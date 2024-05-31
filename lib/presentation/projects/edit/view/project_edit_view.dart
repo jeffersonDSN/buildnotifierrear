@@ -1,12 +1,22 @@
 import 'package:buildnotifierrear/domain/controllers/projects_controller.dart';
+import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/projects_firestore_repository.dart';
+import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
+import 'package:buildnotifierrear/presentation/app/model/mod.dart';
+import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
+import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/bloc/project_edit_bloc.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ProjectEditView extends StatelessWidget {
-  ProjectEditView({super.key});
+class ProjectEditView extends IView {
+  final CrudType type;
+
+  ProjectEditView({
+    super.key,
+    required this.type,
+  });
 
   final ProjectEditBloc bloc = ProjectEditBloc(
     controller: ProjectsController(
@@ -16,9 +26,7 @@ class ProjectEditView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bloc.add(
-      const ProjectEditEvent.load(),
-    );
+    bloc.add(ProjectEditEvent.load(type: type));
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -29,10 +37,21 @@ class ProjectEditView extends StatelessWidget {
               Icons.arrow_back,
               size: Sizes.size32,
             ),
-            onPressed: () {},
+            onPressed: () {
+              appBloc(context).add(
+                const AppEvent.changeView(
+                  mod: Mod.projects(
+                    type: ViewType.overview(),
+                  ),
+                ),
+              );
+            },
           ),
-          title: const Center(
-            child: Text('New project'),
+          title: Center(
+            child: type.when(
+              create: () => const Text('New project'),
+              update: (id) => const Text('Edit project'),
+            ),
           ),
         ),
         body: BlocBuilder<ProjectEditBloc, ProjectEditState>(
@@ -139,11 +158,22 @@ class ProjectEditView extends StatelessWidget {
                               icon: const Icon(
                                 Icons.check,
                               ),
-                              label: const Text('Create project'),
+                              label: type.when(
+                                create: () => const Text('Create project'),
+                                update: (id) => const Text('Update project'),
+                              ),
                               onPressed: () {
                                 bloc.add(
                                   ProjectEditEvent.save(
-                                    callback: () {},
+                                    callback: () {
+                                      appBloc(context).add(
+                                        const AppEvent.changeView(
+                                          mod: Mod.projects(
+                                            type: ViewType.overview(),
+                                          ),
+                                        ),
+                                      );
+                                    },
                                   ),
                                 );
                               },

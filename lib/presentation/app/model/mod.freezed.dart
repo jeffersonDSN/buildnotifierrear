@@ -19,28 +19,28 @@ mixin _$Mod {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() home,
-    required TResult Function() schedule,
-    required TResult Function() projects,
-    required TResult Function() clients,
-    required TResult Function() users,
+    required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) projects,
+    required TResult Function(ViewType type) clients,
+    required TResult Function(ViewType type) users,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? home,
-    TResult? Function()? schedule,
-    TResult? Function()? projects,
-    TResult? Function()? clients,
-    TResult? Function()? users,
+    TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? projects,
+    TResult? Function(ViewType type)? clients,
+    TResult? Function(ViewType type)? users,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? home,
-    TResult Function()? schedule,
-    TResult Function()? projects,
-    TResult Function()? clients,
-    TResult Function()? users,
+    TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? projects,
+    TResult Function(ViewType type)? clients,
+    TResult Function(ViewType type)? users,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -129,10 +129,10 @@ class _$ModHomeImpl implements ModHome {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() home,
-    required TResult Function() schedule,
-    required TResult Function() projects,
-    required TResult Function() clients,
-    required TResult Function() users,
+    required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) projects,
+    required TResult Function(ViewType type) clients,
+    required TResult Function(ViewType type) users,
   }) {
     return home();
   }
@@ -141,10 +141,10 @@ class _$ModHomeImpl implements ModHome {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? home,
-    TResult? Function()? schedule,
-    TResult? Function()? projects,
-    TResult? Function()? clients,
-    TResult? Function()? users,
+    TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? projects,
+    TResult? Function(ViewType type)? clients,
+    TResult? Function(ViewType type)? users,
   }) {
     return home?.call();
   }
@@ -153,10 +153,10 @@ class _$ModHomeImpl implements ModHome {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? home,
-    TResult Function()? schedule,
-    TResult Function()? projects,
-    TResult Function()? clients,
-    TResult Function()? users,
+    TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? projects,
+    TResult Function(ViewType type)? clients,
+    TResult Function(ViewType type)? users,
     required TResult orElse(),
   }) {
     if (home != null) {
@@ -215,6 +215,10 @@ abstract class _$$ModScheduleImplCopyWith<$Res> {
   factory _$$ModScheduleImplCopyWith(
           _$ModScheduleImpl value, $Res Function(_$ModScheduleImpl) then) =
       __$$ModScheduleImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ViewType type});
+
+  $ViewTypeCopyWith<$Res> get type;
 }
 
 /// @nodoc
@@ -224,63 +228,95 @@ class __$$ModScheduleImplCopyWithImpl<$Res>
   __$$ModScheduleImplCopyWithImpl(
       _$ModScheduleImpl _value, $Res Function(_$ModScheduleImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+  }) {
+    return _then(_$ModScheduleImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ViewType,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ViewTypeCopyWith<$Res> get type {
+    return $ViewTypeCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$ModScheduleImpl implements ModSchedule {
-  const _$ModScheduleImpl();
+  const _$ModScheduleImpl({required this.type});
+
+  @override
+  final ViewType type;
 
   @override
   String toString() {
-    return 'Mod.schedule()';
+    return 'Mod.schedule(type: $type)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ModScheduleImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ModScheduleImpl &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, type);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModScheduleImplCopyWith<_$ModScheduleImpl> get copyWith =>
+      __$$ModScheduleImplCopyWithImpl<_$ModScheduleImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() home,
-    required TResult Function() schedule,
-    required TResult Function() projects,
-    required TResult Function() clients,
-    required TResult Function() users,
+    required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) projects,
+    required TResult Function(ViewType type) clients,
+    required TResult Function(ViewType type) users,
   }) {
-    return schedule();
+    return schedule(type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? home,
-    TResult? Function()? schedule,
-    TResult? Function()? projects,
-    TResult? Function()? clients,
-    TResult? Function()? users,
+    TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? projects,
+    TResult? Function(ViewType type)? clients,
+    TResult? Function(ViewType type)? users,
   }) {
-    return schedule?.call();
+    return schedule?.call(type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? home,
-    TResult Function()? schedule,
-    TResult Function()? projects,
-    TResult Function()? clients,
-    TResult Function()? users,
+    TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? projects,
+    TResult Function(ViewType type)? clients,
+    TResult Function(ViewType type)? users,
     required TResult orElse(),
   }) {
     if (schedule != null) {
-      return schedule();
+      return schedule(type);
     }
     return orElse();
   }
@@ -327,7 +363,12 @@ class _$ModScheduleImpl implements ModSchedule {
 }
 
 abstract class ModSchedule implements Mod {
-  const factory ModSchedule() = _$ModScheduleImpl;
+  const factory ModSchedule({required final ViewType type}) = _$ModScheduleImpl;
+
+  ViewType get type;
+  @JsonKey(ignore: true)
+  _$$ModScheduleImplCopyWith<_$ModScheduleImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -335,6 +376,10 @@ abstract class _$$ModProjectsImplCopyWith<$Res> {
   factory _$$ModProjectsImplCopyWith(
           _$ModProjectsImpl value, $Res Function(_$ModProjectsImpl) then) =
       __$$ModProjectsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ViewType type});
+
+  $ViewTypeCopyWith<$Res> get type;
 }
 
 /// @nodoc
@@ -344,63 +389,95 @@ class __$$ModProjectsImplCopyWithImpl<$Res>
   __$$ModProjectsImplCopyWithImpl(
       _$ModProjectsImpl _value, $Res Function(_$ModProjectsImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+  }) {
+    return _then(_$ModProjectsImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ViewType,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ViewTypeCopyWith<$Res> get type {
+    return $ViewTypeCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$ModProjectsImpl implements ModProjects {
-  const _$ModProjectsImpl();
+  const _$ModProjectsImpl({required this.type});
+
+  @override
+  final ViewType type;
 
   @override
   String toString() {
-    return 'Mod.projects()';
+    return 'Mod.projects(type: $type)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ModProjectsImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ModProjectsImpl &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, type);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModProjectsImplCopyWith<_$ModProjectsImpl> get copyWith =>
+      __$$ModProjectsImplCopyWithImpl<_$ModProjectsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() home,
-    required TResult Function() schedule,
-    required TResult Function() projects,
-    required TResult Function() clients,
-    required TResult Function() users,
+    required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) projects,
+    required TResult Function(ViewType type) clients,
+    required TResult Function(ViewType type) users,
   }) {
-    return projects();
+    return projects(type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? home,
-    TResult? Function()? schedule,
-    TResult? Function()? projects,
-    TResult? Function()? clients,
-    TResult? Function()? users,
+    TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? projects,
+    TResult? Function(ViewType type)? clients,
+    TResult? Function(ViewType type)? users,
   }) {
-    return projects?.call();
+    return projects?.call(type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? home,
-    TResult Function()? schedule,
-    TResult Function()? projects,
-    TResult Function()? clients,
-    TResult Function()? users,
+    TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? projects,
+    TResult Function(ViewType type)? clients,
+    TResult Function(ViewType type)? users,
     required TResult orElse(),
   }) {
     if (projects != null) {
-      return projects();
+      return projects(type);
     }
     return orElse();
   }
@@ -447,7 +524,12 @@ class _$ModProjectsImpl implements ModProjects {
 }
 
 abstract class ModProjects implements Mod {
-  const factory ModProjects() = _$ModProjectsImpl;
+  const factory ModProjects({required final ViewType type}) = _$ModProjectsImpl;
+
+  ViewType get type;
+  @JsonKey(ignore: true)
+  _$$ModProjectsImplCopyWith<_$ModProjectsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -455,6 +537,10 @@ abstract class _$$ModClientsImplCopyWith<$Res> {
   factory _$$ModClientsImplCopyWith(
           _$ModClientsImpl value, $Res Function(_$ModClientsImpl) then) =
       __$$ModClientsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ViewType type});
+
+  $ViewTypeCopyWith<$Res> get type;
 }
 
 /// @nodoc
@@ -464,63 +550,95 @@ class __$$ModClientsImplCopyWithImpl<$Res>
   __$$ModClientsImplCopyWithImpl(
       _$ModClientsImpl _value, $Res Function(_$ModClientsImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+  }) {
+    return _then(_$ModClientsImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ViewType,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ViewTypeCopyWith<$Res> get type {
+    return $ViewTypeCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$ModClientsImpl implements ModClients {
-  const _$ModClientsImpl();
+  const _$ModClientsImpl({required this.type});
+
+  @override
+  final ViewType type;
 
   @override
   String toString() {
-    return 'Mod.clients()';
+    return 'Mod.clients(type: $type)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ModClientsImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ModClientsImpl &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, type);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModClientsImplCopyWith<_$ModClientsImpl> get copyWith =>
+      __$$ModClientsImplCopyWithImpl<_$ModClientsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() home,
-    required TResult Function() schedule,
-    required TResult Function() projects,
-    required TResult Function() clients,
-    required TResult Function() users,
+    required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) projects,
+    required TResult Function(ViewType type) clients,
+    required TResult Function(ViewType type) users,
   }) {
-    return clients();
+    return clients(type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? home,
-    TResult? Function()? schedule,
-    TResult? Function()? projects,
-    TResult? Function()? clients,
-    TResult? Function()? users,
+    TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? projects,
+    TResult? Function(ViewType type)? clients,
+    TResult? Function(ViewType type)? users,
   }) {
-    return clients?.call();
+    return clients?.call(type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? home,
-    TResult Function()? schedule,
-    TResult Function()? projects,
-    TResult Function()? clients,
-    TResult Function()? users,
+    TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? projects,
+    TResult Function(ViewType type)? clients,
+    TResult Function(ViewType type)? users,
     required TResult orElse(),
   }) {
     if (clients != null) {
-      return clients();
+      return clients(type);
     }
     return orElse();
   }
@@ -567,7 +685,12 @@ class _$ModClientsImpl implements ModClients {
 }
 
 abstract class ModClients implements Mod {
-  const factory ModClients() = _$ModClientsImpl;
+  const factory ModClients({required final ViewType type}) = _$ModClientsImpl;
+
+  ViewType get type;
+  @JsonKey(ignore: true)
+  _$$ModClientsImplCopyWith<_$ModClientsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -575,6 +698,10 @@ abstract class _$$ModUsersImplCopyWith<$Res> {
   factory _$$ModUsersImplCopyWith(
           _$ModUsersImpl value, $Res Function(_$ModUsersImpl) then) =
       __$$ModUsersImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ViewType type});
+
+  $ViewTypeCopyWith<$Res> get type;
 }
 
 /// @nodoc
@@ -584,63 +711,95 @@ class __$$ModUsersImplCopyWithImpl<$Res>
   __$$ModUsersImplCopyWithImpl(
       _$ModUsersImpl _value, $Res Function(_$ModUsersImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+  }) {
+    return _then(_$ModUsersImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ViewType,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ViewTypeCopyWith<$Res> get type {
+    return $ViewTypeCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$ModUsersImpl implements ModUsers {
-  const _$ModUsersImpl();
+  const _$ModUsersImpl({required this.type});
+
+  @override
+  final ViewType type;
 
   @override
   String toString() {
-    return 'Mod.users()';
+    return 'Mod.users(type: $type)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ModUsersImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ModUsersImpl &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, type);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModUsersImplCopyWith<_$ModUsersImpl> get copyWith =>
+      __$$ModUsersImplCopyWithImpl<_$ModUsersImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() home,
-    required TResult Function() schedule,
-    required TResult Function() projects,
-    required TResult Function() clients,
-    required TResult Function() users,
+    required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) projects,
+    required TResult Function(ViewType type) clients,
+    required TResult Function(ViewType type) users,
   }) {
-    return users();
+    return users(type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? home,
-    TResult? Function()? schedule,
-    TResult? Function()? projects,
-    TResult? Function()? clients,
-    TResult? Function()? users,
+    TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? projects,
+    TResult? Function(ViewType type)? clients,
+    TResult? Function(ViewType type)? users,
   }) {
-    return users?.call();
+    return users?.call(type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? home,
-    TResult Function()? schedule,
-    TResult Function()? projects,
-    TResult Function()? clients,
-    TResult Function()? users,
+    TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? projects,
+    TResult Function(ViewType type)? clients,
+    TResult Function(ViewType type)? users,
     required TResult orElse(),
   }) {
     if (users != null) {
-      return users();
+      return users(type);
     }
     return orElse();
   }
@@ -687,5 +846,10 @@ class _$ModUsersImpl implements ModUsers {
 }
 
 abstract class ModUsers implements Mod {
-  const factory ModUsers() = _$ModUsersImpl;
+  const factory ModUsers({required final ViewType type}) = _$ModUsersImpl;
+
+  ViewType get type;
+  @JsonKey(ignore: true)
+  _$$ModUsersImplCopyWith<_$ModUsersImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

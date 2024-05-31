@@ -22,6 +22,7 @@ mixin _$DependenteStateType {
     required TResult Function() reading,
     required TResult Function() creating,
     required TResult Function() updating,
+    required TResult Function() loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$DependenteStateType {
     TResult? Function()? reading,
     TResult? Function()? creating,
     TResult? Function()? updating,
+    TResult? Function()? loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$DependenteStateType {
     TResult Function()? reading,
     TResult Function()? creating,
     TResult Function()? updating,
+    TResult Function()? loading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$DependenteStateType {
     required TResult Function(DependenteStateTypeReading value) reading,
     required TResult Function(DependenteStateTypeCreating value) creating,
     required TResult Function(DependenteStateTypeUpdating value) updating,
+    required TResult Function(DependenteStateTypeloading value) loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$DependenteStateType {
     TResult? Function(DependenteStateTypeReading value)? reading,
     TResult? Function(DependenteStateTypeCreating value)? creating,
     TResult? Function(DependenteStateTypeUpdating value)? updating,
+    TResult? Function(DependenteStateTypeloading value)? loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$DependenteStateType {
     TResult Function(DependenteStateTypeReading value)? reading,
     TResult Function(DependenteStateTypeCreating value)? creating,
     TResult Function(DependenteStateTypeUpdating value)? updating,
+    TResult Function(DependenteStateTypeloading value)? loading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -132,6 +138,7 @@ class _$DependenteStateTypeListingImpl implements DependenteStateTypeListing {
     required TResult Function() reading,
     required TResult Function() creating,
     required TResult Function() updating,
+    required TResult Function() loading,
   }) {
     return listing();
   }
@@ -143,6 +150,7 @@ class _$DependenteStateTypeListingImpl implements DependenteStateTypeListing {
     TResult? Function()? reading,
     TResult? Function()? creating,
     TResult? Function()? updating,
+    TResult? Function()? loading,
   }) {
     return listing?.call();
   }
@@ -154,6 +162,7 @@ class _$DependenteStateTypeListingImpl implements DependenteStateTypeListing {
     TResult Function()? reading,
     TResult Function()? creating,
     TResult Function()? updating,
+    TResult Function()? loading,
     required TResult orElse(),
   }) {
     if (listing != null) {
@@ -169,6 +178,7 @@ class _$DependenteStateTypeListingImpl implements DependenteStateTypeListing {
     required TResult Function(DependenteStateTypeReading value) reading,
     required TResult Function(DependenteStateTypeCreating value) creating,
     required TResult Function(DependenteStateTypeUpdating value) updating,
+    required TResult Function(DependenteStateTypeloading value) loading,
   }) {
     return listing(this);
   }
@@ -180,6 +190,7 @@ class _$DependenteStateTypeListingImpl implements DependenteStateTypeListing {
     TResult? Function(DependenteStateTypeReading value)? reading,
     TResult? Function(DependenteStateTypeCreating value)? creating,
     TResult? Function(DependenteStateTypeUpdating value)? updating,
+    TResult? Function(DependenteStateTypeloading value)? loading,
   }) {
     return listing?.call(this);
   }
@@ -191,6 +202,7 @@ class _$DependenteStateTypeListingImpl implements DependenteStateTypeListing {
     TResult Function(DependenteStateTypeReading value)? reading,
     TResult Function(DependenteStateTypeCreating value)? creating,
     TResult Function(DependenteStateTypeUpdating value)? updating,
+    TResult Function(DependenteStateTypeloading value)? loading,
     required TResult orElse(),
   }) {
     if (listing != null) {
@@ -250,6 +262,7 @@ class _$DependenteStateTypeReadingImpl implements DependenteStateTypeReading {
     required TResult Function() reading,
     required TResult Function() creating,
     required TResult Function() updating,
+    required TResult Function() loading,
   }) {
     return reading();
   }
@@ -261,6 +274,7 @@ class _$DependenteStateTypeReadingImpl implements DependenteStateTypeReading {
     TResult? Function()? reading,
     TResult? Function()? creating,
     TResult? Function()? updating,
+    TResult? Function()? loading,
   }) {
     return reading?.call();
   }
@@ -272,6 +286,7 @@ class _$DependenteStateTypeReadingImpl implements DependenteStateTypeReading {
     TResult Function()? reading,
     TResult Function()? creating,
     TResult Function()? updating,
+    TResult Function()? loading,
     required TResult orElse(),
   }) {
     if (reading != null) {
@@ -287,6 +302,7 @@ class _$DependenteStateTypeReadingImpl implements DependenteStateTypeReading {
     required TResult Function(DependenteStateTypeReading value) reading,
     required TResult Function(DependenteStateTypeCreating value) creating,
     required TResult Function(DependenteStateTypeUpdating value) updating,
+    required TResult Function(DependenteStateTypeloading value) loading,
   }) {
     return reading(this);
   }
@@ -298,6 +314,7 @@ class _$DependenteStateTypeReadingImpl implements DependenteStateTypeReading {
     TResult? Function(DependenteStateTypeReading value)? reading,
     TResult? Function(DependenteStateTypeCreating value)? creating,
     TResult? Function(DependenteStateTypeUpdating value)? updating,
+    TResult? Function(DependenteStateTypeloading value)? loading,
   }) {
     return reading?.call(this);
   }
@@ -309,6 +326,7 @@ class _$DependenteStateTypeReadingImpl implements DependenteStateTypeReading {
     TResult Function(DependenteStateTypeReading value)? reading,
     TResult Function(DependenteStateTypeCreating value)? creating,
     TResult Function(DependenteStateTypeUpdating value)? updating,
+    TResult Function(DependenteStateTypeloading value)? loading,
     required TResult orElse(),
   }) {
     if (reading != null) {
@@ -368,6 +386,7 @@ class _$DependenteStateTypeCreatingImpl implements DependenteStateTypeCreating {
     required TResult Function() reading,
     required TResult Function() creating,
     required TResult Function() updating,
+    required TResult Function() loading,
   }) {
     return creating();
   }
@@ -379,6 +398,7 @@ class _$DependenteStateTypeCreatingImpl implements DependenteStateTypeCreating {
     TResult? Function()? reading,
     TResult? Function()? creating,
     TResult? Function()? updating,
+    TResult? Function()? loading,
   }) {
     return creating?.call();
   }
@@ -390,6 +410,7 @@ class _$DependenteStateTypeCreatingImpl implements DependenteStateTypeCreating {
     TResult Function()? reading,
     TResult Function()? creating,
     TResult Function()? updating,
+    TResult Function()? loading,
     required TResult orElse(),
   }) {
     if (creating != null) {
@@ -405,6 +426,7 @@ class _$DependenteStateTypeCreatingImpl implements DependenteStateTypeCreating {
     required TResult Function(DependenteStateTypeReading value) reading,
     required TResult Function(DependenteStateTypeCreating value) creating,
     required TResult Function(DependenteStateTypeUpdating value) updating,
+    required TResult Function(DependenteStateTypeloading value) loading,
   }) {
     return creating(this);
   }
@@ -416,6 +438,7 @@ class _$DependenteStateTypeCreatingImpl implements DependenteStateTypeCreating {
     TResult? Function(DependenteStateTypeReading value)? reading,
     TResult? Function(DependenteStateTypeCreating value)? creating,
     TResult? Function(DependenteStateTypeUpdating value)? updating,
+    TResult? Function(DependenteStateTypeloading value)? loading,
   }) {
     return creating?.call(this);
   }
@@ -427,6 +450,7 @@ class _$DependenteStateTypeCreatingImpl implements DependenteStateTypeCreating {
     TResult Function(DependenteStateTypeReading value)? reading,
     TResult Function(DependenteStateTypeCreating value)? creating,
     TResult Function(DependenteStateTypeUpdating value)? updating,
+    TResult Function(DependenteStateTypeloading value)? loading,
     required TResult orElse(),
   }) {
     if (creating != null) {
@@ -487,6 +511,7 @@ class _$DependenteStateTypeUpdatingImpl implements DependenteStateTypeUpdating {
     required TResult Function() reading,
     required TResult Function() creating,
     required TResult Function() updating,
+    required TResult Function() loading,
   }) {
     return updating();
   }
@@ -498,6 +523,7 @@ class _$DependenteStateTypeUpdatingImpl implements DependenteStateTypeUpdating {
     TResult? Function()? reading,
     TResult? Function()? creating,
     TResult? Function()? updating,
+    TResult? Function()? loading,
   }) {
     return updating?.call();
   }
@@ -509,6 +535,7 @@ class _$DependenteStateTypeUpdatingImpl implements DependenteStateTypeUpdating {
     TResult Function()? reading,
     TResult Function()? creating,
     TResult Function()? updating,
+    TResult Function()? loading,
     required TResult orElse(),
   }) {
     if (updating != null) {
@@ -524,6 +551,7 @@ class _$DependenteStateTypeUpdatingImpl implements DependenteStateTypeUpdating {
     required TResult Function(DependenteStateTypeReading value) reading,
     required TResult Function(DependenteStateTypeCreating value) creating,
     required TResult Function(DependenteStateTypeUpdating value) updating,
+    required TResult Function(DependenteStateTypeloading value) loading,
   }) {
     return updating(this);
   }
@@ -535,6 +563,7 @@ class _$DependenteStateTypeUpdatingImpl implements DependenteStateTypeUpdating {
     TResult? Function(DependenteStateTypeReading value)? reading,
     TResult? Function(DependenteStateTypeCreating value)? creating,
     TResult? Function(DependenteStateTypeUpdating value)? updating,
+    TResult? Function(DependenteStateTypeloading value)? loading,
   }) {
     return updating?.call(this);
   }
@@ -546,6 +575,7 @@ class _$DependenteStateTypeUpdatingImpl implements DependenteStateTypeUpdating {
     TResult Function(DependenteStateTypeReading value)? reading,
     TResult Function(DependenteStateTypeCreating value)? creating,
     TResult Function(DependenteStateTypeUpdating value)? updating,
+    TResult Function(DependenteStateTypeloading value)? loading,
     required TResult orElse(),
   }) {
     if (updating != null) {
@@ -558,4 +588,128 @@ class _$DependenteStateTypeUpdatingImpl implements DependenteStateTypeUpdating {
 abstract class DependenteStateTypeUpdating implements DependenteStateType {
   const factory DependenteStateTypeUpdating() =
       _$DependenteStateTypeUpdatingImpl;
+}
+
+/// @nodoc
+abstract class _$$DependenteStateTypeloadingImplCopyWith<$Res> {
+  factory _$$DependenteStateTypeloadingImplCopyWith(
+          _$DependenteStateTypeloadingImpl value,
+          $Res Function(_$DependenteStateTypeloadingImpl) then) =
+      __$$DependenteStateTypeloadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DependenteStateTypeloadingImplCopyWithImpl<$Res>
+    extends _$DependenteStateTypeCopyWithImpl<$Res,
+        _$DependenteStateTypeloadingImpl>
+    implements _$$DependenteStateTypeloadingImplCopyWith<$Res> {
+  __$$DependenteStateTypeloadingImplCopyWithImpl(
+      _$DependenteStateTypeloadingImpl _value,
+      $Res Function(_$DependenteStateTypeloadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DependenteStateTypeloadingImpl implements DependenteStateTypeloading {
+  const _$DependenteStateTypeloadingImpl();
+
+  @override
+  String toString() {
+    return 'DependenteStateType.loading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DependenteStateTypeloadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() listing,
+    required TResult Function() reading,
+    required TResult Function() creating,
+    required TResult Function() updating,
+    required TResult Function() loading,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? listing,
+    TResult? Function()? reading,
+    TResult? Function()? creating,
+    TResult? Function()? updating,
+    TResult? Function()? loading,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? listing,
+    TResult Function()? reading,
+    TResult Function()? creating,
+    TResult Function()? updating,
+    TResult Function()? loading,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DependenteStateTypeListing value) listing,
+    required TResult Function(DependenteStateTypeReading value) reading,
+    required TResult Function(DependenteStateTypeCreating value) creating,
+    required TResult Function(DependenteStateTypeUpdating value) updating,
+    required TResult Function(DependenteStateTypeloading value) loading,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DependenteStateTypeListing value)? listing,
+    TResult? Function(DependenteStateTypeReading value)? reading,
+    TResult? Function(DependenteStateTypeCreating value)? creating,
+    TResult? Function(DependenteStateTypeUpdating value)? updating,
+    TResult? Function(DependenteStateTypeloading value)? loading,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DependenteStateTypeListing value)? listing,
+    TResult Function(DependenteStateTypeReading value)? reading,
+    TResult Function(DependenteStateTypeCreating value)? creating,
+    TResult Function(DependenteStateTypeUpdating value)? updating,
+    TResult Function(DependenteStateTypeloading value)? loading,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DependenteStateTypeloading implements DependenteStateType {
+  const factory DependenteStateTypeloading() = _$DependenteStateTypeloadingImpl;
 }

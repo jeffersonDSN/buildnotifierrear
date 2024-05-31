@@ -3,7 +3,7 @@ part of 'project_edit_bloc.dart';
 @freezed
 class ProjectEditEvent with _$ProjectEditEvent {
   const factory ProjectEditEvent.load({
-    @Default(CrudType.create()) CrudType type,
+    required CrudType type,
   }) = ProjectEditEventLoad;
 
   const factory ProjectEditEvent.updateName({

@@ -8,4 +8,5 @@ class DependenteStateType with _$DependenteStateType {
   const factory DependenteStateType.reading() = DependenteStateTypeReading;
   const factory DependenteStateType.creating() = DependenteStateTypeCreating;
   const factory DependenteStateType.updating() = DependenteStateTypeUpdating;
+  const factory DependenteStateType.loading() = DependenteStateTypeloading;
 }

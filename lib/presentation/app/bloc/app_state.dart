@@ -6,3 +6,7 @@ class AppState with _$AppState {
     required Mod mod,
   }) = AppStateLogged;
 }
+
+extension OnAppState on AppState {
+  AppStateLogged get asAppStateLogged => this as AppStateLogged;
+}

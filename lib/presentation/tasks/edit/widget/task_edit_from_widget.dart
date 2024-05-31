@@ -19,7 +19,6 @@ class TaskEditFromWidget extends StatelessWidget {
     return Expanded(
       child: Column(
         children: [
-          const Divider(),
           Padding(
             padding: const EdgeInsets.all(Sizes.size16),
             child: Column(

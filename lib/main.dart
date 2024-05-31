@@ -16,13 +16,13 @@ void main() async {
   runApp(
     BlocProvider(
       create: (context) => AppBloc(),
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +30,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Build Notifier',
       theme: AppTheme.mainTheme,
-      home: LandingPage(
+      home: BlocBuilder<AppBloc, AppState>(
         bloc: BlocProvider.of<AppBloc>(context),
-        child: BlocBuilder<AppBloc, AppState>(
-          bloc: BlocProvider.of<AppBloc>(context),
-          builder: (context, state) {
-            return state.mod.view();
-          },
-        ),
+        builder: (context, state) {
+          return LandingPage(
+            bloc: BlocProvider.of<AppBloc>(context),
+            child: state.mod.view(),
+          );
+        },
       ),
     );
   }

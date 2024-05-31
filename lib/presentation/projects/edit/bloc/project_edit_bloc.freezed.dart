@@ -150,10 +150,9 @@ class __$$ProjectEditEventLoadImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
-  const _$ProjectEditEventLoadImpl({this.type = const CrudType.create()});
+  const _$ProjectEditEventLoadImpl({required this.type});
 
   @override
-  @JsonKey()
   final CrudType type;
 
   @override
@@ -276,7 +275,7 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
 }
 
 abstract class ProjectEditEventLoad implements ProjectEditEvent {
-  const factory ProjectEditEventLoad({final CrudType type}) =
+  const factory ProjectEditEventLoad({required final CrudType type}) =
       _$ProjectEditEventLoadImpl;
 
   CrudType get type;

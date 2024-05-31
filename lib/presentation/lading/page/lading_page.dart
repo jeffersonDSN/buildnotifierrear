@@ -1,8 +1,10 @@
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
+import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/core/const/images_const.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class LandingPage extends StatelessWidget {
   final Widget child;
@@ -48,6 +50,7 @@ class LandingPage extends StatelessWidget {
                 ListTile(
                   leading: const Icon(Icons.home),
                   title: const Text('Home'),
+                  selected: bloc.state.asAppStateLogged.mod.isModHome,
                   onTap: () {
                     bloc.add(
                       const AppEvent.changeView(
@@ -59,10 +62,13 @@ class LandingPage extends StatelessWidget {
                 ListTile(
                   leading: const Icon(Icons.calendar_month),
                   title: const Text('Schedule'),
+                  selected: bloc.state.asAppStateLogged.mod.isModSchedule,
                   onTap: () {
                     bloc.add(
                       const AppEvent.changeView(
-                        mod: Mod.schedule(),
+                        mod: Mod.schedule(
+                          type: ViewType.overview(),
+                        ),
                       ),
                     );
                   },
@@ -70,10 +76,13 @@ class LandingPage extends StatelessWidget {
                 ListTile(
                   leading: const Icon(Icons.business),
                   title: const Text('Projects'),
+                  selected: bloc.state.asAppStateLogged.mod.isModProjects,
                   onTap: () {
                     bloc.add(
                       const AppEvent.changeView(
-                        mod: Mod.projects(),
+                        mod: Mod.projects(
+                          type: ViewType.overview(),
+                        ),
                       ),
                     );
                   },
@@ -81,10 +90,13 @@ class LandingPage extends StatelessWidget {
                 ListTile(
                   leading: const Icon(Icons.people),
                   title: const Text('Clients'),
+                  selected: bloc.state.asAppStateLogged.mod.isModClients,
                   onTap: () {
                     bloc.add(
                       const AppEvent.changeView(
-                        mod: Mod.clients(),
+                        mod: Mod.clients(
+                          type: ViewType.overview(),
+                        ),
                       ),
                     );
                   },
@@ -92,10 +104,13 @@ class LandingPage extends StatelessWidget {
                 ListTile(
                   leading: const Icon(Icons.badge),
                   title: const Text('Users'),
+                  selected: bloc.state.asAppStateLogged.mod.isModUsers,
                   onTap: () {
                     bloc.add(
                       const AppEvent.changeView(
-                        mod: Mod.users(),
+                        mod: Mod.users(
+                          type: ViewType.overview(),
+                        ),
                       ),
                     );
                   },

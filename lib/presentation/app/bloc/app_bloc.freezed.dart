@@ -61,6 +61,8 @@ abstract class $AppEventCopyWith<$Res> {
       _$AppEventCopyWithImpl<$Res, AppEvent>;
   @useResult
   $Res call({Mod mod});
+
+  $ModCopyWith<$Res> get mod;
 }
 
 /// @nodoc
@@ -76,14 +78,22 @@ class _$AppEventCopyWithImpl<$Res, $Val extends AppEvent>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mod = freezed,
+    Object? mod = null,
   }) {
     return _then(_value.copyWith(
-      mod: freezed == mod
+      mod: null == mod
           ? _value.mod
           : mod // ignore: cast_nullable_to_non_nullable
               as Mod,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ModCopyWith<$Res> get mod {
+    return $ModCopyWith<$Res>(_value.mod, (value) {
+      return _then(_value.copyWith(mod: value) as $Val);
+    });
   }
 }
 
@@ -96,6 +106,9 @@ abstract class _$$AppEventChangeViewImplCopyWith<$Res>
   @override
   @useResult
   $Res call({Mod mod});
+
+  @override
+  $ModCopyWith<$Res> get mod;
 }
 
 /// @nodoc
@@ -109,10 +122,10 @@ class __$$AppEventChangeViewImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mod = freezed,
+    Object? mod = null,
   }) {
     return _then(_$AppEventChangeViewImpl(
-      mod: freezed == mod
+      mod: null == mod
           ? _value.mod
           : mod // ignore: cast_nullable_to_non_nullable
               as Mod,
@@ -138,12 +151,11 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppEventChangeViewImpl &&
-            const DeepCollectionEquality().equals(other.mod, mod));
+            (identical(other.mod, mod) || other.mod == mod));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(mod));
+  int get hashCode => Object.hash(runtimeType, mod);
 
   @JsonKey(ignore: true)
   @override
@@ -268,6 +280,8 @@ abstract class $AppStateCopyWith<$Res> {
       _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
   $Res call({Mod mod});
+
+  $ModCopyWith<$Res> get mod;
 }
 
 /// @nodoc
@@ -283,14 +297,22 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mod = freezed,
+    Object? mod = null,
   }) {
     return _then(_value.copyWith(
-      mod: freezed == mod
+      mod: null == mod
           ? _value.mod
           : mod // ignore: cast_nullable_to_non_nullable
               as Mod,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ModCopyWith<$Res> get mod {
+    return $ModCopyWith<$Res>(_value.mod, (value) {
+      return _then(_value.copyWith(mod: value) as $Val);
+    });
   }
 }
 
@@ -303,6 +325,9 @@ abstract class _$$AppStateLoggedImplCopyWith<$Res>
   @override
   @useResult
   $Res call({Mod mod});
+
+  @override
+  $ModCopyWith<$Res> get mod;
 }
 
 /// @nodoc
@@ -316,10 +341,10 @@ class __$$AppStateLoggedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mod = freezed,
+    Object? mod = null,
   }) {
     return _then(_$AppStateLoggedImpl(
-      mod: freezed == mod
+      mod: null == mod
           ? _value.mod
           : mod // ignore: cast_nullable_to_non_nullable
               as Mod,
@@ -345,12 +370,11 @@ class _$AppStateLoggedImpl implements AppStateLogged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppStateLoggedImpl &&
-            const DeepCollectionEquality().equals(other.mod, mod));
+            (identical(other.mod, mod) || other.mod == mod));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(mod));
+  int get hashCode => Object.hash(runtimeType, mod);
 
   @JsonKey(ignore: true)
   @override
