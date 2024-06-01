@@ -20,21 +20,29 @@ mixin _$ProjectsOverviewEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(Project projectSelected) changeProjectSelected,
-    required TResult Function(DependenteStateType tasksState) updateTasksState,
+    required TResult Function(DependenteStateType<dynamic> tasksState)
+        updateTasksState,
+    required TResult Function(String value) updateTitleTaskSelected,
+    required TResult Function(VoidCallback callback) saveTaskSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(Project projectSelected)? changeProjectSelected,
-    TResult? Function(DependenteStateType tasksState)? updateTasksState,
+    TResult? Function(DependenteStateType<dynamic> tasksState)?
+        updateTasksState,
+    TResult? Function(String value)? updateTitleTaskSelected,
+    TResult? Function(VoidCallback callback)? saveTaskSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(Project projectSelected)? changeProjectSelected,
-    TResult Function(DependenteStateType tasksState)? updateTasksState,
+    TResult Function(DependenteStateType<dynamic> tasksState)? updateTasksState,
+    TResult Function(String value)? updateTitleTaskSelected,
+    TResult Function(VoidCallback callback)? saveTaskSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -45,6 +53,11 @@ mixin _$ProjectsOverviewEvent {
         changeProjectSelected,
     required TResult Function(ProjectsOverviewEventUpdateTasksState value)
         updateTasksState,
+    required TResult Function(
+            ProjectsOverviewEventUpdateTitleTaskSelected value)
+        updateTitleTaskSelected,
+    required TResult Function(ProjectsOverviewEventSaveTaskSelected value)
+        saveTaskSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,6 +67,10 @@ mixin _$ProjectsOverviewEvent {
         changeProjectSelected,
     TResult? Function(ProjectsOverviewEventUpdateTasksState value)?
         updateTasksState,
+    TResult? Function(ProjectsOverviewEventUpdateTitleTaskSelected value)?
+        updateTitleTaskSelected,
+    TResult? Function(ProjectsOverviewEventSaveTaskSelected value)?
+        saveTaskSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +80,10 @@ mixin _$ProjectsOverviewEvent {
         changeProjectSelected,
     TResult Function(ProjectsOverviewEventUpdateTasksState value)?
         updateTasksState,
+    TResult Function(ProjectsOverviewEventUpdateTitleTaskSelected value)?
+        updateTitleTaskSelected,
+    TResult Function(ProjectsOverviewEventSaveTaskSelected value)?
+        saveTaskSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -131,7 +152,10 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(Project projectSelected) changeProjectSelected,
-    required TResult Function(DependenteStateType tasksState) updateTasksState,
+    required TResult Function(DependenteStateType<dynamic> tasksState)
+        updateTasksState,
+    required TResult Function(String value) updateTitleTaskSelected,
+    required TResult Function(VoidCallback callback) saveTaskSelected,
   }) {
     return load();
   }
@@ -141,7 +165,10 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(Project projectSelected)? changeProjectSelected,
-    TResult? Function(DependenteStateType tasksState)? updateTasksState,
+    TResult? Function(DependenteStateType<dynamic> tasksState)?
+        updateTasksState,
+    TResult? Function(String value)? updateTitleTaskSelected,
+    TResult? Function(VoidCallback callback)? saveTaskSelected,
   }) {
     return load?.call();
   }
@@ -151,7 +178,9 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(Project projectSelected)? changeProjectSelected,
-    TResult Function(DependenteStateType tasksState)? updateTasksState,
+    TResult Function(DependenteStateType<dynamic> tasksState)? updateTasksState,
+    TResult Function(String value)? updateTitleTaskSelected,
+    TResult Function(VoidCallback callback)? saveTaskSelected,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -168,6 +197,11 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
         changeProjectSelected,
     required TResult Function(ProjectsOverviewEventUpdateTasksState value)
         updateTasksState,
+    required TResult Function(
+            ProjectsOverviewEventUpdateTitleTaskSelected value)
+        updateTitleTaskSelected,
+    required TResult Function(ProjectsOverviewEventSaveTaskSelected value)
+        saveTaskSelected,
   }) {
     return load(this);
   }
@@ -180,6 +214,10 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
         changeProjectSelected,
     TResult? Function(ProjectsOverviewEventUpdateTasksState value)?
         updateTasksState,
+    TResult? Function(ProjectsOverviewEventUpdateTitleTaskSelected value)?
+        updateTitleTaskSelected,
+    TResult? Function(ProjectsOverviewEventSaveTaskSelected value)?
+        saveTaskSelected,
   }) {
     return load?.call(this);
   }
@@ -192,6 +230,10 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
         changeProjectSelected,
     TResult Function(ProjectsOverviewEventUpdateTasksState value)?
         updateTasksState,
+    TResult Function(ProjectsOverviewEventUpdateTitleTaskSelected value)?
+        updateTitleTaskSelected,
+    TResult Function(ProjectsOverviewEventSaveTaskSelected value)?
+        saveTaskSelected,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -292,7 +334,10 @@ class _$ProjectsOverviewEventChangeProjectSelectedImpl
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(Project projectSelected) changeProjectSelected,
-    required TResult Function(DependenteStateType tasksState) updateTasksState,
+    required TResult Function(DependenteStateType<dynamic> tasksState)
+        updateTasksState,
+    required TResult Function(String value) updateTitleTaskSelected,
+    required TResult Function(VoidCallback callback) saveTaskSelected,
   }) {
     return changeProjectSelected(projectSelected);
   }
@@ -302,7 +347,10 @@ class _$ProjectsOverviewEventChangeProjectSelectedImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(Project projectSelected)? changeProjectSelected,
-    TResult? Function(DependenteStateType tasksState)? updateTasksState,
+    TResult? Function(DependenteStateType<dynamic> tasksState)?
+        updateTasksState,
+    TResult? Function(String value)? updateTitleTaskSelected,
+    TResult? Function(VoidCallback callback)? saveTaskSelected,
   }) {
     return changeProjectSelected?.call(projectSelected);
   }
@@ -312,7 +360,9 @@ class _$ProjectsOverviewEventChangeProjectSelectedImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(Project projectSelected)? changeProjectSelected,
-    TResult Function(DependenteStateType tasksState)? updateTasksState,
+    TResult Function(DependenteStateType<dynamic> tasksState)? updateTasksState,
+    TResult Function(String value)? updateTitleTaskSelected,
+    TResult Function(VoidCallback callback)? saveTaskSelected,
     required TResult orElse(),
   }) {
     if (changeProjectSelected != null) {
@@ -329,6 +379,11 @@ class _$ProjectsOverviewEventChangeProjectSelectedImpl
         changeProjectSelected,
     required TResult Function(ProjectsOverviewEventUpdateTasksState value)
         updateTasksState,
+    required TResult Function(
+            ProjectsOverviewEventUpdateTitleTaskSelected value)
+        updateTitleTaskSelected,
+    required TResult Function(ProjectsOverviewEventSaveTaskSelected value)
+        saveTaskSelected,
   }) {
     return changeProjectSelected(this);
   }
@@ -341,6 +396,10 @@ class _$ProjectsOverviewEventChangeProjectSelectedImpl
         changeProjectSelected,
     TResult? Function(ProjectsOverviewEventUpdateTasksState value)?
         updateTasksState,
+    TResult? Function(ProjectsOverviewEventUpdateTitleTaskSelected value)?
+        updateTitleTaskSelected,
+    TResult? Function(ProjectsOverviewEventSaveTaskSelected value)?
+        saveTaskSelected,
   }) {
     return changeProjectSelected?.call(this);
   }
@@ -353,6 +412,10 @@ class _$ProjectsOverviewEventChangeProjectSelectedImpl
         changeProjectSelected,
     TResult Function(ProjectsOverviewEventUpdateTasksState value)?
         updateTasksState,
+    TResult Function(ProjectsOverviewEventUpdateTitleTaskSelected value)?
+        updateTitleTaskSelected,
+    TResult Function(ProjectsOverviewEventSaveTaskSelected value)?
+        saveTaskSelected,
     required TResult orElse(),
   }) {
     if (changeProjectSelected != null) {
@@ -382,9 +445,9 @@ abstract class _$$ProjectsOverviewEventUpdateTasksStateImplCopyWith<$Res> {
           $Res Function(_$ProjectsOverviewEventUpdateTasksStateImpl) then) =
       __$$ProjectsOverviewEventUpdateTasksStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({DependenteStateType tasksState});
+  $Res call({DependenteStateType<dynamic> tasksState});
 
-  $DependenteStateTypeCopyWith<$Res> get tasksState;
+  $DependenteStateTypeCopyWith<dynamic, $Res> get tasksState;
 }
 
 /// @nodoc
@@ -406,14 +469,15 @@ class __$$ProjectsOverviewEventUpdateTasksStateImplCopyWithImpl<$Res>
       tasksState: null == tasksState
           ? _value.tasksState
           : tasksState // ignore: cast_nullable_to_non_nullable
-              as DependenteStateType,
+              as DependenteStateType<dynamic>,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $DependenteStateTypeCopyWith<$Res> get tasksState {
-    return $DependenteStateTypeCopyWith<$Res>(_value.tasksState, (value) {
+  $DependenteStateTypeCopyWith<dynamic, $Res> get tasksState {
+    return $DependenteStateTypeCopyWith<dynamic, $Res>(_value.tasksState,
+        (value) {
       return _then(_value.copyWith(tasksState: value));
     });
   }
@@ -426,7 +490,7 @@ class _$ProjectsOverviewEventUpdateTasksStateImpl
   const _$ProjectsOverviewEventUpdateTasksStateImpl({required this.tasksState});
 
   @override
-  final DependenteStateType tasksState;
+  final DependenteStateType<dynamic> tasksState;
 
   @override
   String toString() {
@@ -458,7 +522,10 @@ class _$ProjectsOverviewEventUpdateTasksStateImpl
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(Project projectSelected) changeProjectSelected,
-    required TResult Function(DependenteStateType tasksState) updateTasksState,
+    required TResult Function(DependenteStateType<dynamic> tasksState)
+        updateTasksState,
+    required TResult Function(String value) updateTitleTaskSelected,
+    required TResult Function(VoidCallback callback) saveTaskSelected,
   }) {
     return updateTasksState(tasksState);
   }
@@ -468,7 +535,10 @@ class _$ProjectsOverviewEventUpdateTasksStateImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(Project projectSelected)? changeProjectSelected,
-    TResult? Function(DependenteStateType tasksState)? updateTasksState,
+    TResult? Function(DependenteStateType<dynamic> tasksState)?
+        updateTasksState,
+    TResult? Function(String value)? updateTitleTaskSelected,
+    TResult? Function(VoidCallback callback)? saveTaskSelected,
   }) {
     return updateTasksState?.call(tasksState);
   }
@@ -478,7 +548,9 @@ class _$ProjectsOverviewEventUpdateTasksStateImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(Project projectSelected)? changeProjectSelected,
-    TResult Function(DependenteStateType tasksState)? updateTasksState,
+    TResult Function(DependenteStateType<dynamic> tasksState)? updateTasksState,
+    TResult Function(String value)? updateTitleTaskSelected,
+    TResult Function(VoidCallback callback)? saveTaskSelected,
     required TResult orElse(),
   }) {
     if (updateTasksState != null) {
@@ -495,6 +567,11 @@ class _$ProjectsOverviewEventUpdateTasksStateImpl
         changeProjectSelected,
     required TResult Function(ProjectsOverviewEventUpdateTasksState value)
         updateTasksState,
+    required TResult Function(
+            ProjectsOverviewEventUpdateTitleTaskSelected value)
+        updateTitleTaskSelected,
+    required TResult Function(ProjectsOverviewEventSaveTaskSelected value)
+        saveTaskSelected,
   }) {
     return updateTasksState(this);
   }
@@ -507,6 +584,10 @@ class _$ProjectsOverviewEventUpdateTasksStateImpl
         changeProjectSelected,
     TResult? Function(ProjectsOverviewEventUpdateTasksState value)?
         updateTasksState,
+    TResult? Function(ProjectsOverviewEventUpdateTitleTaskSelected value)?
+        updateTitleTaskSelected,
+    TResult? Function(ProjectsOverviewEventSaveTaskSelected value)?
+        saveTaskSelected,
   }) {
     return updateTasksState?.call(this);
   }
@@ -519,6 +600,10 @@ class _$ProjectsOverviewEventUpdateTasksStateImpl
         changeProjectSelected,
     TResult Function(ProjectsOverviewEventUpdateTasksState value)?
         updateTasksState,
+    TResult Function(ProjectsOverviewEventUpdateTitleTaskSelected value)?
+        updateTitleTaskSelected,
+    TResult Function(ProjectsOverviewEventSaveTaskSelected value)?
+        saveTaskSelected,
     required TResult orElse(),
   }) {
     if (updateTasksState != null) {
@@ -531,13 +616,372 @@ class _$ProjectsOverviewEventUpdateTasksStateImpl
 abstract class ProjectsOverviewEventUpdateTasksState
     implements ProjectsOverviewEvent {
   const factory ProjectsOverviewEventUpdateTasksState(
-          {required final DependenteStateType tasksState}) =
+          {required final DependenteStateType<dynamic> tasksState}) =
       _$ProjectsOverviewEventUpdateTasksStateImpl;
 
-  DependenteStateType get tasksState;
+  DependenteStateType<dynamic> get tasksState;
   @JsonKey(ignore: true)
   _$$ProjectsOverviewEventUpdateTasksStateImplCopyWith<
           _$ProjectsOverviewEventUpdateTasksStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProjectsOverviewEventUpdateTitleTaskSelectedImplCopyWith<
+    $Res> {
+  factory _$$ProjectsOverviewEventUpdateTitleTaskSelectedImplCopyWith(
+          _$ProjectsOverviewEventUpdateTitleTaskSelectedImpl value,
+          $Res Function(_$ProjectsOverviewEventUpdateTitleTaskSelectedImpl)
+              then) =
+      __$$ProjectsOverviewEventUpdateTitleTaskSelectedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$ProjectsOverviewEventUpdateTitleTaskSelectedImplCopyWithImpl<$Res>
+    extends _$ProjectsOverviewEventCopyWithImpl<$Res,
+        _$ProjectsOverviewEventUpdateTitleTaskSelectedImpl>
+    implements
+        _$$ProjectsOverviewEventUpdateTitleTaskSelectedImplCopyWith<$Res> {
+  __$$ProjectsOverviewEventUpdateTitleTaskSelectedImplCopyWithImpl(
+      _$ProjectsOverviewEventUpdateTitleTaskSelectedImpl _value,
+      $Res Function(_$ProjectsOverviewEventUpdateTitleTaskSelectedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ProjectsOverviewEventUpdateTitleTaskSelectedImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProjectsOverviewEventUpdateTitleTaskSelectedImpl
+    implements ProjectsOverviewEventUpdateTitleTaskSelected {
+  const _$ProjectsOverviewEventUpdateTitleTaskSelectedImpl(
+      {required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'ProjectsOverviewEvent.updateTitleTaskSelected(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProjectsOverviewEventUpdateTitleTaskSelectedImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProjectsOverviewEventUpdateTitleTaskSelectedImplCopyWith<
+          _$ProjectsOverviewEventUpdateTitleTaskSelectedImpl>
+      get copyWith =>
+          __$$ProjectsOverviewEventUpdateTitleTaskSelectedImplCopyWithImpl<
+                  _$ProjectsOverviewEventUpdateTitleTaskSelectedImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function(Project projectSelected) changeProjectSelected,
+    required TResult Function(DependenteStateType<dynamic> tasksState)
+        updateTasksState,
+    required TResult Function(String value) updateTitleTaskSelected,
+    required TResult Function(VoidCallback callback) saveTaskSelected,
+  }) {
+    return updateTitleTaskSelected(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function(Project projectSelected)? changeProjectSelected,
+    TResult? Function(DependenteStateType<dynamic> tasksState)?
+        updateTasksState,
+    TResult? Function(String value)? updateTitleTaskSelected,
+    TResult? Function(VoidCallback callback)? saveTaskSelected,
+  }) {
+    return updateTitleTaskSelected?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function(Project projectSelected)? changeProjectSelected,
+    TResult Function(DependenteStateType<dynamic> tasksState)? updateTasksState,
+    TResult Function(String value)? updateTitleTaskSelected,
+    TResult Function(VoidCallback callback)? saveTaskSelected,
+    required TResult orElse(),
+  }) {
+    if (updateTitleTaskSelected != null) {
+      return updateTitleTaskSelected(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectsOverviewEventLoad value) load,
+    required TResult Function(ProjectsOverviewEventChangeProjectSelected value)
+        changeProjectSelected,
+    required TResult Function(ProjectsOverviewEventUpdateTasksState value)
+        updateTasksState,
+    required TResult Function(
+            ProjectsOverviewEventUpdateTitleTaskSelected value)
+        updateTitleTaskSelected,
+    required TResult Function(ProjectsOverviewEventSaveTaskSelected value)
+        saveTaskSelected,
+  }) {
+    return updateTitleTaskSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectsOverviewEventLoad value)? load,
+    TResult? Function(ProjectsOverviewEventChangeProjectSelected value)?
+        changeProjectSelected,
+    TResult? Function(ProjectsOverviewEventUpdateTasksState value)?
+        updateTasksState,
+    TResult? Function(ProjectsOverviewEventUpdateTitleTaskSelected value)?
+        updateTitleTaskSelected,
+    TResult? Function(ProjectsOverviewEventSaveTaskSelected value)?
+        saveTaskSelected,
+  }) {
+    return updateTitleTaskSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectsOverviewEventLoad value)? load,
+    TResult Function(ProjectsOverviewEventChangeProjectSelected value)?
+        changeProjectSelected,
+    TResult Function(ProjectsOverviewEventUpdateTasksState value)?
+        updateTasksState,
+    TResult Function(ProjectsOverviewEventUpdateTitleTaskSelected value)?
+        updateTitleTaskSelected,
+    TResult Function(ProjectsOverviewEventSaveTaskSelected value)?
+        saveTaskSelected,
+    required TResult orElse(),
+  }) {
+    if (updateTitleTaskSelected != null) {
+      return updateTitleTaskSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProjectsOverviewEventUpdateTitleTaskSelected
+    implements ProjectsOverviewEvent {
+  const factory ProjectsOverviewEventUpdateTitleTaskSelected(
+          {required final String value}) =
+      _$ProjectsOverviewEventUpdateTitleTaskSelectedImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$ProjectsOverviewEventUpdateTitleTaskSelectedImplCopyWith<
+          _$ProjectsOverviewEventUpdateTitleTaskSelectedImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProjectsOverviewEventSaveTaskSelectedImplCopyWith<$Res> {
+  factory _$$ProjectsOverviewEventSaveTaskSelectedImplCopyWith(
+          _$ProjectsOverviewEventSaveTaskSelectedImpl value,
+          $Res Function(_$ProjectsOverviewEventSaveTaskSelectedImpl) then) =
+      __$$ProjectsOverviewEventSaveTaskSelectedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({VoidCallback callback});
+}
+
+/// @nodoc
+class __$$ProjectsOverviewEventSaveTaskSelectedImplCopyWithImpl<$Res>
+    extends _$ProjectsOverviewEventCopyWithImpl<$Res,
+        _$ProjectsOverviewEventSaveTaskSelectedImpl>
+    implements _$$ProjectsOverviewEventSaveTaskSelectedImplCopyWith<$Res> {
+  __$$ProjectsOverviewEventSaveTaskSelectedImplCopyWithImpl(
+      _$ProjectsOverviewEventSaveTaskSelectedImpl _value,
+      $Res Function(_$ProjectsOverviewEventSaveTaskSelectedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? callback = null,
+  }) {
+    return _then(_$ProjectsOverviewEventSaveTaskSelectedImpl(
+      callback: null == callback
+          ? _value.callback
+          : callback // ignore: cast_nullable_to_non_nullable
+              as VoidCallback,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProjectsOverviewEventSaveTaskSelectedImpl
+    implements ProjectsOverviewEventSaveTaskSelected {
+  const _$ProjectsOverviewEventSaveTaskSelectedImpl({required this.callback});
+
+  @override
+  final VoidCallback callback;
+
+  @override
+  String toString() {
+    return 'ProjectsOverviewEvent.saveTaskSelected(callback: $callback)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProjectsOverviewEventSaveTaskSelectedImpl &&
+            (identical(other.callback, callback) ||
+                other.callback == callback));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, callback);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProjectsOverviewEventSaveTaskSelectedImplCopyWith<
+          _$ProjectsOverviewEventSaveTaskSelectedImpl>
+      get copyWith => __$$ProjectsOverviewEventSaveTaskSelectedImplCopyWithImpl<
+          _$ProjectsOverviewEventSaveTaskSelectedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function(Project projectSelected) changeProjectSelected,
+    required TResult Function(DependenteStateType<dynamic> tasksState)
+        updateTasksState,
+    required TResult Function(String value) updateTitleTaskSelected,
+    required TResult Function(VoidCallback callback) saveTaskSelected,
+  }) {
+    return saveTaskSelected(callback);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function(Project projectSelected)? changeProjectSelected,
+    TResult? Function(DependenteStateType<dynamic> tasksState)?
+        updateTasksState,
+    TResult? Function(String value)? updateTitleTaskSelected,
+    TResult? Function(VoidCallback callback)? saveTaskSelected,
+  }) {
+    return saveTaskSelected?.call(callback);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function(Project projectSelected)? changeProjectSelected,
+    TResult Function(DependenteStateType<dynamic> tasksState)? updateTasksState,
+    TResult Function(String value)? updateTitleTaskSelected,
+    TResult Function(VoidCallback callback)? saveTaskSelected,
+    required TResult orElse(),
+  }) {
+    if (saveTaskSelected != null) {
+      return saveTaskSelected(callback);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectsOverviewEventLoad value) load,
+    required TResult Function(ProjectsOverviewEventChangeProjectSelected value)
+        changeProjectSelected,
+    required TResult Function(ProjectsOverviewEventUpdateTasksState value)
+        updateTasksState,
+    required TResult Function(
+            ProjectsOverviewEventUpdateTitleTaskSelected value)
+        updateTitleTaskSelected,
+    required TResult Function(ProjectsOverviewEventSaveTaskSelected value)
+        saveTaskSelected,
+  }) {
+    return saveTaskSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectsOverviewEventLoad value)? load,
+    TResult? Function(ProjectsOverviewEventChangeProjectSelected value)?
+        changeProjectSelected,
+    TResult? Function(ProjectsOverviewEventUpdateTasksState value)?
+        updateTasksState,
+    TResult? Function(ProjectsOverviewEventUpdateTitleTaskSelected value)?
+        updateTitleTaskSelected,
+    TResult? Function(ProjectsOverviewEventSaveTaskSelected value)?
+        saveTaskSelected,
+  }) {
+    return saveTaskSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectsOverviewEventLoad value)? load,
+    TResult Function(ProjectsOverviewEventChangeProjectSelected value)?
+        changeProjectSelected,
+    TResult Function(ProjectsOverviewEventUpdateTasksState value)?
+        updateTasksState,
+    TResult Function(ProjectsOverviewEventUpdateTitleTaskSelected value)?
+        updateTitleTaskSelected,
+    TResult Function(ProjectsOverviewEventSaveTaskSelected value)?
+        saveTaskSelected,
+    required TResult orElse(),
+  }) {
+    if (saveTaskSelected != null) {
+      return saveTaskSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProjectsOverviewEventSaveTaskSelected
+    implements ProjectsOverviewEvent {
+  const factory ProjectsOverviewEventSaveTaskSelected(
+          {required final VoidCallback callback}) =
+      _$ProjectsOverviewEventSaveTaskSelectedImpl;
+
+  VoidCallback get callback;
+  @JsonKey(ignore: true)
+  _$$ProjectsOverviewEventSaveTaskSelectedImplCopyWith<
+          _$ProjectsOverviewEventSaveTaskSelectedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -547,8 +991,12 @@ mixin _$ProjectsOverviewState {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(Project? projectSelected, List<Project> projects,
-            List<Task> tasksOfprojectSelected, DependenteStateType tasksState)
+    required TResult Function(
+            List<Project> projects,
+            Project? projectSelected,
+            List<Task> tasksOfprojectSelected,
+            Task? taskSelected,
+            DependenteStateType<dynamic> tasksState)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -556,8 +1004,12 @@ mixin _$ProjectsOverviewState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(Project? projectSelected, List<Project> projects,
-            List<Task> tasksOfprojectSelected, DependenteStateType tasksState)?
+    TResult? Function(
+            List<Project> projects,
+            Project? projectSelected,
+            List<Task> tasksOfprojectSelected,
+            Task? taskSelected,
+            DependenteStateType<dynamic> tasksState)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -565,8 +1017,12 @@ mixin _$ProjectsOverviewState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(Project? projectSelected, List<Project> projects,
-            List<Task> tasksOfprojectSelected, DependenteStateType tasksState)?
+    TResult Function(
+            List<Project> projects,
+            Project? projectSelected,
+            List<Task> tasksOfprojectSelected,
+            Task? taskSelected,
+            DependenteStateType<dynamic> tasksState)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -658,8 +1114,12 @@ class _$ProjectsOverviewEventEmptyImpl implements ProjectsOverviewEventEmpty {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(Project? projectSelected, List<Project> projects,
-            List<Task> tasksOfprojectSelected, DependenteStateType tasksState)
+    required TResult Function(
+            List<Project> projects,
+            Project? projectSelected,
+            List<Task> tasksOfprojectSelected,
+            Task? taskSelected,
+            DependenteStateType<dynamic> tasksState)
         loaded,
   }) {
     return empty();
@@ -670,8 +1130,12 @@ class _$ProjectsOverviewEventEmptyImpl implements ProjectsOverviewEventEmpty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(Project? projectSelected, List<Project> projects,
-            List<Task> tasksOfprojectSelected, DependenteStateType tasksState)?
+    TResult? Function(
+            List<Project> projects,
+            Project? projectSelected,
+            List<Task> tasksOfprojectSelected,
+            Task? taskSelected,
+            DependenteStateType<dynamic> tasksState)?
         loaded,
   }) {
     return empty?.call();
@@ -682,8 +1146,12 @@ class _$ProjectsOverviewEventEmptyImpl implements ProjectsOverviewEventEmpty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(Project? projectSelected, List<Project> projects,
-            List<Task> tasksOfprojectSelected, DependenteStateType tasksState)?
+    TResult Function(
+            List<Project> projects,
+            Project? projectSelected,
+            List<Task> tasksOfprojectSelected,
+            Task? taskSelected,
+            DependenteStateType<dynamic> tasksState)?
         loaded,
     required TResult orElse(),
   }) {
@@ -777,8 +1245,12 @@ class _$ProjectsOverviewEventLoadingImpl
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(Project? projectSelected, List<Project> projects,
-            List<Task> tasksOfprojectSelected, DependenteStateType tasksState)
+    required TResult Function(
+            List<Project> projects,
+            Project? projectSelected,
+            List<Task> tasksOfprojectSelected,
+            Task? taskSelected,
+            DependenteStateType<dynamic> tasksState)
         loaded,
   }) {
     return loading();
@@ -789,8 +1261,12 @@ class _$ProjectsOverviewEventLoadingImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(Project? projectSelected, List<Project> projects,
-            List<Task> tasksOfprojectSelected, DependenteStateType tasksState)?
+    TResult? Function(
+            List<Project> projects,
+            Project? projectSelected,
+            List<Task> tasksOfprojectSelected,
+            Task? taskSelected,
+            DependenteStateType<dynamic> tasksState)?
         loaded,
   }) {
     return loading?.call();
@@ -801,8 +1277,12 @@ class _$ProjectsOverviewEventLoadingImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(Project? projectSelected, List<Project> projects,
-            List<Task> tasksOfprojectSelected, DependenteStateType tasksState)?
+    TResult Function(
+            List<Project> projects,
+            Project? projectSelected,
+            List<Task> tasksOfprojectSelected,
+            Task? taskSelected,
+            DependenteStateType<dynamic> tasksState)?
         loaded,
     required TResult orElse(),
   }) {
@@ -860,13 +1340,15 @@ abstract class _$$ProjectsOverviewEventLoadedImplCopyWith<$Res> {
       __$$ProjectsOverviewEventLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
-      {Project? projectSelected,
-      List<Project> projects,
+      {List<Project> projects,
+      Project? projectSelected,
       List<Task> tasksOfprojectSelected,
-      DependenteStateType tasksState});
+      Task? taskSelected,
+      DependenteStateType<dynamic> tasksState});
 
   $ProjectCopyWith<$Res>? get projectSelected;
-  $DependenteStateTypeCopyWith<$Res> get tasksState;
+  $TaskCopyWith<$Res>? get taskSelected;
+  $DependenteStateTypeCopyWith<dynamic, $Res> get tasksState;
 }
 
 /// @nodoc
@@ -882,28 +1364,33 @@ class __$$ProjectsOverviewEventLoadedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? projectSelected = freezed,
     Object? projects = null,
+    Object? projectSelected = freezed,
     Object? tasksOfprojectSelected = null,
+    Object? taskSelected = freezed,
     Object? tasksState = null,
   }) {
     return _then(_$ProjectsOverviewEventLoadedImpl(
-      projectSelected: freezed == projectSelected
-          ? _value.projectSelected
-          : projectSelected // ignore: cast_nullable_to_non_nullable
-              as Project?,
       projects: null == projects
           ? _value._projects
           : projects // ignore: cast_nullable_to_non_nullable
               as List<Project>,
+      projectSelected: freezed == projectSelected
+          ? _value.projectSelected
+          : projectSelected // ignore: cast_nullable_to_non_nullable
+              as Project?,
       tasksOfprojectSelected: null == tasksOfprojectSelected
           ? _value._tasksOfprojectSelected
           : tasksOfprojectSelected // ignore: cast_nullable_to_non_nullable
               as List<Task>,
+      taskSelected: freezed == taskSelected
+          ? _value.taskSelected
+          : taskSelected // ignore: cast_nullable_to_non_nullable
+              as Task?,
       tasksState: null == tasksState
           ? _value.tasksState
           : tasksState // ignore: cast_nullable_to_non_nullable
-              as DependenteStateType,
+              as DependenteStateType<dynamic>,
     ));
   }
 
@@ -921,8 +1408,21 @@ class __$$ProjectsOverviewEventLoadedImplCopyWithImpl<$Res>
 
   @override
   @pragma('vm:prefer-inline')
-  $DependenteStateTypeCopyWith<$Res> get tasksState {
-    return $DependenteStateTypeCopyWith<$Res>(_value.tasksState, (value) {
+  $TaskCopyWith<$Res>? get taskSelected {
+    if (_value.taskSelected == null) {
+      return null;
+    }
+
+    return $TaskCopyWith<$Res>(_value.taskSelected!, (value) {
+      return _then(_value.copyWith(taskSelected: value));
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DependenteStateTypeCopyWith<dynamic, $Res> get tasksState {
+    return $DependenteStateTypeCopyWith<dynamic, $Res>(_value.tasksState,
+        (value) {
       return _then(_value.copyWith(tasksState: value));
     });
   }
@@ -932,15 +1432,14 @@ class __$$ProjectsOverviewEventLoadedImplCopyWithImpl<$Res>
 
 class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
   const _$ProjectsOverviewEventLoadedImpl(
-      {this.projectSelected,
-      required final List<Project> projects,
+      {required final List<Project> projects,
+      this.projectSelected,
       required final List<Task> tasksOfprojectSelected,
+      this.taskSelected,
       required this.tasksState})
       : _projects = projects,
         _tasksOfprojectSelected = tasksOfprojectSelected;
 
-  @override
-  final Project? projectSelected;
   final List<Project> _projects;
   @override
   List<Project> get projects {
@@ -949,6 +1448,8 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
     return EqualUnmodifiableListView(_projects);
   }
 
+  @override
+  final Project? projectSelected;
   final List<Task> _tasksOfprojectSelected;
   @override
   List<Task> get tasksOfprojectSelected {
@@ -959,11 +1460,13 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
   }
 
   @override
-  final DependenteStateType tasksState;
+  final Task? taskSelected;
+  @override
+  final DependenteStateType<dynamic> tasksState;
 
   @override
   String toString() {
-    return 'ProjectsOverviewState.loaded(projectSelected: $projectSelected, projects: $projects, tasksOfprojectSelected: $tasksOfprojectSelected, tasksState: $tasksState)';
+    return 'ProjectsOverviewState.loaded(projects: $projects, projectSelected: $projectSelected, tasksOfprojectSelected: $tasksOfprojectSelected, taskSelected: $taskSelected, tasksState: $tasksState)';
   }
 
   @override
@@ -971,11 +1474,13 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ProjectsOverviewEventLoadedImpl &&
+            const DeepCollectionEquality().equals(other._projects, _projects) &&
             (identical(other.projectSelected, projectSelected) ||
                 other.projectSelected == projectSelected) &&
-            const DeepCollectionEquality().equals(other._projects, _projects) &&
             const DeepCollectionEquality().equals(
                 other._tasksOfprojectSelected, _tasksOfprojectSelected) &&
+            (identical(other.taskSelected, taskSelected) ||
+                other.taskSelected == taskSelected) &&
             (identical(other.tasksState, tasksState) ||
                 other.tasksState == tasksState));
   }
@@ -983,9 +1488,10 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      projectSelected,
       const DeepCollectionEquality().hash(_projects),
+      projectSelected,
       const DeepCollectionEquality().hash(_tasksOfprojectSelected),
+      taskSelected,
       tasksState);
 
   @JsonKey(ignore: true)
@@ -1000,12 +1506,16 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(Project? projectSelected, List<Project> projects,
-            List<Task> tasksOfprojectSelected, DependenteStateType tasksState)
+    required TResult Function(
+            List<Project> projects,
+            Project? projectSelected,
+            List<Task> tasksOfprojectSelected,
+            Task? taskSelected,
+            DependenteStateType<dynamic> tasksState)
         loaded,
   }) {
-    return loaded(
-        projectSelected, projects, tasksOfprojectSelected, tasksState);
+    return loaded(projects, projectSelected, tasksOfprojectSelected,
+        taskSelected, tasksState);
   }
 
   @override
@@ -1013,12 +1523,16 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(Project? projectSelected, List<Project> projects,
-            List<Task> tasksOfprojectSelected, DependenteStateType tasksState)?
+    TResult? Function(
+            List<Project> projects,
+            Project? projectSelected,
+            List<Task> tasksOfprojectSelected,
+            Task? taskSelected,
+            DependenteStateType<dynamic> tasksState)?
         loaded,
   }) {
-    return loaded?.call(
-        projectSelected, projects, tasksOfprojectSelected, tasksState);
+    return loaded?.call(projects, projectSelected, tasksOfprojectSelected,
+        taskSelected, tasksState);
   }
 
   @override
@@ -1026,14 +1540,18 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(Project? projectSelected, List<Project> projects,
-            List<Task> tasksOfprojectSelected, DependenteStateType tasksState)?
+    TResult Function(
+            List<Project> projects,
+            Project? projectSelected,
+            List<Task> tasksOfprojectSelected,
+            Task? taskSelected,
+            DependenteStateType<dynamic> tasksState)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(
-          projectSelected, projects, tasksOfprojectSelected, tasksState);
+      return loaded(projects, projectSelected, tasksOfprojectSelected,
+          taskSelected, tasksState);
     }
     return orElse();
   }
@@ -1075,16 +1593,18 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
 
 abstract class ProjectsOverviewEventLoaded implements ProjectsOverviewState {
   const factory ProjectsOverviewEventLoaded(
-          {final Project? projectSelected,
-          required final List<Project> projects,
+          {required final List<Project> projects,
+          final Project? projectSelected,
           required final List<Task> tasksOfprojectSelected,
-          required final DependenteStateType tasksState}) =
+          final Task? taskSelected,
+          required final DependenteStateType<dynamic> tasksState}) =
       _$ProjectsOverviewEventLoadedImpl;
 
-  Project? get projectSelected;
   List<Project> get projects;
+  Project? get projectSelected;
   List<Task> get tasksOfprojectSelected;
-  DependenteStateType get tasksState;
+  Task? get taskSelected;
+  DependenteStateType<dynamic> get tasksState;
   @JsonKey(ignore: true)
   _$$ProjectsOverviewEventLoadedImplCopyWith<_$ProjectsOverviewEventLoadedImpl>
       get copyWith => throw _privateConstructorUsedError;

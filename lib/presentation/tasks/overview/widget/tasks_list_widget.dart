@@ -32,6 +32,10 @@ class TasksListWidget extends StatelessWidget {
                   var task = tasks[index];
                   return ListTile(
                     title: Text(task.title),
+                    subtitle: const LinearProgressIndicator(
+                      value: 0,
+                      color: AppColor.green,
+                    ),
                     trailing: SizedBox(
                       width: Sizes.size80,
                       child: Row(
@@ -57,10 +61,6 @@ class TasksListWidget extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ),
-                    subtitle: const LinearProgressIndicator(
-                      value: 0.5,
-                      color: AppColor.green,
                     ),
                   );
                 },

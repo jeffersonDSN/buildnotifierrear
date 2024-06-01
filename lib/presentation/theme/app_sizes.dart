@@ -20,7 +20,9 @@ class Sizes {
   static const size96 = 96.0;
   static const size112 = 112.0;
   static const size120 = 120.0;
+  static const size124 = 124.0;
   static const size200 = 200.0;
+  static const size240 = 240.0;
   static const size300 = 300.0;
   static const size320 = 320.0;
   static const widthMobileBreakpoint = 700.0;

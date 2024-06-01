@@ -1,9 +1,7 @@
 import 'package:buildnotifierrear/domain/entities/task.dart';
+import 'package:buildnotifierrear/domain/repositories/abs_i_crud_repository.dart';
 
-abstract interface class AbsITasksRepository {
+abstract interface class AbsITasksRepository
+    implements AbsICRUDRepository<Task> {
   Future<List<Task>> getAllByProject(String projectId);
-  Future<Task> getById(String id);
-  Future<bool> post(Task task);
-  Future<bool> put(Task task);
-  Future<bool> delete(String id);
 }

@@ -1,30 +1,15 @@
+import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
 import 'package:buildnotifierrear/domain/entities/task.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_tasks_repository.dart';
 
-class TasksController {
-  final AbsITasksRepository _repository;
+class TasksController extends CRUDController<Task> {
+  final AbsITasksRepository repository;
 
   TasksController({
-    required AbsITasksRepository repository,
-  }) : _repository = repository;
+    required this.repository,
+  }) : super(repository: repository);
 
   Future<List<Task>> getAllByProject(String projectId) {
-    return _repository.getAllByProject(projectId);
-  }
-
-  Future<Task> getById(String id) {
-    return _repository.getById(id);
-  }
-
-  Future<bool> create(Task task) {
-    return _repository.post(task);
-  }
-
-  Future<bool> update(Task task) {
-    return _repository.put(task);
-  }
-
-  Future<bool> delete(String id) {
-    return _repository.delete(id);
+    return repository.getAllByProject(projectId);
   }
 }

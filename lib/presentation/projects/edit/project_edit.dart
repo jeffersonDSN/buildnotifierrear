@@ -1,5 +1,6 @@
-import 'package:buildnotifierrear/domain/controllers/projects_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
+import 'package:buildnotifierrear/domain/entities/project.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/projects_firestore_repository.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/bloc/project_edit_bloc.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/view/project_edit_view.dart';
@@ -18,11 +19,13 @@ class ProjectEdit extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<ProjectEditBloc>(
       create: (context) => ProjectEditBloc(
-        controller: ProjectsController(
+        controller: CRUDController<Project>(
           repository: ProjectsFirestoreRepository(),
         ),
       ),
-      child: ProjectEditView(type: type ?? const CrudType.create()),
+      child: ProjectEditView(
+        type: type ?? const CrudType.create(),
+      ),
     );
   }
 }

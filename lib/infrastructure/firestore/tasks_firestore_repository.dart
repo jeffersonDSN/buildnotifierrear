@@ -9,8 +9,35 @@ class TasksFirestoreRepository extends FireStoreRepository
   TasksFirestoreRepository() : super(collectionName: 'tasks');
 
   @override
-  Future<List<Task>> getAllByProject(String projectId) async {
+  Future<List<Task>> getAll() async {
     var querySnapshot = await collection.get();
+
+    return querySnapshot.docs
+        .map((DocumentSnapshot document) {
+          var doc = document.data() as Map<String, dynamic>;
+          var result = doc.map((key, value) {
+            if (value is Timestamp) {
+              return MapEntry(key, value.toDate().toString());
+            } else {
+              return MapEntry(key, value);
+            }
+          });
+
+          return {...result, 'id': document.id};
+        })
+        .toList()
+        .map((e) => Task.fromJson(e))
+        .toList();
+  }
+
+  @override
+  Future<List<Task>> getAllByProject(String projectId) async {
+    var querySnapshot = await collection
+        .where(
+          'productId',
+          isEqualTo: projectId,
+        )
+        .get();
 
     return querySnapshot.docs
         .map((DocumentSnapshot document) {

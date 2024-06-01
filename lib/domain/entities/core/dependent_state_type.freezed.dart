@@ -15,13 +15,13 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$DependenteStateType {
+mixin _$DependenteStateType<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() listing,
     required TResult Function() reading,
     required TResult Function() creating,
-    required TResult Function() updating,
+    required TResult Function(T value) updating,
     required TResult Function() loading,
   }) =>
       throw _privateConstructorUsedError;
@@ -30,7 +30,7 @@ mixin _$DependenteStateType {
     TResult? Function()? listing,
     TResult? Function()? reading,
     TResult? Function()? creating,
-    TResult? Function()? updating,
+    TResult? Function(T value)? updating,
     TResult? Function()? loading,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,51 +39,52 @@ mixin _$DependenteStateType {
     TResult Function()? listing,
     TResult Function()? reading,
     TResult Function()? creating,
-    TResult Function()? updating,
+    TResult Function(T value)? updating,
     TResult Function()? loading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DependenteStateTypeListing value) listing,
-    required TResult Function(DependenteStateTypeReading value) reading,
-    required TResult Function(DependenteStateTypeCreating value) creating,
-    required TResult Function(DependenteStateTypeUpdating value) updating,
-    required TResult Function(DependenteStateTypeloading value) loading,
+    required TResult Function(DependenteStateTypeListing<T> value) listing,
+    required TResult Function(DependenteStateTypeReading<T> value) reading,
+    required TResult Function(DependenteStateTypeCreating<T> value) creating,
+    required TResult Function(DependenteStateTypeUpdating<T> value) updating,
+    required TResult Function(DependenteStateTypeloading<T> value) loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(DependenteStateTypeListing value)? listing,
-    TResult? Function(DependenteStateTypeReading value)? reading,
-    TResult? Function(DependenteStateTypeCreating value)? creating,
-    TResult? Function(DependenteStateTypeUpdating value)? updating,
-    TResult? Function(DependenteStateTypeloading value)? loading,
+    TResult? Function(DependenteStateTypeListing<T> value)? listing,
+    TResult? Function(DependenteStateTypeReading<T> value)? reading,
+    TResult? Function(DependenteStateTypeCreating<T> value)? creating,
+    TResult? Function(DependenteStateTypeUpdating<T> value)? updating,
+    TResult? Function(DependenteStateTypeloading<T> value)? loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DependenteStateTypeListing value)? listing,
-    TResult Function(DependenteStateTypeReading value)? reading,
-    TResult Function(DependenteStateTypeCreating value)? creating,
-    TResult Function(DependenteStateTypeUpdating value)? updating,
-    TResult Function(DependenteStateTypeloading value)? loading,
+    TResult Function(DependenteStateTypeListing<T> value)? listing,
+    TResult Function(DependenteStateTypeReading<T> value)? reading,
+    TResult Function(DependenteStateTypeCreating<T> value)? creating,
+    TResult Function(DependenteStateTypeUpdating<T> value)? updating,
+    TResult Function(DependenteStateTypeloading<T> value)? loading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DependenteStateTypeCopyWith<$Res> {
-  factory $DependenteStateTypeCopyWith(
-          DependenteStateType value, $Res Function(DependenteStateType) then) =
-      _$DependenteStateTypeCopyWithImpl<$Res, DependenteStateType>;
+abstract class $DependenteStateTypeCopyWith<T, $Res> {
+  factory $DependenteStateTypeCopyWith(DependenteStateType<T> value,
+          $Res Function(DependenteStateType<T>) then) =
+      _$DependenteStateTypeCopyWithImpl<T, $Res, DependenteStateType<T>>;
 }
 
 /// @nodoc
-class _$DependenteStateTypeCopyWithImpl<$Res, $Val extends DependenteStateType>
-    implements $DependenteStateTypeCopyWith<$Res> {
+class _$DependenteStateTypeCopyWithImpl<T, $Res,
+        $Val extends DependenteStateType<T>>
+    implements $DependenteStateTypeCopyWith<T, $Res> {
   _$DependenteStateTypeCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -93,39 +94,40 @@ class _$DependenteStateTypeCopyWithImpl<$Res, $Val extends DependenteStateType>
 }
 
 /// @nodoc
-abstract class _$$DependenteStateTypeListingImplCopyWith<$Res> {
+abstract class _$$DependenteStateTypeListingImplCopyWith<T, $Res> {
   factory _$$DependenteStateTypeListingImplCopyWith(
-          _$DependenteStateTypeListingImpl value,
-          $Res Function(_$DependenteStateTypeListingImpl) then) =
-      __$$DependenteStateTypeListingImplCopyWithImpl<$Res>;
+          _$DependenteStateTypeListingImpl<T> value,
+          $Res Function(_$DependenteStateTypeListingImpl<T>) then) =
+      __$$DependenteStateTypeListingImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$DependenteStateTypeListingImplCopyWithImpl<$Res>
-    extends _$DependenteStateTypeCopyWithImpl<$Res,
-        _$DependenteStateTypeListingImpl>
-    implements _$$DependenteStateTypeListingImplCopyWith<$Res> {
+class __$$DependenteStateTypeListingImplCopyWithImpl<T, $Res>
+    extends _$DependenteStateTypeCopyWithImpl<T, $Res,
+        _$DependenteStateTypeListingImpl<T>>
+    implements _$$DependenteStateTypeListingImplCopyWith<T, $Res> {
   __$$DependenteStateTypeListingImplCopyWithImpl(
-      _$DependenteStateTypeListingImpl _value,
-      $Res Function(_$DependenteStateTypeListingImpl) _then)
+      _$DependenteStateTypeListingImpl<T> _value,
+      $Res Function(_$DependenteStateTypeListingImpl<T>) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$DependenteStateTypeListingImpl implements DependenteStateTypeListing {
+class _$DependenteStateTypeListingImpl<T>
+    implements DependenteStateTypeListing<T> {
   const _$DependenteStateTypeListingImpl();
 
   @override
   String toString() {
-    return 'DependenteStateType.listing()';
+    return 'DependenteStateType<$T>.listing()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DependenteStateTypeListingImpl);
+            other is _$DependenteStateTypeListingImpl<T>);
   }
 
   @override
@@ -137,7 +139,7 @@ class _$DependenteStateTypeListingImpl implements DependenteStateTypeListing {
     required TResult Function() listing,
     required TResult Function() reading,
     required TResult Function() creating,
-    required TResult Function() updating,
+    required TResult Function(T value) updating,
     required TResult Function() loading,
   }) {
     return listing();
@@ -149,7 +151,7 @@ class _$DependenteStateTypeListingImpl implements DependenteStateTypeListing {
     TResult? Function()? listing,
     TResult? Function()? reading,
     TResult? Function()? creating,
-    TResult? Function()? updating,
+    TResult? Function(T value)? updating,
     TResult? Function()? loading,
   }) {
     return listing?.call();
@@ -161,7 +163,7 @@ class _$DependenteStateTypeListingImpl implements DependenteStateTypeListing {
     TResult Function()? listing,
     TResult Function()? reading,
     TResult Function()? creating,
-    TResult Function()? updating,
+    TResult Function(T value)? updating,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
@@ -174,11 +176,11 @@ class _$DependenteStateTypeListingImpl implements DependenteStateTypeListing {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DependenteStateTypeListing value) listing,
-    required TResult Function(DependenteStateTypeReading value) reading,
-    required TResult Function(DependenteStateTypeCreating value) creating,
-    required TResult Function(DependenteStateTypeUpdating value) updating,
-    required TResult Function(DependenteStateTypeloading value) loading,
+    required TResult Function(DependenteStateTypeListing<T> value) listing,
+    required TResult Function(DependenteStateTypeReading<T> value) reading,
+    required TResult Function(DependenteStateTypeCreating<T> value) creating,
+    required TResult Function(DependenteStateTypeUpdating<T> value) updating,
+    required TResult Function(DependenteStateTypeloading<T> value) loading,
   }) {
     return listing(this);
   }
@@ -186,11 +188,11 @@ class _$DependenteStateTypeListingImpl implements DependenteStateTypeListing {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(DependenteStateTypeListing value)? listing,
-    TResult? Function(DependenteStateTypeReading value)? reading,
-    TResult? Function(DependenteStateTypeCreating value)? creating,
-    TResult? Function(DependenteStateTypeUpdating value)? updating,
-    TResult? Function(DependenteStateTypeloading value)? loading,
+    TResult? Function(DependenteStateTypeListing<T> value)? listing,
+    TResult? Function(DependenteStateTypeReading<T> value)? reading,
+    TResult? Function(DependenteStateTypeCreating<T> value)? creating,
+    TResult? Function(DependenteStateTypeUpdating<T> value)? updating,
+    TResult? Function(DependenteStateTypeloading<T> value)? loading,
   }) {
     return listing?.call(this);
   }
@@ -198,11 +200,11 @@ class _$DependenteStateTypeListingImpl implements DependenteStateTypeListing {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DependenteStateTypeListing value)? listing,
-    TResult Function(DependenteStateTypeReading value)? reading,
-    TResult Function(DependenteStateTypeCreating value)? creating,
-    TResult Function(DependenteStateTypeUpdating value)? updating,
-    TResult Function(DependenteStateTypeloading value)? loading,
+    TResult Function(DependenteStateTypeListing<T> value)? listing,
+    TResult Function(DependenteStateTypeReading<T> value)? reading,
+    TResult Function(DependenteStateTypeCreating<T> value)? creating,
+    TResult Function(DependenteStateTypeUpdating<T> value)? updating,
+    TResult Function(DependenteStateTypeloading<T> value)? loading,
     required TResult orElse(),
   }) {
     if (listing != null) {
@@ -212,44 +214,46 @@ class _$DependenteStateTypeListingImpl implements DependenteStateTypeListing {
   }
 }
 
-abstract class DependenteStateTypeListing implements DependenteStateType {
-  const factory DependenteStateTypeListing() = _$DependenteStateTypeListingImpl;
+abstract class DependenteStateTypeListing<T> implements DependenteStateType<T> {
+  const factory DependenteStateTypeListing() =
+      _$DependenteStateTypeListingImpl<T>;
 }
 
 /// @nodoc
-abstract class _$$DependenteStateTypeReadingImplCopyWith<$Res> {
+abstract class _$$DependenteStateTypeReadingImplCopyWith<T, $Res> {
   factory _$$DependenteStateTypeReadingImplCopyWith(
-          _$DependenteStateTypeReadingImpl value,
-          $Res Function(_$DependenteStateTypeReadingImpl) then) =
-      __$$DependenteStateTypeReadingImplCopyWithImpl<$Res>;
+          _$DependenteStateTypeReadingImpl<T> value,
+          $Res Function(_$DependenteStateTypeReadingImpl<T>) then) =
+      __$$DependenteStateTypeReadingImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$DependenteStateTypeReadingImplCopyWithImpl<$Res>
-    extends _$DependenteStateTypeCopyWithImpl<$Res,
-        _$DependenteStateTypeReadingImpl>
-    implements _$$DependenteStateTypeReadingImplCopyWith<$Res> {
+class __$$DependenteStateTypeReadingImplCopyWithImpl<T, $Res>
+    extends _$DependenteStateTypeCopyWithImpl<T, $Res,
+        _$DependenteStateTypeReadingImpl<T>>
+    implements _$$DependenteStateTypeReadingImplCopyWith<T, $Res> {
   __$$DependenteStateTypeReadingImplCopyWithImpl(
-      _$DependenteStateTypeReadingImpl _value,
-      $Res Function(_$DependenteStateTypeReadingImpl) _then)
+      _$DependenteStateTypeReadingImpl<T> _value,
+      $Res Function(_$DependenteStateTypeReadingImpl<T>) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$DependenteStateTypeReadingImpl implements DependenteStateTypeReading {
+class _$DependenteStateTypeReadingImpl<T>
+    implements DependenteStateTypeReading<T> {
   const _$DependenteStateTypeReadingImpl();
 
   @override
   String toString() {
-    return 'DependenteStateType.reading()';
+    return 'DependenteStateType<$T>.reading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DependenteStateTypeReadingImpl);
+            other is _$DependenteStateTypeReadingImpl<T>);
   }
 
   @override
@@ -261,7 +265,7 @@ class _$DependenteStateTypeReadingImpl implements DependenteStateTypeReading {
     required TResult Function() listing,
     required TResult Function() reading,
     required TResult Function() creating,
-    required TResult Function() updating,
+    required TResult Function(T value) updating,
     required TResult Function() loading,
   }) {
     return reading();
@@ -273,7 +277,7 @@ class _$DependenteStateTypeReadingImpl implements DependenteStateTypeReading {
     TResult? Function()? listing,
     TResult? Function()? reading,
     TResult? Function()? creating,
-    TResult? Function()? updating,
+    TResult? Function(T value)? updating,
     TResult? Function()? loading,
   }) {
     return reading?.call();
@@ -285,7 +289,7 @@ class _$DependenteStateTypeReadingImpl implements DependenteStateTypeReading {
     TResult Function()? listing,
     TResult Function()? reading,
     TResult Function()? creating,
-    TResult Function()? updating,
+    TResult Function(T value)? updating,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
@@ -298,11 +302,11 @@ class _$DependenteStateTypeReadingImpl implements DependenteStateTypeReading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DependenteStateTypeListing value) listing,
-    required TResult Function(DependenteStateTypeReading value) reading,
-    required TResult Function(DependenteStateTypeCreating value) creating,
-    required TResult Function(DependenteStateTypeUpdating value) updating,
-    required TResult Function(DependenteStateTypeloading value) loading,
+    required TResult Function(DependenteStateTypeListing<T> value) listing,
+    required TResult Function(DependenteStateTypeReading<T> value) reading,
+    required TResult Function(DependenteStateTypeCreating<T> value) creating,
+    required TResult Function(DependenteStateTypeUpdating<T> value) updating,
+    required TResult Function(DependenteStateTypeloading<T> value) loading,
   }) {
     return reading(this);
   }
@@ -310,11 +314,11 @@ class _$DependenteStateTypeReadingImpl implements DependenteStateTypeReading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(DependenteStateTypeListing value)? listing,
-    TResult? Function(DependenteStateTypeReading value)? reading,
-    TResult? Function(DependenteStateTypeCreating value)? creating,
-    TResult? Function(DependenteStateTypeUpdating value)? updating,
-    TResult? Function(DependenteStateTypeloading value)? loading,
+    TResult? Function(DependenteStateTypeListing<T> value)? listing,
+    TResult? Function(DependenteStateTypeReading<T> value)? reading,
+    TResult? Function(DependenteStateTypeCreating<T> value)? creating,
+    TResult? Function(DependenteStateTypeUpdating<T> value)? updating,
+    TResult? Function(DependenteStateTypeloading<T> value)? loading,
   }) {
     return reading?.call(this);
   }
@@ -322,11 +326,11 @@ class _$DependenteStateTypeReadingImpl implements DependenteStateTypeReading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DependenteStateTypeListing value)? listing,
-    TResult Function(DependenteStateTypeReading value)? reading,
-    TResult Function(DependenteStateTypeCreating value)? creating,
-    TResult Function(DependenteStateTypeUpdating value)? updating,
-    TResult Function(DependenteStateTypeloading value)? loading,
+    TResult Function(DependenteStateTypeListing<T> value)? listing,
+    TResult Function(DependenteStateTypeReading<T> value)? reading,
+    TResult Function(DependenteStateTypeCreating<T> value)? creating,
+    TResult Function(DependenteStateTypeUpdating<T> value)? updating,
+    TResult Function(DependenteStateTypeloading<T> value)? loading,
     required TResult orElse(),
   }) {
     if (reading != null) {
@@ -336,44 +340,46 @@ class _$DependenteStateTypeReadingImpl implements DependenteStateTypeReading {
   }
 }
 
-abstract class DependenteStateTypeReading implements DependenteStateType {
-  const factory DependenteStateTypeReading() = _$DependenteStateTypeReadingImpl;
+abstract class DependenteStateTypeReading<T> implements DependenteStateType<T> {
+  const factory DependenteStateTypeReading() =
+      _$DependenteStateTypeReadingImpl<T>;
 }
 
 /// @nodoc
-abstract class _$$DependenteStateTypeCreatingImplCopyWith<$Res> {
+abstract class _$$DependenteStateTypeCreatingImplCopyWith<T, $Res> {
   factory _$$DependenteStateTypeCreatingImplCopyWith(
-          _$DependenteStateTypeCreatingImpl value,
-          $Res Function(_$DependenteStateTypeCreatingImpl) then) =
-      __$$DependenteStateTypeCreatingImplCopyWithImpl<$Res>;
+          _$DependenteStateTypeCreatingImpl<T> value,
+          $Res Function(_$DependenteStateTypeCreatingImpl<T>) then) =
+      __$$DependenteStateTypeCreatingImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$DependenteStateTypeCreatingImplCopyWithImpl<$Res>
-    extends _$DependenteStateTypeCopyWithImpl<$Res,
-        _$DependenteStateTypeCreatingImpl>
-    implements _$$DependenteStateTypeCreatingImplCopyWith<$Res> {
+class __$$DependenteStateTypeCreatingImplCopyWithImpl<T, $Res>
+    extends _$DependenteStateTypeCopyWithImpl<T, $Res,
+        _$DependenteStateTypeCreatingImpl<T>>
+    implements _$$DependenteStateTypeCreatingImplCopyWith<T, $Res> {
   __$$DependenteStateTypeCreatingImplCopyWithImpl(
-      _$DependenteStateTypeCreatingImpl _value,
-      $Res Function(_$DependenteStateTypeCreatingImpl) _then)
+      _$DependenteStateTypeCreatingImpl<T> _value,
+      $Res Function(_$DependenteStateTypeCreatingImpl<T>) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$DependenteStateTypeCreatingImpl implements DependenteStateTypeCreating {
+class _$DependenteStateTypeCreatingImpl<T>
+    implements DependenteStateTypeCreating<T> {
   const _$DependenteStateTypeCreatingImpl();
 
   @override
   String toString() {
-    return 'DependenteStateType.creating()';
+    return 'DependenteStateType<$T>.creating()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DependenteStateTypeCreatingImpl);
+            other is _$DependenteStateTypeCreatingImpl<T>);
   }
 
   @override
@@ -385,7 +391,7 @@ class _$DependenteStateTypeCreatingImpl implements DependenteStateTypeCreating {
     required TResult Function() listing,
     required TResult Function() reading,
     required TResult Function() creating,
-    required TResult Function() updating,
+    required TResult Function(T value) updating,
     required TResult Function() loading,
   }) {
     return creating();
@@ -397,7 +403,7 @@ class _$DependenteStateTypeCreatingImpl implements DependenteStateTypeCreating {
     TResult? Function()? listing,
     TResult? Function()? reading,
     TResult? Function()? creating,
-    TResult? Function()? updating,
+    TResult? Function(T value)? updating,
     TResult? Function()? loading,
   }) {
     return creating?.call();
@@ -409,7 +415,7 @@ class _$DependenteStateTypeCreatingImpl implements DependenteStateTypeCreating {
     TResult Function()? listing,
     TResult Function()? reading,
     TResult Function()? creating,
-    TResult Function()? updating,
+    TResult Function(T value)? updating,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
@@ -422,11 +428,11 @@ class _$DependenteStateTypeCreatingImpl implements DependenteStateTypeCreating {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DependenteStateTypeListing value) listing,
-    required TResult Function(DependenteStateTypeReading value) reading,
-    required TResult Function(DependenteStateTypeCreating value) creating,
-    required TResult Function(DependenteStateTypeUpdating value) updating,
-    required TResult Function(DependenteStateTypeloading value) loading,
+    required TResult Function(DependenteStateTypeListing<T> value) listing,
+    required TResult Function(DependenteStateTypeReading<T> value) reading,
+    required TResult Function(DependenteStateTypeCreating<T> value) creating,
+    required TResult Function(DependenteStateTypeUpdating<T> value) updating,
+    required TResult Function(DependenteStateTypeloading<T> value) loading,
   }) {
     return creating(this);
   }
@@ -434,11 +440,11 @@ class _$DependenteStateTypeCreatingImpl implements DependenteStateTypeCreating {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(DependenteStateTypeListing value)? listing,
-    TResult? Function(DependenteStateTypeReading value)? reading,
-    TResult? Function(DependenteStateTypeCreating value)? creating,
-    TResult? Function(DependenteStateTypeUpdating value)? updating,
-    TResult? Function(DependenteStateTypeloading value)? loading,
+    TResult? Function(DependenteStateTypeListing<T> value)? listing,
+    TResult? Function(DependenteStateTypeReading<T> value)? reading,
+    TResult? Function(DependenteStateTypeCreating<T> value)? creating,
+    TResult? Function(DependenteStateTypeUpdating<T> value)? updating,
+    TResult? Function(DependenteStateTypeloading<T> value)? loading,
   }) {
     return creating?.call(this);
   }
@@ -446,11 +452,11 @@ class _$DependenteStateTypeCreatingImpl implements DependenteStateTypeCreating {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DependenteStateTypeListing value)? listing,
-    TResult Function(DependenteStateTypeReading value)? reading,
-    TResult Function(DependenteStateTypeCreating value)? creating,
-    TResult Function(DependenteStateTypeUpdating value)? updating,
-    TResult Function(DependenteStateTypeloading value)? loading,
+    TResult Function(DependenteStateTypeListing<T> value)? listing,
+    TResult Function(DependenteStateTypeReading<T> value)? reading,
+    TResult Function(DependenteStateTypeCreating<T> value)? creating,
+    TResult Function(DependenteStateTypeUpdating<T> value)? updating,
+    TResult Function(DependenteStateTypeloading<T> value)? loading,
     required TResult orElse(),
   }) {
     if (creating != null) {
@@ -460,49 +466,79 @@ class _$DependenteStateTypeCreatingImpl implements DependenteStateTypeCreating {
   }
 }
 
-abstract class DependenteStateTypeCreating implements DependenteStateType {
+abstract class DependenteStateTypeCreating<T>
+    implements DependenteStateType<T> {
   const factory DependenteStateTypeCreating() =
-      _$DependenteStateTypeCreatingImpl;
+      _$DependenteStateTypeCreatingImpl<T>;
 }
 
 /// @nodoc
-abstract class _$$DependenteStateTypeUpdatingImplCopyWith<$Res> {
+abstract class _$$DependenteStateTypeUpdatingImplCopyWith<T, $Res> {
   factory _$$DependenteStateTypeUpdatingImplCopyWith(
-          _$DependenteStateTypeUpdatingImpl value,
-          $Res Function(_$DependenteStateTypeUpdatingImpl) then) =
-      __$$DependenteStateTypeUpdatingImplCopyWithImpl<$Res>;
+          _$DependenteStateTypeUpdatingImpl<T> value,
+          $Res Function(_$DependenteStateTypeUpdatingImpl<T>) then) =
+      __$$DependenteStateTypeUpdatingImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T value});
 }
 
 /// @nodoc
-class __$$DependenteStateTypeUpdatingImplCopyWithImpl<$Res>
-    extends _$DependenteStateTypeCopyWithImpl<$Res,
-        _$DependenteStateTypeUpdatingImpl>
-    implements _$$DependenteStateTypeUpdatingImplCopyWith<$Res> {
+class __$$DependenteStateTypeUpdatingImplCopyWithImpl<T, $Res>
+    extends _$DependenteStateTypeCopyWithImpl<T, $Res,
+        _$DependenteStateTypeUpdatingImpl<T>>
+    implements _$$DependenteStateTypeUpdatingImplCopyWith<T, $Res> {
   __$$DependenteStateTypeUpdatingImplCopyWithImpl(
-      _$DependenteStateTypeUpdatingImpl _value,
-      $Res Function(_$DependenteStateTypeUpdatingImpl) _then)
+      _$DependenteStateTypeUpdatingImpl<T> _value,
+      $Res Function(_$DependenteStateTypeUpdatingImpl<T>) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_$DependenteStateTypeUpdatingImpl<T>(
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$DependenteStateTypeUpdatingImpl implements DependenteStateTypeUpdating {
-  const _$DependenteStateTypeUpdatingImpl();
+class _$DependenteStateTypeUpdatingImpl<T>
+    implements DependenteStateTypeUpdating<T> {
+  const _$DependenteStateTypeUpdatingImpl({required this.value});
+
+  @override
+  final T value;
 
   @override
   String toString() {
-    return 'DependenteStateType.updating()';
+    return 'DependenteStateType<$T>.updating(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DependenteStateTypeUpdatingImpl);
+            other is _$DependenteStateTypeUpdatingImpl<T> &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DependenteStateTypeUpdatingImplCopyWith<T,
+          _$DependenteStateTypeUpdatingImpl<T>>
+      get copyWith => __$$DependenteStateTypeUpdatingImplCopyWithImpl<T,
+          _$DependenteStateTypeUpdatingImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -510,10 +546,10 @@ class _$DependenteStateTypeUpdatingImpl implements DependenteStateTypeUpdating {
     required TResult Function() listing,
     required TResult Function() reading,
     required TResult Function() creating,
-    required TResult Function() updating,
+    required TResult Function(T value) updating,
     required TResult Function() loading,
   }) {
-    return updating();
+    return updating(value);
   }
 
   @override
@@ -522,10 +558,10 @@ class _$DependenteStateTypeUpdatingImpl implements DependenteStateTypeUpdating {
     TResult? Function()? listing,
     TResult? Function()? reading,
     TResult? Function()? creating,
-    TResult? Function()? updating,
+    TResult? Function(T value)? updating,
     TResult? Function()? loading,
   }) {
-    return updating?.call();
+    return updating?.call(value);
   }
 
   @override
@@ -534,12 +570,12 @@ class _$DependenteStateTypeUpdatingImpl implements DependenteStateTypeUpdating {
     TResult Function()? listing,
     TResult Function()? reading,
     TResult Function()? creating,
-    TResult Function()? updating,
+    TResult Function(T value)? updating,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
     if (updating != null) {
-      return updating();
+      return updating(value);
     }
     return orElse();
   }
@@ -547,11 +583,11 @@ class _$DependenteStateTypeUpdatingImpl implements DependenteStateTypeUpdating {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DependenteStateTypeListing value) listing,
-    required TResult Function(DependenteStateTypeReading value) reading,
-    required TResult Function(DependenteStateTypeCreating value) creating,
-    required TResult Function(DependenteStateTypeUpdating value) updating,
-    required TResult Function(DependenteStateTypeloading value) loading,
+    required TResult Function(DependenteStateTypeListing<T> value) listing,
+    required TResult Function(DependenteStateTypeReading<T> value) reading,
+    required TResult Function(DependenteStateTypeCreating<T> value) creating,
+    required TResult Function(DependenteStateTypeUpdating<T> value) updating,
+    required TResult Function(DependenteStateTypeloading<T> value) loading,
   }) {
     return updating(this);
   }
@@ -559,11 +595,11 @@ class _$DependenteStateTypeUpdatingImpl implements DependenteStateTypeUpdating {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(DependenteStateTypeListing value)? listing,
-    TResult? Function(DependenteStateTypeReading value)? reading,
-    TResult? Function(DependenteStateTypeCreating value)? creating,
-    TResult? Function(DependenteStateTypeUpdating value)? updating,
-    TResult? Function(DependenteStateTypeloading value)? loading,
+    TResult? Function(DependenteStateTypeListing<T> value)? listing,
+    TResult? Function(DependenteStateTypeReading<T> value)? reading,
+    TResult? Function(DependenteStateTypeCreating<T> value)? creating,
+    TResult? Function(DependenteStateTypeUpdating<T> value)? updating,
+    TResult? Function(DependenteStateTypeloading<T> value)? loading,
   }) {
     return updating?.call(this);
   }
@@ -571,11 +607,11 @@ class _$DependenteStateTypeUpdatingImpl implements DependenteStateTypeUpdating {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DependenteStateTypeListing value)? listing,
-    TResult Function(DependenteStateTypeReading value)? reading,
-    TResult Function(DependenteStateTypeCreating value)? creating,
-    TResult Function(DependenteStateTypeUpdating value)? updating,
-    TResult Function(DependenteStateTypeloading value)? loading,
+    TResult Function(DependenteStateTypeListing<T> value)? listing,
+    TResult Function(DependenteStateTypeReading<T> value)? reading,
+    TResult Function(DependenteStateTypeCreating<T> value)? creating,
+    TResult Function(DependenteStateTypeUpdating<T> value)? updating,
+    TResult Function(DependenteStateTypeloading<T> value)? loading,
     required TResult orElse(),
   }) {
     if (updating != null) {
@@ -585,45 +621,53 @@ class _$DependenteStateTypeUpdatingImpl implements DependenteStateTypeUpdating {
   }
 }
 
-abstract class DependenteStateTypeUpdating implements DependenteStateType {
-  const factory DependenteStateTypeUpdating() =
-      _$DependenteStateTypeUpdatingImpl;
+abstract class DependenteStateTypeUpdating<T>
+    implements DependenteStateType<T> {
+  const factory DependenteStateTypeUpdating({required final T value}) =
+      _$DependenteStateTypeUpdatingImpl<T>;
+
+  T get value;
+  @JsonKey(ignore: true)
+  _$$DependenteStateTypeUpdatingImplCopyWith<T,
+          _$DependenteStateTypeUpdatingImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DependenteStateTypeloadingImplCopyWith<$Res> {
+abstract class _$$DependenteStateTypeloadingImplCopyWith<T, $Res> {
   factory _$$DependenteStateTypeloadingImplCopyWith(
-          _$DependenteStateTypeloadingImpl value,
-          $Res Function(_$DependenteStateTypeloadingImpl) then) =
-      __$$DependenteStateTypeloadingImplCopyWithImpl<$Res>;
+          _$DependenteStateTypeloadingImpl<T> value,
+          $Res Function(_$DependenteStateTypeloadingImpl<T>) then) =
+      __$$DependenteStateTypeloadingImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$DependenteStateTypeloadingImplCopyWithImpl<$Res>
-    extends _$DependenteStateTypeCopyWithImpl<$Res,
-        _$DependenteStateTypeloadingImpl>
-    implements _$$DependenteStateTypeloadingImplCopyWith<$Res> {
+class __$$DependenteStateTypeloadingImplCopyWithImpl<T, $Res>
+    extends _$DependenteStateTypeCopyWithImpl<T, $Res,
+        _$DependenteStateTypeloadingImpl<T>>
+    implements _$$DependenteStateTypeloadingImplCopyWith<T, $Res> {
   __$$DependenteStateTypeloadingImplCopyWithImpl(
-      _$DependenteStateTypeloadingImpl _value,
-      $Res Function(_$DependenteStateTypeloadingImpl) _then)
+      _$DependenteStateTypeloadingImpl<T> _value,
+      $Res Function(_$DependenteStateTypeloadingImpl<T>) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$DependenteStateTypeloadingImpl implements DependenteStateTypeloading {
+class _$DependenteStateTypeloadingImpl<T>
+    implements DependenteStateTypeloading<T> {
   const _$DependenteStateTypeloadingImpl();
 
   @override
   String toString() {
-    return 'DependenteStateType.loading()';
+    return 'DependenteStateType<$T>.loading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DependenteStateTypeloadingImpl);
+            other is _$DependenteStateTypeloadingImpl<T>);
   }
 
   @override
@@ -635,7 +679,7 @@ class _$DependenteStateTypeloadingImpl implements DependenteStateTypeloading {
     required TResult Function() listing,
     required TResult Function() reading,
     required TResult Function() creating,
-    required TResult Function() updating,
+    required TResult Function(T value) updating,
     required TResult Function() loading,
   }) {
     return loading();
@@ -647,7 +691,7 @@ class _$DependenteStateTypeloadingImpl implements DependenteStateTypeloading {
     TResult? Function()? listing,
     TResult? Function()? reading,
     TResult? Function()? creating,
-    TResult? Function()? updating,
+    TResult? Function(T value)? updating,
     TResult? Function()? loading,
   }) {
     return loading?.call();
@@ -659,7 +703,7 @@ class _$DependenteStateTypeloadingImpl implements DependenteStateTypeloading {
     TResult Function()? listing,
     TResult Function()? reading,
     TResult Function()? creating,
-    TResult Function()? updating,
+    TResult Function(T value)? updating,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
@@ -672,11 +716,11 @@ class _$DependenteStateTypeloadingImpl implements DependenteStateTypeloading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(DependenteStateTypeListing value) listing,
-    required TResult Function(DependenteStateTypeReading value) reading,
-    required TResult Function(DependenteStateTypeCreating value) creating,
-    required TResult Function(DependenteStateTypeUpdating value) updating,
-    required TResult Function(DependenteStateTypeloading value) loading,
+    required TResult Function(DependenteStateTypeListing<T> value) listing,
+    required TResult Function(DependenteStateTypeReading<T> value) reading,
+    required TResult Function(DependenteStateTypeCreating<T> value) creating,
+    required TResult Function(DependenteStateTypeUpdating<T> value) updating,
+    required TResult Function(DependenteStateTypeloading<T> value) loading,
   }) {
     return loading(this);
   }
@@ -684,11 +728,11 @@ class _$DependenteStateTypeloadingImpl implements DependenteStateTypeloading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(DependenteStateTypeListing value)? listing,
-    TResult? Function(DependenteStateTypeReading value)? reading,
-    TResult? Function(DependenteStateTypeCreating value)? creating,
-    TResult? Function(DependenteStateTypeUpdating value)? updating,
-    TResult? Function(DependenteStateTypeloading value)? loading,
+    TResult? Function(DependenteStateTypeListing<T> value)? listing,
+    TResult? Function(DependenteStateTypeReading<T> value)? reading,
+    TResult? Function(DependenteStateTypeCreating<T> value)? creating,
+    TResult? Function(DependenteStateTypeUpdating<T> value)? updating,
+    TResult? Function(DependenteStateTypeloading<T> value)? loading,
   }) {
     return loading?.call(this);
   }
@@ -696,11 +740,11 @@ class _$DependenteStateTypeloadingImpl implements DependenteStateTypeloading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(DependenteStateTypeListing value)? listing,
-    TResult Function(DependenteStateTypeReading value)? reading,
-    TResult Function(DependenteStateTypeCreating value)? creating,
-    TResult Function(DependenteStateTypeUpdating value)? updating,
-    TResult Function(DependenteStateTypeloading value)? loading,
+    TResult Function(DependenteStateTypeListing<T> value)? listing,
+    TResult Function(DependenteStateTypeReading<T> value)? reading,
+    TResult Function(DependenteStateTypeCreating<T> value)? creating,
+    TResult Function(DependenteStateTypeUpdating<T> value)? updating,
+    TResult Function(DependenteStateTypeloading<T> value)? loading,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -710,6 +754,7 @@ class _$DependenteStateTypeloadingImpl implements DependenteStateTypeloading {
   }
 }
 
-abstract class DependenteStateTypeloading implements DependenteStateType {
-  const factory DependenteStateTypeloading() = _$DependenteStateTypeloadingImpl;
+abstract class DependenteStateTypeloading<T> implements DependenteStateType<T> {
+  const factory DependenteStateTypeloading() =
+      _$DependenteStateTypeloadingImpl<T>;
 }

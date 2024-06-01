@@ -1,11 +1,11 @@
 import 'package:buildnotifierrear/domain/entities/project.dart';
-import 'package:buildnotifierrear/domain/repositories/abs_i_projects_repository.dart';
+import 'package:buildnotifierrear/domain/repositories/abs_i_crud_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'firestore_repository.dart';
 
 class ProjectsFirestoreRepository extends FireStoreRepository
-    implements AbsIProjectsRepository {
+    implements AbsICRUDRepository<Project> {
   ProjectsFirestoreRepository() : super(collectionName: 'project');
 
   @override

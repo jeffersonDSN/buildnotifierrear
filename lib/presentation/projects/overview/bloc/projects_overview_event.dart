@@ -11,4 +11,12 @@ class ProjectsOverviewEvent with _$ProjectsOverviewEvent {
   const factory ProjectsOverviewEvent.updateTasksState({
     required DependenteStateType tasksState,
   }) = ProjectsOverviewEventUpdateTasksState;
+
+  const factory ProjectsOverviewEvent.updateTitleTaskSelected({
+    required String value,
+  }) = ProjectsOverviewEventUpdateTitleTaskSelected;
+
+  const factory ProjectsOverviewEvent.saveTaskSelected({
+    required VoidCallback callback,
+  }) = ProjectsOverviewEventSaveTaskSelected;
 }

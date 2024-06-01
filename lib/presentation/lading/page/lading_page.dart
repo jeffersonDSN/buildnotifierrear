@@ -3,8 +3,8 @@ import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/core/const/images_const.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
+import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class LandingPage extends StatelessWidget {
   final Widget child;
@@ -19,108 +19,168 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColor.primaryColorSwatch,
-        iconTheme: const IconThemeData(
-          color: AppColor.lightColor,
-        ),
-        title: Image.asset(
-          '$assetImage$logo2',
-          height: 48,
-        ),
-        automaticallyImplyLeading: false,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 20),
-            child: IconButton(
-              onPressed: () => {},
-              icon: const Icon(Icons.logout_outlined),
-            ),
-          ),
-        ],
-      ),
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.2,
-            child: NavigationDrawer(
-              elevation: 0,
-              children: [
-                ListTile(
-                  leading: const Icon(Icons.home),
-                  title: const Text('Home'),
-                  selected: bloc.state.asAppStateLogged.mod.isModHome,
-                  onTap: () {
-                    bloc.add(
-                      const AppEvent.changeView(
-                        mod: Mod.home(),
-                      ),
-                    );
-                  },
+            child: Container(
+              decoration: const BoxDecoration(
+                color: AppColor.primaryColorSwatch,
+                borderRadius: BorderRadius.horizontal(
+                  right: Radius.circular(Sizes.size24),
                 ),
-                ListTile(
-                  leading: const Icon(Icons.calendar_month),
-                  title: const Text('Schedule'),
-                  selected: bloc.state.asAppStateLogged.mod.isModSchedule,
-                  onTap: () {
-                    bloc.add(
-                      const AppEvent.changeView(
-                        mod: Mod.schedule(
-                          type: ViewType.overview(),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Image.asset(
+                    '$assetImage$logo2',
+                    height: 48,
+                  ),
+                  gapHeight32,
+                  Expanded(
+                    child: ListView(
+                      children: [
+                        Container(
+                          color: bloc.state.asAppStateLogged.mod.isModHome
+                              ? AppColor.backgroundColor
+                              : Colors.transparent,
+                          child: ListTile(
+                            iconColor: Colors.white,
+                            textColor: Colors.white,
+                            leading: const Icon(Icons.home),
+                            title: const Text('Home'),
+                            selected: bloc.state.asAppStateLogged.mod.isModHome,
+                            onTap: () {
+                              bloc.add(
+                                const AppEvent.changeView(
+                                  mod: Mod.home(),
+                                ),
+                              );
+                            },
+                          ),
                         ),
-                      ),
-                    );
-                  },
-                ),
-                ListTile(
-                  leading: const Icon(Icons.business),
-                  title: const Text('Projects'),
-                  selected: bloc.state.asAppStateLogged.mod.isModProjects,
-                  onTap: () {
-                    bloc.add(
-                      const AppEvent.changeView(
-                        mod: Mod.projects(
-                          type: ViewType.overview(),
+                        Container(
+                          color: bloc.state.asAppStateLogged.mod.isModSchedule
+                              ? AppColor.backgroundColor
+                              : Colors.transparent,
+                          child: ListTile(
+                            iconColor: Colors.white,
+                            textColor: Colors.white,
+                            leading: const Icon(Icons.calendar_month),
+                            title: const Text('Schedule'),
+                            selected:
+                                bloc.state.asAppStateLogged.mod.isModSchedule,
+                            onTap: () {
+                              bloc.add(
+                                const AppEvent.changeView(
+                                  mod: Mod.schedule(
+                                    type: ViewType.overview(),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
                         ),
-                      ),
-                    );
-                  },
-                ),
-                ListTile(
-                  leading: const Icon(Icons.people),
-                  title: const Text('Clients'),
-                  selected: bloc.state.asAppStateLogged.mod.isModClients,
-                  onTap: () {
-                    bloc.add(
-                      const AppEvent.changeView(
-                        mod: Mod.clients(
-                          type: ViewType.overview(),
+                        Container(
+                          color: bloc.state.asAppStateLogged.mod.isModProjects
+                              ? AppColor.backgroundColor
+                              : Colors.transparent,
+                          child: ListTile(
+                            iconColor: Colors.white,
+                            textColor: Colors.white,
+                            leading: const Icon(Icons.business),
+                            title: const Text('Projects'),
+                            selected:
+                                bloc.state.asAppStateLogged.mod.isModProjects,
+                            onTap: () {
+                              bloc.add(
+                                const AppEvent.changeView(
+                                  mod: Mod.projects(
+                                    type: ViewType.overview(),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
                         ),
-                      ),
-                    );
-                  },
-                ),
-                ListTile(
-                  leading: const Icon(Icons.badge),
-                  title: const Text('Users'),
-                  selected: bloc.state.asAppStateLogged.mod.isModUsers,
-                  onTap: () {
-                    bloc.add(
-                      const AppEvent.changeView(
-                        mod: Mod.users(
-                          type: ViewType.overview(),
+                        Container(
+                          color: bloc.state.asAppStateLogged.mod.isModClients
+                              ? AppColor.backgroundColor
+                              : Colors.transparent,
+                          child: ListTile(
+                            iconColor: Colors.white,
+                            textColor: Colors.white,
+                            leading: const Icon(Icons.people),
+                            title: const Text('Clients'),
+                            selected:
+                                bloc.state.asAppStateLogged.mod.isModClients,
+                            onTap: () {
+                              bloc.add(
+                                const AppEvent.changeView(
+                                  mod: Mod.clients(
+                                    type: ViewType.overview(),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
                         ),
-                      ),
-                    );
-                  },
-                )
-              ],
+                        Container(
+                          color: bloc.state.asAppStateLogged.mod.isModUsers
+                              ? AppColor.backgroundColor
+                              : Colors.transparent,
+                          child: ListTile(
+                            iconColor: Colors.white,
+                            textColor: Colors.white,
+                            leading: const Icon(Icons.badge),
+                            title: const Text('Users'),
+                            selected:
+                                bloc.state.asAppStateLogged.mod.isModUsers,
+                            onTap: () {
+                              bloc.add(
+                                const AppEvent.changeView(
+                                  mod: Mod.users(
+                                    type: ViewType.overview(),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Spacer(),
+                  const Divider(),
+                  const ListTile(
+                    iconColor: Colors.white,
+                    textColor: Colors.white,
+                    leading: Icon(Icons.settings),
+                    title: Text('Settings'),
+                  ),
+                  const ListTile(
+                    iconColor: Colors.white,
+                    textColor: Colors.white,
+                    leading: Icon(Icons.logout),
+                    title: Text('Sign out'),
+                  ),
+                ],
+              ),
             ),
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.8,
-            child: child,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(
+                Sizes.size16,
+                Sizes.size32,
+                Sizes.size16,
+                Sizes.size32,
+              ),
+              child: child,
+            ),
           ),
         ],
       ),

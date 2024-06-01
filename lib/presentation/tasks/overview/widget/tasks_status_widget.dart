@@ -32,19 +32,19 @@ class TasksStatusWidget extends StatelessWidget {
                     centerSpaceRadius: Sizes.size24,
                     sections: [
                       PieChartSectionData(
-                        value: 10,
+                        value: 0,
                         radius: Sizes.size12,
                         color: AppColor.red,
                         showTitle: false,
                       ),
                       PieChartSectionData(
-                        value: 25,
+                        value: 0,
                         radius: Sizes.size12,
                         showTitle: false,
                         color: AppColor.warning,
                       ),
                       PieChartSectionData(
-                        value: 50,
+                        value: 100,
                         radius: Sizes.size12,
                         showTitle: false,
                         color: AppColor.green,

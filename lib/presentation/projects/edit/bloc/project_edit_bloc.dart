@@ -1,4 +1,4 @@
-import 'package:buildnotifierrear/domain/controllers/projects_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/domain/entities/project.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +11,7 @@ part 'project_edit_state.dart';
 
 class ProjectEditBloc extends Bloc<ProjectEditEvent, ProjectEditState> {
   ProjectEditBloc({
-    required ProjectsController controller,
+    required CRUDController<Project> controller,
   }) : super(
           const ProjectEditState.empty(),
         ) {

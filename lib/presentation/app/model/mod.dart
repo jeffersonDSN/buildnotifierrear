@@ -3,6 +3,7 @@ import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/home/page/home_page.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/project_edit.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/projects_overview.dart';
+import 'package:buildnotifierrear/presentation/users/overview/users_overvire.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -50,7 +51,7 @@ extension OnModel on Mod {
     } else if (this is ModClients) {
       return Container();
     } else if (this is ModUsers) {
-      return Container();
+      return const UsersOverview();
     } else {
       return const HomeView();
     }
