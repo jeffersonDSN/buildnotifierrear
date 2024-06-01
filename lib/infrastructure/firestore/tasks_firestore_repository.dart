@@ -1,4 +1,4 @@
-import 'package:buildnotifierrear/domain/entities/task.dart';
+import 'package:buildnotifierrear/domain/entities/task/task.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_tasks_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 

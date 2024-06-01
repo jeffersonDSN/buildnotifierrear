@@ -2,6 +2,7 @@ import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
+import 'package:buildnotifierrear/presentation/time_cards/overview/widget/time_cards_overview_widget.dart';
 import 'package:buildnotifierrear/presentation/users/overview/bloc/users_overview_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -28,7 +29,12 @@ class UsersOverviewView extends IView {
                 child: CircularProgressIndicator(),
               ),
             ),
-            loaded: (users) {
+            loaded: (
+              users,
+              userSelected,
+              timeCardsOfUserSelected,
+              timeCardsState,
+            ) {
               return Card(
                 child: Padding(
                   padding: const EdgeInsets.all(Sizes.size16),
@@ -41,21 +47,50 @@ class UsersOverviewView extends IView {
                             var user = users[index];
 
                             return ListTile(
+                              selected: userSelected == user,
                               title: Text('${user.firstName} ${user.lastName}'),
                               subtitle: const Text('Bricklayer'),
-                              trailing: IconButton(
-                                icon: const Icon(
-                                  Icons.edit,
-                                  color: AppColor.warning,
+                              trailing: SizedBox(
+                                width: Sizes.size72,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    IconButton(
+                                      icon: const Icon(
+                                        Icons.edit,
+                                        color: AppColor.warning,
+                                      ),
+                                      onPressed: () {},
+                                    ),
+                                    if (userSelected == user)
+                                      const Icon(
+                                        Icons.arrow_forward,
+                                        color: AppColor.primaryColorSwatch,
+                                      ),
+                                  ],
                                 ),
-                                onPressed: () {},
                               ),
                             );
                           },
                         ),
                       ),
                       const VerticalDivider(),
-                      Expanded(child: Container())
+                      Expanded(
+                        child: timeCardsState.maybeWhen(
+                          orElse: () => const Card(),
+                          loading: () => const Center(
+                            child: CircularProgressIndicator(),
+                          ),
+                          listing: () {
+                            return Expanded(
+                              child: TimeCardsOverviewWidget(
+                                timeCards: timeCardsOfUserSelected,
+                              ),
+                            );
+                          },
+                        ),
+                      ),
                     ],
                   ),
                 ),

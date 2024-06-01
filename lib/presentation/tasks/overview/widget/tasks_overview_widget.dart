@@ -1,4 +1,4 @@
-import 'package:buildnotifierrear/domain/entities/task.dart';
+import 'package:buildnotifierrear/domain/entities/task/task.dart';
 import 'package:buildnotifierrear/presentation/tasks/overview/widget/tasks_list_widget.dart';
 import 'package:buildnotifierrear/presentation/tasks/overview/widget/tasks_status_widget.dart';
 import 'package:buildnotifierrear/presentation/tasks/overview/widget/tasks_total_widget.dart';

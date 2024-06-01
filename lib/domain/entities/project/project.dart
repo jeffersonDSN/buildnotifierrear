@@ -1,4 +1,4 @@
-import 'package:buildnotifierrear/domain/entities/task.dart';
+import 'package:buildnotifierrear/domain/entities/task/task.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'project.freezed.dart';

@@ -1,4 +1,4 @@
-import 'package:buildnotifierrear/domain/entities/project.dart';
+import 'package:buildnotifierrear/domain/entities/project/project.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_crud_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 

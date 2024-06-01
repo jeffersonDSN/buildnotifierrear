@@ -1,6 +1,6 @@
 import 'package:buildnotifierrear/domain/controllers/tasks_controller.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
-import 'package:buildnotifierrear/domain/entities/task.dart';
+import 'package:buildnotifierrear/domain/entities/task/task.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/tasks_firestore_repository.dart';
 import 'package:buildnotifierrear/presentation/tasks/edit/bloc/task_edit_bloc.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';

@@ -1,8 +1,8 @@
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/tasks_controller.dart';
 import 'package:buildnotifierrear/domain/entities/core/dependent_state_type.dart';
-import 'package:buildnotifierrear/domain/entities/project.dart';
-import 'package:buildnotifierrear/domain/entities/task.dart';
+import 'package:buildnotifierrear/domain/entities/project/project.dart';
+import 'package:buildnotifierrear/domain/entities/task/task.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
