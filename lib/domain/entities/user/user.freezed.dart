@@ -127,10 +127,7 @@ class __$$UserImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserImpl implements _User {
   const _$UserImpl(
-      {this.id = '',
-      required this.firstName,
-      required this.lastName,
-      this.email = ''});
+      {this.id = '', this.firstName = '', this.lastName = '', this.email = ''});
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
@@ -139,8 +136,10 @@ class _$UserImpl implements _User {
   @JsonKey()
   final String id;
   @override
+  @JsonKey()
   final String firstName;
   @override
+  @JsonKey()
   final String lastName;
   @override
   @JsonKey()
@@ -185,8 +184,8 @@ class _$UserImpl implements _User {
 abstract class _User implements User {
   const factory _User(
       {final String id,
-      required final String firstName,
-      required final String lastName,
+      final String firstName,
+      final String lastName,
       final String email}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;

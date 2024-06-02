@@ -4,6 +4,7 @@ import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
+import 'package:buildnotifierrear/presentation/core/widget/total_active_card.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/bloc/projects_overview_bloc.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/widget/task_edit_widget.dart';
 import 'package:buildnotifierrear/presentation/tasks/overview/widget/tasks_overview_widget.dart';
@@ -12,6 +13,7 @@ import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 class ProjectsOverviewView extends IView {
   const ProjectsOverviewView({super.key});
@@ -44,49 +46,18 @@ class ProjectsOverviewView extends IView {
                 children: [
                   Row(
                     children: [
-                      Card(
-                        child: SizedBox(
-                          width: Sizes.size240,
-                          height: Sizes.size124,
-                          child: Padding(
-                            padding: const EdgeInsets.all(Sizes.size8),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                const Text(
-                                  'Total active projects',
-                                  style: TextStyle(
-                                    fontSize: Sizes.size16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                gapHeight8,
-                                Text(
-                                  '${projects.length}',
-                                  style: const TextStyle(
-                                    fontSize: Sizes.size20,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                gapHeight8,
-                                Center(
-                                  child: FilledButton(
-                                    child: const Text('Create new project'),
-                                    onPressed: () {
-                                      appBloc(context).add(
-                                        const AppEvent.changeView(
-                                          mod: Mod.projects(
-                                            type: ViewType.create(),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                )
-                              ],
+                      TotalActive(
+                        title: 'projects',
+                        total: projects.length,
+                        onPressed: () {
+                          appBloc(context).add(
+                            const AppEvent.changeView(
+                              mod: Mod.projects(
+                                type: ViewType.create(),
+                              ),
                             ),
-                          ),
-                        ),
+                          );
+                        },
                       ),
                       gapWidth8,
                       Card(
@@ -370,55 +341,55 @@ class ProjectsOverviewView extends IView {
                                                 );
                                               },
                                             ),
-                                            // TableCalendar(
-                                            //   firstDay:
-                                            //       DateTime.utc(2010, 10, 16),
-                                            //   lastDay:
-                                            //       DateTime.utc(2030, 3, 14),
-                                            //   focusedDay: DateTime.now(),
-                                            //   currentDay: DateTime.now(),
-                                            //   calendarStyle: CalendarStyle(
-                                            //     defaultTextStyle:
-                                            //         const TextStyle(
-                                            //       color: AppColor
-                                            //           .primaryColorSwatch,
-                                            //     ),
-                                            //     weekendTextStyle:
-                                            //         const TextStyle(
-                                            //       color: AppColor.warning,
-                                            //     ),
-                                            //     selectedDecoration:
-                                            //         const BoxDecoration(
-                                            //       color: AppColor
-                                            //           .primaryColorSwatch,
-                                            //       shape: BoxShape.circle,
-                                            //     ),
-                                            //     todayDecoration: BoxDecoration(
-                                            //       color: AppColor
-                                            //           .primaryColorSwatch
-                                            //           .shade300,
-                                            //       shape: BoxShape.circle,
-                                            //     ),
-                                            //   ),
-                                            //   // selectedDayPredicate: (day) {
-                                            //   //   // return isSameDay(
-                                            //   //   //     selectedDay, day);
-                                            //   // },
-                                            //   onDaySelected:
-                                            //       (selectedDay, focusedDay) {
-                                            //     // bloc.add(
-                                            //     //   ScheduleEvent.load(
-                                            //     //     selectDay: focusedDay,
-                                            //     //   ),
-                                            //     // );
-                                            //   },
-                                            //   calendarFormat:
-                                            //       CalendarFormat.week,
-                                            //   headerStyle: const HeaderStyle(
-                                            //     titleCentered: true,
-                                            //     formatButtonVisible: false,
-                                            //   ),
-                                            // ),
+                                            TableCalendar(
+                                              firstDay:
+                                                  DateTime.utc(2010, 10, 16),
+                                              lastDay:
+                                                  DateTime.utc(2030, 3, 14),
+                                              focusedDay: DateTime.now(),
+                                              currentDay: DateTime.now(),
+                                              calendarStyle: CalendarStyle(
+                                                defaultTextStyle:
+                                                    const TextStyle(
+                                                  color: AppColor
+                                                      .primaryColorSwatch,
+                                                ),
+                                                weekendTextStyle:
+                                                    const TextStyle(
+                                                  color: AppColor.warning,
+                                                ),
+                                                selectedDecoration:
+                                                    const BoxDecoration(
+                                                  color: AppColor
+                                                      .primaryColorSwatch,
+                                                  shape: BoxShape.circle,
+                                                ),
+                                                todayDecoration: BoxDecoration(
+                                                  color: AppColor
+                                                      .primaryColorSwatch
+                                                      .shade300,
+                                                  shape: BoxShape.circle,
+                                                ),
+                                              ),
+                                              // selectedDayPredicate: (day) {
+                                              //   // return isSameDay(
+                                              //   //     selectedDay, day);
+                                              // },
+                                              onDaySelected:
+                                                  (selectedDay, focusedDay) {
+                                                // bloc.add(
+                                                //   ScheduleEvent.load(
+                                                //     selectDay: focusedDay,
+                                                //   ),
+                                                // );
+                                              },
+                                              calendarFormat:
+                                                  CalendarFormat.week,
+                                              headerStyle: const HeaderStyle(
+                                                titleCentered: true,
+                                                formatButtonVisible: false,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                       ),
