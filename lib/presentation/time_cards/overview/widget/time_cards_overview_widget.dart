@@ -26,19 +26,17 @@ class TimeCardsOverviewWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(Sizes.size16),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              Expanded(
-                child: TimeCardsTotalWidget(
-                  total: timeCards.totalHoursAndMinutes,
-                ),
+              TimeCardsTotalWidget(
+                total: timeCards.totalHoursAndMinutes,
               ),
               gapWidth8,
-              const Expanded(
-                child: TasksStatusWidget(),
-              ),
+              // const Expanded(
+              //   child: TasksStatusWidget(),
+              // ),
             ],
           ),
           TimeCardsListWidget(

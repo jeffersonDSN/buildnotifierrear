@@ -1,4 +1,5 @@
 import 'package:buildnotifierrear/domain/entities/core/dependent_state_type.dart';
+import 'package:buildnotifierrear/domain/entities/time_card/time_card.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
@@ -7,7 +8,6 @@ import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
 import 'package:buildnotifierrear/presentation/core/widget/total_active_card.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
-import 'package:buildnotifierrear/presentation/time_cards/overview/widget/time_cards_day_details_list_widget.dart';
 import 'package:buildnotifierrear/presentation/time_cards/overview/widget/time_cards_day_details_widget.dart';
 import 'package:buildnotifierrear/presentation/time_cards/overview/widget/time_cards_overview_widget.dart';
 import 'package:buildnotifierrear/presentation/users/overview/bloc/users_overview_bloc.dart';
@@ -232,7 +232,10 @@ class UsersOverviewView extends IView {
                                   },
                                   reading: (value) {
                                     return TaskEditWidget(
-                                      timecards: timeCardsOfUserSelected,
+                                      timecards:
+                                          timeCardsOfUserSelected.getByStart(
+                                        value,
+                                      ),
                                       onCancel: () {
                                         bloc.add(
                                           const UsersOverviewEvent

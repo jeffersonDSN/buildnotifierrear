@@ -31,6 +31,21 @@ class DailyTotal with _$DailyTotal {
   }) = _DailyTotal;
 }
 
+extension OnTimeCard on TimeCard {
+  ({int hours, int minutes}) get totalHoursAndMinutes {
+    int totalMinutes = 0;
+
+    if (end != null) {
+      totalMinutes += end!.difference(start).inMinutes;
+    }
+
+    int hours = totalMinutes ~/ 60;
+    int minutes = totalMinutes % 60;
+
+    return (hours: hours, minutes: minutes);
+  }
+}
+
 extension OnLisTimeCard on List<TimeCard> {
   ({int hours, int minutes}) get totalHoursAndMinutes {
     int totalMinutes = 0;
@@ -57,50 +72,39 @@ extension OnLisTimeCard on List<TimeCard> {
         timeCard.start.day,
       );
 
+      int totalMinutes = 0;
+
       if (timeCard.end != null) {
-        int totalMinutes = timeCard.end!.difference(timeCard.start).inMinutes;
+        totalMinutes = timeCard.end!.difference(timeCard.start).inMinutes;
+      }
 
-        var index = result.indexWhere((card) => card.day == startDate);
+      var index = result.indexWhere((card) => card.day == startDate);
+      if (index > -1) {
+        var card = result[index];
 
-        if (index > -1) {
-          var card = result[index];
-
-          result[index] = card.copyWith(
-            hours: card.hours + totalMinutes ~/ 60,
-            minutes: card.minutes + totalMinutes % 60,
-          );
-        } else {
-          result.add(
-            DailyTotal(
-              day: startDate,
-              hours: totalMinutes ~/ 60,
-              minutes: totalMinutes % 60,
-            ),
-          );
-        }
+        result[index] = card.copyWith(
+          hours: card.hours + totalMinutes ~/ 60,
+          minutes: card.minutes + totalMinutes % 60,
+        );
+      } else {
+        result.add(
+          DailyTotal(
+            day: startDate,
+            hours: totalMinutes ~/ 60,
+            minutes: totalMinutes % 60,
+          ),
+        );
       }
     });
 
     return result;
   }
 
-  Map<DateTime, List<TimeCard>> groupByStart() {
-    Map<DateTime, List<TimeCard>> grouped = {};
+  List<TimeCard> getByStart(DateTime start) {
+    var result = where(
+      (timecard) => timecard.start.difference(start).inDays == 0,
+    ).toList();
 
-    forEach((timeCard) {
-      DateTime startDate = DateTime(
-        timeCard.start.year,
-        timeCard.start.month,
-        timeCard.start.day,
-      );
-
-      if (grouped.containsKey(startDate)) {
-        grouped[startDate]!.add(timeCard);
-      } else {
-        grouped[startDate] = [timeCard];
-      }
-    });
-
-    return grouped;
+    return result;
   }
 }

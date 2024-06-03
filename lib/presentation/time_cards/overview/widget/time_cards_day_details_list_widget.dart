@@ -22,6 +22,8 @@ class TimeCardsDayDetailsListWidget extends StatelessWidget {
       itemBuilder: (context, index) {
         var timeCard = timecards[index];
 
+        var total = timeCard.totalHoursAndMinutes;
+
         return Card(
           elevation: 1,
           child: Padding(
@@ -118,9 +120,9 @@ class TimeCardsDayDetailsListWidget extends StatelessWidget {
                     ),
                   ),
                   gapWidth32,
-                  const Text(
-                    '5:00',
-                    style: TextStyle(
+                  Text(
+                    '${total.hours}:${numberFormat.format(total.minutes)}',
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: Sizes.size24,
                     ),
