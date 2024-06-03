@@ -57,6 +57,13 @@ class UsersOverviewBloc extends Bloc<UsersOverviewEvent, UsersOverviewState> {
             ),
           );
         },
+        updateTimeCardState: (timeCardsState) {
+          emit(
+            state.asLoaded.copyWith(
+              timeCardsState: timeCardsState,
+            ),
+          );
+        },
       );
     });
   }

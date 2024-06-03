@@ -20,18 +20,24 @@ mixin _$UsersOverviewEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(User userSelected) changeUserSelected,
+    required TResult Function(DependenteStateType<dynamic> timeCardsState)
+        updateTimeCardState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(User userSelected)? changeUserSelected,
+    TResult? Function(DependenteStateType<dynamic> timeCardsState)?
+        updateTimeCardState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(User userSelected)? changeUserSelected,
+    TResult Function(DependenteStateType<dynamic> timeCardsState)?
+        updateTimeCardState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,6 +46,8 @@ mixin _$UsersOverviewEvent {
     required TResult Function(UsersOverviewEventLoad value) load,
     required TResult Function(UsersOverviewEventChangeUserSelected value)
         changeUserSelected,
+    required TResult Function(UsersOverviewEventUpdateTimeCardState value)
+        updateTimeCardState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +55,8 @@ mixin _$UsersOverviewEvent {
     TResult? Function(UsersOverviewEventLoad value)? load,
     TResult? Function(UsersOverviewEventChangeUserSelected value)?
         changeUserSelected,
+    TResult? Function(UsersOverviewEventUpdateTimeCardState value)?
+        updateTimeCardState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,6 +64,8 @@ mixin _$UsersOverviewEvent {
     TResult Function(UsersOverviewEventLoad value)? load,
     TResult Function(UsersOverviewEventChangeUserSelected value)?
         changeUserSelected,
+    TResult Function(UsersOverviewEventUpdateTimeCardState value)?
+        updateTimeCardState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,6 +132,8 @@ class _$UsersOverviewEventLoadImpl implements UsersOverviewEventLoad {
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(User userSelected) changeUserSelected,
+    required TResult Function(DependenteStateType<dynamic> timeCardsState)
+        updateTimeCardState,
   }) {
     return load();
   }
@@ -129,6 +143,8 @@ class _$UsersOverviewEventLoadImpl implements UsersOverviewEventLoad {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(User userSelected)? changeUserSelected,
+    TResult? Function(DependenteStateType<dynamic> timeCardsState)?
+        updateTimeCardState,
   }) {
     return load?.call();
   }
@@ -138,6 +154,8 @@ class _$UsersOverviewEventLoadImpl implements UsersOverviewEventLoad {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(User userSelected)? changeUserSelected,
+    TResult Function(DependenteStateType<dynamic> timeCardsState)?
+        updateTimeCardState,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -152,6 +170,8 @@ class _$UsersOverviewEventLoadImpl implements UsersOverviewEventLoad {
     required TResult Function(UsersOverviewEventLoad value) load,
     required TResult Function(UsersOverviewEventChangeUserSelected value)
         changeUserSelected,
+    required TResult Function(UsersOverviewEventUpdateTimeCardState value)
+        updateTimeCardState,
   }) {
     return load(this);
   }
@@ -162,6 +182,8 @@ class _$UsersOverviewEventLoadImpl implements UsersOverviewEventLoad {
     TResult? Function(UsersOverviewEventLoad value)? load,
     TResult? Function(UsersOverviewEventChangeUserSelected value)?
         changeUserSelected,
+    TResult? Function(UsersOverviewEventUpdateTimeCardState value)?
+        updateTimeCardState,
   }) {
     return load?.call(this);
   }
@@ -172,6 +194,8 @@ class _$UsersOverviewEventLoadImpl implements UsersOverviewEventLoad {
     TResult Function(UsersOverviewEventLoad value)? load,
     TResult Function(UsersOverviewEventChangeUserSelected value)?
         changeUserSelected,
+    TResult Function(UsersOverviewEventUpdateTimeCardState value)?
+        updateTimeCardState,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -269,6 +293,8 @@ class _$UsersOverviewEventChangeUserSelectedImpl
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(User userSelected) changeUserSelected,
+    required TResult Function(DependenteStateType<dynamic> timeCardsState)
+        updateTimeCardState,
   }) {
     return changeUserSelected(userSelected);
   }
@@ -278,6 +304,8 @@ class _$UsersOverviewEventChangeUserSelectedImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(User userSelected)? changeUserSelected,
+    TResult? Function(DependenteStateType<dynamic> timeCardsState)?
+        updateTimeCardState,
   }) {
     return changeUserSelected?.call(userSelected);
   }
@@ -287,6 +315,8 @@ class _$UsersOverviewEventChangeUserSelectedImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(User userSelected)? changeUserSelected,
+    TResult Function(DependenteStateType<dynamic> timeCardsState)?
+        updateTimeCardState,
     required TResult orElse(),
   }) {
     if (changeUserSelected != null) {
@@ -301,6 +331,8 @@ class _$UsersOverviewEventChangeUserSelectedImpl
     required TResult Function(UsersOverviewEventLoad value) load,
     required TResult Function(UsersOverviewEventChangeUserSelected value)
         changeUserSelected,
+    required TResult Function(UsersOverviewEventUpdateTimeCardState value)
+        updateTimeCardState,
   }) {
     return changeUserSelected(this);
   }
@@ -311,6 +343,8 @@ class _$UsersOverviewEventChangeUserSelectedImpl
     TResult? Function(UsersOverviewEventLoad value)? load,
     TResult? Function(UsersOverviewEventChangeUserSelected value)?
         changeUserSelected,
+    TResult? Function(UsersOverviewEventUpdateTimeCardState value)?
+        updateTimeCardState,
   }) {
     return changeUserSelected?.call(this);
   }
@@ -321,6 +355,8 @@ class _$UsersOverviewEventChangeUserSelectedImpl
     TResult Function(UsersOverviewEventLoad value)? load,
     TResult Function(UsersOverviewEventChangeUserSelected value)?
         changeUserSelected,
+    TResult Function(UsersOverviewEventUpdateTimeCardState value)?
+        updateTimeCardState,
     required TResult orElse(),
   }) {
     if (changeUserSelected != null) {
@@ -340,6 +376,177 @@ abstract class UsersOverviewEventChangeUserSelected
   @JsonKey(ignore: true)
   _$$UsersOverviewEventChangeUserSelectedImplCopyWith<
           _$UsersOverviewEventChangeUserSelectedImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UsersOverviewEventUpdateTimeCardStateImplCopyWith<$Res> {
+  factory _$$UsersOverviewEventUpdateTimeCardStateImplCopyWith(
+          _$UsersOverviewEventUpdateTimeCardStateImpl value,
+          $Res Function(_$UsersOverviewEventUpdateTimeCardStateImpl) then) =
+      __$$UsersOverviewEventUpdateTimeCardStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DependenteStateType<dynamic> timeCardsState});
+
+  $DependenteStateTypeCopyWith<dynamic, $Res> get timeCardsState;
+}
+
+/// @nodoc
+class __$$UsersOverviewEventUpdateTimeCardStateImplCopyWithImpl<$Res>
+    extends _$UsersOverviewEventCopyWithImpl<$Res,
+        _$UsersOverviewEventUpdateTimeCardStateImpl>
+    implements _$$UsersOverviewEventUpdateTimeCardStateImplCopyWith<$Res> {
+  __$$UsersOverviewEventUpdateTimeCardStateImplCopyWithImpl(
+      _$UsersOverviewEventUpdateTimeCardStateImpl _value,
+      $Res Function(_$UsersOverviewEventUpdateTimeCardStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? timeCardsState = null,
+  }) {
+    return _then(_$UsersOverviewEventUpdateTimeCardStateImpl(
+      timeCardsState: null == timeCardsState
+          ? _value.timeCardsState
+          : timeCardsState // ignore: cast_nullable_to_non_nullable
+              as DependenteStateType<dynamic>,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DependenteStateTypeCopyWith<dynamic, $Res> get timeCardsState {
+    return $DependenteStateTypeCopyWith<dynamic, $Res>(_value.timeCardsState,
+        (value) {
+      return _then(_value.copyWith(timeCardsState: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UsersOverviewEventUpdateTimeCardStateImpl
+    implements UsersOverviewEventUpdateTimeCardState {
+  const _$UsersOverviewEventUpdateTimeCardStateImpl(
+      {required this.timeCardsState});
+
+  @override
+  final DependenteStateType<dynamic> timeCardsState;
+
+  @override
+  String toString() {
+    return 'UsersOverviewEvent.updateTimeCardState(timeCardsState: $timeCardsState)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UsersOverviewEventUpdateTimeCardStateImpl &&
+            (identical(other.timeCardsState, timeCardsState) ||
+                other.timeCardsState == timeCardsState));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, timeCardsState);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UsersOverviewEventUpdateTimeCardStateImplCopyWith<
+          _$UsersOverviewEventUpdateTimeCardStateImpl>
+      get copyWith => __$$UsersOverviewEventUpdateTimeCardStateImplCopyWithImpl<
+          _$UsersOverviewEventUpdateTimeCardStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function(User userSelected) changeUserSelected,
+    required TResult Function(DependenteStateType<dynamic> timeCardsState)
+        updateTimeCardState,
+  }) {
+    return updateTimeCardState(timeCardsState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function(User userSelected)? changeUserSelected,
+    TResult? Function(DependenteStateType<dynamic> timeCardsState)?
+        updateTimeCardState,
+  }) {
+    return updateTimeCardState?.call(timeCardsState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function(User userSelected)? changeUserSelected,
+    TResult Function(DependenteStateType<dynamic> timeCardsState)?
+        updateTimeCardState,
+    required TResult orElse(),
+  }) {
+    if (updateTimeCardState != null) {
+      return updateTimeCardState(timeCardsState);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UsersOverviewEventLoad value) load,
+    required TResult Function(UsersOverviewEventChangeUserSelected value)
+        changeUserSelected,
+    required TResult Function(UsersOverviewEventUpdateTimeCardState value)
+        updateTimeCardState,
+  }) {
+    return updateTimeCardState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UsersOverviewEventLoad value)? load,
+    TResult? Function(UsersOverviewEventChangeUserSelected value)?
+        changeUserSelected,
+    TResult? Function(UsersOverviewEventUpdateTimeCardState value)?
+        updateTimeCardState,
+  }) {
+    return updateTimeCardState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UsersOverviewEventLoad value)? load,
+    TResult Function(UsersOverviewEventChangeUserSelected value)?
+        changeUserSelected,
+    TResult Function(UsersOverviewEventUpdateTimeCardState value)?
+        updateTimeCardState,
+    required TResult orElse(),
+  }) {
+    if (updateTimeCardState != null) {
+      return updateTimeCardState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UsersOverviewEventUpdateTimeCardState
+    implements UsersOverviewEvent {
+  const factory UsersOverviewEventUpdateTimeCardState(
+          {required final DependenteStateType<dynamic> timeCardsState}) =
+      _$UsersOverviewEventUpdateTimeCardStateImpl;
+
+  DependenteStateType<dynamic> get timeCardsState;
+  @JsonKey(ignore: true)
+  _$$UsersOverviewEventUpdateTimeCardStateImplCopyWith<
+          _$UsersOverviewEventUpdateTimeCardStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 

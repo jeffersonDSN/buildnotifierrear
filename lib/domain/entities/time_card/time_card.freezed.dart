@@ -350,3 +350,156 @@ abstract class _TimeCard implements TimeCard {
   _$$TimeCardImplCopyWith<_$TimeCardImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$DailyTotal {
+  DateTime get day => throw _privateConstructorUsedError;
+  int get hours => throw _privateConstructorUsedError;
+  int get minutes => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $DailyTotalCopyWith<DailyTotal> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DailyTotalCopyWith<$Res> {
+  factory $DailyTotalCopyWith(
+          DailyTotal value, $Res Function(DailyTotal) then) =
+      _$DailyTotalCopyWithImpl<$Res, DailyTotal>;
+  @useResult
+  $Res call({DateTime day, int hours, int minutes});
+}
+
+/// @nodoc
+class _$DailyTotalCopyWithImpl<$Res, $Val extends DailyTotal>
+    implements $DailyTotalCopyWith<$Res> {
+  _$DailyTotalCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? day = null,
+    Object? hours = null,
+    Object? minutes = null,
+  }) {
+    return _then(_value.copyWith(
+      day: null == day
+          ? _value.day
+          : day // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      hours: null == hours
+          ? _value.hours
+          : hours // ignore: cast_nullable_to_non_nullable
+              as int,
+      minutes: null == minutes
+          ? _value.minutes
+          : minutes // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$DailyTotalImplCopyWith<$Res>
+    implements $DailyTotalCopyWith<$Res> {
+  factory _$$DailyTotalImplCopyWith(
+          _$DailyTotalImpl value, $Res Function(_$DailyTotalImpl) then) =
+      __$$DailyTotalImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({DateTime day, int hours, int minutes});
+}
+
+/// @nodoc
+class __$$DailyTotalImplCopyWithImpl<$Res>
+    extends _$DailyTotalCopyWithImpl<$Res, _$DailyTotalImpl>
+    implements _$$DailyTotalImplCopyWith<$Res> {
+  __$$DailyTotalImplCopyWithImpl(
+      _$DailyTotalImpl _value, $Res Function(_$DailyTotalImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? day = null,
+    Object? hours = null,
+    Object? minutes = null,
+  }) {
+    return _then(_$DailyTotalImpl(
+      day: null == day
+          ? _value.day
+          : day // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      hours: null == hours
+          ? _value.hours
+          : hours // ignore: cast_nullable_to_non_nullable
+              as int,
+      minutes: null == minutes
+          ? _value.minutes
+          : minutes // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DailyTotalImpl implements _DailyTotal {
+  _$DailyTotalImpl(
+      {required this.day, required this.hours, required this.minutes});
+
+  @override
+  final DateTime day;
+  @override
+  final int hours;
+  @override
+  final int minutes;
+
+  @override
+  String toString() {
+    return 'DailyTotal(day: $day, hours: $hours, minutes: $minutes)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DailyTotalImpl &&
+            (identical(other.day, day) || other.day == day) &&
+            (identical(other.hours, hours) || other.hours == hours) &&
+            (identical(other.minutes, minutes) || other.minutes == minutes));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, day, hours, minutes);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DailyTotalImplCopyWith<_$DailyTotalImpl> get copyWith =>
+      __$$DailyTotalImplCopyWithImpl<_$DailyTotalImpl>(this, _$identity);
+}
+
+abstract class _DailyTotal implements DailyTotal {
+  factory _DailyTotal(
+      {required final DateTime day,
+      required final int hours,
+      required final int minutes}) = _$DailyTotalImpl;
+
+  @override
+  DateTime get day;
+  @override
+  int get hours;
+  @override
+  int get minutes;
+  @override
+  @JsonKey(ignore: true)
+  _$$DailyTotalImplCopyWith<_$DailyTotalImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

@@ -6,7 +6,7 @@ import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
 import 'package:buildnotifierrear/presentation/core/widget/total_active_card.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/bloc/projects_overview_bloc.dart';
-import 'package:buildnotifierrear/presentation/projects/overview/widget/task_edit_widget.dart';
+import 'package:buildnotifierrear/presentation/tasks/edit/widget/task_edit_widget.dart';
 import 'package:buildnotifierrear/presentation/tasks/overview/widget/tasks_overview_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
@@ -396,7 +396,9 @@ class ProjectsOverviewView extends IView {
                                     ],
                                   ),
                                 ),
-                                reading: () => Container(),
+                                reading: (value) {
+                                  return Container();
+                                },
                                 creating: () {
                                   return TaskEditWidget(
                                     title: 'New task',

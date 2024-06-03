@@ -17,6 +17,7 @@ class BaseScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: leading,
         title: Text(title),
       ),
       body: Column(

@@ -7,4 +7,8 @@ class UsersOverviewEvent with _$UsersOverviewEvent {
   const factory UsersOverviewEvent.changeUserSelected({
     required User userSelected,
   }) = UsersOverviewEventChangeUserSelected;
+
+  const factory UsersOverviewEvent.updateTimeCardState({
+    required DependenteStateType timeCardsState,
+  }) = UsersOverviewEventUpdateTimeCardState;
 }

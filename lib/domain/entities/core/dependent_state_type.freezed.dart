@@ -19,7 +19,7 @@ mixin _$DependenteStateType<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() listing,
-    required TResult Function() reading,
+    required TResult Function(T value) reading,
     required TResult Function() creating,
     required TResult Function(T value) updating,
     required TResult Function() loading,
@@ -28,7 +28,7 @@ mixin _$DependenteStateType<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? listing,
-    TResult? Function()? reading,
+    TResult? Function(T value)? reading,
     TResult? Function()? creating,
     TResult? Function(T value)? updating,
     TResult? Function()? loading,
@@ -37,7 +37,7 @@ mixin _$DependenteStateType<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? listing,
-    TResult Function()? reading,
+    TResult Function(T value)? reading,
     TResult Function()? creating,
     TResult Function(T value)? updating,
     TResult Function()? loading,
@@ -137,7 +137,7 @@ class _$DependenteStateTypeListingImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() listing,
-    required TResult Function() reading,
+    required TResult Function(T value) reading,
     required TResult Function() creating,
     required TResult Function(T value) updating,
     required TResult Function() loading,
@@ -149,7 +149,7 @@ class _$DependenteStateTypeListingImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? listing,
-    TResult? Function()? reading,
+    TResult? Function(T value)? reading,
     TResult? Function()? creating,
     TResult? Function(T value)? updating,
     TResult? Function()? loading,
@@ -161,7 +161,7 @@ class _$DependenteStateTypeListingImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? listing,
-    TResult Function()? reading,
+    TResult Function(T value)? reading,
     TResult Function()? creating,
     TResult Function(T value)? updating,
     TResult Function()? loading,
@@ -225,6 +225,8 @@ abstract class _$$DependenteStateTypeReadingImplCopyWith<T, $Res> {
           _$DependenteStateTypeReadingImpl<T> value,
           $Res Function(_$DependenteStateTypeReadingImpl<T>) then) =
       __$$DependenteStateTypeReadingImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T value});
 }
 
 /// @nodoc
@@ -236,65 +238,91 @@ class __$$DependenteStateTypeReadingImplCopyWithImpl<T, $Res>
       _$DependenteStateTypeReadingImpl<T> _value,
       $Res Function(_$DependenteStateTypeReadingImpl<T>) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_$DependenteStateTypeReadingImpl<T>(
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$DependenteStateTypeReadingImpl<T>
     implements DependenteStateTypeReading<T> {
-  const _$DependenteStateTypeReadingImpl();
+  const _$DependenteStateTypeReadingImpl({required this.value});
+
+  @override
+  final T value;
 
   @override
   String toString() {
-    return 'DependenteStateType<$T>.reading()';
+    return 'DependenteStateType<$T>.reading(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DependenteStateTypeReadingImpl<T>);
+            other is _$DependenteStateTypeReadingImpl<T> &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DependenteStateTypeReadingImplCopyWith<T,
+          _$DependenteStateTypeReadingImpl<T>>
+      get copyWith => __$$DependenteStateTypeReadingImplCopyWithImpl<T,
+          _$DependenteStateTypeReadingImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() listing,
-    required TResult Function() reading,
+    required TResult Function(T value) reading,
     required TResult Function() creating,
     required TResult Function(T value) updating,
     required TResult Function() loading,
   }) {
-    return reading();
+    return reading(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? listing,
-    TResult? Function()? reading,
+    TResult? Function(T value)? reading,
     TResult? Function()? creating,
     TResult? Function(T value)? updating,
     TResult? Function()? loading,
   }) {
-    return reading?.call();
+    return reading?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? listing,
-    TResult Function()? reading,
+    TResult Function(T value)? reading,
     TResult Function()? creating,
     TResult Function(T value)? updating,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
     if (reading != null) {
-      return reading();
+      return reading(value);
     }
     return orElse();
   }
@@ -341,8 +369,14 @@ class _$DependenteStateTypeReadingImpl<T>
 }
 
 abstract class DependenteStateTypeReading<T> implements DependenteStateType<T> {
-  const factory DependenteStateTypeReading() =
+  const factory DependenteStateTypeReading({required final T value}) =
       _$DependenteStateTypeReadingImpl<T>;
+
+  T get value;
+  @JsonKey(ignore: true)
+  _$$DependenteStateTypeReadingImplCopyWith<T,
+          _$DependenteStateTypeReadingImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -389,7 +423,7 @@ class _$DependenteStateTypeCreatingImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() listing,
-    required TResult Function() reading,
+    required TResult Function(T value) reading,
     required TResult Function() creating,
     required TResult Function(T value) updating,
     required TResult Function() loading,
@@ -401,7 +435,7 @@ class _$DependenteStateTypeCreatingImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? listing,
-    TResult? Function()? reading,
+    TResult? Function(T value)? reading,
     TResult? Function()? creating,
     TResult? Function(T value)? updating,
     TResult? Function()? loading,
@@ -413,7 +447,7 @@ class _$DependenteStateTypeCreatingImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? listing,
-    TResult Function()? reading,
+    TResult Function(T value)? reading,
     TResult Function()? creating,
     TResult Function(T value)? updating,
     TResult Function()? loading,
@@ -544,7 +578,7 @@ class _$DependenteStateTypeUpdatingImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() listing,
-    required TResult Function() reading,
+    required TResult Function(T value) reading,
     required TResult Function() creating,
     required TResult Function(T value) updating,
     required TResult Function() loading,
@@ -556,7 +590,7 @@ class _$DependenteStateTypeUpdatingImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? listing,
-    TResult? Function()? reading,
+    TResult? Function(T value)? reading,
     TResult? Function()? creating,
     TResult? Function(T value)? updating,
     TResult? Function()? loading,
@@ -568,7 +602,7 @@ class _$DependenteStateTypeUpdatingImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? listing,
-    TResult Function()? reading,
+    TResult Function(T value)? reading,
     TResult Function()? creating,
     TResult Function(T value)? updating,
     TResult Function()? loading,
@@ -677,7 +711,7 @@ class _$DependenteStateTypeloadingImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() listing,
-    required TResult Function() reading,
+    required TResult Function(T value) reading,
     required TResult Function() creating,
     required TResult Function(T value) updating,
     required TResult Function() loading,
@@ -689,7 +723,7 @@ class _$DependenteStateTypeloadingImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? listing,
-    TResult? Function()? reading,
+    TResult? Function(T value)? reading,
     TResult? Function()? creating,
     TResult? Function(T value)? updating,
     TResult? Function()? loading,
@@ -701,7 +735,7 @@ class _$DependenteStateTypeloadingImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? listing,
-    TResult Function()? reading,
+    TResult Function(T value)? reading,
     TResult Function()? creating,
     TResult Function(T value)? updating,
     TResult Function()? loading,

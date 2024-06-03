@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 class TimeCardsOverviewWidget extends StatelessWidget {
   final List<TimeCard> timeCards;
+  final ValueChanged<DateTime> onOpenDetails;
   //final ValueChanged<Task> onCalendar;
   //final ValueChanged<Task> onEdit;
   //final VoidCallback onCreateNewTask;
@@ -14,6 +15,7 @@ class TimeCardsOverviewWidget extends StatelessWidget {
   const TimeCardsOverviewWidget({
     super.key,
     required this.timeCards,
+    required this.onOpenDetails,
     //required this.onCalendar,
     //required this.onEdit,
     //required this.onCreateNewTask,
@@ -40,7 +42,8 @@ class TimeCardsOverviewWidget extends StatelessWidget {
             ],
           ),
           TimeCardsListWidget(
-            timeCards: timeCards,
+            timeCards: timeCards.dailyTotal,
+            onOpenDetails: onOpenDetails,
           ),
         ],
       ),

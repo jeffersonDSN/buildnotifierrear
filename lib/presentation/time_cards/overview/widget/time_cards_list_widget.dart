@@ -5,15 +5,18 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class TimeCardsListWidget extends StatelessWidget {
-  final List<TimeCard> timeCards;
+  final List<DailyTotal> timeCards;
+  final ValueChanged<DateTime> onOpenDetails;
 
   final DateFormat dayFormat = DateFormat("EEEE");
   final DateFormat dateFormat = DateFormat("MMM dd");
   final DateFormat hourFormat = DateFormat.jm();
+  final NumberFormat numberFormat = NumberFormat('00');
 
   TimeCardsListWidget({
     super.key,
     required this.timeCards,
+    required this.onOpenDetails,
   });
 
   @override
@@ -34,121 +37,36 @@ class TimeCardsListWidget extends StatelessWidget {
                   itemBuilder: (context, index) {
                     var timeCard = timeCards[index];
 
-                    return Card(
-                      child: Padding(
-                        padding: const EdgeInsets.all(Sizes.size8),
+                    return ListTile(
+                      title: Text(
+                        dayFormat.format(timeCard.day),
+                      ),
+                      subtitle: Text(
+                        dateFormat.format(timeCard.day),
+                      ),
+                      trailing: SizedBox(
+                        width: Sizes.size112,
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            SizedBox(
-                              width: Sizes.size88,
-                              child: Column(
-                                children: [
-                                  Text(
-                                    dayFormat.format(timeCard.start),
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: Sizes.size16,
-                                    ),
-                                  ),
-                                  Text(
-                                    dateFormat.format(timeCard.start),
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: Sizes.size16,
-                                    ),
-                                  ),
-                                ],
+                            Text(
+                              '${timeCard.hours}:${numberFormat.format(
+                                timeCard.minutes,
+                              )}',
+                              style: const TextStyle(
+                                fontSize: Sizes.size20,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
-                            gapWidth32,
-                            Expanded(
-                              child: Column(
-                                children: [
-                                  Row(
-                                    children: [
-                                      const Text(
-                                        'Started: ',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: Sizes.size12,
-                                        ),
-                                      ),
-                                      Text(
-                                        hourFormat.format(timeCard.start),
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: Sizes.size16,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      const Icon(
-                                        Icons.location_on,
-                                        color: AppColor.primaryColorSwatch,
-                                      ),
-                                      gapHeight4,
-                                      Text(
-                                        timeCard.startLocation!,
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: const TextStyle(
-                                          fontSize: Sizes.size12,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  const Divider(
-                                    color: AppColor.primaryColorSwatch,
-                                  ),
-                                  gapHeight8,
-                                  if (timeCard.end != null)
-                                    Row(
-                                      children: [
-                                        const Text(
-                                          'End: ',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: Sizes.size12,
-                                          ),
-                                        ),
-                                        Text(
-                                          hourFormat.format(timeCard.end!),
-                                          style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: Sizes.size16,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  if (timeCard.end != null)
-                                    Row(
-                                      children: [
-                                        const Icon(
-                                          Icons.location_on,
-                                          color: AppColor.primaryColorSwatch,
-                                        ),
-                                        gapHeight4,
-                                        Text(
-                                          timeCard.endLocation!,
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: const TextStyle(
-                                            fontSize: Sizes.size12,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  if (timeCard.end != null)
-                                    const Divider(
-                                      color: AppColor.primaryColorSwatch,
-                                    ),
-                                ],
+                            IconButton(
+                              icon: const Icon(
+                                Icons.work_history_outlined,
+                                color: AppColor.primaryColorSwatch,
                               ),
-                            ),
+                              onPressed: () {
+                                onOpenDetails.call(timeCard.day);
+                              },
+                            )
                           ],
                         ),
                       ),

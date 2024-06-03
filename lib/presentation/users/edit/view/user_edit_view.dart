@@ -7,7 +7,6 @@ import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:buildnotifierrear/presentation/users/edit/bloc/user_edit_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class UserEditView extends IView {
