@@ -1,6 +1,8 @@
+import 'package:buildnotifierrear/domain/controllers/appointment_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/time_cards_controller.dart';
 import 'package:buildnotifierrear/domain/entities/user/user.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/appointment_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/time_cards_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/users_firestore_repository.dart';
 import 'package:buildnotifierrear/presentation/users/overview/bloc/users_overview_bloc.dart';
@@ -20,6 +22,9 @@ class UsersOverview extends StatelessWidget {
         ),
         timeCardsController: TimeCardsController(
           repository: TimeCardsFireStoreRepository(),
+        ),
+        appointmentController: AppointmentController(
+          repository: AppointmentFirestoreRepository(),
         ),
       ),
       child: const UsersOverviewView(),

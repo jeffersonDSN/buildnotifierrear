@@ -6,6 +6,7 @@ import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
 import 'package:buildnotifierrear/presentation/core/widget/total_active_card.dart';
+import 'package:buildnotifierrear/presentation/users/overview/widget/schedule_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:buildnotifierrear/presentation/time_cards/overview/widget/time_cards_day_details_widget.dart';
@@ -13,7 +14,6 @@ import 'package:buildnotifierrear/presentation/time_cards/overview/widget/time_c
 import 'package:buildnotifierrear/presentation/users/overview/bloc/users_overview_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:table_calendar/table_calendar.dart';
 
 class UsersOverviewView extends IView {
   const UsersOverviewView({super.key});
@@ -38,9 +38,12 @@ class UsersOverviewView extends IView {
             ),
             loaded: (
               users,
-              userSelected,
-              timeCardsOfUserSelected,
+              selectedUser,
+              timeCardsOfselectedUser,
               timeCardsState,
+              selectedDay,
+              appoitmentOfSelecedDayAndUser,
+              appoitmentCardsState,
             ) {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,7 +74,7 @@ class UsersOverviewView extends IView {
                                   var user = users[index];
 
                                   return ListTile(
-                                    selected: userSelected == user,
+                                    selected: selectedUser == user,
                                     title: Text(
                                       '${user.firstName} ${user.lastName}',
                                     ),
@@ -99,7 +102,7 @@ class UsersOverviewView extends IView {
                                               );
                                             },
                                           ),
-                                          if (userSelected == user)
+                                          if (selectedUser == user)
                                             const Icon(
                                               Icons.arrow_forward,
                                               color:
@@ -110,8 +113,8 @@ class UsersOverviewView extends IView {
                                     ),
                                     onTap: () {
                                       bloc.add(
-                                        UsersOverviewEvent.changeUserSelected(
-                                          userSelected: user,
+                                        UsersOverviewEvent.changeselectedUser(
+                                          selectedUser: user,
                                         ),
                                       );
                                     },
@@ -122,131 +125,94 @@ class UsersOverviewView extends IView {
                             const VerticalDivider(),
                             Expanded(
                               child: timeCardsState.maybeWhen(
-                                  orElse: () => const Card(),
-                                  loading: () => const Center(
-                                        child: CircularProgressIndicator(),
-                                      ),
-                                  listing: () {
-                                    return DefaultTabController(
-                                      initialIndex: 0,
-                                      length: 2,
-                                      child: Column(
-                                        children: [
-                                          gapHeight8,
-                                          TabBar(
-                                            indicator: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(
-                                                Sizes.size24,
-                                              ),
-                                              color:
-                                                  AppColor.primaryColorSwatch,
+                                orElse: () => const Card(),
+                                loading: () => const Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                                listing: () {
+                                  return DefaultTabController(
+                                    initialIndex: 0,
+                                    length: 2,
+                                    child: Column(
+                                      children: [
+                                        gapHeight8,
+                                        TabBar(
+                                          indicator: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(
+                                              Sizes.size24,
                                             ),
-                                            labelColor: Colors.white,
-                                            unselectedLabelColor: Colors.black,
-                                            indicatorSize:
-                                                TabBarIndicatorSize.tab,
-                                            dividerColor: Colors.transparent,
-                                            tabs: const [
-                                              Tab(text: 'Timecard'),
-                                              Tab(text: 'Schedule'),
+                                            color: AppColor.primaryColorSwatch,
+                                          ),
+                                          labelColor: Colors.white,
+                                          unselectedLabelColor: Colors.black,
+                                          indicatorSize:
+                                              TabBarIndicatorSize.tab,
+                                          dividerColor: Colors.transparent,
+                                          tabs: const [
+                                            Tab(text: 'Timecard'),
+                                            Tab(text: 'Schedule'),
+                                          ],
+                                        ),
+                                        const Divider(),
+                                        Expanded(
+                                          child: TabBarView(
+                                            children: [
+                                              TimeCardsOverviewWidget(
+                                                timeCards:
+                                                    timeCardsOfselectedUser,
+                                                onOpenDetails: (value) {
+                                                  bloc.add(
+                                                    UsersOverviewEvent
+                                                        .updateTimeCardState(
+                                                      timeCardsState:
+                                                          DependenteStateType
+                                                              .reading(
+                                                        value: value,
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                              ),
+                                              ScheduleWidget(
+                                                selectedDay: selectedDay,
+                                                isLoading: appoitmentCardsState
+                                                    .isLoading,
+                                                onChangeSelectedDay: (value) {
+                                                  bloc.add(
+                                                    UsersOverviewEvent
+                                                        .updateSelectedDay(
+                                                      selectedDay: value,
+                                                    ),
+                                                  );
+                                                },
+                                                appointments:
+                                                    appoitmentOfSelecedDayAndUser,
+                                              ),
                                             ],
                                           ),
-                                          const Divider(),
-                                          Expanded(
-                                            child: TabBarView(
-                                              children: [
-                                                TimeCardsOverviewWidget(
-                                                  timeCards:
-                                                      timeCardsOfUserSelected,
-                                                  onOpenDetails: (value) {
-                                                    bloc.add(
-                                                      UsersOverviewEvent
-                                                          .updateTimeCardState(
-                                                        timeCardsState:
-                                                            DependenteStateType
-                                                                .reading(
-                                                          value: value,
-                                                        ),
-                                                      ),
-                                                    );
-                                                  },
-                                                ),
-                                                TableCalendar(
-                                                  firstDay: DateTime.utc(
-                                                      2010, 10, 16),
-                                                  lastDay:
-                                                      DateTime.utc(2030, 3, 14),
-                                                  focusedDay: DateTime.now(),
-                                                  currentDay: DateTime.now(),
-                                                  calendarStyle: CalendarStyle(
-                                                    defaultTextStyle:
-                                                        const TextStyle(
-                                                      color: AppColor
-                                                          .primaryColorSwatch,
-                                                    ),
-                                                    weekendTextStyle:
-                                                        const TextStyle(
-                                                      color: AppColor.warning,
-                                                    ),
-                                                    selectedDecoration:
-                                                        const BoxDecoration(
-                                                      color: AppColor
-                                                          .primaryColorSwatch,
-                                                      shape: BoxShape.circle,
-                                                    ),
-                                                    todayDecoration:
-                                                        BoxDecoration(
-                                                      color: AppColor
-                                                          .primaryColorSwatch
-                                                          .shade300,
-                                                      shape: BoxShape.circle,
-                                                    ),
-                                                  ),
-                                                  // selectedDayPredicate: (day) {
-                                                  //   // return isSameDay(
-                                                  //   //     selectedDay, day);
-                                                  // },
-                                                  onDaySelected: (selectedDay,
-                                                      focusedDay) {
-                                                    // bloc.add(
-                                                    //   ScheduleEvent.load(
-                                                    //     selectDay: focusedDay,
-                                                    //   ),
-                                                    // );
-                                                  },
-                                                  calendarFormat:
-                                                      CalendarFormat.week,
-                                                  headerStyle:
-                                                      const HeaderStyle(
-                                                    titleCentered: true,
-                                                    formatButtonVisible: false,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    );
-                                  },
-                                  reading: (value) {
-                                    return TaskEditWidget(
-                                      timecards:
-                                          timeCardsOfUserSelected.getByStart(
-                                        value,
-                                      ),
-                                      onCancel: () {
-                                        bloc.add(
-                                          const UsersOverviewEvent
-                                              .updateTimeCardState(
-                                            timeCardsState:
-                                                DependenteStateType.listing(),
-                                          ),
-                                        );
-                                      },
-                                    );
-                                  }),
+                                        )
+                                      ],
+                                    ),
+                                  );
+                                },
+                                reading: (value) {
+                                  return TaskEditWidget(
+                                    timecards:
+                                        timeCardsOfselectedUser.getByStart(
+                                      value,
+                                    ),
+                                    onCancel: () {
+                                      bloc.add(
+                                        const UsersOverviewEvent
+                                            .updateTimeCardState(
+                                          timeCardsState:
+                                              DependenteStateType.listing(),
+                                        ),
+                                      );
+                                    },
+                                  );
+                                },
+                              ),
                             ),
                           ],
                         ),

@@ -22,59 +22,53 @@ class TimeCardsListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Card(
-        elevation: 1,
-        child: timeCards.isEmpty
-            ? const Center(
-                child: Text(
-                  'has no time card',
-                ),
-              )
-            : Padding(
-                padding: const EdgeInsets.all(Sizes.size8),
-                child: ListView.builder(
-                  itemCount: timeCards.length,
-                  itemBuilder: (context, index) {
-                    var timeCard = timeCards[index];
-
-                    return ListTile(
-                      title: Text(
-                        dayFormat.format(timeCard.day),
-                      ),
-                      subtitle: Text(
-                        dateFormat.format(timeCard.day),
-                      ),
-                      trailing: SizedBox(
-                        width: Sizes.size112,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              '${timeCard.hours}:${numberFormat.format(
-                                timeCard.minutes,
-                              )}',
-                              style: const TextStyle(
-                                fontSize: Sizes.size20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              icon: const Icon(
-                                Icons.work_history_outlined,
-                                color: AppColor.primaryColorSwatch,
-                              ),
-                              onPressed: () {
-                                onOpenDetails.call(timeCard.day);
-                              },
-                            )
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
+      child: timeCards.isEmpty
+          ? const Center(
+              child: Text(
+                'has no time card',
               ),
-      ),
+            )
+          : ListView.builder(
+              itemCount: timeCards.length,
+              itemBuilder: (context, index) {
+                var timeCard = timeCards[index];
+
+                return ListTile(
+                  title: Text(
+                    dayFormat.format(timeCard.day),
+                  ),
+                  subtitle: Text(
+                    dateFormat.format(timeCard.day),
+                  ),
+                  trailing: SizedBox(
+                    width: Sizes.size112,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '${timeCard.hours}:${numberFormat.format(
+                            timeCard.minutes,
+                          )}',
+                          style: const TextStyle(
+                            fontSize: Sizes.size20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        IconButton(
+                          icon: const Icon(
+                            Icons.work_history_outlined,
+                            color: AppColor.primaryColorSwatch,
+                          ),
+                          onPressed: () {
+                            onOpenDetails.call(timeCard.day);
+                          },
+                        )
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
     );
   }
 }

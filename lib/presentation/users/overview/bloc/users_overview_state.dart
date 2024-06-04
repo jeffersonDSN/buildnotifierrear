@@ -6,9 +6,12 @@ class UsersOverviewState with _$UsersOverviewState {
   const factory UsersOverviewState.loading() = UsersOverviewStateLoading;
   const factory UsersOverviewState.loaded({
     required List<User> users,
-    User? userSelected,
-    required List<TimeCard> timeCardsOfUserSelected,
+    User? selectedUser,
+    required List<TimeCard> timeCardsOfselectedUser,
     required DependenteStateType timeCardsState,
+    required DateTime selectedDay,
+    required List<Appointment> appoitmentOfSelecedDayAndUser,
+    required DependenteStateType appoitmentCardsState,
   }) = UsersOverviewStateLoaded;
 }
 

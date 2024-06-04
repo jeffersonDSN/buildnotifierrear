@@ -14,6 +14,7 @@ class AppTheme {
     listTileTheme: _listTileTheme,
     outlinedButtonTheme: _outlinedButtonThemeData,
     floatingActionButtonTheme: _floatingActionButtonThemeData,
+    scrollbarTheme: _scrollbarThemeData,
   );
 }
 
@@ -80,6 +81,13 @@ OutlinedButtonThemeData get _outlinedButtonThemeData => OutlinedButtonThemeData(
 FloatingActionButtonThemeData get _floatingActionButtonThemeData =>
     const FloatingActionButtonThemeData(
       backgroundColor: AppColor.primaryColorSwatch,
+    );
+
+ScrollbarThemeData get _scrollbarThemeData => const ScrollbarThemeData(
+      thumbVisibility: MaterialStatePropertyAll(true),
+      thumbColor: MaterialStatePropertyAll(AppColor.primaryColorSwatch),
+      trackColor: MaterialStatePropertyAll(Colors.grey),
+      trackVisibility: MaterialStatePropertyAll(true),
     );
 
 SystemUiOverlayStyle get loginSystemUiOverlayStyle =>

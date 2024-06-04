@@ -1,5 +1,7 @@
+import 'package:buildnotifierrear/domain/controllers/appointment_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/time_cards_controller.dart';
+import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/domain/entities/core/dependent_state_type.dart';
 import 'package:buildnotifierrear/domain/entities/time_card/time_card.dart';
 import 'package:buildnotifierrear/domain/entities/user/user.dart';
@@ -14,6 +16,7 @@ class UsersOverviewBloc extends Bloc<UsersOverviewEvent, UsersOverviewState> {
   UsersOverviewBloc({
     required CRUDController<User> controller,
     required TimeCardsController timeCardsController,
+    required AppointmentController appointmentController,
   }) : super(const UsersOverviewState.empty()) {
     on<UsersOverviewEvent>((event, emit) async {
       await event.when(
@@ -25,35 +28,47 @@ class UsersOverviewBloc extends Bloc<UsersOverviewEvent, UsersOverviewState> {
           emit(
             UsersOverviewState.loaded(
               users: users,
-              timeCardsOfUserSelected: [],
+              timeCardsOfselectedUser: [],
               timeCardsState: const DependenteStateType.listing(),
+              selectedDay: DateTime.now(),
+              appoitmentOfSelecedDayAndUser: [],
+              appoitmentCardsState: const DependenteStateType.listing(),
             ),
           );
 
           if (users.isNotEmpty) {
             add(
-              UsersOverviewEvent.changeUserSelected(
-                userSelected: users[0],
+              UsersOverviewEvent.changeselectedUser(
+                selectedUser: users[0],
               ),
             );
           }
         },
-        changeUserSelected: (userSelected) async {
+        changeselectedUser: (selectedUser) async {
           emit(
             state.asLoaded.copyWith(
-              userSelected: userSelected,
+              selectedUser: selectedUser,
               timeCardsState: const DependenteStateType.loading(),
+              appoitmentCardsState: const DependenteStateType.loading(),
             ),
           );
 
-          var timeCards = await timeCardsController.getAllByUserId(
-            userSelected.id,
-          );
+          var result = await Future.wait([
+            timeCardsController.getAllByUserId(
+              selectedUser.id,
+            ),
+            appointmentController.getByDayAndUser(
+              state.asLoaded.selectedDay,
+              selectedUser.id,
+            ),
+          ]);
 
           emit(
             state.asLoaded.copyWith(
-              timeCardsOfUserSelected: timeCards,
+              timeCardsOfselectedUser: result[0] as List<TimeCard>,
+              appoitmentOfSelecedDayAndUser: result[1] as List<Appointment>,
               timeCardsState: const DependenteStateType.listing(),
+              appoitmentCardsState: const DependenteStateType.listing(),
             ),
           );
         },
@@ -61,6 +76,27 @@ class UsersOverviewBloc extends Bloc<UsersOverviewEvent, UsersOverviewState> {
           emit(
             state.asLoaded.copyWith(
               timeCardsState: timeCardsState,
+            ),
+          );
+        },
+        updateSelectedDay: (selectedDay) async {
+          emit(
+            state.asLoaded.copyWith(
+              selectedDay: selectedDay,
+              appoitmentCardsState: const DependenteStateType.loading(),
+            ),
+          );
+
+          var appointment = await appointmentController.getByDayAndUser(
+            selectedDay,
+            state.asLoaded.selectedUser!.id,
+          );
+
+          emit(
+            state.asLoaded.copyWith(
+              selectedDay: selectedDay,
+              appoitmentOfSelecedDayAndUser: appointment,
+              appoitmentCardsState: const DependenteStateType.listing(),
             ),
           );
         },

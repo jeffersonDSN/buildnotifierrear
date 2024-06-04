@@ -17,119 +17,118 @@ class TimeCardsDayDetailsListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
+      separatorBuilder: (context, index) {
+        return const Divider();
+      },
       itemCount: timecards.length,
       itemBuilder: (context, index) {
         var timeCard = timecards[index];
 
         var total = timeCard.totalHoursAndMinutes;
 
-        return Card(
-          elevation: 1,
-          child: Padding(
-            padding: const EdgeInsets.all(Sizes.size16),
-            child: Expanded(
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
+        return Expanded(
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  children: [
+                    Row(
                       children: [
-                        Row(
-                          children: [
-                            const Text(
-                              'Started: ',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: Sizes.size12,
-                              ),
-                            ),
-                            Text(
-                              hourFormat.format(timeCard.start),
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: Sizes.size16,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.location_on,
-                              color: AppColor.primaryColorSwatch,
-                            ),
-                            gapHeight4,
-                            Text(
-                              timeCard.startLocation!,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(
-                                fontSize: Sizes.size12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const Divider(
-                          color: AppColor.primaryColorSwatch,
-                        ),
-                        gapHeight8,
-                        if (timeCard.end != null)
-                          Row(
-                            children: [
-                              const Text(
-                                'End: ',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: Sizes.size12,
-                                ),
-                              ),
-                              Text(
-                                hourFormat.format(timeCard.end!),
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: Sizes.size16,
-                                ),
-                              ),
-                            ],
-                          ),
-                        if (timeCard.end != null)
-                          Row(
-                            children: [
-                              const Icon(
-                                Icons.location_on,
-                                color: AppColor.primaryColorSwatch,
-                              ),
-                              gapHeight4,
-                              Text(
-                                timeCard.endLocation!,
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                  fontSize: Sizes.size12,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        if (timeCard.end != null)
-                          const Divider(
+                        const Text(
+                          'Started: ',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: Sizes.size12,
                             color: AppColor.primaryColorSwatch,
                           ),
+                        ),
+                        Text(
+                          hourFormat.format(timeCard.start),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: Sizes.size16,
+                          ),
+                        ),
                       ],
                     ),
-                  ),
-                  gapWidth32,
-                  Text(
-                    '${total.hours}:${numberFormat.format(total.minutes)}',
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: Sizes.size24,
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.location_on,
+                          color: AppColor.primaryColorSwatch,
+                        ),
+                        gapHeight4,
+                        Text(
+                          timeCard.startLocation!,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontSize: Sizes.size12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
-                  )
-                ],
+                    const Divider(
+                      color: AppColor.primaryColorSwatch,
+                    ),
+                    gapHeight8,
+                    if (timeCard.end != null)
+                      Row(
+                        children: [
+                          const Text(
+                            'End: ',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: Sizes.size12,
+                              color: AppColor.primaryColorSwatch,
+                            ),
+                          ),
+                          Text(
+                            hourFormat.format(timeCard.end!),
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: Sizes.size16,
+                            ),
+                          ),
+                        ],
+                      ),
+                    if (timeCard.end != null)
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.location_on,
+                            color: AppColor.primaryColorSwatch,
+                          ),
+                          gapHeight4,
+                          Text(
+                            timeCard.endLocation!,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontSize: Sizes.size12,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    if (timeCard.end != null)
+                      const Divider(
+                        color: AppColor.primaryColorSwatch,
+                      ),
+                  ],
+                ),
               ),
-            ),
+              gapWidth32,
+              Text(
+                '${total.hours}:${numberFormat.format(total.minutes)}',
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: Sizes.size24,
+                ),
+              ),
+            ],
           ),
         );
       },
