@@ -67,7 +67,7 @@ class ScheduleWidget extends StatelessWidget {
               : appointments.isEmpty
                   ? const Center(
                       child: Text(
-                        'has no tasks',
+                        'has no appointment',
                       ),
                     )
                   : ListView.separated(
