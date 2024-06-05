@@ -86,6 +86,8 @@ abstract class _$$AppEventSignInImplCopyWith<$Res> {
       __$$AppEventSignInImplCopyWithImpl<$Res>;
   @useResult
   $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -99,14 +101,22 @@ class __$$AppEventSignInImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
+    Object? user = null,
   }) {
     return _then(_$AppEventSignInImpl(
-      user: freezed == user
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -128,12 +138,11 @@ class _$AppEventSignInImpl implements AppEventSignIn {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppEventSignInImpl &&
-            const DeepCollectionEquality().equals(other.user, user));
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
@@ -649,6 +658,7 @@ abstract class _$$AppStateLoggedImplCopyWith<$Res> {
   @useResult
   $Res call({User user, Mod mod});
 
+  $UserCopyWith<$Res> get user;
   $ModCopyWith<$Res> get mod;
 }
 
@@ -663,11 +673,11 @@ class __$$AppStateLoggedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
+    Object? user = null,
     Object? mod = null,
   }) {
     return _then(_$AppStateLoggedImpl(
-      user: freezed == user
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
@@ -676,6 +686,14 @@ class __$$AppStateLoggedImplCopyWithImpl<$Res>
           : mod // ignore: cast_nullable_to_non_nullable
               as Mod,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 
   @override
@@ -707,13 +725,12 @@ class _$AppStateLoggedImpl implements AppStateLogged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppStateLoggedImpl &&
-            const DeepCollectionEquality().equals(other.user, user) &&
+            (identical(other.user, user) || other.user == user) &&
             (identical(other.mod, mod) || other.mod == mod));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user), mod);
+  int get hashCode => Object.hash(runtimeType, user, mod);
 
   @JsonKey(ignore: true)
   @override

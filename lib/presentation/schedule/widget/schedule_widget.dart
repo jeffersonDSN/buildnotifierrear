@@ -79,10 +79,11 @@ class ScheduleWidget extends StatelessWidget {
         ),
         const Divider(),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            FilledButton(
-              child: const Text('Create new appointment'),
+            FilledButton.icon(
+              icon: const Icon(Icons.add),
+              label: const Text('Add'),
               onPressed: () {},
             )
           ],

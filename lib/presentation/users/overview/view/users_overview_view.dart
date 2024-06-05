@@ -5,7 +5,6 @@ import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
-import 'package:buildnotifierrear/presentation/core/widget/total_active_card.dart';
 import 'package:buildnotifierrear/presentation/schedule/widget/schedule_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
@@ -26,6 +25,21 @@ class UsersOverviewView extends IView {
 
     return BaseScaffold(
       title: 'Users',
+      actions: [
+        FilledButton.icon(
+          icon: const Icon(Icons.add),
+          label: const Text('Add'),
+          onPressed: () {
+            appBloc(context).add(
+              const AppEvent.changeView(
+                mod: Mod.users(
+                  type: ViewType.create(),
+                ),
+              ),
+            );
+          },
+        )
+      ],
       child: BlocBuilder<UsersOverviewBloc, UsersOverviewState>(
         bloc: bloc,
         builder: (context, state) {
@@ -48,19 +62,6 @@ class UsersOverviewView extends IView {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TotalActive(
-                    title: 'Users',
-                    total: users.length,
-                    onPressed: () {
-                      appBloc(context).add(
-                        const AppEvent.changeView(
-                          mod: Mod.users(
-                            type: ViewType.create(),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
                   Expanded(
                     child: Card(
                       child: Padding(

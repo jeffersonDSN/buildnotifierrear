@@ -26,6 +26,21 @@ class ProjectsOverviewView extends IView {
 
     return BaseScaffold(
       title: 'Projects',
+      actions: [
+        FilledButton.icon(
+          icon: const Icon(Icons.add),
+          label: const Text('Add'),
+          onPressed: () {
+            appBloc(context).add(
+              const AppEvent.changeView(
+                mod: Mod.projects(
+                  type: ViewType.create(),
+                ),
+              ),
+            );
+          },
+        )
+      ],
       child: BlocBuilder<ProjectsOverviewBloc, ProjectsOverviewState>(
         bloc: bloc,
         builder: (context, state) {
@@ -47,183 +62,183 @@ class ProjectsOverviewView extends IView {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      TotalActive(
-                        title: 'projects',
-                        total: projects.length,
-                        onPressed: () {
-                          appBloc(context).add(
-                            const AppEvent.changeView(
-                              mod: Mod.projects(
-                                type: ViewType.create(),
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                      gapWidth8,
-                      Card(
-                        child: SizedBox(
-                          width: 240,
-                          height: 125,
-                          child: Padding(
-                            padding: const EdgeInsets.all(Sizes.size8),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                const Text(
-                                  'Project status',
-                                  style: TextStyle(
-                                    fontSize: Sizes.size16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                gapHeight16,
-                                SizedBox(
-                                  height: 50,
-                                  child: PieChart(
-                                    PieChartData(
-                                      centerSpaceRadius: 25,
-                                      sections: [
-                                        PieChartSectionData(
-                                          value: 0,
-                                          radius: 15,
-                                          color: AppColor.red,
-                                          showTitle: false,
-                                        ),
-                                        PieChartSectionData(
-                                          value: 0,
-                                          radius: 15,
-                                          showTitle: false,
-                                          color: AppColor.warning,
-                                        ),
-                                        PieChartSectionData(
-                                          value: 100,
-                                          radius: 15,
-                                          showTitle: false,
-                                          color: AppColor.green,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      gapWidth8,
-                      Card(
-                        child: SizedBox(
-                          width: 240,
-                          height: 125,
-                          child: Padding(
-                            padding: const EdgeInsets.all(Sizes.size8),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                const Text(
-                                  'Task status',
-                                  style: TextStyle(
-                                    fontSize: Sizes.size16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                gapHeight16,
-                                SizedBox(
-                                  height: 50,
-                                  child: PieChart(
-                                    PieChartData(
-                                      centerSpaceRadius: 25,
-                                      sections: [
-                                        PieChartSectionData(
-                                          value: 0,
-                                          radius: 15,
-                                          color: AppColor.red,
-                                          showTitle: false,
-                                        ),
-                                        PieChartSectionData(
-                                          value: 0,
-                                          radius: 15,
-                                          showTitle: false,
-                                          color: AppColor.warning,
-                                        ),
-                                        PieChartSectionData(
-                                          value: 100,
-                                          radius: 15,
-                                          showTitle: false,
-                                          color: AppColor.green,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      gapWidth8,
-                      Card(
-                        child: SizedBox(
-                          width: 200,
-                          height: 125,
-                          child: Padding(
-                            padding: const EdgeInsets.all(Sizes.size8),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                const Text(
-                                  'Description',
-                                  style: TextStyle(
-                                    fontSize: Sizes.size16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                gapHeight8,
-                                Row(
-                                  children: [
-                                    Container(
-                                      color: AppColor.green,
-                                      width: 10,
-                                      height: 10,
-                                    ),
-                                    gapWidth8,
-                                    const Text('On Track')
-                                  ],
-                                ),
-                                gapHeight8,
-                                Row(
-                                  children: [
-                                    Container(
-                                      color: AppColor.warning,
-                                      width: 10,
-                                      height: 10,
-                                    ),
-                                    gapWidth8,
-                                    const Text('At Risk of Delay')
-                                  ],
-                                ),
-                                gapHeight8,
-                                Row(
-                                  children: [
-                                    Container(
-                                      color: AppColor.red,
-                                      width: 10,
-                                      height: 10,
-                                    ),
-                                    gapWidth8,
-                                    const Text('Delayed')
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   children: [
+                  //     TotalActive(
+                  //       title: 'projects',
+                  //       total: projects.length,
+                  //       onPressed: () {
+                  //         appBloc(context).add(
+                  //           const AppEvent.changeView(
+                  //             mod: Mod.projects(
+                  //               type: ViewType.create(),
+                  //             ),
+                  //           ),
+                  //         );
+                  //       },
+                  //     ),
+                  //     gapWidth8,
+                  //     Card(
+                  //       child: SizedBox(
+                  //         width: 240,
+                  //         height: 125,
+                  //         child: Padding(
+                  //           padding: const EdgeInsets.all(Sizes.size8),
+                  //           child: Column(
+                  //             crossAxisAlignment: CrossAxisAlignment.center,
+                  //             children: [
+                  //               const Text(
+                  //                 'Project status',
+                  //                 style: TextStyle(
+                  //                   fontSize: Sizes.size16,
+                  //                   fontWeight: FontWeight.bold,
+                  //                 ),
+                  //               ),
+                  //               gapHeight16,
+                  //               SizedBox(
+                  //                 height: 50,
+                  //                 child: PieChart(
+                  //                   PieChartData(
+                  //                     centerSpaceRadius: 25,
+                  //                     sections: [
+                  //                       PieChartSectionData(
+                  //                         value: 0,
+                  //                         radius: 15,
+                  //                         color: AppColor.red,
+                  //                         showTitle: false,
+                  //                       ),
+                  //                       PieChartSectionData(
+                  //                         value: 0,
+                  //                         radius: 15,
+                  //                         showTitle: false,
+                  //                         color: AppColor.warning,
+                  //                       ),
+                  //                       PieChartSectionData(
+                  //                         value: 100,
+                  //                         radius: 15,
+                  //                         showTitle: false,
+                  //                         color: AppColor.green,
+                  //                       ),
+                  //                     ],
+                  //                   ),
+                  //                 ),
+                  //               ),
+                  //             ],
+                  //           ),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //     gapWidth8,
+                  //     Card(
+                  //       child: SizedBox(
+                  //         width: 240,
+                  //         height: 125,
+                  //         child: Padding(
+                  //           padding: const EdgeInsets.all(Sizes.size8),
+                  //           child: Column(
+                  //             crossAxisAlignment: CrossAxisAlignment.center,
+                  //             children: [
+                  //               const Text(
+                  //                 'Task status',
+                  //                 style: TextStyle(
+                  //                   fontSize: Sizes.size16,
+                  //                   fontWeight: FontWeight.bold,
+                  //                 ),
+                  //               ),
+                  //               gapHeight16,
+                  //               SizedBox(
+                  //                 height: 50,
+                  //                 child: PieChart(
+                  //                   PieChartData(
+                  //                     centerSpaceRadius: 25,
+                  //                     sections: [
+                  //                       PieChartSectionData(
+                  //                         value: 0,
+                  //                         radius: 15,
+                  //                         color: AppColor.red,
+                  //                         showTitle: false,
+                  //                       ),
+                  //                       PieChartSectionData(
+                  //                         value: 0,
+                  //                         radius: 15,
+                  //                         showTitle: false,
+                  //                         color: AppColor.warning,
+                  //                       ),
+                  //                       PieChartSectionData(
+                  //                         value: 100,
+                  //                         radius: 15,
+                  //                         showTitle: false,
+                  //                         color: AppColor.green,
+                  //                       ),
+                  //                     ],
+                  //                   ),
+                  //                 ),
+                  //               ),
+                  //             ],
+                  //           ),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //     gapWidth8,
+                  //     Card(
+                  //       child: SizedBox(
+                  //         width: 200,
+                  //         height: 125,
+                  //         child: Padding(
+                  //           padding: const EdgeInsets.all(Sizes.size8),
+                  //           child: Column(
+                  //             crossAxisAlignment: CrossAxisAlignment.center,
+                  //             children: [
+                  //               const Text(
+                  //                 'Description',
+                  //                 style: TextStyle(
+                  //                   fontSize: Sizes.size16,
+                  //                   fontWeight: FontWeight.bold,
+                  //                 ),
+                  //               ),
+                  //               gapHeight8,
+                  //               Row(
+                  //                 children: [
+                  //                   Container(
+                  //                     color: AppColor.green,
+                  //                     width: 10,
+                  //                     height: 10,
+                  //                   ),
+                  //                   gapWidth8,
+                  //                   const Text('On Track')
+                  //                 ],
+                  //               ),
+                  //               gapHeight8,
+                  //               Row(
+                  //                 children: [
+                  //                   Container(
+                  //                     color: AppColor.warning,
+                  //                     width: 10,
+                  //                     height: 10,
+                  //                   ),
+                  //                   gapWidth8,
+                  //                   const Text('At Risk of Delay')
+                  //                 ],
+                  //               ),
+                  //               gapHeight8,
+                  //               Row(
+                  //                 children: [
+                  //                   Container(
+                  //                     color: AppColor.red,
+                  //                     width: 10,
+                  //                     height: 10,
+                  //                   ),
+                  //                   gapWidth8,
+                  //                   const Text('Delayed')
+                  //                 ],
+                  //               ),
+                  //             ],
+                  //           ),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                   Expanded(
                     child: Card(
                       child: Padding(

@@ -18,54 +18,51 @@ class TasksListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Card(
-        elevation: 1,
-        child: tasks.isEmpty
-            ? const Center(
-                child: Text(
-                  'has no tasks',
-                ),
-              )
-            : ListView.builder(
-                itemCount: tasks.length,
-                itemBuilder: (context, index) {
-                  var task = tasks[index];
-                  return ListTile(
-                    title: Text(task.title),
-                    subtitle: const LinearProgressIndicator(
-                      value: 0,
-                      color: AppColor.green,
-                    ),
-                    trailing: SizedBox(
-                      width: Sizes.size80,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconButton(
-                            icon: const Icon(
-                              Icons.calendar_month,
-                              color: AppColor.primaryColorSwatch,
-                            ),
-                            onPressed: () {
-                              onCalendar.call(task);
-                            },
-                          ),
-                          IconButton(
-                            icon: const Icon(
-                              Icons.edit,
-                              color: AppColor.warning,
-                            ),
-                            onPressed: () {
-                              onEdit.call(task);
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
+      child: tasks.isEmpty
+          ? const Center(
+              child: Text(
+                'has no tasks',
               ),
-      ),
+            )
+          : ListView.builder(
+              itemCount: tasks.length,
+              itemBuilder: (context, index) {
+                var task = tasks[index];
+                return ListTile(
+                  title: Text(task.title),
+                  subtitle: const LinearProgressIndicator(
+                    value: 0,
+                    color: AppColor.green,
+                  ),
+                  trailing: SizedBox(
+                    width: Sizes.size80,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(
+                          icon: const Icon(
+                            Icons.calendar_month,
+                            color: AppColor.primaryColorSwatch,
+                          ),
+                          onPressed: () {
+                            onCalendar.call(task);
+                          },
+                        ),
+                        IconButton(
+                          icon: const Icon(
+                            Icons.edit,
+                            color: AppColor.warning,
+                          ),
+                          onPressed: () {
+                            onEdit.call(task);
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
     );
   }
 }

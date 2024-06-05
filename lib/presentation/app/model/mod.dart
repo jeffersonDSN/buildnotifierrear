@@ -1,5 +1,7 @@
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
+import 'package:buildnotifierrear/presentation/clients/edit/client_edit.dart';
+import 'package:buildnotifierrear/presentation/clients/overview/clients_overview.dart';
 import 'package:buildnotifierrear/presentation/home/page/home_page.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/project_edit.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/projects_overview.dart';
@@ -50,7 +52,11 @@ extension OnModel on Mod {
         update: (id) => ProjectEdit(type: CrudType.update(id: id)),
       );
     } else if (this is ModClients) {
-      return Container();
+      return asModClients.type.when(
+        overview: () => const ClientsOverview(),
+        create: () => const ClientEdit(),
+        update: (id) => ClientEdit(type: CrudType.update(id: id)),
+      );
     } else if (this is ModUsers) {
       return asModUsers.type.when(
         overview: () => const UsersOverview(),

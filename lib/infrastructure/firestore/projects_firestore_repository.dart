@@ -1,17 +1,45 @@
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
-import 'package:buildnotifierrear/domain/repositories/abs_i_crud_repository.dart';
+
+import 'package:buildnotifierrear/domain/repositories/abs_i_projects_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'firestore_repository.dart';
 
 class ProjectsFirestoreRepository extends FireStoreRepository
-    implements AbsICRUDRepository<Project> {
+    implements AbsIProjectsRepository {
   ProjectsFirestoreRepository({required super.tenantId})
       : super(collectionName: 'projects');
 
   @override
   Future<List<Project>> getAll() async {
     var querySnapshot = await collection.get();
+
+    return querySnapshot.docs
+        .map((DocumentSnapshot document) {
+          var doc = document.data() as Map<String, dynamic>;
+          var result = doc.map((key, value) {
+            if (value is Timestamp) {
+              return MapEntry(key, value.toDate().toString());
+            } else {
+              return MapEntry(key, value);
+            }
+          });
+
+          return {...result, 'id': document.id};
+        })
+        .toList()
+        .map((e) => Project.fromJson(e))
+        .toList();
+  }
+
+  @override
+  Future<List<Project>> getAllByClient(String clientId) async {
+    var querySnapshot = await collection
+        .where(
+          'clientId',
+          isEqualTo: clientId,
+        )
+        .get();
 
     return querySnapshot.docs
         .map((DocumentSnapshot document) {

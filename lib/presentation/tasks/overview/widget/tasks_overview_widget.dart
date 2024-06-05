@@ -22,24 +22,21 @@ class TasksOverviewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(Sizes.size16),
+      padding: const EdgeInsets.all(Sizes.size8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Expanded(
-                child: TasksTotalWidget(
-                  total: tasks.length,
-                  onCreateNewTask: onCreateNewTask,
-                ),
-              ),
-              gapWidth8,
-              const Expanded(
-                child: TasksStatusWidget(),
+              FilledButton.icon(
+                icon: const Icon(Icons.add),
+                label: const Text('Add'),
+                onPressed: onCreateNewTask,
               ),
             ],
           ),
+          const Divider(),
           TasksListWidget(
             tasks: tasks,
             onCalendar: onCalendar,
