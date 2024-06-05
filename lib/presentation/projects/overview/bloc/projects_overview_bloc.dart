@@ -1,5 +1,7 @@
+import 'package:buildnotifierrear/domain/controllers/appointment_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/tasks_controller.dart';
+import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/domain/entities/core/dependent_state_type.dart';
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
 import 'package:buildnotifierrear/domain/entities/task/task.dart';
@@ -16,6 +18,7 @@ class ProjectsOverviewBloc
   ProjectsOverviewBloc({
     required CRUDController<Project> controller,
     required TasksController tasksController,
+    required AppointmentController appointmentController,
   }) : super(const ProjectsOverviewState.empty()) {
     on<ProjectsOverviewEvent>(
       (event, emit) async {
@@ -30,6 +33,9 @@ class ProjectsOverviewBloc
                 projects: projects,
                 tasksOfprojectSelected: [],
                 tasksState: const DependenteStateType.listing(),
+                selectedDay: DateTime.now(),
+                appoitmentOfSelecedDay: [],
+                appoitmentCardsState: const DependenteStateType.listing(),
               ),
             );
 
@@ -46,17 +52,26 @@ class ProjectsOverviewBloc
               state.asLoaded.copyWith(
                 projectSelected: projectSelected,
                 tasksState: const DependenteStateType.loading(),
+                appoitmentCardsState: const DependenteStateType.loading(),
               ),
             );
 
-            var tasks = await tasksController.getAllByProject(
-              projectSelected.id,
-            );
+            var result = await Future.wait([
+              tasksController.getAllByProject(
+                projectSelected.id,
+              ),
+              appointmentController.getByDayAndProject(
+                state.asLoaded.selectedDay,
+                projectSelected.id,
+              ),
+            ]);
 
             emit(
               state.asLoaded.copyWith(
-                tasksOfprojectSelected: tasks,
+                tasksOfprojectSelected: result[0] as List<Task>,
+                appoitmentOfSelecedDay: result[1] as List<Appointment>,
                 tasksState: const DependenteStateType.listing(),
+                appoitmentCardsState: const DependenteStateType.listing(),
               ),
             );
           },

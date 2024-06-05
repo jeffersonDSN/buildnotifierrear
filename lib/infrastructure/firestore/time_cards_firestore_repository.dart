@@ -5,7 +5,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class TimeCardsFireStoreRepository extends FireStoreRepository
     implements AbsITimeCardRepository {
-  TimeCardsFireStoreRepository() : super(collectionName: 'timeCard');
+  TimeCardsFireStoreRepository({required super.tenantId})
+      : super(collectionName: 'timeCard');
 
   @override
   Future<List<TimeCard>> getAll() async {

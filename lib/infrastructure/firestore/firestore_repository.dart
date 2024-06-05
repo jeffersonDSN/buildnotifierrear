@@ -5,5 +5,9 @@ class FireStoreRepository {
 
   FireStoreRepository({
     required String collectionName,
-  }) : collection = FirebaseFirestore.instance.collection(collectionName);
+    required String tenantId,
+  }) : collection = FirebaseFirestore.instance
+            .collection('tenant')
+            .doc(tenantId)
+            .collection(collectionName);
 }

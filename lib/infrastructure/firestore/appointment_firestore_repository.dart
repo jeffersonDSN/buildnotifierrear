@@ -6,7 +6,8 @@ import 'firestore_repository.dart';
 
 class AppointmentFirestoreRepository extends FireStoreRepository
     implements AbsIAppointmentRepository {
-  AppointmentFirestoreRepository() : super(collectionName: 'schedule');
+  AppointmentFirestoreRepository({required super.tenantId})
+      : super(collectionName: 'schedule');
 
   @override
   Future<List<Appointment>> getAll() async {
@@ -117,6 +118,62 @@ class AppointmentFirestoreRepository extends FireStoreRepository
     List<DocumentSnapshot> filteredDocs = combinedDocs.values.where((doc) {
       List<dynamic> assignTo = (doc.data() as Map<String, dynamic>)['assignTo'];
       return assignTo.any((element) => element['userID'] == userId);
+    }).toList();
+
+    return filteredDocs.map((DocumentSnapshot document) {
+      var data = document.data() as Map<String, dynamic>;
+      data['id'] = document.id;
+
+      data = data.map((key, value) {
+        if (value is Timestamp) {
+          return MapEntry(key, value.toDate().toString());
+        }
+        return MapEntry(key, value);
+      });
+
+      return Appointment.fromJson(data);
+    }).toList();
+  }
+
+  @override
+  Future<List<Appointment>> getByDayAndProject(
+    DateTime selectedDay,
+    String projectId,
+  ) async {
+    DateTime startOfDay = DateTime(
+      selectedDay.year,
+      selectedDay.month,
+      selectedDay.day,
+    );
+
+    DateTime endOfDay = startOfDay.add(const Duration(days: 1));
+
+    Query query1 = collection
+        .where('startDateTime', isGreaterThanOrEqualTo: startOfDay)
+        .where('startDateTime', isLessThan: endOfDay);
+
+    Query query2 = collection
+        .where('endDateTime', isGreaterThanOrEqualTo: startOfDay)
+        .where('endDateTime', isLessThan: endOfDay);
+
+    List<QuerySnapshot> querySnapshots = await Future.wait([
+      query1.get(),
+      query2.get(),
+    ]);
+
+    Map<String, DocumentSnapshot> combinedDocs = {};
+
+    for (var doc in querySnapshots[0].docs) {
+      combinedDocs[doc.id] = doc;
+    }
+
+    for (var doc in querySnapshots[1].docs) {
+      combinedDocs[doc.id] = doc;
+    }
+
+    List<DocumentSnapshot> filteredDocs = combinedDocs.values.where((doc) {
+      var id = (doc.data() as Map<String, dynamic>)['projectId'] as String;
+      return id == projectId;
     }).toList();
 
     return filteredDocs.map((DocumentSnapshot document) {

@@ -2,6 +2,7 @@ import 'package:buildnotifierrear/firebase_options.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/lading/page/lading_page.dart';
+import 'package:buildnotifierrear/presentation/sign_in/sign_in.dart';
 import 'package:buildnotifierrear/presentation/theme/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -33,9 +34,12 @@ class MyApp extends StatelessWidget {
       home: BlocBuilder<AppBloc, AppState>(
         bloc: BlocProvider.of<AppBloc>(context),
         builder: (context, state) {
-          return LandingPage(
-            bloc: BlocProvider.of<AppBloc>(context),
-            child: state.mod.view(),
+          return state.when(
+            empty: () => const SignIn(),
+            logged: (user, mod) => LandingPage(
+              bloc: BlocProvider.of<AppBloc>(context),
+              child: mod.view(),
+            ),
           );
         },
       ),

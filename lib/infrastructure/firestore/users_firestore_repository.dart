@@ -1,15 +1,41 @@
 import 'package:buildnotifierrear/domain/entities/user/user.dart';
-import 'package:buildnotifierrear/domain/repositories/abs_i_crud_repository.dart';
-import 'package:buildnotifierrear/infrastructure/firestore/firestore_repository.dart';
+import 'package:buildnotifierrear/domain/repositories/abs_i_users_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class UsersFireStoreRepository extends FireStoreRepository
-    implements AbsICRUDRepository<User> {
-  UsersFireStoreRepository() : super(collectionName: 'users');
+class UsersFireStoreRepository implements AbsIUsersRepository {
+  final CollectionReference collection =
+      FirebaseFirestore.instance.collection('users');
+
+  final String tenant;
+
+  UsersFireStoreRepository({required this.tenant});
+
+  @override
+  Future<User?> getUserByUserNamePassword(
+      String userName, String password) async {
+    var querySnapshot = await collection
+        .where('userName', isEqualTo: userName)
+        .where('password', isEqualTo: password)
+        .get();
+
+    var doc = querySnapshot.docs.firstOrNull;
+    if (doc != null) {
+      var data = doc.data() as Map<String, dynamic>;
+
+      return User.fromJson({...data, 'id': doc.reference.id});
+    }
+
+    return Future(() => null);
+  }
 
   @override
   Future<List<User>> getAll() async {
-    var querySnapshot = await collection.get();
+    var querySnapshot = await collection
+        .where(
+          'tenant',
+          isEqualTo: tenant,
+        )
+        .get();
 
     return querySnapshot.docs
         .map((DocumentSnapshot document) {
@@ -36,6 +62,9 @@ class UsersFireStoreRepository extends FireStoreRepository
       'firstName': value.firstName,
       'lastName': value.lastName,
       'email': value.email,
+      'password': value.password,
+      'userName': value.userName,
+      'tenant': value.tenant.isNotEmpty ? value.tenant : tenant,
     };
 
     await collection.add(user);
@@ -48,6 +77,9 @@ class UsersFireStoreRepository extends FireStoreRepository
       'firstName': value.firstName,
       'lastName': value.lastName,
       'email': value.email,
+      'password': value.password,
+      'userName': value.userName,
+      'tenant': value.tenant.isNotEmpty ? value.tenant : tenant,
     };
 
     await collection.doc(value.id.toString()).update(user);

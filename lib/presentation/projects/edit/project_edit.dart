@@ -2,12 +2,14 @@ import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/projects_firestore_repository.dart';
+import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
+import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/bloc/project_edit_bloc.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/view/project_edit_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ProjectEdit extends StatelessWidget {
+class ProjectEdit extends IView {
   final CrudType? type;
 
   const ProjectEdit({
@@ -20,7 +22,9 @@ class ProjectEdit extends StatelessWidget {
     return BlocProvider<ProjectEditBloc>(
       create: (context) => ProjectEditBloc(
         controller: CRUDController<Project>(
-          repository: ProjectsFirestoreRepository(),
+          repository: ProjectsFirestoreRepository(
+            tenantId: appBloc(context).state.asLogged.user.tenant,
+          ),
         ),
       ),
       child: ProjectEditView(

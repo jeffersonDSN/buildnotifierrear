@@ -43,7 +43,7 @@ class LandingPage extends StatelessWidget {
                     child: ListView(
                       children: [
                         Container(
-                          color: bloc.state.asAppStateLogged.mod.isModHome
+                          color: bloc.state.asLogged.mod.isModHome
                               ? AppColor.backgroundColor
                               : Colors.transparent,
                           child: ListTile(
@@ -51,7 +51,7 @@ class LandingPage extends StatelessWidget {
                             textColor: Colors.white,
                             leading: const Icon(Icons.home),
                             title: const Text('Home'),
-                            selected: bloc.state.asAppStateLogged.mod.isModHome,
+                            selected: bloc.state.asLogged.mod.isModHome,
                             onTap: () {
                               bloc.add(
                                 const AppEvent.changeView(
@@ -62,7 +62,7 @@ class LandingPage extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          color: bloc.state.asAppStateLogged.mod.isModSchedule
+                          color: bloc.state.asLogged.mod.isModSchedule
                               ? AppColor.backgroundColor
                               : Colors.transparent,
                           child: ListTile(
@@ -70,8 +70,7 @@ class LandingPage extends StatelessWidget {
                             textColor: Colors.white,
                             leading: const Icon(Icons.calendar_month),
                             title: const Text('Schedule'),
-                            selected:
-                                bloc.state.asAppStateLogged.mod.isModSchedule,
+                            selected: bloc.state.asLogged.mod.isModSchedule,
                             onTap: () {
                               bloc.add(
                                 const AppEvent.changeView(
@@ -84,7 +83,7 @@ class LandingPage extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          color: bloc.state.asAppStateLogged.mod.isModProjects
+                          color: bloc.state.asLogged.mod.isModProjects
                               ? AppColor.backgroundColor
                               : Colors.transparent,
                           child: ListTile(
@@ -92,8 +91,7 @@ class LandingPage extends StatelessWidget {
                             textColor: Colors.white,
                             leading: const Icon(Icons.business),
                             title: const Text('Projects'),
-                            selected:
-                                bloc.state.asAppStateLogged.mod.isModProjects,
+                            selected: bloc.state.asLogged.mod.isModProjects,
                             onTap: () {
                               bloc.add(
                                 const AppEvent.changeView(
@@ -106,7 +104,7 @@ class LandingPage extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          color: bloc.state.asAppStateLogged.mod.isModClients
+                          color: bloc.state.asLogged.mod.isModClients
                               ? AppColor.backgroundColor
                               : Colors.transparent,
                           child: ListTile(
@@ -114,8 +112,7 @@ class LandingPage extends StatelessWidget {
                             textColor: Colors.white,
                             leading: const Icon(Icons.people),
                             title: const Text('Clients'),
-                            selected:
-                                bloc.state.asAppStateLogged.mod.isModClients,
+                            selected: bloc.state.asLogged.mod.isModClients,
                             onTap: () {
                               bloc.add(
                                 const AppEvent.changeView(
@@ -128,7 +125,7 @@ class LandingPage extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          color: bloc.state.asAppStateLogged.mod.isModUsers
+                          color: bloc.state.asLogged.mod.isModUsers
                               ? AppColor.backgroundColor
                               : Colors.transparent,
                           child: ListTile(
@@ -136,8 +133,7 @@ class LandingPage extends StatelessWidget {
                             textColor: Colors.white,
                             leading: const Icon(Icons.badge),
                             title: const Text('Users'),
-                            selected:
-                                bloc.state.asAppStateLogged.mod.isModUsers,
+                            selected: bloc.state.asLogged.mod.isModUsers,
                             onTap: () {
                               bloc.add(
                                 const AppEvent.changeView(
@@ -160,11 +156,16 @@ class LandingPage extends StatelessWidget {
                     leading: Icon(Icons.settings),
                     title: Text('Settings'),
                   ),
-                  const ListTile(
+                  ListTile(
                     iconColor: Colors.white,
                     textColor: Colors.white,
-                    leading: Icon(Icons.logout),
-                    title: Text('Sign out'),
+                    leading: const Icon(Icons.logout),
+                    title: const Text('Sign out'),
+                    onTap: () {
+                      bloc.add(
+                        const AppEvent.signOut(),
+                      );
+                    },
                   ),
                 ],
               ),

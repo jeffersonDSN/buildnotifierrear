@@ -10,6 +10,9 @@ class ProjectsOverviewState with _$ProjectsOverviewState {
     required List<Task> tasksOfprojectSelected,
     Task? taskSelected,
     required DependenteStateType tasksState,
+    required DateTime selectedDay,
+    required List<Appointment> appoitmentOfSelecedDay,
+    required DependenteStateType appoitmentCardsState,
   }) = ProjectsOverviewEventLoaded;
 }
 

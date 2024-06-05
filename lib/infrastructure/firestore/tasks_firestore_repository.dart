@@ -6,7 +6,8 @@ import 'firestore_repository.dart';
 
 class TasksFirestoreRepository extends FireStoreRepository
     implements AbsITasksRepository {
-  TasksFirestoreRepository() : super(collectionName: 'tasks');
+  TasksFirestoreRepository({required super.tenantId})
+      : super(collectionName: 'tasks');
 
   @override
   Future<List<Task>> getAll() async {

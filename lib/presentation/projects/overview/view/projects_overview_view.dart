@@ -6,6 +6,7 @@ import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
 import 'package:buildnotifierrear/presentation/core/widget/total_active_card.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/bloc/projects_overview_bloc.dart';
+import 'package:buildnotifierrear/presentation/schedule/widget/schedule_widget.dart';
 import 'package:buildnotifierrear/presentation/tasks/edit/widget/task_edit_widget.dart';
 import 'package:buildnotifierrear/presentation/tasks/overview/widget/tasks_overview_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
@@ -13,7 +14,6 @@ import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:table_calendar/table_calendar.dart';
 
 class ProjectsOverviewView extends IView {
   const ProjectsOverviewView({super.key});
@@ -40,6 +40,9 @@ class ProjectsOverviewView extends IView {
               tasksOfprojectSelected,
               taskSelected,
               tasksState,
+              selectedDay,
+              appoitmentOfSelecedDay,
+              appoitmentCardsState,
             ) {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -341,54 +344,22 @@ class ProjectsOverviewView extends IView {
                                                 );
                                               },
                                             ),
-                                            TableCalendar(
-                                              firstDay:
-                                                  DateTime.utc(2010, 10, 16),
-                                              lastDay:
-                                                  DateTime.utc(2030, 3, 14),
-                                              focusedDay: DateTime.now(),
-                                              currentDay: DateTime.now(),
-                                              calendarStyle: CalendarStyle(
-                                                defaultTextStyle:
-                                                    const TextStyle(
-                                                  color: AppColor
-                                                      .primaryColorSwatch,
-                                                ),
-                                                weekendTextStyle:
-                                                    const TextStyle(
-                                                  color: AppColor.warning,
-                                                ),
-                                                selectedDecoration:
-                                                    const BoxDecoration(
-                                                  color: AppColor
-                                                      .primaryColorSwatch,
-                                                  shape: BoxShape.circle,
-                                                ),
-                                                todayDecoration: BoxDecoration(
-                                                  color: AppColor
-                                                      .primaryColorSwatch
-                                                      .shade300,
-                                                  shape: BoxShape.circle,
-                                                ),
-                                              ),
-                                              // selectedDayPredicate: (day) {
-                                              //   // return isSameDay(
-                                              //   //     selectedDay, day);
-                                              // },
-                                              onDaySelected:
-                                                  (selectedDay, focusedDay) {
+                                            ScheduleWidget(
+                                              selectedDay: selectedDay,
+                                              isLoading: appoitmentCardsState
+                                                  .isLoading,
+                                              onChangeSelectedDay: (value) {
                                                 // bloc.add(
-                                                //   ScheduleEvent.load(
-                                                //     selectDay: focusedDay,
+                                                //   UsersOverviewEvent
+                                                //       .updateSelectedDay(
+                                                //     selectedDay: value,
                                                 //   ),
                                                 // );
                                               },
-                                              calendarFormat:
-                                                  CalendarFormat.week,
-                                              headerStyle: const HeaderStyle(
-                                                titleCentered: true,
-                                                formatButtonVisible: false,
-                                              ),
+                                              appointments:
+                                                  appoitmentOfSelecedDay,
+                                              scheduleType:
+                                                  ScheduleType.project,
                                             ),
                                           ],
                                         ),

@@ -766,7 +766,7 @@ mixin _$UsersOverviewState {
             List<TimeCard> timeCardsOfselectedUser,
             DependenteStateType<dynamic> timeCardsState,
             DateTime selectedDay,
-            List<Appointment> appoitmentOfSelecedDayAndUser,
+            List<Appointment> appoitmentOfSelecedDay,
             DependenteStateType<dynamic> appoitmentCardsState)
         loaded,
   }) =>
@@ -781,7 +781,7 @@ mixin _$UsersOverviewState {
             List<TimeCard> timeCardsOfselectedUser,
             DependenteStateType<dynamic> timeCardsState,
             DateTime selectedDay,
-            List<Appointment> appoitmentOfSelecedDayAndUser,
+            List<Appointment> appoitmentOfSelecedDay,
             DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
   }) =>
@@ -796,7 +796,7 @@ mixin _$UsersOverviewState {
             List<TimeCard> timeCardsOfselectedUser,
             DependenteStateType<dynamic> timeCardsState,
             DateTime selectedDay,
-            List<Appointment> appoitmentOfSelecedDayAndUser,
+            List<Appointment> appoitmentOfSelecedDay,
             DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
     required TResult orElse(),
@@ -894,7 +894,7 @@ class _$UsersOverviewStateEmptyImpl implements UsersOverviewStateEmpty {
             List<TimeCard> timeCardsOfselectedUser,
             DependenteStateType<dynamic> timeCardsState,
             DateTime selectedDay,
-            List<Appointment> appoitmentOfSelecedDayAndUser,
+            List<Appointment> appoitmentOfSelecedDay,
             DependenteStateType<dynamic> appoitmentCardsState)
         loaded,
   }) {
@@ -912,7 +912,7 @@ class _$UsersOverviewStateEmptyImpl implements UsersOverviewStateEmpty {
             List<TimeCard> timeCardsOfselectedUser,
             DependenteStateType<dynamic> timeCardsState,
             DateTime selectedDay,
-            List<Appointment> appoitmentOfSelecedDayAndUser,
+            List<Appointment> appoitmentOfSelecedDay,
             DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
   }) {
@@ -930,7 +930,7 @@ class _$UsersOverviewStateEmptyImpl implements UsersOverviewStateEmpty {
             List<TimeCard> timeCardsOfselectedUser,
             DependenteStateType<dynamic> timeCardsState,
             DateTime selectedDay,
-            List<Appointment> appoitmentOfSelecedDayAndUser,
+            List<Appointment> appoitmentOfSelecedDay,
             DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
     required TResult orElse(),
@@ -1030,7 +1030,7 @@ class _$UsersOverviewStateLoadingImpl implements UsersOverviewStateLoading {
             List<TimeCard> timeCardsOfselectedUser,
             DependenteStateType<dynamic> timeCardsState,
             DateTime selectedDay,
-            List<Appointment> appoitmentOfSelecedDayAndUser,
+            List<Appointment> appoitmentOfSelecedDay,
             DependenteStateType<dynamic> appoitmentCardsState)
         loaded,
   }) {
@@ -1048,7 +1048,7 @@ class _$UsersOverviewStateLoadingImpl implements UsersOverviewStateLoading {
             List<TimeCard> timeCardsOfselectedUser,
             DependenteStateType<dynamic> timeCardsState,
             DateTime selectedDay,
-            List<Appointment> appoitmentOfSelecedDayAndUser,
+            List<Appointment> appoitmentOfSelecedDay,
             DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
   }) {
@@ -1066,7 +1066,7 @@ class _$UsersOverviewStateLoadingImpl implements UsersOverviewStateLoading {
             List<TimeCard> timeCardsOfselectedUser,
             DependenteStateType<dynamic> timeCardsState,
             DateTime selectedDay,
-            List<Appointment> appoitmentOfSelecedDayAndUser,
+            List<Appointment> appoitmentOfSelecedDay,
             DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
     required TResult orElse(),
@@ -1129,7 +1129,7 @@ abstract class _$$UsersOverviewStateLoadedImplCopyWith<$Res> {
       List<TimeCard> timeCardsOfselectedUser,
       DependenteStateType<dynamic> timeCardsState,
       DateTime selectedDay,
-      List<Appointment> appoitmentOfSelecedDayAndUser,
+      List<Appointment> appoitmentOfSelecedDay,
       DependenteStateType<dynamic> appoitmentCardsState});
 
   $UserCopyWith<$Res>? get selectedUser;
@@ -1155,7 +1155,7 @@ class __$$UsersOverviewStateLoadedImplCopyWithImpl<$Res>
     Object? timeCardsOfselectedUser = null,
     Object? timeCardsState = null,
     Object? selectedDay = null,
-    Object? appoitmentOfSelecedDayAndUser = null,
+    Object? appoitmentOfSelecedDay = null,
     Object? appoitmentCardsState = null,
   }) {
     return _then(_$UsersOverviewStateLoadedImpl(
@@ -1179,9 +1179,9 @@ class __$$UsersOverviewStateLoadedImplCopyWithImpl<$Res>
           ? _value.selectedDay
           : selectedDay // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      appoitmentOfSelecedDayAndUser: null == appoitmentOfSelecedDayAndUser
-          ? _value._appoitmentOfSelecedDayAndUser
-          : appoitmentOfSelecedDayAndUser // ignore: cast_nullable_to_non_nullable
+      appoitmentOfSelecedDay: null == appoitmentOfSelecedDay
+          ? _value._appoitmentOfSelecedDay
+          : appoitmentOfSelecedDay // ignore: cast_nullable_to_non_nullable
               as List<Appointment>,
       appoitmentCardsState: null == appoitmentCardsState
           ? _value.appoitmentCardsState
@@ -1230,11 +1230,11 @@ class _$UsersOverviewStateLoadedImpl implements UsersOverviewStateLoaded {
       required final List<TimeCard> timeCardsOfselectedUser,
       required this.timeCardsState,
       required this.selectedDay,
-      required final List<Appointment> appoitmentOfSelecedDayAndUser,
+      required final List<Appointment> appoitmentOfSelecedDay,
       required this.appoitmentCardsState})
       : _users = users,
         _timeCardsOfselectedUser = timeCardsOfselectedUser,
-        _appoitmentOfSelecedDayAndUser = appoitmentOfSelecedDayAndUser;
+        _appoitmentOfSelecedDay = appoitmentOfSelecedDay;
 
   final List<User> _users;
   @override
@@ -1259,13 +1259,13 @@ class _$UsersOverviewStateLoadedImpl implements UsersOverviewStateLoaded {
   final DependenteStateType<dynamic> timeCardsState;
   @override
   final DateTime selectedDay;
-  final List<Appointment> _appoitmentOfSelecedDayAndUser;
+  final List<Appointment> _appoitmentOfSelecedDay;
   @override
-  List<Appointment> get appoitmentOfSelecedDayAndUser {
-    if (_appoitmentOfSelecedDayAndUser is EqualUnmodifiableListView)
-      return _appoitmentOfSelecedDayAndUser;
+  List<Appointment> get appoitmentOfSelecedDay {
+    if (_appoitmentOfSelecedDay is EqualUnmodifiableListView)
+      return _appoitmentOfSelecedDay;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_appoitmentOfSelecedDayAndUser);
+    return EqualUnmodifiableListView(_appoitmentOfSelecedDay);
   }
 
   @override
@@ -1273,7 +1273,7 @@ class _$UsersOverviewStateLoadedImpl implements UsersOverviewStateLoaded {
 
   @override
   String toString() {
-    return 'UsersOverviewState.loaded(users: $users, selectedUser: $selectedUser, timeCardsOfselectedUser: $timeCardsOfselectedUser, timeCardsState: $timeCardsState, selectedDay: $selectedDay, appoitmentOfSelecedDayAndUser: $appoitmentOfSelecedDayAndUser, appoitmentCardsState: $appoitmentCardsState)';
+    return 'UsersOverviewState.loaded(users: $users, selectedUser: $selectedUser, timeCardsOfselectedUser: $timeCardsOfselectedUser, timeCardsState: $timeCardsState, selectedDay: $selectedDay, appoitmentOfSelecedDay: $appoitmentOfSelecedDay, appoitmentCardsState: $appoitmentCardsState)';
   }
 
   @override
@@ -1291,8 +1291,7 @@ class _$UsersOverviewStateLoadedImpl implements UsersOverviewStateLoaded {
             (identical(other.selectedDay, selectedDay) ||
                 other.selectedDay == selectedDay) &&
             const DeepCollectionEquality().equals(
-                other._appoitmentOfSelecedDayAndUser,
-                _appoitmentOfSelecedDayAndUser) &&
+                other._appoitmentOfSelecedDay, _appoitmentOfSelecedDay) &&
             (identical(other.appoitmentCardsState, appoitmentCardsState) ||
                 other.appoitmentCardsState == appoitmentCardsState));
   }
@@ -1305,7 +1304,7 @@ class _$UsersOverviewStateLoadedImpl implements UsersOverviewStateLoaded {
       const DeepCollectionEquality().hash(_timeCardsOfselectedUser),
       timeCardsState,
       selectedDay,
-      const DeepCollectionEquality().hash(_appoitmentOfSelecedDayAndUser),
+      const DeepCollectionEquality().hash(_appoitmentOfSelecedDay),
       appoitmentCardsState);
 
   @JsonKey(ignore: true)
@@ -1326,12 +1325,12 @@ class _$UsersOverviewStateLoadedImpl implements UsersOverviewStateLoaded {
             List<TimeCard> timeCardsOfselectedUser,
             DependenteStateType<dynamic> timeCardsState,
             DateTime selectedDay,
-            List<Appointment> appoitmentOfSelecedDayAndUser,
+            List<Appointment> appoitmentOfSelecedDay,
             DependenteStateType<dynamic> appoitmentCardsState)
         loaded,
   }) {
     return loaded(users, selectedUser, timeCardsOfselectedUser, timeCardsState,
-        selectedDay, appoitmentOfSelecedDayAndUser, appoitmentCardsState);
+        selectedDay, appoitmentOfSelecedDay, appoitmentCardsState);
   }
 
   @override
@@ -1345,7 +1344,7 @@ class _$UsersOverviewStateLoadedImpl implements UsersOverviewStateLoaded {
             List<TimeCard> timeCardsOfselectedUser,
             DependenteStateType<dynamic> timeCardsState,
             DateTime selectedDay,
-            List<Appointment> appoitmentOfSelecedDayAndUser,
+            List<Appointment> appoitmentOfSelecedDay,
             DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
   }) {
@@ -1355,7 +1354,7 @@ class _$UsersOverviewStateLoadedImpl implements UsersOverviewStateLoaded {
         timeCardsOfselectedUser,
         timeCardsState,
         selectedDay,
-        appoitmentOfSelecedDayAndUser,
+        appoitmentOfSelecedDay,
         appoitmentCardsState);
   }
 
@@ -1370,7 +1369,7 @@ class _$UsersOverviewStateLoadedImpl implements UsersOverviewStateLoaded {
             List<TimeCard> timeCardsOfselectedUser,
             DependenteStateType<dynamic> timeCardsState,
             DateTime selectedDay,
-            List<Appointment> appoitmentOfSelecedDayAndUser,
+            List<Appointment> appoitmentOfSelecedDay,
             DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
     required TResult orElse(),
@@ -1382,7 +1381,7 @@ class _$UsersOverviewStateLoadedImpl implements UsersOverviewStateLoaded {
           timeCardsOfselectedUser,
           timeCardsState,
           selectedDay,
-          appoitmentOfSelecedDayAndUser,
+          appoitmentOfSelecedDay,
           appoitmentCardsState);
     }
     return orElse();
@@ -1430,7 +1429,7 @@ abstract class UsersOverviewStateLoaded implements UsersOverviewState {
           required final List<TimeCard> timeCardsOfselectedUser,
           required final DependenteStateType<dynamic> timeCardsState,
           required final DateTime selectedDay,
-          required final List<Appointment> appoitmentOfSelecedDayAndUser,
+          required final List<Appointment> appoitmentOfSelecedDay,
           required final DependenteStateType<dynamic> appoitmentCardsState}) =
       _$UsersOverviewStateLoadedImpl;
 
@@ -1439,7 +1438,7 @@ abstract class UsersOverviewStateLoaded implements UsersOverviewState {
   List<TimeCard> get timeCardsOfselectedUser;
   DependenteStateType<dynamic> get timeCardsState;
   DateTime get selectedDay;
-  List<Appointment> get appoitmentOfSelecedDayAndUser;
+  List<Appointment> get appoitmentOfSelecedDay;
   DependenteStateType<dynamic> get appoitmentCardsState;
   @JsonKey(ignore: true)
   _$$UsersOverviewStateLoadedImplCopyWith<_$UsersOverviewStateLoadedImpl>

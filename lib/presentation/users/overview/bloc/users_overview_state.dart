@@ -10,7 +10,7 @@ class UsersOverviewState with _$UsersOverviewState {
     required List<TimeCard> timeCardsOfselectedUser,
     required DependenteStateType timeCardsState,
     required DateTime selectedDay,
-    required List<Appointment> appoitmentOfSelecedDayAndUser,
+    required List<Appointment> appoitmentOfSelecedDay,
     required DependenteStateType appoitmentCardsState,
   }) = UsersOverviewStateLoaded;
 }

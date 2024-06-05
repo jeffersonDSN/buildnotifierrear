@@ -10,6 +10,9 @@ class User with _$User {
     @Default('') String firstName,
     @Default('') String lastName,
     @Default('') String email,
+    @Default('') String tenant,
+    @Default('') String userName,
+    @Default('') String password,
   }) = _User;
 
   factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);

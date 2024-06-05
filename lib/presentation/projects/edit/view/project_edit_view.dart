@@ -1,7 +1,4 @@
-import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
-import 'package:buildnotifierrear/domain/entities/project/project.dart';
-import 'package:buildnotifierrear/infrastructure/firestore/projects_firestore_repository.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
@@ -16,19 +13,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ProjectEditView extends IView {
   final CrudType type;
 
-  ProjectEditView({
+  const ProjectEditView({
     super.key,
     required this.type,
   });
 
-  final ProjectEditBloc bloc = ProjectEditBloc(
-    controller: CRUDController<Project>(
-      repository: ProjectsFirestoreRepository(),
-    ),
-  );
-
   @override
   Widget build(BuildContext context) {
+    var bloc = BlocProvider.of<ProjectEditBloc>(context);
+
     bloc.add(ProjectEditEvent.load(type: type));
 
     return BaseScaffold(

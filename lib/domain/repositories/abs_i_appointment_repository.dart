@@ -8,4 +8,9 @@ abstract interface class AbsIAppointmentRepository
     DateTime selectedDay,
     String userId,
   );
+
+  Future<List<Appointment>> getByDayAndProject(
+    DateTime selectedDay,
+    String userId,
+  );
 }

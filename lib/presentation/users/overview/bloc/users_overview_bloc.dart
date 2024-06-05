@@ -31,7 +31,7 @@ class UsersOverviewBloc extends Bloc<UsersOverviewEvent, UsersOverviewState> {
               timeCardsOfselectedUser: [],
               timeCardsState: const DependenteStateType.listing(),
               selectedDay: DateTime.now(),
-              appoitmentOfSelecedDayAndUser: [],
+              appoitmentOfSelecedDay: [],
               appoitmentCardsState: const DependenteStateType.listing(),
             ),
           );
@@ -66,7 +66,7 @@ class UsersOverviewBloc extends Bloc<UsersOverviewEvent, UsersOverviewState> {
           emit(
             state.asLoaded.copyWith(
               timeCardsOfselectedUser: result[0] as List<TimeCard>,
-              appoitmentOfSelecedDayAndUser: result[1] as List<Appointment>,
+              appoitmentOfSelecedDay: result[1] as List<Appointment>,
               timeCardsState: const DependenteStateType.listing(),
               appoitmentCardsState: const DependenteStateType.listing(),
             ),
@@ -95,7 +95,7 @@ class UsersOverviewBloc extends Bloc<UsersOverviewEvent, UsersOverviewState> {
           emit(
             state.asLoaded.copyWith(
               selectedDay: selectedDay,
-              appoitmentOfSelecedDayAndUser: appointment,
+              appoitmentOfSelecedDay: appointment,
               appoitmentCardsState: const DependenteStateType.listing(),
             ),
           );

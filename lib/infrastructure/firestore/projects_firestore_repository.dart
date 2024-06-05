@@ -6,7 +6,8 @@ import 'firestore_repository.dart';
 
 class ProjectsFirestoreRepository extends FireStoreRepository
     implements AbsICRUDRepository<Project> {
-  ProjectsFirestoreRepository() : super(collectionName: 'project');
+  ProjectsFirestoreRepository({required super.tenantId})
+      : super(collectionName: 'projects');
 
   @override
   Future<List<Project>> getAll() async {

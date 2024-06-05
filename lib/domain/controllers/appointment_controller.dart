@@ -20,4 +20,11 @@ class AppointmentController extends CRUDController<Appointment> {
   ) {
     return _repository.getByDayAndUser(selectedDay, userId);
   }
+
+  Future<List<Appointment>> getByDayAndProject(
+    DateTime selectedDay,
+    String projectId,
+  ) {
+    return _repository.getByDayAndProject(selectedDay, projectId);
+  }
 }

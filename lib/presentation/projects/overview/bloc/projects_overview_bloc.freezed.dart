@@ -996,7 +996,10 @@ mixin _$ProjectsOverviewState {
             Project? projectSelected,
             List<Task> tasksOfprojectSelected,
             Task? taskSelected,
-            DependenteStateType<dynamic> tasksState)
+            DependenteStateType<dynamic> tasksState,
+            DateTime selectedDay,
+            List<Appointment> appoitmentOfSelecedDay,
+            DependenteStateType<dynamic> appoitmentCardsState)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -1009,7 +1012,10 @@ mixin _$ProjectsOverviewState {
             Project? projectSelected,
             List<Task> tasksOfprojectSelected,
             Task? taskSelected,
-            DependenteStateType<dynamic> tasksState)?
+            DependenteStateType<dynamic> tasksState,
+            DateTime selectedDay,
+            List<Appointment> appoitmentOfSelecedDay,
+            DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -1022,7 +1028,10 @@ mixin _$ProjectsOverviewState {
             Project? projectSelected,
             List<Task> tasksOfprojectSelected,
             Task? taskSelected,
-            DependenteStateType<dynamic> tasksState)?
+            DependenteStateType<dynamic> tasksState,
+            DateTime selectedDay,
+            List<Appointment> appoitmentOfSelecedDay,
+            DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -1119,7 +1128,10 @@ class _$ProjectsOverviewEventEmptyImpl implements ProjectsOverviewEventEmpty {
             Project? projectSelected,
             List<Task> tasksOfprojectSelected,
             Task? taskSelected,
-            DependenteStateType<dynamic> tasksState)
+            DependenteStateType<dynamic> tasksState,
+            DateTime selectedDay,
+            List<Appointment> appoitmentOfSelecedDay,
+            DependenteStateType<dynamic> appoitmentCardsState)
         loaded,
   }) {
     return empty();
@@ -1135,7 +1147,10 @@ class _$ProjectsOverviewEventEmptyImpl implements ProjectsOverviewEventEmpty {
             Project? projectSelected,
             List<Task> tasksOfprojectSelected,
             Task? taskSelected,
-            DependenteStateType<dynamic> tasksState)?
+            DependenteStateType<dynamic> tasksState,
+            DateTime selectedDay,
+            List<Appointment> appoitmentOfSelecedDay,
+            DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
   }) {
     return empty?.call();
@@ -1151,7 +1166,10 @@ class _$ProjectsOverviewEventEmptyImpl implements ProjectsOverviewEventEmpty {
             Project? projectSelected,
             List<Task> tasksOfprojectSelected,
             Task? taskSelected,
-            DependenteStateType<dynamic> tasksState)?
+            DependenteStateType<dynamic> tasksState,
+            DateTime selectedDay,
+            List<Appointment> appoitmentOfSelecedDay,
+            DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1250,7 +1268,10 @@ class _$ProjectsOverviewEventLoadingImpl
             Project? projectSelected,
             List<Task> tasksOfprojectSelected,
             Task? taskSelected,
-            DependenteStateType<dynamic> tasksState)
+            DependenteStateType<dynamic> tasksState,
+            DateTime selectedDay,
+            List<Appointment> appoitmentOfSelecedDay,
+            DependenteStateType<dynamic> appoitmentCardsState)
         loaded,
   }) {
     return loading();
@@ -1266,7 +1287,10 @@ class _$ProjectsOverviewEventLoadingImpl
             Project? projectSelected,
             List<Task> tasksOfprojectSelected,
             Task? taskSelected,
-            DependenteStateType<dynamic> tasksState)?
+            DependenteStateType<dynamic> tasksState,
+            DateTime selectedDay,
+            List<Appointment> appoitmentOfSelecedDay,
+            DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
   }) {
     return loading?.call();
@@ -1282,7 +1306,10 @@ class _$ProjectsOverviewEventLoadingImpl
             Project? projectSelected,
             List<Task> tasksOfprojectSelected,
             Task? taskSelected,
-            DependenteStateType<dynamic> tasksState)?
+            DependenteStateType<dynamic> tasksState,
+            DateTime selectedDay,
+            List<Appointment> appoitmentOfSelecedDay,
+            DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1344,11 +1371,15 @@ abstract class _$$ProjectsOverviewEventLoadedImplCopyWith<$Res> {
       Project? projectSelected,
       List<Task> tasksOfprojectSelected,
       Task? taskSelected,
-      DependenteStateType<dynamic> tasksState});
+      DependenteStateType<dynamic> tasksState,
+      DateTime selectedDay,
+      List<Appointment> appoitmentOfSelecedDay,
+      DependenteStateType<dynamic> appoitmentCardsState});
 
   $ProjectCopyWith<$Res>? get projectSelected;
   $TaskCopyWith<$Res>? get taskSelected;
   $DependenteStateTypeCopyWith<dynamic, $Res> get tasksState;
+  $DependenteStateTypeCopyWith<dynamic, $Res> get appoitmentCardsState;
 }
 
 /// @nodoc
@@ -1369,6 +1400,9 @@ class __$$ProjectsOverviewEventLoadedImplCopyWithImpl<$Res>
     Object? tasksOfprojectSelected = null,
     Object? taskSelected = freezed,
     Object? tasksState = null,
+    Object? selectedDay = null,
+    Object? appoitmentOfSelecedDay = null,
+    Object? appoitmentCardsState = null,
   }) {
     return _then(_$ProjectsOverviewEventLoadedImpl(
       projects: null == projects
@@ -1390,6 +1424,18 @@ class __$$ProjectsOverviewEventLoadedImplCopyWithImpl<$Res>
       tasksState: null == tasksState
           ? _value.tasksState
           : tasksState // ignore: cast_nullable_to_non_nullable
+              as DependenteStateType<dynamic>,
+      selectedDay: null == selectedDay
+          ? _value.selectedDay
+          : selectedDay // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      appoitmentOfSelecedDay: null == appoitmentOfSelecedDay
+          ? _value._appoitmentOfSelecedDay
+          : appoitmentOfSelecedDay // ignore: cast_nullable_to_non_nullable
+              as List<Appointment>,
+      appoitmentCardsState: null == appoitmentCardsState
+          ? _value.appoitmentCardsState
+          : appoitmentCardsState // ignore: cast_nullable_to_non_nullable
               as DependenteStateType<dynamic>,
     ));
   }
@@ -1426,6 +1472,15 @@ class __$$ProjectsOverviewEventLoadedImplCopyWithImpl<$Res>
       return _then(_value.copyWith(tasksState: value));
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DependenteStateTypeCopyWith<dynamic, $Res> get appoitmentCardsState {
+    return $DependenteStateTypeCopyWith<dynamic, $Res>(
+        _value.appoitmentCardsState, (value) {
+      return _then(_value.copyWith(appoitmentCardsState: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -1436,9 +1491,13 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
       this.projectSelected,
       required final List<Task> tasksOfprojectSelected,
       this.taskSelected,
-      required this.tasksState})
+      required this.tasksState,
+      required this.selectedDay,
+      required final List<Appointment> appoitmentOfSelecedDay,
+      required this.appoitmentCardsState})
       : _projects = projects,
-        _tasksOfprojectSelected = tasksOfprojectSelected;
+        _tasksOfprojectSelected = tasksOfprojectSelected,
+        _appoitmentOfSelecedDay = appoitmentOfSelecedDay;
 
   final List<Project> _projects;
   @override
@@ -1463,10 +1522,23 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
   final Task? taskSelected;
   @override
   final DependenteStateType<dynamic> tasksState;
+  @override
+  final DateTime selectedDay;
+  final List<Appointment> _appoitmentOfSelecedDay;
+  @override
+  List<Appointment> get appoitmentOfSelecedDay {
+    if (_appoitmentOfSelecedDay is EqualUnmodifiableListView)
+      return _appoitmentOfSelecedDay;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_appoitmentOfSelecedDay);
+  }
+
+  @override
+  final DependenteStateType<dynamic> appoitmentCardsState;
 
   @override
   String toString() {
-    return 'ProjectsOverviewState.loaded(projects: $projects, projectSelected: $projectSelected, tasksOfprojectSelected: $tasksOfprojectSelected, taskSelected: $taskSelected, tasksState: $tasksState)';
+    return 'ProjectsOverviewState.loaded(projects: $projects, projectSelected: $projectSelected, tasksOfprojectSelected: $tasksOfprojectSelected, taskSelected: $taskSelected, tasksState: $tasksState, selectedDay: $selectedDay, appoitmentOfSelecedDay: $appoitmentOfSelecedDay, appoitmentCardsState: $appoitmentCardsState)';
   }
 
   @override
@@ -1482,7 +1554,13 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
             (identical(other.taskSelected, taskSelected) ||
                 other.taskSelected == taskSelected) &&
             (identical(other.tasksState, tasksState) ||
-                other.tasksState == tasksState));
+                other.tasksState == tasksState) &&
+            (identical(other.selectedDay, selectedDay) ||
+                other.selectedDay == selectedDay) &&
+            const DeepCollectionEquality().equals(
+                other._appoitmentOfSelecedDay, _appoitmentOfSelecedDay) &&
+            (identical(other.appoitmentCardsState, appoitmentCardsState) ||
+                other.appoitmentCardsState == appoitmentCardsState));
   }
 
   @override
@@ -1492,7 +1570,10 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
       projectSelected,
       const DeepCollectionEquality().hash(_tasksOfprojectSelected),
       taskSelected,
-      tasksState);
+      tasksState,
+      selectedDay,
+      const DeepCollectionEquality().hash(_appoitmentOfSelecedDay),
+      appoitmentCardsState);
 
   @JsonKey(ignore: true)
   @override
@@ -1511,11 +1592,21 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
             Project? projectSelected,
             List<Task> tasksOfprojectSelected,
             Task? taskSelected,
-            DependenteStateType<dynamic> tasksState)
+            DependenteStateType<dynamic> tasksState,
+            DateTime selectedDay,
+            List<Appointment> appoitmentOfSelecedDay,
+            DependenteStateType<dynamic> appoitmentCardsState)
         loaded,
   }) {
-    return loaded(projects, projectSelected, tasksOfprojectSelected,
-        taskSelected, tasksState);
+    return loaded(
+        projects,
+        projectSelected,
+        tasksOfprojectSelected,
+        taskSelected,
+        tasksState,
+        selectedDay,
+        appoitmentOfSelecedDay,
+        appoitmentCardsState);
   }
 
   @override
@@ -1528,11 +1619,21 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
             Project? projectSelected,
             List<Task> tasksOfprojectSelected,
             Task? taskSelected,
-            DependenteStateType<dynamic> tasksState)?
+            DependenteStateType<dynamic> tasksState,
+            DateTime selectedDay,
+            List<Appointment> appoitmentOfSelecedDay,
+            DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
   }) {
-    return loaded?.call(projects, projectSelected, tasksOfprojectSelected,
-        taskSelected, tasksState);
+    return loaded?.call(
+        projects,
+        projectSelected,
+        tasksOfprojectSelected,
+        taskSelected,
+        tasksState,
+        selectedDay,
+        appoitmentOfSelecedDay,
+        appoitmentCardsState);
   }
 
   @override
@@ -1545,13 +1646,23 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
             Project? projectSelected,
             List<Task> tasksOfprojectSelected,
             Task? taskSelected,
-            DependenteStateType<dynamic> tasksState)?
+            DependenteStateType<dynamic> tasksState,
+            DateTime selectedDay,
+            List<Appointment> appoitmentOfSelecedDay,
+            DependenteStateType<dynamic> appoitmentCardsState)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(projects, projectSelected, tasksOfprojectSelected,
-          taskSelected, tasksState);
+      return loaded(
+          projects,
+          projectSelected,
+          tasksOfprojectSelected,
+          taskSelected,
+          tasksState,
+          selectedDay,
+          appoitmentOfSelecedDay,
+          appoitmentCardsState);
     }
     return orElse();
   }
@@ -1597,7 +1708,10 @@ abstract class ProjectsOverviewEventLoaded implements ProjectsOverviewState {
           final Project? projectSelected,
           required final List<Task> tasksOfprojectSelected,
           final Task? taskSelected,
-          required final DependenteStateType<dynamic> tasksState}) =
+          required final DependenteStateType<dynamic> tasksState,
+          required final DateTime selectedDay,
+          required final List<Appointment> appoitmentOfSelecedDay,
+          required final DependenteStateType<dynamic> appoitmentCardsState}) =
       _$ProjectsOverviewEventLoadedImpl;
 
   List<Project> get projects;
@@ -1605,6 +1719,9 @@ abstract class ProjectsOverviewEventLoaded implements ProjectsOverviewState {
   List<Task> get tasksOfprojectSelected;
   Task? get taskSelected;
   DependenteStateType<dynamic> get tasksState;
+  DateTime get selectedDay;
+  List<Appointment> get appoitmentOfSelecedDay;
+  DependenteStateType<dynamic> get appoitmentCardsState;
   @JsonKey(ignore: true)
   _$$ProjectsOverviewEventLoadedImplCopyWith<_$ProjectsOverviewEventLoadedImpl>
       get copyWith => throw _privateConstructorUsedError;
