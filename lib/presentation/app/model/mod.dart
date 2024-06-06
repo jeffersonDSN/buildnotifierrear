@@ -5,6 +5,7 @@ import 'package:buildnotifierrear/presentation/clients/overview/clients_overview
 import 'package:buildnotifierrear/presentation/home/page/home_page.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/project_edit.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/projects_overview.dart';
+import 'package:buildnotifierrear/presentation/schedule/overview/schedule_overview.dart';
 import 'package:buildnotifierrear/presentation/users/edit/user_edit.dart';
 import 'package:buildnotifierrear/presentation/users/overview/users_overvire.dart';
 import 'package:flutter/material.dart';
@@ -43,28 +44,24 @@ extension OnModel on Mod {
   ModUsers get asModUsers => this as ModUsers;
 
   Widget view() {
-    if (this is ModSchedule) {
-      return Container();
-    } else if (this is ModProjects) {
-      return asModProjects.type.when(
+    return when(
+      home: () => const HomeView(),
+      schedule: (viewType) => const ScheduleOverview(),
+      projects: (viewType) => viewType.when(
         overview: () => const ProjectsOverview(),
         create: () => const ProjectEdit(),
         update: (id) => ProjectEdit(type: CrudType.update(id: id)),
-      );
-    } else if (this is ModClients) {
-      return asModClients.type.when(
+      ),
+      clients: (viewType) => viewType.when(
         overview: () => const ClientsOverview(),
         create: () => const ClientEdit(),
         update: (id) => ClientEdit(type: CrudType.update(id: id)),
-      );
-    } else if (this is ModUsers) {
-      return asModUsers.type.when(
+      ),
+      users: (viewType) => viewType.when(
         overview: () => const UsersOverview(),
         create: () => const UserEdit(),
         update: (id) => UserEdit(type: CrudType.update(id: id)),
-      );
-    } else {
-      return const HomeView();
-    }
+      ),
+    );
   }
 }

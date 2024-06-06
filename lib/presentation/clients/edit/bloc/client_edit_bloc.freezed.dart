@@ -1191,6 +1191,7 @@ abstract class _$$ClientEditStateLoadedImplCopyWith<$Res> {
   $Res call({CrudType type, Client client});
 
   $CrudTypeCopyWith<$Res> get type;
+  $ClientCopyWith<$Res> get client;
 }
 
 /// @nodoc
@@ -1205,14 +1206,14 @@ class __$$ClientEditStateLoadedImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? type = null,
-    Object? client = freezed,
+    Object? client = null,
   }) {
     return _then(_$ClientEditStateLoadedImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as CrudType,
-      client: freezed == client
+      client: null == client
           ? _value.client
           : client // ignore: cast_nullable_to_non_nullable
               as Client,
@@ -1224,6 +1225,14 @@ class __$$ClientEditStateLoadedImplCopyWithImpl<$Res>
   $CrudTypeCopyWith<$Res> get type {
     return $CrudTypeCopyWith<$Res>(_value.type, (value) {
       return _then(_value.copyWith(type: value));
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ClientCopyWith<$Res> get client {
+    return $ClientCopyWith<$Res>(_value.client, (value) {
+      return _then(_value.copyWith(client: value));
     });
   }
 }
@@ -1249,12 +1258,11 @@ class _$ClientEditStateLoadedImpl implements ClientEditStateLoaded {
         (other.runtimeType == runtimeType &&
             other is _$ClientEditStateLoadedImpl &&
             (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality().equals(other.client, client));
+            (identical(other.client, client) || other.client == client));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, type, const DeepCollectionEquality().hash(client));
+  int get hashCode => Object.hash(runtimeType, type, client);
 
   @JsonKey(ignore: true)
   @override

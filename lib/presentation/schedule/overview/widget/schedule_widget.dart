@@ -1,21 +1,26 @@
 import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
-import 'package:buildnotifierrear/presentation/schedule/widget/appointments_project_list_widget.dart';
-import 'package:buildnotifierrear/presentation/schedule/widget/appointments_user_list_widget.dart';
+import 'package:buildnotifierrear/presentation/schedule/overview/widget/appointments_general_list_widget.dart';
+import 'package:buildnotifierrear/presentation/schedule/overview/widget/appointments_project_list_widget.dart';
+import 'package:buildnotifierrear/presentation/schedule/overview/widget/appointments_user_list_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 enum ScheduleType {
+  general,
   user,
   project;
 }
 
 extension OnScheduleType on ScheduleType {
   T when<T extends Object?>({
+    required T Function() gereral,
     required T Function() user,
     required T Function() project,
   }) {
     switch (this) {
+      case ScheduleType.general:
+        return gereral();
       case ScheduleType.user:
         return user();
       case ScheduleType.project:
@@ -101,6 +106,9 @@ class ScheduleWidget extends StatelessWidget {
                       ),
                     )
                   : scheduleType.when(
+                      gereral: () => AppointmentsGeneralListdWidget(
+                        appointments: appointments,
+                      ),
                       user: () => AppointmentsUserListdWidget(
                         appointments: appointments,
                       ),

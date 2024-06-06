@@ -81,7 +81,7 @@ class SignInView extends IView {
                       decoration: const InputDecoration(
                         label: Text('Password'),
                         prefixIcon: Icon(
-                          Icons.person,
+                          Icons.lock,
                         ),
                       ),
                       initialValue: state.password,
