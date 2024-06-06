@@ -28,24 +28,13 @@ class AppointmentsUserListdWidget extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  const Text(
-                    'Title:',
-                    style: TextStyle(
-                      color: AppColor.primaryColorSwatch,
-                    ),
-                  ),
-                  gapWidth4,
-                  Text(appointment.title),
-                ],
-              ),
-              Text(
-                '${hourFormat.format(appointment.startDateTime)} - ${hourFormat.format(appointment.endDateTime)}',
-                style: const TextStyle(
-                  fontSize: Sizes.size16,
-                  fontWeight: FontWeight.bold,
+              Expanded(
+                child: Text(
+                  '${hourFormat.format(appointment.startDateTime)} - ${hourFormat.format(appointment.endDateTime)}',
                 ),
+              ),
+              Expanded(
+                child: Text(appointment.title),
               ),
             ],
           ),
@@ -69,15 +58,11 @@ class AppointmentsUserListdWidget extends StatelessWidget {
                         'Project:',
                         style: TextStyle(
                           color: AppColor.primaryColorSwatch,
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       gapWidth4,
                       Text(
                         'N/A',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
                       ),
                     ],
                   ),
@@ -87,15 +72,11 @@ class AppointmentsUserListdWidget extends StatelessWidget {
                         'Task:',
                         style: TextStyle(
                           color: AppColor.primaryColorSwatch,
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       gapWidth4,
                       Text(
                         'N/A',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
                       ),
                     ],
                   ),
@@ -116,10 +97,6 @@ class AppointmentsUserListdWidget extends StatelessWidget {
                           : 'N/A',
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
-                      style: const TextStyle(
-                        fontSize: Sizes.size12,
-                        fontWeight: FontWeight.bold,
-                      ),
                     ),
                   ),
                 ],

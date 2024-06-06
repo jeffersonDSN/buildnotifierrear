@@ -2,7 +2,7 @@ import 'package:buildnotifierrear/domain/controllers/appointment_controller.dart
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/time_cards_controller.dart';
 import 'package:buildnotifierrear/domain/entities/user/user.dart';
-import 'package:buildnotifierrear/infrastructure/firestore/appointment_firestore_repository.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/appointments_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/time_cards_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/users_firestore_repository.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
@@ -32,7 +32,7 @@ class UsersOverview extends IView {
           ),
         ),
         appointmentController: AppointmentController(
-          repository: AppointmentFirestoreRepository(
+          repository: AppointmentsFirestoreRepository(
             tenantId: tenantId,
           ),
         ),

@@ -4,9 +4,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'firestore_repository.dart';
 
-class AppointmentFirestoreRepository extends FireStoreRepository
+class AppointmentsFirestoreRepository extends FireStoreRepository
     implements AbsIAppointmentRepository {
-  AppointmentFirestoreRepository({required super.tenantId})
+  AppointmentsFirestoreRepository({required super.tenantId})
       : super(collectionName: 'schedule');
 
   @override
@@ -117,7 +117,7 @@ class AppointmentFirestoreRepository extends FireStoreRepository
 
     List<DocumentSnapshot> filteredDocs = combinedDocs.values.where((doc) {
       List<dynamic> assignTo = (doc.data() as Map<String, dynamic>)['assignTo'];
-      return assignTo.any((element) => element['userID'] == userId);
+      return assignTo.any((element) => element['id'] == userId);
     }).toList();
 
     return filteredDocs.map((DocumentSnapshot document) {

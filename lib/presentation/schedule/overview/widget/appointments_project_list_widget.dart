@@ -28,24 +28,13 @@ class AppointmentsProjectListdWidget extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  const Text(
-                    'Title:',
-                    style: TextStyle(
-                      color: AppColor.primaryColorSwatch,
-                    ),
-                  ),
-                  gapWidth4,
-                  Text(appointment.title),
-                ],
-              ),
-              Text(
-                '${hourFormat.format(appointment.startDateTime)} - ${hourFormat.format(appointment.endDateTime)}',
-                style: const TextStyle(
-                  fontSize: Sizes.size16,
-                  fontWeight: FontWeight.bold,
+              Expanded(
+                child: Text(
+                  '${hourFormat.format(appointment.startDateTime)} - ${hourFormat.format(appointment.endDateTime)}',
                 ),
+              ),
+              Expanded(
+                child: Text(appointment.title),
               ),
             ],
           ),
@@ -69,15 +58,11 @@ class AppointmentsProjectListdWidget extends StatelessWidget {
                         'Task:',
                         style: TextStyle(
                           color: AppColor.primaryColorSwatch,
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       gapWidth4,
                       Text(
                         'N/A',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
                       ),
                     ],
                   ),
@@ -91,7 +76,6 @@ class AppointmentsProjectListdWidget extends StatelessWidget {
                     'Assign to:',
                     style: TextStyle(
                       color: AppColor.primaryColorSwatch,
-                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   gapWidth8,
@@ -106,9 +90,7 @@ class AppointmentsProjectListdWidget extends StatelessWidget {
                           .toString()
                           .replaceAll('(', '')
                           .replaceAll(')', ''),
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: const TextStyle(),
                     ),
                   ),
                 ],

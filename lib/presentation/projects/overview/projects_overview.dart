@@ -2,7 +2,7 @@ import 'package:buildnotifierrear/domain/controllers/appointment_controller.dart
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/tasks_controller.dart';
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
-import 'package:buildnotifierrear/infrastructure/firestore/appointment_firestore_repository.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/appointments_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/projects_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/tasks_firestore_repository.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
@@ -32,7 +32,7 @@ class ProjectsOverview extends IView {
           ),
         ),
         appointmentController: AppointmentController(
-          repository: AppointmentFirestoreRepository(
+          repository: AppointmentsFirestoreRepository(
             tenantId: tenantId,
           ),
         ),

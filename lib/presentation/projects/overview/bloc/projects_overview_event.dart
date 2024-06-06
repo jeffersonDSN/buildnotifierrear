@@ -4,17 +4,21 @@ part of 'projects_overview_bloc.dart';
 class ProjectsOverviewEvent with _$ProjectsOverviewEvent {
   const factory ProjectsOverviewEvent.load() = ProjectsOverviewEventLoad;
 
-  const factory ProjectsOverviewEvent.changeProjectSelected({
-    required Project projectSelected,
+  const factory ProjectsOverviewEvent.changeSelectedProject({
+    required Project selectedProject,
   }) = ProjectsOverviewEventChangeProjectSelected;
 
-  const factory ProjectsOverviewEvent.updateTasksState({
+  const factory ProjectsOverviewEvent.changeTasksState({
     required DependenteStateType tasksState,
-  }) = ProjectsOverviewEventUpdateTasksState;
+  }) = ProjectsOverviewEventChangeTasksState;
 
-  const factory ProjectsOverviewEvent.updateTitleTaskSelected({
+  const factory ProjectsOverviewEvent.changeTitleTaskSelected({
     required String value,
-  }) = ProjectsOverviewEventUpdateTitleTaskSelected;
+  }) = ProjectsOverviewEventChangeTitleTaskSelected;
+
+  const factory ProjectsOverviewEvent.changeSelectedDay({
+    required DateTime selectedDay,
+  }) = ProjectsOverviewEventSelectedDay;
 
   const factory ProjectsOverviewEvent.saveTaskSelected({
     required VoidCallback callback,

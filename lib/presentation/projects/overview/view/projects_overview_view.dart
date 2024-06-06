@@ -51,7 +51,7 @@ class ProjectsOverviewView extends IView {
             ),
             loaded: (
               projects,
-              projectSelected,
+              selectedProject,
               tasksOfprojectSelected,
               taskSelected,
               tasksState,
@@ -251,7 +251,7 @@ class ProjectsOverviewView extends IView {
                                 itemBuilder: (context, index) {
                                   var project = projects[index];
                                   return ListTile(
-                                    selected: project == projectSelected,
+                                    selected: project == selectedProject,
                                     title: Text(project.name),
                                     subtitle: const LinearProgressIndicator(
                                       value: 0,
@@ -280,7 +280,7 @@ class ProjectsOverviewView extends IView {
                                               );
                                             },
                                           ),
-                                          if (projectSelected == project)
+                                          if (selectedProject == project)
                                             const Icon(
                                               Icons.arrow_forward,
                                               color:
@@ -292,8 +292,8 @@ class ProjectsOverviewView extends IView {
                                     onTap: () {
                                       bloc.add(
                                         ProjectsOverviewEvent
-                                            .changeProjectSelected(
-                                          projectSelected: project,
+                                            .changeSelectedProject(
+                                          selectedProject: project,
                                         ),
                                       );
                                     },
@@ -339,7 +339,7 @@ class ProjectsOverviewView extends IView {
                                               onEdit: (task) {
                                                 bloc.add(
                                                   ProjectsOverviewEvent
-                                                      .updateTasksState(
+                                                      .changeTasksState(
                                                     tasksState:
                                                         DependenteStateType
                                                             .updating(
@@ -351,7 +351,7 @@ class ProjectsOverviewView extends IView {
                                               onCreateNewTask: () {
                                                 bloc.add(
                                                   const ProjectsOverviewEvent
-                                                      .updateTasksState(
+                                                      .changeTasksState(
                                                     tasksState:
                                                         DependenteStateType
                                                             .creating(),
@@ -364,12 +364,12 @@ class ProjectsOverviewView extends IView {
                                               isLoading: appoitmentCardsState
                                                   .isLoading,
                                               onChangeSelectedDay: (value) {
-                                                // bloc.add(
-                                                //   UsersOverviewEvent
-                                                //       .updateSelectedDay(
-                                                //     selectedDay: value,
-                                                //   ),
-                                                // );
+                                                bloc.add(
+                                                  ProjectsOverviewEvent
+                                                      .changeSelectedDay(
+                                                    selectedDay: value,
+                                                  ),
+                                                );
                                               },
                                               appointments:
                                                   appoitmentOfSelecedDay,
@@ -392,14 +392,14 @@ class ProjectsOverviewView extends IView {
                                     onTitleChanged: (value) {
                                       bloc.add(
                                         ProjectsOverviewEvent
-                                            .updateTitleTaskSelected(
+                                            .changeTitleTaskSelected(
                                                 value: value),
                                       );
                                     },
                                     onCancel: () {
                                       bloc.add(
                                         const ProjectsOverviewEvent
-                                            .updateTasksState(
+                                            .changeTasksState(
                                           tasksState:
                                               DependenteStateType.listing(),
                                         ),
@@ -411,7 +411,7 @@ class ProjectsOverviewView extends IView {
                                           callback: () {
                                             bloc.add(
                                               const ProjectsOverviewEvent
-                                                  .updateTasksState(
+                                                  .changeTasksState(
                                                 tasksState: DependenteStateType
                                                     .listing(),
                                               ),
@@ -429,14 +429,14 @@ class ProjectsOverviewView extends IView {
                                     onTitleChanged: (value) {
                                       bloc.add(
                                         ProjectsOverviewEvent
-                                            .updateTitleTaskSelected(
+                                            .changeTitleTaskSelected(
                                                 value: value),
                                       );
                                     },
                                     onCancel: () {
                                       bloc.add(
                                         const ProjectsOverviewEvent
-                                            .updateTasksState(
+                                            .changeTasksState(
                                           tasksState:
                                               DependenteStateType.listing(),
                                         ),
@@ -448,7 +448,7 @@ class ProjectsOverviewView extends IView {
                                           callback: () {
                                             bloc.add(
                                               const ProjectsOverviewEvent
-                                                  .updateTasksState(
+                                                  .changeTasksState(
                                                 tasksState: DependenteStateType
                                                     .listing(),
                                               ),

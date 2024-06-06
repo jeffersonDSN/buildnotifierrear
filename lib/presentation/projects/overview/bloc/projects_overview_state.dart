@@ -6,7 +6,7 @@ class ProjectsOverviewState with _$ProjectsOverviewState {
   const factory ProjectsOverviewState.loading() = ProjectsOverviewEventLoading;
   const factory ProjectsOverviewState.loaded({
     required List<Project> projects,
-    Project? projectSelected,
+    Project? selectedProject,
     required List<Task> tasksOfprojectSelected,
     Task? taskSelected,
     required DependenteStateType tasksState,

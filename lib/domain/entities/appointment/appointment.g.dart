@@ -9,7 +9,7 @@ part of 'appointment.dart';
 _$AppointmentUserImpl _$$AppointmentUserImplFromJson(
         Map<String, dynamic> json) =>
     _$AppointmentUserImpl(
-      id: json['userID'] as String,
+      id: json['id'] as String,
       firstName: json['firstName'] as String,
       lastName: json['lastName'] as String,
     );
@@ -17,7 +17,7 @@ _$AppointmentUserImpl _$$AppointmentUserImplFromJson(
 Map<String, dynamic> _$$AppointmentUserImplToJson(
         _$AppointmentUserImpl instance) =>
     <String, dynamic>{
-      'userID': instance.id,
+      'id': instance.id,
       'firstName': instance.firstName,
       'lastName': instance.lastName,
     };

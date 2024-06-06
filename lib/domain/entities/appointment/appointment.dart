@@ -6,7 +6,7 @@ part 'appointment.g.dart';
 @freezed
 class AppointmentUser with _$AppointmentUser {
   const factory AppointmentUser({
-    @JsonKey(name: 'userID') required String id,
+    required String id,
     required String firstName,
     required String lastName,
   }) = _AppointmentUser;

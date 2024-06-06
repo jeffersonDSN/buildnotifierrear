@@ -28,59 +28,48 @@ class AppointmentsGeneralListdWidget extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  const Text(
-                    'Title:',
-                    style: TextStyle(
-                      color: AppColor.primaryColorSwatch,
+              SizedBox(
+                width: Sizes.size600,
+                child: Row(
+                  children: [
+                    Text(
+                      '${hourFormat.format(appointment.startDateTime)} - ${hourFormat.format(appointment.endDateTime)}',
                     ),
-                  ),
-                  gapWidth4,
-                  Text(appointment.title),
-                ],
+                    gapWidth24,
+                    Text(appointment.title),
+                  ],
+                ),
               ),
-              const Row(
-                children: [
-                  Text(
-                    'Project:',
-                    style: TextStyle(
-                      color: AppColor.primaryColorSwatch,
-                      fontWeight: FontWeight.bold,
+              const Expanded(
+                child: Row(
+                  children: [
+                    Text(
+                      'Project:',
+                      style: TextStyle(
+                        color: AppColor.primaryColorSwatch,
+                      ),
                     ),
-                  ),
-                  gapWidth4,
-                  Text(
-                    'N/A',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                    gapWidth4,
+                    Text(
+                      'N/A',
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              const Row(
-                children: [
-                  Text(
-                    'Task:',
-                    style: TextStyle(
-                      color: AppColor.primaryColorSwatch,
-                      fontWeight: FontWeight.bold,
+              const Expanded(
+                child: Row(
+                  children: [
+                    Text(
+                      'Task:',
+                      style: TextStyle(
+                        color: AppColor.primaryColorSwatch,
+                      ),
                     ),
-                  ),
-                  gapWidth4,
-                  Text(
-                    'N/A',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                    gapWidth4,
+                    Text(
+                      'N/A',
                     ),
-                  ),
-                ],
-              ),
-              Text(
-                '${hourFormat.format(appointment.startDateTime)} - ${hourFormat.format(appointment.endDateTime)}',
-                style: const TextStyle(
-                  fontSize: Sizes.size16,
-                  fontWeight: FontWeight.bold,
+                  ],
                 ),
               ),
             ],
@@ -92,31 +81,57 @@ class AppointmentsGeneralListdWidget extends StatelessWidget {
             ),
             onPressed: () {},
           ),
-          subtitle: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          subtitle: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              gapHeight8,
-              Row(
-                children: [
-                  const Icon(
-                    Icons.location_on,
-                    color: AppColor.primaryColorSwatch,
-                  ),
-                  gapWidth4,
-                  Expanded(
-                    child: Text(
-                      appointment.location.isNotEmpty
-                          ? appointment.location
-                          : 'N/A',
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                      style: const TextStyle(
-                        fontSize: Sizes.size12,
-                        fontWeight: FontWeight.bold,
+              SizedBox(
+                width: Sizes.size600,
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    const Text(
+                      'Assign to:',
+                      style: TextStyle(
+                        color: AppColor.primaryColorSwatch,
                       ),
                     ),
-                  ),
-                ],
+                    gapWidth8,
+                    Expanded(
+                      child: Text(
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        appointment.assignTo
+                            .map((e) {
+                              return ' ${e.firstName} ${e.lastName}';
+                            })
+                            .toString()
+                            .replaceAll('(', '')
+                            .replaceAll(')', ''),
+                        style: const TextStyle(),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Row(
+                  children: [
+                    const Icon(
+                      Icons.location_on,
+                      color: AppColor.primaryColorSwatch,
+                    ),
+                    gapWidth4,
+                    Expanded(
+                      child: Text(
+                        appointment.location.isNotEmpty
+                            ? appointment.location
+                            : 'N/A',
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

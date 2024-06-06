@@ -3,6 +3,7 @@ import 'package:buildnotifierrear/presentation/schedule/overview/widget/appointm
 import 'package:buildnotifierrear/presentation/schedule/overview/widget/appointments_project_list_widget.dart';
 import 'package:buildnotifierrear/presentation/schedule/overview/widget/appointments_user_list_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
+import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -83,15 +84,18 @@ class ScheduleWidget extends StatelessWidget {
           ),
         ),
         const Divider(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            FilledButton.icon(
-              icon: const Icon(Icons.add),
-              label: const Text('Add'),
-              onPressed: () {},
-            )
-          ],
+        Padding(
+          padding: const EdgeInsets.all(Sizes.size8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              FilledButton.icon(
+                icon: const Icon(Icons.add),
+                label: const Text('Add'),
+                onPressed: () {},
+              )
+            ],
+          ),
         ),
         const Divider(),
         Expanded(

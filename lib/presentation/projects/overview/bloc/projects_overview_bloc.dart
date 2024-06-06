@@ -41,16 +41,16 @@ class ProjectsOverviewBloc
 
             if (projects.isNotEmpty) {
               add(
-                ProjectsOverviewEvent.changeProjectSelected(
-                  projectSelected: projects[0],
+                ProjectsOverviewEvent.changeSelectedProject(
+                  selectedProject: projects[0],
                 ),
               );
             }
           },
-          changeProjectSelected: (projectSelected) async {
+          changeSelectedProject: (selectedProject) async {
             emit(
               state.asLoaded.copyWith(
-                projectSelected: projectSelected,
+                selectedProject: selectedProject,
                 tasksState: const DependenteStateType.loading(),
                 appoitmentCardsState: const DependenteStateType.loading(),
               ),
@@ -58,11 +58,11 @@ class ProjectsOverviewBloc
 
             var result = await Future.wait([
               tasksController.getAllByProject(
-                projectSelected.id,
+                selectedProject.id,
               ),
               appointmentController.getByDayAndProject(
                 state.asLoaded.selectedDay,
-                projectSelected.id,
+                selectedProject.id,
               ),
             ]);
 
@@ -75,7 +75,7 @@ class ProjectsOverviewBloc
               ),
             );
           },
-          updateTasksState: (tasksState) {
+          changeTasksState: (tasksState) {
             tasksState.maybeWhen(
               orElse: () {
                 emit(
@@ -89,7 +89,7 @@ class ProjectsOverviewBloc
                   state.asLoaded.copyWith(
                     tasksState: tasksState,
                     taskSelected: Task(
-                      productId: state.asLoaded.projectSelected!.id,
+                      productId: state.asLoaded.selectedProject!.id,
                     ),
                   ),
                 );
@@ -104,12 +104,32 @@ class ProjectsOverviewBloc
               },
             );
           },
-          updateTitleTaskSelected: (value) {
+          changeTitleTaskSelected: (value) {
             emit(
               state.asLoaded.copyWith(
                 taskSelected: state.asLoaded.taskSelected?.copyWith(
                   title: value,
                 ),
+              ),
+            );
+          },
+          changeSelectedDay: (selectedDay) async {
+            emit(
+              state.asLoaded.copyWith(
+                selectedDay: selectedDay,
+                appoitmentCardsState: const DependenteStateType.loading(),
+              ),
+            );
+
+            var appointments = await appointmentController.getByDayAndProject(
+              selectedDay,
+              state.asLoaded.selectedProject!.id,
+            );
+
+            emit(
+              state.asLoaded.copyWith(
+                appoitmentOfSelecedDay: appointments,
+                appoitmentCardsState: const DependenteStateType.listing(),
               ),
             );
           },
@@ -125,7 +145,7 @@ class ProjectsOverviewBloc
             );
 
             var tasks = await tasksController.getAllByProject(
-              state.asLoaded.projectSelected!.id,
+              state.asLoaded.selectedProject!.id,
             );
 
             emit(

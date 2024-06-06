@@ -20,7 +20,6 @@ AppointmentUser _$AppointmentUserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppointmentUser {
-  @JsonKey(name: 'userID')
   String get id => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
@@ -37,8 +36,7 @@ abstract class $AppointmentUserCopyWith<$Res> {
           AppointmentUser value, $Res Function(AppointmentUser) then) =
       _$AppointmentUserCopyWithImpl<$Res, AppointmentUser>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'userID') String id, String firstName, String lastName});
+  $Res call({String id, String firstName, String lastName});
 }
 
 /// @nodoc
@@ -83,8 +81,7 @@ abstract class _$$AppointmentUserImplCopyWith<$Res>
       __$$AppointmentUserImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'userID') String id, String firstName, String lastName});
+  $Res call({String id, String firstName, String lastName});
 }
 
 /// @nodoc
@@ -123,15 +120,12 @@ class __$$AppointmentUserImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppointmentUserImpl implements _AppointmentUser {
   const _$AppointmentUserImpl(
-      {@JsonKey(name: 'userID') required this.id,
-      required this.firstName,
-      required this.lastName});
+      {required this.id, required this.firstName, required this.lastName});
 
   factory _$AppointmentUserImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppointmentUserImplFromJson(json);
 
   @override
-  @JsonKey(name: 'userID')
   final String id;
   @override
   final String firstName;
@@ -176,7 +170,7 @@ class _$AppointmentUserImpl implements _AppointmentUser {
 
 abstract class _AppointmentUser implements AppointmentUser {
   const factory _AppointmentUser(
-      {@JsonKey(name: 'userID') required final String id,
+      {required final String id,
       required final String firstName,
       required final String lastName}) = _$AppointmentUserImpl;
 
@@ -184,7 +178,6 @@ abstract class _AppointmentUser implements AppointmentUser {
       _$AppointmentUserImpl.fromJson;
 
   @override
-  @JsonKey(name: 'userID')
   String get id;
   @override
   String get firstName;

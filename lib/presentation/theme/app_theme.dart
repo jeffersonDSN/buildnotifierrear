@@ -56,14 +56,12 @@ CardTheme get _cardTheme => const CardTheme(
 TextTheme get _textTheme => const TextTheme(
       titleMedium: TextStyle(
         fontSize: 16,
-        fontWeight: FontWeight.bold,
       ),
     );
 
 ListTileThemeData get _listTileTheme => const ListTileThemeData(
       titleTextStyle: TextStyle(
         fontSize: 16,
-        fontWeight: FontWeight.bold,
       ),
       iconColor: Colors.black,
       selectedColor: Colors.black,
