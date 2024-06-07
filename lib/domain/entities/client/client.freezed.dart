@@ -24,6 +24,7 @@ mixin _$Client {
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
+  String get phoneNumber => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +36,12 @@ abstract class $ClientCopyWith<$Res> {
   factory $ClientCopyWith(Client value, $Res Function(Client) then) =
       _$ClientCopyWithImpl<$Res, Client>;
   @useResult
-  $Res call({String id, String firstName, String lastName, String email});
+  $Res call(
+      {String id,
+      String firstName,
+      String lastName,
+      String email,
+      String phoneNumber});
 }
 
 /// @nodoc
@@ -55,6 +61,7 @@ class _$ClientCopyWithImpl<$Res, $Val extends Client>
     Object? firstName = null,
     Object? lastName = null,
     Object? email = null,
+    Object? phoneNumber = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -73,6 +80,10 @@ class _$ClientCopyWithImpl<$Res, $Val extends Client>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -84,7 +95,12 @@ abstract class _$$ClientImplCopyWith<$Res> implements $ClientCopyWith<$Res> {
       __$$ClientImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String firstName, String lastName, String email});
+  $Res call(
+      {String id,
+      String firstName,
+      String lastName,
+      String email,
+      String phoneNumber});
 }
 
 /// @nodoc
@@ -102,6 +118,7 @@ class __$$ClientImplCopyWithImpl<$Res>
     Object? firstName = null,
     Object? lastName = null,
     Object? email = null,
+    Object? phoneNumber = null,
   }) {
     return _then(_$ClientImpl(
       id: null == id
@@ -120,6 +137,10 @@ class __$$ClientImplCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -128,7 +149,11 @@ class __$$ClientImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClientImpl implements _Client {
   const _$ClientImpl(
-      {this.id = '', this.firstName = '', this.lastName = '', this.email = ''});
+      {this.id = '',
+      this.firstName = '',
+      this.lastName = '',
+      this.email = '',
+      this.phoneNumber = ''});
 
   factory _$ClientImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClientImplFromJson(json);
@@ -145,10 +170,13 @@ class _$ClientImpl implements _Client {
   @override
   @JsonKey()
   final String email;
+  @override
+  @JsonKey()
+  final String phoneNumber;
 
   @override
   String toString() {
-    return 'Client(id: $id, firstName: $firstName, lastName: $lastName, email: $email)';
+    return 'Client(id: $id, firstName: $firstName, lastName: $lastName, email: $email, phoneNumber: $phoneNumber)';
   }
 
   @override
@@ -161,12 +189,15 @@ class _$ClientImpl implements _Client {
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
-            (identical(other.email, email) || other.email == email));
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, firstName, lastName, email);
+  int get hashCode =>
+      Object.hash(runtimeType, id, firstName, lastName, email, phoneNumber);
 
   @JsonKey(ignore: true)
   @override
@@ -187,7 +218,8 @@ abstract class _Client implements Client {
       {final String id,
       final String firstName,
       final String lastName,
-      final String email}) = _$ClientImpl;
+      final String email,
+      final String phoneNumber}) = _$ClientImpl;
 
   factory _Client.fromJson(Map<String, dynamic> json) = _$ClientImpl.fromJson;
 
@@ -199,6 +231,8 @@ abstract class _Client implements Client {
   String get lastName;
   @override
   String get email;
+  @override
+  String get phoneNumber;
   @override
   @JsonKey(ignore: true)
   _$$ClientImplCopyWith<_$ClientImpl> get copyWith =>

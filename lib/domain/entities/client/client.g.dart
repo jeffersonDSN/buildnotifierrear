@@ -11,6 +11,7 @@ _$ClientImpl _$$ClientImplFromJson(Map<String, dynamic> json) => _$ClientImpl(
       firstName: json['firstName'] as String? ?? '',
       lastName: json['lastName'] as String? ?? '',
       email: json['email'] as String? ?? '',
+      phoneNumber: json['phoneNumber'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$ClientImplToJson(_$ClientImpl instance) =>
@@ -19,4 +20,5 @@ Map<String, dynamic> _$$ClientImplToJson(_$ClientImpl instance) =>
       'firstName': instance.firstName,
       'lastName': instance.lastName,
       'email': instance.email,
+      'phoneNumber': instance.phoneNumber,
     };

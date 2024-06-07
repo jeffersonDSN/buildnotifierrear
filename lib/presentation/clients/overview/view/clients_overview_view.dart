@@ -94,7 +94,7 @@ class ClientsOverviewView extends IView {
                                                   AppColor.primaryColorSwatch,
                                             ),
                                             gapWidth4,
-                                            Text(client.email)
+                                            Text(client.phoneNumber)
                                           ],
                                         ),
                                       ],
@@ -113,7 +113,7 @@ class ClientsOverviewView extends IView {
                                             onPressed: () {
                                               appBloc(context).add(
                                                 AppEvent.changeView(
-                                                  mod: Mod.users(
+                                                  mod: Mod.clients(
                                                     type: ViewType.update(
                                                       id: client.id,
                                                     ),

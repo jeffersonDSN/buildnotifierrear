@@ -10,6 +10,7 @@ class Client with _$Client {
     @Default('') String firstName,
     @Default('') String lastName,
     @Default('') String email,
+    @Default('') String phoneNumber,
   }) = _Client;
 
   factory Client.fromJson(Map<String, Object?> json) => _$ClientFromJson(json);

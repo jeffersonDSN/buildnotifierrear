@@ -40,7 +40,7 @@ class ClientEditBloc extends Bloc<ClientEditEvent, ClientEditState> {
             },
           );
         },
-        updateFirstName: (value) {
+        changeFirstName: (value) {
           emit(
             state.asLoaded.copyWith(
               client: state.asLoaded.client.copyWith(
@@ -49,7 +49,7 @@ class ClientEditBloc extends Bloc<ClientEditEvent, ClientEditState> {
             ),
           );
         },
-        updateLastName: (value) {
+        changeLastName: (value) {
           emit(
             state.asLoaded.copyWith(
               client: state.asLoaded.client.copyWith(
@@ -58,11 +58,20 @@ class ClientEditBloc extends Bloc<ClientEditEvent, ClientEditState> {
             ),
           );
         },
-        updateEmail: (value) {
+        changeEmail: (value) {
           emit(
             state.asLoaded.copyWith(
               client: state.asLoaded.client.copyWith(
                 email: value,
+              ),
+            ),
+          );
+        },
+        changePhoneNumber: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              client: state.asLoaded.client.copyWith(
+                phoneNumber: value,
               ),
             ),
           );

@@ -72,7 +72,7 @@ class ClientEditView extends IView {
                                 initialValue: user.firstName,
                                 onChanged: (value) {
                                   bloc.add(
-                                    ClientEditEvent.updateFirstName(
+                                    ClientEditEvent.changeFirstName(
                                       value: value,
                                     ),
                                   );
@@ -86,7 +86,7 @@ class ClientEditView extends IView {
                                 initialValue: user.lastName,
                                 onChanged: (value) {
                                   bloc.add(
-                                    ClientEditEvent.updateLastName(
+                                    ClientEditEvent.changeLastName(
                                       value: value,
                                     ),
                                   );
@@ -100,7 +100,21 @@ class ClientEditView extends IView {
                                 initialValue: user.email,
                                 onChanged: (value) {
                                   bloc.add(
-                                    ClientEditEvent.updateEmail(
+                                    ClientEditEvent.changeEmail(
+                                      value: value,
+                                    ),
+                                  );
+                                },
+                              ),
+                              gapHeight16,
+                              TextFormField(
+                                decoration: const InputDecoration(
+                                  label: Text('Phone number'),
+                                ),
+                                initialValue: user.phoneNumber,
+                                onChanged: (value) {
+                                  bloc.add(
+                                    ClientEditEvent.changePhoneNumber(
                                       value: value,
                                     ),
                                   );

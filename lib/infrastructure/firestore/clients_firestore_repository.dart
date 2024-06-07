@@ -37,6 +37,7 @@ class ClientsFireStoreRepository extends FireStoreRepository
       'firstName': value.firstName,
       'lastName': value.lastName,
       'email': value.email,
+      'phoneNumber': value.phoneNumber,
     };
 
     await collection.add(user);
@@ -49,6 +50,7 @@ class ClientsFireStoreRepository extends FireStoreRepository
       'firstName': value.firstName,
       'lastName': value.lastName,
       'email': value.email,
+      'phoneNumber': value.email,
     };
 
     await collection.doc(value.id.toString()).update(user);

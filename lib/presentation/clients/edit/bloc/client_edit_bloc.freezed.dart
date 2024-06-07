@@ -19,27 +19,30 @@ mixin _$ClientEditEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateFirstName,
-    required TResult Function(String value) updateLastName,
-    required TResult Function(String value) updateEmail,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changePhoneNumber,
     required TResult Function(VoidCallback callback) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateFirstName,
-    TResult? Function(String value)? updateLastName,
-    TResult? Function(String value)? updateEmail,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changePhoneNumber,
     TResult? Function(VoidCallback callback)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateFirstName,
-    TResult Function(String value)? updateLastName,
-    TResult Function(String value)? updateEmail,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changePhoneNumber,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) =>
@@ -47,29 +50,34 @@ mixin _$ClientEditEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ClientEditEventLoad value) load,
-    required TResult Function(ClientEditEventUpdateFirstName value)
-        updateFirstName,
-    required TResult Function(ClientEditEventUpdateLastName value)
-        updateLastName,
-    required TResult Function(ClientEditEventUpdateEmail value) updateEmail,
+    required TResult Function(ClientEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(ClientEditEventChangeLastName value)
+        changeLastName,
+    required TResult Function(ClientEditEventChangeEmail value) changeEmail,
+    required TResult Function(ClientEditEventChangePhoneNumber value)
+        changePhoneNumber,
     required TResult Function(ClientEditEventSave value) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ClientEditEventLoad value)? load,
-    TResult? Function(ClientEditEventUpdateFirstName value)? updateFirstName,
-    TResult? Function(ClientEditEventUpdateLastName value)? updateLastName,
-    TResult? Function(ClientEditEventUpdateEmail value)? updateEmail,
+    TResult? Function(ClientEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(ClientEditEventChangeLastName value)? changeLastName,
+    TResult? Function(ClientEditEventChangeEmail value)? changeEmail,
+    TResult? Function(ClientEditEventChangePhoneNumber value)?
+        changePhoneNumber,
     TResult? Function(ClientEditEventSave value)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ClientEditEventLoad value)? load,
-    TResult Function(ClientEditEventUpdateFirstName value)? updateFirstName,
-    TResult Function(ClientEditEventUpdateLastName value)? updateLastName,
-    TResult Function(ClientEditEventUpdateEmail value)? updateEmail,
+    TResult Function(ClientEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(ClientEditEventChangeLastName value)? changeLastName,
+    TResult Function(ClientEditEventChangeEmail value)? changeEmail,
+    TResult Function(ClientEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(ClientEditEventSave value)? save,
     required TResult orElse(),
   }) =>
@@ -170,9 +178,10 @@ class _$ClientEditEventLoadImpl implements ClientEditEventLoad {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateFirstName,
-    required TResult Function(String value) updateLastName,
-    required TResult Function(String value) updateEmail,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changePhoneNumber,
     required TResult Function(VoidCallback callback) save,
   }) {
     return load(type);
@@ -182,9 +191,10 @@ class _$ClientEditEventLoadImpl implements ClientEditEventLoad {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateFirstName,
-    TResult? Function(String value)? updateLastName,
-    TResult? Function(String value)? updateEmail,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changePhoneNumber,
     TResult? Function(VoidCallback callback)? save,
   }) {
     return load?.call(type);
@@ -194,9 +204,10 @@ class _$ClientEditEventLoadImpl implements ClientEditEventLoad {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateFirstName,
-    TResult Function(String value)? updateLastName,
-    TResult Function(String value)? updateEmail,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changePhoneNumber,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -210,11 +221,13 @@ class _$ClientEditEventLoadImpl implements ClientEditEventLoad {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ClientEditEventLoad value) load,
-    required TResult Function(ClientEditEventUpdateFirstName value)
-        updateFirstName,
-    required TResult Function(ClientEditEventUpdateLastName value)
-        updateLastName,
-    required TResult Function(ClientEditEventUpdateEmail value) updateEmail,
+    required TResult Function(ClientEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(ClientEditEventChangeLastName value)
+        changeLastName,
+    required TResult Function(ClientEditEventChangeEmail value) changeEmail,
+    required TResult Function(ClientEditEventChangePhoneNumber value)
+        changePhoneNumber,
     required TResult Function(ClientEditEventSave value) save,
   }) {
     return load(this);
@@ -224,9 +237,11 @@ class _$ClientEditEventLoadImpl implements ClientEditEventLoad {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ClientEditEventLoad value)? load,
-    TResult? Function(ClientEditEventUpdateFirstName value)? updateFirstName,
-    TResult? Function(ClientEditEventUpdateLastName value)? updateLastName,
-    TResult? Function(ClientEditEventUpdateEmail value)? updateEmail,
+    TResult? Function(ClientEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(ClientEditEventChangeLastName value)? changeLastName,
+    TResult? Function(ClientEditEventChangeEmail value)? changeEmail,
+    TResult? Function(ClientEditEventChangePhoneNumber value)?
+        changePhoneNumber,
     TResult? Function(ClientEditEventSave value)? save,
   }) {
     return load?.call(this);
@@ -236,9 +251,10 @@ class _$ClientEditEventLoadImpl implements ClientEditEventLoad {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ClientEditEventLoad value)? load,
-    TResult Function(ClientEditEventUpdateFirstName value)? updateFirstName,
-    TResult Function(ClientEditEventUpdateLastName value)? updateLastName,
-    TResult Function(ClientEditEventUpdateEmail value)? updateEmail,
+    TResult Function(ClientEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(ClientEditEventChangeLastName value)? changeLastName,
+    TResult Function(ClientEditEventChangeEmail value)? changeEmail,
+    TResult Function(ClientEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(ClientEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -260,23 +276,23 @@ abstract class ClientEditEventLoad implements ClientEditEvent {
 }
 
 /// @nodoc
-abstract class _$$ClientEditEventUpdateFirstNameImplCopyWith<$Res> {
-  factory _$$ClientEditEventUpdateFirstNameImplCopyWith(
-          _$ClientEditEventUpdateFirstNameImpl value,
-          $Res Function(_$ClientEditEventUpdateFirstNameImpl) then) =
-      __$$ClientEditEventUpdateFirstNameImplCopyWithImpl<$Res>;
+abstract class _$$ClientEditEventChangeFirstNameImplCopyWith<$Res> {
+  factory _$$ClientEditEventChangeFirstNameImplCopyWith(
+          _$ClientEditEventChangeFirstNameImpl value,
+          $Res Function(_$ClientEditEventChangeFirstNameImpl) then) =
+      __$$ClientEditEventChangeFirstNameImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$ClientEditEventUpdateFirstNameImplCopyWithImpl<$Res>
+class __$$ClientEditEventChangeFirstNameImplCopyWithImpl<$Res>
     extends _$ClientEditEventCopyWithImpl<$Res,
-        _$ClientEditEventUpdateFirstNameImpl>
-    implements _$$ClientEditEventUpdateFirstNameImplCopyWith<$Res> {
-  __$$ClientEditEventUpdateFirstNameImplCopyWithImpl(
-      _$ClientEditEventUpdateFirstNameImpl _value,
-      $Res Function(_$ClientEditEventUpdateFirstNameImpl) _then)
+        _$ClientEditEventChangeFirstNameImpl>
+    implements _$$ClientEditEventChangeFirstNameImplCopyWith<$Res> {
+  __$$ClientEditEventChangeFirstNameImplCopyWithImpl(
+      _$ClientEditEventChangeFirstNameImpl _value,
+      $Res Function(_$ClientEditEventChangeFirstNameImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -284,7 +300,7 @@ class __$$ClientEditEventUpdateFirstNameImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$ClientEditEventUpdateFirstNameImpl(
+    return _then(_$ClientEditEventChangeFirstNameImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -295,23 +311,23 @@ class __$$ClientEditEventUpdateFirstNameImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ClientEditEventUpdateFirstNameImpl
-    implements ClientEditEventUpdateFirstName {
-  const _$ClientEditEventUpdateFirstNameImpl({required this.value});
+class _$ClientEditEventChangeFirstNameImpl
+    implements ClientEditEventChangeFirstName {
+  const _$ClientEditEventChangeFirstNameImpl({required this.value});
 
   @override
   final String value;
 
   @override
   String toString() {
-    return 'ClientEditEvent.updateFirstName(value: $value)';
+    return 'ClientEditEvent.changeFirstName(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ClientEditEventUpdateFirstNameImpl &&
+            other is _$ClientEditEventChangeFirstNameImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -321,47 +337,50 @@ class _$ClientEditEventUpdateFirstNameImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ClientEditEventUpdateFirstNameImplCopyWith<
-          _$ClientEditEventUpdateFirstNameImpl>
-      get copyWith => __$$ClientEditEventUpdateFirstNameImplCopyWithImpl<
-          _$ClientEditEventUpdateFirstNameImpl>(this, _$identity);
+  _$$ClientEditEventChangeFirstNameImplCopyWith<
+          _$ClientEditEventChangeFirstNameImpl>
+      get copyWith => __$$ClientEditEventChangeFirstNameImplCopyWithImpl<
+          _$ClientEditEventChangeFirstNameImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateFirstName,
-    required TResult Function(String value) updateLastName,
-    required TResult Function(String value) updateEmail,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changePhoneNumber,
     required TResult Function(VoidCallback callback) save,
   }) {
-    return updateFirstName(value);
+    return changeFirstName(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateFirstName,
-    TResult? Function(String value)? updateLastName,
-    TResult? Function(String value)? updateEmail,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changePhoneNumber,
     TResult? Function(VoidCallback callback)? save,
   }) {
-    return updateFirstName?.call(value);
+    return changeFirstName?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateFirstName,
-    TResult Function(String value)? updateLastName,
-    TResult Function(String value)? updateEmail,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changePhoneNumber,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
-    if (updateFirstName != null) {
-      return updateFirstName(value);
+    if (changeFirstName != null) {
+      return changeFirstName(value);
     }
     return orElse();
   }
@@ -370,74 +389,79 @@ class _$ClientEditEventUpdateFirstNameImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ClientEditEventLoad value) load,
-    required TResult Function(ClientEditEventUpdateFirstName value)
-        updateFirstName,
-    required TResult Function(ClientEditEventUpdateLastName value)
-        updateLastName,
-    required TResult Function(ClientEditEventUpdateEmail value) updateEmail,
+    required TResult Function(ClientEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(ClientEditEventChangeLastName value)
+        changeLastName,
+    required TResult Function(ClientEditEventChangeEmail value) changeEmail,
+    required TResult Function(ClientEditEventChangePhoneNumber value)
+        changePhoneNumber,
     required TResult Function(ClientEditEventSave value) save,
   }) {
-    return updateFirstName(this);
+    return changeFirstName(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ClientEditEventLoad value)? load,
-    TResult? Function(ClientEditEventUpdateFirstName value)? updateFirstName,
-    TResult? Function(ClientEditEventUpdateLastName value)? updateLastName,
-    TResult? Function(ClientEditEventUpdateEmail value)? updateEmail,
+    TResult? Function(ClientEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(ClientEditEventChangeLastName value)? changeLastName,
+    TResult? Function(ClientEditEventChangeEmail value)? changeEmail,
+    TResult? Function(ClientEditEventChangePhoneNumber value)?
+        changePhoneNumber,
     TResult? Function(ClientEditEventSave value)? save,
   }) {
-    return updateFirstName?.call(this);
+    return changeFirstName?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ClientEditEventLoad value)? load,
-    TResult Function(ClientEditEventUpdateFirstName value)? updateFirstName,
-    TResult Function(ClientEditEventUpdateLastName value)? updateLastName,
-    TResult Function(ClientEditEventUpdateEmail value)? updateEmail,
+    TResult Function(ClientEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(ClientEditEventChangeLastName value)? changeLastName,
+    TResult Function(ClientEditEventChangeEmail value)? changeEmail,
+    TResult Function(ClientEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(ClientEditEventSave value)? save,
     required TResult orElse(),
   }) {
-    if (updateFirstName != null) {
-      return updateFirstName(this);
+    if (changeFirstName != null) {
+      return changeFirstName(this);
     }
     return orElse();
   }
 }
 
-abstract class ClientEditEventUpdateFirstName implements ClientEditEvent {
-  const factory ClientEditEventUpdateFirstName({required final String value}) =
-      _$ClientEditEventUpdateFirstNameImpl;
+abstract class ClientEditEventChangeFirstName implements ClientEditEvent {
+  const factory ClientEditEventChangeFirstName({required final String value}) =
+      _$ClientEditEventChangeFirstNameImpl;
 
   String get value;
   @JsonKey(ignore: true)
-  _$$ClientEditEventUpdateFirstNameImplCopyWith<
-          _$ClientEditEventUpdateFirstNameImpl>
+  _$$ClientEditEventChangeFirstNameImplCopyWith<
+          _$ClientEditEventChangeFirstNameImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ClientEditEventUpdateLastNameImplCopyWith<$Res> {
-  factory _$$ClientEditEventUpdateLastNameImplCopyWith(
-          _$ClientEditEventUpdateLastNameImpl value,
-          $Res Function(_$ClientEditEventUpdateLastNameImpl) then) =
-      __$$ClientEditEventUpdateLastNameImplCopyWithImpl<$Res>;
+abstract class _$$ClientEditEventChangeLastNameImplCopyWith<$Res> {
+  factory _$$ClientEditEventChangeLastNameImplCopyWith(
+          _$ClientEditEventChangeLastNameImpl value,
+          $Res Function(_$ClientEditEventChangeLastNameImpl) then) =
+      __$$ClientEditEventChangeLastNameImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$ClientEditEventUpdateLastNameImplCopyWithImpl<$Res>
+class __$$ClientEditEventChangeLastNameImplCopyWithImpl<$Res>
     extends _$ClientEditEventCopyWithImpl<$Res,
-        _$ClientEditEventUpdateLastNameImpl>
-    implements _$$ClientEditEventUpdateLastNameImplCopyWith<$Res> {
-  __$$ClientEditEventUpdateLastNameImplCopyWithImpl(
-      _$ClientEditEventUpdateLastNameImpl _value,
-      $Res Function(_$ClientEditEventUpdateLastNameImpl) _then)
+        _$ClientEditEventChangeLastNameImpl>
+    implements _$$ClientEditEventChangeLastNameImplCopyWith<$Res> {
+  __$$ClientEditEventChangeLastNameImplCopyWithImpl(
+      _$ClientEditEventChangeLastNameImpl _value,
+      $Res Function(_$ClientEditEventChangeLastNameImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -445,7 +469,7 @@ class __$$ClientEditEventUpdateLastNameImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$ClientEditEventUpdateLastNameImpl(
+    return _then(_$ClientEditEventChangeLastNameImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -456,23 +480,23 @@ class __$$ClientEditEventUpdateLastNameImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ClientEditEventUpdateLastNameImpl
-    implements ClientEditEventUpdateLastName {
-  const _$ClientEditEventUpdateLastNameImpl({required this.value});
+class _$ClientEditEventChangeLastNameImpl
+    implements ClientEditEventChangeLastName {
+  const _$ClientEditEventChangeLastNameImpl({required this.value});
 
   @override
   final String value;
 
   @override
   String toString() {
-    return 'ClientEditEvent.updateLastName(value: $value)';
+    return 'ClientEditEvent.changeLastName(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ClientEditEventUpdateLastNameImpl &&
+            other is _$ClientEditEventChangeLastNameImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -482,47 +506,50 @@ class _$ClientEditEventUpdateLastNameImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ClientEditEventUpdateLastNameImplCopyWith<
-          _$ClientEditEventUpdateLastNameImpl>
-      get copyWith => __$$ClientEditEventUpdateLastNameImplCopyWithImpl<
-          _$ClientEditEventUpdateLastNameImpl>(this, _$identity);
+  _$$ClientEditEventChangeLastNameImplCopyWith<
+          _$ClientEditEventChangeLastNameImpl>
+      get copyWith => __$$ClientEditEventChangeLastNameImplCopyWithImpl<
+          _$ClientEditEventChangeLastNameImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateFirstName,
-    required TResult Function(String value) updateLastName,
-    required TResult Function(String value) updateEmail,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changePhoneNumber,
     required TResult Function(VoidCallback callback) save,
   }) {
-    return updateLastName(value);
+    return changeLastName(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateFirstName,
-    TResult? Function(String value)? updateLastName,
-    TResult? Function(String value)? updateEmail,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changePhoneNumber,
     TResult? Function(VoidCallback callback)? save,
   }) {
-    return updateLastName?.call(value);
+    return changeLastName?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateFirstName,
-    TResult Function(String value)? updateLastName,
-    TResult Function(String value)? updateEmail,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changePhoneNumber,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
-    if (updateLastName != null) {
-      return updateLastName(value);
+    if (changeLastName != null) {
+      return changeLastName(value);
     }
     return orElse();
   }
@@ -531,74 +558,79 @@ class _$ClientEditEventUpdateLastNameImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ClientEditEventLoad value) load,
-    required TResult Function(ClientEditEventUpdateFirstName value)
-        updateFirstName,
-    required TResult Function(ClientEditEventUpdateLastName value)
-        updateLastName,
-    required TResult Function(ClientEditEventUpdateEmail value) updateEmail,
+    required TResult Function(ClientEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(ClientEditEventChangeLastName value)
+        changeLastName,
+    required TResult Function(ClientEditEventChangeEmail value) changeEmail,
+    required TResult Function(ClientEditEventChangePhoneNumber value)
+        changePhoneNumber,
     required TResult Function(ClientEditEventSave value) save,
   }) {
-    return updateLastName(this);
+    return changeLastName(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ClientEditEventLoad value)? load,
-    TResult? Function(ClientEditEventUpdateFirstName value)? updateFirstName,
-    TResult? Function(ClientEditEventUpdateLastName value)? updateLastName,
-    TResult? Function(ClientEditEventUpdateEmail value)? updateEmail,
+    TResult? Function(ClientEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(ClientEditEventChangeLastName value)? changeLastName,
+    TResult? Function(ClientEditEventChangeEmail value)? changeEmail,
+    TResult? Function(ClientEditEventChangePhoneNumber value)?
+        changePhoneNumber,
     TResult? Function(ClientEditEventSave value)? save,
   }) {
-    return updateLastName?.call(this);
+    return changeLastName?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ClientEditEventLoad value)? load,
-    TResult Function(ClientEditEventUpdateFirstName value)? updateFirstName,
-    TResult Function(ClientEditEventUpdateLastName value)? updateLastName,
-    TResult Function(ClientEditEventUpdateEmail value)? updateEmail,
+    TResult Function(ClientEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(ClientEditEventChangeLastName value)? changeLastName,
+    TResult Function(ClientEditEventChangeEmail value)? changeEmail,
+    TResult Function(ClientEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(ClientEditEventSave value)? save,
     required TResult orElse(),
   }) {
-    if (updateLastName != null) {
-      return updateLastName(this);
+    if (changeLastName != null) {
+      return changeLastName(this);
     }
     return orElse();
   }
 }
 
-abstract class ClientEditEventUpdateLastName implements ClientEditEvent {
-  const factory ClientEditEventUpdateLastName({required final String value}) =
-      _$ClientEditEventUpdateLastNameImpl;
+abstract class ClientEditEventChangeLastName implements ClientEditEvent {
+  const factory ClientEditEventChangeLastName({required final String value}) =
+      _$ClientEditEventChangeLastNameImpl;
 
   String get value;
   @JsonKey(ignore: true)
-  _$$ClientEditEventUpdateLastNameImplCopyWith<
-          _$ClientEditEventUpdateLastNameImpl>
+  _$$ClientEditEventChangeLastNameImplCopyWith<
+          _$ClientEditEventChangeLastNameImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ClientEditEventUpdateEmailImplCopyWith<$Res> {
-  factory _$$ClientEditEventUpdateEmailImplCopyWith(
-          _$ClientEditEventUpdateEmailImpl value,
-          $Res Function(_$ClientEditEventUpdateEmailImpl) then) =
-      __$$ClientEditEventUpdateEmailImplCopyWithImpl<$Res>;
+abstract class _$$ClientEditEventChangeEmailImplCopyWith<$Res> {
+  factory _$$ClientEditEventChangeEmailImplCopyWith(
+          _$ClientEditEventChangeEmailImpl value,
+          $Res Function(_$ClientEditEventChangeEmailImpl) then) =
+      __$$ClientEditEventChangeEmailImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$ClientEditEventUpdateEmailImplCopyWithImpl<$Res>
+class __$$ClientEditEventChangeEmailImplCopyWithImpl<$Res>
     extends _$ClientEditEventCopyWithImpl<$Res,
-        _$ClientEditEventUpdateEmailImpl>
-    implements _$$ClientEditEventUpdateEmailImplCopyWith<$Res> {
-  __$$ClientEditEventUpdateEmailImplCopyWithImpl(
-      _$ClientEditEventUpdateEmailImpl _value,
-      $Res Function(_$ClientEditEventUpdateEmailImpl) _then)
+        _$ClientEditEventChangeEmailImpl>
+    implements _$$ClientEditEventChangeEmailImplCopyWith<$Res> {
+  __$$ClientEditEventChangeEmailImplCopyWithImpl(
+      _$ClientEditEventChangeEmailImpl _value,
+      $Res Function(_$ClientEditEventChangeEmailImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -606,7 +638,7 @@ class __$$ClientEditEventUpdateEmailImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$ClientEditEventUpdateEmailImpl(
+    return _then(_$ClientEditEventChangeEmailImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -617,22 +649,22 @@ class __$$ClientEditEventUpdateEmailImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ClientEditEventUpdateEmailImpl implements ClientEditEventUpdateEmail {
-  const _$ClientEditEventUpdateEmailImpl({required this.value});
+class _$ClientEditEventChangeEmailImpl implements ClientEditEventChangeEmail {
+  const _$ClientEditEventChangeEmailImpl({required this.value});
 
   @override
   final String value;
 
   @override
   String toString() {
-    return 'ClientEditEvent.updateEmail(value: $value)';
+    return 'ClientEditEvent.changeEmail(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ClientEditEventUpdateEmailImpl &&
+            other is _$ClientEditEventChangeEmailImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -642,46 +674,49 @@ class _$ClientEditEventUpdateEmailImpl implements ClientEditEventUpdateEmail {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ClientEditEventUpdateEmailImplCopyWith<_$ClientEditEventUpdateEmailImpl>
-      get copyWith => __$$ClientEditEventUpdateEmailImplCopyWithImpl<
-          _$ClientEditEventUpdateEmailImpl>(this, _$identity);
+  _$$ClientEditEventChangeEmailImplCopyWith<_$ClientEditEventChangeEmailImpl>
+      get copyWith => __$$ClientEditEventChangeEmailImplCopyWithImpl<
+          _$ClientEditEventChangeEmailImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateFirstName,
-    required TResult Function(String value) updateLastName,
-    required TResult Function(String value) updateEmail,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changePhoneNumber,
     required TResult Function(VoidCallback callback) save,
   }) {
-    return updateEmail(value);
+    return changeEmail(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateFirstName,
-    TResult? Function(String value)? updateLastName,
-    TResult? Function(String value)? updateEmail,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changePhoneNumber,
     TResult? Function(VoidCallback callback)? save,
   }) {
-    return updateEmail?.call(value);
+    return changeEmail?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateFirstName,
-    TResult Function(String value)? updateLastName,
-    TResult Function(String value)? updateEmail,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changePhoneNumber,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
-    if (updateEmail != null) {
-      return updateEmail(value);
+    if (changeEmail != null) {
+      return changeEmail(value);
     }
     return orElse();
   }
@@ -690,52 +725,226 @@ class _$ClientEditEventUpdateEmailImpl implements ClientEditEventUpdateEmail {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ClientEditEventLoad value) load,
-    required TResult Function(ClientEditEventUpdateFirstName value)
-        updateFirstName,
-    required TResult Function(ClientEditEventUpdateLastName value)
-        updateLastName,
-    required TResult Function(ClientEditEventUpdateEmail value) updateEmail,
+    required TResult Function(ClientEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(ClientEditEventChangeLastName value)
+        changeLastName,
+    required TResult Function(ClientEditEventChangeEmail value) changeEmail,
+    required TResult Function(ClientEditEventChangePhoneNumber value)
+        changePhoneNumber,
     required TResult Function(ClientEditEventSave value) save,
   }) {
-    return updateEmail(this);
+    return changeEmail(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ClientEditEventLoad value)? load,
-    TResult? Function(ClientEditEventUpdateFirstName value)? updateFirstName,
-    TResult? Function(ClientEditEventUpdateLastName value)? updateLastName,
-    TResult? Function(ClientEditEventUpdateEmail value)? updateEmail,
+    TResult? Function(ClientEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(ClientEditEventChangeLastName value)? changeLastName,
+    TResult? Function(ClientEditEventChangeEmail value)? changeEmail,
+    TResult? Function(ClientEditEventChangePhoneNumber value)?
+        changePhoneNumber,
     TResult? Function(ClientEditEventSave value)? save,
   }) {
-    return updateEmail?.call(this);
+    return changeEmail?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ClientEditEventLoad value)? load,
-    TResult Function(ClientEditEventUpdateFirstName value)? updateFirstName,
-    TResult Function(ClientEditEventUpdateLastName value)? updateLastName,
-    TResult Function(ClientEditEventUpdateEmail value)? updateEmail,
+    TResult Function(ClientEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(ClientEditEventChangeLastName value)? changeLastName,
+    TResult Function(ClientEditEventChangeEmail value)? changeEmail,
+    TResult Function(ClientEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(ClientEditEventSave value)? save,
     required TResult orElse(),
   }) {
-    if (updateEmail != null) {
-      return updateEmail(this);
+    if (changeEmail != null) {
+      return changeEmail(this);
     }
     return orElse();
   }
 }
 
-abstract class ClientEditEventUpdateEmail implements ClientEditEvent {
-  const factory ClientEditEventUpdateEmail({required final String value}) =
-      _$ClientEditEventUpdateEmailImpl;
+abstract class ClientEditEventChangeEmail implements ClientEditEvent {
+  const factory ClientEditEventChangeEmail({required final String value}) =
+      _$ClientEditEventChangeEmailImpl;
 
   String get value;
   @JsonKey(ignore: true)
-  _$$ClientEditEventUpdateEmailImplCopyWith<_$ClientEditEventUpdateEmailImpl>
+  _$$ClientEditEventChangeEmailImplCopyWith<_$ClientEditEventChangeEmailImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ClientEditEventChangePhoneNumberImplCopyWith<$Res> {
+  factory _$$ClientEditEventChangePhoneNumberImplCopyWith(
+          _$ClientEditEventChangePhoneNumberImpl value,
+          $Res Function(_$ClientEditEventChangePhoneNumberImpl) then) =
+      __$$ClientEditEventChangePhoneNumberImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$ClientEditEventChangePhoneNumberImplCopyWithImpl<$Res>
+    extends _$ClientEditEventCopyWithImpl<$Res,
+        _$ClientEditEventChangePhoneNumberImpl>
+    implements _$$ClientEditEventChangePhoneNumberImplCopyWith<$Res> {
+  __$$ClientEditEventChangePhoneNumberImplCopyWithImpl(
+      _$ClientEditEventChangePhoneNumberImpl _value,
+      $Res Function(_$ClientEditEventChangePhoneNumberImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ClientEditEventChangePhoneNumberImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ClientEditEventChangePhoneNumberImpl
+    implements ClientEditEventChangePhoneNumber {
+  const _$ClientEditEventChangePhoneNumberImpl({required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'ClientEditEvent.changePhoneNumber(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ClientEditEventChangePhoneNumberImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ClientEditEventChangePhoneNumberImplCopyWith<
+          _$ClientEditEventChangePhoneNumberImpl>
+      get copyWith => __$$ClientEditEventChangePhoneNumberImplCopyWithImpl<
+          _$ClientEditEventChangePhoneNumberImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changePhoneNumber(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changePhoneNumber?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changePhoneNumber != null) {
+      return changePhoneNumber(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ClientEditEventLoad value) load,
+    required TResult Function(ClientEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(ClientEditEventChangeLastName value)
+        changeLastName,
+    required TResult Function(ClientEditEventChangeEmail value) changeEmail,
+    required TResult Function(ClientEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(ClientEditEventSave value) save,
+  }) {
+    return changePhoneNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ClientEditEventLoad value)? load,
+    TResult? Function(ClientEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(ClientEditEventChangeLastName value)? changeLastName,
+    TResult? Function(ClientEditEventChangeEmail value)? changeEmail,
+    TResult? Function(ClientEditEventChangePhoneNumber value)?
+        changePhoneNumber,
+    TResult? Function(ClientEditEventSave value)? save,
+  }) {
+    return changePhoneNumber?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ClientEditEventLoad value)? load,
+    TResult Function(ClientEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(ClientEditEventChangeLastName value)? changeLastName,
+    TResult Function(ClientEditEventChangeEmail value)? changeEmail,
+    TResult Function(ClientEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(ClientEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changePhoneNumber != null) {
+      return changePhoneNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ClientEditEventChangePhoneNumber implements ClientEditEvent {
+  const factory ClientEditEventChangePhoneNumber(
+      {required final String value}) = _$ClientEditEventChangePhoneNumberImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$ClientEditEventChangePhoneNumberImplCopyWith<
+          _$ClientEditEventChangePhoneNumberImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -806,9 +1015,10 @@ class _$ClientEditEventSaveImpl implements ClientEditEventSave {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateFirstName,
-    required TResult Function(String value) updateLastName,
-    required TResult Function(String value) updateEmail,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changePhoneNumber,
     required TResult Function(VoidCallback callback) save,
   }) {
     return save(callback);
@@ -818,9 +1028,10 @@ class _$ClientEditEventSaveImpl implements ClientEditEventSave {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateFirstName,
-    TResult? Function(String value)? updateLastName,
-    TResult? Function(String value)? updateEmail,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changePhoneNumber,
     TResult? Function(VoidCallback callback)? save,
   }) {
     return save?.call(callback);
@@ -830,9 +1041,10 @@ class _$ClientEditEventSaveImpl implements ClientEditEventSave {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateFirstName,
-    TResult Function(String value)? updateLastName,
-    TResult Function(String value)? updateEmail,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changePhoneNumber,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -846,11 +1058,13 @@ class _$ClientEditEventSaveImpl implements ClientEditEventSave {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ClientEditEventLoad value) load,
-    required TResult Function(ClientEditEventUpdateFirstName value)
-        updateFirstName,
-    required TResult Function(ClientEditEventUpdateLastName value)
-        updateLastName,
-    required TResult Function(ClientEditEventUpdateEmail value) updateEmail,
+    required TResult Function(ClientEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(ClientEditEventChangeLastName value)
+        changeLastName,
+    required TResult Function(ClientEditEventChangeEmail value) changeEmail,
+    required TResult Function(ClientEditEventChangePhoneNumber value)
+        changePhoneNumber,
     required TResult Function(ClientEditEventSave value) save,
   }) {
     return save(this);
@@ -860,9 +1074,11 @@ class _$ClientEditEventSaveImpl implements ClientEditEventSave {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ClientEditEventLoad value)? load,
-    TResult? Function(ClientEditEventUpdateFirstName value)? updateFirstName,
-    TResult? Function(ClientEditEventUpdateLastName value)? updateLastName,
-    TResult? Function(ClientEditEventUpdateEmail value)? updateEmail,
+    TResult? Function(ClientEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(ClientEditEventChangeLastName value)? changeLastName,
+    TResult? Function(ClientEditEventChangeEmail value)? changeEmail,
+    TResult? Function(ClientEditEventChangePhoneNumber value)?
+        changePhoneNumber,
     TResult? Function(ClientEditEventSave value)? save,
   }) {
     return save?.call(this);
@@ -872,9 +1088,10 @@ class _$ClientEditEventSaveImpl implements ClientEditEventSave {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ClientEditEventLoad value)? load,
-    TResult Function(ClientEditEventUpdateFirstName value)? updateFirstName,
-    TResult Function(ClientEditEventUpdateLastName value)? updateLastName,
-    TResult Function(ClientEditEventUpdateEmail value)? updateEmail,
+    TResult Function(ClientEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(ClientEditEventChangeLastName value)? changeLastName,
+    TResult Function(ClientEditEventChangeEmail value)? changeEmail,
+    TResult Function(ClientEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(ClientEditEventSave value)? save,
     required TResult orElse(),
   }) {

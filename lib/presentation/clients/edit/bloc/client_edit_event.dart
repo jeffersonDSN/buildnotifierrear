@@ -6,17 +6,21 @@ class ClientEditEvent with _$ClientEditEvent {
     required CrudType type,
   }) = ClientEditEventLoad;
 
-  const factory ClientEditEvent.updateFirstName({
+  const factory ClientEditEvent.changeFirstName({
     required String value,
-  }) = ClientEditEventUpdateFirstName;
+  }) = ClientEditEventChangeFirstName;
 
-  const factory ClientEditEvent.updateLastName({
+  const factory ClientEditEvent.changeLastName({
     required String value,
-  }) = ClientEditEventUpdateLastName;
+  }) = ClientEditEventChangeLastName;
 
-  const factory ClientEditEvent.updateEmail({
+  const factory ClientEditEvent.changeEmail({
     required String value,
-  }) = ClientEditEventUpdateEmail;
+  }) = ClientEditEventChangeEmail;
+
+  const factory ClientEditEvent.changePhoneNumber({
+    required String value,
+  }) = ClientEditEventChangePhoneNumber;
 
   const factory ClientEditEvent.save({
     required VoidCallback callback,
