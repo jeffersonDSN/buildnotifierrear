@@ -178,6 +178,9 @@ class UsersOverviewView extends IView {
                                                 selectedDay: selectedDay,
                                                 isLoading: appoitmentCardsState
                                                     .isLoading,
+                                                appointments:
+                                                    appoitmentOfSelecedDayAndUser,
+                                                scheduleType: ScheduleType.user,
                                                 onChangeSelectedDay: (value) {
                                                   bloc.add(
                                                     UsersOverviewEvent
@@ -186,9 +189,7 @@ class UsersOverviewView extends IView {
                                                     ),
                                                   );
                                                 },
-                                                appointments:
-                                                    appoitmentOfSelecedDayAndUser,
-                                                scheduleType: ScheduleType.user,
+                                                onCreate: () {},
                                               ),
                                             ],
                                           ),

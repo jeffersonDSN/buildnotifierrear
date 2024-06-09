@@ -20,24 +20,20 @@ class ClientEditBloc extends Bloc<ClientEditEvent, ClientEditState> {
         load: (type) async {
           emit(const ClientEditState.loading());
 
-          await type.when(
+          var result = await type.when(
             create: () async {
-              emit(
-                ClientEditState.loaded(
-                  type: type,
-                  client: const Client(),
-                ),
-              );
+              return const Client();
             },
             update: (id) async {
-              var client = await controller.getById(id);
-              emit(
-                ClientEditState.loaded(
-                  type: type,
-                  client: client,
-                ),
-              );
+              return controller.getById(id);
             },
+          );
+
+          emit(
+            ClientEditState.loaded(
+              type: type,
+              client: result,
+            ),
           );
         },
         changeFirstName: (value) {

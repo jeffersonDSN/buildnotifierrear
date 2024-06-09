@@ -20,24 +20,20 @@ class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
         load: (type) async {
           emit(const UserEditState.loading());
 
-          await type.when(
+          var result = await type.when(
             create: () async {
-              emit(
-                UserEditState.loaded(
-                  type: type,
-                  user: const User(),
-                ),
-              );
+              return const User();
             },
             update: (id) async {
-              var user = await controller.getById(id);
-              emit(
-                UserEditState.loaded(
-                  type: type,
-                  user: user,
-                ),
-              );
+              return await controller.getById(id);
             },
+          );
+
+          emit(
+            UserEditState.loaded(
+              type: type,
+              user: result,
+            ),
           );
         },
         updateFirstName: (value) {

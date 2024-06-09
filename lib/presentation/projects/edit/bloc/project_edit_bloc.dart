@@ -20,24 +20,20 @@ class ProjectEditBloc extends Bloc<ProjectEditEvent, ProjectEditState> {
         load: (type) async {
           emit(const ProjectEditState.loading());
 
-          await type.when(
+          var result = await type.when(
             create: () async {
-              emit(
-                ProjectEditState.loaded(
-                  type: type,
-                  project: const Project(),
-                ),
-              );
+              return const Project();
             },
             update: (id) async {
-              var project = await controller.getById(id);
-              emit(
-                ProjectEditState.loaded(
-                  type: type,
-                  project: project,
-                ),
-              );
+              return controller.getById(id);
             },
+          );
+
+          emit(
+            ProjectEditState.loaded(
+              type: type,
+              project: result,
+            ),
           );
         },
         updateName: (value) {

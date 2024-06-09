@@ -36,6 +36,7 @@ class ScheduleWidget extends StatelessWidget {
   final List<Appointment> appointments;
   final bool isLoading;
   final ScheduleType scheduleType;
+  final VoidCallback onCreate;
 
   const ScheduleWidget({
     super.key,
@@ -44,6 +45,7 @@ class ScheduleWidget extends StatelessWidget {
     required this.appointments,
     this.isLoading = false,
     required this.scheduleType,
+    required this.onCreate,
   });
 
   @override
@@ -91,8 +93,8 @@ class ScheduleWidget extends StatelessWidget {
             children: [
               FilledButton.icon(
                 icon: const Icon(Icons.add),
-                label: const Text('Add'),
-                onPressed: () {},
+                label: const Text('Create'),
+                onPressed: onCreate,
               )
             ],
           ),

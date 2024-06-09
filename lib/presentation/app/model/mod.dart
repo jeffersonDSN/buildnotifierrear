@@ -5,6 +5,7 @@ import 'package:buildnotifierrear/presentation/clients/overview/clients_overview
 import 'package:buildnotifierrear/presentation/home/page/home_page.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/project_edit.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/projects_overview.dart';
+import 'package:buildnotifierrear/presentation/schedule/edit/schedule_edit.dart';
 import 'package:buildnotifierrear/presentation/schedule/overview/schedule_overview.dart';
 import 'package:buildnotifierrear/presentation/users/edit/user_edit.dart';
 import 'package:buildnotifierrear/presentation/users/overview/users_overvire.dart';
@@ -46,7 +47,11 @@ extension OnModel on Mod {
   Widget view() {
     return when(
       home: () => const HomeView(),
-      schedule: (viewType) => const ScheduleOverview(),
+      schedule: (viewType) => viewType.when(
+        overview: () => const ScheduleOverview(),
+        create: () => const ScheduleEdit(),
+        update: (id) => const ScheduleEdit(),
+      ),
       projects: (viewType) => viewType.when(
         overview: () => const ProjectsOverview(),
         create: () => const ProjectEdit(),

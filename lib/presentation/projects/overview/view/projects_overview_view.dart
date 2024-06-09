@@ -363,6 +363,10 @@ class ProjectsOverviewView extends IView {
                                               selectedDay: selectedDay,
                                               isLoading: appoitmentCardsState
                                                   .isLoading,
+                                              appointments:
+                                                  appoitmentOfSelecedDay,
+                                              scheduleType:
+                                                  ScheduleType.project,
                                               onChangeSelectedDay: (value) {
                                                 bloc.add(
                                                   ProjectsOverviewEvent
@@ -371,10 +375,7 @@ class ProjectsOverviewView extends IView {
                                                   ),
                                                 );
                                               },
-                                              appointments:
-                                                  appoitmentOfSelecedDay,
-                                              scheduleType:
-                                                  ScheduleType.project,
+                                              onCreate: () {},
                                             ),
                                           ],
                                         ),

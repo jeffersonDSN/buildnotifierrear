@@ -1,3 +1,6 @@
+import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
+import 'package:buildnotifierrear/presentation/app/model/mod.dart';
+import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/schedule/overview/bloc/schedule_overview_bloc.dart';
 import 'package:buildnotifierrear/presentation/schedule/overview/widget/schedule_widget.dart';
@@ -30,6 +33,15 @@ class ScheduleOverviewView extends IView {
               onChangeSelectedDay: (value) {
                 bloc.add(
                   ScheduleOverViewEvent.changeSelectedDay(selectedDay: value),
+                );
+              },
+              onCreate: () {
+                appBloc(context).add(
+                  const AppEvent.changeView(
+                    mod: Mod.schedule(
+                      type: ViewType.create(),
+                    ),
+                  ),
                 );
               },
             );
