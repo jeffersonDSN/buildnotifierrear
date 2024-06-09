@@ -57,7 +57,11 @@ class ScheduleEditView extends IView {
         builder: (context, state) {
           return state.when(
             empty: () => Container(),
-            loaded: (periodType, appointment) {
+            loaded: (
+              periodType,
+              appointment,
+              selectedAppointment,
+            ) {
               return Column(
                 children: [
                   Expanded(
@@ -102,96 +106,153 @@ class ScheduleEditView extends IView {
                                       },
                                     ),
                                     Expanded(
-                                      child: ListView.separated(
-                                        itemCount:
-                                            state.asLoaded.appointments.length,
-                                        itemBuilder: (context, index) {
-                                          var appointment = state
-                                              .asLoaded.appointments[index];
-                                          return Row(
-                                            children: [
-                                              Flexible(
-                                                flex: 2,
-                                                child: TextFormField(
-                                                  initialValue:
-                                                      dayFormat.format(
-                                                    appointment.startDateTime,
-                                                  ),
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    labelText: 'Date',
-                                                    labelStyle: TextStyle(
-                                                      fontSize: Sizes.size12,
+                                      child: ListView(
+                                        children: [
+                                          ...state.asLoaded.appointments.map(
+                                            (appointment) {
+                                              return Row(
+                                                children: [
+                                                  Flexible(
+                                                    flex: 2,
+                                                    child: TextFormField(
+                                                      initialValue:
+                                                          dayFormat.format(
+                                                        appointment
+                                                            .startDateTime,
+                                                      ),
+                                                      decoration:
+                                                          const InputDecoration(
+                                                        labelText: 'Date',
+                                                        labelStyle: TextStyle(
+                                                          fontSize:
+                                                              Sizes.size12,
+                                                        ),
+                                                      ),
                                                     ),
                                                   ),
-                                                ),
-                                              ),
-                                              gapWidth4,
-                                              Flexible(
-                                                flex: 1,
-                                                child: TextFormField(
-                                                  initialValue: hourFormat
-                                                      .format(appointment
-                                                          .startDateTime),
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    labelText: 'Start',
-                                                    labelStyle: TextStyle(
-                                                      fontSize: Sizes.size12,
+                                                  gapWidth4,
+                                                  Flexible(
+                                                    flex: 1,
+                                                    child: TextFormField(
+                                                      initialValue: hourFormat
+                                                          .format(appointment
+                                                              .startDateTime),
+                                                      decoration:
+                                                          const InputDecoration(
+                                                        labelText: 'Start',
+                                                        labelStyle: TextStyle(
+                                                          fontSize:
+                                                              Sizes.size12,
+                                                        ),
+                                                      ),
                                                     ),
                                                   ),
-                                                ),
-                                              ),
-                                              gapWidth4,
-                                              Flexible(
-                                                flex: 1,
-                                                child: TextFormField(
-                                                  initialValue: hourFormat
-                                                      .format(appointment
-                                                          .endDateTime),
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    labelText: 'End',
-                                                    labelStyle: TextStyle(
-                                                      fontSize: Sizes.size12,
+                                                  gapWidth4,
+                                                  Flexible(
+                                                    flex: 1,
+                                                    child: TextFormField(
+                                                      initialValue: hourFormat
+                                                          .format(appointment
+                                                              .endDateTime),
+                                                      decoration:
+                                                          const InputDecoration(
+                                                        labelText: 'End',
+                                                        labelStyle: TextStyle(
+                                                          fontSize:
+                                                              Sizes.size12,
+                                                        ),
+                                                      ),
                                                     ),
                                                   ),
-                                                ),
-                                              ),
-                                              gapWidth16,
-                                              Tooltip(
-                                                message:
-                                                    'Add another period to this day',
-                                                child: IconButton(
-                                                  icon: const Icon(
-                                                    Icons.add_circle,
-                                                    color: AppColor
-                                                        .primaryColorSwatch,
+                                                  gapWidth16,
+                                                  Tooltip(
+                                                    message:
+                                                        'Add another period to this day',
+                                                    child: IconButton(
+                                                      icon: const Icon(
+                                                        Icons.add_circle,
+                                                        color: AppColor
+                                                            .primaryColorSwatch,
+                                                      ),
+                                                      onPressed: () {
+                                                        bloc.add(
+                                                          ScheduleEditEvent
+                                                              .addDate(
+                                                            date: appointment
+                                                                .endDateTime
+                                                                .add(
+                                                              const Duration(
+                                                                hours: 1,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        );
+                                                      },
+                                                    ),
                                                   ),
-                                                  onPressed: () {},
-                                                ),
+                                                  gapWidth4,
+                                                  IconButton(
+                                                    icon: const Icon(
+                                                      Icons.delete,
+                                                      color: AppColor.red,
+                                                    ),
+                                                    onPressed: () {
+                                                      bloc.add(
+                                                        ScheduleEditEvent
+                                                            .remodeAppointment(
+                                                          value: appointment,
+                                                        ),
+                                                      );
+                                                    },
+                                                  )
+                                                ],
+                                              );
+                                            },
+                                          ),
+                                          if (periodType.isNoRepeat)
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                top: Sizes.size16,
                                               ),
-                                              gapWidth4,
-                                              IconButton(
-                                                icon: const Icon(
-                                                  Icons.delete,
-                                                  color: AppColor.red,
-                                                ),
-                                                onPressed: () {},
-                                              )
-                                            ],
-                                          );
-                                        },
-                                        separatorBuilder: (context, index) {
-                                          return const Divider();
-                                        },
+                                              child: Row(
+                                                children: [
+                                                  TextButton(
+                                                    child:
+                                                        const Text('Add a day'),
+                                                    onPressed: () async {
+                                                      var selectedDay =
+                                                          await showDatePicker(
+                                                        context: context,
+                                                        firstDate: DateTime.utc(
+                                                          2010,
+                                                          10,
+                                                          16,
+                                                        ),
+                                                        lastDate: DateTime.utc(
+                                                          2030,
+                                                          3,
+                                                          14,
+                                                        ),
+                                                        initialDate:
+                                                            DateTime.now(),
+                                                      );
+
+                                                      if (selectedDay != null) {
+                                                        bloc.add(
+                                                          ScheduleEditEvent
+                                                              .addDate(
+                                                            date: selectedDay,
+                                                          ),
+                                                        );
+                                                      }
+                                                    },
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                        ],
                                       ),
                                     ),
-                                    if (periodType.isNoRepeat)
-                                      TextButton(
-                                        child: const Text('Add a day'),
-                                        onPressed: () {},
-                                      ),
                                   ],
                                 ),
                               ),

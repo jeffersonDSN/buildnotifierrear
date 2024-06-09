@@ -6,6 +6,7 @@ class ScheduleEditState with _$ScheduleEditState {
   const factory ScheduleEditState.loaded({
     required SchedulePeriodType periodType,
     required List<Appointment> appointments,
+    Appointment? selectedAppointment,
   }) = ScheduleEditStateLoaded;
 }
 
