@@ -23,6 +23,7 @@ mixin _$UsersOverviewEvent {
     required TResult Function(DependenteStateType<dynamic> timeCardsState)
         updateTimeCardState,
     required TResult Function(DateTime selectedDay) updateSelectedDay,
+    required TResult Function(String appointmentId) deleteAppointment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$UsersOverviewEvent {
     TResult? Function(DependenteStateType<dynamic> timeCardsState)?
         updateTimeCardState,
     TResult? Function(DateTime selectedDay)? updateSelectedDay,
+    TResult? Function(String appointmentId)? deleteAppointment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$UsersOverviewEvent {
     TResult Function(DependenteStateType<dynamic> timeCardsState)?
         updateTimeCardState,
     TResult Function(DateTime selectedDay)? updateSelectedDay,
+    TResult Function(String appointmentId)? deleteAppointment,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +56,8 @@ mixin _$UsersOverviewEvent {
         updateTimeCardState,
     required TResult Function(UsersOverviewEventUpdateSelectedDay value)
         updateSelectedDay,
+    required TResult Function(UsersOverviewEventDeleteAppointment value)
+        deleteAppointment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +69,8 @@ mixin _$UsersOverviewEvent {
         updateTimeCardState,
     TResult? Function(UsersOverviewEventUpdateSelectedDay value)?
         updateSelectedDay,
+    TResult? Function(UsersOverviewEventDeleteAppointment value)?
+        deleteAppointment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +82,8 @@ mixin _$UsersOverviewEvent {
         updateTimeCardState,
     TResult Function(UsersOverviewEventUpdateSelectedDay value)?
         updateSelectedDay,
+    TResult Function(UsersOverviewEventDeleteAppointment value)?
+        deleteAppointment,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -144,6 +153,7 @@ class _$UsersOverviewEventLoadImpl implements UsersOverviewEventLoad {
     required TResult Function(DependenteStateType<dynamic> timeCardsState)
         updateTimeCardState,
     required TResult Function(DateTime selectedDay) updateSelectedDay,
+    required TResult Function(String appointmentId) deleteAppointment,
   }) {
     return load();
   }
@@ -156,6 +166,7 @@ class _$UsersOverviewEventLoadImpl implements UsersOverviewEventLoad {
     TResult? Function(DependenteStateType<dynamic> timeCardsState)?
         updateTimeCardState,
     TResult? Function(DateTime selectedDay)? updateSelectedDay,
+    TResult? Function(String appointmentId)? deleteAppointment,
   }) {
     return load?.call();
   }
@@ -168,6 +179,7 @@ class _$UsersOverviewEventLoadImpl implements UsersOverviewEventLoad {
     TResult Function(DependenteStateType<dynamic> timeCardsState)?
         updateTimeCardState,
     TResult Function(DateTime selectedDay)? updateSelectedDay,
+    TResult Function(String appointmentId)? deleteAppointment,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -186,6 +198,8 @@ class _$UsersOverviewEventLoadImpl implements UsersOverviewEventLoad {
         updateTimeCardState,
     required TResult Function(UsersOverviewEventUpdateSelectedDay value)
         updateSelectedDay,
+    required TResult Function(UsersOverviewEventDeleteAppointment value)
+        deleteAppointment,
   }) {
     return load(this);
   }
@@ -200,6 +214,8 @@ class _$UsersOverviewEventLoadImpl implements UsersOverviewEventLoad {
         updateTimeCardState,
     TResult? Function(UsersOverviewEventUpdateSelectedDay value)?
         updateSelectedDay,
+    TResult? Function(UsersOverviewEventDeleteAppointment value)?
+        deleteAppointment,
   }) {
     return load?.call(this);
   }
@@ -214,6 +230,8 @@ class _$UsersOverviewEventLoadImpl implements UsersOverviewEventLoad {
         updateTimeCardState,
     TResult Function(UsersOverviewEventUpdateSelectedDay value)?
         updateSelectedDay,
+    TResult Function(UsersOverviewEventDeleteAppointment value)?
+        deleteAppointment,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -314,6 +332,7 @@ class _$UsersOverviewEventChangeselectedUserImpl
     required TResult Function(DependenteStateType<dynamic> timeCardsState)
         updateTimeCardState,
     required TResult Function(DateTime selectedDay) updateSelectedDay,
+    required TResult Function(String appointmentId) deleteAppointment,
   }) {
     return changeselectedUser(selectedUser);
   }
@@ -326,6 +345,7 @@ class _$UsersOverviewEventChangeselectedUserImpl
     TResult? Function(DependenteStateType<dynamic> timeCardsState)?
         updateTimeCardState,
     TResult? Function(DateTime selectedDay)? updateSelectedDay,
+    TResult? Function(String appointmentId)? deleteAppointment,
   }) {
     return changeselectedUser?.call(selectedUser);
   }
@@ -338,6 +358,7 @@ class _$UsersOverviewEventChangeselectedUserImpl
     TResult Function(DependenteStateType<dynamic> timeCardsState)?
         updateTimeCardState,
     TResult Function(DateTime selectedDay)? updateSelectedDay,
+    TResult Function(String appointmentId)? deleteAppointment,
     required TResult orElse(),
   }) {
     if (changeselectedUser != null) {
@@ -356,6 +377,8 @@ class _$UsersOverviewEventChangeselectedUserImpl
         updateTimeCardState,
     required TResult Function(UsersOverviewEventUpdateSelectedDay value)
         updateSelectedDay,
+    required TResult Function(UsersOverviewEventDeleteAppointment value)
+        deleteAppointment,
   }) {
     return changeselectedUser(this);
   }
@@ -370,6 +393,8 @@ class _$UsersOverviewEventChangeselectedUserImpl
         updateTimeCardState,
     TResult? Function(UsersOverviewEventUpdateSelectedDay value)?
         updateSelectedDay,
+    TResult? Function(UsersOverviewEventDeleteAppointment value)?
+        deleteAppointment,
   }) {
     return changeselectedUser?.call(this);
   }
@@ -384,6 +409,8 @@ class _$UsersOverviewEventChangeselectedUserImpl
         updateTimeCardState,
     TResult Function(UsersOverviewEventUpdateSelectedDay value)?
         updateSelectedDay,
+    TResult Function(UsersOverviewEventDeleteAppointment value)?
+        deleteAppointment,
     required TResult orElse(),
   }) {
     if (changeselectedUser != null) {
@@ -494,6 +521,7 @@ class _$UsersOverviewEventUpdateTimeCardStateImpl
     required TResult Function(DependenteStateType<dynamic> timeCardsState)
         updateTimeCardState,
     required TResult Function(DateTime selectedDay) updateSelectedDay,
+    required TResult Function(String appointmentId) deleteAppointment,
   }) {
     return updateTimeCardState(timeCardsState);
   }
@@ -506,6 +534,7 @@ class _$UsersOverviewEventUpdateTimeCardStateImpl
     TResult? Function(DependenteStateType<dynamic> timeCardsState)?
         updateTimeCardState,
     TResult? Function(DateTime selectedDay)? updateSelectedDay,
+    TResult? Function(String appointmentId)? deleteAppointment,
   }) {
     return updateTimeCardState?.call(timeCardsState);
   }
@@ -518,6 +547,7 @@ class _$UsersOverviewEventUpdateTimeCardStateImpl
     TResult Function(DependenteStateType<dynamic> timeCardsState)?
         updateTimeCardState,
     TResult Function(DateTime selectedDay)? updateSelectedDay,
+    TResult Function(String appointmentId)? deleteAppointment,
     required TResult orElse(),
   }) {
     if (updateTimeCardState != null) {
@@ -536,6 +566,8 @@ class _$UsersOverviewEventUpdateTimeCardStateImpl
         updateTimeCardState,
     required TResult Function(UsersOverviewEventUpdateSelectedDay value)
         updateSelectedDay,
+    required TResult Function(UsersOverviewEventDeleteAppointment value)
+        deleteAppointment,
   }) {
     return updateTimeCardState(this);
   }
@@ -550,6 +582,8 @@ class _$UsersOverviewEventUpdateTimeCardStateImpl
         updateTimeCardState,
     TResult? Function(UsersOverviewEventUpdateSelectedDay value)?
         updateSelectedDay,
+    TResult? Function(UsersOverviewEventDeleteAppointment value)?
+        deleteAppointment,
   }) {
     return updateTimeCardState?.call(this);
   }
@@ -564,6 +598,8 @@ class _$UsersOverviewEventUpdateTimeCardStateImpl
         updateTimeCardState,
     TResult Function(UsersOverviewEventUpdateSelectedDay value)?
         updateSelectedDay,
+    TResult Function(UsersOverviewEventDeleteAppointment value)?
+        deleteAppointment,
     required TResult orElse(),
   }) {
     if (updateTimeCardState != null) {
@@ -662,6 +698,7 @@ class _$UsersOverviewEventUpdateSelectedDayImpl
     required TResult Function(DependenteStateType<dynamic> timeCardsState)
         updateTimeCardState,
     required TResult Function(DateTime selectedDay) updateSelectedDay,
+    required TResult Function(String appointmentId) deleteAppointment,
   }) {
     return updateSelectedDay(selectedDay);
   }
@@ -674,6 +711,7 @@ class _$UsersOverviewEventUpdateSelectedDayImpl
     TResult? Function(DependenteStateType<dynamic> timeCardsState)?
         updateTimeCardState,
     TResult? Function(DateTime selectedDay)? updateSelectedDay,
+    TResult? Function(String appointmentId)? deleteAppointment,
   }) {
     return updateSelectedDay?.call(selectedDay);
   }
@@ -686,6 +724,7 @@ class _$UsersOverviewEventUpdateSelectedDayImpl
     TResult Function(DependenteStateType<dynamic> timeCardsState)?
         updateTimeCardState,
     TResult Function(DateTime selectedDay)? updateSelectedDay,
+    TResult Function(String appointmentId)? deleteAppointment,
     required TResult orElse(),
   }) {
     if (updateSelectedDay != null) {
@@ -704,6 +743,8 @@ class _$UsersOverviewEventUpdateSelectedDayImpl
         updateTimeCardState,
     required TResult Function(UsersOverviewEventUpdateSelectedDay value)
         updateSelectedDay,
+    required TResult Function(UsersOverviewEventDeleteAppointment value)
+        deleteAppointment,
   }) {
     return updateSelectedDay(this);
   }
@@ -718,6 +759,8 @@ class _$UsersOverviewEventUpdateSelectedDayImpl
         updateTimeCardState,
     TResult? Function(UsersOverviewEventUpdateSelectedDay value)?
         updateSelectedDay,
+    TResult? Function(UsersOverviewEventDeleteAppointment value)?
+        deleteAppointment,
   }) {
     return updateSelectedDay?.call(this);
   }
@@ -732,6 +775,8 @@ class _$UsersOverviewEventUpdateSelectedDayImpl
         updateTimeCardState,
     TResult Function(UsersOverviewEventUpdateSelectedDay value)?
         updateSelectedDay,
+    TResult Function(UsersOverviewEventDeleteAppointment value)?
+        deleteAppointment,
     required TResult orElse(),
   }) {
     if (updateSelectedDay != null) {
@@ -751,6 +796,184 @@ abstract class UsersOverviewEventUpdateSelectedDay
   @JsonKey(ignore: true)
   _$$UsersOverviewEventUpdateSelectedDayImplCopyWith<
           _$UsersOverviewEventUpdateSelectedDayImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UsersOverviewEventDeleteAppointmentImplCopyWith<$Res> {
+  factory _$$UsersOverviewEventDeleteAppointmentImplCopyWith(
+          _$UsersOverviewEventDeleteAppointmentImpl value,
+          $Res Function(_$UsersOverviewEventDeleteAppointmentImpl) then) =
+      __$$UsersOverviewEventDeleteAppointmentImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String appointmentId});
+}
+
+/// @nodoc
+class __$$UsersOverviewEventDeleteAppointmentImplCopyWithImpl<$Res>
+    extends _$UsersOverviewEventCopyWithImpl<$Res,
+        _$UsersOverviewEventDeleteAppointmentImpl>
+    implements _$$UsersOverviewEventDeleteAppointmentImplCopyWith<$Res> {
+  __$$UsersOverviewEventDeleteAppointmentImplCopyWithImpl(
+      _$UsersOverviewEventDeleteAppointmentImpl _value,
+      $Res Function(_$UsersOverviewEventDeleteAppointmentImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? appointmentId = null,
+  }) {
+    return _then(_$UsersOverviewEventDeleteAppointmentImpl(
+      appointmentId: null == appointmentId
+          ? _value.appointmentId
+          : appointmentId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UsersOverviewEventDeleteAppointmentImpl
+    implements UsersOverviewEventDeleteAppointment {
+  const _$UsersOverviewEventDeleteAppointmentImpl(
+      {required this.appointmentId});
+
+  @override
+  final String appointmentId;
+
+  @override
+  String toString() {
+    return 'UsersOverviewEvent.deleteAppointment(appointmentId: $appointmentId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UsersOverviewEventDeleteAppointmentImpl &&
+            (identical(other.appointmentId, appointmentId) ||
+                other.appointmentId == appointmentId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, appointmentId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UsersOverviewEventDeleteAppointmentImplCopyWith<
+          _$UsersOverviewEventDeleteAppointmentImpl>
+      get copyWith => __$$UsersOverviewEventDeleteAppointmentImplCopyWithImpl<
+          _$UsersOverviewEventDeleteAppointmentImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function(User selectedUser) changeselectedUser,
+    required TResult Function(DependenteStateType<dynamic> timeCardsState)
+        updateTimeCardState,
+    required TResult Function(DateTime selectedDay) updateSelectedDay,
+    required TResult Function(String appointmentId) deleteAppointment,
+  }) {
+    return deleteAppointment(appointmentId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function(User selectedUser)? changeselectedUser,
+    TResult? Function(DependenteStateType<dynamic> timeCardsState)?
+        updateTimeCardState,
+    TResult? Function(DateTime selectedDay)? updateSelectedDay,
+    TResult? Function(String appointmentId)? deleteAppointment,
+  }) {
+    return deleteAppointment?.call(appointmentId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function(User selectedUser)? changeselectedUser,
+    TResult Function(DependenteStateType<dynamic> timeCardsState)?
+        updateTimeCardState,
+    TResult Function(DateTime selectedDay)? updateSelectedDay,
+    TResult Function(String appointmentId)? deleteAppointment,
+    required TResult orElse(),
+  }) {
+    if (deleteAppointment != null) {
+      return deleteAppointment(appointmentId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UsersOverviewEventLoad value) load,
+    required TResult Function(UsersOverviewEventChangeselectedUser value)
+        changeselectedUser,
+    required TResult Function(UsersOverviewEventUpdateTimeCardState value)
+        updateTimeCardState,
+    required TResult Function(UsersOverviewEventUpdateSelectedDay value)
+        updateSelectedDay,
+    required TResult Function(UsersOverviewEventDeleteAppointment value)
+        deleteAppointment,
+  }) {
+    return deleteAppointment(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UsersOverviewEventLoad value)? load,
+    TResult? Function(UsersOverviewEventChangeselectedUser value)?
+        changeselectedUser,
+    TResult? Function(UsersOverviewEventUpdateTimeCardState value)?
+        updateTimeCardState,
+    TResult? Function(UsersOverviewEventUpdateSelectedDay value)?
+        updateSelectedDay,
+    TResult? Function(UsersOverviewEventDeleteAppointment value)?
+        deleteAppointment,
+  }) {
+    return deleteAppointment?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UsersOverviewEventLoad value)? load,
+    TResult Function(UsersOverviewEventChangeselectedUser value)?
+        changeselectedUser,
+    TResult Function(UsersOverviewEventUpdateTimeCardState value)?
+        updateTimeCardState,
+    TResult Function(UsersOverviewEventUpdateSelectedDay value)?
+        updateSelectedDay,
+    TResult Function(UsersOverviewEventDeleteAppointment value)?
+        deleteAppointment,
+    required TResult orElse(),
+  }) {
+    if (deleteAppointment != null) {
+      return deleteAppointment(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UsersOverviewEventDeleteAppointment
+    implements UsersOverviewEvent {
+  const factory UsersOverviewEventDeleteAppointment(
+          {required final String appointmentId}) =
+      _$UsersOverviewEventDeleteAppointmentImpl;
+
+  String get appointmentId;
+  @JsonKey(ignore: true)
+  _$$UsersOverviewEventDeleteAppointmentImplCopyWith<
+          _$UsersOverviewEventDeleteAppointmentImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 

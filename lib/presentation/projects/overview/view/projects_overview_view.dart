@@ -376,6 +376,14 @@ class ProjectsOverviewView extends IView {
                                                 );
                                               },
                                               onCreate: () {},
+                                              onDelete: (value) {
+                                                bloc.add(
+                                                  ProjectsOverviewEvent
+                                                      .deleteAppointment(
+                                                    appointmentId: value,
+                                                  ),
+                                                );
+                                              },
                                             ),
                                           ],
                                         ),

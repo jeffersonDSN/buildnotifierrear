@@ -5,4 +5,8 @@ class ScheduleOverViewEvent with _$ScheduleOverViewEvent {
   const factory ScheduleOverViewEvent.changeSelectedDay({
     required DateTime selectedDay,
   }) = ScheduleEOverViewVentChangeSelectedDay;
+
+  const factory ScheduleOverViewEvent.delete({
+    required String appointmantId,
+  }) = ScheduleOverViewEventDelete;
 }

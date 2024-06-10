@@ -34,32 +34,41 @@ class TasksListWidget extends StatelessWidget {
                     value: 0,
                     color: AppColor.green,
                   ),
-                  trailing: SizedBox(
-                    width: Sizes.size80,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconButton(
-                          icon: const Icon(
-                            Icons.calendar_month,
-                            color: AppColor.primaryColorSwatch,
-                          ),
-                          onPressed: () {
-                            onCalendar.call(task);
-                          },
-                        ),
-                        IconButton(
-                          icon: const Icon(
-                            Icons.edit,
-                            color: AppColor.warning,
-                          ),
-                          onPressed: () {
-                            onEdit.call(task);
-                          },
-                        ),
-                      ],
+                  trailing: IconButton(
+                    icon: const Icon(
+                      Icons.edit,
+                      color: AppColor.warning,
                     ),
+                    onPressed: () {
+                      onEdit.call(task);
+                    },
                   ),
+                  // SizedBox(
+                  //   width: Sizes.size80,
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //     children: [
+                  //       IconButton(
+                  //         icon: const Icon(
+                  //           Icons.calendar_month,
+                  //           color: AppColor.primaryColorSwatch,
+                  //         ),
+                  //         onPressed: () {
+                  //           onCalendar.call(task);
+                  //         },
+                  //       ),
+                  //       IconButton(
+                  //         icon: const Icon(
+                  //           Icons.edit,
+                  //           color: AppColor.warning,
+                  //         ),
+                  //         onPressed: () {
+                  //           onEdit.call(task);
+                  //         },
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                 );
               },
             ),

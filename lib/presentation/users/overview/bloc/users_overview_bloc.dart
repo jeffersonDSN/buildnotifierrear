@@ -100,6 +100,15 @@ class UsersOverviewBloc extends Bloc<UsersOverviewEvent, UsersOverviewState> {
             ),
           );
         },
+        deleteAppointment: (appointmentId) async {
+          await appointmentController.delete(appointmentId);
+
+          add(
+            UsersOverviewEvent.updateSelectedDay(
+              selectedDay: state.asLoaded.selectedDay,
+            ),
+          );
+        },
       );
     });
   }

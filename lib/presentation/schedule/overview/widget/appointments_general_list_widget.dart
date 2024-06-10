@@ -6,12 +6,14 @@ import 'package:intl/intl.dart';
 
 class AppointmentsGeneralListdWidget extends StatelessWidget {
   final List<Appointment> appointments;
+  final ValueChanged<String> onDelete;
 
   final DateFormat hourFormat = DateFormat.jm();
 
   AppointmentsGeneralListdWidget({
     super.key,
     required this.appointments,
+    required this.onDelete,
   });
 
   @override
@@ -40,10 +42,10 @@ class AppointmentsGeneralListdWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              const Expanded(
+              Expanded(
                 child: Row(
                   children: [
-                    Text(
+                    const Text(
                       'Project:',
                       style: TextStyle(
                         color: AppColor.primaryColorSwatch,
@@ -51,15 +53,17 @@ class AppointmentsGeneralListdWidget extends StatelessWidget {
                     ),
                     gapWidth4,
                     Text(
-                      'N/A',
+                      appointment.projectName.isNotEmpty
+                          ? appointment.projectName
+                          : 'N/A',
                     ),
                   ],
                 ),
               ),
-              const Expanded(
+              Expanded(
                 child: Row(
                   children: [
-                    Text(
+                    const Text(
                       'Task:',
                       style: TextStyle(
                         color: AppColor.primaryColorSwatch,
@@ -67,7 +71,9 @@ class AppointmentsGeneralListdWidget extends StatelessWidget {
                     ),
                     gapWidth4,
                     Text(
-                      'N/A',
+                      appointment.taskName.isNotEmpty
+                          ? appointment.taskName
+                          : 'N/A',
                     ),
                   ],
                 ),
@@ -76,10 +82,12 @@ class AppointmentsGeneralListdWidget extends StatelessWidget {
           ),
           trailing: IconButton(
             icon: const Icon(
-              Icons.edit,
-              color: AppColor.warning,
+              Icons.delete,
+              color: AppColor.red,
             ),
-            onPressed: () {},
+            onPressed: () {
+              onDelete.call(appointment.id);
+            },
           ),
           subtitle: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

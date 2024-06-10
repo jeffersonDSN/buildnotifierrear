@@ -23,4 +23,8 @@ class ProjectsOverviewEvent with _$ProjectsOverviewEvent {
   const factory ProjectsOverviewEvent.saveTaskSelected({
     required VoidCallback callback,
   }) = ProjectsOverviewEventSaveTaskSelected;
+
+  const factory ProjectsOverviewEvent.deleteAppointment({
+    required String appointmentId,
+  }) = ProjectsOverviewEventDeleteAppointment;
 }

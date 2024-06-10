@@ -29,6 +29,15 @@ class ScheduleOverViewBloc
             ),
           );
         },
+        delete: (appointmantId) async {
+          await controller.delete(appointmantId);
+
+          add(
+            ScheduleOverViewEvent.changeSelectedDay(
+              selectedDay: state.selectedDay,
+            ),
+          );
+        },
       );
     });
   }

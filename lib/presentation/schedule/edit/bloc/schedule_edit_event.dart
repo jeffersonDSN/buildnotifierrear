@@ -51,4 +51,8 @@ class ScheduleEditEvent with _$ScheduleEditEvent {
   const factory ScheduleEditEvent.remodeAppointment({
     required Appointment value,
   }) = ScheduleEditEventRemoveAppointment;
+
+  const factory ScheduleEditEvent.save({
+    required VoidCallback callBack,
+  }) = ScheduleEditEventSave;
 }

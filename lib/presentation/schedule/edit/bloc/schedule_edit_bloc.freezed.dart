@@ -35,6 +35,7 @@ mixin _$ScheduleEditEvent {
         removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,6 +54,7 @@ mixin _$ScheduleEditEvent {
     TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +72,7 @@ mixin _$ScheduleEditEvent {
     TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -104,6 +107,7 @@ mixin _$ScheduleEditEvent {
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -132,6 +136,7 @@ mixin _$ScheduleEditEvent {
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -159,6 +164,7 @@ mixin _$ScheduleEditEvent {
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -275,6 +281,7 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
         removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
   }) {
     return load(type);
   }
@@ -296,6 +303,7 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
     TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
   }) {
     return load?.call(type);
   }
@@ -316,6 +324,7 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
     TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -356,6 +365,7 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
   }) {
     return load(this);
   }
@@ -387,6 +397,7 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
   }) {
     return load?.call(this);
   }
@@ -417,6 +428,7 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -523,6 +535,7 @@ class _$ScheduleEditEventChangePeriodTypeImpl
         removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
   }) {
     return changePeriodType(value);
   }
@@ -544,6 +557,7 @@ class _$ScheduleEditEventChangePeriodTypeImpl
     TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
   }) {
     return changePeriodType?.call(value);
   }
@@ -564,6 +578,7 @@ class _$ScheduleEditEventChangePeriodTypeImpl
     TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
     if (changePeriodType != null) {
@@ -604,6 +619,7 @@ class _$ScheduleEditEventChangePeriodTypeImpl
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
   }) {
     return changePeriodType(this);
   }
@@ -635,6 +651,7 @@ class _$ScheduleEditEventChangePeriodTypeImpl
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
   }) {
     return changePeriodType?.call(this);
   }
@@ -665,6 +682,7 @@ class _$ScheduleEditEventChangePeriodTypeImpl
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
     required TResult orElse(),
   }) {
     if (changePeriodType != null) {
@@ -786,6 +804,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
         removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
   }) {
     return changeSelectedAppointment(value);
   }
@@ -807,6 +826,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
     TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
   }) {
     return changeSelectedAppointment?.call(value);
   }
@@ -827,6 +847,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
     TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
     if (changeSelectedAppointment != null) {
@@ -867,6 +888,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
   }) {
     return changeSelectedAppointment(this);
   }
@@ -898,6 +920,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
   }) {
     return changeSelectedAppointment?.call(this);
   }
@@ -928,6 +951,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
     required TResult orElse(),
   }) {
     if (changeSelectedAppointment != null) {
@@ -1044,6 +1068,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentTitleImpl
         removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
   }) {
     return changeSelectedAppointmentTitle(value);
   }
@@ -1065,6 +1090,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentTitleImpl
     TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
   }) {
     return changeSelectedAppointmentTitle?.call(value);
   }
@@ -1085,6 +1111,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentTitleImpl
     TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
     if (changeSelectedAppointmentTitle != null) {
@@ -1125,6 +1152,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentTitleImpl
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
   }) {
     return changeSelectedAppointmentTitle(this);
   }
@@ -1156,6 +1184,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentTitleImpl
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
   }) {
     return changeSelectedAppointmentTitle?.call(this);
   }
@@ -1186,6 +1215,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentTitleImpl
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
     required TResult orElse(),
   }) {
     if (changeSelectedAppointmentTitle != null) {
@@ -1312,6 +1342,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentProjectImpl
         removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
   }) {
     return changeSelectedAppointmentProject(id, value);
   }
@@ -1333,6 +1364,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentProjectImpl
     TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
   }) {
     return changeSelectedAppointmentProject?.call(id, value);
   }
@@ -1353,6 +1385,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentProjectImpl
     TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
     if (changeSelectedAppointmentProject != null) {
@@ -1393,6 +1426,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentProjectImpl
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
   }) {
     return changeSelectedAppointmentProject(this);
   }
@@ -1424,6 +1458,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentProjectImpl
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
   }) {
     return changeSelectedAppointmentProject?.call(this);
   }
@@ -1454,6 +1489,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentProjectImpl
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
     required TResult orElse(),
   }) {
     if (changeSelectedAppointmentProject != null) {
@@ -1578,6 +1614,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentTaskImpl
         removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
   }) {
     return changeSelectedAppointmentTask(id, value);
   }
@@ -1599,6 +1636,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentTaskImpl
     TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
   }) {
     return changeSelectedAppointmentTask?.call(id, value);
   }
@@ -1619,6 +1657,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentTaskImpl
     TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
     if (changeSelectedAppointmentTask != null) {
@@ -1659,6 +1698,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentTaskImpl
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
   }) {
     return changeSelectedAppointmentTask(this);
   }
@@ -1690,6 +1730,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentTaskImpl
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
   }) {
     return changeSelectedAppointmentTask?.call(this);
   }
@@ -1720,6 +1761,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentTaskImpl
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
     required TResult orElse(),
   }) {
     if (changeSelectedAppointmentTask != null) {
@@ -1841,6 +1883,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentLocationImpl
         removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
   }) {
     return changeSelectedAppointmentLocation(value);
   }
@@ -1862,6 +1905,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentLocationImpl
     TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
   }) {
     return changeSelectedAppointmentLocation?.call(value);
   }
@@ -1882,6 +1926,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentLocationImpl
     TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
     if (changeSelectedAppointmentLocation != null) {
@@ -1922,6 +1967,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentLocationImpl
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
   }) {
     return changeSelectedAppointmentLocation(this);
   }
@@ -1953,6 +1999,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentLocationImpl
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
   }) {
     return changeSelectedAppointmentLocation?.call(this);
   }
@@ -1983,6 +2030,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentLocationImpl
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
     required TResult orElse(),
   }) {
     if (changeSelectedAppointmentLocation != null) {
@@ -2104,6 +2152,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl
         removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
   }) {
     return changeSelectedAppointmentDescription(value);
   }
@@ -2125,6 +2174,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl
     TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
   }) {
     return changeSelectedAppointmentDescription?.call(value);
   }
@@ -2145,6 +2195,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl
     TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
     if (changeSelectedAppointmentDescription != null) {
@@ -2185,6 +2236,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
   }) {
     return changeSelectedAppointmentDescription(this);
   }
@@ -2216,6 +2268,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
   }) {
     return changeSelectedAppointmentDescription?.call(this);
   }
@@ -2246,6 +2299,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
     required TResult orElse(),
   }) {
     if (changeSelectedAppointmentDescription != null) {
@@ -2373,6 +2427,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl
         removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
   }) {
     return changeSelectedAppointmentAssignTo(value);
   }
@@ -2394,6 +2449,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl
     TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
   }) {
     return changeSelectedAppointmentAssignTo?.call(value);
   }
@@ -2414,6 +2470,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl
     TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
     if (changeSelectedAppointmentAssignTo != null) {
@@ -2454,6 +2511,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
   }) {
     return changeSelectedAppointmentAssignTo(this);
   }
@@ -2485,6 +2543,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
   }) {
     return changeSelectedAppointmentAssignTo?.call(this);
   }
@@ -2515,6 +2574,7 @@ class _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
     required TResult orElse(),
   }) {
     if (changeSelectedAppointmentAssignTo != null) {
@@ -2647,6 +2707,7 @@ class _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl
         removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
   }) {
     return removeSelectedAppointmentAssignTo(user);
   }
@@ -2668,6 +2729,7 @@ class _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl
     TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
   }) {
     return removeSelectedAppointmentAssignTo?.call(user);
   }
@@ -2688,6 +2750,7 @@ class _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl
     TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
     if (removeSelectedAppointmentAssignTo != null) {
@@ -2728,6 +2791,7 @@ class _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
   }) {
     return removeSelectedAppointmentAssignTo(this);
   }
@@ -2759,6 +2823,7 @@ class _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
   }) {
     return removeSelectedAppointmentAssignTo?.call(this);
   }
@@ -2789,6 +2854,7 @@ class _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
     required TResult orElse(),
   }) {
     if (removeSelectedAppointmentAssignTo != null) {
@@ -2896,6 +2962,7 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
         removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
   }) {
     return addDate(date);
   }
@@ -2917,6 +2984,7 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
     TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
   }) {
     return addDate?.call(date);
   }
@@ -2937,6 +3005,7 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
     TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
     if (addDate != null) {
@@ -2977,6 +3046,7 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
   }) {
     return addDate(this);
   }
@@ -3008,6 +3078,7 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
   }) {
     return addDate?.call(this);
   }
@@ -3038,6 +3109,7 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
     required TResult orElse(),
   }) {
     if (addDate != null) {
@@ -3154,6 +3226,7 @@ class _$ScheduleEditEventRemoveAppointmentImpl
         removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
   }) {
     return remodeAppointment(value);
   }
@@ -3175,6 +3248,7 @@ class _$ScheduleEditEventRemoveAppointmentImpl
     TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
   }) {
     return remodeAppointment?.call(value);
   }
@@ -3195,6 +3269,7 @@ class _$ScheduleEditEventRemoveAppointmentImpl
     TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
     if (remodeAppointment != null) {
@@ -3235,6 +3310,7 @@ class _$ScheduleEditEventRemoveAppointmentImpl
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
   }) {
     return remodeAppointment(this);
   }
@@ -3266,6 +3342,7 @@ class _$ScheduleEditEventRemoveAppointmentImpl
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
   }) {
     return remodeAppointment?.call(this);
   }
@@ -3296,6 +3373,7 @@ class _$ScheduleEditEventRemoveAppointmentImpl
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
     required TResult orElse(),
   }) {
     if (remodeAppointment != null) {
@@ -3314,6 +3392,257 @@ abstract class ScheduleEditEventRemoveAppointment implements ScheduleEditEvent {
   @JsonKey(ignore: true)
   _$$ScheduleEditEventRemoveAppointmentImplCopyWith<
           _$ScheduleEditEventRemoveAppointmentImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ScheduleEditEventSaveImplCopyWith<$Res> {
+  factory _$$ScheduleEditEventSaveImplCopyWith(
+          _$ScheduleEditEventSaveImpl value,
+          $Res Function(_$ScheduleEditEventSaveImpl) then) =
+      __$$ScheduleEditEventSaveImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({VoidCallback callBack});
+}
+
+/// @nodoc
+class __$$ScheduleEditEventSaveImplCopyWithImpl<$Res>
+    extends _$ScheduleEditEventCopyWithImpl<$Res, _$ScheduleEditEventSaveImpl>
+    implements _$$ScheduleEditEventSaveImplCopyWith<$Res> {
+  __$$ScheduleEditEventSaveImplCopyWithImpl(_$ScheduleEditEventSaveImpl _value,
+      $Res Function(_$ScheduleEditEventSaveImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? callBack = null,
+  }) {
+    return _then(_$ScheduleEditEventSaveImpl(
+      callBack: null == callBack
+          ? _value.callBack
+          : callBack // ignore: cast_nullable_to_non_nullable
+              as VoidCallback,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ScheduleEditEventSaveImpl implements ScheduleEditEventSave {
+  const _$ScheduleEditEventSaveImpl({required this.callBack});
+
+  @override
+  final VoidCallback callBack;
+
+  @override
+  String toString() {
+    return 'ScheduleEditEvent.save(callBack: $callBack)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ScheduleEditEventSaveImpl &&
+            (identical(other.callBack, callBack) ||
+                other.callBack == callBack));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, callBack);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScheduleEditEventSaveImplCopyWith<_$ScheduleEditEventSaveImpl>
+      get copyWith => __$$ScheduleEditEventSaveImplCopyWithImpl<
+          _$ScheduleEditEventSaveImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(SchedulePeriodType value) changePeriodType,
+    required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(DateTime date) addDate,
+    required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
+  }) {
+    return save(callBack);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(SchedulePeriodType value)? changePeriodType,
+    TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult? Function(DateTime date)? addDate,
+    TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
+  }) {
+    return save?.call(callBack);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(SchedulePeriodType value)? changePeriodType,
+    TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult Function(DateTime date)? addDate,
+    TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
+    required TResult orElse(),
+  }) {
+    if (save != null) {
+      return save(callBack);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ScheduleEditEventLoad value) load,
+    required TResult Function(ScheduleEditEventChangePeriodType value)
+        changePeriodType,
+    required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
+        changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(ScheduleEditEventAddDate value) addDate,
+    required TResult Function(ScheduleEditEventRemoveAppointment value)
+        remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
+  }) {
+    return save(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ScheduleEditEventLoad value)? load,
+    TResult? Function(ScheduleEditEventChangePeriodType value)?
+        changePeriodType,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult? Function(ScheduleEditEventAddDate value)? addDate,
+    TResult? Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
+  }) {
+    return save?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ScheduleEditEventLoad value)? load,
+    TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
+    TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult Function(ScheduleEditEventAddDate value)? addDate,
+    TResult Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (save != null) {
+      return save(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ScheduleEditEventSave implements ScheduleEditEvent {
+  const factory ScheduleEditEventSave({required final VoidCallback callBack}) =
+      _$ScheduleEditEventSaveImpl;
+
+  VoidCallback get callBack;
+  @JsonKey(ignore: true)
+  _$$ScheduleEditEventSaveImplCopyWith<_$ScheduleEditEventSaveImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 

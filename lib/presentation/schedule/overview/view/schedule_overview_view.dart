@@ -44,6 +44,13 @@ class ScheduleOverviewView extends IView {
                   ),
                 );
               },
+              onDelete: (value) {
+                bloc.add(
+                  ScheduleOverViewEvent.delete(
+                    appointmantId: value,
+                  ),
+                );
+              },
             );
           },
         ),

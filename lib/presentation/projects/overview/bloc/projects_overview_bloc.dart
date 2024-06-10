@@ -156,6 +156,15 @@ class ProjectsOverviewBloc
 
             callback.call();
           },
+          deleteAppointment: (appointmentId) async {
+            await appointmentController.delete(appointmentId);
+
+            add(
+              ProjectsOverviewEvent.changeSelectedDay(
+                selectedDay: state.asLoaded.selectedDay,
+              ),
+            );
+          },
         );
       },
     );

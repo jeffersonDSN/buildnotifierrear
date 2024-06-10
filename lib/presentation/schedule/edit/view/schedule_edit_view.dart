@@ -360,11 +360,6 @@ class ScheduleEditView extends IView {
                                         }
                                       },
                                     ),
-                                    // TextFormField(
-                                    //   decoration: const InputDecoration(
-                                    //     labelText: 'Project',
-                                    //   ),
-                                    // ),
                                     gapHeight8,
                                     DropdownButtonFormField<
                                         ({String id, String title})>(
@@ -407,13 +402,6 @@ class ScheduleEditView extends IView {
                                         }
                                       },
                                     ),
-
-                                    // gapHeight8,
-                                    // TextFormField(
-                                    //   decoration: const InputDecoration(
-                                    //     labelText: 'Task',
-                                    //   ),
-                                    // ),
                                     gapHeight8,
                                     TextFormField(
                                       decoration: const InputDecoration(
@@ -523,7 +511,21 @@ class ScheduleEditView extends IView {
                             create: () => const Text('Create appointment'),
                             update: (id) => const Text('Update appointment'),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            bloc.add(
+                              ScheduleEditEvent.save(
+                                callBack: () {
+                                  appBloc(context).add(
+                                    const AppEventChangeView(
+                                      mod: Mod.schedule(
+                                        type: ViewType.overview(),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                            );
+                          },
                         ),
                       ),
                     ],

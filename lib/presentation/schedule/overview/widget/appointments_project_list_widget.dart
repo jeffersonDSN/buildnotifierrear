@@ -6,12 +6,14 @@ import 'package:intl/intl.dart';
 
 class AppointmentsProjectListdWidget extends StatelessWidget {
   final List<Appointment> appointments;
+  final ValueChanged<String> onDelete;
 
   final DateFormat hourFormat = DateFormat.jm();
 
   AppointmentsProjectListdWidget({
     super.key,
     required this.appointments,
+    required this.onDelete,
   });
 
   @override
@@ -40,21 +42,23 @@ class AppointmentsProjectListdWidget extends StatelessWidget {
           ),
           trailing: IconButton(
             icon: const Icon(
-              Icons.edit,
-              color: AppColor.warning,
+              Icons.delete,
+              color: AppColor.red,
             ),
-            onPressed: () {},
+            onPressed: () {
+              onDelete.call(appointment.id);
+            },
           ),
           subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               gapHeight8,
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
-                      Text(
+                      const Text(
                         'Task:',
                         style: TextStyle(
                           color: AppColor.primaryColorSwatch,
@@ -62,7 +66,7 @@ class AppointmentsProjectListdWidget extends StatelessWidget {
                       ),
                       gapWidth4,
                       Text(
-                        'N/A',
+                        appointment.taskName,
                       ),
                     ],
                   ),

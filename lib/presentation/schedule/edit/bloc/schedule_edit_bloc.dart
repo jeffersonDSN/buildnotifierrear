@@ -5,6 +5,7 @@ import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
 import 'package:buildnotifierrear/domain/entities/task/task.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
 
@@ -215,6 +216,13 @@ class ScheduleEditBloc extends Bloc<ScheduleEditEvent, ScheduleEditState> {
               appointments: list,
             ),
           );
+        },
+        save: (callBack) async {
+          for (var i = 0; i < state.asLoaded.appointments.length; i++) {
+            await controller.create(state.asLoaded.appointments[i]);
+          }
+
+          callBack.call();
         },
       );
     });

@@ -16,20 +16,22 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ScheduleOverViewEvent {
-  DateTime get selectedDay => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(DateTime selectedDay) changeSelectedDay,
+    required TResult Function(String appointmantId) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(DateTime selectedDay)? changeSelectedDay,
+    TResult? Function(String appointmantId)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(DateTime selectedDay)? changeSelectedDay,
+    TResult Function(String appointmantId)? delete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -37,24 +39,23 @@ mixin _$ScheduleOverViewEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(ScheduleEOverViewVentChangeSelectedDay value)
         changeSelectedDay,
+    required TResult Function(ScheduleOverViewEventDelete value) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ScheduleEOverViewVentChangeSelectedDay value)?
         changeSelectedDay,
+    TResult? Function(ScheduleOverViewEventDelete value)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ScheduleEOverViewVentChangeSelectedDay value)?
         changeSelectedDay,
+    TResult Function(ScheduleOverViewEventDelete value)? delete,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $ScheduleOverViewEventCopyWith<ScheduleOverViewEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -63,8 +64,6 @@ abstract class $ScheduleOverViewEventCopyWith<$Res> {
   factory $ScheduleOverViewEventCopyWith(ScheduleOverViewEvent value,
           $Res Function(ScheduleOverViewEvent) then) =
       _$ScheduleOverViewEventCopyWithImpl<$Res, ScheduleOverViewEvent>;
-  @useResult
-  $Res call({DateTime selectedDay});
 }
 
 /// @nodoc
@@ -77,29 +76,14 @@ class _$ScheduleOverViewEventCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? selectedDay = null,
-  }) {
-    return _then(_value.copyWith(
-      selectedDay: null == selectedDay
-          ? _value.selectedDay
-          : selectedDay // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$ScheduleEOverViewVentChangeSelectedDayImplCopyWith<$Res>
-    implements $ScheduleOverViewEventCopyWith<$Res> {
+abstract class _$$ScheduleEOverViewVentChangeSelectedDayImplCopyWith<$Res> {
   factory _$$ScheduleEOverViewVentChangeSelectedDayImplCopyWith(
           _$ScheduleEOverViewVentChangeSelectedDayImpl value,
           $Res Function(_$ScheduleEOverViewVentChangeSelectedDayImpl) then) =
       __$$ScheduleEOverViewVentChangeSelectedDayImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({DateTime selectedDay});
 }
@@ -178,6 +162,7 @@ class _$ScheduleEOverViewVentChangeSelectedDayImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(DateTime selectedDay) changeSelectedDay,
+    required TResult Function(String appointmantId) delete,
   }) {
     return changeSelectedDay(selectedDay);
   }
@@ -186,6 +171,7 @@ class _$ScheduleEOverViewVentChangeSelectedDayImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(DateTime selectedDay)? changeSelectedDay,
+    TResult? Function(String appointmantId)? delete,
   }) {
     return changeSelectedDay?.call(selectedDay);
   }
@@ -194,6 +180,7 @@ class _$ScheduleEOverViewVentChangeSelectedDayImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(DateTime selectedDay)? changeSelectedDay,
+    TResult Function(String appointmantId)? delete,
     required TResult orElse(),
   }) {
     if (changeSelectedDay != null) {
@@ -207,6 +194,7 @@ class _$ScheduleEOverViewVentChangeSelectedDayImpl
   TResult map<TResult extends Object?>({
     required TResult Function(ScheduleEOverViewVentChangeSelectedDay value)
         changeSelectedDay,
+    required TResult Function(ScheduleOverViewEventDelete value) delete,
   }) {
     return changeSelectedDay(this);
   }
@@ -216,6 +204,7 @@ class _$ScheduleEOverViewVentChangeSelectedDayImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ScheduleEOverViewVentChangeSelectedDay value)?
         changeSelectedDay,
+    TResult? Function(ScheduleOverViewEventDelete value)? delete,
   }) {
     return changeSelectedDay?.call(this);
   }
@@ -225,6 +214,7 @@ class _$ScheduleEOverViewVentChangeSelectedDayImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ScheduleEOverViewVentChangeSelectedDay value)?
         changeSelectedDay,
+    TResult Function(ScheduleOverViewEventDelete value)? delete,
     required TResult orElse(),
   }) {
     if (changeSelectedDay != null) {
@@ -240,12 +230,163 @@ abstract class ScheduleEOverViewVentChangeSelectedDay
           {required final DateTime selectedDay}) =
       _$ScheduleEOverViewVentChangeSelectedDayImpl;
 
-  @override
   DateTime get selectedDay;
-  @override
   @JsonKey(ignore: true)
   _$$ScheduleEOverViewVentChangeSelectedDayImplCopyWith<
           _$ScheduleEOverViewVentChangeSelectedDayImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ScheduleOverViewEventDeleteImplCopyWith<$Res> {
+  factory _$$ScheduleOverViewEventDeleteImplCopyWith(
+          _$ScheduleOverViewEventDeleteImpl value,
+          $Res Function(_$ScheduleOverViewEventDeleteImpl) then) =
+      __$$ScheduleOverViewEventDeleteImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String appointmantId});
+}
+
+/// @nodoc
+class __$$ScheduleOverViewEventDeleteImplCopyWithImpl<$Res>
+    extends _$ScheduleOverViewEventCopyWithImpl<$Res,
+        _$ScheduleOverViewEventDeleteImpl>
+    implements _$$ScheduleOverViewEventDeleteImplCopyWith<$Res> {
+  __$$ScheduleOverViewEventDeleteImplCopyWithImpl(
+      _$ScheduleOverViewEventDeleteImpl _value,
+      $Res Function(_$ScheduleOverViewEventDeleteImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? appointmantId = null,
+  }) {
+    return _then(_$ScheduleOverViewEventDeleteImpl(
+      appointmantId: null == appointmantId
+          ? _value.appointmantId
+          : appointmantId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ScheduleOverViewEventDeleteImpl
+    with DiagnosticableTreeMixin
+    implements ScheduleOverViewEventDelete {
+  const _$ScheduleOverViewEventDeleteImpl({required this.appointmantId});
+
+  @override
+  final String appointmantId;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ScheduleOverViewEvent.delete(appointmantId: $appointmantId)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ScheduleOverViewEvent.delete'))
+      ..add(DiagnosticsProperty('appointmantId', appointmantId));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ScheduleOverViewEventDeleteImpl &&
+            (identical(other.appointmantId, appointmantId) ||
+                other.appointmantId == appointmantId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, appointmantId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScheduleOverViewEventDeleteImplCopyWith<_$ScheduleOverViewEventDeleteImpl>
+      get copyWith => __$$ScheduleOverViewEventDeleteImplCopyWithImpl<
+          _$ScheduleOverViewEventDeleteImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(DateTime selectedDay) changeSelectedDay,
+    required TResult Function(String appointmantId) delete,
+  }) {
+    return delete(appointmantId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(DateTime selectedDay)? changeSelectedDay,
+    TResult? Function(String appointmantId)? delete,
+  }) {
+    return delete?.call(appointmantId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(DateTime selectedDay)? changeSelectedDay,
+    TResult Function(String appointmantId)? delete,
+    required TResult orElse(),
+  }) {
+    if (delete != null) {
+      return delete(appointmantId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ScheduleEOverViewVentChangeSelectedDay value)
+        changeSelectedDay,
+    required TResult Function(ScheduleOverViewEventDelete value) delete,
+  }) {
+    return delete(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ScheduleEOverViewVentChangeSelectedDay value)?
+        changeSelectedDay,
+    TResult? Function(ScheduleOverViewEventDelete value)? delete,
+  }) {
+    return delete?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ScheduleEOverViewVentChangeSelectedDay value)?
+        changeSelectedDay,
+    TResult Function(ScheduleOverViewEventDelete value)? delete,
+    required TResult orElse(),
+  }) {
+    if (delete != null) {
+      return delete(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ScheduleOverViewEventDelete implements ScheduleOverViewEvent {
+  const factory ScheduleOverViewEventDelete(
+          {required final String appointmantId}) =
+      _$ScheduleOverViewEventDeleteImpl;
+
+  String get appointmantId;
+  @JsonKey(ignore: true)
+  _$$ScheduleOverViewEventDeleteImplCopyWith<_$ScheduleOverViewEventDeleteImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 

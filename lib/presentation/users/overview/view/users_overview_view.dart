@@ -190,6 +190,14 @@ class UsersOverviewView extends IView {
                                                   );
                                                 },
                                                 onCreate: () {},
+                                                onDelete: (value) {
+                                                  bloc.add(
+                                                    UsersOverviewEvent
+                                                        .deleteAppointment(
+                                                      appointmentId: value,
+                                                    ),
+                                                  );
+                                                },
                                               ),
                                             ],
                                           ),

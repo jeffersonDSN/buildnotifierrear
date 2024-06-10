@@ -28,6 +28,8 @@ extension OnScheduleType on ScheduleType {
         return project();
     }
   }
+
+  bool get isGeneral => this == ScheduleType.general;
 }
 
 class ScheduleWidget extends StatelessWidget {
@@ -37,6 +39,7 @@ class ScheduleWidget extends StatelessWidget {
   final bool isLoading;
   final ScheduleType scheduleType;
   final VoidCallback onCreate;
+  final ValueChanged<String> onDelete;
 
   const ScheduleWidget({
     super.key,
@@ -46,6 +49,7 @@ class ScheduleWidget extends StatelessWidget {
     this.isLoading = false,
     required this.scheduleType,
     required this.onCreate,
+    required this.onDelete,
   });
 
   @override
@@ -85,20 +89,21 @@ class ScheduleWidget extends StatelessWidget {
             formatButtonVisible: false,
           ),
         ),
-        const Divider(),
-        Padding(
-          padding: const EdgeInsets.all(Sizes.size8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              FilledButton.icon(
-                icon: const Icon(Icons.add),
-                label: const Text('Create'),
-                onPressed: onCreate,
-              )
-            ],
+        if (scheduleType.isGeneral) const Divider(),
+        if (scheduleType.isGeneral)
+          Padding(
+            padding: const EdgeInsets.all(Sizes.size8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                FilledButton.icon(
+                  icon: const Icon(Icons.add),
+                  label: const Text('Create'),
+                  onPressed: onCreate,
+                )
+              ],
+            ),
           ),
-        ),
         const Divider(),
         Expanded(
           child: isLoading
@@ -114,12 +119,15 @@ class ScheduleWidget extends StatelessWidget {
                   : scheduleType.when(
                       gereral: () => AppointmentsGeneralListdWidget(
                         appointments: appointments,
+                        onDelete: onDelete,
                       ),
                       user: () => AppointmentsUserListdWidget(
                         appointments: appointments,
+                        onDelete: onDelete,
                       ),
                       project: () => AppointmentsProjectListdWidget(
                         appointments: appointments,
+                        onDelete: onDelete,
                       ),
                     ),
         ),
