@@ -31,6 +31,10 @@ class Appointment with _$Appointment {
     required DateTime endDateTime,
     @Default(0) double latitude,
     @Default(0) longitude,
+    @Default('') String projectId,
+    @Default('') String projectName,
+    @Default('') String taskId,
+    @Default('') String taskName,
     @Default([]) List<AppointmentUser> assignTo,
   }) = _Appointment;
 

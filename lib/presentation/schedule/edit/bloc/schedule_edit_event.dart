@@ -14,6 +14,36 @@ class ScheduleEditEvent with _$ScheduleEditEvent {
     required Appointment value,
   }) = ScheduleEditEventChangeSelectedAppointment;
 
+  const factory ScheduleEditEvent.changeSelectedAppointmentTitle({
+    required String value,
+  }) = ScheduleEditEventChangeSelectedAppointmentTitle;
+
+  const factory ScheduleEditEvent.changeSelectedAppointmentProject({
+    required String id,
+    required String value,
+  }) = ScheduleEditEventChangeSelectedAppointmentProject;
+
+  const factory ScheduleEditEvent.changeSelectedAppointmentTask({
+    required String id,
+    required String value,
+  }) = ScheduleEditEventChangeSelectedAppointmentTask;
+
+  const factory ScheduleEditEvent.changeSelectedAppointmentLocation({
+    required String value,
+  }) = ScheduleEditEventChangeSelectedAppointmentLocation;
+
+  const factory ScheduleEditEvent.changeSelectedAppointmentDescription({
+    required String value,
+  }) = ScheduleEditEventChangeSelectedAppointmentDescription;
+
+  const factory ScheduleEditEvent.changeSelectedAppointmentAssignTo({
+    required List<AppointmentUser> value,
+  }) = ScheduleEditEventChangeSelectedAppointmentAssignTo;
+
+  const factory ScheduleEditEvent.removeSelectedAppointmentAssignTo({
+    required AppointmentUser user,
+  }) = ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo;
+
   const factory ScheduleEditEvent.addDate({
     required DateTime date,
   }) = ScheduleEditEventAddDate;

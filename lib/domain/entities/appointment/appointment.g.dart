@@ -31,6 +31,10 @@ _$AppointmentImpl _$$AppointmentImplFromJson(Map<String, dynamic> json) =>
       endDateTime: DateTime.parse(json['endDateTime'] as String),
       latitude: (json['latitude'] as num?)?.toDouble() ?? 0,
       longitude: json['longitude'] ?? 0,
+      projectId: json['projectId'] as String? ?? '',
+      projectName: json['projectName'] as String? ?? '',
+      taskId: json['taskId'] as String? ?? '',
+      taskName: json['taskName'] as String? ?? '',
       assignTo: (json['assignTo'] as List<dynamic>?)
               ?.map((e) => AppointmentUser.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -46,5 +50,9 @@ Map<String, dynamic> _$$AppointmentImplToJson(_$AppointmentImpl instance) =>
       'endDateTime': instance.endDateTime.toIso8601String(),
       'latitude': instance.latitude,
       'longitude': instance.longitude,
+      'projectId': instance.projectId,
+      'projectName': instance.projectName,
+      'taskId': instance.taskId,
+      'taskName': instance.taskName,
       'assignTo': instance.assignTo,
     };

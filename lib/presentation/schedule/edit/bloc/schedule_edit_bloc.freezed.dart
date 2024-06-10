@@ -21,6 +21,18 @@ mixin _$ScheduleEditEvent {
     required TResult Function(CrudType type) load,
     required TResult Function(SchedulePeriodType value) changePeriodType,
     required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
   }) =>
@@ -30,6 +42,15 @@ mixin _$ScheduleEditEvent {
     TResult? Function(CrudType type)? load,
     TResult? Function(SchedulePeriodType value)? changePeriodType,
     TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
   }) =>
@@ -39,6 +60,14 @@ mixin _$ScheduleEditEvent {
     TResult Function(CrudType type)? load,
     TResult Function(SchedulePeriodType value)? changePeriodType,
     TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
     required TResult orElse(),
@@ -51,6 +80,27 @@ mixin _$ScheduleEditEvent {
         changePeriodType,
     required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
         changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
@@ -63,6 +113,22 @@ mixin _$ScheduleEditEvent {
         changePeriodType,
     TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
         changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
@@ -74,6 +140,22 @@ mixin _$ScheduleEditEvent {
     TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
     TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
         changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
@@ -179,6 +261,18 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
     required TResult Function(CrudType type) load,
     required TResult Function(SchedulePeriodType value) changePeriodType,
     required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
   }) {
@@ -191,6 +285,15 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
     TResult? Function(CrudType type)? load,
     TResult? Function(SchedulePeriodType value)? changePeriodType,
     TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
   }) {
@@ -203,6 +306,14 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
     TResult Function(CrudType type)? load,
     TResult Function(SchedulePeriodType value)? changePeriodType,
     TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
     required TResult orElse(),
@@ -221,6 +332,27 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
         changePeriodType,
     required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
         changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
@@ -236,6 +368,22 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
         changePeriodType,
     TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
         changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
@@ -250,6 +398,22 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
     TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
     TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
         changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
@@ -345,6 +509,18 @@ class _$ScheduleEditEventChangePeriodTypeImpl
     required TResult Function(CrudType type) load,
     required TResult Function(SchedulePeriodType value) changePeriodType,
     required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
   }) {
@@ -357,6 +533,15 @@ class _$ScheduleEditEventChangePeriodTypeImpl
     TResult? Function(CrudType type)? load,
     TResult? Function(SchedulePeriodType value)? changePeriodType,
     TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
   }) {
@@ -369,6 +554,14 @@ class _$ScheduleEditEventChangePeriodTypeImpl
     TResult Function(CrudType type)? load,
     TResult Function(SchedulePeriodType value)? changePeriodType,
     TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
     required TResult orElse(),
@@ -387,6 +580,27 @@ class _$ScheduleEditEventChangePeriodTypeImpl
         changePeriodType,
     required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
         changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
@@ -402,6 +616,22 @@ class _$ScheduleEditEventChangePeriodTypeImpl
         changePeriodType,
     TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
         changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
@@ -416,6 +646,22 @@ class _$ScheduleEditEventChangePeriodTypeImpl
     TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
     TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
         changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
@@ -526,6 +772,18 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
     required TResult Function(CrudType type) load,
     required TResult Function(SchedulePeriodType value) changePeriodType,
     required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
   }) {
@@ -538,6 +796,15 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
     TResult? Function(CrudType type)? load,
     TResult? Function(SchedulePeriodType value)? changePeriodType,
     TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
   }) {
@@ -550,6 +817,14 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
     TResult Function(CrudType type)? load,
     TResult Function(SchedulePeriodType value)? changePeriodType,
     TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
     required TResult orElse(),
@@ -568,6 +843,27 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
         changePeriodType,
     required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
         changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
@@ -583,6 +879,22 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
         changePeriodType,
     TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
         changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
@@ -597,6 +909,22 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
     TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
     TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
         changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
@@ -619,6 +947,1867 @@ abstract class ScheduleEditEventChangeSelectedAppointment
   @JsonKey(ignore: true)
   _$$ScheduleEditEventChangeSelectedAppointmentImplCopyWith<
           _$ScheduleEditEventChangeSelectedAppointmentImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ScheduleEditEventChangeSelectedAppointmentTitleImplCopyWith<
+    $Res> {
+  factory _$$ScheduleEditEventChangeSelectedAppointmentTitleImplCopyWith(
+          _$ScheduleEditEventChangeSelectedAppointmentTitleImpl value,
+          $Res Function(_$ScheduleEditEventChangeSelectedAppointmentTitleImpl)
+              then) =
+      __$$ScheduleEditEventChangeSelectedAppointmentTitleImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$ScheduleEditEventChangeSelectedAppointmentTitleImplCopyWithImpl<$Res>
+    extends _$ScheduleEditEventCopyWithImpl<$Res,
+        _$ScheduleEditEventChangeSelectedAppointmentTitleImpl>
+    implements
+        _$$ScheduleEditEventChangeSelectedAppointmentTitleImplCopyWith<$Res> {
+  __$$ScheduleEditEventChangeSelectedAppointmentTitleImplCopyWithImpl(
+      _$ScheduleEditEventChangeSelectedAppointmentTitleImpl _value,
+      $Res Function(_$ScheduleEditEventChangeSelectedAppointmentTitleImpl)
+          _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ScheduleEditEventChangeSelectedAppointmentTitleImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ScheduleEditEventChangeSelectedAppointmentTitleImpl
+    implements ScheduleEditEventChangeSelectedAppointmentTitle {
+  const _$ScheduleEditEventChangeSelectedAppointmentTitleImpl(
+      {required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'ScheduleEditEvent.changeSelectedAppointmentTitle(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ScheduleEditEventChangeSelectedAppointmentTitleImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScheduleEditEventChangeSelectedAppointmentTitleImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentTitleImpl>
+      get copyWith =>
+          __$$ScheduleEditEventChangeSelectedAppointmentTitleImplCopyWithImpl<
+                  _$ScheduleEditEventChangeSelectedAppointmentTitleImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(SchedulePeriodType value) changePeriodType,
+    required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(DateTime date) addDate,
+    required TResult Function(Appointment value) remodeAppointment,
+  }) {
+    return changeSelectedAppointmentTitle(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(SchedulePeriodType value)? changePeriodType,
+    TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult? Function(DateTime date)? addDate,
+    TResult? Function(Appointment value)? remodeAppointment,
+  }) {
+    return changeSelectedAppointmentTitle?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(SchedulePeriodType value)? changePeriodType,
+    TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult Function(DateTime date)? addDate,
+    TResult Function(Appointment value)? remodeAppointment,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentTitle != null) {
+      return changeSelectedAppointmentTitle(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ScheduleEditEventLoad value) load,
+    required TResult Function(ScheduleEditEventChangePeriodType value)
+        changePeriodType,
+    required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
+        changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(ScheduleEditEventAddDate value) addDate,
+    required TResult Function(ScheduleEditEventRemoveAppointment value)
+        remodeAppointment,
+  }) {
+    return changeSelectedAppointmentTitle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ScheduleEditEventLoad value)? load,
+    TResult? Function(ScheduleEditEventChangePeriodType value)?
+        changePeriodType,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult? Function(ScheduleEditEventAddDate value)? addDate,
+    TResult? Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+  }) {
+    return changeSelectedAppointmentTitle?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ScheduleEditEventLoad value)? load,
+    TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
+    TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult Function(ScheduleEditEventAddDate value)? addDate,
+    TResult Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentTitle != null) {
+      return changeSelectedAppointmentTitle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ScheduleEditEventChangeSelectedAppointmentTitle
+    implements ScheduleEditEvent {
+  const factory ScheduleEditEventChangeSelectedAppointmentTitle(
+          {required final String value}) =
+      _$ScheduleEditEventChangeSelectedAppointmentTitleImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$ScheduleEditEventChangeSelectedAppointmentTitleImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentTitleImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ScheduleEditEventChangeSelectedAppointmentProjectImplCopyWith<
+    $Res> {
+  factory _$$ScheduleEditEventChangeSelectedAppointmentProjectImplCopyWith(
+          _$ScheduleEditEventChangeSelectedAppointmentProjectImpl value,
+          $Res Function(_$ScheduleEditEventChangeSelectedAppointmentProjectImpl)
+              then) =
+      __$$ScheduleEditEventChangeSelectedAppointmentProjectImplCopyWithImpl<
+          $Res>;
+  @useResult
+  $Res call({String id, String value});
+}
+
+/// @nodoc
+class __$$ScheduleEditEventChangeSelectedAppointmentProjectImplCopyWithImpl<
+        $Res>
+    extends _$ScheduleEditEventCopyWithImpl<$Res,
+        _$ScheduleEditEventChangeSelectedAppointmentProjectImpl>
+    implements
+        _$$ScheduleEditEventChangeSelectedAppointmentProjectImplCopyWith<$Res> {
+  __$$ScheduleEditEventChangeSelectedAppointmentProjectImplCopyWithImpl(
+      _$ScheduleEditEventChangeSelectedAppointmentProjectImpl _value,
+      $Res Function(_$ScheduleEditEventChangeSelectedAppointmentProjectImpl)
+          _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? value = null,
+  }) {
+    return _then(_$ScheduleEditEventChangeSelectedAppointmentProjectImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ScheduleEditEventChangeSelectedAppointmentProjectImpl
+    implements ScheduleEditEventChangeSelectedAppointmentProject {
+  const _$ScheduleEditEventChangeSelectedAppointmentProjectImpl(
+      {required this.id, required this.value});
+
+  @override
+  final String id;
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'ScheduleEditEvent.changeSelectedAppointmentProject(id: $id, value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ScheduleEditEventChangeSelectedAppointmentProjectImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScheduleEditEventChangeSelectedAppointmentProjectImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentProjectImpl>
+      get copyWith =>
+          __$$ScheduleEditEventChangeSelectedAppointmentProjectImplCopyWithImpl<
+                  _$ScheduleEditEventChangeSelectedAppointmentProjectImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(SchedulePeriodType value) changePeriodType,
+    required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(DateTime date) addDate,
+    required TResult Function(Appointment value) remodeAppointment,
+  }) {
+    return changeSelectedAppointmentProject(id, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(SchedulePeriodType value)? changePeriodType,
+    TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult? Function(DateTime date)? addDate,
+    TResult? Function(Appointment value)? remodeAppointment,
+  }) {
+    return changeSelectedAppointmentProject?.call(id, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(SchedulePeriodType value)? changePeriodType,
+    TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult Function(DateTime date)? addDate,
+    TResult Function(Appointment value)? remodeAppointment,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentProject != null) {
+      return changeSelectedAppointmentProject(id, value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ScheduleEditEventLoad value) load,
+    required TResult Function(ScheduleEditEventChangePeriodType value)
+        changePeriodType,
+    required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
+        changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(ScheduleEditEventAddDate value) addDate,
+    required TResult Function(ScheduleEditEventRemoveAppointment value)
+        remodeAppointment,
+  }) {
+    return changeSelectedAppointmentProject(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ScheduleEditEventLoad value)? load,
+    TResult? Function(ScheduleEditEventChangePeriodType value)?
+        changePeriodType,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult? Function(ScheduleEditEventAddDate value)? addDate,
+    TResult? Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+  }) {
+    return changeSelectedAppointmentProject?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ScheduleEditEventLoad value)? load,
+    TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
+    TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult Function(ScheduleEditEventAddDate value)? addDate,
+    TResult Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentProject != null) {
+      return changeSelectedAppointmentProject(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ScheduleEditEventChangeSelectedAppointmentProject
+    implements ScheduleEditEvent {
+  const factory ScheduleEditEventChangeSelectedAppointmentProject(
+          {required final String id, required final String value}) =
+      _$ScheduleEditEventChangeSelectedAppointmentProjectImpl;
+
+  String get id;
+  String get value;
+  @JsonKey(ignore: true)
+  _$$ScheduleEditEventChangeSelectedAppointmentProjectImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentProjectImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ScheduleEditEventChangeSelectedAppointmentTaskImplCopyWith<
+    $Res> {
+  factory _$$ScheduleEditEventChangeSelectedAppointmentTaskImplCopyWith(
+          _$ScheduleEditEventChangeSelectedAppointmentTaskImpl value,
+          $Res Function(_$ScheduleEditEventChangeSelectedAppointmentTaskImpl)
+              then) =
+      __$$ScheduleEditEventChangeSelectedAppointmentTaskImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id, String value});
+}
+
+/// @nodoc
+class __$$ScheduleEditEventChangeSelectedAppointmentTaskImplCopyWithImpl<$Res>
+    extends _$ScheduleEditEventCopyWithImpl<$Res,
+        _$ScheduleEditEventChangeSelectedAppointmentTaskImpl>
+    implements
+        _$$ScheduleEditEventChangeSelectedAppointmentTaskImplCopyWith<$Res> {
+  __$$ScheduleEditEventChangeSelectedAppointmentTaskImplCopyWithImpl(
+      _$ScheduleEditEventChangeSelectedAppointmentTaskImpl _value,
+      $Res Function(_$ScheduleEditEventChangeSelectedAppointmentTaskImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? value = null,
+  }) {
+    return _then(_$ScheduleEditEventChangeSelectedAppointmentTaskImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ScheduleEditEventChangeSelectedAppointmentTaskImpl
+    implements ScheduleEditEventChangeSelectedAppointmentTask {
+  const _$ScheduleEditEventChangeSelectedAppointmentTaskImpl(
+      {required this.id, required this.value});
+
+  @override
+  final String id;
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'ScheduleEditEvent.changeSelectedAppointmentTask(id: $id, value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ScheduleEditEventChangeSelectedAppointmentTaskImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScheduleEditEventChangeSelectedAppointmentTaskImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentTaskImpl>
+      get copyWith =>
+          __$$ScheduleEditEventChangeSelectedAppointmentTaskImplCopyWithImpl<
+                  _$ScheduleEditEventChangeSelectedAppointmentTaskImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(SchedulePeriodType value) changePeriodType,
+    required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(DateTime date) addDate,
+    required TResult Function(Appointment value) remodeAppointment,
+  }) {
+    return changeSelectedAppointmentTask(id, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(SchedulePeriodType value)? changePeriodType,
+    TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult? Function(DateTime date)? addDate,
+    TResult? Function(Appointment value)? remodeAppointment,
+  }) {
+    return changeSelectedAppointmentTask?.call(id, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(SchedulePeriodType value)? changePeriodType,
+    TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult Function(DateTime date)? addDate,
+    TResult Function(Appointment value)? remodeAppointment,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentTask != null) {
+      return changeSelectedAppointmentTask(id, value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ScheduleEditEventLoad value) load,
+    required TResult Function(ScheduleEditEventChangePeriodType value)
+        changePeriodType,
+    required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
+        changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(ScheduleEditEventAddDate value) addDate,
+    required TResult Function(ScheduleEditEventRemoveAppointment value)
+        remodeAppointment,
+  }) {
+    return changeSelectedAppointmentTask(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ScheduleEditEventLoad value)? load,
+    TResult? Function(ScheduleEditEventChangePeriodType value)?
+        changePeriodType,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult? Function(ScheduleEditEventAddDate value)? addDate,
+    TResult? Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+  }) {
+    return changeSelectedAppointmentTask?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ScheduleEditEventLoad value)? load,
+    TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
+    TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult Function(ScheduleEditEventAddDate value)? addDate,
+    TResult Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentTask != null) {
+      return changeSelectedAppointmentTask(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ScheduleEditEventChangeSelectedAppointmentTask
+    implements ScheduleEditEvent {
+  const factory ScheduleEditEventChangeSelectedAppointmentTask(
+          {required final String id, required final String value}) =
+      _$ScheduleEditEventChangeSelectedAppointmentTaskImpl;
+
+  String get id;
+  String get value;
+  @JsonKey(ignore: true)
+  _$$ScheduleEditEventChangeSelectedAppointmentTaskImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentTaskImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ScheduleEditEventChangeSelectedAppointmentLocationImplCopyWith<
+    $Res> {
+  factory _$$ScheduleEditEventChangeSelectedAppointmentLocationImplCopyWith(
+          _$ScheduleEditEventChangeSelectedAppointmentLocationImpl value,
+          $Res Function(
+                  _$ScheduleEditEventChangeSelectedAppointmentLocationImpl)
+              then) =
+      __$$ScheduleEditEventChangeSelectedAppointmentLocationImplCopyWithImpl<
+          $Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$ScheduleEditEventChangeSelectedAppointmentLocationImplCopyWithImpl<
+        $Res>
+    extends _$ScheduleEditEventCopyWithImpl<$Res,
+        _$ScheduleEditEventChangeSelectedAppointmentLocationImpl>
+    implements
+        _$$ScheduleEditEventChangeSelectedAppointmentLocationImplCopyWith<
+            $Res> {
+  __$$ScheduleEditEventChangeSelectedAppointmentLocationImplCopyWithImpl(
+      _$ScheduleEditEventChangeSelectedAppointmentLocationImpl _value,
+      $Res Function(_$ScheduleEditEventChangeSelectedAppointmentLocationImpl)
+          _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ScheduleEditEventChangeSelectedAppointmentLocationImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ScheduleEditEventChangeSelectedAppointmentLocationImpl
+    implements ScheduleEditEventChangeSelectedAppointmentLocation {
+  const _$ScheduleEditEventChangeSelectedAppointmentLocationImpl(
+      {required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'ScheduleEditEvent.changeSelectedAppointmentLocation(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ScheduleEditEventChangeSelectedAppointmentLocationImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScheduleEditEventChangeSelectedAppointmentLocationImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentLocationImpl>
+      get copyWith =>
+          __$$ScheduleEditEventChangeSelectedAppointmentLocationImplCopyWithImpl<
+                  _$ScheduleEditEventChangeSelectedAppointmentLocationImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(SchedulePeriodType value) changePeriodType,
+    required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(DateTime date) addDate,
+    required TResult Function(Appointment value) remodeAppointment,
+  }) {
+    return changeSelectedAppointmentLocation(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(SchedulePeriodType value)? changePeriodType,
+    TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult? Function(DateTime date)? addDate,
+    TResult? Function(Appointment value)? remodeAppointment,
+  }) {
+    return changeSelectedAppointmentLocation?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(SchedulePeriodType value)? changePeriodType,
+    TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult Function(DateTime date)? addDate,
+    TResult Function(Appointment value)? remodeAppointment,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentLocation != null) {
+      return changeSelectedAppointmentLocation(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ScheduleEditEventLoad value) load,
+    required TResult Function(ScheduleEditEventChangePeriodType value)
+        changePeriodType,
+    required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
+        changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(ScheduleEditEventAddDate value) addDate,
+    required TResult Function(ScheduleEditEventRemoveAppointment value)
+        remodeAppointment,
+  }) {
+    return changeSelectedAppointmentLocation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ScheduleEditEventLoad value)? load,
+    TResult? Function(ScheduleEditEventChangePeriodType value)?
+        changePeriodType,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult? Function(ScheduleEditEventAddDate value)? addDate,
+    TResult? Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+  }) {
+    return changeSelectedAppointmentLocation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ScheduleEditEventLoad value)? load,
+    TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
+    TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult Function(ScheduleEditEventAddDate value)? addDate,
+    TResult Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentLocation != null) {
+      return changeSelectedAppointmentLocation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ScheduleEditEventChangeSelectedAppointmentLocation
+    implements ScheduleEditEvent {
+  const factory ScheduleEditEventChangeSelectedAppointmentLocation(
+          {required final String value}) =
+      _$ScheduleEditEventChangeSelectedAppointmentLocationImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$ScheduleEditEventChangeSelectedAppointmentLocationImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentLocationImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ScheduleEditEventChangeSelectedAppointmentDescriptionImplCopyWith<
+    $Res> {
+  factory _$$ScheduleEditEventChangeSelectedAppointmentDescriptionImplCopyWith(
+          _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl value,
+          $Res Function(
+                  _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl)
+              then) =
+      __$$ScheduleEditEventChangeSelectedAppointmentDescriptionImplCopyWithImpl<
+          $Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$ScheduleEditEventChangeSelectedAppointmentDescriptionImplCopyWithImpl<
+        $Res>
+    extends _$ScheduleEditEventCopyWithImpl<$Res,
+        _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl>
+    implements
+        _$$ScheduleEditEventChangeSelectedAppointmentDescriptionImplCopyWith<
+            $Res> {
+  __$$ScheduleEditEventChangeSelectedAppointmentDescriptionImplCopyWithImpl(
+      _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl _value,
+      $Res Function(_$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl)
+          _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl
+    implements ScheduleEditEventChangeSelectedAppointmentDescription {
+  const _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl(
+      {required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'ScheduleEditEvent.changeSelectedAppointmentDescription(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other
+                is _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScheduleEditEventChangeSelectedAppointmentDescriptionImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl>
+      get copyWith =>
+          __$$ScheduleEditEventChangeSelectedAppointmentDescriptionImplCopyWithImpl<
+                  _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(SchedulePeriodType value) changePeriodType,
+    required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(DateTime date) addDate,
+    required TResult Function(Appointment value) remodeAppointment,
+  }) {
+    return changeSelectedAppointmentDescription(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(SchedulePeriodType value)? changePeriodType,
+    TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult? Function(DateTime date)? addDate,
+    TResult? Function(Appointment value)? remodeAppointment,
+  }) {
+    return changeSelectedAppointmentDescription?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(SchedulePeriodType value)? changePeriodType,
+    TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult Function(DateTime date)? addDate,
+    TResult Function(Appointment value)? remodeAppointment,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentDescription != null) {
+      return changeSelectedAppointmentDescription(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ScheduleEditEventLoad value) load,
+    required TResult Function(ScheduleEditEventChangePeriodType value)
+        changePeriodType,
+    required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
+        changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(ScheduleEditEventAddDate value) addDate,
+    required TResult Function(ScheduleEditEventRemoveAppointment value)
+        remodeAppointment,
+  }) {
+    return changeSelectedAppointmentDescription(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ScheduleEditEventLoad value)? load,
+    TResult? Function(ScheduleEditEventChangePeriodType value)?
+        changePeriodType,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult? Function(ScheduleEditEventAddDate value)? addDate,
+    TResult? Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+  }) {
+    return changeSelectedAppointmentDescription?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ScheduleEditEventLoad value)? load,
+    TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
+    TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult Function(ScheduleEditEventAddDate value)? addDate,
+    TResult Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentDescription != null) {
+      return changeSelectedAppointmentDescription(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ScheduleEditEventChangeSelectedAppointmentDescription
+    implements ScheduleEditEvent {
+  const factory ScheduleEditEventChangeSelectedAppointmentDescription(
+          {required final String value}) =
+      _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$ScheduleEditEventChangeSelectedAppointmentDescriptionImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ScheduleEditEventChangeSelectedAppointmentAssignToImplCopyWith<
+    $Res> {
+  factory _$$ScheduleEditEventChangeSelectedAppointmentAssignToImplCopyWith(
+          _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl value,
+          $Res Function(
+                  _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl)
+              then) =
+      __$$ScheduleEditEventChangeSelectedAppointmentAssignToImplCopyWithImpl<
+          $Res>;
+  @useResult
+  $Res call({List<AppointmentUser> value});
+}
+
+/// @nodoc
+class __$$ScheduleEditEventChangeSelectedAppointmentAssignToImplCopyWithImpl<
+        $Res>
+    extends _$ScheduleEditEventCopyWithImpl<$Res,
+        _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl>
+    implements
+        _$$ScheduleEditEventChangeSelectedAppointmentAssignToImplCopyWith<
+            $Res> {
+  __$$ScheduleEditEventChangeSelectedAppointmentAssignToImplCopyWithImpl(
+      _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl _value,
+      $Res Function(_$ScheduleEditEventChangeSelectedAppointmentAssignToImpl)
+          _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ScheduleEditEventChangeSelectedAppointmentAssignToImpl(
+      value: null == value
+          ? _value._value
+          : value // ignore: cast_nullable_to_non_nullable
+              as List<AppointmentUser>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl
+    implements ScheduleEditEventChangeSelectedAppointmentAssignTo {
+  const _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl(
+      {required final List<AppointmentUser> value})
+      : _value = value;
+
+  final List<AppointmentUser> _value;
+  @override
+  List<AppointmentUser> get value {
+    if (_value is EqualUnmodifiableListView) return _value;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_value);
+  }
+
+  @override
+  String toString() {
+    return 'ScheduleEditEvent.changeSelectedAppointmentAssignTo(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl &&
+            const DeepCollectionEquality().equals(other._value, _value));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_value));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScheduleEditEventChangeSelectedAppointmentAssignToImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl>
+      get copyWith =>
+          __$$ScheduleEditEventChangeSelectedAppointmentAssignToImplCopyWithImpl<
+                  _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(SchedulePeriodType value) changePeriodType,
+    required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(DateTime date) addDate,
+    required TResult Function(Appointment value) remodeAppointment,
+  }) {
+    return changeSelectedAppointmentAssignTo(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(SchedulePeriodType value)? changePeriodType,
+    TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult? Function(DateTime date)? addDate,
+    TResult? Function(Appointment value)? remodeAppointment,
+  }) {
+    return changeSelectedAppointmentAssignTo?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(SchedulePeriodType value)? changePeriodType,
+    TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult Function(DateTime date)? addDate,
+    TResult Function(Appointment value)? remodeAppointment,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentAssignTo != null) {
+      return changeSelectedAppointmentAssignTo(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ScheduleEditEventLoad value) load,
+    required TResult Function(ScheduleEditEventChangePeriodType value)
+        changePeriodType,
+    required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
+        changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(ScheduleEditEventAddDate value) addDate,
+    required TResult Function(ScheduleEditEventRemoveAppointment value)
+        remodeAppointment,
+  }) {
+    return changeSelectedAppointmentAssignTo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ScheduleEditEventLoad value)? load,
+    TResult? Function(ScheduleEditEventChangePeriodType value)?
+        changePeriodType,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult? Function(ScheduleEditEventAddDate value)? addDate,
+    TResult? Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+  }) {
+    return changeSelectedAppointmentAssignTo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ScheduleEditEventLoad value)? load,
+    TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
+    TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult Function(ScheduleEditEventAddDate value)? addDate,
+    TResult Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentAssignTo != null) {
+      return changeSelectedAppointmentAssignTo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ScheduleEditEventChangeSelectedAppointmentAssignTo
+    implements ScheduleEditEvent {
+  const factory ScheduleEditEventChangeSelectedAppointmentAssignTo(
+          {required final List<AppointmentUser> value}) =
+      _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl;
+
+  List<AppointmentUser> get value;
+  @JsonKey(ignore: true)
+  _$$ScheduleEditEventChangeSelectedAppointmentAssignToImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImplCopyWith<
+    $Res> {
+  factory _$$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImplCopyWith(
+          _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl value,
+          $Res Function(
+                  _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl)
+              then) =
+      __$$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImplCopyWithImpl<
+          $Res>;
+  @useResult
+  $Res call({AppointmentUser user});
+
+  $AppointmentUserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImplCopyWithImpl<
+        $Res>
+    extends _$ScheduleEditEventCopyWithImpl<$Res,
+        _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl>
+    implements
+        _$$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImplCopyWith<
+            $Res> {
+  __$$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImplCopyWithImpl(
+      _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl _value,
+      $Res Function(
+              _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl)
+          _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+  }) {
+    return _then(_$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl(
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AppointmentUser,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AppointmentUserCopyWith<$Res> get user {
+    return $AppointmentUserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl
+    implements ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo {
+  const _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl(
+      {required this.user});
+
+  @override
+  final AppointmentUser user;
+
+  @override
+  String toString() {
+    return 'ScheduleEditEvent.removeSelectedAppointmentAssignTo(user: $user)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other
+                is _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImplCopyWith<
+          _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl>
+      get copyWith =>
+          __$$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImplCopyWithImpl<
+                  _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(SchedulePeriodType value) changePeriodType,
+    required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(DateTime date) addDate,
+    required TResult Function(Appointment value) remodeAppointment,
+  }) {
+    return removeSelectedAppointmentAssignTo(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(SchedulePeriodType value)? changePeriodType,
+    TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult? Function(DateTime date)? addDate,
+    TResult? Function(Appointment value)? remodeAppointment,
+  }) {
+    return removeSelectedAppointmentAssignTo?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(SchedulePeriodType value)? changePeriodType,
+    TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult Function(DateTime date)? addDate,
+    TResult Function(Appointment value)? remodeAppointment,
+    required TResult orElse(),
+  }) {
+    if (removeSelectedAppointmentAssignTo != null) {
+      return removeSelectedAppointmentAssignTo(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ScheduleEditEventLoad value) load,
+    required TResult Function(ScheduleEditEventChangePeriodType value)
+        changePeriodType,
+    required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
+        changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(ScheduleEditEventAddDate value) addDate,
+    required TResult Function(ScheduleEditEventRemoveAppointment value)
+        remodeAppointment,
+  }) {
+    return removeSelectedAppointmentAssignTo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ScheduleEditEventLoad value)? load,
+    TResult? Function(ScheduleEditEventChangePeriodType value)?
+        changePeriodType,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult? Function(ScheduleEditEventAddDate value)? addDate,
+    TResult? Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+  }) {
+    return removeSelectedAppointmentAssignTo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ScheduleEditEventLoad value)? load,
+    TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
+    TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult Function(ScheduleEditEventAddDate value)? addDate,
+    TResult Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+    required TResult orElse(),
+  }) {
+    if (removeSelectedAppointmentAssignTo != null) {
+      return removeSelectedAppointmentAssignTo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo
+    implements ScheduleEditEvent {
+  const factory ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo(
+          {required final AppointmentUser user}) =
+      _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl;
+
+  AppointmentUser get user;
+  @JsonKey(ignore: true)
+  _$$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImplCopyWith<
+          _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -693,6 +2882,18 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
     required TResult Function(CrudType type) load,
     required TResult Function(SchedulePeriodType value) changePeriodType,
     required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
   }) {
@@ -705,6 +2906,15 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
     TResult? Function(CrudType type)? load,
     TResult? Function(SchedulePeriodType value)? changePeriodType,
     TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
   }) {
@@ -717,6 +2927,14 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
     TResult Function(CrudType type)? load,
     TResult Function(SchedulePeriodType value)? changePeriodType,
     TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
     required TResult orElse(),
@@ -735,6 +2953,27 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
         changePeriodType,
     required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
         changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
@@ -750,6 +2989,22 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
         changePeriodType,
     TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
         changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
@@ -764,6 +3019,22 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
     TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
     TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
         changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
@@ -869,6 +3140,18 @@ class _$ScheduleEditEventRemoveAppointmentImpl
     required TResult Function(CrudType type) load,
     required TResult Function(SchedulePeriodType value) changePeriodType,
     required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
     required TResult Function(DateTime date) addDate,
     required TResult Function(Appointment value) remodeAppointment,
   }) {
@@ -881,6 +3164,15 @@ class _$ScheduleEditEventRemoveAppointmentImpl
     TResult? Function(CrudType type)? load,
     TResult? Function(SchedulePeriodType value)? changePeriodType,
     TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult? Function(DateTime date)? addDate,
     TResult? Function(Appointment value)? remodeAppointment,
   }) {
@@ -893,6 +3185,14 @@ class _$ScheduleEditEventRemoveAppointmentImpl
     TResult Function(CrudType type)? load,
     TResult Function(SchedulePeriodType value)? changePeriodType,
     TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
     TResult Function(DateTime date)? addDate,
     TResult Function(Appointment value)? remodeAppointment,
     required TResult orElse(),
@@ -911,6 +3211,27 @@ class _$ScheduleEditEventRemoveAppointmentImpl
         changePeriodType,
     required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
         changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
     required TResult Function(ScheduleEditEventAddDate value) addDate,
     required TResult Function(ScheduleEditEventRemoveAppointment value)
         remodeAppointment,
@@ -926,6 +3247,22 @@ class _$ScheduleEditEventRemoveAppointmentImpl
         changePeriodType,
     TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
         changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
     TResult? Function(ScheduleEditEventAddDate value)? addDate,
     TResult? Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
@@ -940,6 +3277,22 @@ class _$ScheduleEditEventRemoveAppointmentImpl
     TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
     TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
         changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
     TResult Function(ScheduleEditEventAddDate value)? addDate,
     TResult Function(ScheduleEditEventRemoveAppointment value)?
         remodeAppointment,
@@ -969,24 +3322,36 @@ mixin _$ScheduleEditState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function(SchedulePeriodType periodType,
-            List<Appointment> appointments, Appointment? selectedAppointment)
+    required TResult Function(
+            SchedulePeriodType periodType,
+            List<Appointment> appointments,
+            Appointment? selectedAppointment,
+            List<Project> projects,
+            List<Task> tasks)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function(SchedulePeriodType periodType,
-            List<Appointment> appointments, Appointment? selectedAppointment)?
+    TResult? Function(
+            SchedulePeriodType periodType,
+            List<Appointment> appointments,
+            Appointment? selectedAppointment,
+            List<Project> projects,
+            List<Task> tasks)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function(SchedulePeriodType periodType,
-            List<Appointment> appointments, Appointment? selectedAppointment)?
+    TResult Function(
+            SchedulePeriodType periodType,
+            List<Appointment> appointments,
+            Appointment? selectedAppointment,
+            List<Project> projects,
+            List<Task> tasks)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -1072,8 +3437,12 @@ class _$ScheduleEditStateEmptyImpl implements ScheduleEditStateEmpty {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function(SchedulePeriodType periodType,
-            List<Appointment> appointments, Appointment? selectedAppointment)
+    required TResult Function(
+            SchedulePeriodType periodType,
+            List<Appointment> appointments,
+            Appointment? selectedAppointment,
+            List<Project> projects,
+            List<Task> tasks)
         loaded,
   }) {
     return empty();
@@ -1083,8 +3452,12 @@ class _$ScheduleEditStateEmptyImpl implements ScheduleEditStateEmpty {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function(SchedulePeriodType periodType,
-            List<Appointment> appointments, Appointment? selectedAppointment)?
+    TResult? Function(
+            SchedulePeriodType periodType,
+            List<Appointment> appointments,
+            Appointment? selectedAppointment,
+            List<Project> projects,
+            List<Task> tasks)?
         loaded,
   }) {
     return empty?.call();
@@ -1094,8 +3467,12 @@ class _$ScheduleEditStateEmptyImpl implements ScheduleEditStateEmpty {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function(SchedulePeriodType periodType,
-            List<Appointment> appointments, Appointment? selectedAppointment)?
+    TResult Function(
+            SchedulePeriodType periodType,
+            List<Appointment> appointments,
+            Appointment? selectedAppointment,
+            List<Project> projects,
+            List<Task> tasks)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1151,7 +3528,9 @@ abstract class _$$ScheduleEditStateLoadedImplCopyWith<$Res> {
   $Res call(
       {SchedulePeriodType periodType,
       List<Appointment> appointments,
-      Appointment? selectedAppointment});
+      Appointment? selectedAppointment,
+      List<Project> projects,
+      List<Task> tasks});
 
   $AppointmentCopyWith<$Res>? get selectedAppointment;
 }
@@ -1171,6 +3550,8 @@ class __$$ScheduleEditStateLoadedImplCopyWithImpl<$Res>
     Object? periodType = null,
     Object? appointments = null,
     Object? selectedAppointment = freezed,
+    Object? projects = null,
+    Object? tasks = null,
   }) {
     return _then(_$ScheduleEditStateLoadedImpl(
       periodType: null == periodType
@@ -1185,6 +3566,14 @@ class __$$ScheduleEditStateLoadedImplCopyWithImpl<$Res>
           ? _value.selectedAppointment
           : selectedAppointment // ignore: cast_nullable_to_non_nullable
               as Appointment?,
+      projects: null == projects
+          ? _value._projects
+          : projects // ignore: cast_nullable_to_non_nullable
+              as List<Project>,
+      tasks: null == tasks
+          ? _value._tasks
+          : tasks // ignore: cast_nullable_to_non_nullable
+              as List<Task>,
     ));
   }
 
@@ -1207,8 +3596,12 @@ class _$ScheduleEditStateLoadedImpl implements ScheduleEditStateLoaded {
   const _$ScheduleEditStateLoadedImpl(
       {required this.periodType,
       required final List<Appointment> appointments,
-      this.selectedAppointment})
-      : _appointments = appointments;
+      this.selectedAppointment,
+      required final List<Project> projects,
+      required final List<Task> tasks})
+      : _appointments = appointments,
+        _projects = projects,
+        _tasks = tasks;
 
   @override
   final SchedulePeriodType periodType;
@@ -1222,10 +3615,25 @@ class _$ScheduleEditStateLoadedImpl implements ScheduleEditStateLoaded {
 
   @override
   final Appointment? selectedAppointment;
+  final List<Project> _projects;
+  @override
+  List<Project> get projects {
+    if (_projects is EqualUnmodifiableListView) return _projects;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_projects);
+  }
+
+  final List<Task> _tasks;
+  @override
+  List<Task> get tasks {
+    if (_tasks is EqualUnmodifiableListView) return _tasks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tasks);
+  }
 
   @override
   String toString() {
-    return 'ScheduleEditState.loaded(periodType: $periodType, appointments: $appointments, selectedAppointment: $selectedAppointment)';
+    return 'ScheduleEditState.loaded(periodType: $periodType, appointments: $appointments, selectedAppointment: $selectedAppointment, projects: $projects, tasks: $tasks)';
   }
 
   @override
@@ -1238,12 +3646,19 @@ class _$ScheduleEditStateLoadedImpl implements ScheduleEditStateLoaded {
             const DeepCollectionEquality()
                 .equals(other._appointments, _appointments) &&
             (identical(other.selectedAppointment, selectedAppointment) ||
-                other.selectedAppointment == selectedAppointment));
+                other.selectedAppointment == selectedAppointment) &&
+            const DeepCollectionEquality().equals(other._projects, _projects) &&
+            const DeepCollectionEquality().equals(other._tasks, _tasks));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, periodType,
-      const DeepCollectionEquality().hash(_appointments), selectedAppointment);
+  int get hashCode => Object.hash(
+      runtimeType,
+      periodType,
+      const DeepCollectionEquality().hash(_appointments),
+      selectedAppointment,
+      const DeepCollectionEquality().hash(_projects),
+      const DeepCollectionEquality().hash(_tasks));
 
   @JsonKey(ignore: true)
   @override
@@ -1256,35 +3671,50 @@ class _$ScheduleEditStateLoadedImpl implements ScheduleEditStateLoaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
-    required TResult Function(SchedulePeriodType periodType,
-            List<Appointment> appointments, Appointment? selectedAppointment)
+    required TResult Function(
+            SchedulePeriodType periodType,
+            List<Appointment> appointments,
+            Appointment? selectedAppointment,
+            List<Project> projects,
+            List<Task> tasks)
         loaded,
   }) {
-    return loaded(periodType, appointments, selectedAppointment);
+    return loaded(
+        periodType, appointments, selectedAppointment, projects, tasks);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
-    TResult? Function(SchedulePeriodType periodType,
-            List<Appointment> appointments, Appointment? selectedAppointment)?
+    TResult? Function(
+            SchedulePeriodType periodType,
+            List<Appointment> appointments,
+            Appointment? selectedAppointment,
+            List<Project> projects,
+            List<Task> tasks)?
         loaded,
   }) {
-    return loaded?.call(periodType, appointments, selectedAppointment);
+    return loaded?.call(
+        periodType, appointments, selectedAppointment, projects, tasks);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
-    TResult Function(SchedulePeriodType periodType,
-            List<Appointment> appointments, Appointment? selectedAppointment)?
+    TResult Function(
+            SchedulePeriodType periodType,
+            List<Appointment> appointments,
+            Appointment? selectedAppointment,
+            List<Project> projects,
+            List<Task> tasks)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(periodType, appointments, selectedAppointment);
+      return loaded(
+          periodType, appointments, selectedAppointment, projects, tasks);
     }
     return orElse();
   }
@@ -1325,11 +3755,15 @@ abstract class ScheduleEditStateLoaded implements ScheduleEditState {
   const factory ScheduleEditStateLoaded(
       {required final SchedulePeriodType periodType,
       required final List<Appointment> appointments,
-      final Appointment? selectedAppointment}) = _$ScheduleEditStateLoadedImpl;
+      final Appointment? selectedAppointment,
+      required final List<Project> projects,
+      required final List<Task> tasks}) = _$ScheduleEditStateLoadedImpl;
 
   SchedulePeriodType get periodType;
   List<Appointment> get appointments;
   Appointment? get selectedAppointment;
+  List<Project> get projects;
+  List<Task> get tasks;
   @JsonKey(ignore: true)
   _$$ScheduleEditStateLoadedImplCopyWith<_$ScheduleEditStateLoadedImpl>
       get copyWith => throw _privateConstructorUsedError;

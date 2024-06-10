@@ -7,6 +7,8 @@ class ScheduleEditState with _$ScheduleEditState {
     required SchedulePeriodType periodType,
     required List<Appointment> appointments,
     Appointment? selectedAppointment,
+    required List<Project> projects,
+    required List<Task> tasks,
   }) = ScheduleEditStateLoaded;
 }
 

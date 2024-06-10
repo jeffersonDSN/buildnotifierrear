@@ -216,7 +216,11 @@ class AppointmentsFirestoreRepository extends FireStoreRepository
       'location': value.location,
       'latitude': value.latitude,
       'longitude': value.longitude,
-      'assignTo': value.assignTo,
+      'projectId': value.projectId,
+      'projectName': value.projectName,
+      'taskId': value.taskId,
+      'taskName': value.taskName,
+      'assignTo': value.assignTo.toJson(),
     };
 
     await collection.doc(value.id.toString()).update(schedule);
@@ -232,6 +236,10 @@ class AppointmentsFirestoreRepository extends FireStoreRepository
       'location': value.location,
       'latitude': value.latitude,
       'longitude': value.longitude,
+      'projectId': value.projectId,
+      'projectName': value.projectName,
+      'taskId': value.taskId,
+      'taskName': value.taskName,
       'assignTo': value.assignTo.toJson(),
     };
 
