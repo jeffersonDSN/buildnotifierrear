@@ -4,8 +4,8 @@ import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class TimeCardsListWidget extends StatelessWidget {
-  final List<DailyTotal> timeCards;
+class TimecardsListWidget extends StatelessWidget {
+  final List<DailyTotal> timecards;
   final ValueChanged<DateTime> onOpenDetails;
 
   final DateFormat dayFormat = DateFormat("EEEE");
@@ -13,32 +13,32 @@ class TimeCardsListWidget extends StatelessWidget {
   final DateFormat hourFormat = DateFormat.jm();
   final NumberFormat numberFormat = NumberFormat('00');
 
-  TimeCardsListWidget({
+  TimecardsListWidget({
     super.key,
-    required this.timeCards,
+    required this.timecards,
     required this.onOpenDetails,
   });
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: timeCards.isEmpty
+      child: timecards.isEmpty
           ? const Center(
               child: Text(
                 'has no time card',
               ),
             )
           : ListView.builder(
-              itemCount: timeCards.length,
+              itemCount: timecards.length,
               itemBuilder: (context, index) {
-                var timeCard = timeCards[index];
+                var timecard = timecards[index];
 
                 return ListTile(
                   title: Text(
-                    dayFormat.format(timeCard.day),
+                    dayFormat.format(timecard.day),
                   ),
                   subtitle: Text(
-                    dateFormat.format(timeCard.day),
+                    dateFormat.format(timecard.day),
                   ),
                   trailing: SizedBox(
                     width: Sizes.size112,
@@ -46,8 +46,8 @@ class TimeCardsListWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '${timeCard.hours}:${numberFormat.format(
-                            timeCard.minutes,
+                          '${timecard.hours}:${numberFormat.format(
+                            timecard.minutes,
                           )}',
                           style: const TextStyle(
                             fontSize: Sizes.size20,
@@ -60,7 +60,7 @@ class TimeCardsListWidget extends StatelessWidget {
                             color: AppColor.primaryColorSwatch,
                           ),
                           onPressed: () {
-                            onOpenDetails.call(timeCard.day);
+                            onOpenDetails.call(timecard.day);
                           },
                         )
                       ],

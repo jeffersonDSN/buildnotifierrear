@@ -4,13 +4,13 @@ import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class TimeCardsDayDetailsListWidget extends StatelessWidget {
-  final List<TimeCard> timecards;
+class TimecardsDayDetailsListWidget extends StatelessWidget {
+  final List<Timecard> timecards;
 
   final DateFormat hourFormat = DateFormat.jm();
   final NumberFormat numberFormat = NumberFormat('00');
 
-  TimeCardsDayDetailsListWidget({
+  TimecardsDayDetailsListWidget({
     super.key,
     required this.timecards,
   });
@@ -23,9 +23,9 @@ class TimeCardsDayDetailsListWidget extends StatelessWidget {
       },
       itemCount: timecards.length,
       itemBuilder: (context, index) {
-        var timeCard = timecards[index];
+        var timecard = timecards[index];
 
-        var total = timeCard.totalHoursAndMinutes;
+        var total = timecard.totalHoursAndMinutes;
 
         return Expanded(
           child: Row(
@@ -44,7 +44,7 @@ class TimeCardsDayDetailsListWidget extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          hourFormat.format(timeCard.start),
+                          hourFormat.format(timecard.start),
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: Sizes.size16,
@@ -60,7 +60,7 @@ class TimeCardsDayDetailsListWidget extends StatelessWidget {
                         ),
                         gapHeight4,
                         Text(
-                          timeCard.startLocation!,
+                          timecard.startLocation!,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
@@ -74,7 +74,7 @@ class TimeCardsDayDetailsListWidget extends StatelessWidget {
                       color: AppColor.primaryColorSwatch,
                     ),
                     gapHeight8,
-                    if (timeCard.end != null)
+                    if (timecard.end != null)
                       Row(
                         children: [
                           const Text(
@@ -86,7 +86,7 @@ class TimeCardsDayDetailsListWidget extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            hourFormat.format(timeCard.end!),
+                            hourFormat.format(timecard.end!),
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: Sizes.size16,
@@ -94,7 +94,7 @@ class TimeCardsDayDetailsListWidget extends StatelessWidget {
                           ),
                         ],
                       ),
-                    if (timeCard.end != null)
+                    if (timecard.end != null)
                       Row(
                         children: [
                           const Icon(
@@ -103,7 +103,7 @@ class TimeCardsDayDetailsListWidget extends StatelessWidget {
                           ),
                           gapHeight4,
                           Text(
-                            timeCard.endLocation!,
+                            timecard.endLocation!,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(
@@ -113,7 +113,7 @@ class TimeCardsDayDetailsListWidget extends StatelessWidget {
                           ),
                         ],
                       ),
-                    if (timeCard.end != null)
+                    if (timecard.end != null)
                       const Divider(
                         color: AppColor.primaryColorSwatch,
                       ),

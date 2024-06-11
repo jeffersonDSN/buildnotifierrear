@@ -26,8 +26,8 @@ class UsersOverview extends IView {
             tenant: tenantId,
           ),
         ),
-        timeCardsController: TimeCardsController(
-          repository: TimeCardsFireStoreRepository(
+        timecardsController: TimecardsController(
+          repository: TimecardsFireStoreRepository(
             tenantId: tenantId,
           ),
         ),

@@ -4,19 +4,19 @@ import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:buildnotifierrear/presentation/time_cards/overview/widget/time_cards_list_widget.dart';
 import 'package:flutter/material.dart';
 
-class TimeCardsOverviewWidget extends StatelessWidget {
-  final List<TimeCard> timeCards;
+class TimecardsOverviewWidget extends StatelessWidget {
+  final List<Timecard> timecards;
   final ValueChanged<DateTime> onOpenDetails;
 
-  const TimeCardsOverviewWidget({
+  const TimecardsOverviewWidget({
     super.key,
-    required this.timeCards,
+    required this.timecards,
     required this.onOpenDetails,
   });
 
   @override
   Widget build(BuildContext context) {
-    var total = timeCards.totalHoursAndMinutes;
+    var total = timecards.totalHoursAndMinutes;
 
     return Padding(
       padding: const EdgeInsets.all(Sizes.size16),
@@ -47,8 +47,8 @@ class TimeCardsOverviewWidget extends StatelessWidget {
             ),
           ),
           const Divider(),
-          TimeCardsListWidget(
-            timeCards: timeCards.dailyTotal,
+          TimecardsListWidget(
+            timecards: timecards.dailyTotal,
             onOpenDetails: onOpenDetails,
           ),
         ],

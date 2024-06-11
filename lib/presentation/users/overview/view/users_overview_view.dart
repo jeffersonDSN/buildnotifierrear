@@ -53,8 +53,8 @@ class UsersOverviewView extends IView {
             loaded: (
               users,
               selectedUser,
-              timeCardsOfselectedUser,
-              timeCardsState,
+              timecardsOfselectedUser,
+              timecardsState,
               selectedDay,
               appoitmentOfSelecedDayAndUser,
               appoitmentCardsState,
@@ -125,7 +125,7 @@ class UsersOverviewView extends IView {
                             ),
                             const VerticalDivider(),
                             Expanded(
-                              child: timeCardsState.maybeWhen(
+                              child: timecardsState.maybeWhen(
                                 orElse: () => const Card(),
                                 loading: () => const Center(
                                   child: CircularProgressIndicator(),
@@ -158,14 +158,14 @@ class UsersOverviewView extends IView {
                                         Expanded(
                                           child: TabBarView(
                                             children: [
-                                              TimeCardsOverviewWidget(
-                                                timeCards:
-                                                    timeCardsOfselectedUser,
+                                              TimecardsOverviewWidget(
+                                                timecards:
+                                                    timecardsOfselectedUser,
                                                 onOpenDetails: (value) {
                                                   bloc.add(
                                                     UsersOverviewEvent
-                                                        .updateTimeCardState(
-                                                      timeCardsState:
+                                                        .updateTimecardState(
+                                                      timecardsState:
                                                           DependenteStateType
                                                               .reading(
                                                         value: value,
@@ -209,14 +209,14 @@ class UsersOverviewView extends IView {
                                 reading: (value) {
                                   return TaskEditWidget(
                                     timecards:
-                                        timeCardsOfselectedUser.getByStart(
+                                        timecardsOfselectedUser.getByStart(
                                       value,
                                     ),
                                     onCancel: () {
                                       bloc.add(
                                         const UsersOverviewEvent
-                                            .updateTimeCardState(
-                                          timeCardsState:
+                                            .updateTimecardState(
+                                          timecardsState:
                                               DependenteStateType.listing(),
                                         ),
                                       );

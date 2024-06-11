@@ -15,7 +15,7 @@ part 'users_overview_state.dart';
 class UsersOverviewBloc extends Bloc<UsersOverviewEvent, UsersOverviewState> {
   UsersOverviewBloc({
     required CRUDController<User> controller,
-    required TimeCardsController timeCardsController,
+    required TimecardsController timecardsController,
     required AppointmentController appointmentController,
   }) : super(const UsersOverviewState.empty()) {
     on<UsersOverviewEvent>((event, emit) async {
@@ -28,8 +28,8 @@ class UsersOverviewBloc extends Bloc<UsersOverviewEvent, UsersOverviewState> {
           emit(
             UsersOverviewState.loaded(
               users: users,
-              timeCardsOfselectedUser: [],
-              timeCardsState: const DependenteStateType.listing(),
+              timecardsOfselectedUser: [],
+              timecardsState: const DependenteStateType.listing(),
               selectedDay: DateTime.now(),
               appoitmentOfSelecedDay: [],
               appoitmentCardsState: const DependenteStateType.listing(),
@@ -48,13 +48,13 @@ class UsersOverviewBloc extends Bloc<UsersOverviewEvent, UsersOverviewState> {
           emit(
             state.asLoaded.copyWith(
               selectedUser: selectedUser,
-              timeCardsState: const DependenteStateType.loading(),
+              timecardsState: const DependenteStateType.loading(),
               appoitmentCardsState: const DependenteStateType.loading(),
             ),
           );
 
           var result = await Future.wait([
-            timeCardsController.getAllByUserId(
+            timecardsController.getAllByUserId(
               selectedUser.id,
             ),
             appointmentController.getByDayAndUser(
@@ -65,17 +65,17 @@ class UsersOverviewBloc extends Bloc<UsersOverviewEvent, UsersOverviewState> {
 
           emit(
             state.asLoaded.copyWith(
-              timeCardsOfselectedUser: result[0] as List<TimeCard>,
+              timecardsOfselectedUser: result[0] as List<Timecard>,
               appoitmentOfSelecedDay: result[1] as List<Appointment>,
-              timeCardsState: const DependenteStateType.listing(),
+              timecardsState: const DependenteStateType.listing(),
               appoitmentCardsState: const DependenteStateType.listing(),
             ),
           );
         },
-        updateTimeCardState: (timeCardsState) {
+        updateTimecardState: (timecardsState) {
           emit(
             state.asLoaded.copyWith(
-              timeCardsState: timeCardsState,
+              timecardsState: timecardsState,
             ),
           );
         },

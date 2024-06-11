@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 
 class TaskEditWidget extends StatelessWidget {
-  final List<TimeCard> timecards;
+  final List<Timecard> timecards;
   final VoidCallback onCancel;
 
   final DateFormat dayFormat = DateFormat('EEEE, MMM d yyyy');
@@ -41,7 +41,7 @@ class TaskEditWidget extends StatelessWidget {
           const Divider(),
           gapHeight16,
           Expanded(
-            child: TimeCardsDayDetailsListWidget(
+            child: TimecardsDayDetailsListWidget(
               timecards: timecards,
             ),
           ),

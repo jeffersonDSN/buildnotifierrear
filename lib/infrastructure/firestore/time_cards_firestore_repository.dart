@@ -3,13 +3,13 @@ import 'package:buildnotifierrear/domain/repositories/abs_i_time_card_repository
 import 'package:buildnotifierrear/infrastructure/firestore/firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class TimeCardsFireStoreRepository extends FireStoreRepository
-    implements AbsITimeCardRepository {
-  TimeCardsFireStoreRepository({required super.tenantId})
-      : super(collectionName: 'timeCard');
+class TimecardsFireStoreRepository extends FireStoreRepository
+    implements AbsITimecardRepository {
+  TimecardsFireStoreRepository({required super.tenantId})
+      : super(collectionName: 'timecard');
 
   @override
-  Future<List<TimeCard>> getAll() async {
+  Future<List<Timecard>> getAll() async {
     var querySnapshot = await collection.get();
 
     return querySnapshot.docs
@@ -26,12 +26,12 @@ class TimeCardsFireStoreRepository extends FireStoreRepository
           return {...result, 'id': document.id};
         })
         .toList()
-        .map((e) => TimeCard.fromJson(e))
+        .map((e) => Timecard.fromJson(e))
         .toList();
   }
 
   @override
-  Future<List<TimeCard>> getAllByUserId(String userId) async {
+  Future<List<Timecard>> getAllByUserId(String userId) async {
     var querySnapshot = await collection
         .where('userId', isEqualTo: userId)
         .orderBy('start', descending: true)
@@ -51,12 +51,12 @@ class TimeCardsFireStoreRepository extends FireStoreRepository
           return {...result, 'id': document.id};
         })
         .toList()
-        .map((e) => TimeCard.fromJson(e))
+        .map((e) => Timecard.fromJson(e))
         .toList();
   }
 
   @override
-  Future<bool> post(TimeCard clock) async {
+  Future<bool> post(Timecard clock) async {
     var schedule = {
       'userId': clock.userId,
       'start': clock.start,
@@ -74,7 +74,7 @@ class TimeCardsFireStoreRepository extends FireStoreRepository
   }
 
   @override
-  Future<bool> put(TimeCard clock) async {
+  Future<bool> put(Timecard clock) async {
     var schedule = {
       'userId': clock.userId,
       'start': clock.start,
@@ -98,7 +98,7 @@ class TimeCardsFireStoreRepository extends FireStoreRepository
   }
 
   @override
-  Future<TimeCard> getById(String id) {
+  Future<Timecard> getById(String id) {
     // TODO: implement getById
     throw UnimplementedError();
   }

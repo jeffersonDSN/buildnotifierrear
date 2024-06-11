@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-TimeCard _$TimeCardFromJson(Map<String, dynamic> json) {
-  return _TimeCard.fromJson(json);
+Timecard _$TimecardFromJson(Map<String, dynamic> json) {
+  return _Timecard.fromJson(json);
 }
 
 /// @nodoc
-mixin _$TimeCard {
+mixin _$Timecard {
   String get id => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
   DateTime get start => throw _privateConstructorUsedError;
@@ -33,14 +33,14 @@ mixin _$TimeCard {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TimeCardCopyWith<TimeCard> get copyWith =>
+  $TimecardCopyWith<Timecard> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TimeCardCopyWith<$Res> {
-  factory $TimeCardCopyWith(TimeCard value, $Res Function(TimeCard) then) =
-      _$TimeCardCopyWithImpl<$Res, TimeCard>;
+abstract class $TimecardCopyWith<$Res> {
+  factory $TimecardCopyWith(Timecard value, $Res Function(Timecard) then) =
+      _$TimecardCopyWithImpl<$Res, Timecard>;
   @useResult
   $Res call(
       {String id,
@@ -56,9 +56,9 @@ abstract class $TimeCardCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TimeCardCopyWithImpl<$Res, $Val extends TimeCard>
-    implements $TimeCardCopyWith<$Res> {
-  _$TimeCardCopyWithImpl(this._value, this._then);
+class _$TimecardCopyWithImpl<$Res, $Val extends Timecard>
+    implements $TimecardCopyWith<$Res> {
+  _$TimecardCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -125,11 +125,11 @@ class _$TimeCardCopyWithImpl<$Res, $Val extends TimeCard>
 }
 
 /// @nodoc
-abstract class _$$TimeCardImplCopyWith<$Res>
-    implements $TimeCardCopyWith<$Res> {
-  factory _$$TimeCardImplCopyWith(
-          _$TimeCardImpl value, $Res Function(_$TimeCardImpl) then) =
-      __$$TimeCardImplCopyWithImpl<$Res>;
+abstract class _$$TimecardImplCopyWith<$Res>
+    implements $TimecardCopyWith<$Res> {
+  factory _$$TimecardImplCopyWith(
+          _$TimecardImpl value, $Res Function(_$TimecardImpl) then) =
+      __$$TimecardImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -146,11 +146,11 @@ abstract class _$$TimeCardImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TimeCardImplCopyWithImpl<$Res>
-    extends _$TimeCardCopyWithImpl<$Res, _$TimeCardImpl>
-    implements _$$TimeCardImplCopyWith<$Res> {
-  __$$TimeCardImplCopyWithImpl(
-      _$TimeCardImpl _value, $Res Function(_$TimeCardImpl) _then)
+class __$$TimecardImplCopyWithImpl<$Res>
+    extends _$TimecardCopyWithImpl<$Res, _$TimecardImpl>
+    implements _$$TimecardImplCopyWith<$Res> {
+  __$$TimecardImplCopyWithImpl(
+      _$TimecardImpl _value, $Res Function(_$TimecardImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -167,7 +167,7 @@ class __$$TimeCardImplCopyWithImpl<$Res>
     Object? endLongitude = freezed,
     Object? endLocation = freezed,
   }) {
-    return _then(_$TimeCardImpl(
+    return _then(_$TimecardImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -214,8 +214,8 @@ class __$$TimeCardImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TimeCardImpl implements _TimeCard {
-  _$TimeCardImpl(
+class _$TimecardImpl implements _Timecard {
+  _$TimecardImpl(
       {this.id = '',
       required this.userId,
       required this.start,
@@ -227,8 +227,8 @@ class _$TimeCardImpl implements _TimeCard {
       this.endLongitude,
       this.endLocation});
 
-  factory _$TimeCardImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TimeCardImplFromJson(json);
+  factory _$TimecardImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TimecardImplFromJson(json);
 
   @override
   @JsonKey()
@@ -254,14 +254,14 @@ class _$TimeCardImpl implements _TimeCard {
 
   @override
   String toString() {
-    return 'TimeCard(id: $id, userId: $userId, start: $start, startLatitude: $startLatitude, startLongitude: $startLongitude, startLocation: $startLocation, end: $end, endLatitude: $endLatitude, endLongitude: $endLongitude, endLocation: $endLocation)';
+    return 'Timecard(id: $id, userId: $userId, start: $start, startLatitude: $startLatitude, startLongitude: $startLongitude, startLocation: $startLocation, end: $end, endLatitude: $endLatitude, endLongitude: $endLongitude, endLocation: $endLocation)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TimeCardImpl &&
+            other is _$TimecardImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.start, start) || other.start == start) &&
@@ -298,19 +298,19 @@ class _$TimeCardImpl implements _TimeCard {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TimeCardImplCopyWith<_$TimeCardImpl> get copyWith =>
-      __$$TimeCardImplCopyWithImpl<_$TimeCardImpl>(this, _$identity);
+  _$$TimecardImplCopyWith<_$TimecardImpl> get copyWith =>
+      __$$TimecardImplCopyWithImpl<_$TimecardImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$TimeCardImplToJson(
+    return _$$TimecardImplToJson(
       this,
     );
   }
 }
 
-abstract class _TimeCard implements TimeCard {
-  factory _TimeCard(
+abstract class _Timecard implements Timecard {
+  factory _Timecard(
       {final String id,
       required final String userId,
       required final DateTime start,
@@ -320,10 +320,10 @@ abstract class _TimeCard implements TimeCard {
       final DateTime? end,
       final double? endLatitude,
       final double? endLongitude,
-      final String? endLocation}) = _$TimeCardImpl;
+      final String? endLocation}) = _$TimecardImpl;
 
-  factory _TimeCard.fromJson(Map<String, dynamic> json) =
-      _$TimeCardImpl.fromJson;
+  factory _Timecard.fromJson(Map<String, dynamic> json) =
+      _$TimecardImpl.fromJson;
 
   @override
   String get id;
@@ -347,7 +347,7 @@ abstract class _TimeCard implements TimeCard {
   String? get endLocation;
   @override
   @JsonKey(ignore: true)
-  _$$TimeCardImplCopyWith<_$TimeCardImpl> get copyWith =>
+  _$$TimecardImplCopyWith<_$TimecardImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

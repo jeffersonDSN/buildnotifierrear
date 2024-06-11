@@ -1,6 +1,5 @@
 import 'package:buildnotifierrear/domain/entities/task/task.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
-import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 
 class TasksListWidget extends StatelessWidget {

@@ -7,8 +7,8 @@ class UsersOverviewState with _$UsersOverviewState {
   const factory UsersOverviewState.loaded({
     required List<User> users,
     User? selectedUser,
-    required List<TimeCard> timeCardsOfselectedUser,
-    required DependenteStateType timeCardsState,
+    required List<Timecard> timecardsOfselectedUser,
+    required DependenteStateType timecardsState,
     required DateTime selectedDay,
     required List<Appointment> appoitmentOfSelecedDay,
     required DependenteStateType appoitmentCardsState,
