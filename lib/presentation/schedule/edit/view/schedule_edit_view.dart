@@ -82,6 +82,7 @@ class ScheduleEditView extends IView {
                           child: Row(
                             children: [
                               Expanded(
+                                flex: 2,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -303,6 +304,7 @@ class ScheduleEditView extends IView {
                               const VerticalDivider(),
                               gapWidth16,
                               Expanded(
+                                flex: 1,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
