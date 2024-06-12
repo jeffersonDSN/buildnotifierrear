@@ -14,8 +14,9 @@ class UsersFireStoreRepository implements AbsIUsersRepository {
   Future<User?> getUserByUserNamePassword(
       String userName, String password) async {
     var querySnapshot = await collection
-        .where('userName', isEqualTo: userName)
+        .where('userName', isEqualTo: userName.toLowerCase())
         .where('password', isEqualTo: password)
+        .where('userType', isEqualTo: 1)
         .get();
 
     var doc = querySnapshot.docs.firstOrNull;
@@ -30,8 +31,9 @@ class UsersFireStoreRepository implements AbsIUsersRepository {
 
   @override
   Future<List<User>> getUserByUserName(String userName) async {
-    var querySnapshot =
-        await collection.where('userName', isEqualTo: userName).get();
+    var querySnapshot = await collection
+        .where('userName', isEqualTo: userName.toLowerCase())
+        .get();
 
     return querySnapshot.docs
         .map((DocumentSnapshot document) {
@@ -79,7 +81,7 @@ class UsersFireStoreRepository implements AbsIUsersRepository {
       'lastName': value.lastName,
       'email': value.email,
       'password': value.password,
-      'userName': value.userName,
+      'userName': value.userName.toLowerCase(),
       'tenant': value.tenant.isNotEmpty ? value.tenant : tenant,
       'userType': value.userType,
     };
@@ -95,7 +97,7 @@ class UsersFireStoreRepository implements AbsIUsersRepository {
       'lastName': value.lastName,
       'email': value.email,
       'password': value.password,
-      'userName': value.userName,
+      'userName': value.userName.toLowerCase(),
       'tenant': value.tenant.isNotEmpty ? value.tenant : tenant,
       'userType': value.userType,
     };

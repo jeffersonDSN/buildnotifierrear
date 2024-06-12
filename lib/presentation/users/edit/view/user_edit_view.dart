@@ -62,7 +62,7 @@ class UserEditView extends IView {
               return Padding(
                 padding: const EdgeInsets.all(Sizes.size16),
                 child: SizedBox(
-                  width: 500,
+                  width: Sizes.size600,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [

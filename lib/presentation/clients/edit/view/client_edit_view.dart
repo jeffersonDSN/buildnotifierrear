@@ -63,64 +63,67 @@ class ClientEditView extends IView {
                       child: Card(
                         child: Padding(
                           padding: const EdgeInsets.all(Sizes.size16),
-                          child: Column(
-                            children: [
-                              TextFormField(
-                                decoration: const InputDecoration(
-                                  label: Text('First Name'),
+                          child: SizedBox(
+                            width: Sizes.size600,
+                            child: Column(
+                              children: [
+                                TextFormField(
+                                  decoration: const InputDecoration(
+                                    label: Text('First Name'),
+                                  ),
+                                  initialValue: user.firstName,
+                                  onChanged: (value) {
+                                    bloc.add(
+                                      ClientEditEvent.changeFirstName(
+                                        value: value,
+                                      ),
+                                    );
+                                  },
                                 ),
-                                initialValue: user.firstName,
-                                onChanged: (value) {
-                                  bloc.add(
-                                    ClientEditEvent.changeFirstName(
-                                      value: value,
-                                    ),
-                                  );
-                                },
-                              ),
-                              gapHeight16,
-                              TextFormField(
-                                decoration: const InputDecoration(
-                                  label: Text('Last name'),
+                                gapHeight16,
+                                TextFormField(
+                                  decoration: const InputDecoration(
+                                    label: Text('Last name'),
+                                  ),
+                                  initialValue: user.lastName,
+                                  onChanged: (value) {
+                                    bloc.add(
+                                      ClientEditEvent.changeLastName(
+                                        value: value,
+                                      ),
+                                    );
+                                  },
                                 ),
-                                initialValue: user.lastName,
-                                onChanged: (value) {
-                                  bloc.add(
-                                    ClientEditEvent.changeLastName(
-                                      value: value,
-                                    ),
-                                  );
-                                },
-                              ),
-                              gapHeight16,
-                              TextFormField(
-                                decoration: const InputDecoration(
-                                  label: Text('E-mail'),
+                                gapHeight16,
+                                TextFormField(
+                                  decoration: const InputDecoration(
+                                    label: Text('E-mail'),
+                                  ),
+                                  initialValue: user.email,
+                                  onChanged: (value) {
+                                    bloc.add(
+                                      ClientEditEvent.changeEmail(
+                                        value: value,
+                                      ),
+                                    );
+                                  },
                                 ),
-                                initialValue: user.email,
-                                onChanged: (value) {
-                                  bloc.add(
-                                    ClientEditEvent.changeEmail(
-                                      value: value,
-                                    ),
-                                  );
-                                },
-                              ),
-                              gapHeight16,
-                              TextFormField(
-                                decoration: const InputDecoration(
-                                  label: Text('Phone number'),
+                                gapHeight16,
+                                TextFormField(
+                                  decoration: const InputDecoration(
+                                    label: Text('Phone number'),
+                                  ),
+                                  initialValue: user.phoneNumber,
+                                  onChanged: (value) {
+                                    bloc.add(
+                                      ClientEditEvent.changePhoneNumber(
+                                        value: value,
+                                      ),
+                                    );
+                                  },
                                 ),
-                                initialValue: user.phoneNumber,
-                                onChanged: (value) {
-                                  bloc.add(
-                                    ClientEditEvent.changePhoneNumber(
-                                      value: value,
-                                    ),
-                                  );
-                                },
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),

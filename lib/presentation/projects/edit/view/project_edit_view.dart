@@ -55,123 +55,126 @@ class ProjectEditView extends IView {
             loaded: (type, project) {
               return Padding(
                 padding: const EdgeInsets.all(Sizes.size16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(Sizes.size16),
-                          child: Column(
-                            children: [
-                              TextFormField(
-                                decoration: const InputDecoration(
-                                  label: Text('Name'),
-                                ),
-                                initialValue: project.name,
-                                onChanged: (value) {
-                                  bloc.add(
-                                    ProjectEditEvent.updateName(
-                                      value: value,
-                                    ),
-                                  );
-                                },
-                              ),
-                              gapHeight16,
-                              TextFormField(
-                                decoration: const InputDecoration(
-                                  label: Text('Address'),
-                                ),
-                                initialValue: project.address,
-                                onChanged: (value) {
-                                  bloc.add(
-                                    ProjectEditEvent.updateAddress(
-                                      value: value,
-                                    ),
-                                  );
-                                },
-                              ),
-                              gapHeight16,
-                              TextFormField(
-                                decoration: const InputDecoration(
-                                  label: Text('City'),
-                                ),
-                                initialValue: project.city,
-                                onChanged: (value) {
-                                  bloc.add(
-                                    ProjectEditEvent.updateCity(
-                                      value: value,
-                                    ),
-                                  );
-                                },
-                              ),
-                              gapHeight16,
-                              TextFormField(
-                                decoration: const InputDecoration(
-                                  label: Text('State'),
-                                ),
-                                initialValue: project.state,
-                                onChanged: (value) {
-                                  bloc.add(
-                                    ProjectEditEvent.updateState(
-                                      value: value,
-                                    ),
-                                  );
-                                },
-                              ),
-                              gapHeight16,
-                              TextFormField(
-                                decoration: const InputDecoration(
-                                  label: Text('ZIP Code'),
-                                ),
-                                initialValue: project.zipCode,
-                                onChanged: (value) {
-                                  bloc.add(
-                                    ProjectEditEvent.updateZipCode(
-                                      value: value,
-                                    ),
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    gapHeight16,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(Sizes.size8),
-                          child: FilledButton.icon(
-                            icon: const Icon(
-                              Icons.check,
-                            ),
-                            label: type.when(
-                              create: () => const Text('Create project'),
-                              update: (id) => const Text('Update project'),
-                            ),
-                            onPressed: () {
-                              bloc.add(
-                                ProjectEditEvent.save(
-                                  callback: () {
-                                    appBloc(context).add(
-                                      const AppEvent.changeView(
-                                        mod: Mod.projects(
-                                          type: ViewType.overview(),
-                                        ),
+                child: SizedBox(
+                  width: Sizes.size600,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Card(
+                          child: Padding(
+                            padding: const EdgeInsets.all(Sizes.size16),
+                            child: Column(
+                              children: [
+                                TextFormField(
+                                  decoration: const InputDecoration(
+                                    label: Text('Name'),
+                                  ),
+                                  initialValue: project.name,
+                                  onChanged: (value) {
+                                    bloc.add(
+                                      ProjectEditEvent.updateName(
+                                        value: value,
                                       ),
                                     );
                                   },
                                 ),
-                              );
-                            },
+                                gapHeight16,
+                                TextFormField(
+                                  decoration: const InputDecoration(
+                                    label: Text('Address'),
+                                  ),
+                                  initialValue: project.address,
+                                  onChanged: (value) {
+                                    bloc.add(
+                                      ProjectEditEvent.updateAddress(
+                                        value: value,
+                                      ),
+                                    );
+                                  },
+                                ),
+                                gapHeight16,
+                                TextFormField(
+                                  decoration: const InputDecoration(
+                                    label: Text('City'),
+                                  ),
+                                  initialValue: project.city,
+                                  onChanged: (value) {
+                                    bloc.add(
+                                      ProjectEditEvent.updateCity(
+                                        value: value,
+                                      ),
+                                    );
+                                  },
+                                ),
+                                gapHeight16,
+                                TextFormField(
+                                  decoration: const InputDecoration(
+                                    label: Text('State'),
+                                  ),
+                                  initialValue: project.state,
+                                  onChanged: (value) {
+                                    bloc.add(
+                                      ProjectEditEvent.updateState(
+                                        value: value,
+                                      ),
+                                    );
+                                  },
+                                ),
+                                gapHeight16,
+                                TextFormField(
+                                  decoration: const InputDecoration(
+                                    label: Text('ZIP Code'),
+                                  ),
+                                  initialValue: project.zipCode,
+                                  onChanged: (value) {
+                                    bloc.add(
+                                      ProjectEditEvent.updateZipCode(
+                                        value: value,
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                      gapHeight16,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(Sizes.size8),
+                            child: FilledButton.icon(
+                              icon: const Icon(
+                                Icons.check,
+                              ),
+                              label: type.when(
+                                create: () => const Text('Create project'),
+                                update: (id) => const Text('Update project'),
+                              ),
+                              onPressed: () {
+                                bloc.add(
+                                  ProjectEditEvent.save(
+                                    callback: () {
+                                      appBloc(context).add(
+                                        const AppEvent.changeView(
+                                          mod: Mod.projects(
+                                            type: ViewType.overview(),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               );
             },

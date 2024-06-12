@@ -97,9 +97,25 @@ extension OnLisTimecard on List<Timecard> {
     return result;
   }
 
-  List<Timecard> getByStart(DateTime start) {
+  List<Timecard> getByStart(DateTime value) {
+    DateTime day = DateTime(
+      value.year,
+      value.month,
+      value.day,
+    );
+
     var result = where(
-      (timecard) => timecard.start.difference(start).inDays == 0,
+      (timecard) {
+        DateTime startDate = DateTime(
+          timecard.start.year,
+          timecard.start.month,
+          timecard.start.day,
+        );
+
+        var result = day.difference(startDate).inDays == 0;
+
+        return result;
+      },
     ).toList();
 
     return result;
