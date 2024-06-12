@@ -200,6 +200,7 @@ mixin _$Appointment {
   String get location => throw _privateConstructorUsedError;
   DateTime get startDateTime => throw _privateConstructorUsedError;
   DateTime get endDateTime => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
   dynamic get longitude => throw _privateConstructorUsedError;
   String get projectId => throw _privateConstructorUsedError;
@@ -226,6 +227,7 @@ abstract class $AppointmentCopyWith<$Res> {
       String location,
       DateTime startDateTime,
       DateTime endDateTime,
+      String description,
       double latitude,
       dynamic longitude,
       String projectId,
@@ -253,6 +255,7 @@ class _$AppointmentCopyWithImpl<$Res, $Val extends Appointment>
     Object? location = null,
     Object? startDateTime = null,
     Object? endDateTime = null,
+    Object? description = null,
     Object? latitude = null,
     Object? longitude = freezed,
     Object? projectId = null,
@@ -282,6 +285,10 @@ class _$AppointmentCopyWithImpl<$Res, $Val extends Appointment>
           ? _value.endDateTime
           : endDateTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
       latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -328,6 +335,7 @@ abstract class _$$AppointmentImplCopyWith<$Res>
       String location,
       DateTime startDateTime,
       DateTime endDateTime,
+      String description,
       double latitude,
       dynamic longitude,
       String projectId,
@@ -353,6 +361,7 @@ class __$$AppointmentImplCopyWithImpl<$Res>
     Object? location = null,
     Object? startDateTime = null,
     Object? endDateTime = null,
+    Object? description = null,
     Object? latitude = null,
     Object? longitude = freezed,
     Object? projectId = null,
@@ -382,6 +391,10 @@ class __$$AppointmentImplCopyWithImpl<$Res>
           ? _value.endDateTime
           : endDateTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
       latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -420,6 +433,7 @@ class _$AppointmentImpl implements _Appointment {
       this.location = '',
       required this.startDateTime,
       required this.endDateTime,
+      this.description = '',
       this.latitude = 0,
       this.longitude = 0,
       this.projectId = '',
@@ -445,6 +459,9 @@ class _$AppointmentImpl implements _Appointment {
   final DateTime startDateTime;
   @override
   final DateTime endDateTime;
+  @override
+  @JsonKey()
+  final String description;
   @override
   @JsonKey()
   final double latitude;
@@ -474,7 +491,7 @@ class _$AppointmentImpl implements _Appointment {
 
   @override
   String toString() {
-    return 'Appointment(id: $id, title: $title, location: $location, startDateTime: $startDateTime, endDateTime: $endDateTime, latitude: $latitude, longitude: $longitude, projectId: $projectId, projectName: $projectName, taskId: $taskId, taskName: $taskName, assignTo: $assignTo)';
+    return 'Appointment(id: $id, title: $title, location: $location, startDateTime: $startDateTime, endDateTime: $endDateTime, description: $description, latitude: $latitude, longitude: $longitude, projectId: $projectId, projectName: $projectName, taskId: $taskId, taskName: $taskName, assignTo: $assignTo)';
   }
 
   @override
@@ -490,6 +507,8 @@ class _$AppointmentImpl implements _Appointment {
                 other.startDateTime == startDateTime) &&
             (identical(other.endDateTime, endDateTime) ||
                 other.endDateTime == endDateTime) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             const DeepCollectionEquality().equals(other.longitude, longitude) &&
@@ -512,6 +531,7 @@ class _$AppointmentImpl implements _Appointment {
       location,
       startDateTime,
       endDateTime,
+      description,
       latitude,
       const DeepCollectionEquality().hash(longitude),
       projectId,
@@ -541,6 +561,7 @@ abstract class _Appointment implements Appointment {
       final String location,
       required final DateTime startDateTime,
       required final DateTime endDateTime,
+      final String description,
       final double latitude,
       final dynamic longitude,
       final String projectId,
@@ -562,6 +583,8 @@ abstract class _Appointment implements Appointment {
   DateTime get startDateTime;
   @override
   DateTime get endDateTime;
+  @override
+  String get description;
   @override
   double get latitude;
   @override

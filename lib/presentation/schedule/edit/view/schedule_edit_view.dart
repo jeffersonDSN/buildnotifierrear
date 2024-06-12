@@ -6,6 +6,7 @@ import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
 import 'package:buildnotifierrear/presentation/schedule/edit/bloc/schedule_edit_bloc.dart';
+import 'package:buildnotifierrear/presentation/schedule/edit/widget/appointment_details_form.dart';
 import 'package:buildnotifierrear/presentation/schedule/schedule_edit_assign_to/schedule_edit_assign_to_list.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
@@ -29,6 +30,8 @@ class ScheduleEditView extends IView {
     var bloc = BlocProvider.of<ScheduleEditBloc>(context);
 
     TextEditingController titleController = TextEditingController();
+    TextEditingController locationController = TextEditingController();
+    TextEditingController descriptionController = TextEditingController();
 
     bloc.add(
       ScheduleEditEvent.load(
@@ -69,7 +72,11 @@ class ScheduleEditView extends IView {
               tasks,
             ) {
               if (titleController.text != selectedAppointment!.title) {
-                titleController.text = selectedAppointment.taskName;
+                titleController.text = selectedAppointment.title;
+              }
+
+              if (locationController.text != selectedAppointment.location) {
+                locationController.text = selectedAppointment.location;
               }
 
               return Column(
@@ -308,50 +315,48 @@ class ScheduleEditView extends IView {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    TextFormField(
-                                      decoration: const InputDecoration(
-                                        labelText: 'Title',
-                                      ),
-                                      controller: titleController,
-                                      onChanged: (value) {
-                                        bloc.add(
-                                          ScheduleEditEvent
-                                              .changeSelectedAppointmentTitle(
-                                            value: value,
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                    gapHeight8,
-                                    DropdownButtonFormField<
-                                        ({String id, String name})>(
-                                      decoration: const InputDecoration(
-                                        label: Text(
-                                          'Project',
+                                    SizedBox(
+                                      height: Sizes.size320,
+                                      child: AppointmentDetailsForm(
+                                        titleController: titleController,
+                                        locationController: locationController,
+                                        descriptionController:
+                                            descriptionController,
+                                        project: (
+                                          id: selectedAppointment.projectId,
+                                          name: selectedAppointment.projectName,
                                         ),
-                                      ),
-                                      isExpanded: true,
-                                      value: (
-                                        id: selectedAppointment.projectId,
-                                        name: selectedAppointment.projectName,
-                                      ),
-                                      items: [
-                                        const DropdownMenuItem(
-                                          value: (id: '', name: ''),
-                                          child: Text(''),
+                                        task: (
+                                          id: selectedAppointment.taskId,
+                                          title: selectedAppointment.taskName,
                                         ),
-                                        ...projects.map((project) {
-                                          return DropdownMenuItem(
-                                            value: (
-                                              id: project.id,
-                                              name: project.name,
+                                        projects: projects,
+                                        tasks: tasks,
+                                        onChangedTitle: (value) {
+                                          bloc.add(
+                                            ScheduleEditEvent
+                                                .changeSelectedAppointmentTitle(
+                                              value: value,
                                             ),
-                                            child: Text(project.name),
                                           );
-                                        }),
-                                      ],
-                                      onChanged: (value) {
-                                        if (value != null) {
+                                        },
+                                        onChangedLocation: (value) {
+                                          bloc.add(
+                                            ScheduleEditEvent
+                                                .changeSelectedAppointmentLocation(
+                                              value: value,
+                                            ),
+                                          );
+                                        },
+                                        onChangedDescription: (value) {
+                                          bloc.add(
+                                            ScheduleEditEvent
+                                                .changeSelectedAppointmentDescription(
+                                              value: value,
+                                            ),
+                                          );
+                                        },
+                                        onChangedProject: (value) {
                                           bloc.add(
                                             ScheduleEditEvent
                                                 .changeSelectedAppointmentProject(
@@ -359,41 +364,8 @@ class ScheduleEditView extends IView {
                                               value: value.name,
                                             ),
                                           );
-                                        }
-                                      },
-                                    ),
-                                    gapHeight8,
-                                    DropdownButtonFormField<
-                                        ({String id, String title})>(
-                                      decoration: const InputDecoration(
-                                        label: Text(
-                                          'Task',
-                                        ),
-                                      ),
-                                      isExpanded: true,
-                                      value: (
-                                        id: selectedAppointment.taskId,
-                                        title: selectedAppointment.taskName,
-                                      ),
-                                      items: [
-                                        const DropdownMenuItem(
-                                          value: (id: '', title: ''),
-                                          child: Text(''),
-                                        ),
-                                        ...tasks.map(
-                                          (task) {
-                                            return DropdownMenuItem(
-                                              value: (
-                                                id: task.id,
-                                                title: task.title
-                                              ),
-                                              child: Text(task.title),
-                                            );
-                                          },
-                                        ),
-                                      ],
-                                      onChanged: (value) {
-                                        if (value != null) {
+                                        },
+                                        onChangedTask: (value) {
                                           bloc.add(
                                             ScheduleEditEvent
                                                 .changeSelectedAppointmentTask(
@@ -401,20 +373,7 @@ class ScheduleEditView extends IView {
                                               value: value.title,
                                             ),
                                           );
-                                        }
-                                      },
-                                    ),
-                                    gapHeight8,
-                                    TextFormField(
-                                      decoration: const InputDecoration(
-                                        labelText: 'Location',
-                                      ),
-                                    ),
-                                    gapHeight8,
-                                    TextFormField(
-                                      maxLines: 3,
-                                      decoration: const InputDecoration(
-                                        labelText: 'Description',
+                                        },
                                       ),
                                     ),
                                     gapHeight16,

@@ -27,6 +27,7 @@ mixin _$User {
   String get tenant => throw _privateConstructorUsedError;
   String get userName => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
+  int get userType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,7 +46,8 @@ abstract class $UserCopyWith<$Res> {
       String email,
       String tenant,
       String userName,
-      String password});
+      String password,
+      int userType});
 }
 
 /// @nodoc
@@ -68,6 +70,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? tenant = null,
     Object? userName = null,
     Object? password = null,
+    Object? userType = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -98,6 +101,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
+      userType: null == userType
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -116,7 +123,8 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String email,
       String tenant,
       String userName,
-      String password});
+      String password,
+      int userType});
 }
 
 /// @nodoc
@@ -136,6 +144,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? tenant = null,
     Object? userName = null,
     Object? password = null,
+    Object? userType = null,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -166,6 +175,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
+      userType: null == userType
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -180,7 +193,8 @@ class _$UserImpl implements _User {
       this.email = '',
       this.tenant = '',
       this.userName = '',
-      this.password = ''});
+      this.password = '',
+      this.userType = 0});
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
@@ -206,10 +220,13 @@ class _$UserImpl implements _User {
   @override
   @JsonKey()
   final String password;
+  @override
+  @JsonKey()
+  final int userType;
 
   @override
   String toString() {
-    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, tenant: $tenant, userName: $userName, password: $password)';
+    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, tenant: $tenant, userName: $userName, password: $password, userType: $userType)';
   }
 
   @override
@@ -227,13 +244,15 @@ class _$UserImpl implements _User {
             (identical(other.userName, userName) ||
                 other.userName == userName) &&
             (identical(other.password, password) ||
-                other.password == password));
+                other.password == password) &&
+            (identical(other.userType, userType) ||
+                other.userType == userType));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, firstName, lastName, email, tenant, userName, password);
+  int get hashCode => Object.hash(runtimeType, id, firstName, lastName, email,
+      tenant, userName, password, userType);
 
   @JsonKey(ignore: true)
   @override
@@ -257,7 +276,8 @@ abstract class _User implements User {
       final String email,
       final String tenant,
       final String userName,
-      final String password}) = _$UserImpl;
+      final String password,
+      final int userType}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
@@ -275,6 +295,8 @@ abstract class _User implements User {
   String get userName;
   @override
   String get password;
+  @override
+  int get userType;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>

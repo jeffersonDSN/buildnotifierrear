@@ -1,4 +1,4 @@
-import 'package:buildnotifierrear/domain/entities/time_card/time_card.dart';
+import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +46,7 @@ class TimecardsListWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '${timecard.hours}:${numberFormat.format(
+                          '${numberFormat.format(timecard.hours)}:${numberFormat.format(
                             timecard.minutes,
                           )}',
                           style: const TextStyle(

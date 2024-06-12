@@ -14,6 +14,7 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       tenant: json['tenant'] as String? ?? '',
       userName: json['userName'] as String? ?? '',
       password: json['password'] as String? ?? '',
+      userType: (json['userType'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
@@ -25,4 +26,5 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'tenant': instance.tenant,
       'userName': instance.userName,
       'password': instance.password,
+      'userType': instance.userType,
     };

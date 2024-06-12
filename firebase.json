@@ -1,1 +1,30 @@
-{"flutter":{"platforms":{"dart":{"lib/firebase_options.dart":{"projectId":"buildnotifier-e5c6e","configurations":{"macos":"1:1056176794632:ios:f2452d29082d91eca375bd","web":"1:1056176794632:web:9324eda2dde955a8a375bd","windows":"1:1056176794632:web:04375d29208c2b2ea375bd"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "buildnotifier-e5c6e",
+          "configurations": {
+            "macos": "1:1056176794632:ios:f2452d29082d91eca375bd",
+            "web": "1:1056176794632:web:9324eda2dde955a8a375bd",
+            "windows": "1:1056176794632:web:04375d29208c2b2ea375bd"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

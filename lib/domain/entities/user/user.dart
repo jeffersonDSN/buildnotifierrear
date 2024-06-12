@@ -13,6 +13,7 @@ class User with _$User {
     @Default('') String tenant,
     @Default('') String userName,
     @Default('') String password,
+    @Default(0) int userType,
   }) = _User;
 
   factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);

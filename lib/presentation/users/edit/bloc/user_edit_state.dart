@@ -7,6 +7,7 @@ class UserEditState with _$UserEditState {
   const factory UserEditState.loaded({
     required CrudType type,
     required User user,
+    @Default(false) bool isDuplicateUsername,
   }) = UserEditStateLoaded;
 }
 

@@ -1,4 +1,4 @@
-import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/users_controller.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/domain/entities/user/user.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +11,7 @@ part 'user_edit_state.dart';
 
 class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
   UserEditBloc({
-    required CRUDController<User> controller,
+    required UsersController controller,
   }) : super(
           const UserEditState.empty(),
         ) {
@@ -63,21 +63,66 @@ class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
             ),
           );
         },
-        save: (callback) async {
-          await state.asLoaded.type.when(
-            create: () async {
-              return controller.create(
-                state.asLoaded.user,
-              );
-            },
-            update: (id) async {
-              return controller.update(
-                state.asLoaded.user,
-              );
-            },
+        updateUsername: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              user: state.asLoaded.user.copyWith(
+                userName: value,
+              ),
+              isDuplicateUsername: false,
+            ),
           );
+        },
+        updatePassword: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              user: state.asLoaded.user.copyWith(
+                password: value,
+              ),
+            ),
+          );
+        },
+        updateUserType: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              user: state.asLoaded.user.copyWith(
+                userType: value,
+              ),
+            ),
+          );
+        },
+        save: (callback) async {
+          var isDuplicateUsername = false;
 
-          callback.call();
+          if (state.asLoaded.user.userName.isNotEmpty) {
+            isDuplicateUsername = await controller.hasThisUsername(
+              state.asLoaded.user.userName,
+              state.asLoaded.user.id,
+            );
+          }
+
+          if (isDuplicateUsername) {
+            emit(
+              state.asLoaded.copyWith(
+                isDuplicateUsername: true,
+              ),
+            );
+          } else {
+            await state.asLoaded.type.when(
+              create: () async {
+                return controller.create(
+                  state.asLoaded.user,
+                );
+              },
+              update: (id) async {
+                return controller.update(
+                  state.asLoaded.user,
+                );
+              },
+            );
+
+            callback.call();
+          }
         },
       );
     });

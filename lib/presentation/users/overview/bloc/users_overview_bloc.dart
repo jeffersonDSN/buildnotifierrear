@@ -1,9 +1,9 @@
 import 'package:buildnotifierrear/domain/controllers/appointment_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
-import 'package:buildnotifierrear/domain/controllers/time_cards_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/timecards_controller.dart';
 import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/domain/entities/core/dependent_state_type.dart';
-import 'package:buildnotifierrear/domain/entities/time_card/time_card.dart';
+import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
 import 'package:buildnotifierrear/domain/entities/user/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';

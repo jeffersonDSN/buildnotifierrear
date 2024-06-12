@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'time_card.dart';
+part of 'timecard.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

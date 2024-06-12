@@ -1,5 +1,5 @@
-import 'package:buildnotifierrear/domain/entities/time_card/time_card.dart';
-import 'package:buildnotifierrear/domain/repositories/abs_i_time_card_repository.dart';
+import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
+import 'package:buildnotifierrear/domain/repositories/abs_i_timecard_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 

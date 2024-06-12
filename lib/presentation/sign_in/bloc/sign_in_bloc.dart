@@ -20,14 +20,14 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
       await event.when(
         changeUserName: (value) {
           emit(
-            state.asInit.copyWith(
+            state.copyWith(
               userName: value,
             ),
           );
         },
         changePassword: (value) {
           emit(
-            state.asInit.copyWith(
+            state.copyWith(
               password: value,
             ),
           );
@@ -45,15 +45,15 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
             state.password,
           );
 
-          emit(
-            SignInState.signIn(
-              userName: state.userName,
-              password: state.password,
-            ),
-          );
-
           if (user != null) {
             callback.call(user);
+          } else {
+            emit(
+              SignInState.signInError(
+                userName: state.userName,
+                password: state.password,
+              ),
+            );
           }
         },
       );

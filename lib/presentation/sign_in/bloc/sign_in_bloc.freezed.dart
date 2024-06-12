@@ -516,18 +516,21 @@ mixin _$SignInState {
   TResult when<TResult extends Object?>({
     required TResult Function(String userName, String password) init,
     required TResult Function(String userName, String password) signIn,
+    required TResult Function(String userName, String password) signInError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String userName, String password)? init,
     TResult? Function(String userName, String password)? signIn,
+    TResult? Function(String userName, String password)? signInError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String userName, String password)? init,
     TResult Function(String userName, String password)? signIn,
+    TResult Function(String userName, String password)? signInError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -535,18 +538,21 @@ mixin _$SignInState {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInStateInit value) init,
     required TResult Function(SignInStateSignIn value) signIn,
+    required TResult Function(SignInStateSignInError value) signInError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInStateInit value)? init,
     TResult? Function(SignInStateSignIn value)? signIn,
+    TResult? Function(SignInStateSignInError value)? signInError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInStateInit value)? init,
     TResult Function(SignInStateSignIn value)? signIn,
+    TResult Function(SignInStateSignInError value)? signInError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -673,6 +679,7 @@ class _$SignInStateInitImpl implements SignInStateInit {
   TResult when<TResult extends Object?>({
     required TResult Function(String userName, String password) init,
     required TResult Function(String userName, String password) signIn,
+    required TResult Function(String userName, String password) signInError,
   }) {
     return init(userName, password);
   }
@@ -682,6 +689,7 @@ class _$SignInStateInitImpl implements SignInStateInit {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String userName, String password)? init,
     TResult? Function(String userName, String password)? signIn,
+    TResult? Function(String userName, String password)? signInError,
   }) {
     return init?.call(userName, password);
   }
@@ -691,6 +699,7 @@ class _$SignInStateInitImpl implements SignInStateInit {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String userName, String password)? init,
     TResult Function(String userName, String password)? signIn,
+    TResult Function(String userName, String password)? signInError,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -704,6 +713,7 @@ class _$SignInStateInitImpl implements SignInStateInit {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInStateInit value) init,
     required TResult Function(SignInStateSignIn value) signIn,
+    required TResult Function(SignInStateSignInError value) signInError,
   }) {
     return init(this);
   }
@@ -713,6 +723,7 @@ class _$SignInStateInitImpl implements SignInStateInit {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInStateInit value)? init,
     TResult? Function(SignInStateSignIn value)? signIn,
+    TResult? Function(SignInStateSignInError value)? signInError,
   }) {
     return init?.call(this);
   }
@@ -722,6 +733,7 @@ class _$SignInStateInitImpl implements SignInStateInit {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInStateInit value)? init,
     TResult Function(SignInStateSignIn value)? signIn,
+    TResult Function(SignInStateSignInError value)? signInError,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -826,6 +838,7 @@ class _$SignInStateSignInImpl implements SignInStateSignIn {
   TResult when<TResult extends Object?>({
     required TResult Function(String userName, String password) init,
     required TResult Function(String userName, String password) signIn,
+    required TResult Function(String userName, String password) signInError,
   }) {
     return signIn(userName, password);
   }
@@ -835,6 +848,7 @@ class _$SignInStateSignInImpl implements SignInStateSignIn {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String userName, String password)? init,
     TResult? Function(String userName, String password)? signIn,
+    TResult? Function(String userName, String password)? signInError,
   }) {
     return signIn?.call(userName, password);
   }
@@ -844,6 +858,7 @@ class _$SignInStateSignInImpl implements SignInStateSignIn {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String userName, String password)? init,
     TResult Function(String userName, String password)? signIn,
+    TResult Function(String userName, String password)? signInError,
     required TResult orElse(),
   }) {
     if (signIn != null) {
@@ -857,6 +872,7 @@ class _$SignInStateSignInImpl implements SignInStateSignIn {
   TResult map<TResult extends Object?>({
     required TResult Function(SignInStateInit value) init,
     required TResult Function(SignInStateSignIn value) signIn,
+    required TResult Function(SignInStateSignInError value) signInError,
   }) {
     return signIn(this);
   }
@@ -866,6 +882,7 @@ class _$SignInStateSignInImpl implements SignInStateSignIn {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SignInStateInit value)? init,
     TResult? Function(SignInStateSignIn value)? signIn,
+    TResult? Function(SignInStateSignInError value)? signInError,
   }) {
     return signIn?.call(this);
   }
@@ -875,6 +892,7 @@ class _$SignInStateSignInImpl implements SignInStateSignIn {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SignInStateInit value)? init,
     TResult Function(SignInStateSignIn value)? signIn,
+    TResult Function(SignInStateSignInError value)? signInError,
     required TResult orElse(),
   }) {
     if (signIn != null) {
@@ -897,4 +915,165 @@ abstract class SignInStateSignIn implements SignInState {
   @JsonKey(ignore: true)
   _$$SignInStateSignInImplCopyWith<_$SignInStateSignInImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SignInStateSignInErrorImplCopyWith<$Res>
+    implements $SignInStateCopyWith<$Res> {
+  factory _$$SignInStateSignInErrorImplCopyWith(
+          _$SignInStateSignInErrorImpl value,
+          $Res Function(_$SignInStateSignInErrorImpl) then) =
+      __$$SignInStateSignInErrorImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String userName, String password});
+}
+
+/// @nodoc
+class __$$SignInStateSignInErrorImplCopyWithImpl<$Res>
+    extends _$SignInStateCopyWithImpl<$Res, _$SignInStateSignInErrorImpl>
+    implements _$$SignInStateSignInErrorImplCopyWith<$Res> {
+  __$$SignInStateSignInErrorImplCopyWithImpl(
+      _$SignInStateSignInErrorImpl _value,
+      $Res Function(_$SignInStateSignInErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userName = null,
+    Object? password = null,
+  }) {
+    return _then(_$SignInStateSignInErrorImpl(
+      userName: null == userName
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SignInStateSignInErrorImpl implements SignInStateSignInError {
+  const _$SignInStateSignInErrorImpl(
+      {required this.userName, required this.password});
+
+  @override
+  final String userName;
+  @override
+  final String password;
+
+  @override
+  String toString() {
+    return 'SignInState.signInError(userName: $userName, password: $password)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SignInStateSignInErrorImpl &&
+            (identical(other.userName, userName) ||
+                other.userName == userName) &&
+            (identical(other.password, password) ||
+                other.password == password));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userName, password);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SignInStateSignInErrorImplCopyWith<_$SignInStateSignInErrorImpl>
+      get copyWith => __$$SignInStateSignInErrorImplCopyWithImpl<
+          _$SignInStateSignInErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String userName, String password) init,
+    required TResult Function(String userName, String password) signIn,
+    required TResult Function(String userName, String password) signInError,
+  }) {
+    return signInError(userName, password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String userName, String password)? init,
+    TResult? Function(String userName, String password)? signIn,
+    TResult? Function(String userName, String password)? signInError,
+  }) {
+    return signInError?.call(userName, password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String userName, String password)? init,
+    TResult Function(String userName, String password)? signIn,
+    TResult Function(String userName, String password)? signInError,
+    required TResult orElse(),
+  }) {
+    if (signInError != null) {
+      return signInError(userName, password);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignInStateInit value) init,
+    required TResult Function(SignInStateSignIn value) signIn,
+    required TResult Function(SignInStateSignInError value) signInError,
+  }) {
+    return signInError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignInStateInit value)? init,
+    TResult? Function(SignInStateSignIn value)? signIn,
+    TResult? Function(SignInStateSignInError value)? signInError,
+  }) {
+    return signInError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignInStateInit value)? init,
+    TResult Function(SignInStateSignIn value)? signIn,
+    TResult Function(SignInStateSignInError value)? signInError,
+    required TResult orElse(),
+  }) {
+    if (signInError != null) {
+      return signInError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignInStateSignInError implements SignInState {
+  const factory SignInStateSignInError(
+      {required final String userName,
+      required final String password}) = _$SignInStateSignInErrorImpl;
+
+  @override
+  String get userName;
+  @override
+  String get password;
+  @override
+  @JsonKey(ignore: true)
+  _$$SignInStateSignInErrorImplCopyWith<_$SignInStateSignInErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -18,6 +18,18 @@ class UserEditEvent with _$UserEditEvent {
     required String value,
   }) = UserEditEventtUpdateEmail;
 
+  const factory UserEditEvent.updateUsername({
+    required String value,
+  }) = UserEditEventtUpdateUsername;
+
+  const factory UserEditEvent.updatePassword({
+    required String value,
+  }) = UserEditEventtUpdatePassword;
+
+  const factory UserEditEvent.updateUserType({
+    required int value,
+  }) = UserEditEventtUpdateUserType;
+
   const factory UserEditEvent.save({
     required VoidCallback callback,
   }) = UserEditEventtSave;

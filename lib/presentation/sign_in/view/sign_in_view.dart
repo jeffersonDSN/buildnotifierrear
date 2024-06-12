@@ -92,14 +92,22 @@ class SignInView extends IView {
                         );
                       },
                     ),
+                    gapHeight8,
+                    if (state.isSignInError)
+                      const Text(
+                        'The username or password you’ve entered is incorrect.',
+                        style: TextStyle(
+                          color: AppColor.red,
+                        ),
+                      ),
                     gapHeight32,
                     FilledButton(
-                      child: state.isInit
-                          ? const Text(
-                              'Sign in',
-                            )
-                          : const CircularProgressIndicator(
+                      child: state.isSignIn
+                          ? const CircularProgressIndicator(
                               color: AppColor.lightColor,
+                            )
+                          : const Text(
+                              'Sign in',
                             ),
                       onPressed: () {
                         bloc.add(

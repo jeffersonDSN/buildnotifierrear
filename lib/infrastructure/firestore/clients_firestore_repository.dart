@@ -50,7 +50,7 @@ class ClientsFireStoreRepository extends FireStoreRepository
       'firstName': value.firstName,
       'lastName': value.lastName,
       'email': value.email,
-      'phoneNumber': value.email,
+      'phoneNumber': value.phoneNumber,
     };
 
     await collection.doc(value.id.toString()).update(user);

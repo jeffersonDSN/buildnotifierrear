@@ -1,10 +1,11 @@
 import 'package:buildnotifierrear/domain/controllers/appointment_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
-import 'package:buildnotifierrear/domain/controllers/time_cards_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/timecards_controller.dart';
 import 'package:buildnotifierrear/domain/entities/user/user.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/appointments_firestore_repository.dart';
-import 'package:buildnotifierrear/infrastructure/firestore/time_cards_firestore_repository.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/timecards_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/users_firestore_repository.dart';
+import 'package:buildnotifierrear/infrastructure/http/location_repository.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/users/overview/bloc/users_overview_bloc.dart';
@@ -35,6 +36,7 @@ class UsersOverview extends IView {
           repository: AppointmentsFirestoreRepository(
             tenantId: tenantId,
           ),
+          locationRepository: LocationRepository(),
         ),
       ),
       child: const UsersOverviewView(),

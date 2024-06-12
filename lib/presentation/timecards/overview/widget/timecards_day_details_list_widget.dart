@@ -1,4 +1,4 @@
-import 'package:buildnotifierrear/domain/entities/time_card/time_card.dart';
+import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
@@ -27,16 +27,57 @@ class TimecardsDayDetailsListWidget extends StatelessWidget {
 
         var total = timecard.totalHoursAndMinutes;
 
-        return Expanded(
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  children: [
+        return Row(
+          children: [
+            Expanded(
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      const Text(
+                        'Started: ',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: Sizes.size12,
+                          color: AppColor.primaryColorSwatch,
+                        ),
+                      ),
+                      Text(
+                        hourFormat.format(timecard.start),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: Sizes.size16,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.location_on,
+                        color: AppColor.primaryColorSwatch,
+                      ),
+                      gapHeight4,
+                      Text(
+                        timecard.startLocation!,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: Sizes.size12,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Divider(
+                    color: AppColor.primaryColorSwatch,
+                  ),
+                  gapHeight8,
+                  if (timecard.end != null)
                     Row(
                       children: [
                         const Text(
-                          'Started: ',
+                          'End: ',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: Sizes.size12,
@@ -44,7 +85,7 @@ class TimecardsDayDetailsListWidget extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          hourFormat.format(timecard.start),
+                          hourFormat.format(timecard.end!),
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: Sizes.size16,
@@ -52,6 +93,7 @@ class TimecardsDayDetailsListWidget extends StatelessWidget {
                         ),
                       ],
                     ),
+                  if (timecard.end != null)
                     Row(
                       children: [
                         const Icon(
@@ -60,7 +102,7 @@ class TimecardsDayDetailsListWidget extends StatelessWidget {
                         ),
                         gapHeight4,
                         Text(
-                          timecard.startLocation!,
+                          timecard.endLocation!,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
@@ -70,66 +112,26 @@ class TimecardsDayDetailsListWidget extends StatelessWidget {
                         ),
                       ],
                     ),
+                  if (timecard.end != null)
                     const Divider(
                       color: AppColor.primaryColorSwatch,
                     ),
-                    gapHeight8,
-                    if (timecard.end != null)
-                      Row(
-                        children: [
-                          const Text(
-                            'End: ',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: Sizes.size12,
-                              color: AppColor.primaryColorSwatch,
-                            ),
-                          ),
-                          Text(
-                            hourFormat.format(timecard.end!),
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: Sizes.size16,
-                            ),
-                          ),
-                        ],
-                      ),
-                    if (timecard.end != null)
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.location_on,
-                            color: AppColor.primaryColorSwatch,
-                          ),
-                          gapHeight4,
-                          Text(
-                            timecard.endLocation!,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
-                              fontSize: Sizes.size12,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    if (timecard.end != null)
-                      const Divider(
-                        color: AppColor.primaryColorSwatch,
-                      ),
-                  ],
-                ),
+                ],
               ),
-              gapWidth32,
-              Text(
+            ),
+            Padding(
+              padding: const EdgeInsets.all(
+                Sizes.size24,
+              ),
+              child: Text(
                 '${total.hours}:${numberFormat.format(total.minutes)}',
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: Sizes.size24,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         );
       },
     );

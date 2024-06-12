@@ -29,6 +29,22 @@ class UsersFireStoreRepository implements AbsIUsersRepository {
   }
 
   @override
+  Future<List<User>> getUserByUserName(String userName) async {
+    var querySnapshot =
+        await collection.where('userName', isEqualTo: userName).get();
+
+    return querySnapshot.docs
+        .map((DocumentSnapshot document) {
+          var doc = document.data() as Map<String, dynamic>;
+
+          return {...doc, 'id': document.id};
+        })
+        .toList()
+        .map((e) => User.fromJson(e))
+        .toList();
+  }
+
+  @override
   Future<List<User>> getAll() async {
     var querySnapshot = await collection
         .where(
@@ -65,6 +81,7 @@ class UsersFireStoreRepository implements AbsIUsersRepository {
       'password': value.password,
       'userName': value.userName,
       'tenant': value.tenant.isNotEmpty ? value.tenant : tenant,
+      'userType': value.userType,
     };
 
     await collection.add(user);
@@ -80,6 +97,7 @@ class UsersFireStoreRepository implements AbsIUsersRepository {
       'password': value.password,
       'userName': value.userName,
       'tenant': value.tenant.isNotEmpty ? value.tenant : tenant,
+      'userType': value.userType,
     };
 
     await collection.doc(value.id.toString()).update(user);

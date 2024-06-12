@@ -1,5 +1,5 @@
 import 'package:buildnotifierrear/domain/entities/core/dependent_state_type.dart';
-import 'package:buildnotifierrear/domain/entities/time_card/time_card.dart';
+import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
@@ -8,8 +8,8 @@ import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
 import 'package:buildnotifierrear/presentation/schedule/overview/widget/schedule_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
-import 'package:buildnotifierrear/presentation/time_cards/overview/widget/time_cards_day_details_widget.dart';
-import 'package:buildnotifierrear/presentation/time_cards/overview/widget/time_cards_overview_widget.dart';
+import 'package:buildnotifierrear/presentation/timecards/overview/widget/timecards_day_details_widget.dart';
+import 'package:buildnotifierrear/presentation/timecards/overview/widget/timecards_overview_widget.dart';
 import 'package:buildnotifierrear/presentation/users/overview/bloc/users_overview_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

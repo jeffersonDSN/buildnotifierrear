@@ -5,6 +5,7 @@ import 'package:buildnotifierrear/domain/entities/project/project.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/appointments_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/projects_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/tasks_firestore_repository.dart';
+import 'package:buildnotifierrear/infrastructure/http/location_repository.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/bloc/projects_overview_bloc.dart';
@@ -35,6 +36,7 @@ class ProjectsOverview extends IView {
           repository: AppointmentsFirestoreRepository(
             tenantId: tenantId,
           ),
+          locationRepository: LocationRepository(),
         ),
       ),
       child: const ProjectsOverviewView(),

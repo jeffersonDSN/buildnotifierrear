@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'time_card.freezed.dart';
-part 'time_card.g.dart';
+part 'timecard.freezed.dart';
+part 'timecard.g.dart';
 
 @freezed
 class Timecard with _$Timecard {
@@ -26,8 +26,7 @@ class Timecard with _$Timecard {
 class DailyTotal with _$DailyTotal {
   factory DailyTotal({
     required DateTime day,
-    required int hours,
-    required int minutes,
+    required int totalMinutes,
   }) = _DailyTotal;
 }
 
@@ -83,15 +82,13 @@ extension OnLisTimecard on List<Timecard> {
         var card = result[index];
 
         result[index] = card.copyWith(
-          hours: card.hours + totalMinutes ~/ 60,
-          minutes: card.minutes + totalMinutes % 60,
+          totalMinutes: card.totalMinutes + totalMinutes,
         );
       } else {
         result.add(
           DailyTotal(
             day: startDate,
-            hours: totalMinutes ~/ 60,
-            minutes: totalMinutes % 60,
+            totalMinutes: totalMinutes,
           ),
         );
       }
@@ -107,4 +104,9 @@ extension OnLisTimecard on List<Timecard> {
 
     return result;
   }
+}
+
+extension OnDailyTotal on DailyTotal {
+  int get hours => totalMinutes ~/ 60;
+  int get minutes => totalMinutes % 60;
 }

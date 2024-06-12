@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'time_card.dart';
+part of 'timecard.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -354,8 +354,7 @@ abstract class _Timecard implements Timecard {
 /// @nodoc
 mixin _$DailyTotal {
   DateTime get day => throw _privateConstructorUsedError;
-  int get hours => throw _privateConstructorUsedError;
-  int get minutes => throw _privateConstructorUsedError;
+  int get totalMinutes => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DailyTotalCopyWith<DailyTotal> get copyWith =>
@@ -368,7 +367,7 @@ abstract class $DailyTotalCopyWith<$Res> {
           DailyTotal value, $Res Function(DailyTotal) then) =
       _$DailyTotalCopyWithImpl<$Res, DailyTotal>;
   @useResult
-  $Res call({DateTime day, int hours, int minutes});
+  $Res call({DateTime day, int totalMinutes});
 }
 
 /// @nodoc
@@ -385,21 +384,16 @@ class _$DailyTotalCopyWithImpl<$Res, $Val extends DailyTotal>
   @override
   $Res call({
     Object? day = null,
-    Object? hours = null,
-    Object? minutes = null,
+    Object? totalMinutes = null,
   }) {
     return _then(_value.copyWith(
       day: null == day
           ? _value.day
           : day // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      hours: null == hours
-          ? _value.hours
-          : hours // ignore: cast_nullable_to_non_nullable
-              as int,
-      minutes: null == minutes
-          ? _value.minutes
-          : minutes // ignore: cast_nullable_to_non_nullable
+      totalMinutes: null == totalMinutes
+          ? _value.totalMinutes
+          : totalMinutes // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -413,7 +407,7 @@ abstract class _$$DailyTotalImplCopyWith<$Res>
       __$$DailyTotalImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({DateTime day, int hours, int minutes});
+  $Res call({DateTime day, int totalMinutes});
 }
 
 /// @nodoc
@@ -428,21 +422,16 @@ class __$$DailyTotalImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? day = null,
-    Object? hours = null,
-    Object? minutes = null,
+    Object? totalMinutes = null,
   }) {
     return _then(_$DailyTotalImpl(
       day: null == day
           ? _value.day
           : day // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      hours: null == hours
-          ? _value.hours
-          : hours // ignore: cast_nullable_to_non_nullable
-              as int,
-      minutes: null == minutes
-          ? _value.minutes
-          : minutes // ignore: cast_nullable_to_non_nullable
+      totalMinutes: null == totalMinutes
+          ? _value.totalMinutes
+          : totalMinutes // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -451,19 +440,16 @@ class __$$DailyTotalImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DailyTotalImpl implements _DailyTotal {
-  _$DailyTotalImpl(
-      {required this.day, required this.hours, required this.minutes});
+  _$DailyTotalImpl({required this.day, required this.totalMinutes});
 
   @override
   final DateTime day;
   @override
-  final int hours;
-  @override
-  final int minutes;
+  final int totalMinutes;
 
   @override
   String toString() {
-    return 'DailyTotal(day: $day, hours: $hours, minutes: $minutes)';
+    return 'DailyTotal(day: $day, totalMinutes: $totalMinutes)';
   }
 
   @override
@@ -472,12 +458,12 @@ class _$DailyTotalImpl implements _DailyTotal {
         (other.runtimeType == runtimeType &&
             other is _$DailyTotalImpl &&
             (identical(other.day, day) || other.day == day) &&
-            (identical(other.hours, hours) || other.hours == hours) &&
-            (identical(other.minutes, minutes) || other.minutes == minutes));
+            (identical(other.totalMinutes, totalMinutes) ||
+                other.totalMinutes == totalMinutes));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, day, hours, minutes);
+  int get hashCode => Object.hash(runtimeType, day, totalMinutes);
 
   @JsonKey(ignore: true)
   @override
@@ -489,15 +475,12 @@ class _$DailyTotalImpl implements _DailyTotal {
 abstract class _DailyTotal implements DailyTotal {
   factory _DailyTotal(
       {required final DateTime day,
-      required final int hours,
-      required final int minutes}) = _$DailyTotalImpl;
+      required final int totalMinutes}) = _$DailyTotalImpl;
 
   @override
   DateTime get day;
   @override
-  int get hours;
-  @override
-  int get minutes;
+  int get totalMinutes;
   @override
   @JsonKey(ignore: true)
   _$$DailyTotalImplCopyWith<_$DailyTotalImpl> get copyWith =>
