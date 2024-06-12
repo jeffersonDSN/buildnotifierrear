@@ -150,11 +150,18 @@ class LandingPage extends StatelessWidget {
                   ),
                   const Spacer(),
                   const Divider(),
-                  const ListTile(
+                  ListTile(
                     iconColor: Colors.white,
                     textColor: Colors.white,
-                    leading: Icon(Icons.settings),
-                    title: Text('Settings'),
+                    leading: const Icon(Icons.settings),
+                    title: const Text('Settings'),
+                    onTap: () {
+                      bloc.add(
+                        const AppEvent.changeView(
+                          mod: Mod.settings(),
+                        ),
+                      );
+                    },
                   ),
                   ListTile(
                     iconColor: Colors.white,

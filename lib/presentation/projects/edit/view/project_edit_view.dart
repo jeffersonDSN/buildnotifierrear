@@ -68,7 +68,7 @@ class ProjectEditView extends IView {
                               children: [
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                    label: Text('Name'),
+                                    labelText: 'Name',
                                   ),
                                   initialValue: project.name,
                                   onChanged: (value) {
@@ -82,7 +82,7 @@ class ProjectEditView extends IView {
                                 gapHeight16,
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                    label: Text('Address'),
+                                    labelText: 'Address',
                                   ),
                                   initialValue: project.address,
                                   onChanged: (value) {
@@ -96,7 +96,7 @@ class ProjectEditView extends IView {
                                 gapHeight16,
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                    label: Text('City'),
+                                    labelText: 'City',
                                   ),
                                   initialValue: project.city,
                                   onChanged: (value) {
@@ -110,7 +110,7 @@ class ProjectEditView extends IView {
                                 gapHeight16,
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                    label: Text('State'),
+                                    labelText: 'State',
                                   ),
                                   initialValue: project.state,
                                   onChanged: (value) {
@@ -124,7 +124,7 @@ class ProjectEditView extends IView {
                                 gapHeight16,
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                    label: Text('ZIP Code'),
+                                    labelText: 'ZIP Code',
                                   ),
                                   initialValue: project.zipCode,
                                   onChanged: (value) {

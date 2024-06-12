@@ -1,0 +1,33 @@
+import 'package:buildnotifierrear/domain/entities/settings/settings.dart';
+import 'package:buildnotifierrear/domain/repositories/abs_i_settings_repository.dart';
+import 'package:cloud_firestore/cloud_firestore.dart' hide Settings;
+
+class SettingsFirestoreRepository implements AbsISettingsRepository {
+  final String _tenantId;
+  final CollectionReference _collection;
+
+  SettingsFirestoreRepository({
+    required String tenantId,
+  })  : _tenantId = tenantId,
+        _collection = FirebaseFirestore.instance.collection('tenant');
+
+  @override
+  Future<Settings> get() async {
+    var querySnapshot = await _collection.doc(_tenantId).get();
+
+    var doc = querySnapshot.data() as Map<String, dynamic>;
+    Map<String, dynamic> profile = doc['profile'];
+
+    return Settings.fromJson({...profile, 'id': _tenantId});
+  }
+
+  @override
+  Future<bool> put(Settings value) async {
+    var settings = {
+      'profile': value.toJson(),
+    };
+
+    await _collection.doc(value.id.toString()).update(settings);
+    return true;
+  }
+}

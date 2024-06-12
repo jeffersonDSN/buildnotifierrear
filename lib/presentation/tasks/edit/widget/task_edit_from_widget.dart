@@ -25,7 +25,7 @@ class TaskEditFromWidget extends StatelessWidget {
               children: [
                 TextFormField(
                   decoration: const InputDecoration(
-                    label: Text('Title'),
+                    labelText: 'Title',
                   ),
                   initialValue: task.title,
                   onChanged: onTitleChanged,

@@ -74,7 +74,7 @@ class UserEditView extends IView {
                               children: [
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                    label: Text('First Name'),
+                                    labelText: 'First Name',
                                   ),
                                   initialValue: user.firstName,
                                   onChanged: (value) {
@@ -88,7 +88,7 @@ class UserEditView extends IView {
                                 gapHeight16,
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                    label: Text('Last name'),
+                                    labelText: 'Last name',
                                   ),
                                   initialValue: user.lastName,
                                   onChanged: (value) {
@@ -102,7 +102,7 @@ class UserEditView extends IView {
                                 gapHeight16,
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                    label: Text('E-mail'),
+                                    labelText: 'E-mail',
                                   ),
                                   initialValue: user.email,
                                   onChanged: (value) {
@@ -116,7 +116,7 @@ class UserEditView extends IView {
                                 gapHeight16,
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                    label: Text('Username'),
+                                    labelText: 'Username',
                                   ),
                                   initialValue: user.userName,
                                   onChanged: (value) {
@@ -137,7 +137,7 @@ class UserEditView extends IView {
                                 gapHeight16,
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                    label: Text('Password'),
+                                    labelText: 'Password',
                                   ),
                                   initialValue: user.password,
                                   onChanged: (value) {
@@ -152,9 +152,7 @@ class UserEditView extends IView {
                                 DropdownButtonFormField(
                                   value: user.userType,
                                   decoration: const InputDecoration(
-                                    label: Text(
-                                      'User type',
-                                    ),
+                                    labelText: 'User type',
                                   ),
                                   isExpanded: true,
                                   items: const [

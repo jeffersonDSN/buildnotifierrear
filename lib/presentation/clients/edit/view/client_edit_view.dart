@@ -56,20 +56,20 @@ class ClientEditView extends IView {
             loaded: (type, user) {
               return Padding(
                 padding: const EdgeInsets.all(Sizes.size16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(Sizes.size16),
-                          child: SizedBox(
-                            width: Sizes.size600,
+                child: SizedBox(
+                  width: Sizes.size600,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Card(
+                          child: Padding(
+                            padding: const EdgeInsets.all(Sizes.size16),
                             child: Column(
                               children: [
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                    label: Text('First Name'),
+                                    labelText: 'First Name',
                                   ),
                                   initialValue: user.firstName,
                                   onChanged: (value) {
@@ -83,7 +83,7 @@ class ClientEditView extends IView {
                                 gapHeight16,
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                    label: Text('Last name'),
+                                    labelText: 'Last name',
                                   ),
                                   initialValue: user.lastName,
                                   onChanged: (value) {
@@ -97,7 +97,7 @@ class ClientEditView extends IView {
                                 gapHeight16,
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                    label: Text('E-mail'),
+                                    labelText: 'E-mail',
                                   ),
                                   initialValue: user.email,
                                   onChanged: (value) {
@@ -111,7 +111,7 @@ class ClientEditView extends IView {
                                 gapHeight16,
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                    label: Text('Phone number'),
+                                    labelText: 'Phone number',
                                   ),
                                   initialValue: user.phoneNumber,
                                   onChanged: (value) {
@@ -127,41 +127,41 @@ class ClientEditView extends IView {
                           ),
                         ),
                       ),
-                    ),
-                    gapHeight16,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(Sizes.size8),
-                          child: FilledButton.icon(
-                            icon: const Icon(
-                              Icons.check,
-                            ),
-                            label: type.when(
-                              create: () => const Text('Create client'),
-                              update: (id) => const Text('Update client'),
-                            ),
-                            onPressed: () {
-                              bloc.add(
-                                ClientEditEvent.save(
-                                  callback: () {
-                                    appBloc(context).add(
-                                      const AppEvent.changeView(
-                                        mod: Mod.clients(
-                                          type: ViewType.overview(),
+                      gapHeight16,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(Sizes.size8),
+                            child: FilledButton.icon(
+                              icon: const Icon(
+                                Icons.check,
+                              ),
+                              label: type.when(
+                                create: () => const Text('Create client'),
+                                update: (id) => const Text('Update client'),
+                              ),
+                              onPressed: () {
+                                bloc.add(
+                                  ClientEditEvent.save(
+                                    callback: () {
+                                      appBloc(context).add(
+                                        const AppEvent.changeView(
+                                          mod: Mod.clients(
+                                            type: ViewType.overview(),
+                                          ),
                                         ),
-                                      ),
-                                    );
-                                  },
-                                ),
-                              );
-                            },
+                                      );
+                                    },
+                                  ),
+                                );
+                              },
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               );
             },

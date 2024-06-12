@@ -51,9 +51,7 @@ class AppointmentDetailsForm extends StatelessWidget {
           gapHeight8,
           DropdownButtonFormField<({String id, String name})>(
             decoration: const InputDecoration(
-              label: Text(
-                'Project',
-              ),
+              labelText: 'Project',
             ),
             isExpanded: true,
             value: (
@@ -84,9 +82,7 @@ class AppointmentDetailsForm extends StatelessWidget {
           gapHeight8,
           DropdownButtonFormField<({String id, String title})>(
             decoration: const InputDecoration(
-              label: Text(
-                'Task',
-              ),
+              labelText: 'Task',
             ),
             isExpanded: true,
             value: (

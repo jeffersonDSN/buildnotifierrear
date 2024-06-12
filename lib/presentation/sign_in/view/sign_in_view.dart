@@ -68,7 +68,7 @@ class SignInView extends IView {
                       gapHeight32,
                       TextFormField(
                         decoration: const InputDecoration(
-                          label: Text('User name'),
+                          labelText: 'User name',
                           prefixIcon: Icon(
                             Icons.person,
                           ),
@@ -90,7 +90,7 @@ class SignInView extends IView {
                       gapHeight32,
                       TextFormField(
                         decoration: const InputDecoration(
-                          label: Text('Password'),
+                          labelText: 'Password',
                           prefixIcon: Icon(
                             Icons.lock,
                           ),

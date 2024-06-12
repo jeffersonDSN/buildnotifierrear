@@ -148,11 +148,6 @@ class ScheduleEditView extends IView {
                                                           decoration:
                                                               const InputDecoration(
                                                             labelText: 'Date',
-                                                            labelStyle:
-                                                                TextStyle(
-                                                              fontSize:
-                                                                  Sizes.size12,
-                                                            ),
                                                           ),
                                                         ),
                                                       ),
@@ -168,11 +163,6 @@ class ScheduleEditView extends IView {
                                                           decoration:
                                                               const InputDecoration(
                                                             labelText: 'Start',
-                                                            labelStyle:
-                                                                TextStyle(
-                                                              fontSize:
-                                                                  Sizes.size12,
-                                                            ),
                                                           ),
                                                         ),
                                                       ),
@@ -188,11 +178,6 @@ class ScheduleEditView extends IView {
                                                           decoration:
                                                               const InputDecoration(
                                                             labelText: 'End',
-                                                            labelStyle:
-                                                                TextStyle(
-                                                              fontSize:
-                                                                  Sizes.size12,
-                                                            ),
                                                           ),
                                                         ),
                                                       ),

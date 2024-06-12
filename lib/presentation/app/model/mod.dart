@@ -7,6 +7,7 @@ import 'package:buildnotifierrear/presentation/projects/edit/project_edit.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/projects_overview.dart';
 import 'package:buildnotifierrear/presentation/schedule/edit/schedule_edit.dart';
 import 'package:buildnotifierrear/presentation/schedule/overview/schedule_overview.dart';
+import 'package:buildnotifierrear/presentation/settings/edit/settings_edit.dart';
 import 'package:buildnotifierrear/presentation/users/edit/user_edit.dart';
 import 'package:buildnotifierrear/presentation/users/overview/users_overvire.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ class Mod with _$Mod {
   const factory Mod.users({
     required ViewType type,
   }) = ModUsers;
+  const factory Mod.settings() = ModSettings;
 }
 
 extension OnModel on Mod {
@@ -67,6 +69,7 @@ extension OnModel on Mod {
         create: () => const UserEdit(),
         update: (id) => UserEdit(type: CrudType.update(id: id)),
       ),
+      settings: () => const SettingsEdit(),
     );
   }
 }
