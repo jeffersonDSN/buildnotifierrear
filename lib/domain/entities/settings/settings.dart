@@ -9,6 +9,7 @@ class Settings with _$Settings {
     @Default('') String id,
     @Default('') String name,
     @Default(0) int payPeriod,
+    required DateTime periodStart,
   }) = _Settings;
 
   factory Settings.fromJson(Map<String, Object?> json) =>

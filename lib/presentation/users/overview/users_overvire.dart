@@ -1,8 +1,9 @@
 import 'package:buildnotifierrear/domain/controllers/appointment_controller.dart';
-import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/period_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/timecards_controller.dart';
-import 'package:buildnotifierrear/domain/entities/user/user.dart';
+import 'package:buildnotifierrear/domain/controllers/users_controller.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/appointments_firestore_repository.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/settings_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/timecards_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/users_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/http/location_repository.dart';
@@ -22,7 +23,7 @@ class UsersOverview extends IView {
 
     return BlocProvider<UsersOverviewBloc>(
       create: (context) => UsersOverviewBloc(
-        controller: CRUDController<User>(
+        controller: UsersController(
           repository: UsersFireStoreRepository(
             tenant: tenantId,
           ),
@@ -31,12 +32,20 @@ class UsersOverview extends IView {
           repository: TimecardsFireStoreRepository(
             tenantId: tenantId,
           ),
+          settingsRepository: SettingsFirestoreRepository(
+            tenantId: tenantId,
+          ),
         ),
         appointmentController: AppointmentController(
           repository: AppointmentsFirestoreRepository(
             tenantId: tenantId,
           ),
           locationRepository: LocationRepository(),
+        ),
+        periodController: PeriodController(
+          repository: SettingsFirestoreRepository(
+            tenantId: tenantId,
+          ),
         ),
       ),
       child: const UsersOverviewView(),

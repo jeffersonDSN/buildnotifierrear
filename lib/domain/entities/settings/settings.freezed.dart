@@ -23,6 +23,7 @@ mixin _$Settings {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get payPeriod => throw _privateConstructorUsedError;
+  DateTime get periodStart => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +36,7 @@ abstract class $SettingsCopyWith<$Res> {
   factory $SettingsCopyWith(Settings value, $Res Function(Settings) then) =
       _$SettingsCopyWithImpl<$Res, Settings>;
   @useResult
-  $Res call({String id, String name, int payPeriod});
+  $Res call({String id, String name, int payPeriod, DateTime periodStart});
 }
 
 /// @nodoc
@@ -54,6 +55,7 @@ class _$SettingsCopyWithImpl<$Res, $Val extends Settings>
     Object? id = null,
     Object? name = null,
     Object? payPeriod = null,
+    Object? periodStart = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -68,6 +70,10 @@ class _$SettingsCopyWithImpl<$Res, $Val extends Settings>
           ? _value.payPeriod
           : payPeriod // ignore: cast_nullable_to_non_nullable
               as int,
+      periodStart: null == periodStart
+          ? _value.periodStart
+          : periodStart // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ) as $Val);
   }
 }
@@ -80,7 +86,7 @@ abstract class _$$SettingsImplCopyWith<$Res>
       __$$SettingsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, int payPeriod});
+  $Res call({String id, String name, int payPeriod, DateTime periodStart});
 }
 
 /// @nodoc
@@ -97,6 +103,7 @@ class __$$SettingsImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? payPeriod = null,
+    Object? periodStart = null,
   }) {
     return _then(_$SettingsImpl(
       id: null == id
@@ -111,6 +118,10 @@ class __$$SettingsImplCopyWithImpl<$Res>
           ? _value.payPeriod
           : payPeriod // ignore: cast_nullable_to_non_nullable
               as int,
+      periodStart: null == periodStart
+          ? _value.periodStart
+          : periodStart // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -118,7 +129,11 @@ class __$$SettingsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SettingsImpl implements _Settings {
-  const _$SettingsImpl({this.id = '', this.name = '', this.payPeriod = 0});
+  const _$SettingsImpl(
+      {this.id = '',
+      this.name = '',
+      this.payPeriod = 0,
+      required this.periodStart});
 
   factory _$SettingsImpl.fromJson(Map<String, dynamic> json) =>
       _$$SettingsImplFromJson(json);
@@ -132,10 +147,12 @@ class _$SettingsImpl implements _Settings {
   @override
   @JsonKey()
   final int payPeriod;
+  @override
+  final DateTime periodStart;
 
   @override
   String toString() {
-    return 'Settings(id: $id, name: $name, payPeriod: $payPeriod)';
+    return 'Settings(id: $id, name: $name, payPeriod: $payPeriod, periodStart: $periodStart)';
   }
 
   @override
@@ -146,12 +163,15 @@ class _$SettingsImpl implements _Settings {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.payPeriod, payPeriod) ||
-                other.payPeriod == payPeriod));
+                other.payPeriod == payPeriod) &&
+            (identical(other.periodStart, periodStart) ||
+                other.periodStart == periodStart));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, payPeriod);
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, payPeriod, periodStart);
 
   @JsonKey(ignore: true)
   @override
@@ -171,7 +191,8 @@ abstract class _Settings implements Settings {
   const factory _Settings(
       {final String id,
       final String name,
-      final int payPeriod}) = _$SettingsImpl;
+      final int payPeriod,
+      required final DateTime periodStart}) = _$SettingsImpl;
 
   factory _Settings.fromJson(Map<String, dynamic> json) =
       _$SettingsImpl.fromJson;
@@ -182,6 +203,8 @@ abstract class _Settings implements Settings {
   String get name;
   @override
   int get payPeriod;
+  @override
+  DateTime get periodStart;
   @override
   @JsonKey(ignore: true)
   _$$SettingsImplCopyWith<_$SettingsImpl> get copyWith =>

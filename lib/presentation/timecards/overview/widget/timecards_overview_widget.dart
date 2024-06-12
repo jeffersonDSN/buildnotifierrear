@@ -1,3 +1,4 @@
+import 'package:buildnotifierrear/domain/entities/period/period.dart';
 import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
@@ -6,16 +7,25 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class TimecardsOverviewWidget extends StatelessWidget {
+  final Period selectedPeriod;
+  final List<Period> periods;
+  final ValueChanged<Period> onChangePeriod;
   final List<Timecard> timecards;
   final ValueChanged<DateTime> onOpenDetails;
+  final bool isLoading;
 
   TimecardsOverviewWidget({
     super.key,
+    required this.selectedPeriod,
+    required this.periods,
+    required this.onChangePeriod,
     required this.timecards,
     required this.onOpenDetails,
+    this.isLoading = false,
   });
 
   final NumberFormat numberFormat = NumberFormat('00');
+  final DateFormat dateFormat = DateFormat.yMd();
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +36,29 @@ class TimecardsOverviewWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          DropdownButton(
+            value: selectedPeriod,
+            isExpanded: true,
+            items: periods.map(
+              (period) {
+                return DropdownMenuItem(
+                  value: period,
+                  child: Text(
+                    '${period.name}: ${dateFormat.format(period.startDate)} - ${dateFormat.format(period.endDate)} ',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                );
+              },
+            ).toList(),
+            onChanged: (value) {
+              if (value != null) {
+                onChangePeriod.call(value);
+              }
+            },
+          ),
+          gapHeight16,
           ListTile(
             title: const Text(
               'Total hours of the period',

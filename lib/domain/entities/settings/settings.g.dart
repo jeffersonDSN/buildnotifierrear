@@ -11,6 +11,7 @@ _$SettingsImpl _$$SettingsImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String? ?? '',
       name: json['name'] as String? ?? '',
       payPeriod: (json['payPeriod'] as num?)?.toInt() ?? 0,
+      periodStart: DateTime.parse(json['periodStart'] as String),
     );
 
 Map<String, dynamic> _$$SettingsImplToJson(_$SettingsImpl instance) =>
@@ -18,4 +19,5 @@ Map<String, dynamic> _$$SettingsImplToJson(_$SettingsImpl instance) =>
       'id': instance.id,
       'name': instance.name,
       'payPeriod': instance.payPeriod,
+      'periodStart': instance.periodStart.toIso8601String(),
     };

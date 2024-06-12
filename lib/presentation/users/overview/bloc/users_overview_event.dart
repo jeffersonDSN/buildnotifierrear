@@ -16,6 +16,10 @@ class UsersOverviewEvent with _$UsersOverviewEvent {
     required DateTime selectedDay,
   }) = UsersOverviewEventUpdateSelectedDay;
 
+  const factory UsersOverviewEvent.changeSelectedPeriod({
+    required Period selectedPeriod,
+  }) = UsersOverviewEventChangeSelectedPeriod;
+
   const factory UsersOverviewEvent.deleteAppointment({
     required String appointmentId,
   }) = UsersOverviewEventDeleteAppointment;

@@ -22,4 +22,8 @@ class UsersController extends CRUDController<User> {
 
     return result.any((user) => user.id != id);
   }
+
+  Future<List<User>> getAllOfPeriod() {
+    return _repository.getAll();
+  }
 }

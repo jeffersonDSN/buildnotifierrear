@@ -3,9 +3,11 @@ import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
 import 'package:buildnotifierrear/presentation/settings/edit/bloc/settings_edit_bloc.dart';
+import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 class SettingsEditView extends IView {
   const SettingsEditView({super.key});
@@ -33,7 +35,7 @@ class SettingsEditView extends IView {
                   Sizes.size16,
                 ),
                 child: SizedBox(
-                  width: Sizes.size600,
+                  width: Sizes.size300,
                   child: Column(
                     children: [
                       Expanded(
@@ -85,6 +87,47 @@ class SettingsEditView extends IView {
                                     );
                                   },
                                 ),
+                                gapHeight32,
+                                const Text('Select when your period start'),
+                                gapHeight8,
+                                TableCalendar(
+                                  firstDay: DateTime.utc(2010, 10, 16),
+                                  lastDay: DateTime.utc(2030, 3, 14),
+                                  focusedDay: settings.periodStart,
+                                  currentDay: DateTime.now(),
+                                  calendarStyle: CalendarStyle(
+                                    defaultTextStyle: const TextStyle(
+                                      color: AppColor.primaryColorSwatch,
+                                    ),
+                                    weekendTextStyle: const TextStyle(
+                                      color: AppColor.warning,
+                                    ),
+                                    selectedDecoration: const BoxDecoration(
+                                      color: AppColor.primaryColorSwatch,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    todayDecoration: BoxDecoration(
+                                      color:
+                                          AppColor.primaryColorSwatch.shade300,
+                                      shape: BoxShape.circle,
+                                    ),
+                                  ),
+                                  selectedDayPredicate: (day) {
+                                    return isSameDay(settings.periodStart, day);
+                                  },
+                                  onDaySelected: (selectedDay, focusedDay) {
+                                    bloc.add(
+                                      SettingsEditEvent.changeSelectedDay(
+                                        value: focusedDay,
+                                      ),
+                                    );
+                                  },
+                                  calendarFormat: CalendarFormat.month,
+                                  headerStyle: const HeaderStyle(
+                                    titleCentered: true,
+                                    formatButtonVisible: false,
+                                  ),
+                                )
                               ],
                             ),
                           ),

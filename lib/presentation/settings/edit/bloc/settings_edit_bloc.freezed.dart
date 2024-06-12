@@ -21,6 +21,7 @@ mixin _$SettingsEditEvent {
     required TResult Function() load,
     required TResult Function(String value) changeName,
     required TResult Function(int value) changePayPeriod,
+    required TResult Function(DateTime value) changeSelectedDay,
     required TResult Function(VoidCallback callBack) save,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,6 +30,7 @@ mixin _$SettingsEditEvent {
     TResult? Function()? load,
     TResult? Function(String value)? changeName,
     TResult? Function(int value)? changePayPeriod,
+    TResult? Function(DateTime value)? changeSelectedDay,
     TResult? Function(VoidCallback callBack)? save,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +39,7 @@ mixin _$SettingsEditEvent {
     TResult Function()? load,
     TResult Function(String value)? changeName,
     TResult Function(int value)? changePayPeriod,
+    TResult Function(DateTime value)? changeSelectedDay,
     TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) =>
@@ -45,7 +48,10 @@ mixin _$SettingsEditEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(SettingsEditEventLoad value) load,
     required TResult Function(SettingsEditEventChangeName value) changeName,
-    required TResult Function(SettingsEditEventPayPeriod value) changePayPeriod,
+    required TResult Function(SettingsEditEventChangePayPeriod value)
+        changePayPeriod,
+    required TResult Function(SettingsEditEventChangeSelectedDay value)
+        changeSelectedDay,
     required TResult Function(SettingsEditEventSave value) save,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,7 +59,9 @@ mixin _$SettingsEditEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SettingsEditEventLoad value)? load,
     TResult? Function(SettingsEditEventChangeName value)? changeName,
-    TResult? Function(SettingsEditEventPayPeriod value)? changePayPeriod,
+    TResult? Function(SettingsEditEventChangePayPeriod value)? changePayPeriod,
+    TResult? Function(SettingsEditEventChangeSelectedDay value)?
+        changeSelectedDay,
     TResult? Function(SettingsEditEventSave value)? save,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +69,9 @@ mixin _$SettingsEditEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SettingsEditEventLoad value)? load,
     TResult Function(SettingsEditEventChangeName value)? changeName,
-    TResult Function(SettingsEditEventPayPeriod value)? changePayPeriod,
+    TResult Function(SettingsEditEventChangePayPeriod value)? changePayPeriod,
+    TResult Function(SettingsEditEventChangeSelectedDay value)?
+        changeSelectedDay,
     TResult Function(SettingsEditEventSave value)? save,
     required TResult orElse(),
   }) =>
@@ -129,6 +139,7 @@ class _$SettingsEditEventLoadImpl implements SettingsEditEventLoad {
     required TResult Function() load,
     required TResult Function(String value) changeName,
     required TResult Function(int value) changePayPeriod,
+    required TResult Function(DateTime value) changeSelectedDay,
     required TResult Function(VoidCallback callBack) save,
   }) {
     return load();
@@ -140,6 +151,7 @@ class _$SettingsEditEventLoadImpl implements SettingsEditEventLoad {
     TResult? Function()? load,
     TResult? Function(String value)? changeName,
     TResult? Function(int value)? changePayPeriod,
+    TResult? Function(DateTime value)? changeSelectedDay,
     TResult? Function(VoidCallback callBack)? save,
   }) {
     return load?.call();
@@ -151,6 +163,7 @@ class _$SettingsEditEventLoadImpl implements SettingsEditEventLoad {
     TResult Function()? load,
     TResult Function(String value)? changeName,
     TResult Function(int value)? changePayPeriod,
+    TResult Function(DateTime value)? changeSelectedDay,
     TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
@@ -165,7 +178,10 @@ class _$SettingsEditEventLoadImpl implements SettingsEditEventLoad {
   TResult map<TResult extends Object?>({
     required TResult Function(SettingsEditEventLoad value) load,
     required TResult Function(SettingsEditEventChangeName value) changeName,
-    required TResult Function(SettingsEditEventPayPeriod value) changePayPeriod,
+    required TResult Function(SettingsEditEventChangePayPeriod value)
+        changePayPeriod,
+    required TResult Function(SettingsEditEventChangeSelectedDay value)
+        changeSelectedDay,
     required TResult Function(SettingsEditEventSave value) save,
   }) {
     return load(this);
@@ -176,7 +192,9 @@ class _$SettingsEditEventLoadImpl implements SettingsEditEventLoad {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SettingsEditEventLoad value)? load,
     TResult? Function(SettingsEditEventChangeName value)? changeName,
-    TResult? Function(SettingsEditEventPayPeriod value)? changePayPeriod,
+    TResult? Function(SettingsEditEventChangePayPeriod value)? changePayPeriod,
+    TResult? Function(SettingsEditEventChangeSelectedDay value)?
+        changeSelectedDay,
     TResult? Function(SettingsEditEventSave value)? save,
   }) {
     return load?.call(this);
@@ -187,7 +205,9 @@ class _$SettingsEditEventLoadImpl implements SettingsEditEventLoad {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SettingsEditEventLoad value)? load,
     TResult Function(SettingsEditEventChangeName value)? changeName,
-    TResult Function(SettingsEditEventPayPeriod value)? changePayPeriod,
+    TResult Function(SettingsEditEventChangePayPeriod value)? changePayPeriod,
+    TResult Function(SettingsEditEventChangeSelectedDay value)?
+        changeSelectedDay,
     TResult Function(SettingsEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -273,6 +293,7 @@ class _$SettingsEditEventChangeNameImpl implements SettingsEditEventChangeName {
     required TResult Function() load,
     required TResult Function(String value) changeName,
     required TResult Function(int value) changePayPeriod,
+    required TResult Function(DateTime value) changeSelectedDay,
     required TResult Function(VoidCallback callBack) save,
   }) {
     return changeName(value);
@@ -284,6 +305,7 @@ class _$SettingsEditEventChangeNameImpl implements SettingsEditEventChangeName {
     TResult? Function()? load,
     TResult? Function(String value)? changeName,
     TResult? Function(int value)? changePayPeriod,
+    TResult? Function(DateTime value)? changeSelectedDay,
     TResult? Function(VoidCallback callBack)? save,
   }) {
     return changeName?.call(value);
@@ -295,6 +317,7 @@ class _$SettingsEditEventChangeNameImpl implements SettingsEditEventChangeName {
     TResult Function()? load,
     TResult Function(String value)? changeName,
     TResult Function(int value)? changePayPeriod,
+    TResult Function(DateTime value)? changeSelectedDay,
     TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
@@ -309,7 +332,10 @@ class _$SettingsEditEventChangeNameImpl implements SettingsEditEventChangeName {
   TResult map<TResult extends Object?>({
     required TResult Function(SettingsEditEventLoad value) load,
     required TResult Function(SettingsEditEventChangeName value) changeName,
-    required TResult Function(SettingsEditEventPayPeriod value) changePayPeriod,
+    required TResult Function(SettingsEditEventChangePayPeriod value)
+        changePayPeriod,
+    required TResult Function(SettingsEditEventChangeSelectedDay value)
+        changeSelectedDay,
     required TResult Function(SettingsEditEventSave value) save,
   }) {
     return changeName(this);
@@ -320,7 +346,9 @@ class _$SettingsEditEventChangeNameImpl implements SettingsEditEventChangeName {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SettingsEditEventLoad value)? load,
     TResult? Function(SettingsEditEventChangeName value)? changeName,
-    TResult? Function(SettingsEditEventPayPeriod value)? changePayPeriod,
+    TResult? Function(SettingsEditEventChangePayPeriod value)? changePayPeriod,
+    TResult? Function(SettingsEditEventChangeSelectedDay value)?
+        changeSelectedDay,
     TResult? Function(SettingsEditEventSave value)? save,
   }) {
     return changeName?.call(this);
@@ -331,7 +359,9 @@ class _$SettingsEditEventChangeNameImpl implements SettingsEditEventChangeName {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SettingsEditEventLoad value)? load,
     TResult Function(SettingsEditEventChangeName value)? changeName,
-    TResult Function(SettingsEditEventPayPeriod value)? changePayPeriod,
+    TResult Function(SettingsEditEventChangePayPeriod value)? changePayPeriod,
+    TResult Function(SettingsEditEventChangeSelectedDay value)?
+        changeSelectedDay,
     TResult Function(SettingsEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -353,23 +383,23 @@ abstract class SettingsEditEventChangeName implements SettingsEditEvent {
 }
 
 /// @nodoc
-abstract class _$$SettingsEditEventPayPeriodImplCopyWith<$Res> {
-  factory _$$SettingsEditEventPayPeriodImplCopyWith(
-          _$SettingsEditEventPayPeriodImpl value,
-          $Res Function(_$SettingsEditEventPayPeriodImpl) then) =
-      __$$SettingsEditEventPayPeriodImplCopyWithImpl<$Res>;
+abstract class _$$SettingsEditEventChangePayPeriodImplCopyWith<$Res> {
+  factory _$$SettingsEditEventChangePayPeriodImplCopyWith(
+          _$SettingsEditEventChangePayPeriodImpl value,
+          $Res Function(_$SettingsEditEventChangePayPeriodImpl) then) =
+      __$$SettingsEditEventChangePayPeriodImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int value});
 }
 
 /// @nodoc
-class __$$SettingsEditEventPayPeriodImplCopyWithImpl<$Res>
+class __$$SettingsEditEventChangePayPeriodImplCopyWithImpl<$Res>
     extends _$SettingsEditEventCopyWithImpl<$Res,
-        _$SettingsEditEventPayPeriodImpl>
-    implements _$$SettingsEditEventPayPeriodImplCopyWith<$Res> {
-  __$$SettingsEditEventPayPeriodImplCopyWithImpl(
-      _$SettingsEditEventPayPeriodImpl _value,
-      $Res Function(_$SettingsEditEventPayPeriodImpl) _then)
+        _$SettingsEditEventChangePayPeriodImpl>
+    implements _$$SettingsEditEventChangePayPeriodImplCopyWith<$Res> {
+  __$$SettingsEditEventChangePayPeriodImplCopyWithImpl(
+      _$SettingsEditEventChangePayPeriodImpl _value,
+      $Res Function(_$SettingsEditEventChangePayPeriodImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -377,7 +407,7 @@ class __$$SettingsEditEventPayPeriodImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$SettingsEditEventPayPeriodImpl(
+    return _then(_$SettingsEditEventChangePayPeriodImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -388,8 +418,9 @@ class __$$SettingsEditEventPayPeriodImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SettingsEditEventPayPeriodImpl implements SettingsEditEventPayPeriod {
-  const _$SettingsEditEventPayPeriodImpl({required this.value});
+class _$SettingsEditEventChangePayPeriodImpl
+    implements SettingsEditEventChangePayPeriod {
+  const _$SettingsEditEventChangePayPeriodImpl({required this.value});
 
   @override
   final int value;
@@ -403,7 +434,7 @@ class _$SettingsEditEventPayPeriodImpl implements SettingsEditEventPayPeriod {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SettingsEditEventPayPeriodImpl &&
+            other is _$SettingsEditEventChangePayPeriodImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -413,9 +444,10 @@ class _$SettingsEditEventPayPeriodImpl implements SettingsEditEventPayPeriod {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SettingsEditEventPayPeriodImplCopyWith<_$SettingsEditEventPayPeriodImpl>
-      get copyWith => __$$SettingsEditEventPayPeriodImplCopyWithImpl<
-          _$SettingsEditEventPayPeriodImpl>(this, _$identity);
+  _$$SettingsEditEventChangePayPeriodImplCopyWith<
+          _$SettingsEditEventChangePayPeriodImpl>
+      get copyWith => __$$SettingsEditEventChangePayPeriodImplCopyWithImpl<
+          _$SettingsEditEventChangePayPeriodImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -423,6 +455,7 @@ class _$SettingsEditEventPayPeriodImpl implements SettingsEditEventPayPeriod {
     required TResult Function() load,
     required TResult Function(String value) changeName,
     required TResult Function(int value) changePayPeriod,
+    required TResult Function(DateTime value) changeSelectedDay,
     required TResult Function(VoidCallback callBack) save,
   }) {
     return changePayPeriod(value);
@@ -434,6 +467,7 @@ class _$SettingsEditEventPayPeriodImpl implements SettingsEditEventPayPeriod {
     TResult? Function()? load,
     TResult? Function(String value)? changeName,
     TResult? Function(int value)? changePayPeriod,
+    TResult? Function(DateTime value)? changeSelectedDay,
     TResult? Function(VoidCallback callBack)? save,
   }) {
     return changePayPeriod?.call(value);
@@ -445,6 +479,7 @@ class _$SettingsEditEventPayPeriodImpl implements SettingsEditEventPayPeriod {
     TResult Function()? load,
     TResult Function(String value)? changeName,
     TResult Function(int value)? changePayPeriod,
+    TResult Function(DateTime value)? changeSelectedDay,
     TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
@@ -459,7 +494,10 @@ class _$SettingsEditEventPayPeriodImpl implements SettingsEditEventPayPeriod {
   TResult map<TResult extends Object?>({
     required TResult Function(SettingsEditEventLoad value) load,
     required TResult Function(SettingsEditEventChangeName value) changeName,
-    required TResult Function(SettingsEditEventPayPeriod value) changePayPeriod,
+    required TResult Function(SettingsEditEventChangePayPeriod value)
+        changePayPeriod,
+    required TResult Function(SettingsEditEventChangeSelectedDay value)
+        changeSelectedDay,
     required TResult Function(SettingsEditEventSave value) save,
   }) {
     return changePayPeriod(this);
@@ -470,7 +508,9 @@ class _$SettingsEditEventPayPeriodImpl implements SettingsEditEventPayPeriod {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SettingsEditEventLoad value)? load,
     TResult? Function(SettingsEditEventChangeName value)? changeName,
-    TResult? Function(SettingsEditEventPayPeriod value)? changePayPeriod,
+    TResult? Function(SettingsEditEventChangePayPeriod value)? changePayPeriod,
+    TResult? Function(SettingsEditEventChangeSelectedDay value)?
+        changeSelectedDay,
     TResult? Function(SettingsEditEventSave value)? save,
   }) {
     return changePayPeriod?.call(this);
@@ -481,7 +521,9 @@ class _$SettingsEditEventPayPeriodImpl implements SettingsEditEventPayPeriod {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SettingsEditEventLoad value)? load,
     TResult Function(SettingsEditEventChangeName value)? changeName,
-    TResult Function(SettingsEditEventPayPeriod value)? changePayPeriod,
+    TResult Function(SettingsEditEventChangePayPeriod value)? changePayPeriod,
+    TResult Function(SettingsEditEventChangeSelectedDay value)?
+        changeSelectedDay,
     TResult Function(SettingsEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -492,13 +534,178 @@ class _$SettingsEditEventPayPeriodImpl implements SettingsEditEventPayPeriod {
   }
 }
 
-abstract class SettingsEditEventPayPeriod implements SettingsEditEvent {
-  const factory SettingsEditEventPayPeriod({required final int value}) =
-      _$SettingsEditEventPayPeriodImpl;
+abstract class SettingsEditEventChangePayPeriod implements SettingsEditEvent {
+  const factory SettingsEditEventChangePayPeriod({required final int value}) =
+      _$SettingsEditEventChangePayPeriodImpl;
 
   int get value;
   @JsonKey(ignore: true)
-  _$$SettingsEditEventPayPeriodImplCopyWith<_$SettingsEditEventPayPeriodImpl>
+  _$$SettingsEditEventChangePayPeriodImplCopyWith<
+          _$SettingsEditEventChangePayPeriodImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SettingsEditEventChangeSelectedDayImplCopyWith<$Res> {
+  factory _$$SettingsEditEventChangeSelectedDayImplCopyWith(
+          _$SettingsEditEventChangeSelectedDayImpl value,
+          $Res Function(_$SettingsEditEventChangeSelectedDayImpl) then) =
+      __$$SettingsEditEventChangeSelectedDayImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DateTime value});
+}
+
+/// @nodoc
+class __$$SettingsEditEventChangeSelectedDayImplCopyWithImpl<$Res>
+    extends _$SettingsEditEventCopyWithImpl<$Res,
+        _$SettingsEditEventChangeSelectedDayImpl>
+    implements _$$SettingsEditEventChangeSelectedDayImplCopyWith<$Res> {
+  __$$SettingsEditEventChangeSelectedDayImplCopyWithImpl(
+      _$SettingsEditEventChangeSelectedDayImpl _value,
+      $Res Function(_$SettingsEditEventChangeSelectedDayImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$SettingsEditEventChangeSelectedDayImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SettingsEditEventChangeSelectedDayImpl
+    implements SettingsEditEventChangeSelectedDay {
+  const _$SettingsEditEventChangeSelectedDayImpl({required this.value});
+
+  @override
+  final DateTime value;
+
+  @override
+  String toString() {
+    return 'SettingsEditEvent.changeSelectedDay(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SettingsEditEventChangeSelectedDayImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SettingsEditEventChangeSelectedDayImplCopyWith<
+          _$SettingsEditEventChangeSelectedDayImpl>
+      get copyWith => __$$SettingsEditEventChangeSelectedDayImplCopyWithImpl<
+          _$SettingsEditEventChangeSelectedDayImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function(String value) changeName,
+    required TResult Function(int value) changePayPeriod,
+    required TResult Function(DateTime value) changeSelectedDay,
+    required TResult Function(VoidCallback callBack) save,
+  }) {
+    return changeSelectedDay(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function(String value)? changeName,
+    TResult? Function(int value)? changePayPeriod,
+    TResult? Function(DateTime value)? changeSelectedDay,
+    TResult? Function(VoidCallback callBack)? save,
+  }) {
+    return changeSelectedDay?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function(String value)? changeName,
+    TResult Function(int value)? changePayPeriod,
+    TResult Function(DateTime value)? changeSelectedDay,
+    TResult Function(VoidCallback callBack)? save,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedDay != null) {
+      return changeSelectedDay(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SettingsEditEventLoad value) load,
+    required TResult Function(SettingsEditEventChangeName value) changeName,
+    required TResult Function(SettingsEditEventChangePayPeriod value)
+        changePayPeriod,
+    required TResult Function(SettingsEditEventChangeSelectedDay value)
+        changeSelectedDay,
+    required TResult Function(SettingsEditEventSave value) save,
+  }) {
+    return changeSelectedDay(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SettingsEditEventLoad value)? load,
+    TResult? Function(SettingsEditEventChangeName value)? changeName,
+    TResult? Function(SettingsEditEventChangePayPeriod value)? changePayPeriod,
+    TResult? Function(SettingsEditEventChangeSelectedDay value)?
+        changeSelectedDay,
+    TResult? Function(SettingsEditEventSave value)? save,
+  }) {
+    return changeSelectedDay?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SettingsEditEventLoad value)? load,
+    TResult Function(SettingsEditEventChangeName value)? changeName,
+    TResult Function(SettingsEditEventChangePayPeriod value)? changePayPeriod,
+    TResult Function(SettingsEditEventChangeSelectedDay value)?
+        changeSelectedDay,
+    TResult Function(SettingsEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedDay != null) {
+      return changeSelectedDay(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SettingsEditEventChangeSelectedDay implements SettingsEditEvent {
+  const factory SettingsEditEventChangeSelectedDay(
+          {required final DateTime value}) =
+      _$SettingsEditEventChangeSelectedDayImpl;
+
+  DateTime get value;
+  @JsonKey(ignore: true)
+  _$$SettingsEditEventChangeSelectedDayImplCopyWith<
+          _$SettingsEditEventChangeSelectedDayImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -572,6 +779,7 @@ class _$SettingsEditEventSaveImpl implements SettingsEditEventSave {
     required TResult Function() load,
     required TResult Function(String value) changeName,
     required TResult Function(int value) changePayPeriod,
+    required TResult Function(DateTime value) changeSelectedDay,
     required TResult Function(VoidCallback callBack) save,
   }) {
     return save(callBack);
@@ -583,6 +791,7 @@ class _$SettingsEditEventSaveImpl implements SettingsEditEventSave {
     TResult? Function()? load,
     TResult? Function(String value)? changeName,
     TResult? Function(int value)? changePayPeriod,
+    TResult? Function(DateTime value)? changeSelectedDay,
     TResult? Function(VoidCallback callBack)? save,
   }) {
     return save?.call(callBack);
@@ -594,6 +803,7 @@ class _$SettingsEditEventSaveImpl implements SettingsEditEventSave {
     TResult Function()? load,
     TResult Function(String value)? changeName,
     TResult Function(int value)? changePayPeriod,
+    TResult Function(DateTime value)? changeSelectedDay,
     TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
@@ -608,7 +818,10 @@ class _$SettingsEditEventSaveImpl implements SettingsEditEventSave {
   TResult map<TResult extends Object?>({
     required TResult Function(SettingsEditEventLoad value) load,
     required TResult Function(SettingsEditEventChangeName value) changeName,
-    required TResult Function(SettingsEditEventPayPeriod value) changePayPeriod,
+    required TResult Function(SettingsEditEventChangePayPeriod value)
+        changePayPeriod,
+    required TResult Function(SettingsEditEventChangeSelectedDay value)
+        changeSelectedDay,
     required TResult Function(SettingsEditEventSave value) save,
   }) {
     return save(this);
@@ -619,7 +832,9 @@ class _$SettingsEditEventSaveImpl implements SettingsEditEventSave {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(SettingsEditEventLoad value)? load,
     TResult? Function(SettingsEditEventChangeName value)? changeName,
-    TResult? Function(SettingsEditEventPayPeriod value)? changePayPeriod,
+    TResult? Function(SettingsEditEventChangePayPeriod value)? changePayPeriod,
+    TResult? Function(SettingsEditEventChangeSelectedDay value)?
+        changeSelectedDay,
     TResult? Function(SettingsEditEventSave value)? save,
   }) {
     return save?.call(this);
@@ -630,7 +845,9 @@ class _$SettingsEditEventSaveImpl implements SettingsEditEventSave {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SettingsEditEventLoad value)? load,
     TResult Function(SettingsEditEventChangeName value)? changeName,
-    TResult Function(SettingsEditEventPayPeriod value)? changePayPeriod,
+    TResult Function(SettingsEditEventChangePayPeriod value)? changePayPeriod,
+    TResult Function(SettingsEditEventChangeSelectedDay value)?
+        changeSelectedDay,
     TResult Function(SettingsEditEventSave value)? save,
     required TResult orElse(),
   }) {

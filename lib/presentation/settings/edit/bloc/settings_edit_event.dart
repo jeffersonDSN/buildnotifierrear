@@ -10,7 +10,11 @@ class SettingsEditEvent with _$SettingsEditEvent {
 
   const factory SettingsEditEvent.changePayPeriod({
     required int value,
-  }) = SettingsEditEventPayPeriod;
+  }) = SettingsEditEventChangePayPeriod;
+
+  const factory SettingsEditEvent.changeSelectedDay({
+    required DateTime value,
+  }) = SettingsEditEventChangeSelectedDay;
 
   const factory SettingsEditEvent.save({
     required VoidCallback callBack,

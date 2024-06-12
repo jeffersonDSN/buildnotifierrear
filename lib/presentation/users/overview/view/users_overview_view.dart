@@ -53,6 +53,8 @@ class UsersOverviewView extends IView {
             loaded: (
               users,
               selectedUser,
+              periods,
+              selectedPeriod,
               timecardsOfselectedUser,
               timecardsState,
               selectedDay,
@@ -125,42 +127,49 @@ class UsersOverviewView extends IView {
                             ),
                             const VerticalDivider(),
                             Expanded(
-                              child: timecardsState.maybeWhen(
-                                orElse: () => const Card(),
-                                loading: () => const Center(
-                                  child: CircularProgressIndicator(),
-                                ),
-                                listing: () {
-                                  return DefaultTabController(
-                                    initialIndex: 0,
-                                    length: 2,
-                                    child: Column(
-                                      children: [
-                                        gapHeight8,
-                                        TabBar(
-                                          indicator: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(
-                                              Sizes.size24,
-                                            ),
-                                            color: AppColor.primaryColorSwatch,
-                                          ),
-                                          labelColor: Colors.white,
-                                          unselectedLabelColor: Colors.black,
-                                          indicatorSize:
-                                              TabBarIndicatorSize.tab,
-                                          dividerColor: Colors.transparent,
-                                          tabs: const [
-                                            Tab(text: 'Timecard'),
-                                            Tab(text: 'Schedule'),
-                                          ],
+                              child: DefaultTabController(
+                                initialIndex: 0,
+                                length: 2,
+                                child: Column(
+                                  children: [
+                                    gapHeight8,
+                                    TabBar(
+                                      indicator: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(
+                                          Sizes.size24,
                                         ),
-                                        const Divider(),
-                                        Expanded(
-                                          child: TabBarView(
-                                            children: [
-                                              TimecardsOverviewWidget(
+                                        color: AppColor.primaryColorSwatch,
+                                      ),
+                                      labelColor: Colors.white,
+                                      unselectedLabelColor: Colors.black,
+                                      indicatorSize: TabBarIndicatorSize.tab,
+                                      dividerColor: Colors.transparent,
+                                      tabs: const [
+                                        Tab(text: 'Timecard'),
+                                        Tab(text: 'Schedule'),
+                                      ],
+                                    ),
+                                    const Divider(),
+                                    Expanded(
+                                      child: TabBarView(
+                                        children: [
+                                          timecardsState.maybeWhen(
+                                            orElse: () {
+                                              return TimecardsOverviewWidget(
+                                                selectedPeriod: selectedPeriod,
+                                                periods: periods,
                                                 timecards:
                                                     timecardsOfselectedUser,
+                                                isLoading:
+                                                    timecardsState.isLoading,
+                                                onChangePeriod: (value) {
+                                                  bloc.add(
+                                                    UsersOverviewEvent
+                                                        .changeSelectedPeriod(
+                                                      selectedPeriod: value,
+                                                    ),
+                                                  );
+                                                },
                                                 onOpenDetails: (value) {
                                                   bloc.add(
                                                     UsersOverviewEvent
@@ -173,56 +182,58 @@ class UsersOverviewView extends IView {
                                                     ),
                                                   );
                                                 },
-                                              ),
-                                              ScheduleWidget(
-                                                selectedDay: selectedDay,
-                                                isLoading: appoitmentCardsState
-                                                    .isLoading,
-                                                appointments:
-                                                    appoitmentOfSelecedDayAndUser,
-                                                scheduleType: ScheduleType.user,
-                                                onChangeSelectedDay: (value) {
+                                              );
+                                            },
+                                            reading: (value) {
+                                              return TaskEditWidget(
+                                                timecards:
+                                                    timecardsOfselectedUser
+                                                        .getByStart(
+                                                  value,
+                                                ),
+                                                onCancel: () {
                                                   bloc.add(
-                                                    UsersOverviewEvent
-                                                        .updateSelectedDay(
-                                                      selectedDay: value,
+                                                    const UsersOverviewEvent
+                                                        .updateTimecardState(
+                                                      timecardsState:
+                                                          DependenteStateType
+                                                              .listing(),
                                                     ),
                                                   );
                                                 },
-                                                onCreate: () {},
-                                                onDelete: (value) {
-                                                  bloc.add(
-                                                    UsersOverviewEvent
-                                                        .deleteAppointment(
-                                                      appointmentId: value,
-                                                    ),
-                                                  );
-                                                },
-                                              ),
-                                            ],
+                                              );
+                                            },
                                           ),
-                                        )
-                                      ],
-                                    ),
-                                  );
-                                },
-                                reading: (value) {
-                                  return TaskEditWidget(
-                                    timecards:
-                                        timecardsOfselectedUser.getByStart(
-                                      value,
-                                    ),
-                                    onCancel: () {
-                                      bloc.add(
-                                        const UsersOverviewEvent
-                                            .updateTimecardState(
-                                          timecardsState:
-                                              DependenteStateType.listing(),
-                                        ),
-                                      );
-                                    },
-                                  );
-                                },
+                                          ScheduleWidget(
+                                            selectedDay: selectedDay,
+                                            isLoading:
+                                                appoitmentCardsState.isLoading,
+                                            appointments:
+                                                appoitmentOfSelecedDayAndUser,
+                                            scheduleType: ScheduleType.user,
+                                            onChangeSelectedDay: (value) {
+                                              bloc.add(
+                                                UsersOverviewEvent
+                                                    .updateSelectedDay(
+                                                  selectedDay: value,
+                                                ),
+                                              );
+                                            },
+                                            onCreate: () {},
+                                            onDelete: (value) {
+                                              bloc.add(
+                                                UsersOverviewEvent
+                                                    .deleteAppointment(
+                                                  appointmentId: value,
+                                                ),
+                                              );
+                                            },
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ],

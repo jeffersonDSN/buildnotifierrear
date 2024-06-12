@@ -43,6 +43,15 @@ class SettingsEditBloc extends Bloc<SettingsEditEvent, SettingsEditState> {
             ),
           );
         },
+        changeSelectedDay: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              settings: state.asLoaded.settings.copyWith(
+                periodStart: value,
+              ),
+            ),
+          );
+        },
         save: (callBack) {
           controller.updateSettings(state.asLoaded.settings);
 

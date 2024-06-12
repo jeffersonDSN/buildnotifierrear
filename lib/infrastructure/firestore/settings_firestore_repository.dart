@@ -18,7 +18,15 @@ class SettingsFirestoreRepository implements AbsISettingsRepository {
     var doc = querySnapshot.data() as Map<String, dynamic>;
     Map<String, dynamic> profile = doc['profile'];
 
-    return Settings.fromJson({...profile, 'id': _tenantId});
+    var result = profile.map((key, value) {
+      if (value is Timestamp) {
+        return MapEntry(key, value.toDate().toString());
+      } else {
+        return MapEntry(key, value);
+      }
+    });
+
+    return Settings.fromJson({...result, 'id': _tenantId});
   }
 
   @override
