@@ -60,7 +60,7 @@ class ScheduleEditAssignToView extends StatelessWidget {
 
                           return CheckboxListTile(
                             title: Text('${user.firstName} ${user.lastName}'),
-                            subtitle: const Text('Bricklayer'),
+                            subtitle: Text(user.department),
                             value: assignTo.any(
                               (element) => element.id == user.id,
                             ),

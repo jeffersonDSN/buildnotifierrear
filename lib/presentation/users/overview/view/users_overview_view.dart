@@ -71,7 +71,7 @@ class UsersOverviewView extends IView {
                         child: Row(
                           children: [
                             Expanded(
-                              child: ListView.builder(
+                              child: ListView.separated(
                                 itemCount: users.length,
                                 itemBuilder: (context, index) {
                                   var user = users[index];
@@ -81,7 +81,58 @@ class UsersOverviewView extends IView {
                                     title: Text(
                                       '${user.firstName} ${user.lastName}',
                                     ),
-                                    subtitle: const Text('Bricklayer'),
+                                    subtitle: Column(
+                                      children: [
+                                        gapHeight4,
+                                        Row(
+                                          children: [
+                                            const Icon(
+                                              Icons.email_outlined,
+                                              color:
+                                                  AppColor.primaryColorSwatch,
+                                            ),
+                                            gapWidth4,
+                                            Text(
+                                              user.email.isNotEmpty
+                                                  ? user.email
+                                                  : 'N/A',
+                                            )
+                                          ],
+                                        ),
+                                        gapHeight4,
+                                        Row(
+                                          children: [
+                                            const Icon(
+                                              Icons.phone,
+                                              color:
+                                                  AppColor.primaryColorSwatch,
+                                            ),
+                                            gapWidth4,
+                                            Text(
+                                              user.phoneNumber.isNotEmpty
+                                                  ? user.phoneNumber
+                                                  : 'N/A',
+                                            )
+                                          ],
+                                        ),
+                                        gapHeight4,
+                                        Row(
+                                          children: [
+                                            const Icon(
+                                              Icons.engineering,
+                                              color:
+                                                  AppColor.primaryColorSwatch,
+                                            ),
+                                            gapWidth4,
+                                            Text(
+                                              user.department.isNotEmpty
+                                                  ? user.department
+                                                  : 'N/A',
+                                            )
+                                          ],
+                                        ),
+                                      ],
+                                    ),
                                     trailing: SizedBox(
                                       width: Sizes.size72,
                                       child: Row(
@@ -122,6 +173,9 @@ class UsersOverviewView extends IView {
                                       );
                                     },
                                   );
+                                },
+                                separatorBuilder: (context, index) {
+                                  return const Divider();
                                 },
                               ),
                             ),

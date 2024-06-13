@@ -36,7 +36,7 @@ class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
             ),
           );
         },
-        updateFirstName: (value) {
+        changeFirstName: (value) {
           emit(
             state.asLoaded.copyWith(
               user: state.asLoaded.user.copyWith(
@@ -45,7 +45,7 @@ class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
             ),
           );
         },
-        updateLastName: (value) {
+        changeLastName: (value) {
           emit(
             state.asLoaded.copyWith(
               user: state.asLoaded.user.copyWith(
@@ -54,7 +54,16 @@ class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
             ),
           );
         },
-        updateEmail: (value) {
+        changePhoneNumber: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              user: state.asLoaded.user.copyWith(
+                phoneNumber: value,
+              ),
+            ),
+          );
+        },
+        changeEmail: (value) {
           emit(
             state.asLoaded.copyWith(
               user: state.asLoaded.user.copyWith(
@@ -63,7 +72,16 @@ class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
             ),
           );
         },
-        updateUsername: (value) {
+        changeDepartment: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              user: state.asLoaded.user.copyWith(
+                department: value,
+              ),
+            ),
+          );
+        },
+        changeUsername: (value) {
           emit(
             state.asLoaded.copyWith(
               user: state.asLoaded.user.copyWith(
@@ -73,7 +91,7 @@ class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
             ),
           );
         },
-        updatePassword: (value) {
+        changePassword: (value) {
           emit(
             state.asLoaded.copyWith(
               user: state.asLoaded.user.copyWith(
@@ -82,7 +100,7 @@ class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
             ),
           );
         },
-        updateUserType: (value) {
+        changeUserType: (value) {
           emit(
             state.asLoaded.copyWith(
               user: state.asLoaded.user.copyWith(

@@ -24,6 +24,8 @@ mixin _$User {
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
+  String get phoneNumber => throw _privateConstructorUsedError;
+  String get department => throw _privateConstructorUsedError;
   String get tenant => throw _privateConstructorUsedError;
   String get userName => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
@@ -44,6 +46,8 @@ abstract class $UserCopyWith<$Res> {
       String firstName,
       String lastName,
       String email,
+      String phoneNumber,
+      String department,
       String tenant,
       String userName,
       String password,
@@ -67,6 +71,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? firstName = null,
     Object? lastName = null,
     Object? email = null,
+    Object? phoneNumber = null,
+    Object? department = null,
     Object? tenant = null,
     Object? userName = null,
     Object? password = null,
@@ -88,6 +94,14 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      department: null == department
+          ? _value.department
+          : department // ignore: cast_nullable_to_non_nullable
               as String,
       tenant: null == tenant
           ? _value.tenant
@@ -121,6 +135,8 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String firstName,
       String lastName,
       String email,
+      String phoneNumber,
+      String department,
       String tenant,
       String userName,
       String password,
@@ -141,6 +157,8 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? firstName = null,
     Object? lastName = null,
     Object? email = null,
+    Object? phoneNumber = null,
+    Object? department = null,
     Object? tenant = null,
     Object? userName = null,
     Object? password = null,
@@ -162,6 +180,14 @@ class __$$UserImplCopyWithImpl<$Res>
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      department: null == department
+          ? _value.department
+          : department // ignore: cast_nullable_to_non_nullable
               as String,
       tenant: null == tenant
           ? _value.tenant
@@ -191,6 +217,8 @@ class _$UserImpl implements _User {
       this.firstName = '',
       this.lastName = '',
       this.email = '',
+      this.phoneNumber = '',
+      this.department = '',
       this.tenant = '',
       this.userName = '',
       this.password = '',
@@ -213,6 +241,12 @@ class _$UserImpl implements _User {
   final String email;
   @override
   @JsonKey()
+  final String phoneNumber;
+  @override
+  @JsonKey()
+  final String department;
+  @override
+  @JsonKey()
   final String tenant;
   @override
   @JsonKey()
@@ -226,7 +260,7 @@ class _$UserImpl implements _User {
 
   @override
   String toString() {
-    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, tenant: $tenant, userName: $userName, password: $password, userType: $userType)';
+    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, phoneNumber: $phoneNumber, department: $department, tenant: $tenant, userName: $userName, password: $password, userType: $userType)';
   }
 
   @override
@@ -240,6 +274,10 @@ class _$UserImpl implements _User {
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
             (identical(other.email, email) || other.email == email) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber) &&
+            (identical(other.department, department) ||
+                other.department == department) &&
             (identical(other.tenant, tenant) || other.tenant == tenant) &&
             (identical(other.userName, userName) ||
                 other.userName == userName) &&
@@ -252,7 +290,7 @@ class _$UserImpl implements _User {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, firstName, lastName, email,
-      tenant, userName, password, userType);
+      phoneNumber, department, tenant, userName, password, userType);
 
   @JsonKey(ignore: true)
   @override
@@ -274,6 +312,8 @@ abstract class _User implements User {
       final String firstName,
       final String lastName,
       final String email,
+      final String phoneNumber,
+      final String department,
       final String tenant,
       final String userName,
       final String password,
@@ -289,6 +329,10 @@ abstract class _User implements User {
   String get lastName;
   @override
   String get email;
+  @override
+  String get phoneNumber;
+  @override
+  String get department;
   @override
   String get tenant;
   @override

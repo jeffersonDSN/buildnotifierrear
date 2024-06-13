@@ -246,7 +246,7 @@ class ProjectsOverviewView extends IView {
                         child: Row(
                           children: [
                             Expanded(
-                              child: ListView.builder(
+                              child: ListView.separated(
                                 itemCount: projects.length,
                                 itemBuilder: (context, index) {
                                   var project = projects[index];
@@ -298,6 +298,9 @@ class ProjectsOverviewView extends IView {
                                       );
                                     },
                                   );
+                                },
+                                separatorBuilder: (context, index) {
+                                  return const Divider();
                                 },
                               ),
                             ),

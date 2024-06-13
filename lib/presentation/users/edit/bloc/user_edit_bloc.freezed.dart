@@ -19,36 +19,42 @@ mixin _$UserEditEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateFirstName,
-    required TResult Function(String value) updateLastName,
-    required TResult Function(String value) updateEmail,
-    required TResult Function(String value) updateUsername,
-    required TResult Function(String value) updatePassword,
-    required TResult Function(int value) updateUserType,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
     required TResult Function(VoidCallback callback) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateFirstName,
-    TResult? Function(String value)? updateLastName,
-    TResult? Function(String value)? updateEmail,
-    TResult? Function(String value)? updateUsername,
-    TResult? Function(String value)? updatePassword,
-    TResult? Function(int value)? updateUserType,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
     TResult? Function(VoidCallback callback)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateFirstName,
-    TResult Function(String value)? updateLastName,
-    TResult Function(String value)? updateEmail,
-    TResult Function(String value)? updateUsername,
-    TResult Function(String value)? updatePassword,
-    TResult Function(int value)? updateUserType,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) =>
@@ -56,41 +62,45 @@ mixin _$UserEditEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserEditEventtLoad value) load,
-    required TResult Function(UserEditEventtUpdateFirstName value)
-        updateFirstName,
-    required TResult Function(UserEditEventtUpdateLastName value)
-        updateLastName,
-    required TResult Function(UserEditEventtUpdateEmail value) updateEmail,
-    required TResult Function(UserEditEventtUpdateUsername value)
-        updateUsername,
-    required TResult Function(UserEditEventtUpdatePassword value)
-        updatePassword,
-    required TResult Function(UserEditEventtUpdateUserType value)
-        updateUserType,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
     required TResult Function(UserEditEventtSave value) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
-    TResult? Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult? Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult? Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult? Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult? Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult? Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
     TResult? Function(UserEditEventtSave value)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
-    TResult Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
     TResult Function(UserEditEventtSave value)? save,
     required TResult orElse(),
   }) =>
@@ -191,12 +201,14 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateFirstName,
-    required TResult Function(String value) updateLastName,
-    required TResult Function(String value) updateEmail,
-    required TResult Function(String value) updateUsername,
-    required TResult Function(String value) updatePassword,
-    required TResult Function(int value) updateUserType,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
     required TResult Function(VoidCallback callback) save,
   }) {
     return load(type);
@@ -206,12 +218,14 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateFirstName,
-    TResult? Function(String value)? updateLastName,
-    TResult? Function(String value)? updateEmail,
-    TResult? Function(String value)? updateUsername,
-    TResult? Function(String value)? updatePassword,
-    TResult? Function(int value)? updateUserType,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
     TResult? Function(VoidCallback callback)? save,
   }) {
     return load?.call(type);
@@ -221,12 +235,14 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateFirstName,
-    TResult Function(String value)? updateLastName,
-    TResult Function(String value)? updateEmail,
-    TResult Function(String value)? updateUsername,
-    TResult Function(String value)? updatePassword,
-    TResult Function(int value)? updateUserType,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -240,17 +256,17 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserEditEventtLoad value) load,
-    required TResult Function(UserEditEventtUpdateFirstName value)
-        updateFirstName,
-    required TResult Function(UserEditEventtUpdateLastName value)
-        updateLastName,
-    required TResult Function(UserEditEventtUpdateEmail value) updateEmail,
-    required TResult Function(UserEditEventtUpdateUsername value)
-        updateUsername,
-    required TResult Function(UserEditEventtUpdatePassword value)
-        updatePassword,
-    required TResult Function(UserEditEventtUpdateUserType value)
-        updateUserType,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
     required TResult Function(UserEditEventtSave value) save,
   }) {
     return load(this);
@@ -260,12 +276,14 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
-    TResult? Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult? Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult? Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult? Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult? Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult? Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
     TResult? Function(UserEditEventtSave value)? save,
   }) {
     return load?.call(this);
@@ -275,12 +293,14 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
-    TResult Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
     TResult Function(UserEditEventtSave value)? save,
     required TResult orElse(),
   }) {
@@ -302,23 +322,23 @@ abstract class UserEditEventtLoad implements UserEditEvent {
 }
 
 /// @nodoc
-abstract class _$$UserEditEventtUpdateFirstNameImplCopyWith<$Res> {
-  factory _$$UserEditEventtUpdateFirstNameImplCopyWith(
-          _$UserEditEventtUpdateFirstNameImpl value,
-          $Res Function(_$UserEditEventtUpdateFirstNameImpl) then) =
-      __$$UserEditEventtUpdateFirstNameImplCopyWithImpl<$Res>;
+abstract class _$$UserEditEventChangeFirstNameImplCopyWith<$Res> {
+  factory _$$UserEditEventChangeFirstNameImplCopyWith(
+          _$UserEditEventChangeFirstNameImpl value,
+          $Res Function(_$UserEditEventChangeFirstNameImpl) then) =
+      __$$UserEditEventChangeFirstNameImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$UserEditEventtUpdateFirstNameImplCopyWithImpl<$Res>
+class __$$UserEditEventChangeFirstNameImplCopyWithImpl<$Res>
     extends _$UserEditEventCopyWithImpl<$Res,
-        _$UserEditEventtUpdateFirstNameImpl>
-    implements _$$UserEditEventtUpdateFirstNameImplCopyWith<$Res> {
-  __$$UserEditEventtUpdateFirstNameImplCopyWithImpl(
-      _$UserEditEventtUpdateFirstNameImpl _value,
-      $Res Function(_$UserEditEventtUpdateFirstNameImpl) _then)
+        _$UserEditEventChangeFirstNameImpl>
+    implements _$$UserEditEventChangeFirstNameImplCopyWith<$Res> {
+  __$$UserEditEventChangeFirstNameImplCopyWithImpl(
+      _$UserEditEventChangeFirstNameImpl _value,
+      $Res Function(_$UserEditEventChangeFirstNameImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -326,7 +346,7 @@ class __$$UserEditEventtUpdateFirstNameImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$UserEditEventtUpdateFirstNameImpl(
+    return _then(_$UserEditEventChangeFirstNameImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -337,23 +357,23 @@ class __$$UserEditEventtUpdateFirstNameImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserEditEventtUpdateFirstNameImpl
-    implements UserEditEventtUpdateFirstName {
-  const _$UserEditEventtUpdateFirstNameImpl({required this.value});
+class _$UserEditEventChangeFirstNameImpl
+    implements UserEditEventChangeFirstName {
+  const _$UserEditEventChangeFirstNameImpl({required this.value});
 
   @override
   final String value;
 
   @override
   String toString() {
-    return 'UserEditEvent.updateFirstName(value: $value)';
+    return 'UserEditEvent.changeFirstName(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserEditEventtUpdateFirstNameImpl &&
+            other is _$UserEditEventChangeFirstNameImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -363,56 +383,62 @@ class _$UserEditEventtUpdateFirstNameImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserEditEventtUpdateFirstNameImplCopyWith<
-          _$UserEditEventtUpdateFirstNameImpl>
-      get copyWith => __$$UserEditEventtUpdateFirstNameImplCopyWithImpl<
-          _$UserEditEventtUpdateFirstNameImpl>(this, _$identity);
+  _$$UserEditEventChangeFirstNameImplCopyWith<
+          _$UserEditEventChangeFirstNameImpl>
+      get copyWith => __$$UserEditEventChangeFirstNameImplCopyWithImpl<
+          _$UserEditEventChangeFirstNameImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateFirstName,
-    required TResult Function(String value) updateLastName,
-    required TResult Function(String value) updateEmail,
-    required TResult Function(String value) updateUsername,
-    required TResult Function(String value) updatePassword,
-    required TResult Function(int value) updateUserType,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
     required TResult Function(VoidCallback callback) save,
   }) {
-    return updateFirstName(value);
+    return changeFirstName(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateFirstName,
-    TResult? Function(String value)? updateLastName,
-    TResult? Function(String value)? updateEmail,
-    TResult? Function(String value)? updateUsername,
-    TResult? Function(String value)? updatePassword,
-    TResult? Function(int value)? updateUserType,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
     TResult? Function(VoidCallback callback)? save,
   }) {
-    return updateFirstName?.call(value);
+    return changeFirstName?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateFirstName,
-    TResult Function(String value)? updateLastName,
-    TResult Function(String value)? updateEmail,
-    TResult Function(String value)? updateUsername,
-    TResult Function(String value)? updatePassword,
-    TResult Function(int value)? updateUserType,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
-    if (updateFirstName != null) {
-      return updateFirstName(value);
+    if (changeFirstName != null) {
+      return changeFirstName(value);
     }
     return orElse();
   }
@@ -421,86 +447,278 @@ class _$UserEditEventtUpdateFirstNameImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserEditEventtLoad value) load,
-    required TResult Function(UserEditEventtUpdateFirstName value)
-        updateFirstName,
-    required TResult Function(UserEditEventtUpdateLastName value)
-        updateLastName,
-    required TResult Function(UserEditEventtUpdateEmail value) updateEmail,
-    required TResult Function(UserEditEventtUpdateUsername value)
-        updateUsername,
-    required TResult Function(UserEditEventtUpdatePassword value)
-        updatePassword,
-    required TResult Function(UserEditEventtUpdateUserType value)
-        updateUserType,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
     required TResult Function(UserEditEventtSave value) save,
   }) {
-    return updateFirstName(this);
+    return changeFirstName(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
-    TResult? Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult? Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult? Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult? Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult? Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult? Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
     TResult? Function(UserEditEventtSave value)? save,
   }) {
-    return updateFirstName?.call(this);
+    return changeFirstName?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
-    TResult Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
     TResult Function(UserEditEventtSave value)? save,
     required TResult orElse(),
   }) {
-    if (updateFirstName != null) {
-      return updateFirstName(this);
+    if (changeFirstName != null) {
+      return changeFirstName(this);
     }
     return orElse();
   }
 }
 
-abstract class UserEditEventtUpdateFirstName implements UserEditEvent {
-  const factory UserEditEventtUpdateFirstName({required final String value}) =
-      _$UserEditEventtUpdateFirstNameImpl;
+abstract class UserEditEventChangeFirstName implements UserEditEvent {
+  const factory UserEditEventChangeFirstName({required final String value}) =
+      _$UserEditEventChangeFirstNameImpl;
 
   String get value;
   @JsonKey(ignore: true)
-  _$$UserEditEventtUpdateFirstNameImplCopyWith<
-          _$UserEditEventtUpdateFirstNameImpl>
+  _$$UserEditEventChangeFirstNameImplCopyWith<
+          _$UserEditEventChangeFirstNameImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UserEditEventtUpdateLastNameImplCopyWith<$Res> {
-  factory _$$UserEditEventtUpdateLastNameImplCopyWith(
-          _$UserEditEventtUpdateLastNameImpl value,
-          $Res Function(_$UserEditEventtUpdateLastNameImpl) then) =
-      __$$UserEditEventtUpdateLastNameImplCopyWithImpl<$Res>;
+abstract class _$$UserEditEventChangeLastNameImplCopyWith<$Res> {
+  factory _$$UserEditEventChangeLastNameImplCopyWith(
+          _$UserEditEventChangeLastNameImpl value,
+          $Res Function(_$UserEditEventChangeLastNameImpl) then) =
+      __$$UserEditEventChangeLastNameImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$UserEditEventtUpdateLastNameImplCopyWithImpl<$Res>
+class __$$UserEditEventChangeLastNameImplCopyWithImpl<$Res>
+    extends _$UserEditEventCopyWithImpl<$Res, _$UserEditEventChangeLastNameImpl>
+    implements _$$UserEditEventChangeLastNameImplCopyWith<$Res> {
+  __$$UserEditEventChangeLastNameImplCopyWithImpl(
+      _$UserEditEventChangeLastNameImpl _value,
+      $Res Function(_$UserEditEventChangeLastNameImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UserEditEventChangeLastNameImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
+  const _$UserEditEventChangeLastNameImpl({required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'UserEditEvent.changeLastName(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserEditEventChangeLastNameImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserEditEventChangeLastNameImplCopyWith<_$UserEditEventChangeLastNameImpl>
+      get copyWith => __$$UserEditEventChangeLastNameImplCopyWithImpl<
+          _$UserEditEventChangeLastNameImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeLastName(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeLastName?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeLastName != null) {
+      return changeLastName(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserEditEventtLoad value) load,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
+    required TResult Function(UserEditEventtSave value) save,
+  }) {
+    return changeLastName(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UserEditEventtLoad value)? load,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult? Function(UserEditEventtSave value)? save,
+  }) {
+    return changeLastName?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserEditEventtLoad value)? load,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult Function(UserEditEventtSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeLastName != null) {
+      return changeLastName(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserEditEventChangeLastName implements UserEditEvent {
+  const factory UserEditEventChangeLastName({required final String value}) =
+      _$UserEditEventChangeLastNameImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UserEditEventChangeLastNameImplCopyWith<_$UserEditEventChangeLastNameImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserEditEventChangePhoneNumberImplCopyWith<$Res> {
+  factory _$$UserEditEventChangePhoneNumberImplCopyWith(
+          _$UserEditEventChangePhoneNumberImpl value,
+          $Res Function(_$UserEditEventChangePhoneNumberImpl) then) =
+      __$$UserEditEventChangePhoneNumberImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UserEditEventChangePhoneNumberImplCopyWithImpl<$Res>
     extends _$UserEditEventCopyWithImpl<$Res,
-        _$UserEditEventtUpdateLastNameImpl>
-    implements _$$UserEditEventtUpdateLastNameImplCopyWith<$Res> {
-  __$$UserEditEventtUpdateLastNameImplCopyWithImpl(
-      _$UserEditEventtUpdateLastNameImpl _value,
-      $Res Function(_$UserEditEventtUpdateLastNameImpl) _then)
+        _$UserEditEventChangePhoneNumberImpl>
+    implements _$$UserEditEventChangePhoneNumberImplCopyWith<$Res> {
+  __$$UserEditEventChangePhoneNumberImplCopyWithImpl(
+      _$UserEditEventChangePhoneNumberImpl _value,
+      $Res Function(_$UserEditEventChangePhoneNumberImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -508,7 +726,7 @@ class __$$UserEditEventtUpdateLastNameImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$UserEditEventtUpdateLastNameImpl(
+    return _then(_$UserEditEventChangePhoneNumberImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -519,23 +737,23 @@ class __$$UserEditEventtUpdateLastNameImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserEditEventtUpdateLastNameImpl
-    implements UserEditEventtUpdateLastName {
-  const _$UserEditEventtUpdateLastNameImpl({required this.value});
+class _$UserEditEventChangePhoneNumberImpl
+    implements UserEditEventChangePhoneNumber {
+  const _$UserEditEventChangePhoneNumberImpl({required this.value});
 
   @override
   final String value;
 
   @override
   String toString() {
-    return 'UserEditEvent.updateLastName(value: $value)';
+    return 'UserEditEvent.changePhoneNumber(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserEditEventtUpdateLastNameImpl &&
+            other is _$UserEditEventChangePhoneNumberImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -545,56 +763,62 @@ class _$UserEditEventtUpdateLastNameImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserEditEventtUpdateLastNameImplCopyWith<
-          _$UserEditEventtUpdateLastNameImpl>
-      get copyWith => __$$UserEditEventtUpdateLastNameImplCopyWithImpl<
-          _$UserEditEventtUpdateLastNameImpl>(this, _$identity);
+  _$$UserEditEventChangePhoneNumberImplCopyWith<
+          _$UserEditEventChangePhoneNumberImpl>
+      get copyWith => __$$UserEditEventChangePhoneNumberImplCopyWithImpl<
+          _$UserEditEventChangePhoneNumberImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateFirstName,
-    required TResult Function(String value) updateLastName,
-    required TResult Function(String value) updateEmail,
-    required TResult Function(String value) updateUsername,
-    required TResult Function(String value) updatePassword,
-    required TResult Function(int value) updateUserType,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
     required TResult Function(VoidCallback callback) save,
   }) {
-    return updateLastName(value);
+    return changePhoneNumber(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateFirstName,
-    TResult? Function(String value)? updateLastName,
-    TResult? Function(String value)? updateEmail,
-    TResult? Function(String value)? updateUsername,
-    TResult? Function(String value)? updatePassword,
-    TResult? Function(int value)? updateUserType,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
     TResult? Function(VoidCallback callback)? save,
   }) {
-    return updateLastName?.call(value);
+    return changePhoneNumber?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateFirstName,
-    TResult Function(String value)? updateLastName,
-    TResult Function(String value)? updateEmail,
-    TResult Function(String value)? updateUsername,
-    TResult Function(String value)? updatePassword,
-    TResult Function(int value)? updateUserType,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
-    if (updateLastName != null) {
-      return updateLastName(value);
+    if (changePhoneNumber != null) {
+      return changePhoneNumber(value);
     }
     return orElse();
   }
@@ -603,85 +827,89 @@ class _$UserEditEventtUpdateLastNameImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserEditEventtLoad value) load,
-    required TResult Function(UserEditEventtUpdateFirstName value)
-        updateFirstName,
-    required TResult Function(UserEditEventtUpdateLastName value)
-        updateLastName,
-    required TResult Function(UserEditEventtUpdateEmail value) updateEmail,
-    required TResult Function(UserEditEventtUpdateUsername value)
-        updateUsername,
-    required TResult Function(UserEditEventtUpdatePassword value)
-        updatePassword,
-    required TResult Function(UserEditEventtUpdateUserType value)
-        updateUserType,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
     required TResult Function(UserEditEventtSave value) save,
   }) {
-    return updateLastName(this);
+    return changePhoneNumber(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
-    TResult? Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult? Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult? Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult? Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult? Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult? Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
     TResult? Function(UserEditEventtSave value)? save,
   }) {
-    return updateLastName?.call(this);
+    return changePhoneNumber?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
-    TResult Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
     TResult Function(UserEditEventtSave value)? save,
     required TResult orElse(),
   }) {
-    if (updateLastName != null) {
-      return updateLastName(this);
+    if (changePhoneNumber != null) {
+      return changePhoneNumber(this);
     }
     return orElse();
   }
 }
 
-abstract class UserEditEventtUpdateLastName implements UserEditEvent {
-  const factory UserEditEventtUpdateLastName({required final String value}) =
-      _$UserEditEventtUpdateLastNameImpl;
+abstract class UserEditEventChangePhoneNumber implements UserEditEvent {
+  const factory UserEditEventChangePhoneNumber({required final String value}) =
+      _$UserEditEventChangePhoneNumberImpl;
 
   String get value;
   @JsonKey(ignore: true)
-  _$$UserEditEventtUpdateLastNameImplCopyWith<
-          _$UserEditEventtUpdateLastNameImpl>
+  _$$UserEditEventChangePhoneNumberImplCopyWith<
+          _$UserEditEventChangePhoneNumberImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UserEditEventtUpdateEmailImplCopyWith<$Res> {
-  factory _$$UserEditEventtUpdateEmailImplCopyWith(
-          _$UserEditEventtUpdateEmailImpl value,
-          $Res Function(_$UserEditEventtUpdateEmailImpl) then) =
-      __$$UserEditEventtUpdateEmailImplCopyWithImpl<$Res>;
+abstract class _$$UserEditEventChangeEmailImplCopyWith<$Res> {
+  factory _$$UserEditEventChangeEmailImplCopyWith(
+          _$UserEditEventChangeEmailImpl value,
+          $Res Function(_$UserEditEventChangeEmailImpl) then) =
+      __$$UserEditEventChangeEmailImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$UserEditEventtUpdateEmailImplCopyWithImpl<$Res>
-    extends _$UserEditEventCopyWithImpl<$Res, _$UserEditEventtUpdateEmailImpl>
-    implements _$$UserEditEventtUpdateEmailImplCopyWith<$Res> {
-  __$$UserEditEventtUpdateEmailImplCopyWithImpl(
-      _$UserEditEventtUpdateEmailImpl _value,
-      $Res Function(_$UserEditEventtUpdateEmailImpl) _then)
+class __$$UserEditEventChangeEmailImplCopyWithImpl<$Res>
+    extends _$UserEditEventCopyWithImpl<$Res, _$UserEditEventChangeEmailImpl>
+    implements _$$UserEditEventChangeEmailImplCopyWith<$Res> {
+  __$$UserEditEventChangeEmailImplCopyWithImpl(
+      _$UserEditEventChangeEmailImpl _value,
+      $Res Function(_$UserEditEventChangeEmailImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -689,7 +917,7 @@ class __$$UserEditEventtUpdateEmailImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$UserEditEventtUpdateEmailImpl(
+    return _then(_$UserEditEventChangeEmailImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -700,22 +928,22 @@ class __$$UserEditEventtUpdateEmailImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserEditEventtUpdateEmailImpl implements UserEditEventtUpdateEmail {
-  const _$UserEditEventtUpdateEmailImpl({required this.value});
+class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
+  const _$UserEditEventChangeEmailImpl({required this.value});
 
   @override
   final String value;
 
   @override
   String toString() {
-    return 'UserEditEvent.updateEmail(value: $value)';
+    return 'UserEditEvent.changeEmail(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserEditEventtUpdateEmailImpl &&
+            other is _$UserEditEventChangeEmailImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -725,55 +953,61 @@ class _$UserEditEventtUpdateEmailImpl implements UserEditEventtUpdateEmail {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserEditEventtUpdateEmailImplCopyWith<_$UserEditEventtUpdateEmailImpl>
-      get copyWith => __$$UserEditEventtUpdateEmailImplCopyWithImpl<
-          _$UserEditEventtUpdateEmailImpl>(this, _$identity);
+  _$$UserEditEventChangeEmailImplCopyWith<_$UserEditEventChangeEmailImpl>
+      get copyWith => __$$UserEditEventChangeEmailImplCopyWithImpl<
+          _$UserEditEventChangeEmailImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateFirstName,
-    required TResult Function(String value) updateLastName,
-    required TResult Function(String value) updateEmail,
-    required TResult Function(String value) updateUsername,
-    required TResult Function(String value) updatePassword,
-    required TResult Function(int value) updateUserType,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
     required TResult Function(VoidCallback callback) save,
   }) {
-    return updateEmail(value);
+    return changeEmail(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateFirstName,
-    TResult? Function(String value)? updateLastName,
-    TResult? Function(String value)? updateEmail,
-    TResult? Function(String value)? updateUsername,
-    TResult? Function(String value)? updatePassword,
-    TResult? Function(int value)? updateUserType,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
     TResult? Function(VoidCallback callback)? save,
   }) {
-    return updateEmail?.call(value);
+    return changeEmail?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateFirstName,
-    TResult Function(String value)? updateLastName,
-    TResult Function(String value)? updateEmail,
-    TResult Function(String value)? updateUsername,
-    TResult Function(String value)? updatePassword,
-    TResult Function(int value)? updateUserType,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
-    if (updateEmail != null) {
-      return updateEmail(value);
+    if (changeEmail != null) {
+      return changeEmail(value);
     }
     return orElse();
   }
@@ -782,85 +1016,89 @@ class _$UserEditEventtUpdateEmailImpl implements UserEditEventtUpdateEmail {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserEditEventtLoad value) load,
-    required TResult Function(UserEditEventtUpdateFirstName value)
-        updateFirstName,
-    required TResult Function(UserEditEventtUpdateLastName value)
-        updateLastName,
-    required TResult Function(UserEditEventtUpdateEmail value) updateEmail,
-    required TResult Function(UserEditEventtUpdateUsername value)
-        updateUsername,
-    required TResult Function(UserEditEventtUpdatePassword value)
-        updatePassword,
-    required TResult Function(UserEditEventtUpdateUserType value)
-        updateUserType,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
     required TResult Function(UserEditEventtSave value) save,
   }) {
-    return updateEmail(this);
+    return changeEmail(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
-    TResult? Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult? Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult? Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult? Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult? Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult? Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
     TResult? Function(UserEditEventtSave value)? save,
   }) {
-    return updateEmail?.call(this);
+    return changeEmail?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
-    TResult Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
     TResult Function(UserEditEventtSave value)? save,
     required TResult orElse(),
   }) {
-    if (updateEmail != null) {
-      return updateEmail(this);
+    if (changeEmail != null) {
+      return changeEmail(this);
     }
     return orElse();
   }
 }
 
-abstract class UserEditEventtUpdateEmail implements UserEditEvent {
-  const factory UserEditEventtUpdateEmail({required final String value}) =
-      _$UserEditEventtUpdateEmailImpl;
+abstract class UserEditEventChangeEmail implements UserEditEvent {
+  const factory UserEditEventChangeEmail({required final String value}) =
+      _$UserEditEventChangeEmailImpl;
 
   String get value;
   @JsonKey(ignore: true)
-  _$$UserEditEventtUpdateEmailImplCopyWith<_$UserEditEventtUpdateEmailImpl>
+  _$$UserEditEventChangeEmailImplCopyWith<_$UserEditEventChangeEmailImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UserEditEventtUpdateUsernameImplCopyWith<$Res> {
-  factory _$$UserEditEventtUpdateUsernameImplCopyWith(
-          _$UserEditEventtUpdateUsernameImpl value,
-          $Res Function(_$UserEditEventtUpdateUsernameImpl) then) =
-      __$$UserEditEventtUpdateUsernameImplCopyWithImpl<$Res>;
+abstract class _$$UserEditEventChangeDepartmentImplCopyWith<$Res> {
+  factory _$$UserEditEventChangeDepartmentImplCopyWith(
+          _$UserEditEventChangeDepartmentImpl value,
+          $Res Function(_$UserEditEventChangeDepartmentImpl) then) =
+      __$$UserEditEventChangeDepartmentImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$UserEditEventtUpdateUsernameImplCopyWithImpl<$Res>
+class __$$UserEditEventChangeDepartmentImplCopyWithImpl<$Res>
     extends _$UserEditEventCopyWithImpl<$Res,
-        _$UserEditEventtUpdateUsernameImpl>
-    implements _$$UserEditEventtUpdateUsernameImplCopyWith<$Res> {
-  __$$UserEditEventtUpdateUsernameImplCopyWithImpl(
-      _$UserEditEventtUpdateUsernameImpl _value,
-      $Res Function(_$UserEditEventtUpdateUsernameImpl) _then)
+        _$UserEditEventChangeDepartmentImpl>
+    implements _$$UserEditEventChangeDepartmentImplCopyWith<$Res> {
+  __$$UserEditEventChangeDepartmentImplCopyWithImpl(
+      _$UserEditEventChangeDepartmentImpl _value,
+      $Res Function(_$UserEditEventChangeDepartmentImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -868,7 +1106,7 @@ class __$$UserEditEventtUpdateUsernameImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$UserEditEventtUpdateUsernameImpl(
+    return _then(_$UserEditEventChangeDepartmentImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -879,23 +1117,23 @@ class __$$UserEditEventtUpdateUsernameImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserEditEventtUpdateUsernameImpl
-    implements UserEditEventtUpdateUsername {
-  const _$UserEditEventtUpdateUsernameImpl({required this.value});
+class _$UserEditEventChangeDepartmentImpl
+    implements UserEditEventChangeDepartment {
+  const _$UserEditEventChangeDepartmentImpl({required this.value});
 
   @override
   final String value;
 
   @override
   String toString() {
-    return 'UserEditEvent.updateUsername(value: $value)';
+    return 'UserEditEvent.changeDepartment(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserEditEventtUpdateUsernameImpl &&
+            other is _$UserEditEventChangeDepartmentImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -905,56 +1143,62 @@ class _$UserEditEventtUpdateUsernameImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserEditEventtUpdateUsernameImplCopyWith<
-          _$UserEditEventtUpdateUsernameImpl>
-      get copyWith => __$$UserEditEventtUpdateUsernameImplCopyWithImpl<
-          _$UserEditEventtUpdateUsernameImpl>(this, _$identity);
+  _$$UserEditEventChangeDepartmentImplCopyWith<
+          _$UserEditEventChangeDepartmentImpl>
+      get copyWith => __$$UserEditEventChangeDepartmentImplCopyWithImpl<
+          _$UserEditEventChangeDepartmentImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateFirstName,
-    required TResult Function(String value) updateLastName,
-    required TResult Function(String value) updateEmail,
-    required TResult Function(String value) updateUsername,
-    required TResult Function(String value) updatePassword,
-    required TResult Function(int value) updateUserType,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
     required TResult Function(VoidCallback callback) save,
   }) {
-    return updateUsername(value);
+    return changeDepartment(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateFirstName,
-    TResult? Function(String value)? updateLastName,
-    TResult? Function(String value)? updateEmail,
-    TResult? Function(String value)? updateUsername,
-    TResult? Function(String value)? updatePassword,
-    TResult? Function(int value)? updateUserType,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
     TResult? Function(VoidCallback callback)? save,
   }) {
-    return updateUsername?.call(value);
+    return changeDepartment?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateFirstName,
-    TResult Function(String value)? updateLastName,
-    TResult Function(String value)? updateEmail,
-    TResult Function(String value)? updateUsername,
-    TResult Function(String value)? updatePassword,
-    TResult Function(int value)? updateUserType,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
-    if (updateUsername != null) {
-      return updateUsername(value);
+    if (changeDepartment != null) {
+      return changeDepartment(value);
     }
     return orElse();
   }
@@ -963,86 +1207,89 @@ class _$UserEditEventtUpdateUsernameImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserEditEventtLoad value) load,
-    required TResult Function(UserEditEventtUpdateFirstName value)
-        updateFirstName,
-    required TResult Function(UserEditEventtUpdateLastName value)
-        updateLastName,
-    required TResult Function(UserEditEventtUpdateEmail value) updateEmail,
-    required TResult Function(UserEditEventtUpdateUsername value)
-        updateUsername,
-    required TResult Function(UserEditEventtUpdatePassword value)
-        updatePassword,
-    required TResult Function(UserEditEventtUpdateUserType value)
-        updateUserType,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
     required TResult Function(UserEditEventtSave value) save,
   }) {
-    return updateUsername(this);
+    return changeDepartment(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
-    TResult? Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult? Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult? Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult? Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult? Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult? Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
     TResult? Function(UserEditEventtSave value)? save,
   }) {
-    return updateUsername?.call(this);
+    return changeDepartment?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
-    TResult Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
     TResult Function(UserEditEventtSave value)? save,
     required TResult orElse(),
   }) {
-    if (updateUsername != null) {
-      return updateUsername(this);
+    if (changeDepartment != null) {
+      return changeDepartment(this);
     }
     return orElse();
   }
 }
 
-abstract class UserEditEventtUpdateUsername implements UserEditEvent {
-  const factory UserEditEventtUpdateUsername({required final String value}) =
-      _$UserEditEventtUpdateUsernameImpl;
+abstract class UserEditEventChangeDepartment implements UserEditEvent {
+  const factory UserEditEventChangeDepartment({required final String value}) =
+      _$UserEditEventChangeDepartmentImpl;
 
   String get value;
   @JsonKey(ignore: true)
-  _$$UserEditEventtUpdateUsernameImplCopyWith<
-          _$UserEditEventtUpdateUsernameImpl>
+  _$$UserEditEventChangeDepartmentImplCopyWith<
+          _$UserEditEventChangeDepartmentImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UserEditEventtUpdatePasswordImplCopyWith<$Res> {
-  factory _$$UserEditEventtUpdatePasswordImplCopyWith(
-          _$UserEditEventtUpdatePasswordImpl value,
-          $Res Function(_$UserEditEventtUpdatePasswordImpl) then) =
-      __$$UserEditEventtUpdatePasswordImplCopyWithImpl<$Res>;
+abstract class _$$UserEditEventChangeUsernameImplCopyWith<$Res> {
+  factory _$$UserEditEventChangeUsernameImplCopyWith(
+          _$UserEditEventChangeUsernameImpl value,
+          $Res Function(_$UserEditEventChangeUsernameImpl) then) =
+      __$$UserEditEventChangeUsernameImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$UserEditEventtUpdatePasswordImplCopyWithImpl<$Res>
-    extends _$UserEditEventCopyWithImpl<$Res,
-        _$UserEditEventtUpdatePasswordImpl>
-    implements _$$UserEditEventtUpdatePasswordImplCopyWith<$Res> {
-  __$$UserEditEventtUpdatePasswordImplCopyWithImpl(
-      _$UserEditEventtUpdatePasswordImpl _value,
-      $Res Function(_$UserEditEventtUpdatePasswordImpl) _then)
+class __$$UserEditEventChangeUsernameImplCopyWithImpl<$Res>
+    extends _$UserEditEventCopyWithImpl<$Res, _$UserEditEventChangeUsernameImpl>
+    implements _$$UserEditEventChangeUsernameImplCopyWith<$Res> {
+  __$$UserEditEventChangeUsernameImplCopyWithImpl(
+      _$UserEditEventChangeUsernameImpl _value,
+      $Res Function(_$UserEditEventChangeUsernameImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1050,7 +1297,7 @@ class __$$UserEditEventtUpdatePasswordImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$UserEditEventtUpdatePasswordImpl(
+    return _then(_$UserEditEventChangeUsernameImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -1061,23 +1308,22 @@ class __$$UserEditEventtUpdatePasswordImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserEditEventtUpdatePasswordImpl
-    implements UserEditEventtUpdatePassword {
-  const _$UserEditEventtUpdatePasswordImpl({required this.value});
+class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
+  const _$UserEditEventChangeUsernameImpl({required this.value});
 
   @override
   final String value;
 
   @override
   String toString() {
-    return 'UserEditEvent.updatePassword(value: $value)';
+    return 'UserEditEvent.changeUsername(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserEditEventtUpdatePasswordImpl &&
+            other is _$UserEditEventChangeUsernameImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -1087,56 +1333,61 @@ class _$UserEditEventtUpdatePasswordImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserEditEventtUpdatePasswordImplCopyWith<
-          _$UserEditEventtUpdatePasswordImpl>
-      get copyWith => __$$UserEditEventtUpdatePasswordImplCopyWithImpl<
-          _$UserEditEventtUpdatePasswordImpl>(this, _$identity);
+  _$$UserEditEventChangeUsernameImplCopyWith<_$UserEditEventChangeUsernameImpl>
+      get copyWith => __$$UserEditEventChangeUsernameImplCopyWithImpl<
+          _$UserEditEventChangeUsernameImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateFirstName,
-    required TResult Function(String value) updateLastName,
-    required TResult Function(String value) updateEmail,
-    required TResult Function(String value) updateUsername,
-    required TResult Function(String value) updatePassword,
-    required TResult Function(int value) updateUserType,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
     required TResult Function(VoidCallback callback) save,
   }) {
-    return updatePassword(value);
+    return changeUsername(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateFirstName,
-    TResult? Function(String value)? updateLastName,
-    TResult? Function(String value)? updateEmail,
-    TResult? Function(String value)? updateUsername,
-    TResult? Function(String value)? updatePassword,
-    TResult? Function(int value)? updateUserType,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
     TResult? Function(VoidCallback callback)? save,
   }) {
-    return updatePassword?.call(value);
+    return changeUsername?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateFirstName,
-    TResult Function(String value)? updateLastName,
-    TResult Function(String value)? updateEmail,
-    TResult Function(String value)? updateUsername,
-    TResult Function(String value)? updatePassword,
-    TResult Function(int value)? updateUserType,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
-    if (updatePassword != null) {
-      return updatePassword(value);
+    if (changeUsername != null) {
+      return changeUsername(value);
     }
     return orElse();
   }
@@ -1145,86 +1396,276 @@ class _$UserEditEventtUpdatePasswordImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserEditEventtLoad value) load,
-    required TResult Function(UserEditEventtUpdateFirstName value)
-        updateFirstName,
-    required TResult Function(UserEditEventtUpdateLastName value)
-        updateLastName,
-    required TResult Function(UserEditEventtUpdateEmail value) updateEmail,
-    required TResult Function(UserEditEventtUpdateUsername value)
-        updateUsername,
-    required TResult Function(UserEditEventtUpdatePassword value)
-        updatePassword,
-    required TResult Function(UserEditEventtUpdateUserType value)
-        updateUserType,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
     required TResult Function(UserEditEventtSave value) save,
   }) {
-    return updatePassword(this);
+    return changeUsername(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
-    TResult? Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult? Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult? Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult? Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult? Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult? Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
     TResult? Function(UserEditEventtSave value)? save,
   }) {
-    return updatePassword?.call(this);
+    return changeUsername?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
-    TResult Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
     TResult Function(UserEditEventtSave value)? save,
     required TResult orElse(),
   }) {
-    if (updatePassword != null) {
-      return updatePassword(this);
+    if (changeUsername != null) {
+      return changeUsername(this);
     }
     return orElse();
   }
 }
 
-abstract class UserEditEventtUpdatePassword implements UserEditEvent {
-  const factory UserEditEventtUpdatePassword({required final String value}) =
-      _$UserEditEventtUpdatePasswordImpl;
+abstract class UserEditEventChangeUsername implements UserEditEvent {
+  const factory UserEditEventChangeUsername({required final String value}) =
+      _$UserEditEventChangeUsernameImpl;
 
   String get value;
   @JsonKey(ignore: true)
-  _$$UserEditEventtUpdatePasswordImplCopyWith<
-          _$UserEditEventtUpdatePasswordImpl>
+  _$$UserEditEventChangeUsernameImplCopyWith<_$UserEditEventChangeUsernameImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UserEditEventtUpdateUserTypeImplCopyWith<$Res> {
-  factory _$$UserEditEventtUpdateUserTypeImplCopyWith(
-          _$UserEditEventtUpdateUserTypeImpl value,
-          $Res Function(_$UserEditEventtUpdateUserTypeImpl) then) =
-      __$$UserEditEventtUpdateUserTypeImplCopyWithImpl<$Res>;
+abstract class _$$UserEditEventChangePasswordImplCopyWith<$Res> {
+  factory _$$UserEditEventChangePasswordImplCopyWith(
+          _$UserEditEventChangePasswordImpl value,
+          $Res Function(_$UserEditEventChangePasswordImpl) then) =
+      __$$UserEditEventChangePasswordImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UserEditEventChangePasswordImplCopyWithImpl<$Res>
+    extends _$UserEditEventCopyWithImpl<$Res, _$UserEditEventChangePasswordImpl>
+    implements _$$UserEditEventChangePasswordImplCopyWith<$Res> {
+  __$$UserEditEventChangePasswordImplCopyWithImpl(
+      _$UserEditEventChangePasswordImpl _value,
+      $Res Function(_$UserEditEventChangePasswordImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UserEditEventChangePasswordImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
+  const _$UserEditEventChangePasswordImpl({required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'UserEditEvent.changePassword(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserEditEventChangePasswordImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserEditEventChangePasswordImplCopyWith<_$UserEditEventChangePasswordImpl>
+      get copyWith => __$$UserEditEventChangePasswordImplCopyWithImpl<
+          _$UserEditEventChangePasswordImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changePassword(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changePassword?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changePassword != null) {
+      return changePassword(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserEditEventtLoad value) load,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
+    required TResult Function(UserEditEventtSave value) save,
+  }) {
+    return changePassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UserEditEventtLoad value)? load,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult? Function(UserEditEventtSave value)? save,
+  }) {
+    return changePassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserEditEventtLoad value)? load,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult Function(UserEditEventtSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changePassword != null) {
+      return changePassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserEditEventChangePassword implements UserEditEvent {
+  const factory UserEditEventChangePassword({required final String value}) =
+      _$UserEditEventChangePasswordImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UserEditEventChangePasswordImplCopyWith<_$UserEditEventChangePasswordImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserEditEventChangeUserTypeImplCopyWith<$Res> {
+  factory _$$UserEditEventChangeUserTypeImplCopyWith(
+          _$UserEditEventChangeUserTypeImpl value,
+          $Res Function(_$UserEditEventChangeUserTypeImpl) then) =
+      __$$UserEditEventChangeUserTypeImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int value});
 }
 
 /// @nodoc
-class __$$UserEditEventtUpdateUserTypeImplCopyWithImpl<$Res>
-    extends _$UserEditEventCopyWithImpl<$Res,
-        _$UserEditEventtUpdateUserTypeImpl>
-    implements _$$UserEditEventtUpdateUserTypeImplCopyWith<$Res> {
-  __$$UserEditEventtUpdateUserTypeImplCopyWithImpl(
-      _$UserEditEventtUpdateUserTypeImpl _value,
-      $Res Function(_$UserEditEventtUpdateUserTypeImpl) _then)
+class __$$UserEditEventChangeUserTypeImplCopyWithImpl<$Res>
+    extends _$UserEditEventCopyWithImpl<$Res, _$UserEditEventChangeUserTypeImpl>
+    implements _$$UserEditEventChangeUserTypeImplCopyWith<$Res> {
+  __$$UserEditEventChangeUserTypeImplCopyWithImpl(
+      _$UserEditEventChangeUserTypeImpl _value,
+      $Res Function(_$UserEditEventChangeUserTypeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1232,7 +1673,7 @@ class __$$UserEditEventtUpdateUserTypeImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$UserEditEventtUpdateUserTypeImpl(
+    return _then(_$UserEditEventChangeUserTypeImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -1243,23 +1684,22 @@ class __$$UserEditEventtUpdateUserTypeImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserEditEventtUpdateUserTypeImpl
-    implements UserEditEventtUpdateUserType {
-  const _$UserEditEventtUpdateUserTypeImpl({required this.value});
+class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
+  const _$UserEditEventChangeUserTypeImpl({required this.value});
 
   @override
   final int value;
 
   @override
   String toString() {
-    return 'UserEditEvent.updateUserType(value: $value)';
+    return 'UserEditEvent.changeUserType(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserEditEventtUpdateUserTypeImpl &&
+            other is _$UserEditEventChangeUserTypeImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -1269,56 +1709,61 @@ class _$UserEditEventtUpdateUserTypeImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserEditEventtUpdateUserTypeImplCopyWith<
-          _$UserEditEventtUpdateUserTypeImpl>
-      get copyWith => __$$UserEditEventtUpdateUserTypeImplCopyWithImpl<
-          _$UserEditEventtUpdateUserTypeImpl>(this, _$identity);
+  _$$UserEditEventChangeUserTypeImplCopyWith<_$UserEditEventChangeUserTypeImpl>
+      get copyWith => __$$UserEditEventChangeUserTypeImplCopyWithImpl<
+          _$UserEditEventChangeUserTypeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateFirstName,
-    required TResult Function(String value) updateLastName,
-    required TResult Function(String value) updateEmail,
-    required TResult Function(String value) updateUsername,
-    required TResult Function(String value) updatePassword,
-    required TResult Function(int value) updateUserType,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
     required TResult Function(VoidCallback callback) save,
   }) {
-    return updateUserType(value);
+    return changeUserType(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateFirstName,
-    TResult? Function(String value)? updateLastName,
-    TResult? Function(String value)? updateEmail,
-    TResult? Function(String value)? updateUsername,
-    TResult? Function(String value)? updatePassword,
-    TResult? Function(int value)? updateUserType,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
     TResult? Function(VoidCallback callback)? save,
   }) {
-    return updateUserType?.call(value);
+    return changeUserType?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateFirstName,
-    TResult Function(String value)? updateLastName,
-    TResult Function(String value)? updateEmail,
-    TResult Function(String value)? updateUsername,
-    TResult Function(String value)? updatePassword,
-    TResult Function(int value)? updateUserType,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
-    if (updateUserType != null) {
-      return updateUserType(value);
+    if (changeUserType != null) {
+      return changeUserType(value);
     }
     return orElse();
   }
@@ -1327,65 +1772,68 @@ class _$UserEditEventtUpdateUserTypeImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserEditEventtLoad value) load,
-    required TResult Function(UserEditEventtUpdateFirstName value)
-        updateFirstName,
-    required TResult Function(UserEditEventtUpdateLastName value)
-        updateLastName,
-    required TResult Function(UserEditEventtUpdateEmail value) updateEmail,
-    required TResult Function(UserEditEventtUpdateUsername value)
-        updateUsername,
-    required TResult Function(UserEditEventtUpdatePassword value)
-        updatePassword,
-    required TResult Function(UserEditEventtUpdateUserType value)
-        updateUserType,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
     required TResult Function(UserEditEventtSave value) save,
   }) {
-    return updateUserType(this);
+    return changeUserType(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
-    TResult? Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult? Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult? Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult? Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult? Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult? Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
     TResult? Function(UserEditEventtSave value)? save,
   }) {
-    return updateUserType?.call(this);
+    return changeUserType?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
-    TResult Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
     TResult Function(UserEditEventtSave value)? save,
     required TResult orElse(),
   }) {
-    if (updateUserType != null) {
-      return updateUserType(this);
+    if (changeUserType != null) {
+      return changeUserType(this);
     }
     return orElse();
   }
 }
 
-abstract class UserEditEventtUpdateUserType implements UserEditEvent {
-  const factory UserEditEventtUpdateUserType({required final int value}) =
-      _$UserEditEventtUpdateUserTypeImpl;
+abstract class UserEditEventChangeUserType implements UserEditEvent {
+  const factory UserEditEventChangeUserType({required final int value}) =
+      _$UserEditEventChangeUserTypeImpl;
 
   int get value;
   @JsonKey(ignore: true)
-  _$$UserEditEventtUpdateUserTypeImplCopyWith<
-          _$UserEditEventtUpdateUserTypeImpl>
+  _$$UserEditEventChangeUserTypeImplCopyWith<_$UserEditEventChangeUserTypeImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1456,12 +1904,14 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateFirstName,
-    required TResult Function(String value) updateLastName,
-    required TResult Function(String value) updateEmail,
-    required TResult Function(String value) updateUsername,
-    required TResult Function(String value) updatePassword,
-    required TResult Function(int value) updateUserType,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
     required TResult Function(VoidCallback callback) save,
   }) {
     return save(callback);
@@ -1471,12 +1921,14 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateFirstName,
-    TResult? Function(String value)? updateLastName,
-    TResult? Function(String value)? updateEmail,
-    TResult? Function(String value)? updateUsername,
-    TResult? Function(String value)? updatePassword,
-    TResult? Function(int value)? updateUserType,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
     TResult? Function(VoidCallback callback)? save,
   }) {
     return save?.call(callback);
@@ -1486,12 +1938,14 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateFirstName,
-    TResult Function(String value)? updateLastName,
-    TResult Function(String value)? updateEmail,
-    TResult Function(String value)? updateUsername,
-    TResult Function(String value)? updatePassword,
-    TResult Function(int value)? updateUserType,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -1505,17 +1959,17 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UserEditEventtLoad value) load,
-    required TResult Function(UserEditEventtUpdateFirstName value)
-        updateFirstName,
-    required TResult Function(UserEditEventtUpdateLastName value)
-        updateLastName,
-    required TResult Function(UserEditEventtUpdateEmail value) updateEmail,
-    required TResult Function(UserEditEventtUpdateUsername value)
-        updateUsername,
-    required TResult Function(UserEditEventtUpdatePassword value)
-        updatePassword,
-    required TResult Function(UserEditEventtUpdateUserType value)
-        updateUserType,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
     required TResult Function(UserEditEventtSave value) save,
   }) {
     return save(this);
@@ -1525,12 +1979,14 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
-    TResult? Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult? Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult? Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult? Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult? Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult? Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
     TResult? Function(UserEditEventtSave value)? save,
   }) {
     return save?.call(this);
@@ -1540,12 +1996,14 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
-    TResult Function(UserEditEventtUpdateFirstName value)? updateFirstName,
-    TResult Function(UserEditEventtUpdateLastName value)? updateLastName,
-    TResult Function(UserEditEventtUpdateEmail value)? updateEmail,
-    TResult Function(UserEditEventtUpdateUsername value)? updateUsername,
-    TResult Function(UserEditEventtUpdatePassword value)? updatePassword,
-    TResult Function(UserEditEventtUpdateUserType value)? updateUserType,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
     TResult Function(UserEditEventtSave value)? save,
     required TResult orElse(),
   }) {

@@ -10,6 +10,8 @@ class User with _$User {
     @Default('') String firstName,
     @Default('') String lastName,
     @Default('') String email,
+    @Default('') String phoneNumber,
+    @Default('') String department,
     @Default('') String tenant,
     @Default('') String userName,
     @Default('') String password,

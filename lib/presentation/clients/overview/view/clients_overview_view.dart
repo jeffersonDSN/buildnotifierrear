@@ -82,7 +82,11 @@ class ClientsOverviewView extends IView {
                                                   AppColor.primaryColorSwatch,
                                             ),
                                             gapWidth4,
-                                            Text(client.email)
+                                            Text(
+                                              client.email.isNotEmpty
+                                                  ? client.email
+                                                  : 'N/A',
+                                            )
                                           ],
                                         ),
                                         gapHeight4,
@@ -94,7 +98,11 @@ class ClientsOverviewView extends IView {
                                                   AppColor.primaryColorSwatch,
                                             ),
                                             gapWidth4,
-                                            Text(client.phoneNumber)
+                                            Text(
+                                              client.phoneNumber.isNotEmpty
+                                                  ? client.phoneNumber
+                                                  : 'N/A',
+                                            )
                                           ],
                                         ),
                                       ],

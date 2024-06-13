@@ -79,7 +79,7 @@ class UserEditView extends IView {
                                   initialValue: user.firstName,
                                   onChanged: (value) {
                                     bloc.add(
-                                      UserEditEvent.updateFirstName(
+                                      UserEditEvent.changeFirstName(
                                         value: value,
                                       ),
                                     );
@@ -93,7 +93,21 @@ class UserEditView extends IView {
                                   initialValue: user.lastName,
                                   onChanged: (value) {
                                     bloc.add(
-                                      UserEditEvent.updateLastName(
+                                      UserEditEvent.changeLastName(
+                                        value: value,
+                                      ),
+                                    );
+                                  },
+                                ),
+                                gapHeight16,
+                                TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Phone number',
+                                  ),
+                                  initialValue: user.phoneNumber,
+                                  onChanged: (value) {
+                                    bloc.add(
+                                      UserEditEvent.changePhoneNumber(
                                         value: value,
                                       ),
                                     );
@@ -107,7 +121,21 @@ class UserEditView extends IView {
                                   initialValue: user.email,
                                   onChanged: (value) {
                                     bloc.add(
-                                      UserEditEvent.updateEmail(
+                                      UserEditEvent.changeEmail(
+                                        value: value,
+                                      ),
+                                    );
+                                  },
+                                ),
+                                gapHeight16,
+                                TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Department',
+                                  ),
+                                  initialValue: user.department,
+                                  onChanged: (value) {
+                                    bloc.add(
+                                      UserEditEvent.changeDepartment(
                                         value: value,
                                       ),
                                     );
@@ -121,7 +149,7 @@ class UserEditView extends IView {
                                   initialValue: user.userName,
                                   onChanged: (value) {
                                     bloc.add(
-                                      UserEditEvent.updateUsername(
+                                      UserEditEvent.changeUsername(
                                         value: value,
                                       ),
                                     );
@@ -142,7 +170,7 @@ class UserEditView extends IView {
                                   initialValue: user.password,
                                   onChanged: (value) {
                                     bloc.add(
-                                      UserEditEvent.updatePassword(
+                                      UserEditEvent.changePassword(
                                         value: value,
                                       ),
                                     );
@@ -168,7 +196,7 @@ class UserEditView extends IView {
                                   onChanged: (value) {
                                     if (value != null) {
                                       bloc.add(
-                                        UserEditEvent.updateUserType(
+                                        UserEditEvent.changeUserType(
                                           value: value,
                                         ),
                                       );

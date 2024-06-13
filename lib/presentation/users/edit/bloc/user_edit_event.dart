@@ -6,29 +6,37 @@ class UserEditEvent with _$UserEditEvent {
     required CrudType type,
   }) = UserEditEventtLoad;
 
-  const factory UserEditEvent.updateFirstName({
+  const factory UserEditEvent.changeFirstName({
     required String value,
-  }) = UserEditEventtUpdateFirstName;
+  }) = UserEditEventChangeFirstName;
 
-  const factory UserEditEvent.updateLastName({
+  const factory UserEditEvent.changeLastName({
     required String value,
-  }) = UserEditEventtUpdateLastName;
+  }) = UserEditEventChangeLastName;
 
-  const factory UserEditEvent.updateEmail({
+  const factory UserEditEvent.changePhoneNumber({
     required String value,
-  }) = UserEditEventtUpdateEmail;
+  }) = UserEditEventChangePhoneNumber;
 
-  const factory UserEditEvent.updateUsername({
+  const factory UserEditEvent.changeEmail({
     required String value,
-  }) = UserEditEventtUpdateUsername;
+  }) = UserEditEventChangeEmail;
 
-  const factory UserEditEvent.updatePassword({
+  const factory UserEditEvent.changeDepartment({
     required String value,
-  }) = UserEditEventtUpdatePassword;
+  }) = UserEditEventChangeDepartment;
 
-  const factory UserEditEvent.updateUserType({
+  const factory UserEditEvent.changeUsername({
+    required String value,
+  }) = UserEditEventChangeUsername;
+
+  const factory UserEditEvent.changePassword({
+    required String value,
+  }) = UserEditEventChangePassword;
+
+  const factory UserEditEvent.changeUserType({
     required int value,
-  }) = UserEditEventtUpdateUserType;
+  }) = UserEditEventChangeUserType;
 
   const factory UserEditEvent.save({
     required VoidCallback callback,
