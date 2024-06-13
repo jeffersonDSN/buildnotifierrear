@@ -22,6 +22,14 @@ class ScheduleEditEvent with _$ScheduleEditEvent {
     required DateTime value,
   }) = ScheduleEditEventChangeSelectedAppointmentDate;
 
+  const factory ScheduleEditEvent.changeSelectedAppointmentStart({
+    required DateTime value,
+  }) = ScheduleEditEventChangeSelectedAppointmentStart;
+
+  const factory ScheduleEditEvent.changeSelectedAppointmentEnd({
+    required DateTime value,
+  }) = ScheduleEditEventChangeSelectedAppointmentEnd;
+
   const factory ScheduleEditEvent.changeSelectedAppointmentProject({
     required String id,
     required String value,

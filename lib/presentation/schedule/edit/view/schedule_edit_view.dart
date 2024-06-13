@@ -85,8 +85,8 @@ class ScheduleEditView extends IView {
                         child: Form(
                           child: Row(
                             children: [
-                              Expanded(
-                                flex: 2,
+                              SizedBox(
+                                width: Sizes.size564,
                                 child: AppointmentDatesForm(
                                   periodType: periodType,
                                   appointments: appointments,
@@ -137,14 +137,31 @@ class ScheduleEditView extends IView {
                                     bloc.add(
                                       ScheduleEditEvent
                                           .changeSelectedAppointmentDate(
-                                              value: value),
+                                        value: value,
+                                      ),
+                                    );
+                                  },
+                                  onChangeStart: (value) {
+                                    bloc.add(
+                                      ScheduleEditEvent
+                                          .changeSelectedAppointmentStart(
+                                        value: value,
+                                      ),
+                                    );
+                                  },
+                                  onChangeEnd: (value) {
+                                    bloc.add(
+                                      ScheduleEditEvent
+                                          .changeSelectedAppointmentEnd(
+                                        value: value,
+                                      ),
                                     );
                                   },
                                 ),
                               ),
-                              gapWidth16,
+                              gapWidth4,
                               const VerticalDivider(),
-                              gapWidth16,
+                              gapWidth4,
                               Expanded(
                                 flex: 1,
                                 child: Column(

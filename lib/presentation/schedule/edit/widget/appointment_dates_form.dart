@@ -1,5 +1,6 @@
 import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/presentation/schedule/edit/bloc/schedule_edit_bloc.dart';
+import 'package:buildnotifierrear/presentation/schedule/edit/widget/hour_input_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,8 @@ class AppointmentDatesForm extends StatelessWidget {
   final ValueChanged<Appointment> onChangeSelectedAppointment;
   final ValueChanged<DateTime> onPressedAddAdd;
   final ValueChanged<DateTime> onChangeDate;
+  final ValueChanged<DateTime> onChangeStart;
+  final ValueChanged<DateTime> onChangeEnd;
 
   AppointmentDatesForm({
     super.key,
@@ -27,9 +30,10 @@ class AppointmentDatesForm extends StatelessWidget {
     required this.onChangeSelectedAppointment,
     required this.onPressedAddAdd,
     required this.onChangeDate,
+    required this.onChangeStart,
+    required this.onChangeEnd,
   });
 
-  final DateFormat hourFormat = DateFormat.jm();
   final DateFormat dayFormat = DateFormat.yMEd();
 
   @override
@@ -67,73 +71,79 @@ class AppointmentDatesForm extends StatelessWidget {
           ],
           onChanged: onChangedPeriodType,
         ),
-        Expanded(
-          child: ListView(
-            children: [
-              ...appointments.map(
-                (appointment) {
-                  TextEditingController dateController = TextEditingController(
-                    text: dayFormat.format(
-                      appointment.startDateTime,
-                    ),
-                  );
+        Column(
+          children: [
+            ...appointments.map(
+              (appointment) {
+                TextEditingController dateController = TextEditingController(
+                  text: dayFormat.format(
+                    appointment.startDateTime,
+                  ),
+                );
 
-                  return InkWell(
-                    child: Padding(
-                      padding: const EdgeInsets.all(
-                        Sizes.size8,
-                      ),
+                GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+                return InkWell(
+                  child: SizedBox(
+                    height: Sizes.size48,
+                    child: Form(
+                      key: formKey,
                       child: Row(
                         children: [
-                          Flexible(
-                            flex: 2,
-                            child: TextFormField(
-                              readOnly: true,
-                              enabled: appointment == selectedAppointment,
-                              controller: dateController,
-                              decoration: InputDecoration(
-                                labelText: 'Date',
-                                suffixIcon: IconButton(
-                                  icon: const Icon(
-                                    Icons.calendar_month,
-                                    color: AppColor.primaryColorSwatch,
+                          SizedBox(
+                            width: 165,
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12.0),
+                                side: const BorderSide(
+                                  width: 0.5,
+                                ),
+                              ),
+                              child: TextFormField(
+                                enabled: appointment == selectedAppointment,
+                                controller: dateController,
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                ),
+                                decoration: InputDecoration(
+                                  isDense: true,
+                                  hintText: 'Date',
+                                  border: const OutlineInputBorder(
+                                    //borderRadius: BorderRadius.circular(10.0),
+                                    borderSide: BorderSide.none,
                                   ),
-                                  onPressed: () async {
-                                    var date = await getDate();
+                                  suffixIcon: IconButton(
+                                    icon: const Icon(
+                                      Icons.calendar_month,
+                                      color: AppColor.primaryColorSwatch,
+                                    ),
+                                    onPressed: () async {
+                                      var date = await getDate();
 
-                                    if (date != null) {
-                                      onChangeDate.call(date);
-                                    }
-                                  },
+                                      if (date != null) {
+                                        onChangeDate.call(date);
+                                      }
+                                    },
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                           gapWidth4,
-                          Flexible(
-                            flex: 1,
-                            child: TextFormField(
-                              enabled: appointment == selectedAppointment,
-                              initialValue:
-                                  hourFormat.format(appointment.startDateTime),
-                              decoration: const InputDecoration(
-                                labelText: 'Start',
-                              ),
-                            ),
+                          HourInputWidget(
+                            hintText: 'Start',
+                            enabled: appointment == selectedAppointment,
+                            value: appointment.startDateTime,
+                            onChangeValue: onChangeStart,
                           ),
                           gapWidth4,
-                          Flexible(
-                            flex: 1,
-                            child: TextFormField(
-                              enabled: appointment == selectedAppointment,
-                              initialValue:
-                                  hourFormat.format(appointment.endDateTime),
-                              decoration: const InputDecoration(
-                                labelText: 'End',
-                              ),
-                            ),
+                          HourInputWidget(
+                            hintText: 'End',
+                            enabled: appointment == selectedAppointment,
+                            value: appointment.endDateTime,
+                            onChangeValue: onChangeEnd,
                           ),
-                          gapWidth16,
+                          gapWidth4,
                           Tooltip(
                             message: 'Add another period to this day',
                             child: IconButton(
@@ -164,34 +174,34 @@ class AppointmentDatesForm extends StatelessWidget {
                         ],
                       ),
                     ),
-                    onTap: () {
-                      onChangeSelectedAppointment.call(appointment);
-                    },
-                  );
-                },
-              ),
-              if (periodType.isNoRepeat)
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: Sizes.size16,
                   ),
-                  child: Row(
-                    children: [
-                      TextButton(
-                        child: const Text('Add a day'),
-                        onPressed: () async {
-                          var selectedDay = await getDate();
-
-                          if (selectedDay != null) {
-                            onPressedAddAdd.call(selectedDay);
-                          }
-                        },
-                      ),
-                    ],
-                  ),
+                  onTap: () {
+                    onChangeSelectedAppointment.call(appointment);
+                  },
+                );
+              },
+            ),
+            if (periodType.isNoRepeat)
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: Sizes.size16,
                 ),
-            ],
-          ),
+                child: Row(
+                  children: [
+                    TextButton(
+                      child: const Text('Add a day'),
+                      onPressed: () async {
+                        var selectedDay = await getDate();
+
+                        if (selectedDay != null) {
+                          onPressedAddAdd.call(selectedDay);
+                        }
+                      },
+                    ),
+                  ],
+                ),
+              ),
+          ],
         ),
       ],
     );

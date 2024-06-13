@@ -14,6 +14,7 @@ class Sizes {
   static const size48 = 48.0;
   static const size56 = 56.0;
   static const size64 = 64.0;
+  static const size68 = 68.0;
   static const size72 = 72.0;
   static const size80 = 80.0;
   static const size88 = 88.0;
@@ -28,6 +29,7 @@ class Sizes {
   static const size340 = 340.0;
   static const size360 = 360.0;
   static const size400 = 400.0;
+  static const size564 = 564.0;
   static const size600 = 600.0;
   static const widthMobileBreakpoint = 700.0;
 }

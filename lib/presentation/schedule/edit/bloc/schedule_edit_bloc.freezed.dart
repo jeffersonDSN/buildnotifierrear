@@ -23,6 +23,8 @@ mixin _$ScheduleEditEvent {
     required TResult Function(Appointment value) changeSelectedAppointment,
     required TResult Function(String value) changeSelectedAppointmentTitle,
     required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
     required TResult Function(String id, String value)
         changeSelectedAppointmentProject,
     required TResult Function(String id, String value)
@@ -46,6 +48,8 @@ mixin _$ScheduleEditEvent {
     TResult? Function(Appointment value)? changeSelectedAppointment,
     TResult? Function(String value)? changeSelectedAppointmentTitle,
     TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult? Function(String id, String value)?
         changeSelectedAppointmentProject,
     TResult? Function(String id, String value)? changeSelectedAppointmentTask,
@@ -66,6 +70,8 @@ mixin _$ScheduleEditEvent {
     TResult Function(Appointment value)? changeSelectedAppointment,
     TResult Function(String value)? changeSelectedAppointmentTitle,
     TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult Function(String id, String value)? changeSelectedAppointmentProject,
     TResult Function(String id, String value)? changeSelectedAppointmentTask,
     TResult Function(String value)? changeSelectedAppointmentLocation,
@@ -92,6 +98,12 @@ mixin _$ScheduleEditEvent {
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentDate value)
         changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentProject value)
         changeSelectedAppointmentProject,
@@ -127,6 +139,10 @@ mixin _$ScheduleEditEvent {
         changeSelectedAppointmentTitle,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -157,6 +173,10 @@ mixin _$ScheduleEditEvent {
         changeSelectedAppointmentTitle,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -279,6 +299,8 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
     required TResult Function(Appointment value) changeSelectedAppointment,
     required TResult Function(String value) changeSelectedAppointmentTitle,
     required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
     required TResult Function(String id, String value)
         changeSelectedAppointmentProject,
     required TResult Function(String id, String value)
@@ -305,6 +327,8 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
     TResult? Function(Appointment value)? changeSelectedAppointment,
     TResult? Function(String value)? changeSelectedAppointmentTitle,
     TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult? Function(String id, String value)?
         changeSelectedAppointmentProject,
     TResult? Function(String id, String value)? changeSelectedAppointmentTask,
@@ -328,6 +352,8 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
     TResult Function(Appointment value)? changeSelectedAppointment,
     TResult Function(String value)? changeSelectedAppointmentTitle,
     TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult Function(String id, String value)? changeSelectedAppointmentProject,
     TResult Function(String id, String value)? changeSelectedAppointmentTask,
     TResult Function(String value)? changeSelectedAppointmentLocation,
@@ -360,6 +386,12 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentDate value)
         changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentProject value)
         changeSelectedAppointmentProject,
@@ -398,6 +430,10 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
         changeSelectedAppointmentTitle,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -431,6 +467,10 @@ class _$ScheduleEditEventLoadImpl implements ScheduleEditEventLoad {
         changeSelectedAppointmentTitle,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -543,6 +583,8 @@ class _$ScheduleEditEventChangePeriodTypeImpl
     required TResult Function(Appointment value) changeSelectedAppointment,
     required TResult Function(String value) changeSelectedAppointmentTitle,
     required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
     required TResult Function(String id, String value)
         changeSelectedAppointmentProject,
     required TResult Function(String id, String value)
@@ -569,6 +611,8 @@ class _$ScheduleEditEventChangePeriodTypeImpl
     TResult? Function(Appointment value)? changeSelectedAppointment,
     TResult? Function(String value)? changeSelectedAppointmentTitle,
     TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult? Function(String id, String value)?
         changeSelectedAppointmentProject,
     TResult? Function(String id, String value)? changeSelectedAppointmentTask,
@@ -592,6 +636,8 @@ class _$ScheduleEditEventChangePeriodTypeImpl
     TResult Function(Appointment value)? changeSelectedAppointment,
     TResult Function(String value)? changeSelectedAppointmentTitle,
     TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult Function(String id, String value)? changeSelectedAppointmentProject,
     TResult Function(String id, String value)? changeSelectedAppointmentTask,
     TResult Function(String value)? changeSelectedAppointmentLocation,
@@ -624,6 +670,12 @@ class _$ScheduleEditEventChangePeriodTypeImpl
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentDate value)
         changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentProject value)
         changeSelectedAppointmentProject,
@@ -662,6 +714,10 @@ class _$ScheduleEditEventChangePeriodTypeImpl
         changeSelectedAppointmentTitle,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -695,6 +751,10 @@ class _$ScheduleEditEventChangePeriodTypeImpl
         changeSelectedAppointmentTitle,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -822,6 +882,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
     required TResult Function(Appointment value) changeSelectedAppointment,
     required TResult Function(String value) changeSelectedAppointmentTitle,
     required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
     required TResult Function(String id, String value)
         changeSelectedAppointmentProject,
     required TResult Function(String id, String value)
@@ -848,6 +910,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
     TResult? Function(Appointment value)? changeSelectedAppointment,
     TResult? Function(String value)? changeSelectedAppointmentTitle,
     TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult? Function(String id, String value)?
         changeSelectedAppointmentProject,
     TResult? Function(String id, String value)? changeSelectedAppointmentTask,
@@ -871,6 +935,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
     TResult Function(Appointment value)? changeSelectedAppointment,
     TResult Function(String value)? changeSelectedAppointmentTitle,
     TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult Function(String id, String value)? changeSelectedAppointmentProject,
     TResult Function(String id, String value)? changeSelectedAppointmentTask,
     TResult Function(String value)? changeSelectedAppointmentLocation,
@@ -903,6 +969,12 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentDate value)
         changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentProject value)
         changeSelectedAppointmentProject,
@@ -941,6 +1013,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
         changeSelectedAppointmentTitle,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -974,6 +1050,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentImpl
         changeSelectedAppointmentTitle,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -1096,6 +1176,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentTitleImpl
     required TResult Function(Appointment value) changeSelectedAppointment,
     required TResult Function(String value) changeSelectedAppointmentTitle,
     required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
     required TResult Function(String id, String value)
         changeSelectedAppointmentProject,
     required TResult Function(String id, String value)
@@ -1122,6 +1204,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentTitleImpl
     TResult? Function(Appointment value)? changeSelectedAppointment,
     TResult? Function(String value)? changeSelectedAppointmentTitle,
     TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult? Function(String id, String value)?
         changeSelectedAppointmentProject,
     TResult? Function(String id, String value)? changeSelectedAppointmentTask,
@@ -1145,6 +1229,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentTitleImpl
     TResult Function(Appointment value)? changeSelectedAppointment,
     TResult Function(String value)? changeSelectedAppointmentTitle,
     TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult Function(String id, String value)? changeSelectedAppointmentProject,
     TResult Function(String id, String value)? changeSelectedAppointmentTask,
     TResult Function(String value)? changeSelectedAppointmentLocation,
@@ -1177,6 +1263,12 @@ class _$ScheduleEditEventChangeSelectedAppointmentTitleImpl
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentDate value)
         changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentProject value)
         changeSelectedAppointmentProject,
@@ -1215,6 +1307,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentTitleImpl
         changeSelectedAppointmentTitle,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -1248,6 +1344,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentTitleImpl
         changeSelectedAppointmentTitle,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -1369,6 +1469,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentDateImpl
     required TResult Function(Appointment value) changeSelectedAppointment,
     required TResult Function(String value) changeSelectedAppointmentTitle,
     required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
     required TResult Function(String id, String value)
         changeSelectedAppointmentProject,
     required TResult Function(String id, String value)
@@ -1395,6 +1497,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentDateImpl
     TResult? Function(Appointment value)? changeSelectedAppointment,
     TResult? Function(String value)? changeSelectedAppointmentTitle,
     TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult? Function(String id, String value)?
         changeSelectedAppointmentProject,
     TResult? Function(String id, String value)? changeSelectedAppointmentTask,
@@ -1418,6 +1522,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentDateImpl
     TResult Function(Appointment value)? changeSelectedAppointment,
     TResult Function(String value)? changeSelectedAppointmentTitle,
     TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult Function(String id, String value)? changeSelectedAppointmentProject,
     TResult Function(String id, String value)? changeSelectedAppointmentTask,
     TResult Function(String value)? changeSelectedAppointmentLocation,
@@ -1450,6 +1556,12 @@ class _$ScheduleEditEventChangeSelectedAppointmentDateImpl
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentDate value)
         changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentProject value)
         changeSelectedAppointmentProject,
@@ -1488,6 +1600,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentDateImpl
         changeSelectedAppointmentTitle,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -1521,6 +1637,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentDateImpl
         changeSelectedAppointmentTitle,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -1558,6 +1678,593 @@ abstract class ScheduleEditEventChangeSelectedAppointmentDate
   @JsonKey(ignore: true)
   _$$ScheduleEditEventChangeSelectedAppointmentDateImplCopyWith<
           _$ScheduleEditEventChangeSelectedAppointmentDateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ScheduleEditEventChangeSelectedAppointmentStartImplCopyWith<
+    $Res> {
+  factory _$$ScheduleEditEventChangeSelectedAppointmentStartImplCopyWith(
+          _$ScheduleEditEventChangeSelectedAppointmentStartImpl value,
+          $Res Function(_$ScheduleEditEventChangeSelectedAppointmentStartImpl)
+              then) =
+      __$$ScheduleEditEventChangeSelectedAppointmentStartImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DateTime value});
+}
+
+/// @nodoc
+class __$$ScheduleEditEventChangeSelectedAppointmentStartImplCopyWithImpl<$Res>
+    extends _$ScheduleEditEventCopyWithImpl<$Res,
+        _$ScheduleEditEventChangeSelectedAppointmentStartImpl>
+    implements
+        _$$ScheduleEditEventChangeSelectedAppointmentStartImplCopyWith<$Res> {
+  __$$ScheduleEditEventChangeSelectedAppointmentStartImplCopyWithImpl(
+      _$ScheduleEditEventChangeSelectedAppointmentStartImpl _value,
+      $Res Function(_$ScheduleEditEventChangeSelectedAppointmentStartImpl)
+          _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ScheduleEditEventChangeSelectedAppointmentStartImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ScheduleEditEventChangeSelectedAppointmentStartImpl
+    implements ScheduleEditEventChangeSelectedAppointmentStart {
+  const _$ScheduleEditEventChangeSelectedAppointmentStartImpl(
+      {required this.value});
+
+  @override
+  final DateTime value;
+
+  @override
+  String toString() {
+    return 'ScheduleEditEvent.changeSelectedAppointmentStart(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ScheduleEditEventChangeSelectedAppointmentStartImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScheduleEditEventChangeSelectedAppointmentStartImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentStartImpl>
+      get copyWith =>
+          __$$ScheduleEditEventChangeSelectedAppointmentStartImplCopyWithImpl<
+                  _$ScheduleEditEventChangeSelectedAppointmentStartImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(SchedulePeriodType value) changePeriodType,
+    required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(DateTime date) addDate,
+    required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
+  }) {
+    return changeSelectedAppointmentStart(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(SchedulePeriodType value)? changePeriodType,
+    TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult? Function(DateTime date)? addDate,
+    TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
+  }) {
+    return changeSelectedAppointmentStart?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(SchedulePeriodType value)? changePeriodType,
+    TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult Function(DateTime date)? addDate,
+    TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentStart != null) {
+      return changeSelectedAppointmentStart(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ScheduleEditEventLoad value) load,
+    required TResult Function(ScheduleEditEventChangePeriodType value)
+        changePeriodType,
+    required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
+        changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDate value)
+        changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(ScheduleEditEventAddDate value) addDate,
+    required TResult Function(ScheduleEditEventRemoveAppointment value)
+        remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
+  }) {
+    return changeSelectedAppointmentStart(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ScheduleEditEventLoad value)? load,
+    TResult? Function(ScheduleEditEventChangePeriodType value)?
+        changePeriodType,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
+        changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult? Function(ScheduleEditEventAddDate value)? addDate,
+    TResult? Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
+  }) {
+    return changeSelectedAppointmentStart?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ScheduleEditEventLoad value)? load,
+    TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
+    TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
+        changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult Function(ScheduleEditEventAddDate value)? addDate,
+    TResult Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentStart != null) {
+      return changeSelectedAppointmentStart(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ScheduleEditEventChangeSelectedAppointmentStart
+    implements ScheduleEditEvent {
+  const factory ScheduleEditEventChangeSelectedAppointmentStart(
+          {required final DateTime value}) =
+      _$ScheduleEditEventChangeSelectedAppointmentStartImpl;
+
+  DateTime get value;
+  @JsonKey(ignore: true)
+  _$$ScheduleEditEventChangeSelectedAppointmentStartImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentStartImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ScheduleEditEventChangeSelectedAppointmentEndImplCopyWith<
+    $Res> {
+  factory _$$ScheduleEditEventChangeSelectedAppointmentEndImplCopyWith(
+          _$ScheduleEditEventChangeSelectedAppointmentEndImpl value,
+          $Res Function(_$ScheduleEditEventChangeSelectedAppointmentEndImpl)
+              then) =
+      __$$ScheduleEditEventChangeSelectedAppointmentEndImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DateTime value});
+}
+
+/// @nodoc
+class __$$ScheduleEditEventChangeSelectedAppointmentEndImplCopyWithImpl<$Res>
+    extends _$ScheduleEditEventCopyWithImpl<$Res,
+        _$ScheduleEditEventChangeSelectedAppointmentEndImpl>
+    implements
+        _$$ScheduleEditEventChangeSelectedAppointmentEndImplCopyWith<$Res> {
+  __$$ScheduleEditEventChangeSelectedAppointmentEndImplCopyWithImpl(
+      _$ScheduleEditEventChangeSelectedAppointmentEndImpl _value,
+      $Res Function(_$ScheduleEditEventChangeSelectedAppointmentEndImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ScheduleEditEventChangeSelectedAppointmentEndImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ScheduleEditEventChangeSelectedAppointmentEndImpl
+    implements ScheduleEditEventChangeSelectedAppointmentEnd {
+  const _$ScheduleEditEventChangeSelectedAppointmentEndImpl(
+      {required this.value});
+
+  @override
+  final DateTime value;
+
+  @override
+  String toString() {
+    return 'ScheduleEditEvent.changeSelectedAppointmentEnd(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ScheduleEditEventChangeSelectedAppointmentEndImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScheduleEditEventChangeSelectedAppointmentEndImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentEndImpl>
+      get copyWith =>
+          __$$ScheduleEditEventChangeSelectedAppointmentEndImplCopyWithImpl<
+                  _$ScheduleEditEventChangeSelectedAppointmentEndImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(SchedulePeriodType value) changePeriodType,
+    required TResult Function(Appointment value) changeSelectedAppointment,
+    required TResult Function(String value) changeSelectedAppointmentTitle,
+    required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentProject,
+    required TResult Function(String id, String value)
+        changeSelectedAppointmentTask,
+    required TResult Function(String value) changeSelectedAppointmentLocation,
+    required TResult Function(String value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(List<AppointmentUser> value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(AppointmentUser user)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(DateTime date) addDate,
+    required TResult Function(Appointment value) remodeAppointment,
+    required TResult Function(VoidCallback callBack) save,
+  }) {
+    return changeSelectedAppointmentEnd(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(SchedulePeriodType value)? changePeriodType,
+    TResult? Function(Appointment value)? changeSelectedAppointment,
+    TResult? Function(String value)? changeSelectedAppointmentTitle,
+    TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
+    TResult? Function(String id, String value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult? Function(String value)? changeSelectedAppointmentLocation,
+    TResult? Function(String value)? changeSelectedAppointmentDescription,
+    TResult? Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult? Function(DateTime date)? addDate,
+    TResult? Function(Appointment value)? remodeAppointment,
+    TResult? Function(VoidCallback callBack)? save,
+  }) {
+    return changeSelectedAppointmentEnd?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(SchedulePeriodType value)? changePeriodType,
+    TResult Function(Appointment value)? changeSelectedAppointment,
+    TResult Function(String value)? changeSelectedAppointmentTitle,
+    TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
+    TResult Function(String id, String value)? changeSelectedAppointmentProject,
+    TResult Function(String id, String value)? changeSelectedAppointmentTask,
+    TResult Function(String value)? changeSelectedAppointmentLocation,
+    TResult Function(String value)? changeSelectedAppointmentDescription,
+    TResult Function(List<AppointmentUser> value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(AppointmentUser user)? removeSelectedAppointmentAssignTo,
+    TResult Function(DateTime date)? addDate,
+    TResult Function(Appointment value)? remodeAppointment,
+    TResult Function(VoidCallback callBack)? save,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentEnd != null) {
+      return changeSelectedAppointmentEnd(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ScheduleEditEventLoad value) load,
+    required TResult Function(ScheduleEditEventChangePeriodType value)
+        changePeriodType,
+    required TResult Function(ScheduleEditEventChangeSelectedAppointment value)
+        changeSelectedAppointment,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTitle value)
+        changeSelectedAppointmentTitle,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDate value)
+        changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentProject value)
+        changeSelectedAppointmentProject,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentTask value)
+        changeSelectedAppointmentTask,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentLocation value)
+        changeSelectedAppointmentLocation,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)
+        changeSelectedAppointmentDescription,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentAssignTo value)
+        changeSelectedAppointmentAssignTo,
+    required TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)
+        removeSelectedAppointmentAssignTo,
+    required TResult Function(ScheduleEditEventAddDate value) addDate,
+    required TResult Function(ScheduleEditEventRemoveAppointment value)
+        remodeAppointment,
+    required TResult Function(ScheduleEditEventSave value) save,
+  }) {
+    return changeSelectedAppointmentEnd(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ScheduleEditEventLoad value)? load,
+    TResult? Function(ScheduleEditEventChangePeriodType value)?
+        changePeriodType,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
+        changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult? Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult? Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult? Function(ScheduleEditEventAddDate value)? addDate,
+    TResult? Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+    TResult? Function(ScheduleEditEventSave value)? save,
+  }) {
+    return changeSelectedAppointmentEnd?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ScheduleEditEventLoad value)? load,
+    TResult Function(ScheduleEditEventChangePeriodType value)? changePeriodType,
+    TResult Function(ScheduleEditEventChangeSelectedAppointment value)?
+        changeSelectedAppointment,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTitle value)?
+        changeSelectedAppointmentTitle,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
+        changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
+        changeSelectedAppointmentProject,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
+        changeSelectedAppointmentTask,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentLocation value)?
+        changeSelectedAppointmentLocation,
+    TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentDescription value)?
+        changeSelectedAppointmentDescription,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentAssignTo value)?
+        changeSelectedAppointmentAssignTo,
+    TResult Function(
+            ScheduleEditEventChangeRemoveSelectedAppointmentAssignTo value)?
+        removeSelectedAppointmentAssignTo,
+    TResult Function(ScheduleEditEventAddDate value)? addDate,
+    TResult Function(ScheduleEditEventRemoveAppointment value)?
+        remodeAppointment,
+    TResult Function(ScheduleEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedAppointmentEnd != null) {
+      return changeSelectedAppointmentEnd(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ScheduleEditEventChangeSelectedAppointmentEnd
+    implements ScheduleEditEvent {
+  const factory ScheduleEditEventChangeSelectedAppointmentEnd(
+          {required final DateTime value}) =
+      _$ScheduleEditEventChangeSelectedAppointmentEndImpl;
+
+  DateTime get value;
+  @JsonKey(ignore: true)
+  _$$ScheduleEditEventChangeSelectedAppointmentEndImplCopyWith<
+          _$ScheduleEditEventChangeSelectedAppointmentEndImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1653,6 +2360,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentProjectImpl
     required TResult Function(Appointment value) changeSelectedAppointment,
     required TResult Function(String value) changeSelectedAppointmentTitle,
     required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
     required TResult Function(String id, String value)
         changeSelectedAppointmentProject,
     required TResult Function(String id, String value)
@@ -1679,6 +2388,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentProjectImpl
     TResult? Function(Appointment value)? changeSelectedAppointment,
     TResult? Function(String value)? changeSelectedAppointmentTitle,
     TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult? Function(String id, String value)?
         changeSelectedAppointmentProject,
     TResult? Function(String id, String value)? changeSelectedAppointmentTask,
@@ -1702,6 +2413,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentProjectImpl
     TResult Function(Appointment value)? changeSelectedAppointment,
     TResult Function(String value)? changeSelectedAppointmentTitle,
     TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult Function(String id, String value)? changeSelectedAppointmentProject,
     TResult Function(String id, String value)? changeSelectedAppointmentTask,
     TResult Function(String value)? changeSelectedAppointmentLocation,
@@ -1734,6 +2447,12 @@ class _$ScheduleEditEventChangeSelectedAppointmentProjectImpl
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentDate value)
         changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentProject value)
         changeSelectedAppointmentProject,
@@ -1772,6 +2491,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentProjectImpl
         changeSelectedAppointmentTitle,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -1805,6 +2528,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentProjectImpl
         changeSelectedAppointmentTitle,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -1935,6 +2662,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentTaskImpl
     required TResult Function(Appointment value) changeSelectedAppointment,
     required TResult Function(String value) changeSelectedAppointmentTitle,
     required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
     required TResult Function(String id, String value)
         changeSelectedAppointmentProject,
     required TResult Function(String id, String value)
@@ -1961,6 +2690,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentTaskImpl
     TResult? Function(Appointment value)? changeSelectedAppointment,
     TResult? Function(String value)? changeSelectedAppointmentTitle,
     TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult? Function(String id, String value)?
         changeSelectedAppointmentProject,
     TResult? Function(String id, String value)? changeSelectedAppointmentTask,
@@ -1984,6 +2715,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentTaskImpl
     TResult Function(Appointment value)? changeSelectedAppointment,
     TResult Function(String value)? changeSelectedAppointmentTitle,
     TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult Function(String id, String value)? changeSelectedAppointmentProject,
     TResult Function(String id, String value)? changeSelectedAppointmentTask,
     TResult Function(String value)? changeSelectedAppointmentLocation,
@@ -2016,6 +2749,12 @@ class _$ScheduleEditEventChangeSelectedAppointmentTaskImpl
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentDate value)
         changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentProject value)
         changeSelectedAppointmentProject,
@@ -2054,6 +2793,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentTaskImpl
         changeSelectedAppointmentTitle,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -2087,6 +2830,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentTaskImpl
         changeSelectedAppointmentTitle,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -2214,6 +2961,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentLocationImpl
     required TResult Function(Appointment value) changeSelectedAppointment,
     required TResult Function(String value) changeSelectedAppointmentTitle,
     required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
     required TResult Function(String id, String value)
         changeSelectedAppointmentProject,
     required TResult Function(String id, String value)
@@ -2240,6 +2989,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentLocationImpl
     TResult? Function(Appointment value)? changeSelectedAppointment,
     TResult? Function(String value)? changeSelectedAppointmentTitle,
     TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult? Function(String id, String value)?
         changeSelectedAppointmentProject,
     TResult? Function(String id, String value)? changeSelectedAppointmentTask,
@@ -2263,6 +3014,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentLocationImpl
     TResult Function(Appointment value)? changeSelectedAppointment,
     TResult Function(String value)? changeSelectedAppointmentTitle,
     TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult Function(String id, String value)? changeSelectedAppointmentProject,
     TResult Function(String id, String value)? changeSelectedAppointmentTask,
     TResult Function(String value)? changeSelectedAppointmentLocation,
@@ -2295,6 +3048,12 @@ class _$ScheduleEditEventChangeSelectedAppointmentLocationImpl
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentDate value)
         changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentProject value)
         changeSelectedAppointmentProject,
@@ -2333,6 +3092,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentLocationImpl
         changeSelectedAppointmentTitle,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -2366,6 +3129,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentLocationImpl
         changeSelectedAppointmentTitle,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -2493,6 +3260,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl
     required TResult Function(Appointment value) changeSelectedAppointment,
     required TResult Function(String value) changeSelectedAppointmentTitle,
     required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
     required TResult Function(String id, String value)
         changeSelectedAppointmentProject,
     required TResult Function(String id, String value)
@@ -2519,6 +3288,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl
     TResult? Function(Appointment value)? changeSelectedAppointment,
     TResult? Function(String value)? changeSelectedAppointmentTitle,
     TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult? Function(String id, String value)?
         changeSelectedAppointmentProject,
     TResult? Function(String id, String value)? changeSelectedAppointmentTask,
@@ -2542,6 +3313,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl
     TResult Function(Appointment value)? changeSelectedAppointment,
     TResult Function(String value)? changeSelectedAppointmentTitle,
     TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult Function(String id, String value)? changeSelectedAppointmentProject,
     TResult Function(String id, String value)? changeSelectedAppointmentTask,
     TResult Function(String value)? changeSelectedAppointmentLocation,
@@ -2574,6 +3347,12 @@ class _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentDate value)
         changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentProject value)
         changeSelectedAppointmentProject,
@@ -2612,6 +3391,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl
         changeSelectedAppointmentTitle,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -2645,6 +3428,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentDescriptionImpl
         changeSelectedAppointmentTitle,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -2778,6 +3565,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl
     required TResult Function(Appointment value) changeSelectedAppointment,
     required TResult Function(String value) changeSelectedAppointmentTitle,
     required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
     required TResult Function(String id, String value)
         changeSelectedAppointmentProject,
     required TResult Function(String id, String value)
@@ -2804,6 +3593,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl
     TResult? Function(Appointment value)? changeSelectedAppointment,
     TResult? Function(String value)? changeSelectedAppointmentTitle,
     TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult? Function(String id, String value)?
         changeSelectedAppointmentProject,
     TResult? Function(String id, String value)? changeSelectedAppointmentTask,
@@ -2827,6 +3618,8 @@ class _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl
     TResult Function(Appointment value)? changeSelectedAppointment,
     TResult Function(String value)? changeSelectedAppointmentTitle,
     TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult Function(String id, String value)? changeSelectedAppointmentProject,
     TResult Function(String id, String value)? changeSelectedAppointmentTask,
     TResult Function(String value)? changeSelectedAppointmentLocation,
@@ -2859,6 +3652,12 @@ class _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentDate value)
         changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentProject value)
         changeSelectedAppointmentProject,
@@ -2897,6 +3696,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl
         changeSelectedAppointmentTitle,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -2930,6 +3733,10 @@ class _$ScheduleEditEventChangeSelectedAppointmentAssignToImpl
         changeSelectedAppointmentTitle,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -3068,6 +3875,8 @@ class _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl
     required TResult Function(Appointment value) changeSelectedAppointment,
     required TResult Function(String value) changeSelectedAppointmentTitle,
     required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
     required TResult Function(String id, String value)
         changeSelectedAppointmentProject,
     required TResult Function(String id, String value)
@@ -3094,6 +3903,8 @@ class _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl
     TResult? Function(Appointment value)? changeSelectedAppointment,
     TResult? Function(String value)? changeSelectedAppointmentTitle,
     TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult? Function(String id, String value)?
         changeSelectedAppointmentProject,
     TResult? Function(String id, String value)? changeSelectedAppointmentTask,
@@ -3117,6 +3928,8 @@ class _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl
     TResult Function(Appointment value)? changeSelectedAppointment,
     TResult Function(String value)? changeSelectedAppointmentTitle,
     TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult Function(String id, String value)? changeSelectedAppointmentProject,
     TResult Function(String id, String value)? changeSelectedAppointmentTask,
     TResult Function(String value)? changeSelectedAppointmentLocation,
@@ -3149,6 +3962,12 @@ class _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentDate value)
         changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentProject value)
         changeSelectedAppointmentProject,
@@ -3187,6 +4006,10 @@ class _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl
         changeSelectedAppointmentTitle,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -3220,6 +4043,10 @@ class _$ScheduleEditEventChangeRemoveSelectedAppointmentAssignToImpl
         changeSelectedAppointmentTitle,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -3333,6 +4160,8 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
     required TResult Function(Appointment value) changeSelectedAppointment,
     required TResult Function(String value) changeSelectedAppointmentTitle,
     required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
     required TResult Function(String id, String value)
         changeSelectedAppointmentProject,
     required TResult Function(String id, String value)
@@ -3359,6 +4188,8 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
     TResult? Function(Appointment value)? changeSelectedAppointment,
     TResult? Function(String value)? changeSelectedAppointmentTitle,
     TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult? Function(String id, String value)?
         changeSelectedAppointmentProject,
     TResult? Function(String id, String value)? changeSelectedAppointmentTask,
@@ -3382,6 +4213,8 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
     TResult Function(Appointment value)? changeSelectedAppointment,
     TResult Function(String value)? changeSelectedAppointmentTitle,
     TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult Function(String id, String value)? changeSelectedAppointmentProject,
     TResult Function(String id, String value)? changeSelectedAppointmentTask,
     TResult Function(String value)? changeSelectedAppointmentLocation,
@@ -3414,6 +4247,12 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentDate value)
         changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentProject value)
         changeSelectedAppointmentProject,
@@ -3452,6 +4291,10 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
         changeSelectedAppointmentTitle,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -3485,6 +4328,10 @@ class _$ScheduleEditEventAddDateImpl implements ScheduleEditEventAddDate {
         changeSelectedAppointmentTitle,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -3607,6 +4454,8 @@ class _$ScheduleEditEventRemoveAppointmentImpl
     required TResult Function(Appointment value) changeSelectedAppointment,
     required TResult Function(String value) changeSelectedAppointmentTitle,
     required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
     required TResult Function(String id, String value)
         changeSelectedAppointmentProject,
     required TResult Function(String id, String value)
@@ -3633,6 +4482,8 @@ class _$ScheduleEditEventRemoveAppointmentImpl
     TResult? Function(Appointment value)? changeSelectedAppointment,
     TResult? Function(String value)? changeSelectedAppointmentTitle,
     TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult? Function(String id, String value)?
         changeSelectedAppointmentProject,
     TResult? Function(String id, String value)? changeSelectedAppointmentTask,
@@ -3656,6 +4507,8 @@ class _$ScheduleEditEventRemoveAppointmentImpl
     TResult Function(Appointment value)? changeSelectedAppointment,
     TResult Function(String value)? changeSelectedAppointmentTitle,
     TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult Function(String id, String value)? changeSelectedAppointmentProject,
     TResult Function(String id, String value)? changeSelectedAppointmentTask,
     TResult Function(String value)? changeSelectedAppointmentLocation,
@@ -3688,6 +4541,12 @@ class _$ScheduleEditEventRemoveAppointmentImpl
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentDate value)
         changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentProject value)
         changeSelectedAppointmentProject,
@@ -3726,6 +4585,10 @@ class _$ScheduleEditEventRemoveAppointmentImpl
         changeSelectedAppointmentTitle,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -3759,6 +4622,10 @@ class _$ScheduleEditEventRemoveAppointmentImpl
         changeSelectedAppointmentTitle,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -3870,6 +4737,8 @@ class _$ScheduleEditEventSaveImpl implements ScheduleEditEventSave {
     required TResult Function(Appointment value) changeSelectedAppointment,
     required TResult Function(String value) changeSelectedAppointmentTitle,
     required TResult Function(DateTime value) changeSelectedAppointmentDate,
+    required TResult Function(DateTime value) changeSelectedAppointmentStart,
+    required TResult Function(DateTime value) changeSelectedAppointmentEnd,
     required TResult Function(String id, String value)
         changeSelectedAppointmentProject,
     required TResult Function(String id, String value)
@@ -3896,6 +4765,8 @@ class _$ScheduleEditEventSaveImpl implements ScheduleEditEventSave {
     TResult? Function(Appointment value)? changeSelectedAppointment,
     TResult? Function(String value)? changeSelectedAppointmentTitle,
     TResult? Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult? Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult? Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult? Function(String id, String value)?
         changeSelectedAppointmentProject,
     TResult? Function(String id, String value)? changeSelectedAppointmentTask,
@@ -3919,6 +4790,8 @@ class _$ScheduleEditEventSaveImpl implements ScheduleEditEventSave {
     TResult Function(Appointment value)? changeSelectedAppointment,
     TResult Function(String value)? changeSelectedAppointmentTitle,
     TResult Function(DateTime value)? changeSelectedAppointmentDate,
+    TResult Function(DateTime value)? changeSelectedAppointmentStart,
+    TResult Function(DateTime value)? changeSelectedAppointmentEnd,
     TResult Function(String id, String value)? changeSelectedAppointmentProject,
     TResult Function(String id, String value)? changeSelectedAppointmentTask,
     TResult Function(String value)? changeSelectedAppointmentLocation,
@@ -3951,6 +4824,12 @@ class _$ScheduleEditEventSaveImpl implements ScheduleEditEventSave {
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentDate value)
         changeSelectedAppointmentDate,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentStart value)
+        changeSelectedAppointmentStart,
+    required TResult Function(
+            ScheduleEditEventChangeSelectedAppointmentEnd value)
+        changeSelectedAppointmentEnd,
     required TResult Function(
             ScheduleEditEventChangeSelectedAppointmentProject value)
         changeSelectedAppointmentProject,
@@ -3989,6 +4868,10 @@ class _$ScheduleEditEventSaveImpl implements ScheduleEditEventSave {
         changeSelectedAppointmentTitle,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult? Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult? Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
@@ -4022,6 +4905,10 @@ class _$ScheduleEditEventSaveImpl implements ScheduleEditEventSave {
         changeSelectedAppointmentTitle,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentDate value)?
         changeSelectedAppointmentDate,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentStart value)?
+        changeSelectedAppointmentStart,
+    TResult Function(ScheduleEditEventChangeSelectedAppointmentEnd value)?
+        changeSelectedAppointmentEnd,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentProject value)?
         changeSelectedAppointmentProject,
     TResult Function(ScheduleEditEventChangeSelectedAppointmentTask value)?
