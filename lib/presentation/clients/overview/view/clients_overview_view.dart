@@ -156,6 +156,15 @@ class ClientsOverviewView extends IView {
                                 listing: () {
                                   return Column(
                                     children: [
+                                      const Text(
+                                        'Projects',
+                                        style: TextStyle(
+                                          color: AppColor.primaryColorSwatch,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: Sizes.size20,
+                                        ),
+                                      ),
+                                      const Divider(),
                                       Expanded(
                                         child: ListView.builder(
                                           itemCount:

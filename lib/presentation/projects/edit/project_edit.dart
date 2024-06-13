@@ -1,6 +1,8 @@
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/projects_controller.dart';
+import 'package:buildnotifierrear/domain/entities/client/client.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
-import 'package:buildnotifierrear/domain/entities/project/project.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/clients_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/projects_firestore_repository.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
@@ -19,11 +21,18 @@ class ProjectEdit extends IView {
 
   @override
   Widget build(BuildContext context) {
+    var tenantId = appBloc(context).state.asLogged.user.tenant;
+
     return BlocProvider<ProjectEditBloc>(
       create: (context) => ProjectEditBloc(
-        controller: CRUDController<Project>(
+        controller: ProjectsController(
           repository: ProjectsFirestoreRepository(
-            tenantId: appBloc(context).state.asLogged.user.tenant,
+            tenantId: tenantId,
+          ),
+        ),
+        clientsController: CRUDController<Client>(
+          repository: ClientsFireStoreRepository(
+            tenantId: tenantId,
           ),
         ),
       ),

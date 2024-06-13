@@ -22,6 +22,9 @@ Project _$ProjectFromJson(Map<String, dynamic> json) {
 mixin _$Project {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  String get clientId => throw _privateConstructorUsedError;
+  String get clientFirstname => throw _privateConstructorUsedError;
+  String get clientLastname => throw _privateConstructorUsedError;
   String get zipCode => throw _privateConstructorUsedError;
   String get state => throw _privateConstructorUsedError;
   String get city => throw _privateConstructorUsedError;
@@ -43,6 +46,9 @@ abstract class $ProjectCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
+      String clientId,
+      String clientFirstname,
+      String clientLastname,
       String zipCode,
       String state,
       String city,
@@ -67,6 +73,9 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? clientId = null,
+    Object? clientFirstname = null,
+    Object? clientLastname = null,
     Object? zipCode = null,
     Object? state = null,
     Object? city = null,
@@ -83,6 +92,18 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      clientId: null == clientId
+          ? _value.clientId
+          : clientId // ignore: cast_nullable_to_non_nullable
+              as String,
+      clientFirstname: null == clientFirstname
+          ? _value.clientFirstname
+          : clientFirstname // ignore: cast_nullable_to_non_nullable
+              as String,
+      clientLastname: null == clientLastname
+          ? _value.clientLastname
+          : clientLastname // ignore: cast_nullable_to_non_nullable
               as String,
       zipCode: null == zipCode
           ? _value.zipCode
@@ -126,6 +147,9 @@ abstract class _$$ProjectImplCopyWith<$Res> implements $ProjectCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
+      String clientId,
+      String clientFirstname,
+      String clientLastname,
       String zipCode,
       String state,
       String city,
@@ -148,6 +172,9 @@ class __$$ProjectImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? clientId = null,
+    Object? clientFirstname = null,
+    Object? clientLastname = null,
     Object? zipCode = null,
     Object? state = null,
     Object? city = null,
@@ -164,6 +191,18 @@ class __$$ProjectImplCopyWithImpl<$Res>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      clientId: null == clientId
+          ? _value.clientId
+          : clientId // ignore: cast_nullable_to_non_nullable
+              as String,
+      clientFirstname: null == clientFirstname
+          ? _value.clientFirstname
+          : clientFirstname // ignore: cast_nullable_to_non_nullable
+              as String,
+      clientLastname: null == clientLastname
+          ? _value.clientLastname
+          : clientLastname // ignore: cast_nullable_to_non_nullable
               as String,
       zipCode: null == zipCode
           ? _value.zipCode
@@ -203,6 +242,9 @@ class _$ProjectImpl implements _Project {
   const _$ProjectImpl(
       {this.id = '',
       this.name = '',
+      this.clientId = '',
+      this.clientFirstname = '',
+      this.clientLastname = '',
       this.zipCode = '',
       this.state = '',
       this.city = '',
@@ -221,6 +263,15 @@ class _$ProjectImpl implements _Project {
   @override
   @JsonKey()
   final String name;
+  @override
+  @JsonKey()
+  final String clientId;
+  @override
+  @JsonKey()
+  final String clientFirstname;
+  @override
+  @JsonKey()
+  final String clientLastname;
   @override
   @JsonKey()
   final String zipCode;
@@ -248,7 +299,7 @@ class _$ProjectImpl implements _Project {
 
   @override
   String toString() {
-    return 'Project(id: $id, name: $name, zipCode: $zipCode, state: $state, city: $city, address: $address, latitude: $latitude, longitude: $longitude, tasks: $tasks)';
+    return 'Project(id: $id, name: $name, clientId: $clientId, clientFirstname: $clientFirstname, clientLastname: $clientLastname, zipCode: $zipCode, state: $state, city: $city, address: $address, latitude: $latitude, longitude: $longitude, tasks: $tasks)';
   }
 
   @override
@@ -258,6 +309,12 @@ class _$ProjectImpl implements _Project {
             other is _$ProjectImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.clientId, clientId) ||
+                other.clientId == clientId) &&
+            (identical(other.clientFirstname, clientFirstname) ||
+                other.clientFirstname == clientFirstname) &&
+            (identical(other.clientLastname, clientLastname) ||
+                other.clientLastname == clientLastname) &&
             (identical(other.zipCode, zipCode) || other.zipCode == zipCode) &&
             (identical(other.state, state) || other.state == state) &&
             (identical(other.city, city) || other.city == city) &&
@@ -275,6 +332,9 @@ class _$ProjectImpl implements _Project {
       runtimeType,
       id,
       name,
+      clientId,
+      clientFirstname,
+      clientLastname,
       zipCode,
       state,
       city,
@@ -301,6 +361,9 @@ abstract class _Project implements Project {
   const factory _Project(
       {final String id,
       final String name,
+      final String clientId,
+      final String clientFirstname,
+      final String clientLastname,
       final String zipCode,
       final String state,
       final String city,
@@ -315,6 +378,12 @@ abstract class _Project implements Project {
   String get id;
   @override
   String get name;
+  @override
+  String get clientId;
+  @override
+  String get clientFirstname;
+  @override
+  String get clientLastname;
   @override
   String get zipCode;
   @override

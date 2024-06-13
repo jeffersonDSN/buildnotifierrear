@@ -52,7 +52,7 @@ class ProjectEditView extends IView {
             loading: () => const Center(
               child: CircularProgressIndicator(),
             ),
-            loaded: (type, project) {
+            loaded: (type, project, clients) {
               return Padding(
                 padding: const EdgeInsets.all(Sizes.size16),
                 child: SizedBox(
@@ -73,10 +73,60 @@ class ProjectEditView extends IView {
                                   initialValue: project.name,
                                   onChanged: (value) {
                                     bloc.add(
-                                      ProjectEditEvent.updateName(
+                                      ProjectEditEvent.changeName(
                                         value: value,
                                       ),
                                     );
+                                  },
+                                ),
+                                gapHeight16,
+                                DropdownButtonFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Client',
+                                  ),
+                                  value: (
+                                    id: project.clientId,
+                                    firstName: project.clientFirstname,
+                                    lastName: project.clientLastname,
+                                  ),
+                                  isExpanded: true,
+                                  items: [
+                                    const DropdownMenuItem<
+                                        ({
+                                          String id,
+                                          String firstName,
+                                          String lastName,
+                                        })>(
+                                      value: (
+                                        id: '',
+                                        firstName: '',
+                                        lastName: '',
+                                      ),
+                                      child: Text(''),
+                                    ),
+                                    ...clients.map((cliente) {
+                                      return DropdownMenuItem(
+                                        value: (
+                                          id: cliente.id,
+                                          firstName: cliente.firstName,
+                                          lastName: cliente.lastName,
+                                        ),
+                                        child: Text(
+                                          '${cliente.firstName} ${cliente.lastName}',
+                                        ),
+                                      );
+                                    }),
+                                  ],
+                                  onChanged: (value) {
+                                    if (value != null) {
+                                      bloc.add(
+                                        ProjectEditEvent.changeClient(
+                                          clientId: value.id,
+                                          firstName: value.firstName,
+                                          lastName: value.lastName,
+                                        ),
+                                      );
+                                    }
                                   },
                                 ),
                                 gapHeight16,
@@ -87,7 +137,7 @@ class ProjectEditView extends IView {
                                   initialValue: project.address,
                                   onChanged: (value) {
                                     bloc.add(
-                                      ProjectEditEvent.updateAddress(
+                                      ProjectEditEvent.changeAddress(
                                         value: value,
                                       ),
                                     );
@@ -101,7 +151,7 @@ class ProjectEditView extends IView {
                                   initialValue: project.city,
                                   onChanged: (value) {
                                     bloc.add(
-                                      ProjectEditEvent.updateCity(
+                                      ProjectEditEvent.changeCity(
                                         value: value,
                                       ),
                                     );
@@ -115,7 +165,7 @@ class ProjectEditView extends IView {
                                   initialValue: project.state,
                                   onChanged: (value) {
                                     bloc.add(
-                                      ProjectEditEvent.updateState(
+                                      ProjectEditEvent.changeState(
                                         value: value,
                                       ),
                                     );
@@ -129,7 +179,7 @@ class ProjectEditView extends IView {
                                   initialValue: project.zipCode,
                                   onChanged: (value) {
                                     bloc.add(
-                                      ProjectEditEvent.updateZipCode(
+                                      ProjectEditEvent.changeZipCode(
                                         value: value,
                                       ),
                                     );

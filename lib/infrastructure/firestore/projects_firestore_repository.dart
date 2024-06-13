@@ -79,6 +79,9 @@ class ProjectsFirestoreRepository extends FireStoreRepository
   Future<bool> put(Project value) async {
     var schedule = {
       'name': value.name,
+      'clientId': value.clientId,
+      'clientFirstname': value.clientFirstname,
+      'clientLastname': value.clientLastname,
       'zipCode': value.zipCode,
       'state': value.state,
       'city': value.city,
@@ -95,6 +98,9 @@ class ProjectsFirestoreRepository extends FireStoreRepository
   Future<bool> post(Project value) async {
     var schedule = {
       'name': value.name,
+      'clientId': value.clientId,
+      'clientFirstname': value.clientFirstname,
+      'clientLastname': value.clientLastname,
       'zipCode': value.zipCode,
       'state': value.state,
       'city': value.city,

@@ -19,33 +19,40 @@ mixin _$ProjectEditEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateName,
-    required TResult Function(String value) updateZipCode,
-    required TResult Function(String value) updateState,
-    required TResult Function(String value) updateCity,
-    required TResult Function(String value) updateAddress,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
     required TResult Function(VoidCallback callback) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateName,
-    TResult? Function(String value)? updateZipCode,
-    TResult? Function(String value)? updateState,
-    TResult? Function(String value)? updateCity,
-    TResult? Function(String value)? updateAddress,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult? Function(VoidCallback callback)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateName,
-    TResult Function(String value)? updateZipCode,
-    TResult Function(String value)? updateState,
-    TResult Function(String value)? updateCity,
-    TResult Function(String value)? updateAddress,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) =>
@@ -53,35 +60,38 @@ mixin _$ProjectEditEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ProjectEditEventLoad value) load,
-    required TResult Function(ProjectEditEventUpdateName value) updateName,
-    required TResult Function(ProjectEditEventUpdateZipCode value)
-        updateZipCode,
-    required TResult Function(ProjectEditEventUpdateState value) updateState,
-    required TResult Function(ProjectEditEventUpdateCity value) updateCity,
-    required TResult Function(ProjectEditEventUpdateAddress value)
-        updateAddress,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ProjectEditEventLoad value)? load,
-    TResult? Function(ProjectEditEventUpdateName value)? updateName,
-    TResult? Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult? Function(ProjectEditEventUpdateState value)? updateState,
-    TResult? Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult? Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProjectEditEventLoad value)? load,
-    TResult Function(ProjectEditEventUpdateName value)? updateName,
-    TResult Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult Function(ProjectEditEventUpdateState value)? updateState,
-    TResult Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) =>
@@ -183,11 +193,14 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateName,
-    required TResult Function(String value) updateZipCode,
-    required TResult Function(String value) updateState,
-    required TResult Function(String value) updateCity,
-    required TResult Function(String value) updateAddress,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
     required TResult Function(VoidCallback callback) save,
   }) {
     return load(type);
@@ -197,11 +210,13 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateName,
-    TResult? Function(String value)? updateZipCode,
-    TResult? Function(String value)? updateState,
-    TResult? Function(String value)? updateCity,
-    TResult? Function(String value)? updateAddress,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult? Function(VoidCallback callback)? save,
   }) {
     return load?.call(type);
@@ -211,11 +226,13 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateName,
-    TResult Function(String value)? updateZipCode,
-    TResult Function(String value)? updateState,
-    TResult Function(String value)? updateCity,
-    TResult Function(String value)? updateAddress,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -229,13 +246,14 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ProjectEditEventLoad value) load,
-    required TResult Function(ProjectEditEventUpdateName value) updateName,
-    required TResult Function(ProjectEditEventUpdateZipCode value)
-        updateZipCode,
-    required TResult Function(ProjectEditEventUpdateState value) updateState,
-    required TResult Function(ProjectEditEventUpdateCity value) updateCity,
-    required TResult Function(ProjectEditEventUpdateAddress value)
-        updateAddress,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
     return load(this);
@@ -245,11 +263,12 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ProjectEditEventLoad value)? load,
-    TResult? Function(ProjectEditEventUpdateName value)? updateName,
-    TResult? Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult? Function(ProjectEditEventUpdateState value)? updateState,
-    TResult? Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult? Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
     return load?.call(this);
@@ -259,11 +278,12 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProjectEditEventLoad value)? load,
-    TResult Function(ProjectEditEventUpdateName value)? updateName,
-    TResult Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult Function(ProjectEditEventUpdateState value)? updateState,
-    TResult Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -285,23 +305,23 @@ abstract class ProjectEditEventLoad implements ProjectEditEvent {
 }
 
 /// @nodoc
-abstract class _$$ProjectEditEventUpdateNameImplCopyWith<$Res> {
-  factory _$$ProjectEditEventUpdateNameImplCopyWith(
-          _$ProjectEditEventUpdateNameImpl value,
-          $Res Function(_$ProjectEditEventUpdateNameImpl) then) =
-      __$$ProjectEditEventUpdateNameImplCopyWithImpl<$Res>;
+abstract class _$$ProjectEditEventChangeNameImplCopyWith<$Res> {
+  factory _$$ProjectEditEventChangeNameImplCopyWith(
+          _$ProjectEditEventChangeNameImpl value,
+          $Res Function(_$ProjectEditEventChangeNameImpl) then) =
+      __$$ProjectEditEventChangeNameImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$ProjectEditEventUpdateNameImplCopyWithImpl<$Res>
+class __$$ProjectEditEventChangeNameImplCopyWithImpl<$Res>
     extends _$ProjectEditEventCopyWithImpl<$Res,
-        _$ProjectEditEventUpdateNameImpl>
-    implements _$$ProjectEditEventUpdateNameImplCopyWith<$Res> {
-  __$$ProjectEditEventUpdateNameImplCopyWithImpl(
-      _$ProjectEditEventUpdateNameImpl _value,
-      $Res Function(_$ProjectEditEventUpdateNameImpl) _then)
+        _$ProjectEditEventChangeNameImpl>
+    implements _$$ProjectEditEventChangeNameImplCopyWith<$Res> {
+  __$$ProjectEditEventChangeNameImplCopyWithImpl(
+      _$ProjectEditEventChangeNameImpl _value,
+      $Res Function(_$ProjectEditEventChangeNameImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -309,7 +329,7 @@ class __$$ProjectEditEventUpdateNameImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$ProjectEditEventUpdateNameImpl(
+    return _then(_$ProjectEditEventChangeNameImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -320,22 +340,22 @@ class __$$ProjectEditEventUpdateNameImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProjectEditEventUpdateNameImpl implements ProjectEditEventUpdateName {
-  const _$ProjectEditEventUpdateNameImpl({required this.value});
+class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
+  const _$ProjectEditEventChangeNameImpl({required this.value});
 
   @override
   final String value;
 
   @override
   String toString() {
-    return 'ProjectEditEvent.updateName(value: $value)';
+    return 'ProjectEditEvent.changeName(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProjectEditEventUpdateNameImpl &&
+            other is _$ProjectEditEventChangeNameImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -345,52 +365,59 @@ class _$ProjectEditEventUpdateNameImpl implements ProjectEditEventUpdateName {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProjectEditEventUpdateNameImplCopyWith<_$ProjectEditEventUpdateNameImpl>
-      get copyWith => __$$ProjectEditEventUpdateNameImplCopyWithImpl<
-          _$ProjectEditEventUpdateNameImpl>(this, _$identity);
+  _$$ProjectEditEventChangeNameImplCopyWith<_$ProjectEditEventChangeNameImpl>
+      get copyWith => __$$ProjectEditEventChangeNameImplCopyWithImpl<
+          _$ProjectEditEventChangeNameImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateName,
-    required TResult Function(String value) updateZipCode,
-    required TResult Function(String value) updateState,
-    required TResult Function(String value) updateCity,
-    required TResult Function(String value) updateAddress,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
     required TResult Function(VoidCallback callback) save,
   }) {
-    return updateName(value);
+    return changeName(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateName,
-    TResult? Function(String value)? updateZipCode,
-    TResult? Function(String value)? updateState,
-    TResult? Function(String value)? updateCity,
-    TResult? Function(String value)? updateAddress,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult? Function(VoidCallback callback)? save,
   }) {
-    return updateName?.call(value);
+    return changeName?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateName,
-    TResult Function(String value)? updateZipCode,
-    TResult Function(String value)? updateState,
-    TResult Function(String value)? updateCity,
-    TResult Function(String value)? updateAddress,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
-    if (updateName != null) {
-      return updateName(value);
+    if (changeName != null) {
+      return changeName(value);
     }
     return orElse();
   }
@@ -399,79 +426,82 @@ class _$ProjectEditEventUpdateNameImpl implements ProjectEditEventUpdateName {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ProjectEditEventLoad value) load,
-    required TResult Function(ProjectEditEventUpdateName value) updateName,
-    required TResult Function(ProjectEditEventUpdateZipCode value)
-        updateZipCode,
-    required TResult Function(ProjectEditEventUpdateState value) updateState,
-    required TResult Function(ProjectEditEventUpdateCity value) updateCity,
-    required TResult Function(ProjectEditEventUpdateAddress value)
-        updateAddress,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
-    return updateName(this);
+    return changeName(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ProjectEditEventLoad value)? load,
-    TResult? Function(ProjectEditEventUpdateName value)? updateName,
-    TResult? Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult? Function(ProjectEditEventUpdateState value)? updateState,
-    TResult? Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult? Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
-    return updateName?.call(this);
+    return changeName?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProjectEditEventLoad value)? load,
-    TResult Function(ProjectEditEventUpdateName value)? updateName,
-    TResult Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult Function(ProjectEditEventUpdateState value)? updateState,
-    TResult Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
-    if (updateName != null) {
-      return updateName(this);
+    if (changeName != null) {
+      return changeName(this);
     }
     return orElse();
   }
 }
 
-abstract class ProjectEditEventUpdateName implements ProjectEditEvent {
-  const factory ProjectEditEventUpdateName({required final String value}) =
-      _$ProjectEditEventUpdateNameImpl;
+abstract class ProjectEditEventChangeName implements ProjectEditEvent {
+  const factory ProjectEditEventChangeName({required final String value}) =
+      _$ProjectEditEventChangeNameImpl;
 
   String get value;
   @JsonKey(ignore: true)
-  _$$ProjectEditEventUpdateNameImplCopyWith<_$ProjectEditEventUpdateNameImpl>
+  _$$ProjectEditEventChangeNameImplCopyWith<_$ProjectEditEventChangeNameImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ProjectEditEventUpdateZipCodeImplCopyWith<$Res> {
-  factory _$$ProjectEditEventUpdateZipCodeImplCopyWith(
-          _$ProjectEditEventUpdateZipCodeImpl value,
-          $Res Function(_$ProjectEditEventUpdateZipCodeImpl) then) =
-      __$$ProjectEditEventUpdateZipCodeImplCopyWithImpl<$Res>;
+abstract class _$$ProjectEditEventChangeZipCodeImplCopyWith<$Res> {
+  factory _$$ProjectEditEventChangeZipCodeImplCopyWith(
+          _$ProjectEditEventChangeZipCodeImpl value,
+          $Res Function(_$ProjectEditEventChangeZipCodeImpl) then) =
+      __$$ProjectEditEventChangeZipCodeImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$ProjectEditEventUpdateZipCodeImplCopyWithImpl<$Res>
+class __$$ProjectEditEventChangeZipCodeImplCopyWithImpl<$Res>
     extends _$ProjectEditEventCopyWithImpl<$Res,
-        _$ProjectEditEventUpdateZipCodeImpl>
-    implements _$$ProjectEditEventUpdateZipCodeImplCopyWith<$Res> {
-  __$$ProjectEditEventUpdateZipCodeImplCopyWithImpl(
-      _$ProjectEditEventUpdateZipCodeImpl _value,
-      $Res Function(_$ProjectEditEventUpdateZipCodeImpl) _then)
+        _$ProjectEditEventChangeZipCodeImpl>
+    implements _$$ProjectEditEventChangeZipCodeImplCopyWith<$Res> {
+  __$$ProjectEditEventChangeZipCodeImplCopyWithImpl(
+      _$ProjectEditEventChangeZipCodeImpl _value,
+      $Res Function(_$ProjectEditEventChangeZipCodeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -479,7 +509,7 @@ class __$$ProjectEditEventUpdateZipCodeImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$ProjectEditEventUpdateZipCodeImpl(
+    return _then(_$ProjectEditEventChangeZipCodeImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -490,23 +520,23 @@ class __$$ProjectEditEventUpdateZipCodeImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProjectEditEventUpdateZipCodeImpl
-    implements ProjectEditEventUpdateZipCode {
-  const _$ProjectEditEventUpdateZipCodeImpl({required this.value});
+class _$ProjectEditEventChangeZipCodeImpl
+    implements ProjectEditEventChangeZipCode {
+  const _$ProjectEditEventChangeZipCodeImpl({required this.value});
 
   @override
   final String value;
 
   @override
   String toString() {
-    return 'ProjectEditEvent.updateZipCode(value: $value)';
+    return 'ProjectEditEvent.changeZipCode(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProjectEditEventUpdateZipCodeImpl &&
+            other is _$ProjectEditEventChangeZipCodeImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -516,53 +546,60 @@ class _$ProjectEditEventUpdateZipCodeImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProjectEditEventUpdateZipCodeImplCopyWith<
-          _$ProjectEditEventUpdateZipCodeImpl>
-      get copyWith => __$$ProjectEditEventUpdateZipCodeImplCopyWithImpl<
-          _$ProjectEditEventUpdateZipCodeImpl>(this, _$identity);
+  _$$ProjectEditEventChangeZipCodeImplCopyWith<
+          _$ProjectEditEventChangeZipCodeImpl>
+      get copyWith => __$$ProjectEditEventChangeZipCodeImplCopyWithImpl<
+          _$ProjectEditEventChangeZipCodeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateName,
-    required TResult Function(String value) updateZipCode,
-    required TResult Function(String value) updateState,
-    required TResult Function(String value) updateCity,
-    required TResult Function(String value) updateAddress,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
     required TResult Function(VoidCallback callback) save,
   }) {
-    return updateZipCode(value);
+    return changeZipCode(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateName,
-    TResult? Function(String value)? updateZipCode,
-    TResult? Function(String value)? updateState,
-    TResult? Function(String value)? updateCity,
-    TResult? Function(String value)? updateAddress,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult? Function(VoidCallback callback)? save,
   }) {
-    return updateZipCode?.call(value);
+    return changeZipCode?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateName,
-    TResult Function(String value)? updateZipCode,
-    TResult Function(String value)? updateState,
-    TResult Function(String value)? updateCity,
-    TResult Function(String value)? updateAddress,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
-    if (updateZipCode != null) {
-      return updateZipCode(value);
+    if (changeZipCode != null) {
+      return changeZipCode(value);
     }
     return orElse();
   }
@@ -571,80 +608,83 @@ class _$ProjectEditEventUpdateZipCodeImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ProjectEditEventLoad value) load,
-    required TResult Function(ProjectEditEventUpdateName value) updateName,
-    required TResult Function(ProjectEditEventUpdateZipCode value)
-        updateZipCode,
-    required TResult Function(ProjectEditEventUpdateState value) updateState,
-    required TResult Function(ProjectEditEventUpdateCity value) updateCity,
-    required TResult Function(ProjectEditEventUpdateAddress value)
-        updateAddress,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
-    return updateZipCode(this);
+    return changeZipCode(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ProjectEditEventLoad value)? load,
-    TResult? Function(ProjectEditEventUpdateName value)? updateName,
-    TResult? Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult? Function(ProjectEditEventUpdateState value)? updateState,
-    TResult? Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult? Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
-    return updateZipCode?.call(this);
+    return changeZipCode?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProjectEditEventLoad value)? load,
-    TResult Function(ProjectEditEventUpdateName value)? updateName,
-    TResult Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult Function(ProjectEditEventUpdateState value)? updateState,
-    TResult Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
-    if (updateZipCode != null) {
-      return updateZipCode(this);
+    if (changeZipCode != null) {
+      return changeZipCode(this);
     }
     return orElse();
   }
 }
 
-abstract class ProjectEditEventUpdateZipCode implements ProjectEditEvent {
-  const factory ProjectEditEventUpdateZipCode({required final String value}) =
-      _$ProjectEditEventUpdateZipCodeImpl;
+abstract class ProjectEditEventChangeZipCode implements ProjectEditEvent {
+  const factory ProjectEditEventChangeZipCode({required final String value}) =
+      _$ProjectEditEventChangeZipCodeImpl;
 
   String get value;
   @JsonKey(ignore: true)
-  _$$ProjectEditEventUpdateZipCodeImplCopyWith<
-          _$ProjectEditEventUpdateZipCodeImpl>
+  _$$ProjectEditEventChangeZipCodeImplCopyWith<
+          _$ProjectEditEventChangeZipCodeImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ProjectEditEventUpdateStateImplCopyWith<$Res> {
-  factory _$$ProjectEditEventUpdateStateImplCopyWith(
-          _$ProjectEditEventUpdateStateImpl value,
-          $Res Function(_$ProjectEditEventUpdateStateImpl) then) =
-      __$$ProjectEditEventUpdateStateImplCopyWithImpl<$Res>;
+abstract class _$$ProjectEditEventChangeStateImplCopyWith<$Res> {
+  factory _$$ProjectEditEventChangeStateImplCopyWith(
+          _$ProjectEditEventChangeStateImpl value,
+          $Res Function(_$ProjectEditEventChangeStateImpl) then) =
+      __$$ProjectEditEventChangeStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$ProjectEditEventUpdateStateImplCopyWithImpl<$Res>
+class __$$ProjectEditEventChangeStateImplCopyWithImpl<$Res>
     extends _$ProjectEditEventCopyWithImpl<$Res,
-        _$ProjectEditEventUpdateStateImpl>
-    implements _$$ProjectEditEventUpdateStateImplCopyWith<$Res> {
-  __$$ProjectEditEventUpdateStateImplCopyWithImpl(
-      _$ProjectEditEventUpdateStateImpl _value,
-      $Res Function(_$ProjectEditEventUpdateStateImpl) _then)
+        _$ProjectEditEventChangeStateImpl>
+    implements _$$ProjectEditEventChangeStateImplCopyWith<$Res> {
+  __$$ProjectEditEventChangeStateImplCopyWithImpl(
+      _$ProjectEditEventChangeStateImpl _value,
+      $Res Function(_$ProjectEditEventChangeStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -652,7 +692,7 @@ class __$$ProjectEditEventUpdateStateImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$ProjectEditEventUpdateStateImpl(
+    return _then(_$ProjectEditEventChangeStateImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -663,22 +703,22 @@ class __$$ProjectEditEventUpdateStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProjectEditEventUpdateStateImpl implements ProjectEditEventUpdateState {
-  const _$ProjectEditEventUpdateStateImpl({required this.value});
+class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
+  const _$ProjectEditEventChangeStateImpl({required this.value});
 
   @override
   final String value;
 
   @override
   String toString() {
-    return 'ProjectEditEvent.updateState(value: $value)';
+    return 'ProjectEditEvent.changeState(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProjectEditEventUpdateStateImpl &&
+            other is _$ProjectEditEventChangeStateImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -688,52 +728,59 @@ class _$ProjectEditEventUpdateStateImpl implements ProjectEditEventUpdateState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProjectEditEventUpdateStateImplCopyWith<_$ProjectEditEventUpdateStateImpl>
-      get copyWith => __$$ProjectEditEventUpdateStateImplCopyWithImpl<
-          _$ProjectEditEventUpdateStateImpl>(this, _$identity);
+  _$$ProjectEditEventChangeStateImplCopyWith<_$ProjectEditEventChangeStateImpl>
+      get copyWith => __$$ProjectEditEventChangeStateImplCopyWithImpl<
+          _$ProjectEditEventChangeStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateName,
-    required TResult Function(String value) updateZipCode,
-    required TResult Function(String value) updateState,
-    required TResult Function(String value) updateCity,
-    required TResult Function(String value) updateAddress,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
     required TResult Function(VoidCallback callback) save,
   }) {
-    return updateState(value);
+    return changeState(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateName,
-    TResult? Function(String value)? updateZipCode,
-    TResult? Function(String value)? updateState,
-    TResult? Function(String value)? updateCity,
-    TResult? Function(String value)? updateAddress,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult? Function(VoidCallback callback)? save,
   }) {
-    return updateState?.call(value);
+    return changeState?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateName,
-    TResult Function(String value)? updateZipCode,
-    TResult Function(String value)? updateState,
-    TResult Function(String value)? updateCity,
-    TResult Function(String value)? updateAddress,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
-    if (updateState != null) {
-      return updateState(value);
+    if (changeState != null) {
+      return changeState(value);
     }
     return orElse();
   }
@@ -742,79 +789,82 @@ class _$ProjectEditEventUpdateStateImpl implements ProjectEditEventUpdateState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ProjectEditEventLoad value) load,
-    required TResult Function(ProjectEditEventUpdateName value) updateName,
-    required TResult Function(ProjectEditEventUpdateZipCode value)
-        updateZipCode,
-    required TResult Function(ProjectEditEventUpdateState value) updateState,
-    required TResult Function(ProjectEditEventUpdateCity value) updateCity,
-    required TResult Function(ProjectEditEventUpdateAddress value)
-        updateAddress,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
-    return updateState(this);
+    return changeState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ProjectEditEventLoad value)? load,
-    TResult? Function(ProjectEditEventUpdateName value)? updateName,
-    TResult? Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult? Function(ProjectEditEventUpdateState value)? updateState,
-    TResult? Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult? Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
-    return updateState?.call(this);
+    return changeState?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProjectEditEventLoad value)? load,
-    TResult Function(ProjectEditEventUpdateName value)? updateName,
-    TResult Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult Function(ProjectEditEventUpdateState value)? updateState,
-    TResult Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
-    if (updateState != null) {
-      return updateState(this);
+    if (changeState != null) {
+      return changeState(this);
     }
     return orElse();
   }
 }
 
-abstract class ProjectEditEventUpdateState implements ProjectEditEvent {
-  const factory ProjectEditEventUpdateState({required final String value}) =
-      _$ProjectEditEventUpdateStateImpl;
+abstract class ProjectEditEventChangeState implements ProjectEditEvent {
+  const factory ProjectEditEventChangeState({required final String value}) =
+      _$ProjectEditEventChangeStateImpl;
 
   String get value;
   @JsonKey(ignore: true)
-  _$$ProjectEditEventUpdateStateImplCopyWith<_$ProjectEditEventUpdateStateImpl>
+  _$$ProjectEditEventChangeStateImplCopyWith<_$ProjectEditEventChangeStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ProjectEditEventUpdateCityImplCopyWith<$Res> {
-  factory _$$ProjectEditEventUpdateCityImplCopyWith(
-          _$ProjectEditEventUpdateCityImpl value,
-          $Res Function(_$ProjectEditEventUpdateCityImpl) then) =
-      __$$ProjectEditEventUpdateCityImplCopyWithImpl<$Res>;
+abstract class _$$ProjectEditEventChangeCityImplCopyWith<$Res> {
+  factory _$$ProjectEditEventChangeCityImplCopyWith(
+          _$ProjectEditEventChangeCityImpl value,
+          $Res Function(_$ProjectEditEventChangeCityImpl) then) =
+      __$$ProjectEditEventChangeCityImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$ProjectEditEventUpdateCityImplCopyWithImpl<$Res>
+class __$$ProjectEditEventChangeCityImplCopyWithImpl<$Res>
     extends _$ProjectEditEventCopyWithImpl<$Res,
-        _$ProjectEditEventUpdateCityImpl>
-    implements _$$ProjectEditEventUpdateCityImplCopyWith<$Res> {
-  __$$ProjectEditEventUpdateCityImplCopyWithImpl(
-      _$ProjectEditEventUpdateCityImpl _value,
-      $Res Function(_$ProjectEditEventUpdateCityImpl) _then)
+        _$ProjectEditEventChangeCityImpl>
+    implements _$$ProjectEditEventChangeCityImplCopyWith<$Res> {
+  __$$ProjectEditEventChangeCityImplCopyWithImpl(
+      _$ProjectEditEventChangeCityImpl _value,
+      $Res Function(_$ProjectEditEventChangeCityImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -822,7 +872,7 @@ class __$$ProjectEditEventUpdateCityImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$ProjectEditEventUpdateCityImpl(
+    return _then(_$ProjectEditEventChangeCityImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -833,22 +883,22 @@ class __$$ProjectEditEventUpdateCityImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProjectEditEventUpdateCityImpl implements ProjectEditEventUpdateCity {
-  const _$ProjectEditEventUpdateCityImpl({required this.value});
+class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
+  const _$ProjectEditEventChangeCityImpl({required this.value});
 
   @override
   final String value;
 
   @override
   String toString() {
-    return 'ProjectEditEvent.updateCity(value: $value)';
+    return 'ProjectEditEvent.changeCity(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProjectEditEventUpdateCityImpl &&
+            other is _$ProjectEditEventChangeCityImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -858,52 +908,59 @@ class _$ProjectEditEventUpdateCityImpl implements ProjectEditEventUpdateCity {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProjectEditEventUpdateCityImplCopyWith<_$ProjectEditEventUpdateCityImpl>
-      get copyWith => __$$ProjectEditEventUpdateCityImplCopyWithImpl<
-          _$ProjectEditEventUpdateCityImpl>(this, _$identity);
+  _$$ProjectEditEventChangeCityImplCopyWith<_$ProjectEditEventChangeCityImpl>
+      get copyWith => __$$ProjectEditEventChangeCityImplCopyWithImpl<
+          _$ProjectEditEventChangeCityImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateName,
-    required TResult Function(String value) updateZipCode,
-    required TResult Function(String value) updateState,
-    required TResult Function(String value) updateCity,
-    required TResult Function(String value) updateAddress,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
     required TResult Function(VoidCallback callback) save,
   }) {
-    return updateCity(value);
+    return changeCity(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateName,
-    TResult? Function(String value)? updateZipCode,
-    TResult? Function(String value)? updateState,
-    TResult? Function(String value)? updateCity,
-    TResult? Function(String value)? updateAddress,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult? Function(VoidCallback callback)? save,
   }) {
-    return updateCity?.call(value);
+    return changeCity?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateName,
-    TResult Function(String value)? updateZipCode,
-    TResult Function(String value)? updateState,
-    TResult Function(String value)? updateCity,
-    TResult Function(String value)? updateAddress,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
-    if (updateCity != null) {
-      return updateCity(value);
+    if (changeCity != null) {
+      return changeCity(value);
     }
     return orElse();
   }
@@ -912,79 +969,82 @@ class _$ProjectEditEventUpdateCityImpl implements ProjectEditEventUpdateCity {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ProjectEditEventLoad value) load,
-    required TResult Function(ProjectEditEventUpdateName value) updateName,
-    required TResult Function(ProjectEditEventUpdateZipCode value)
-        updateZipCode,
-    required TResult Function(ProjectEditEventUpdateState value) updateState,
-    required TResult Function(ProjectEditEventUpdateCity value) updateCity,
-    required TResult Function(ProjectEditEventUpdateAddress value)
-        updateAddress,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
-    return updateCity(this);
+    return changeCity(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ProjectEditEventLoad value)? load,
-    TResult? Function(ProjectEditEventUpdateName value)? updateName,
-    TResult? Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult? Function(ProjectEditEventUpdateState value)? updateState,
-    TResult? Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult? Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
-    return updateCity?.call(this);
+    return changeCity?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProjectEditEventLoad value)? load,
-    TResult Function(ProjectEditEventUpdateName value)? updateName,
-    TResult Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult Function(ProjectEditEventUpdateState value)? updateState,
-    TResult Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
-    if (updateCity != null) {
-      return updateCity(this);
+    if (changeCity != null) {
+      return changeCity(this);
     }
     return orElse();
   }
 }
 
-abstract class ProjectEditEventUpdateCity implements ProjectEditEvent {
-  const factory ProjectEditEventUpdateCity({required final String value}) =
-      _$ProjectEditEventUpdateCityImpl;
+abstract class ProjectEditEventChangeCity implements ProjectEditEvent {
+  const factory ProjectEditEventChangeCity({required final String value}) =
+      _$ProjectEditEventChangeCityImpl;
 
   String get value;
   @JsonKey(ignore: true)
-  _$$ProjectEditEventUpdateCityImplCopyWith<_$ProjectEditEventUpdateCityImpl>
+  _$$ProjectEditEventChangeCityImplCopyWith<_$ProjectEditEventChangeCityImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ProjectEditEventUpdateAddressImplCopyWith<$Res> {
-  factory _$$ProjectEditEventUpdateAddressImplCopyWith(
-          _$ProjectEditEventUpdateAddressImpl value,
-          $Res Function(_$ProjectEditEventUpdateAddressImpl) then) =
-      __$$ProjectEditEventUpdateAddressImplCopyWithImpl<$Res>;
+abstract class _$$ProjectEditEventChangeAddressImplCopyWith<$Res> {
+  factory _$$ProjectEditEventChangeAddressImplCopyWith(
+          _$ProjectEditEventChangeAddressImpl value,
+          $Res Function(_$ProjectEditEventChangeAddressImpl) then) =
+      __$$ProjectEditEventChangeAddressImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$ProjectEditEventUpdateAddressImplCopyWithImpl<$Res>
+class __$$ProjectEditEventChangeAddressImplCopyWithImpl<$Res>
     extends _$ProjectEditEventCopyWithImpl<$Res,
-        _$ProjectEditEventUpdateAddressImpl>
-    implements _$$ProjectEditEventUpdateAddressImplCopyWith<$Res> {
-  __$$ProjectEditEventUpdateAddressImplCopyWithImpl(
-      _$ProjectEditEventUpdateAddressImpl _value,
-      $Res Function(_$ProjectEditEventUpdateAddressImpl) _then)
+        _$ProjectEditEventChangeAddressImpl>
+    implements _$$ProjectEditEventChangeAddressImplCopyWith<$Res> {
+  __$$ProjectEditEventChangeAddressImplCopyWithImpl(
+      _$ProjectEditEventChangeAddressImpl _value,
+      $Res Function(_$ProjectEditEventChangeAddressImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -992,7 +1052,7 @@ class __$$ProjectEditEventUpdateAddressImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$ProjectEditEventUpdateAddressImpl(
+    return _then(_$ProjectEditEventChangeAddressImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -1003,23 +1063,23 @@ class __$$ProjectEditEventUpdateAddressImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProjectEditEventUpdateAddressImpl
-    implements ProjectEditEventUpdateAddress {
-  const _$ProjectEditEventUpdateAddressImpl({required this.value});
+class _$ProjectEditEventChangeAddressImpl
+    implements ProjectEditEventChangeAddress {
+  const _$ProjectEditEventChangeAddressImpl({required this.value});
 
   @override
   final String value;
 
   @override
   String toString() {
-    return 'ProjectEditEvent.updateAddress(value: $value)';
+    return 'ProjectEditEvent.changeAddress(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProjectEditEventUpdateAddressImpl &&
+            other is _$ProjectEditEventChangeAddressImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -1029,53 +1089,60 @@ class _$ProjectEditEventUpdateAddressImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProjectEditEventUpdateAddressImplCopyWith<
-          _$ProjectEditEventUpdateAddressImpl>
-      get copyWith => __$$ProjectEditEventUpdateAddressImplCopyWithImpl<
-          _$ProjectEditEventUpdateAddressImpl>(this, _$identity);
+  _$$ProjectEditEventChangeAddressImplCopyWith<
+          _$ProjectEditEventChangeAddressImpl>
+      get copyWith => __$$ProjectEditEventChangeAddressImplCopyWithImpl<
+          _$ProjectEditEventChangeAddressImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateName,
-    required TResult Function(String value) updateZipCode,
-    required TResult Function(String value) updateState,
-    required TResult Function(String value) updateCity,
-    required TResult Function(String value) updateAddress,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
     required TResult Function(VoidCallback callback) save,
   }) {
-    return updateAddress(value);
+    return changeAddress(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateName,
-    TResult? Function(String value)? updateZipCode,
-    TResult? Function(String value)? updateState,
-    TResult? Function(String value)? updateCity,
-    TResult? Function(String value)? updateAddress,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult? Function(VoidCallback callback)? save,
   }) {
-    return updateAddress?.call(value);
+    return changeAddress?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateName,
-    TResult Function(String value)? updateZipCode,
-    TResult Function(String value)? updateState,
-    TResult Function(String value)? updateCity,
-    TResult Function(String value)? updateAddress,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
-    if (updateAddress != null) {
-      return updateAddress(value);
+    if (changeAddress != null) {
+      return changeAddress(value);
     }
     return orElse();
   }
@@ -1084,59 +1151,271 @@ class _$ProjectEditEventUpdateAddressImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ProjectEditEventLoad value) load,
-    required TResult Function(ProjectEditEventUpdateName value) updateName,
-    required TResult Function(ProjectEditEventUpdateZipCode value)
-        updateZipCode,
-    required TResult Function(ProjectEditEventUpdateState value) updateState,
-    required TResult Function(ProjectEditEventUpdateCity value) updateCity,
-    required TResult Function(ProjectEditEventUpdateAddress value)
-        updateAddress,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
-    return updateAddress(this);
+    return changeAddress(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ProjectEditEventLoad value)? load,
-    TResult? Function(ProjectEditEventUpdateName value)? updateName,
-    TResult? Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult? Function(ProjectEditEventUpdateState value)? updateState,
-    TResult? Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult? Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
-    return updateAddress?.call(this);
+    return changeAddress?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProjectEditEventLoad value)? load,
-    TResult Function(ProjectEditEventUpdateName value)? updateName,
-    TResult Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult Function(ProjectEditEventUpdateState value)? updateState,
-    TResult Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
-    if (updateAddress != null) {
-      return updateAddress(this);
+    if (changeAddress != null) {
+      return changeAddress(this);
     }
     return orElse();
   }
 }
 
-abstract class ProjectEditEventUpdateAddress implements ProjectEditEvent {
-  const factory ProjectEditEventUpdateAddress({required final String value}) =
-      _$ProjectEditEventUpdateAddressImpl;
+abstract class ProjectEditEventChangeAddress implements ProjectEditEvent {
+  const factory ProjectEditEventChangeAddress({required final String value}) =
+      _$ProjectEditEventChangeAddressImpl;
 
   String get value;
   @JsonKey(ignore: true)
-  _$$ProjectEditEventUpdateAddressImplCopyWith<
-          _$ProjectEditEventUpdateAddressImpl>
+  _$$ProjectEditEventChangeAddressImplCopyWith<
+          _$ProjectEditEventChangeAddressImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProjectEditEventChangeClientImplCopyWith<$Res> {
+  factory _$$ProjectEditEventChangeClientImplCopyWith(
+          _$ProjectEditEventChangeClientImpl value,
+          $Res Function(_$ProjectEditEventChangeClientImpl) then) =
+      __$$ProjectEditEventChangeClientImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String clientId, String firstName, String lastName});
+}
+
+/// @nodoc
+class __$$ProjectEditEventChangeClientImplCopyWithImpl<$Res>
+    extends _$ProjectEditEventCopyWithImpl<$Res,
+        _$ProjectEditEventChangeClientImpl>
+    implements _$$ProjectEditEventChangeClientImplCopyWith<$Res> {
+  __$$ProjectEditEventChangeClientImplCopyWithImpl(
+      _$ProjectEditEventChangeClientImpl _value,
+      $Res Function(_$ProjectEditEventChangeClientImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? clientId = null,
+    Object? firstName = null,
+    Object? lastName = null,
+  }) {
+    return _then(_$ProjectEditEventChangeClientImpl(
+      clientId: null == clientId
+          ? _value.clientId
+          : clientId // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProjectEditEventChangeClientImpl
+    implements ProjectEditEventChangeClient {
+  const _$ProjectEditEventChangeClientImpl(
+      {required this.clientId,
+      required this.firstName,
+      required this.lastName});
+
+  @override
+  final String clientId;
+  @override
+  final String firstName;
+  @override
+  final String lastName;
+
+  @override
+  String toString() {
+    return 'ProjectEditEvent.changeClient(clientId: $clientId, firstName: $firstName, lastName: $lastName)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProjectEditEventChangeClientImpl &&
+            (identical(other.clientId, clientId) ||
+                other.clientId == clientId) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, clientId, firstName, lastName);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProjectEditEventChangeClientImplCopyWith<
+          _$ProjectEditEventChangeClientImpl>
+      get copyWith => __$$ProjectEditEventChangeClientImplCopyWithImpl<
+          _$ProjectEditEventChangeClientImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeClient(clientId, firstName, lastName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeClient?.call(clientId, firstName, lastName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeClient != null) {
+      return changeClient(clientId, firstName, lastName);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectEditEventLoad value) load,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventSave value) save,
+  }) {
+    return changeClient(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectEditEventLoad value)? load,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventSave value)? save,
+  }) {
+    return changeClient?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectEditEventLoad value)? load,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeClient != null) {
+      return changeClient(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProjectEditEventChangeClient implements ProjectEditEvent {
+  const factory ProjectEditEventChangeClient(
+      {required final String clientId,
+      required final String firstName,
+      required final String lastName}) = _$ProjectEditEventChangeClientImpl;
+
+  String get clientId;
+  String get firstName;
+  String get lastName;
+  @JsonKey(ignore: true)
+  _$$ProjectEditEventChangeClientImplCopyWith<
+          _$ProjectEditEventChangeClientImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1208,11 +1487,14 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
-    required TResult Function(String value) updateName,
-    required TResult Function(String value) updateZipCode,
-    required TResult Function(String value) updateState,
-    required TResult Function(String value) updateCity,
-    required TResult Function(String value) updateAddress,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
     required TResult Function(VoidCallback callback) save,
   }) {
     return save(callback);
@@ -1222,11 +1504,13 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
-    TResult? Function(String value)? updateName,
-    TResult? Function(String value)? updateZipCode,
-    TResult? Function(String value)? updateState,
-    TResult? Function(String value)? updateCity,
-    TResult? Function(String value)? updateAddress,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult? Function(VoidCallback callback)? save,
   }) {
     return save?.call(callback);
@@ -1236,11 +1520,13 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
-    TResult Function(String value)? updateName,
-    TResult Function(String value)? updateZipCode,
-    TResult Function(String value)? updateState,
-    TResult Function(String value)? updateCity,
-    TResult Function(String value)? updateAddress,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -1254,13 +1540,14 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ProjectEditEventLoad value) load,
-    required TResult Function(ProjectEditEventUpdateName value) updateName,
-    required TResult Function(ProjectEditEventUpdateZipCode value)
-        updateZipCode,
-    required TResult Function(ProjectEditEventUpdateState value) updateState,
-    required TResult Function(ProjectEditEventUpdateCity value) updateCity,
-    required TResult Function(ProjectEditEventUpdateAddress value)
-        updateAddress,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
     return save(this);
@@ -1270,11 +1557,12 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ProjectEditEventLoad value)? load,
-    TResult? Function(ProjectEditEventUpdateName value)? updateName,
-    TResult? Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult? Function(ProjectEditEventUpdateState value)? updateState,
-    TResult? Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult? Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
     return save?.call(this);
@@ -1284,11 +1572,12 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProjectEditEventLoad value)? load,
-    TResult Function(ProjectEditEventUpdateName value)? updateName,
-    TResult Function(ProjectEditEventUpdateZipCode value)? updateZipCode,
-    TResult Function(ProjectEditEventUpdateState value)? updateState,
-    TResult Function(ProjectEditEventUpdateCity value)? updateCity,
-    TResult Function(ProjectEditEventUpdateAddress value)? updateAddress,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -1315,21 +1604,25 @@ mixin _$ProjectEditState {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(CrudType type, Project project) loaded,
+    required TResult Function(
+            CrudType type, Project project, List<Client> clients)
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType type, Project project)? loaded,
+    TResult? Function(CrudType type, Project project, List<Client> clients)?
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType type, Project project)? loaded,
+    TResult Function(CrudType type, Project project, List<Client> clients)?
+        loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1417,7 +1710,9 @@ class _$ProjectEditStateEmptyImpl implements ProjectEditStateEmpty {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(CrudType type, Project project) loaded,
+    required TResult Function(
+            CrudType type, Project project, List<Client> clients)
+        loaded,
   }) {
     return empty();
   }
@@ -1427,7 +1722,8 @@ class _$ProjectEditStateEmptyImpl implements ProjectEditStateEmpty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType type, Project project)? loaded,
+    TResult? Function(CrudType type, Project project, List<Client> clients)?
+        loaded,
   }) {
     return empty?.call();
   }
@@ -1437,7 +1733,8 @@ class _$ProjectEditStateEmptyImpl implements ProjectEditStateEmpty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType type, Project project)? loaded,
+    TResult Function(CrudType type, Project project, List<Client> clients)?
+        loaded,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -1528,7 +1825,9 @@ class _$ProjectEditStateLoadingImpl implements ProjectEditStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(CrudType type, Project project) loaded,
+    required TResult Function(
+            CrudType type, Project project, List<Client> clients)
+        loaded,
   }) {
     return loading();
   }
@@ -1538,7 +1837,8 @@ class _$ProjectEditStateLoadingImpl implements ProjectEditStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType type, Project project)? loaded,
+    TResult? Function(CrudType type, Project project, List<Client> clients)?
+        loaded,
   }) {
     return loading?.call();
   }
@@ -1548,7 +1848,8 @@ class _$ProjectEditStateLoadingImpl implements ProjectEditStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType type, Project project)? loaded,
+    TResult Function(CrudType type, Project project, List<Client> clients)?
+        loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1603,7 +1904,7 @@ abstract class _$$ProjectEditStateLoadedImplCopyWith<$Res> {
           $Res Function(_$ProjectEditStateLoadedImpl) then) =
       __$$ProjectEditStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({CrudType type, Project project});
+  $Res call({CrudType type, Project project, List<Client> clients});
 
   $CrudTypeCopyWith<$Res> get type;
   $ProjectCopyWith<$Res> get project;
@@ -1623,6 +1924,7 @@ class __$$ProjectEditStateLoadedImplCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
     Object? project = null,
+    Object? clients = null,
   }) {
     return _then(_$ProjectEditStateLoadedImpl(
       type: null == type
@@ -1633,6 +1935,10 @@ class __$$ProjectEditStateLoadedImplCopyWithImpl<$Res>
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project,
+      clients: null == clients
+          ? _value._clients
+          : clients // ignore: cast_nullable_to_non_nullable
+              as List<Client>,
     ));
   }
 
@@ -1657,16 +1963,26 @@ class __$$ProjectEditStateLoadedImplCopyWithImpl<$Res>
 
 class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
   const _$ProjectEditStateLoadedImpl(
-      {required this.type, required this.project});
+      {required this.type,
+      required this.project,
+      required final List<Client> clients})
+      : _clients = clients;
 
   @override
   final CrudType type;
   @override
   final Project project;
+  final List<Client> _clients;
+  @override
+  List<Client> get clients {
+    if (_clients is EqualUnmodifiableListView) return _clients;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_clients);
+  }
 
   @override
   String toString() {
-    return 'ProjectEditState.loaded(type: $type, project: $project)';
+    return 'ProjectEditState.loaded(type: $type, project: $project, clients: $clients)';
   }
 
   @override
@@ -1675,11 +1991,13 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
         (other.runtimeType == runtimeType &&
             other is _$ProjectEditStateLoadedImpl &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.project, project) || other.project == project));
+            (identical(other.project, project) || other.project == project) &&
+            const DeepCollectionEquality().equals(other._clients, _clients));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, project);
+  int get hashCode => Object.hash(runtimeType, type, project,
+      const DeepCollectionEquality().hash(_clients));
 
   @JsonKey(ignore: true)
   @override
@@ -1693,9 +2011,11 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(CrudType type, Project project) loaded,
+    required TResult Function(
+            CrudType type, Project project, List<Client> clients)
+        loaded,
   }) {
-    return loaded(type, project);
+    return loaded(type, project, clients);
   }
 
   @override
@@ -1703,9 +2023,10 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType type, Project project)? loaded,
+    TResult? Function(CrudType type, Project project, List<Client> clients)?
+        loaded,
   }) {
-    return loaded?.call(type, project);
+    return loaded?.call(type, project, clients);
   }
 
   @override
@@ -1713,11 +2034,12 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType type, Project project)? loaded,
+    TResult Function(CrudType type, Project project, List<Client> clients)?
+        loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(type, project);
+      return loaded(type, project, clients);
     }
     return orElse();
   }
@@ -1760,10 +2082,12 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
 abstract class ProjectEditStateLoaded implements ProjectEditState {
   const factory ProjectEditStateLoaded(
       {required final CrudType type,
-      required final Project project}) = _$ProjectEditStateLoadedImpl;
+      required final Project project,
+      required final List<Client> clients}) = _$ProjectEditStateLoadedImpl;
 
   CrudType get type;
   Project get project;
+  List<Client> get clients;
   @JsonKey(ignore: true)
   _$$ProjectEditStateLoadedImplCopyWith<_$ProjectEditStateLoadedImpl>
       get copyWith => throw _privateConstructorUsedError;

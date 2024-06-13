@@ -7,6 +7,7 @@ class ProjectEditState with _$ProjectEditState {
   const factory ProjectEditState.loaded({
     required CrudType type,
     required Project project,
+    required List<Client> clients,
   }) = ProjectEditStateLoaded;
 }
 

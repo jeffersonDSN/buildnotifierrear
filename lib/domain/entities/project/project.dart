@@ -9,6 +9,9 @@ class Project with _$Project {
   const factory Project({
     @Default('') String id,
     @Default('') String name,
+    @Default('') String clientId,
+    @Default('') String clientFirstname,
+    @Default('') String clientLastname,
     @Default('') String zipCode,
     @Default('') String state,
     @Default('') String city,

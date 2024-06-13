@@ -6,25 +6,31 @@ class ProjectEditEvent with _$ProjectEditEvent {
     required CrudType type,
   }) = ProjectEditEventLoad;
 
-  const factory ProjectEditEvent.updateName({
+  const factory ProjectEditEvent.changeName({
     required String value,
-  }) = ProjectEditEventUpdateName;
+  }) = ProjectEditEventChangeName;
 
-  const factory ProjectEditEvent.updateZipCode({
+  const factory ProjectEditEvent.changeZipCode({
     required String value,
-  }) = ProjectEditEventUpdateZipCode;
+  }) = ProjectEditEventChangeZipCode;
 
-  const factory ProjectEditEvent.updateState({
+  const factory ProjectEditEvent.changeState({
     required String value,
-  }) = ProjectEditEventUpdateState;
+  }) = ProjectEditEventChangeState;
 
-  const factory ProjectEditEvent.updateCity({
+  const factory ProjectEditEvent.changeCity({
     required String value,
-  }) = ProjectEditEventUpdateCity;
+  }) = ProjectEditEventChangeCity;
 
-  const factory ProjectEditEvent.updateAddress({
+  const factory ProjectEditEvent.changeAddress({
     required String value,
-  }) = ProjectEditEventUpdateAddress;
+  }) = ProjectEditEventChangeAddress;
+
+  const factory ProjectEditEvent.changeClient({
+    required String clientId,
+    required String firstName,
+    required String lastName,
+  }) = ProjectEditEventChangeClient;
 
   const factory ProjectEditEvent.save({
     required VoidCallback callback,

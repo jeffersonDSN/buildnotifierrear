@@ -1,4 +1,6 @@
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/projects_controller.dart';
+import 'package:buildnotifierrear/domain/entities/client/client.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
 import 'package:flutter/material.dart';
@@ -10,9 +12,11 @@ part 'project_edit_event.dart';
 part 'project_edit_state.dart';
 
 class ProjectEditBloc extends Bloc<ProjectEditEvent, ProjectEditState> {
-  ProjectEditBloc({
-    required CRUDController<Project> controller,
-  }) : super(
+  ProjectEditBloc(
+      {required ProjectsController controller,
+      required CRUDController<Client> clientsController,
+      required})
+      : super(
           const ProjectEditState.empty(),
         ) {
     on<ProjectEditEvent>((event, emit) async {
@@ -29,14 +33,14 @@ class ProjectEditBloc extends Bloc<ProjectEditEvent, ProjectEditState> {
             },
           );
 
+          var clients = await clientsController.getAll();
+
           emit(
             ProjectEditState.loaded(
-              type: type,
-              project: result,
-            ),
+                type: type, project: result, clients: clients),
           );
         },
-        updateName: (value) {
+        changeName: (value) {
           emit(
             state.asLoaded.copyWith(
               project: state.asLoaded.project.copyWith(
@@ -45,7 +49,18 @@ class ProjectEditBloc extends Bloc<ProjectEditEvent, ProjectEditState> {
             ),
           );
         },
-        updateZipCode: (value) {
+        changeClient: (clientId, firstName, lastName) {
+          emit(
+            state.asLoaded.copyWith(
+              project: state.asLoaded.project.copyWith(
+                clientId: clientId,
+                clientFirstname: firstName,
+                clientLastname: lastName,
+              ),
+            ),
+          );
+        },
+        changeZipCode: (value) {
           emit(
             state.asLoaded.copyWith(
               project: state.asLoaded.project.copyWith(
@@ -54,7 +69,7 @@ class ProjectEditBloc extends Bloc<ProjectEditEvent, ProjectEditState> {
             ),
           );
         },
-        updateState: (value) {
+        changeState: (value) {
           emit(
             state.asLoaded.copyWith(
               project: state.asLoaded.project.copyWith(
@@ -63,7 +78,7 @@ class ProjectEditBloc extends Bloc<ProjectEditEvent, ProjectEditState> {
             ),
           );
         },
-        updateCity: (value) {
+        changeCity: (value) {
           emit(
             state.asLoaded.copyWith(
               project: state.asLoaded.project.copyWith(
@@ -72,7 +87,7 @@ class ProjectEditBloc extends Bloc<ProjectEditEvent, ProjectEditState> {
             ),
           );
         },
-        updateAddress: (value) {
+        changeAddress: (value) {
           emit(
             state.asLoaded.copyWith(
               project: state.asLoaded.project.copyWith(
