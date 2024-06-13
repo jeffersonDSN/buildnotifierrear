@@ -216,6 +216,48 @@ class ScheduleEditBloc extends Bloc<ScheduleEditEvent, ScheduleEditState> {
             ),
           );
         },
+        changeSelectedAppointmentDate: (value) {
+          var selectedAppointment = state.asLoaded.selectedAppointment;
+
+          emit(
+            state.asLoaded.copyWith(
+              appointments: state.asLoaded.appointments.map((appointment) {
+                if (appointment == state.asLoaded.selectedAppointment) {
+                  return appointment.copyWith(
+                    startDateTime: value.add(
+                      Duration(
+                        hours: appointment.startDateTime.hour,
+                        milliseconds: appointment.startDateTime.minute,
+                      ),
+                    ),
+                    endDateTime: value.add(
+                      Duration(
+                        hours: appointment.endDateTime.hour,
+                        milliseconds: appointment.endDateTime.minute,
+                      ),
+                    ),
+                  );
+                } else {
+                  return appointment;
+                }
+              }).toList(),
+              selectedAppointment: selectedAppointment?.copyWith(
+                startDateTime: value.add(
+                  Duration(
+                    hours: selectedAppointment.startDateTime.hour,
+                    milliseconds: selectedAppointment.startDateTime.minute,
+                  ),
+                ),
+                endDateTime: value.add(
+                  Duration(
+                    hours: selectedAppointment.endDateTime.hour,
+                    milliseconds: selectedAppointment.endDateTime.minute,
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
         removeSelectedAppointmentAssignTo: (user) {
           var list = [...state.asLoaded.selectedAppointment!.assignTo];
           list.remove(user);

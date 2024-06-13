@@ -100,6 +100,46 @@ class ScheduleEditView extends IView {
                                       );
                                     }
                                   },
+                                  onPressedAddPeriod: (value) {
+                                    bloc.add(
+                                      ScheduleEditEvent.addDate(
+                                        date: value.endDateTime.add(
+                                          const Duration(
+                                            hours: 1,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  onPressedRemoveAppointment: (value) {
+                                    bloc.add(
+                                      ScheduleEditEvent.remodeAppointment(
+                                        value: value,
+                                      ),
+                                    );
+                                  },
+                                  onChangeSelectedAppointment: (value) {
+                                    bloc.add(
+                                      ScheduleEditEvent
+                                          .changeSelectedAppointment(
+                                        value: value,
+                                      ),
+                                    );
+                                  },
+                                  onPressedAddAdd: (value) {
+                                    bloc.add(
+                                      ScheduleEditEvent.addDate(
+                                        date: value,
+                                      ),
+                                    );
+                                  },
+                                  onChangeDate: (value) {
+                                    bloc.add(
+                                      ScheduleEditEvent
+                                          .changeSelectedAppointmentDate(
+                                              value: value),
+                                    );
+                                  },
                                 ),
                               ),
                               gapWidth16,

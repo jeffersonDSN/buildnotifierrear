@@ -10,6 +10,11 @@ class AppointmentDatesForm extends StatelessWidget {
   final List<Appointment> appointments;
   final Appointment selectedAppointment;
   final ValueChanged<SchedulePeriodType?> onChangedPeriodType;
+  final ValueChanged<Appointment> onPressedAddPeriod;
+  final ValueChanged<Appointment> onPressedRemoveAppointment;
+  final ValueChanged<Appointment> onChangeSelectedAppointment;
+  final ValueChanged<DateTime> onPressedAddAdd;
+  final ValueChanged<DateTime> onChangeDate;
 
   AppointmentDatesForm({
     super.key,
@@ -17,6 +22,11 @@ class AppointmentDatesForm extends StatelessWidget {
     required this.appointments,
     required this.selectedAppointment,
     required this.onChangedPeriodType,
+    required this.onPressedAddPeriod,
+    required this.onPressedRemoveAppointment,
+    required this.onChangeSelectedAppointment,
+    required this.onPressedAddAdd,
+    required this.onChangeDate,
   });
 
   final DateFormat hourFormat = DateFormat.jm();
@@ -24,6 +34,15 @@ class AppointmentDatesForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Future<DateTime?> getDate() async {
+      return showDatePicker(
+        context: context,
+        firstDate: DateTime.utc(2010, 10, 16),
+        lastDate: DateTime.utc(2030, 3, 14),
+        initialDate: DateTime.now(),
+      );
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -53,6 +72,12 @@ class AppointmentDatesForm extends StatelessWidget {
             children: [
               ...appointments.map(
                 (appointment) {
+                  TextEditingController dateController = TextEditingController(
+                    text: dayFormat.format(
+                      appointment.startDateTime,
+                    ),
+                  );
+
                   return InkWell(
                     child: Padding(
                       padding: const EdgeInsets.all(
@@ -65,24 +90,23 @@ class AppointmentDatesForm extends StatelessWidget {
                             child: TextFormField(
                               readOnly: true,
                               enabled: appointment == selectedAppointment,
-                              initialValue: dayFormat.format(
-                                appointment.startDateTime,
-                              ),
-                              decoration: const InputDecoration(
+                              controller: dateController,
+                              decoration: InputDecoration(
                                 labelText: 'Date',
+                                suffixIcon: IconButton(
+                                  icon: const Icon(
+                                    Icons.calendar_month,
+                                    color: AppColor.primaryColorSwatch,
+                                  ),
+                                  onPressed: () async {
+                                    var date = await getDate();
+
+                                    if (date != null) {
+                                      onChangeDate.call(date);
+                                    }
+                                  },
+                                ),
                               ),
-                              onTap: () async {
-                                var picked = await showDatePicker(
-                                  context: context,
-                                  initialDate: DateTime.now(),
-                                  firstDate: DateTime(
-                                    2000,
-                                  ),
-                                  lastDate: DateTime(
-                                    2101,
-                                  ),
-                                );
-                              },
                             ),
                           ),
                           gapWidth4,
@@ -118,15 +142,7 @@ class AppointmentDatesForm extends StatelessWidget {
                                 color: AppColor.primaryColorSwatch,
                               ),
                               onPressed: () {
-                                bloc.add(
-                                  ScheduleEditEvent.addDate(
-                                    date: appointment.endDateTime.add(
-                                      const Duration(
-                                        hours: 1,
-                                      ),
-                                    ),
-                                  ),
-                                );
+                                onPressedAddPeriod.call(appointment);
                               },
                             ),
                           ),
@@ -136,11 +152,7 @@ class AppointmentDatesForm extends StatelessWidget {
                               color: AppColor.red,
                             ),
                             onPressed: () {
-                              bloc.add(
-                                ScheduleEditEvent.remodeAppointment(
-                                  value: appointment,
-                                ),
-                              );
+                              onPressedRemoveAppointment.call(appointment);
                             },
                           ),
                           Icon(
@@ -153,11 +165,7 @@ class AppointmentDatesForm extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      bloc.add(
-                        ScheduleEditEvent.changeSelectedAppointment(
-                          value: appointment,
-                        ),
-                      );
+                      onChangeSelectedAppointment.call(appointment);
                     },
                   );
                 },
@@ -172,27 +180,10 @@ class AppointmentDatesForm extends StatelessWidget {
                       TextButton(
                         child: const Text('Add a day'),
                         onPressed: () async {
-                          var selectedDay = await showDatePicker(
-                            context: context,
-                            firstDate: DateTime.utc(
-                              2010,
-                              10,
-                              16,
-                            ),
-                            lastDate: DateTime.utc(
-                              2030,
-                              3,
-                              14,
-                            ),
-                            initialDate: DateTime.now(),
-                          );
+                          var selectedDay = await getDate();
 
                           if (selectedDay != null) {
-                            bloc.add(
-                              ScheduleEditEvent.addDate(
-                                date: selectedDay,
-                              ),
-                            );
+                            onPressedAddAdd.call(selectedDay);
                           }
                         },
                       ),
