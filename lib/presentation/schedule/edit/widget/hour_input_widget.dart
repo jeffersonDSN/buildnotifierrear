@@ -136,6 +136,7 @@ class _HourInputWidgetState extends State<HourInputWidget> {
           SizedBox(
             width: Sizes.size68,
             child: PopupMenuButton(
+              enabled: widget.enabled,
               tooltip: '',
               initialValue: ampm,
               icon: Row(
@@ -143,7 +144,10 @@ class _HourInputWidgetState extends State<HourInputWidget> {
                 children: [
                   Text(
                     ampm,
-                    style: const TextStyle(fontSize: 14),
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: widget.enabled ? Colors.black : Colors.grey,
+                    ),
                   ),
                   gapWidth4,
                   const Icon(
