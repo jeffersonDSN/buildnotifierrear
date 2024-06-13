@@ -38,96 +38,94 @@ class AppointmentDetailsForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        children: [
-          TextFormField(
-            decoration: const InputDecoration(
-              labelText: 'Title',
-            ),
-            controller: titleController,
-            onChanged: onChangedTitle,
+    return Column(
+      children: [
+        TextFormField(
+          decoration: const InputDecoration(
+            labelText: 'Title',
           ),
-          gapHeight8,
-          DropdownButtonFormField<({String id, String name})>(
-            decoration: const InputDecoration(
-              labelText: 'Project',
+          controller: titleController,
+          onChanged: onChangedTitle,
+        ),
+        gapHeight8,
+        DropdownButtonFormField<({String id, String name})>(
+          decoration: const InputDecoration(
+            labelText: 'Project',
+          ),
+          isExpanded: true,
+          value: (
+            id: project.id,
+            name: project.name,
+          ),
+          items: [
+            const DropdownMenuItem(
+              value: (id: '', name: ''),
+              child: Text(''),
             ),
-            isExpanded: true,
-            value: (
-              id: project.id,
-              name: project.name,
+            ...projects.map((project) {
+              return DropdownMenuItem(
+                value: (
+                  id: project.id,
+                  name: project.name,
+                ),
+                child: Text(project.name),
+              );
+            }),
+          ],
+          onChanged: (value) {
+            if (value != null) {
+              onChangedProject.call(value);
+            }
+          },
+        ),
+        gapHeight8,
+        DropdownButtonFormField<({String id, String title})>(
+          decoration: const InputDecoration(
+            labelText: 'Task',
+          ),
+          isExpanded: true,
+          value: (
+            id: task.id,
+            title: task.title,
+          ),
+          items: [
+            const DropdownMenuItem(
+              value: (id: '', title: ''),
+              child: Text(''),
             ),
-            items: [
-              const DropdownMenuItem(
-                value: (id: '', name: ''),
-                child: Text(''),
-              ),
-              ...projects.map((project) {
+            ...tasks.map(
+              (task) {
                 return DropdownMenuItem(
-                  value: (
-                    id: project.id,
-                    name: project.name,
-                  ),
-                  child: Text(project.name),
+                  value: (id: task.id, title: task.title),
+                  child: Text(task.title),
                 );
-              }),
-            ],
-            onChanged: (value) {
-              if (value != null) {
-                onChangedProject.call(value);
-              }
-            },
-          ),
-          gapHeight8,
-          DropdownButtonFormField<({String id, String title})>(
-            decoration: const InputDecoration(
-              labelText: 'Task',
+              },
             ),
-            isExpanded: true,
-            value: (
-              id: task.id,
-              title: task.title,
-            ),
-            items: [
-              const DropdownMenuItem(
-                value: (id: '', title: ''),
-                child: Text(''),
-              ),
-              ...tasks.map(
-                (task) {
-                  return DropdownMenuItem(
-                    value: (id: task.id, title: task.title),
-                    child: Text(task.title),
-                  );
-                },
-              ),
-            ],
-            onChanged: (value) {
-              if (value != null) {
-                onChangedTask.call(value);
-              }
-            },
+          ],
+          onChanged: (value) {
+            if (value != null) {
+              onChangedTask.call(value);
+            }
+          },
+        ),
+        gapHeight8,
+        TextFormField(
+          decoration: const InputDecoration(
+            labelText: 'Location',
           ),
-          gapHeight8,
-          TextFormField(
-            decoration: const InputDecoration(
-              labelText: 'Location',
-            ),
-            controller: locationController,
-            onChanged: onChangedLocation,
+          controller: locationController,
+          onChanged: onChangedLocation,
+        ),
+        gapHeight8,
+        TextFormField(
+          maxLines: 3,
+          decoration: const InputDecoration(
+            labelText: 'Description',
           ),
-          gapHeight8,
-          TextFormField(
-            maxLines: 3,
-            decoration: const InputDecoration(
-              labelText: 'Description',
-            ),
-            controller: descriptionController,
-            onChanged: onChangedDescription,
-          ),
-        ],
-      ),
+          controller: descriptionController,
+          onChanged: onChangedDescription,
+        ),
+      ],
     );
   }
 }

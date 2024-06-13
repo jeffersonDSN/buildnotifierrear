@@ -121,6 +121,23 @@ class ScheduleEditBloc extends Bloc<ScheduleEditEvent, ScheduleEditState> {
         },
         changeSelectedAppointmentProject: (id, valeu) async {
           var tasks = await tasksController.getAllByProject(id);
+          var project = state.asLoaded.projects.where((project) {
+            return project.id == id;
+          }).firstOrNull;
+
+          var location = '';
+          if (project != null) {
+            location = project.address;
+            location += location.isNotEmpty && project.city.isNotEmpty
+                ? ', ${project.city}'
+                : project.city;
+            location += location.isNotEmpty && project.state.isNotEmpty
+                ? ', ${project.state}'
+                : project.state;
+            location += location.isNotEmpty && project.zipCode.isNotEmpty
+                ? ', ${project.zipCode}'
+                : project.zipCode;
+          }
 
           emit(
             state.asLoaded.copyWith(
@@ -131,6 +148,7 @@ class ScheduleEditBloc extends Bloc<ScheduleEditEvent, ScheduleEditState> {
                     projectName: valeu,
                     taskId: '',
                     taskName: '',
+                    location: location,
                   );
                 } else {
                   return appointment;
@@ -141,6 +159,7 @@ class ScheduleEditBloc extends Bloc<ScheduleEditEvent, ScheduleEditState> {
                 projectName: valeu,
                 taskId: '',
                 taskName: '',
+                location: location,
               ),
               tasks: tasks,
             ),
