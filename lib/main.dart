@@ -2,7 +2,8 @@ import 'package:buildnotifierrear/firebase_options.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/lading/page/lading_page.dart';
-import 'package:buildnotifierrear/presentation/sign_in/sign_in.dart';
+import 'package:buildnotifierrear/presentation/sign/sign_in/sign_in.dart';
+import 'package:buildnotifierrear/presentation/sign/sign_up/sign_up.dart';
 import 'package:buildnotifierrear/presentation/theme/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +56,8 @@ class MyApp extends StatelessWidget {
         bloc: BlocProvider.of<AppBloc>(context),
         builder: (context, state) {
           return state.when(
-            empty: () => const SignIn(),
+            signIn: () => const SignIn(),
+            signUp: () => const SignUp(),
             logged: (user, mod) => LandingPage(
               bloc: BlocProvider.of<AppBloc>(context),
               child: mod.view(),

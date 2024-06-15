@@ -8,7 +8,7 @@ part 'app_event.dart';
 part 'app_state.dart';
 
 class AppBloc extends Bloc<AppEvent, AppState> {
-  AppBloc() : super(const AppState.empty()) {
+  AppBloc() : super(const AppState.signIn()) {
     on<AppEvent>((event, emit) {
       event.when(
         signIn: (user) {
@@ -17,6 +17,11 @@ class AppBloc extends Bloc<AppEvent, AppState> {
               mod: const Mod.home(),
               user: user,
             ),
+          );
+        },
+        createNewUser: () {
+          emit(
+            const AppState.signUp(),
           );
         },
         changeView: (mod) {
@@ -28,7 +33,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
         },
         signOut: () {
           emit(
-            const AppState.empty(),
+            const AppState.signIn(),
           );
         },
       );

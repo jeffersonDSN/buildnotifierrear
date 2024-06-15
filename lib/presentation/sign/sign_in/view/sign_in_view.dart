@@ -1,23 +1,23 @@
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/const/images_const.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
-import 'package:buildnotifierrear/presentation/sign_up/bloc/sign_up_bloc.dart';
+import 'package:buildnotifierrear/presentation/sign/sign_in/bloc/sign_in_bloc.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SignUpView extends IView {
-  SignUpView({super.key});
+class SignInView extends IView {
+  SignInView({super.key});
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    var bloc = BlocProvider.of<SignUpBloc>(context);
+    var bloc = BlocProvider.of<SignInBloc>(context);
 
     return Scaffold(
-        body: BlocBuilder<SignUpBloc, SignUpState>(
+        body: BlocBuilder<SignInBloc, SignInState>(
       bloc: bloc,
       builder: (context, state) {
         return Row(
@@ -32,7 +32,7 @@ class SignUpView extends IView {
                       '$assetImage$logo2',
                     ),
                     const Text(
-                      'welcome Back!',
+                      'Welcome Back!',
                       style: TextStyle(
                         fontSize: Sizes.size32,
                         color: AppColor.lightColor,
@@ -65,7 +65,7 @@ class SignUpView extends IView {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      gapHeight32,
+                      gapHeight16,
                       TextFormField(
                         decoration: const InputDecoration(
                           labelText: 'User name',
@@ -76,7 +76,7 @@ class SignUpView extends IView {
                         initialValue: state.userName,
                         onChanged: (value) {
                           bloc.add(
-                            SignUpEvent.changeUserName(value: value),
+                            SignInEvent.changeUserName(value: value),
                           );
                         },
                         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -87,7 +87,7 @@ class SignUpView extends IView {
                           return null;
                         },
                       ),
-                      gapHeight32,
+                      gapHeight16,
                       TextFormField(
                         decoration: const InputDecoration(
                           labelText: 'Password',
@@ -99,7 +99,7 @@ class SignUpView extends IView {
                         obscureText: true,
                         onChanged: (value) {
                           bloc.add(
-                            SignUpEvent.changePassword(value: value),
+                            SignInEvent.changePassword(value: value),
                           );
                         },
                         validator: (value) {
@@ -117,7 +117,7 @@ class SignUpView extends IView {
                             color: AppColor.red,
                           ),
                         ),
-                      gapHeight32,
+                      gapHeight24,
                       FilledButton(
                         child: state.isSignIn
                             ? const CircularProgressIndicator(
@@ -133,7 +133,7 @@ class SignUpView extends IView {
                             // );
 
                             bloc.add(
-                              SignUpEvent.signIn(
+                              SignInEvent.signIn(
                                 callback: (value) {
                                   appBloc(context).add(
                                     AppEvent.signIn(
@@ -150,7 +150,21 @@ class SignUpView extends IView {
                           //   );
                           // }
                         },
-                      )
+                      ),
+                      gapHeight24,
+                      Row(
+                        children: [
+                          const Text('Don’t have an account?'),
+                          TextButton(
+                            child: const Text("Sign up"),
+                            onPressed: () {
+                              appBloc(context).add(
+                                const AppEvent.createNewUser(),
+                              );
+                            },
+                          )
+                        ],
+                      ),
                     ],
                   ),
                 ),

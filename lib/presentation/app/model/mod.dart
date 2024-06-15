@@ -30,6 +30,7 @@ class Mod with _$Mod {
   const factory Mod.users({
     required ViewType type,
   }) = ModUsers;
+
   const factory Mod.settings() = ModSettings;
 }
 

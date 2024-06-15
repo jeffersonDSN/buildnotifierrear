@@ -2,7 +2,9 @@ part of 'app_bloc.dart';
 
 @freezed
 class AppState with _$AppState {
-  const factory AppState.empty() = AppStateEmpty;
+  const factory AppState.signIn() = AppStateIn;
+
+  const factory AppState.signUp() = AppStateUp;
 
   const factory AppState.logged({
     required User user,

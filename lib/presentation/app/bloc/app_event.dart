@@ -6,6 +6,8 @@ class AppEvent with _$AppEvent {
     required User user,
   }) = AppEventSignIn;
 
+  const factory AppEvent.createNewUser() = AppEventCreateNewUser;
+
   const factory AppEvent.changeView({
     required Mod mod,
   }) = AppEventChangeView;

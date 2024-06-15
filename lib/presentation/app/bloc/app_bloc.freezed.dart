@@ -19,6 +19,7 @@ mixin _$AppEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(User user) signIn,
+    required TResult Function() createNewUser,
     required TResult Function(Mod mod) changeView,
     required TResult Function() signOut,
   }) =>
@@ -26,6 +27,7 @@ mixin _$AppEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(User user)? signIn,
+    TResult? Function()? createNewUser,
     TResult? Function(Mod mod)? changeView,
     TResult? Function()? signOut,
   }) =>
@@ -33,6 +35,7 @@ mixin _$AppEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? signIn,
+    TResult Function()? createNewUser,
     TResult Function(Mod mod)? changeView,
     TResult Function()? signOut,
     required TResult orElse(),
@@ -41,6 +44,7 @@ mixin _$AppEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AppEventSignIn value) signIn,
+    required TResult Function(AppEventCreateNewUser value) createNewUser,
     required TResult Function(AppEventChangeView value) changeView,
     required TResult Function(AppEventSignOut value) signOut,
   }) =>
@@ -48,6 +52,7 @@ mixin _$AppEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AppEventSignIn value)? signIn,
+    TResult? Function(AppEventCreateNewUser value)? createNewUser,
     TResult? Function(AppEventChangeView value)? changeView,
     TResult? Function(AppEventSignOut value)? signOut,
   }) =>
@@ -55,6 +60,7 @@ mixin _$AppEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AppEventSignIn value)? signIn,
+    TResult Function(AppEventCreateNewUser value)? createNewUser,
     TResult Function(AppEventChangeView value)? changeView,
     TResult Function(AppEventSignOut value)? signOut,
     required TResult orElse(),
@@ -155,6 +161,7 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(User user) signIn,
+    required TResult Function() createNewUser,
     required TResult Function(Mod mod) changeView,
     required TResult Function() signOut,
   }) {
@@ -165,6 +172,7 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(User user)? signIn,
+    TResult? Function()? createNewUser,
     TResult? Function(Mod mod)? changeView,
     TResult? Function()? signOut,
   }) {
@@ -175,6 +183,7 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? signIn,
+    TResult Function()? createNewUser,
     TResult Function(Mod mod)? changeView,
     TResult Function()? signOut,
     required TResult orElse(),
@@ -189,6 +198,7 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AppEventSignIn value) signIn,
+    required TResult Function(AppEventCreateNewUser value) createNewUser,
     required TResult Function(AppEventChangeView value) changeView,
     required TResult Function(AppEventSignOut value) signOut,
   }) {
@@ -199,6 +209,7 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AppEventSignIn value)? signIn,
+    TResult? Function(AppEventCreateNewUser value)? createNewUser,
     TResult? Function(AppEventChangeView value)? changeView,
     TResult? Function(AppEventSignOut value)? signOut,
   }) {
@@ -209,6 +220,7 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AppEventSignIn value)? signIn,
+    TResult Function(AppEventCreateNewUser value)? createNewUser,
     TResult Function(AppEventChangeView value)? changeView,
     TResult Function(AppEventSignOut value)? signOut,
     required TResult orElse(),
@@ -228,6 +240,122 @@ abstract class AppEventSignIn implements AppEvent {
   @JsonKey(ignore: true)
   _$$AppEventSignInImplCopyWith<_$AppEventSignInImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AppEventCreateNewUserImplCopyWith<$Res> {
+  factory _$$AppEventCreateNewUserImplCopyWith(
+          _$AppEventCreateNewUserImpl value,
+          $Res Function(_$AppEventCreateNewUserImpl) then) =
+      __$$AppEventCreateNewUserImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AppEventCreateNewUserImplCopyWithImpl<$Res>
+    extends _$AppEventCopyWithImpl<$Res, _$AppEventCreateNewUserImpl>
+    implements _$$AppEventCreateNewUserImplCopyWith<$Res> {
+  __$$AppEventCreateNewUserImplCopyWithImpl(_$AppEventCreateNewUserImpl _value,
+      $Res Function(_$AppEventCreateNewUserImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AppEventCreateNewUserImpl implements AppEventCreateNewUser {
+  const _$AppEventCreateNewUserImpl();
+
+  @override
+  String toString() {
+    return 'AppEvent.createNewUser()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AppEventCreateNewUserImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) signIn,
+    required TResult Function() createNewUser,
+    required TResult Function(Mod mod) changeView,
+    required TResult Function() signOut,
+  }) {
+    return createNewUser();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(User user)? signIn,
+    TResult? Function()? createNewUser,
+    TResult? Function(Mod mod)? changeView,
+    TResult? Function()? signOut,
+  }) {
+    return createNewUser?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? signIn,
+    TResult Function()? createNewUser,
+    TResult Function(Mod mod)? changeView,
+    TResult Function()? signOut,
+    required TResult orElse(),
+  }) {
+    if (createNewUser != null) {
+      return createNewUser();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppEventSignIn value) signIn,
+    required TResult Function(AppEventCreateNewUser value) createNewUser,
+    required TResult Function(AppEventChangeView value) changeView,
+    required TResult Function(AppEventSignOut value) signOut,
+  }) {
+    return createNewUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppEventSignIn value)? signIn,
+    TResult? Function(AppEventCreateNewUser value)? createNewUser,
+    TResult? Function(AppEventChangeView value)? changeView,
+    TResult? Function(AppEventSignOut value)? signOut,
+  }) {
+    return createNewUser?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppEventSignIn value)? signIn,
+    TResult Function(AppEventCreateNewUser value)? createNewUser,
+    TResult Function(AppEventChangeView value)? changeView,
+    TResult Function(AppEventSignOut value)? signOut,
+    required TResult orElse(),
+  }) {
+    if (createNewUser != null) {
+      return createNewUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AppEventCreateNewUser implements AppEvent {
+  const factory AppEventCreateNewUser() = _$AppEventCreateNewUserImpl;
 }
 
 /// @nodoc
@@ -306,6 +434,7 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(User user) signIn,
+    required TResult Function() createNewUser,
     required TResult Function(Mod mod) changeView,
     required TResult Function() signOut,
   }) {
@@ -316,6 +445,7 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(User user)? signIn,
+    TResult? Function()? createNewUser,
     TResult? Function(Mod mod)? changeView,
     TResult? Function()? signOut,
   }) {
@@ -326,6 +456,7 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? signIn,
+    TResult Function()? createNewUser,
     TResult Function(Mod mod)? changeView,
     TResult Function()? signOut,
     required TResult orElse(),
@@ -340,6 +471,7 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AppEventSignIn value) signIn,
+    required TResult Function(AppEventCreateNewUser value) createNewUser,
     required TResult Function(AppEventChangeView value) changeView,
     required TResult Function(AppEventSignOut value) signOut,
   }) {
@@ -350,6 +482,7 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AppEventSignIn value)? signIn,
+    TResult? Function(AppEventCreateNewUser value)? createNewUser,
     TResult? Function(AppEventChangeView value)? changeView,
     TResult? Function(AppEventSignOut value)? signOut,
   }) {
@@ -360,6 +493,7 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AppEventSignIn value)? signIn,
+    TResult Function(AppEventCreateNewUser value)? createNewUser,
     TResult Function(AppEventChangeView value)? changeView,
     TResult Function(AppEventSignOut value)? signOut,
     required TResult orElse(),
@@ -420,6 +554,7 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(User user) signIn,
+    required TResult Function() createNewUser,
     required TResult Function(Mod mod) changeView,
     required TResult Function() signOut,
   }) {
@@ -430,6 +565,7 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(User user)? signIn,
+    TResult? Function()? createNewUser,
     TResult? Function(Mod mod)? changeView,
     TResult? Function()? signOut,
   }) {
@@ -440,6 +576,7 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? signIn,
+    TResult Function()? createNewUser,
     TResult Function(Mod mod)? changeView,
     TResult Function()? signOut,
     required TResult orElse(),
@@ -454,6 +591,7 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AppEventSignIn value) signIn,
+    required TResult Function(AppEventCreateNewUser value) createNewUser,
     required TResult Function(AppEventChangeView value) changeView,
     required TResult Function(AppEventSignOut value) signOut,
   }) {
@@ -464,6 +602,7 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AppEventSignIn value)? signIn,
+    TResult? Function(AppEventCreateNewUser value)? createNewUser,
     TResult? Function(AppEventChangeView value)? changeView,
     TResult? Function(AppEventSignOut value)? signOut,
   }) {
@@ -474,6 +613,7 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AppEventSignIn value)? signIn,
+    TResult Function(AppEventCreateNewUser value)? createNewUser,
     TResult Function(AppEventChangeView value)? changeView,
     TResult Function(AppEventSignOut value)? signOut,
     required TResult orElse(),
@@ -493,38 +633,44 @@ abstract class AppEventSignOut implements AppEvent {
 mixin _$AppState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() empty,
+    required TResult Function() signIn,
+    required TResult Function() signUp,
     required TResult Function(User user, Mod mod) logged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? empty,
+    TResult? Function()? signIn,
+    TResult? Function()? signUp,
     TResult? Function(User user, Mod mod)? logged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? empty,
+    TResult Function()? signIn,
+    TResult Function()? signUp,
     TResult Function(User user, Mod mod)? logged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppStateEmpty value) empty,
+    required TResult Function(AppStateIn value) signIn,
+    required TResult Function(AppStateUp value) signUp,
     required TResult Function(AppStateLogged value) logged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppStateEmpty value)? empty,
+    TResult? Function(AppStateIn value)? signIn,
+    TResult? Function(AppStateUp value)? signUp,
     TResult? Function(AppStateLogged value)? logged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppStateEmpty value)? empty,
+    TResult Function(AppStateIn value)? signIn,
+    TResult Function(AppStateUp value)? signUp,
     TResult Function(AppStateLogged value)? logged,
     required TResult orElse(),
   }) =>
@@ -549,35 +695,35 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
 }
 
 /// @nodoc
-abstract class _$$AppStateEmptyImplCopyWith<$Res> {
-  factory _$$AppStateEmptyImplCopyWith(
-          _$AppStateEmptyImpl value, $Res Function(_$AppStateEmptyImpl) then) =
-      __$$AppStateEmptyImplCopyWithImpl<$Res>;
+abstract class _$$AppStateInImplCopyWith<$Res> {
+  factory _$$AppStateInImplCopyWith(
+          _$AppStateInImpl value, $Res Function(_$AppStateInImpl) then) =
+      __$$AppStateInImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AppStateEmptyImplCopyWithImpl<$Res>
-    extends _$AppStateCopyWithImpl<$Res, _$AppStateEmptyImpl>
-    implements _$$AppStateEmptyImplCopyWith<$Res> {
-  __$$AppStateEmptyImplCopyWithImpl(
-      _$AppStateEmptyImpl _value, $Res Function(_$AppStateEmptyImpl) _then)
+class __$$AppStateInImplCopyWithImpl<$Res>
+    extends _$AppStateCopyWithImpl<$Res, _$AppStateInImpl>
+    implements _$$AppStateInImplCopyWith<$Res> {
+  __$$AppStateInImplCopyWithImpl(
+      _$AppStateInImpl _value, $Res Function(_$AppStateInImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AppStateEmptyImpl implements AppStateEmpty {
-  const _$AppStateEmptyImpl();
+class _$AppStateInImpl implements AppStateIn {
+  const _$AppStateInImpl();
 
   @override
   String toString() {
-    return 'AppState.empty()';
+    return 'AppState.signIn()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AppStateEmptyImpl);
+        (other.runtimeType == runtimeType && other is _$AppStateInImpl);
   }
 
   @override
@@ -586,30 +732,33 @@ class _$AppStateEmptyImpl implements AppStateEmpty {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() empty,
+    required TResult Function() signIn,
+    required TResult Function() signUp,
     required TResult Function(User user, Mod mod) logged,
   }) {
-    return empty();
+    return signIn();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? empty,
+    TResult? Function()? signIn,
+    TResult? Function()? signUp,
     TResult? Function(User user, Mod mod)? logged,
   }) {
-    return empty?.call();
+    return signIn?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? empty,
+    TResult Function()? signIn,
+    TResult Function()? signUp,
     TResult Function(User user, Mod mod)? logged,
     required TResult orElse(),
   }) {
-    if (empty != null) {
-      return empty();
+    if (signIn != null) {
+      return signIn();
     }
     return orElse();
   }
@@ -617,37 +766,148 @@ class _$AppStateEmptyImpl implements AppStateEmpty {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppStateEmpty value) empty,
+    required TResult Function(AppStateIn value) signIn,
+    required TResult Function(AppStateUp value) signUp,
     required TResult Function(AppStateLogged value) logged,
   }) {
-    return empty(this);
+    return signIn(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppStateEmpty value)? empty,
+    TResult? Function(AppStateIn value)? signIn,
+    TResult? Function(AppStateUp value)? signUp,
     TResult? Function(AppStateLogged value)? logged,
   }) {
-    return empty?.call(this);
+    return signIn?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppStateEmpty value)? empty,
+    TResult Function(AppStateIn value)? signIn,
+    TResult Function(AppStateUp value)? signUp,
     TResult Function(AppStateLogged value)? logged,
     required TResult orElse(),
   }) {
-    if (empty != null) {
-      return empty(this);
+    if (signIn != null) {
+      return signIn(this);
     }
     return orElse();
   }
 }
 
-abstract class AppStateEmpty implements AppState {
-  const factory AppStateEmpty() = _$AppStateEmptyImpl;
+abstract class AppStateIn implements AppState {
+  const factory AppStateIn() = _$AppStateInImpl;
+}
+
+/// @nodoc
+abstract class _$$AppStateUpImplCopyWith<$Res> {
+  factory _$$AppStateUpImplCopyWith(
+          _$AppStateUpImpl value, $Res Function(_$AppStateUpImpl) then) =
+      __$$AppStateUpImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AppStateUpImplCopyWithImpl<$Res>
+    extends _$AppStateCopyWithImpl<$Res, _$AppStateUpImpl>
+    implements _$$AppStateUpImplCopyWith<$Res> {
+  __$$AppStateUpImplCopyWithImpl(
+      _$AppStateUpImpl _value, $Res Function(_$AppStateUpImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AppStateUpImpl implements AppStateUp {
+  const _$AppStateUpImpl();
+
+  @override
+  String toString() {
+    return 'AppState.signUp()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AppStateUpImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signIn,
+    required TResult Function() signUp,
+    required TResult Function(User user, Mod mod) logged,
+  }) {
+    return signUp();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? signIn,
+    TResult? Function()? signUp,
+    TResult? Function(User user, Mod mod)? logged,
+  }) {
+    return signUp?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signIn,
+    TResult Function()? signUp,
+    TResult Function(User user, Mod mod)? logged,
+    required TResult orElse(),
+  }) {
+    if (signUp != null) {
+      return signUp();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppStateIn value) signIn,
+    required TResult Function(AppStateUp value) signUp,
+    required TResult Function(AppStateLogged value) logged,
+  }) {
+    return signUp(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppStateIn value)? signIn,
+    TResult? Function(AppStateUp value)? signUp,
+    TResult? Function(AppStateLogged value)? logged,
+  }) {
+    return signUp?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppStateIn value)? signIn,
+    TResult Function(AppStateUp value)? signUp,
+    TResult Function(AppStateLogged value)? logged,
+    required TResult orElse(),
+  }) {
+    if (signUp != null) {
+      return signUp(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AppStateUp implements AppState {
+  const factory AppStateUp() = _$AppStateUpImpl;
 }
 
 /// @nodoc
@@ -742,7 +1002,8 @@ class _$AppStateLoggedImpl implements AppStateLogged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() empty,
+    required TResult Function() signIn,
+    required TResult Function() signUp,
     required TResult Function(User user, Mod mod) logged,
   }) {
     return logged(user, mod);
@@ -751,7 +1012,8 @@ class _$AppStateLoggedImpl implements AppStateLogged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? empty,
+    TResult? Function()? signIn,
+    TResult? Function()? signUp,
     TResult? Function(User user, Mod mod)? logged,
   }) {
     return logged?.call(user, mod);
@@ -760,7 +1022,8 @@ class _$AppStateLoggedImpl implements AppStateLogged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? empty,
+    TResult Function()? signIn,
+    TResult Function()? signUp,
     TResult Function(User user, Mod mod)? logged,
     required TResult orElse(),
   }) {
@@ -773,7 +1036,8 @@ class _$AppStateLoggedImpl implements AppStateLogged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AppStateEmpty value) empty,
+    required TResult Function(AppStateIn value) signIn,
+    required TResult Function(AppStateUp value) signUp,
     required TResult Function(AppStateLogged value) logged,
   }) {
     return logged(this);
@@ -782,7 +1046,8 @@ class _$AppStateLoggedImpl implements AppStateLogged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppStateEmpty value)? empty,
+    TResult? Function(AppStateIn value)? signIn,
+    TResult? Function(AppStateUp value)? signUp,
     TResult? Function(AppStateLogged value)? logged,
   }) {
     return logged?.call(this);
@@ -791,7 +1056,8 @@ class _$AppStateLoggedImpl implements AppStateLogged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppStateEmpty value)? empty,
+    TResult Function(AppStateIn value)? signIn,
+    TResult Function(AppStateUp value)? signUp,
     TResult Function(AppStateLogged value)? logged,
     required TResult orElse(),
   }) {

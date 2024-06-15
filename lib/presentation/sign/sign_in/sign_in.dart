@@ -1,7 +1,7 @@
 import 'package:buildnotifierrear/domain/controllers/users_controller.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/users_firestore_repository.dart';
-import 'package:buildnotifierrear/presentation/sign_in/bloc/sign_in_bloc.dart';
-import 'package:buildnotifierrear/presentation/sign_in/view/sign_in_view.dart';
+import 'package:buildnotifierrear/presentation/sign/sign_in/bloc/sign_in_bloc.dart';
+import 'package:buildnotifierrear/presentation/sign/sign_in/view/sign_in_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
