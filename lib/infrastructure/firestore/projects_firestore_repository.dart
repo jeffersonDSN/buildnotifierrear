@@ -1,7 +1,9 @@
+import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
 
 import 'package:buildnotifierrear/domain/repositories/abs_i_projects_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart';
 
 import 'firestore_repository.dart';
 
@@ -76,7 +78,7 @@ class ProjectsFirestoreRepository extends FireStoreRepository
   }
 
   @override
-  Future<bool> put(Project value) async {
+  Future<Either<ErrorFields, bool>> put(Project value) async {
     var schedule = {
       'name': value.name,
       'clientId': value.clientId,
@@ -91,11 +93,11 @@ class ProjectsFirestoreRepository extends FireStoreRepository
     };
 
     await collection.doc(value.id.toString()).update(schedule);
-    return true;
+    return right(true);
   }
 
   @override
-  Future<bool> post(Project value) async {
+  Future<Either<ErrorFields, bool>> post(Project value) async {
     var schedule = {
       'name': value.name,
       'clientId': value.clientId,
@@ -110,7 +112,7 @@ class ProjectsFirestoreRepository extends FireStoreRepository
     };
 
     await collection.add(schedule);
-    return true;
+    return right(true);
   }
 
   @override

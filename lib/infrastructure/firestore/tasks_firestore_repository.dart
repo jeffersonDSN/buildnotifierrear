@@ -1,6 +1,8 @@
+import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/task/task.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_tasks_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart' hide Task;
 
 import 'firestore_repository.dart';
 
@@ -75,25 +77,25 @@ class TasksFirestoreRepository extends FireStoreRepository
   }
 
   @override
-  Future<bool> put(Task value) async {
+  Future<Either<ErrorFields, bool>> put(Task value) async {
     var schedule = {
       'title': value.title,
       'productId': value.productId,
     };
 
     await collection.doc(value.id.toString()).update(schedule);
-    return true;
+    return right(true);
   }
 
   @override
-  Future<bool> post(Task value) async {
+  Future<Either<ErrorFields, bool>> post(Task value) async {
     var schedule = {
       'title': value.title,
       'productId': value.productId,
     };
 
     await collection.add(schedule);
-    return true;
+    return right(true);
   }
 
   @override

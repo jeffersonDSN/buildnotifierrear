@@ -1513,21 +1513,27 @@ mixin _$SignUpState {
   TResult when<TResult extends Object?>({
     required TResult Function(User user, Settings settings) init,
     required TResult Function(User user, Settings settings) signUp,
-    required TResult Function(User user, Settings settings) signUpError,
+    required TResult Function(
+            User user, Settings settings, ({int code, String message}) error)
+        signUpError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(User user, Settings settings)? init,
     TResult? Function(User user, Settings settings)? signUp,
-    TResult? Function(User user, Settings settings)? signUpError,
+    TResult? Function(
+            User user, Settings settings, ({int code, String message}) error)?
+        signUpError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user, Settings settings)? init,
     TResult Function(User user, Settings settings)? signUp,
-    TResult Function(User user, Settings settings)? signUpError,
+    TResult Function(
+            User user, Settings settings, ({int code, String message}) error)?
+        signUpError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1698,7 +1704,9 @@ class _$SignUpStateUpImpl implements SignUpStateUp {
   TResult when<TResult extends Object?>({
     required TResult Function(User user, Settings settings) init,
     required TResult Function(User user, Settings settings) signUp,
-    required TResult Function(User user, Settings settings) signUpError,
+    required TResult Function(
+            User user, Settings settings, ({int code, String message}) error)
+        signUpError,
   }) {
     return init(user, settings);
   }
@@ -1708,7 +1716,9 @@ class _$SignUpStateUpImpl implements SignUpStateUp {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(User user, Settings settings)? init,
     TResult? Function(User user, Settings settings)? signUp,
-    TResult? Function(User user, Settings settings)? signUpError,
+    TResult? Function(
+            User user, Settings settings, ({int code, String message}) error)?
+        signUpError,
   }) {
     return init?.call(user, settings);
   }
@@ -1718,7 +1728,9 @@ class _$SignUpStateUpImpl implements SignUpStateUp {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user, Settings settings)? init,
     TResult Function(User user, Settings settings)? signUp,
-    TResult Function(User user, Settings settings)? signUpError,
+    TResult Function(
+            User user, Settings settings, ({int code, String message}) error)?
+        signUpError,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -1860,7 +1872,9 @@ class _$SignUpStateSignUpImpl implements SignUpStateSignUp {
   TResult when<TResult extends Object?>({
     required TResult Function(User user, Settings settings) init,
     required TResult Function(User user, Settings settings) signUp,
-    required TResult Function(User user, Settings settings) signUpError,
+    required TResult Function(
+            User user, Settings settings, ({int code, String message}) error)
+        signUpError,
   }) {
     return signUp(user, settings);
   }
@@ -1870,7 +1884,9 @@ class _$SignUpStateSignUpImpl implements SignUpStateSignUp {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(User user, Settings settings)? init,
     TResult? Function(User user, Settings settings)? signUp,
-    TResult? Function(User user, Settings settings)? signUpError,
+    TResult? Function(
+            User user, Settings settings, ({int code, String message}) error)?
+        signUpError,
   }) {
     return signUp?.call(user, settings);
   }
@@ -1880,7 +1896,9 @@ class _$SignUpStateSignUpImpl implements SignUpStateSignUp {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user, Settings settings)? init,
     TResult Function(User user, Settings settings)? signUp,
-    TResult Function(User user, Settings settings)? signUpError,
+    TResult Function(
+            User user, Settings settings, ({int code, String message}) error)?
+        signUpError,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -1948,7 +1966,7 @@ abstract class _$$SignUpStateSignUpErrorImplCopyWith<$Res>
       __$$SignUpStateSignUpErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({User user, Settings settings});
+  $Res call({User user, Settings settings, ({int code, String message}) error});
 
   @override
   $UserCopyWith<$Res> get user;
@@ -1970,6 +1988,7 @@ class __$$SignUpStateSignUpErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? user = null,
     Object? settings = null,
+    Object? error = null,
   }) {
     return _then(_$SignUpStateSignUpErrorImpl(
       user: null == user
@@ -1980,6 +1999,10 @@ class __$$SignUpStateSignUpErrorImplCopyWithImpl<$Res>
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
               as Settings,
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as ({int code, String message}),
     ));
   }
 }
@@ -1988,16 +2011,18 @@ class __$$SignUpStateSignUpErrorImplCopyWithImpl<$Res>
 
 class _$SignUpStateSignUpErrorImpl implements SignUpStateSignUpError {
   const _$SignUpStateSignUpErrorImpl(
-      {required this.user, required this.settings});
+      {required this.user, required this.settings, required this.error});
 
   @override
   final User user;
   @override
   final Settings settings;
+  @override
+  final ({int code, String message}) error;
 
   @override
   String toString() {
-    return 'SignUpState.signUpError(user: $user, settings: $settings)';
+    return 'SignUpState.signUpError(user: $user, settings: $settings, error: $error)';
   }
 
   @override
@@ -2007,11 +2032,12 @@ class _$SignUpStateSignUpErrorImpl implements SignUpStateSignUpError {
             other is _$SignUpStateSignUpErrorImpl &&
             (identical(other.user, user) || other.user == user) &&
             (identical(other.settings, settings) ||
-                other.settings == settings));
+                other.settings == settings) &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, user, settings);
+  int get hashCode => Object.hash(runtimeType, user, settings, error);
 
   @JsonKey(ignore: true)
   @override
@@ -2025,9 +2051,11 @@ class _$SignUpStateSignUpErrorImpl implements SignUpStateSignUpError {
   TResult when<TResult extends Object?>({
     required TResult Function(User user, Settings settings) init,
     required TResult Function(User user, Settings settings) signUp,
-    required TResult Function(User user, Settings settings) signUpError,
+    required TResult Function(
+            User user, Settings settings, ({int code, String message}) error)
+        signUpError,
   }) {
-    return signUpError(user, settings);
+    return signUpError(user, settings, error);
   }
 
   @override
@@ -2035,9 +2063,11 @@ class _$SignUpStateSignUpErrorImpl implements SignUpStateSignUpError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(User user, Settings settings)? init,
     TResult? Function(User user, Settings settings)? signUp,
-    TResult? Function(User user, Settings settings)? signUpError,
+    TResult? Function(
+            User user, Settings settings, ({int code, String message}) error)?
+        signUpError,
   }) {
-    return signUpError?.call(user, settings);
+    return signUpError?.call(user, settings, error);
   }
 
   @override
@@ -2045,11 +2075,13 @@ class _$SignUpStateSignUpErrorImpl implements SignUpStateSignUpError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user, Settings settings)? init,
     TResult Function(User user, Settings settings)? signUp,
-    TResult Function(User user, Settings settings)? signUpError,
+    TResult Function(
+            User user, Settings settings, ({int code, String message}) error)?
+        signUpError,
     required TResult orElse(),
   }) {
     if (signUpError != null) {
-      return signUpError(user, settings);
+      return signUpError(user, settings, error);
     }
     return orElse();
   }
@@ -2091,13 +2123,16 @@ class _$SignUpStateSignUpErrorImpl implements SignUpStateSignUpError {
 
 abstract class SignUpStateSignUpError implements SignUpState {
   const factory SignUpStateSignUpError(
-      {required final User user,
-      required final Settings settings}) = _$SignUpStateSignUpErrorImpl;
+          {required final User user,
+          required final Settings settings,
+          required final ({int code, String message}) error}) =
+      _$SignUpStateSignUpErrorImpl;
 
   @override
   User get user;
   @override
   Settings get settings;
+  ({int code, String message}) get error;
   @override
   @JsonKey(ignore: true)
   _$$SignUpStateSignUpErrorImplCopyWith<_$SignUpStateSignUpErrorImpl>

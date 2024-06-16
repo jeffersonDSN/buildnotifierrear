@@ -79,7 +79,7 @@ class SignUpView extends IView {
                               Icons.badge,
                             ),
                           ),
-                          initialValue: state.user.userName,
+                          initialValue: state.user.firstName,
                           onChanged: (value) {
                             bloc.add(
                               SignUpEvent.changeFirstName(value: value),
@@ -159,6 +159,14 @@ class SignUpView extends IView {
                             return null;
                           },
                         ),
+                        if (state.isSignUpError &&
+                            state.asSignInError.error.code == 2)
+                          Text(
+                            state.asSignInError.error.message,
+                            style: const TextStyle(
+                              color: AppColor.red,
+                            ),
+                          ),
                         gapHeight16,
                         TextFormField(
                           decoration: const InputDecoration(
@@ -202,6 +210,14 @@ class SignUpView extends IView {
                             return null;
                           },
                         ),
+                        if (state.isSignUpError &&
+                            state.asSignInError.error.code == 1)
+                          Text(
+                            state.asSignInError.error.message,
+                            style: const TextStyle(
+                              color: AppColor.red,
+                            ),
+                          ),
                         gapHeight16,
                         TextFormField(
                           decoration: const InputDecoration(
@@ -224,14 +240,6 @@ class SignUpView extends IView {
                             return null;
                           },
                         ),
-                        gapHeight8,
-                        if (state.isSignUpError)
-                          const Text(
-                            'The username or password you’ve entered is incorrect.',
-                            style: TextStyle(
-                              color: AppColor.red,
-                            ),
-                          ),
                         gapHeight32,
                         FilledButton(
                           child: state.isSignUp

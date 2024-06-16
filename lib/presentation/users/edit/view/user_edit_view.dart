@@ -54,11 +54,7 @@ class UserEditView extends IView {
             loading: () => const Center(
               child: CircularProgressIndicator(),
             ),
-            loaded: (
-              type,
-              user,
-              isDuplicateUsername,
-            ) {
+            loaded: (type, user, error) {
               return Padding(
                 padding: const EdgeInsets.all(Sizes.size16),
                 child: SizedBox(
@@ -127,6 +123,13 @@ class UserEditView extends IView {
                                     );
                                   },
                                 ),
+                                if (error != null && error.code == 2)
+                                  Text(
+                                    error.message,
+                                    style: const TextStyle(
+                                      color: AppColor.red,
+                                    ),
+                                  ),
                                 gapHeight16,
                                 TextFormField(
                                   decoration: const InputDecoration(
@@ -155,10 +158,10 @@ class UserEditView extends IView {
                                     );
                                   },
                                 ),
-                                if (isDuplicateUsername)
-                                  const Text(
-                                    'Username is already being used',
-                                    style: TextStyle(
+                                if (error != null && error.code == 1)
+                                  Text(
+                                    error.message,
+                                    style: const TextStyle(
                                       color: AppColor.red,
                                     ),
                                   ),

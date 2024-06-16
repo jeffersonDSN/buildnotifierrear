@@ -1,7 +1,9 @@
+import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/client/client.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_crud_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart';
 
 class ClientsFireStoreRepository extends FireStoreRepository
     implements AbsICRUDRepository<Client> {
@@ -32,7 +34,7 @@ class ClientsFireStoreRepository extends FireStoreRepository
   }
 
   @override
-  Future<bool> post(Client value) async {
+  Future<Either<ErrorFields, bool>> post(Client value) async {
     var user = {
       'firstName': value.firstName,
       'lastName': value.lastName,
@@ -41,11 +43,11 @@ class ClientsFireStoreRepository extends FireStoreRepository
     };
 
     await collection.add(user);
-    return true;
+    return right(true);
   }
 
   @override
-  Future<bool> put(Client value) async {
+  Future<Either<ErrorFields, bool>> put(Client value) async {
     var user = {
       'firstName': value.firstName,
       'lastName': value.lastName,
@@ -54,7 +56,7 @@ class ClientsFireStoreRepository extends FireStoreRepository
     };
 
     await collection.doc(value.id.toString()).update(user);
-    return true;
+    return right(true);
   }
 
   @override

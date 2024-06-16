@@ -1,6 +1,8 @@
+import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/user/user.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_users_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart';
 
 class UsersFireStoreRepository implements AbsIUsersRepository {
   final CollectionReference collection =
@@ -29,11 +31,25 @@ class UsersFireStoreRepository implements AbsIUsersRepository {
     return Future(() => null);
   }
 
-  @override
   Future<List<User>> getUserByUserName(String userName) async {
     var querySnapshot = await collection
         .where('userName', isEqualTo: userName.toLowerCase())
         .get();
+
+    return querySnapshot.docs
+        .map((DocumentSnapshot document) {
+          var doc = document.data() as Map<String, dynamic>;
+
+          return {...doc, 'id': document.id};
+        })
+        .toList()
+        .map((e) => User.fromJson(e))
+        .toList();
+  }
+
+  Future<List<User>> getUserByEmail(String email) async {
+    var querySnapshot =
+        await collection.where('email', isEqualTo: email.toLowerCase()).get();
 
     return querySnapshot.docs
         .map((DocumentSnapshot document) {
@@ -75,11 +91,41 @@ class UsersFireStoreRepository implements AbsIUsersRepository {
   }
 
   @override
-  Future<bool> post(User value) async {
+  Future<Either<ErrorFields, bool>> post(User value) async {
+    if (value.userName.isNotEmpty) {
+      var result = await getUserByUserName(value.userName);
+
+      if (result.isNotEmpty) {
+        if (value.id.isEmpty || result.any((user) => user.id != value.id)) {
+          return left(
+            (
+              code: 1,
+              message: 'Username is already being used',
+            ),
+          );
+        }
+      }
+    }
+
+    if (value.email.isNotEmpty) {
+      var result = await getUserByEmail(value.email);
+
+      if (result.isNotEmpty) {
+        if (value.id.isEmpty || result.any((user) => user.id != value.id)) {
+          return left(
+            (
+              code: 2,
+              message: 'Email is already being used',
+            ),
+          );
+        }
+      }
+    }
+
     var user = {
       'firstName': value.firstName,
       'lastName': value.lastName,
-      'email': value.email,
+      'email': value.email.toLowerCase(),
       'phoneNumber': value.phoneNumber,
       'department': value.department,
       'password': value.password,
@@ -89,15 +135,46 @@ class UsersFireStoreRepository implements AbsIUsersRepository {
     };
 
     await collection.add(user);
-    return true;
+
+    return right(true);
   }
 
   @override
-  Future<bool> put(User value) async {
+  Future<Either<ErrorFields, bool>> put(User value) async {
+    if (value.userName.isNotEmpty) {
+      var result = await getUserByUserName(value.userName);
+
+      if (result.isNotEmpty) {
+        if (value.id.isEmpty || result.any((user) => user.id != value.id)) {
+          return left(
+            (
+              code: 1,
+              message: 'Username is already being used',
+            ),
+          );
+        }
+      }
+    }
+
+    if (value.email.isNotEmpty) {
+      var result = await getUserByEmail(value.email);
+
+      if (result.isNotEmpty) {
+        if (value.id.isEmpty || result.any((user) => user.id != value.id)) {
+          return left(
+            (
+              code: 2,
+              message: 'Email is already being used',
+            ),
+          );
+        }
+      }
+    }
+
     var user = {
       'firstName': value.firstName,
       'lastName': value.lastName,
-      'email': value.email,
+      'email': value.email.toLowerCase(),
       'phoneNumber': value.phoneNumber,
       'department': value.department,
       'password': value.password,
@@ -107,7 +184,7 @@ class UsersFireStoreRepository implements AbsIUsersRepository {
     };
 
     await collection.doc(value.id.toString()).update(user);
-    return true;
+    return right(true);
   }
 
   @override

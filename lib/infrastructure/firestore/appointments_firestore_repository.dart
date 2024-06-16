@@ -1,6 +1,8 @@
+import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_appointment_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart';
 
 import 'firestore_repository.dart';
 
@@ -208,7 +210,7 @@ class AppointmentsFirestoreRepository extends FireStoreRepository
   }
 
   @override
-  Future<bool> put(Appointment value) async {
+  Future<Either<ErrorFields, bool>> put(Appointment value) async {
     var schedule = {
       'startDateTime': value.startDateTime,
       'endDateTime': value.endDateTime,
@@ -225,11 +227,11 @@ class AppointmentsFirestoreRepository extends FireStoreRepository
     };
 
     await collection.doc(value.id.toString()).update(schedule);
-    return true;
+    return right(true);
   }
 
   @override
-  Future<bool> post(Appointment value) async {
+  Future<Either<ErrorFields, bool>> post(Appointment value) async {
     var schedule = {
       'startDateTime': value.startDateTime,
       'endDateTime': value.endDateTime,
@@ -246,7 +248,7 @@ class AppointmentsFirestoreRepository extends FireStoreRepository
     };
 
     await collection.add(schedule);
-    return true;
+    return right(true);
   }
 
   @override

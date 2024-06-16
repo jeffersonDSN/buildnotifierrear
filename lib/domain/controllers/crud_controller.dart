@@ -1,4 +1,6 @@
+import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_crud_repository.dart';
+import 'package:dartz/dartz.dart';
 
 class CRUDController<T> {
   final AbsICRUDRepository<T> _repository;
@@ -14,11 +16,11 @@ class CRUDController<T> {
     return _repository.getById(id);
   }
 
-  Future<bool> create(T value) async {
+  Future<Either<ErrorFields, bool>> create(T value) async {
     return await _repository.post(value);
   }
 
-  Future<bool> update(T value) {
+  Future<Either<ErrorFields, bool>> update(T value) {
     return _repository.put(value);
   }
 

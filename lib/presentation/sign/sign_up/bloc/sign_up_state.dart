@@ -15,6 +15,7 @@ class SignUpState with _$SignUpState {
   const factory SignUpState.signUpError({
     required User user,
     required Settings settings,
+    required ErrorFields error,
   }) = SignUpStateSignUpError;
 }
 

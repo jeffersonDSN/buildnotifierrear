@@ -1,4 +1,5 @@
 import 'package:buildnotifierrear/domain/controllers/users_controller.dart';
+import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/domain/entities/user/user.dart';
 import 'package:flutter/material.dart';
@@ -87,7 +88,6 @@ class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
               user: state.asLoaded.user.copyWith(
                 userName: value,
               ),
-              isDuplicateUsername: false,
             ),
           );
         },
@@ -110,37 +110,29 @@ class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
           );
         },
         save: (callback) async {
-          var isDuplicateUsername = false;
-
-          if (state.asLoaded.user.userName.isNotEmpty) {
-            isDuplicateUsername = await controller.hasThisUsername(
-              state.asLoaded.user.userName,
-              state.asLoaded.user.id,
-            );
-          }
-
-          if (isDuplicateUsername) {
-            emit(
-              state.asLoaded.copyWith(
-                isDuplicateUsername: true,
-              ),
-            );
-          } else {
-            await state.asLoaded.type.when(
-              create: () async {
-                return controller.create(
-                  state.asLoaded.user,
+          await state.asLoaded.type.when(
+            create: () {
+              return controller.create(state.asLoaded.user);
+            },
+            update: (id) {
+              return controller.update(
+                state.asLoaded.user,
+              );
+            },
+          ).then(
+            (either) => either.fold(
+              (error) {
+                emit(
+                  state.asLoaded.copyWith(
+                    error: error,
+                  ),
                 );
               },
-              update: (id) async {
-                return controller.update(
-                  state.asLoaded.user,
-                );
+              (response) {
+                callback.call();
               },
-            );
-
-            callback.call();
-          }
+            ),
+          );
         },
       );
     });

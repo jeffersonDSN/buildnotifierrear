@@ -1,7 +1,9 @@
+import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_timecard_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart';
 
 class TimecardsFireStoreRepository extends FireStoreRepository
     implements AbsITimecardRepository {
@@ -86,7 +88,7 @@ class TimecardsFireStoreRepository extends FireStoreRepository
   }
 
   @override
-  Future<bool> post(Timecard clock) async {
+  Future<Either<ErrorFields, bool>> post(Timecard clock) async {
     var schedule = {
       'userId': clock.userId,
       'start': clock.start,
@@ -100,11 +102,11 @@ class TimecardsFireStoreRepository extends FireStoreRepository
     };
 
     await collection.add(schedule);
-    return true;
+    return right(true);
   }
 
   @override
-  Future<bool> put(Timecard clock) async {
+  Future<Either<ErrorFields, bool>> put(Timecard clock) async {
     var schedule = {
       'userId': clock.userId,
       'start': clock.start,
@@ -118,7 +120,7 @@ class TimecardsFireStoreRepository extends FireStoreRepository
     };
 
     await collection.doc(clock.id.toString()).update(schedule);
-    return true;
+    return right(true);
   }
 
   @override

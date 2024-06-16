@@ -1,5 +1,6 @@
 import 'package:buildnotifierrear/domain/controllers/settings_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/users_controller.dart';
+import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/settings/settings.dart';
 import 'package:buildnotifierrear/domain/entities/user/user.dart';
 import 'package:flutter/material.dart';
@@ -112,33 +113,33 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
             ),
           );
 
-          User? user;
-
           var id = await settingsController.createNewAccount(
             state.settings,
             state.user,
           );
 
           if (id.isNotEmpty) {
-            await controller.create(
-              state.user.copyWith(tenant: id),
-            );
+            await controller.create(state.user.copyWith(tenant: id)).then(
+                  (either) => either.fold(
+                    (error) {
+                      emit(
+                        SignUpState.signUpError(
+                          user: state.user,
+                          settings: state.settings,
+                          error: error,
+                        ),
+                      );
+                    },
+                    (response) async {
+                      var user = await controller.getUserByUserNamePassword(
+                        state.user.userName,
+                        state.user.password,
+                      );
 
-            user = await controller.getUserByUserNamePassword(
-              state.user.userName,
-              state.user.password,
-            );
-          }
-
-          if (user != null) {
-            callback.call(user);
-          } else {
-            emit(
-              SignUpState.signUpError(
-                user: state.user,
-                settings: state.settings,
-              ),
-            );
+                      callback.call(user!);
+                    },
+                  ),
+                );
           }
         },
       );

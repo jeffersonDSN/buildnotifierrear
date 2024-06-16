@@ -12,18 +12,4 @@ class UsersController extends CRUDController<User> {
   Future<User?> getUserByUserNamePassword(String userName, String password) {
     return _repository.getUserByUserNamePassword(userName, password);
   }
-
-  Future<bool> hasThisUsername(String userName, String id) async {
-    var result = await _repository.getUserByUserName(userName);
-
-    if (result.isEmpty) {
-      return false;
-    }
-
-    return result.any((user) => user.id != id);
-  }
-
-  Future<List<User>> getAllOfPeriod() {
-    return _repository.getAll();
-  }
 }
