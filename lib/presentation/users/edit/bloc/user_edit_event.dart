@@ -26,6 +26,14 @@ class UserEditEvent with _$UserEditEvent {
     required String value,
   }) = UserEditEventChangeDepartment;
 
+  const factory UserEditEvent.changeRole({
+    required String value,
+  }) = UserEditEventChangeRole;
+
+  const factory UserEditEvent.changeHourlyRate({
+    required double value,
+  }) = UserEditEventChangeHourlyRate;
+
   const factory UserEditEvent.changeUsername({
     required String value,
   }) = UserEditEventChangeUsername;

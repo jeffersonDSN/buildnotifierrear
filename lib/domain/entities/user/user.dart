@@ -12,6 +12,8 @@ class User with _$User {
     @Default('') String email,
     @Default('') String phoneNumber,
     @Default('') String department,
+    @Default('') String role,
+    @Default(0) double hourlyRate,
     @Default('') String tenant,
     @Default('') String userName,
     @Default('') String password,

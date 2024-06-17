@@ -24,6 +24,8 @@ mixin _$UserEditEvent {
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
     required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeRole,
+    required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
     required TResult Function(int value) changeUserType,
@@ -38,6 +40,8 @@ mixin _$UserEditEvent {
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
     TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeRole,
+    TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
     TResult? Function(int value)? changeUserType,
@@ -52,6 +56,8 @@ mixin _$UserEditEvent {
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
     TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeRole,
+    TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
     TResult Function(int value)? changeUserType,
@@ -70,6 +76,9 @@ mixin _$UserEditEvent {
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
+    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
     required TResult Function(UserEditEventChangePassword value) changePassword,
     required TResult Function(UserEditEventChangeUserType value) changeUserType,
@@ -84,6 +93,8 @@ mixin _$UserEditEvent {
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
     TResult? Function(UserEditEventChangeUserType value)? changeUserType,
@@ -98,6 +109,8 @@ mixin _$UserEditEvent {
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
     TResult Function(UserEditEventChangeUserType value)? changeUserType,
@@ -206,6 +219,8 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
     required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeRole,
+    required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
     required TResult Function(int value) changeUserType,
@@ -223,6 +238,8 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
     TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeRole,
+    TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
     TResult? Function(int value)? changeUserType,
@@ -240,6 +257,8 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
     TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeRole,
+    TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
     TResult Function(int value)? changeUserType,
@@ -264,6 +283,9 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
+    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
     required TResult Function(UserEditEventChangePassword value) changePassword,
     required TResult Function(UserEditEventChangeUserType value) changeUserType,
@@ -281,6 +303,8 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
     TResult? Function(UserEditEventChangeUserType value)? changeUserType,
@@ -298,6 +322,8 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
     TResult Function(UserEditEventChangeUserType value)? changeUserType,
@@ -397,6 +423,8 @@ class _$UserEditEventChangeFirstNameImpl
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
     required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeRole,
+    required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
     required TResult Function(int value) changeUserType,
@@ -414,6 +442,8 @@ class _$UserEditEventChangeFirstNameImpl
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
     TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeRole,
+    TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
     TResult? Function(int value)? changeUserType,
@@ -431,6 +461,8 @@ class _$UserEditEventChangeFirstNameImpl
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
     TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeRole,
+    TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
     TResult Function(int value)? changeUserType,
@@ -455,6 +487,9 @@ class _$UserEditEventChangeFirstNameImpl
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
+    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
     required TResult Function(UserEditEventChangePassword value) changePassword,
     required TResult Function(UserEditEventChangeUserType value) changeUserType,
@@ -472,6 +507,8 @@ class _$UserEditEventChangeFirstNameImpl
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
     TResult? Function(UserEditEventChangeUserType value)? changeUserType,
@@ -489,6 +526,8 @@ class _$UserEditEventChangeFirstNameImpl
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
     TResult Function(UserEditEventChangeUserType value)? changeUserType,
@@ -586,6 +625,8 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
     required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeRole,
+    required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
     required TResult Function(int value) changeUserType,
@@ -603,6 +644,8 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
     TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeRole,
+    TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
     TResult? Function(int value)? changeUserType,
@@ -620,6 +663,8 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
     TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeRole,
+    TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
     TResult Function(int value)? changeUserType,
@@ -644,6 +689,9 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
+    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
     required TResult Function(UserEditEventChangePassword value) changePassword,
     required TResult Function(UserEditEventChangeUserType value) changeUserType,
@@ -661,6 +709,8 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
     TResult? Function(UserEditEventChangeUserType value)? changeUserType,
@@ -678,6 +728,8 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
     TResult Function(UserEditEventChangeUserType value)? changeUserType,
@@ -777,6 +829,8 @@ class _$UserEditEventChangePhoneNumberImpl
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
     required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeRole,
+    required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
     required TResult Function(int value) changeUserType,
@@ -794,6 +848,8 @@ class _$UserEditEventChangePhoneNumberImpl
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
     TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeRole,
+    TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
     TResult? Function(int value)? changeUserType,
@@ -811,6 +867,8 @@ class _$UserEditEventChangePhoneNumberImpl
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
     TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeRole,
+    TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
     TResult Function(int value)? changeUserType,
@@ -835,6 +893,9 @@ class _$UserEditEventChangePhoneNumberImpl
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
+    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
     required TResult Function(UserEditEventChangePassword value) changePassword,
     required TResult Function(UserEditEventChangeUserType value) changeUserType,
@@ -852,6 +913,8 @@ class _$UserEditEventChangePhoneNumberImpl
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
     TResult? Function(UserEditEventChangeUserType value)? changeUserType,
@@ -869,6 +932,8 @@ class _$UserEditEventChangePhoneNumberImpl
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
     TResult Function(UserEditEventChangeUserType value)? changeUserType,
@@ -966,6 +1031,8 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
     required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeRole,
+    required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
     required TResult Function(int value) changeUserType,
@@ -983,6 +1050,8 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
     TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeRole,
+    TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
     TResult? Function(int value)? changeUserType,
@@ -1000,6 +1069,8 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
     TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeRole,
+    TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
     TResult Function(int value)? changeUserType,
@@ -1024,6 +1095,9 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
+    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
     required TResult Function(UserEditEventChangePassword value) changePassword,
     required TResult Function(UserEditEventChangeUserType value) changeUserType,
@@ -1041,6 +1115,8 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
     TResult? Function(UserEditEventChangeUserType value)? changeUserType,
@@ -1058,6 +1134,8 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
     TResult Function(UserEditEventChangeUserType value)? changeUserType,
@@ -1157,6 +1235,8 @@ class _$UserEditEventChangeDepartmentImpl
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
     required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeRole,
+    required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
     required TResult Function(int value) changeUserType,
@@ -1174,6 +1254,8 @@ class _$UserEditEventChangeDepartmentImpl
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
     TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeRole,
+    TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
     TResult? Function(int value)? changeUserType,
@@ -1191,6 +1273,8 @@ class _$UserEditEventChangeDepartmentImpl
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
     TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeRole,
+    TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
     TResult Function(int value)? changeUserType,
@@ -1215,6 +1299,9 @@ class _$UserEditEventChangeDepartmentImpl
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
+    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
     required TResult Function(UserEditEventChangePassword value) changePassword,
     required TResult Function(UserEditEventChangeUserType value) changeUserType,
@@ -1232,6 +1319,8 @@ class _$UserEditEventChangeDepartmentImpl
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
     TResult? Function(UserEditEventChangeUserType value)? changeUserType,
@@ -1249,6 +1338,8 @@ class _$UserEditEventChangeDepartmentImpl
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
     TResult Function(UserEditEventChangeUserType value)? changeUserType,
@@ -1270,6 +1361,412 @@ abstract class UserEditEventChangeDepartment implements UserEditEvent {
   @JsonKey(ignore: true)
   _$$UserEditEventChangeDepartmentImplCopyWith<
           _$UserEditEventChangeDepartmentImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserEditEventChangeRoleImplCopyWith<$Res> {
+  factory _$$UserEditEventChangeRoleImplCopyWith(
+          _$UserEditEventChangeRoleImpl value,
+          $Res Function(_$UserEditEventChangeRoleImpl) then) =
+      __$$UserEditEventChangeRoleImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UserEditEventChangeRoleImplCopyWithImpl<$Res>
+    extends _$UserEditEventCopyWithImpl<$Res, _$UserEditEventChangeRoleImpl>
+    implements _$$UserEditEventChangeRoleImplCopyWith<$Res> {
+  __$$UserEditEventChangeRoleImplCopyWithImpl(
+      _$UserEditEventChangeRoleImpl _value,
+      $Res Function(_$UserEditEventChangeRoleImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UserEditEventChangeRoleImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserEditEventChangeRoleImpl implements UserEditEventChangeRole {
+  const _$UserEditEventChangeRoleImpl({required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'UserEditEvent.changeRole(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserEditEventChangeRoleImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserEditEventChangeRoleImplCopyWith<_$UserEditEventChangeRoleImpl>
+      get copyWith => __$$UserEditEventChangeRoleImplCopyWithImpl<
+          _$UserEditEventChangeRoleImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeRole,
+    required TResult Function(double value) changeHourlyRate,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeRole(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeRole,
+    TResult? Function(double value)? changeHourlyRate,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeRole?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeRole,
+    TResult Function(double value)? changeHourlyRate,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeRole != null) {
+      return changeRole(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserEditEventtLoad value) load,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
+    required TResult Function(UserEditEventtSave value) save,
+  }) {
+    return changeRole(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UserEditEventtLoad value)? load,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult? Function(UserEditEventtSave value)? save,
+  }) {
+    return changeRole?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserEditEventtLoad value)? load,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult Function(UserEditEventtSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeRole != null) {
+      return changeRole(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserEditEventChangeRole implements UserEditEvent {
+  const factory UserEditEventChangeRole({required final String value}) =
+      _$UserEditEventChangeRoleImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UserEditEventChangeRoleImplCopyWith<_$UserEditEventChangeRoleImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserEditEventChangeHourlyRateImplCopyWith<$Res> {
+  factory _$$UserEditEventChangeHourlyRateImplCopyWith(
+          _$UserEditEventChangeHourlyRateImpl value,
+          $Res Function(_$UserEditEventChangeHourlyRateImpl) then) =
+      __$$UserEditEventChangeHourlyRateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({double value});
+}
+
+/// @nodoc
+class __$$UserEditEventChangeHourlyRateImplCopyWithImpl<$Res>
+    extends _$UserEditEventCopyWithImpl<$Res,
+        _$UserEditEventChangeHourlyRateImpl>
+    implements _$$UserEditEventChangeHourlyRateImplCopyWith<$Res> {
+  __$$UserEditEventChangeHourlyRateImplCopyWithImpl(
+      _$UserEditEventChangeHourlyRateImpl _value,
+      $Res Function(_$UserEditEventChangeHourlyRateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UserEditEventChangeHourlyRateImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserEditEventChangeHourlyRateImpl
+    implements UserEditEventChangeHourlyRate {
+  const _$UserEditEventChangeHourlyRateImpl({required this.value});
+
+  @override
+  final double value;
+
+  @override
+  String toString() {
+    return 'UserEditEvent.changeHourlyRate(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserEditEventChangeHourlyRateImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserEditEventChangeHourlyRateImplCopyWith<
+          _$UserEditEventChangeHourlyRateImpl>
+      get copyWith => __$$UserEditEventChangeHourlyRateImplCopyWithImpl<
+          _$UserEditEventChangeHourlyRateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeRole,
+    required TResult Function(double value) changeHourlyRate,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeHourlyRate(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeRole,
+    TResult? Function(double value)? changeHourlyRate,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeHourlyRate?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeRole,
+    TResult Function(double value)? changeHourlyRate,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeHourlyRate != null) {
+      return changeHourlyRate(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserEditEventtLoad value) load,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
+    required TResult Function(UserEditEventtSave value) save,
+  }) {
+    return changeHourlyRate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UserEditEventtLoad value)? load,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult? Function(UserEditEventtSave value)? save,
+  }) {
+    return changeHourlyRate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserEditEventtLoad value)? load,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult Function(UserEditEventtSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeHourlyRate != null) {
+      return changeHourlyRate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserEditEventChangeHourlyRate implements UserEditEvent {
+  const factory UserEditEventChangeHourlyRate({required final double value}) =
+      _$UserEditEventChangeHourlyRateImpl;
+
+  double get value;
+  @JsonKey(ignore: true)
+  _$$UserEditEventChangeHourlyRateImplCopyWith<
+          _$UserEditEventChangeHourlyRateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1346,6 +1843,8 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
     required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeRole,
+    required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
     required TResult Function(int value) changeUserType,
@@ -1363,6 +1862,8 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
     TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeRole,
+    TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
     TResult? Function(int value)? changeUserType,
@@ -1380,6 +1881,8 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
     TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeRole,
+    TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
     TResult Function(int value)? changeUserType,
@@ -1404,6 +1907,9 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
+    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
     required TResult Function(UserEditEventChangePassword value) changePassword,
     required TResult Function(UserEditEventChangeUserType value) changeUserType,
@@ -1421,6 +1927,8 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
     TResult? Function(UserEditEventChangeUserType value)? changeUserType,
@@ -1438,6 +1946,8 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
     TResult Function(UserEditEventChangeUserType value)? changeUserType,
@@ -1534,6 +2044,8 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
     required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeRole,
+    required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
     required TResult Function(int value) changeUserType,
@@ -1551,6 +2063,8 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
     TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeRole,
+    TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
     TResult? Function(int value)? changeUserType,
@@ -1568,6 +2082,8 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
     TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeRole,
+    TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
     TResult Function(int value)? changeUserType,
@@ -1592,6 +2108,9 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
+    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
     required TResult Function(UserEditEventChangePassword value) changePassword,
     required TResult Function(UserEditEventChangeUserType value) changeUserType,
@@ -1609,6 +2128,8 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
     TResult? Function(UserEditEventChangeUserType value)? changeUserType,
@@ -1626,6 +2147,8 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
     TResult Function(UserEditEventChangeUserType value)? changeUserType,
@@ -1722,6 +2245,8 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
     required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeRole,
+    required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
     required TResult Function(int value) changeUserType,
@@ -1739,6 +2264,8 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
     TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeRole,
+    TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
     TResult? Function(int value)? changeUserType,
@@ -1756,6 +2283,8 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
     TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeRole,
+    TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
     TResult Function(int value)? changeUserType,
@@ -1780,6 +2309,9 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
+    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
     required TResult Function(UserEditEventChangePassword value) changePassword,
     required TResult Function(UserEditEventChangeUserType value) changeUserType,
@@ -1797,6 +2329,8 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
     TResult? Function(UserEditEventChangeUserType value)? changeUserType,
@@ -1814,6 +2348,8 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
     TResult Function(UserEditEventChangeUserType value)? changeUserType,
@@ -1909,6 +2445,8 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
     required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changeRole,
+    required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
     required TResult Function(int value) changeUserType,
@@ -1926,6 +2464,8 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
     TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changeRole,
+    TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
     TResult? Function(int value)? changeUserType,
@@ -1943,6 +2483,8 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
     TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changeRole,
+    TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
     TResult Function(int value)? changeUserType,
@@ -1967,6 +2509,9 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
+    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
     required TResult Function(UserEditEventChangePassword value) changePassword,
     required TResult Function(UserEditEventChangeUserType value) changeUserType,
@@ -1984,6 +2529,8 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
     TResult? Function(UserEditEventChangeUserType value)? changeUserType,
@@ -2001,6 +2548,8 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
     TResult Function(UserEditEventChangeUserType value)? changeUserType,

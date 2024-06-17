@@ -8,6 +8,7 @@ import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:buildnotifierrear/presentation/users/edit/bloc/user_edit_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class UserEditView extends IView {
@@ -66,146 +67,194 @@ class UserEditView extends IView {
                         child: Card(
                           child: Padding(
                             padding: const EdgeInsets.all(Sizes.size16),
-                            child: Column(
+                            child: Row(
                               children: [
-                                TextFormField(
-                                  decoration: const InputDecoration(
-                                    labelText: 'First Name',
-                                  ),
-                                  initialValue: user.firstName,
-                                  onChanged: (value) {
-                                    bloc.add(
-                                      UserEditEvent.changeFirstName(
-                                        value: value,
-                                      ),
-                                    );
-                                  },
-                                ),
-                                gapHeight16,
-                                TextFormField(
-                                  decoration: const InputDecoration(
-                                    labelText: 'Last name',
-                                  ),
-                                  initialValue: user.lastName,
-                                  onChanged: (value) {
-                                    bloc.add(
-                                      UserEditEvent.changeLastName(
-                                        value: value,
-                                      ),
-                                    );
-                                  },
-                                ),
-                                gapHeight16,
-                                TextFormField(
-                                  decoration: const InputDecoration(
-                                    labelText: 'Phone number',
-                                  ),
-                                  initialValue: user.phoneNumber,
-                                  onChanged: (value) {
-                                    bloc.add(
-                                      UserEditEvent.changePhoneNumber(
-                                        value: value,
-                                      ),
-                                    );
-                                  },
-                                ),
-                                gapHeight16,
-                                TextFormField(
-                                  decoration: const InputDecoration(
-                                    labelText: 'E-mail',
-                                  ),
-                                  initialValue: user.email,
-                                  onChanged: (value) {
-                                    bloc.add(
-                                      UserEditEvent.changeEmail(
-                                        value: value,
-                                      ),
-                                    );
-                                  },
-                                ),
-                                if (error != null && error.code == 2)
-                                  Text(
-                                    error.message,
-                                    style: const TextStyle(
-                                      color: AppColor.red,
-                                    ),
-                                  ),
-                                gapHeight16,
-                                TextFormField(
-                                  decoration: const InputDecoration(
-                                    labelText: 'Department',
-                                  ),
-                                  initialValue: user.department,
-                                  onChanged: (value) {
-                                    bloc.add(
-                                      UserEditEvent.changeDepartment(
-                                        value: value,
-                                      ),
-                                    );
-                                  },
-                                ),
-                                gapHeight16,
-                                TextFormField(
-                                  decoration: const InputDecoration(
-                                    labelText: 'Username',
-                                  ),
-                                  initialValue: user.userName,
-                                  onChanged: (value) {
-                                    bloc.add(
-                                      UserEditEvent.changeUsername(
-                                        value: value,
-                                      ),
-                                    );
-                                  },
-                                ),
-                                if (error != null && error.code == 1)
-                                  Text(
-                                    error.message,
-                                    style: const TextStyle(
-                                      color: AppColor.red,
-                                    ),
-                                  ),
-                                gapHeight16,
-                                TextFormField(
-                                  decoration: const InputDecoration(
-                                    labelText: 'Password',
-                                  ),
-                                  initialValue: user.password,
-                                  onChanged: (value) {
-                                    bloc.add(
-                                      UserEditEvent.changePassword(
-                                        value: value,
-                                      ),
-                                    );
-                                  },
-                                ),
-                                gapHeight16,
-                                DropdownButtonFormField(
-                                  value: user.userType,
-                                  decoration: const InputDecoration(
-                                    labelText: 'User type',
-                                  ),
-                                  isExpanded: true,
-                                  items: const [
-                                    DropdownMenuItem(
-                                      value: 0,
-                                      child: Text('Standard User'),
-                                    ),
-                                    DropdownMenuItem(
-                                      value: 1,
-                                      child: Text('Administrator'),
-                                    )
-                                  ],
-                                  onChanged: (value) {
-                                    if (value != null) {
-                                      bloc.add(
-                                        UserEditEvent.changeUserType(
-                                          value: value,
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      TextFormField(
+                                        decoration: const InputDecoration(
+                                          labelText: 'First Name',
                                         ),
-                                      );
-                                    }
-                                  },
-                                )
+                                        initialValue: user.firstName,
+                                        onChanged: (value) {
+                                          bloc.add(
+                                            UserEditEvent.changeFirstName(
+                                              value: value,
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                      gapHeight16,
+                                      TextFormField(
+                                        decoration: const InputDecoration(
+                                          labelText: 'Phone number',
+                                        ),
+                                        initialValue: user.phoneNumber,
+                                        onChanged: (value) {
+                                          bloc.add(
+                                            UserEditEvent.changePhoneNumber(
+                                              value: value,
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                      gapHeight16,
+                                      TextFormField(
+                                        decoration: const InputDecoration(
+                                          labelText: 'Department',
+                                        ),
+                                        initialValue: user.department,
+                                        onChanged: (value) {
+                                          bloc.add(
+                                            UserEditEvent.changeDepartment(
+                                              value: value,
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                      gapHeight16,
+                                      TextFormField(
+                                        decoration: const InputDecoration(
+                                          labelText: 'Role',
+                                        ),
+                                        initialValue: user.role,
+                                        onChanged: (value) {
+                                          bloc.add(
+                                            UserEditEvent.changeRole(
+                                              value: value,
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                      gapHeight16,
+                                      TextFormField(
+                                        decoration: const InputDecoration(
+                                          labelText: 'Username',
+                                        ),
+                                        initialValue: user.userName,
+                                        onChanged: (value) {
+                                          bloc.add(
+                                            UserEditEvent.changeUsername(
+                                              value: value,
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                      if (error != null && error.code == 1)
+                                        Text(
+                                          error.message,
+                                          style: const TextStyle(
+                                            color: AppColor.red,
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                                gapWidth32,
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      TextFormField(
+                                        decoration: const InputDecoration(
+                                          labelText: 'Last name',
+                                        ),
+                                        initialValue: user.lastName,
+                                        onChanged: (value) {
+                                          bloc.add(
+                                            UserEditEvent.changeLastName(
+                                              value: value,
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                      gapHeight16,
+                                      TextFormField(
+                                        decoration: const InputDecoration(
+                                          labelText: 'E-mail',
+                                        ),
+                                        initialValue: user.email,
+                                        onChanged: (value) {
+                                          bloc.add(
+                                            UserEditEvent.changeEmail(
+                                              value: value,
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                      if (error != null && error.code == 2)
+                                        Text(
+                                          error.message,
+                                          style: const TextStyle(
+                                            color: AppColor.red,
+                                          ),
+                                        ),
+                                      gapHeight16,
+                                      DropdownButtonFormField(
+                                        value: user.userType,
+                                        decoration: const InputDecoration(
+                                          labelText: 'User type',
+                                        ),
+                                        isExpanded: true,
+                                        items: const [
+                                          DropdownMenuItem(
+                                            value: 0,
+                                            child: Text('Standard User'),
+                                          ),
+                                          DropdownMenuItem(
+                                            value: 1,
+                                            child: Text('Administrator'),
+                                          )
+                                        ],
+                                        onChanged: (value) {
+                                          if (value != null) {
+                                            bloc.add(
+                                              UserEditEvent.changeUserType(
+                                                value: value,
+                                              ),
+                                            );
+                                          }
+                                        },
+                                      ),
+                                      gapHeight16,
+                                      TextFormField(
+                                        inputFormatters: <TextInputFormatter>[
+                                          FilteringTextInputFormatter.allow(
+                                            RegExp(r'^\d+\.?\d{0,2}'),
+                                          ),
+                                        ],
+                                        decoration: const InputDecoration(
+                                          labelText: 'Hourly rate',
+                                        ),
+                                        initialValue: user.hourlyRate > 0
+                                            ? user.hourlyRate.toStringAsFixed(2)
+                                            : '',
+                                        onChanged: (value) {
+                                          bloc.add(
+                                            UserEditEvent.changeHourlyRate(
+                                              value:
+                                                  double.tryParse(value) ?? 0,
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                      gapHeight16,
+                                      TextFormField(
+                                        decoration: const InputDecoration(
+                                          labelText: 'Password',
+                                        ),
+                                        initialValue: user.password,
+                                        onChanged: (value) {
+                                          bloc.add(
+                                            UserEditEvent.changePassword(
+                                              value: value,
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ],
                             ),
                           ),

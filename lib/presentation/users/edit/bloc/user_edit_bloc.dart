@@ -82,6 +82,24 @@ class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
             ),
           );
         },
+        changeRole: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              user: state.asLoaded.user.copyWith(
+                role: value,
+              ),
+            ),
+          );
+        },
+        changeHourlyRate: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              user: state.asLoaded.user.copyWith(
+                hourlyRate: value,
+              ),
+            ),
+          );
+        },
         changeUsername: (value) {
           emit(
             state.asLoaded.copyWith(
