@@ -1,6 +1,7 @@
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/const/images_const.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
+import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
 import 'package:buildnotifierrear/presentation/sign/sign_up/bloc/sign_up_bloc.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
@@ -72,20 +73,14 @@ class SignUpView extends IView {
                           ),
                         ),
                         gapHeight24,
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'First name',
-                            prefixIcon: Icon(
-                              Icons.badge,
-                            ),
-                          ),
+                        BaseTextFormField(
+                          label: 'First name',
                           initialValue: state.user.firstName,
                           onChanged: (value) {
                             bloc.add(
                               SignUpEvent.changeFirstName(value: value),
                             );
                           },
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'First name is required';
@@ -94,20 +89,14 @@ class SignUpView extends IView {
                           },
                         ),
                         gapHeight16,
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'Last name',
-                            prefixIcon: Icon(
-                              Icons.badge,
-                            ),
-                          ),
+                        BaseTextFormField(
+                          label: 'Last name',
                           initialValue: state.user.lastName,
                           onChanged: (value) {
                             bloc.add(
                               SignUpEvent.changeLastName(value: value),
                             );
                           },
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Last name is required';
@@ -116,20 +105,14 @@ class SignUpView extends IView {
                           },
                         ),
                         gapHeight16,
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'Company name',
-                            prefixIcon: Icon(
-                              Icons.business,
-                            ),
-                          ),
+                        BaseTextFormField(
+                          label: 'Company name',
                           initialValue: state.settings.name,
                           onChanged: (value) {
                             bloc.add(
                               SignUpEvent.changeCompanyName(value: value),
                             );
                           },
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Company name is required';
@@ -138,20 +121,14 @@ class SignUpView extends IView {
                           },
                         ),
                         gapHeight16,
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'Email',
-                            prefixIcon: Icon(
-                              Icons.email,
-                            ),
-                          ),
+                        BaseTextFormField(
+                          label: 'Email',
                           initialValue: state.user.email,
                           onChanged: (value) {
                             bloc.add(
                               SignUpEvent.changeEmail(value: value),
                             );
                           },
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Email is required';
@@ -168,20 +145,14 @@ class SignUpView extends IView {
                             ),
                           ),
                         gapHeight16,
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'Phone number',
-                            prefixIcon: Icon(
-                              Icons.phone,
-                            ),
-                          ),
+                        BaseTextFormField(
+                          label: 'Phone number',
                           initialValue: state.user.phoneNumber,
                           onChanged: (value) {
                             bloc.add(
                               SignUpEvent.changePhone(value: value),
                             );
                           },
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Phone number is required';
@@ -190,13 +161,8 @@ class SignUpView extends IView {
                           },
                         ),
                         gapHeight16,
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'Username',
-                            prefixIcon: Icon(
-                              Icons.person,
-                            ),
-                          ),
+                        BaseTextFormField(
+                          label: 'Username',
                           initialValue: state.user.userName,
                           onChanged: (value) {
                             bloc.add(
@@ -219,13 +185,8 @@ class SignUpView extends IView {
                             ),
                           ),
                         gapHeight16,
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'Password',
-                            prefixIcon: Icon(
-                              Icons.lock,
-                            ),
-                          ),
+                        BaseTextFormField(
+                          label: 'Password',
                           initialValue: state.user.password,
                           obscureText: true,
                           onChanged: (value) {

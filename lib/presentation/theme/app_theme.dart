@@ -38,9 +38,17 @@ ColorScheme get _colorScheme => ColorScheme.fromSeed(
     );
 
 InputDecorationTheme get _inputDecorationTheme => const InputDecorationTheme(
+      isDense: true,
       filled: true,
       fillColor: AppColor.lightColor,
       prefixIconColor: AppColor.primaryColorSwatch,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(Sizes.size4)),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(Sizes.size4)),
+        borderSide: BorderSide(color: AppColor.primaryColorSwatch),
+      ),
     );
 
 CardTheme get _cardTheme => const CardTheme(

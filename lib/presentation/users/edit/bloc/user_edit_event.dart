@@ -22,13 +22,33 @@ class UserEditEvent with _$UserEditEvent {
     required String value,
   }) = UserEditEventChangeEmail;
 
+  const factory UserEditEvent.changeAddress({
+    required String value,
+  }) = UserEditEventChangeAddress;
+
+  const factory UserEditEvent.changeAddress2({
+    required String value,
+  }) = UserEditEventChangeAddress2;
+
+  const factory UserEditEvent.changeCity({
+    required String value,
+  }) = UserEditEventChangeCity;
+
+  const factory UserEditEvent.changeState({
+    required String value,
+  }) = UserEditEventChangeState;
+
+  const factory UserEditEvent.changeZipCode({
+    required String value,
+  }) = UserEditEventChangeZipCode;
+
   const factory UserEditEvent.changeDepartment({
     required String value,
   }) = UserEditEventChangeDepartment;
 
-  const factory UserEditEvent.changeRole({
+  const factory UserEditEvent.changePosition({
     required String value,
-  }) = UserEditEventChangeRole;
+  }) = UserEditEventChangePosition;
 
   const factory UserEditEvent.changeHourlyRate({
     required double value,

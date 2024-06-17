@@ -73,6 +73,51 @@ class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
             ),
           );
         },
+        changeAddress: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              user: state.asLoaded.user.copyWith(
+                address: value,
+              ),
+            ),
+          );
+        },
+        changeAddress2: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              user: state.asLoaded.user.copyWith(
+                address2: value,
+              ),
+            ),
+          );
+        },
+        changeCity: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              user: state.asLoaded.user.copyWith(
+                city: value,
+              ),
+            ),
+          );
+        },
+        changeState: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              user: state.asLoaded.user.copyWith(
+                state: value,
+              ),
+            ),
+          );
+        },
+        changeZipCode: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              user: state.asLoaded.user.copyWith(
+                zipCode: value,
+              ),
+            ),
+          );
+        },
         changeDepartment: (value) {
           emit(
             state.asLoaded.copyWith(
@@ -82,11 +127,11 @@ class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
             ),
           );
         },
-        changeRole: (value) {
+        changePosition: (value) {
           emit(
             state.asLoaded.copyWith(
               user: state.asLoaded.user.copyWith(
-                role: value,
+                position: value,
               ),
             ),
           );

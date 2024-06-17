@@ -128,7 +128,15 @@ class UsersOverviewView extends IView {
                                               user.department.isNotEmpty
                                                   ? user.department
                                                   : 'N/A',
-                                            )
+                                            ),
+                                            gapWidth4,
+                                            const Text('/'),
+                                            gapWidth4,
+                                            Text(
+                                              user.position.isNotEmpty
+                                                  ? user.position
+                                                  : 'N/A',
+                                            ),
                                           ],
                                         ),
                                       ],

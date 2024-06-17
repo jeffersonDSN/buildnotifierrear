@@ -23,8 +23,13 @@ mixin _$UserEditEvent {
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
     required TResult Function(String value) changeDepartment,
-    required TResult Function(String value) changeRole,
+    required TResult Function(String value) changePosition,
     required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
@@ -39,8 +44,13 @@ mixin _$UserEditEvent {
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
     TResult? Function(String value)? changeDepartment,
-    TResult? Function(String value)? changeRole,
+    TResult? Function(String value)? changePosition,
     TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
@@ -55,8 +65,13 @@ mixin _$UserEditEvent {
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
     TResult Function(String value)? changeDepartment,
-    TResult Function(String value)? changeRole,
+    TResult Function(String value)? changePosition,
     TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
@@ -74,9 +89,14 @@ mixin _$UserEditEvent {
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
-    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
     required TResult Function(UserEditEventChangeHourlyRate value)
         changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
@@ -92,8 +112,13 @@ mixin _$UserEditEvent {
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
     TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
@@ -108,8 +133,13 @@ mixin _$UserEditEvent {
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
     TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
@@ -218,8 +248,13 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
     required TResult Function(String value) changeDepartment,
-    required TResult Function(String value) changeRole,
+    required TResult Function(String value) changePosition,
     required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
@@ -237,8 +272,13 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
     TResult? Function(String value)? changeDepartment,
-    TResult? Function(String value)? changeRole,
+    TResult? Function(String value)? changePosition,
     TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
@@ -256,8 +296,13 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
     TResult Function(String value)? changeDepartment,
-    TResult Function(String value)? changeRole,
+    TResult Function(String value)? changePosition,
     TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
@@ -281,9 +326,14 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
-    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
     required TResult Function(UserEditEventChangeHourlyRate value)
         changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
@@ -302,8 +352,13 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
     TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
@@ -321,8 +376,13 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
     TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
@@ -422,8 +482,13 @@ class _$UserEditEventChangeFirstNameImpl
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
     required TResult Function(String value) changeDepartment,
-    required TResult Function(String value) changeRole,
+    required TResult Function(String value) changePosition,
     required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
@@ -441,8 +506,13 @@ class _$UserEditEventChangeFirstNameImpl
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
     TResult? Function(String value)? changeDepartment,
-    TResult? Function(String value)? changeRole,
+    TResult? Function(String value)? changePosition,
     TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
@@ -460,8 +530,13 @@ class _$UserEditEventChangeFirstNameImpl
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
     TResult Function(String value)? changeDepartment,
-    TResult Function(String value)? changeRole,
+    TResult Function(String value)? changePosition,
     TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
@@ -485,9 +560,14 @@ class _$UserEditEventChangeFirstNameImpl
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
-    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
     required TResult Function(UserEditEventChangeHourlyRate value)
         changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
@@ -506,8 +586,13 @@ class _$UserEditEventChangeFirstNameImpl
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
     TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
@@ -525,8 +610,13 @@ class _$UserEditEventChangeFirstNameImpl
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
     TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
@@ -624,8 +714,13 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
     required TResult Function(String value) changeDepartment,
-    required TResult Function(String value) changeRole,
+    required TResult Function(String value) changePosition,
     required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
@@ -643,8 +738,13 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
     TResult? Function(String value)? changeDepartment,
-    TResult? Function(String value)? changeRole,
+    TResult? Function(String value)? changePosition,
     TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
@@ -662,8 +762,13 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
     TResult Function(String value)? changeDepartment,
-    TResult Function(String value)? changeRole,
+    TResult Function(String value)? changePosition,
     TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
@@ -687,9 +792,14 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
-    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
     required TResult Function(UserEditEventChangeHourlyRate value)
         changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
@@ -708,8 +818,13 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
     TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
@@ -727,8 +842,13 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
     TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
@@ -828,8 +948,13 @@ class _$UserEditEventChangePhoneNumberImpl
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
     required TResult Function(String value) changeDepartment,
-    required TResult Function(String value) changeRole,
+    required TResult Function(String value) changePosition,
     required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
@@ -847,8 +972,13 @@ class _$UserEditEventChangePhoneNumberImpl
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
     TResult? Function(String value)? changeDepartment,
-    TResult? Function(String value)? changeRole,
+    TResult? Function(String value)? changePosition,
     TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
@@ -866,8 +996,13 @@ class _$UserEditEventChangePhoneNumberImpl
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
     TResult Function(String value)? changeDepartment,
-    TResult Function(String value)? changeRole,
+    TResult Function(String value)? changePosition,
     TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
@@ -891,9 +1026,14 @@ class _$UserEditEventChangePhoneNumberImpl
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
-    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
     required TResult Function(UserEditEventChangeHourlyRate value)
         changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
@@ -912,8 +1052,13 @@ class _$UserEditEventChangePhoneNumberImpl
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
     TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
@@ -931,8 +1076,13 @@ class _$UserEditEventChangePhoneNumberImpl
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
     TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
@@ -1030,8 +1180,13 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
     required TResult Function(String value) changeDepartment,
-    required TResult Function(String value) changeRole,
+    required TResult Function(String value) changePosition,
     required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
@@ -1049,8 +1204,13 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
     TResult? Function(String value)? changeDepartment,
-    TResult? Function(String value)? changeRole,
+    TResult? Function(String value)? changePosition,
     TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
@@ -1068,8 +1228,13 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
     TResult Function(String value)? changeDepartment,
-    TResult Function(String value)? changeRole,
+    TResult Function(String value)? changePosition,
     TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
@@ -1093,9 +1258,14 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
-    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
     required TResult Function(UserEditEventChangeHourlyRate value)
         changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
@@ -1114,8 +1284,13 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
     TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
@@ -1133,8 +1308,13 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
     TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
@@ -1156,6 +1336,1161 @@ abstract class UserEditEventChangeEmail implements UserEditEvent {
   String get value;
   @JsonKey(ignore: true)
   _$$UserEditEventChangeEmailImplCopyWith<_$UserEditEventChangeEmailImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserEditEventChangeAddressImplCopyWith<$Res> {
+  factory _$$UserEditEventChangeAddressImplCopyWith(
+          _$UserEditEventChangeAddressImpl value,
+          $Res Function(_$UserEditEventChangeAddressImpl) then) =
+      __$$UserEditEventChangeAddressImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UserEditEventChangeAddressImplCopyWithImpl<$Res>
+    extends _$UserEditEventCopyWithImpl<$Res, _$UserEditEventChangeAddressImpl>
+    implements _$$UserEditEventChangeAddressImplCopyWith<$Res> {
+  __$$UserEditEventChangeAddressImplCopyWithImpl(
+      _$UserEditEventChangeAddressImpl _value,
+      $Res Function(_$UserEditEventChangeAddressImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UserEditEventChangeAddressImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserEditEventChangeAddressImpl implements UserEditEventChangeAddress {
+  const _$UserEditEventChangeAddressImpl({required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'UserEditEvent.changeAddress(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserEditEventChangeAddressImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserEditEventChangeAddressImplCopyWith<_$UserEditEventChangeAddressImpl>
+      get copyWith => __$$UserEditEventChangeAddressImplCopyWithImpl<
+          _$UserEditEventChangeAddressImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changePosition,
+    required TResult Function(double value) changeHourlyRate,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeAddress(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changePosition,
+    TResult? Function(double value)? changeHourlyRate,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeAddress?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changePosition,
+    TResult Function(double value)? changeHourlyRate,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeAddress != null) {
+      return changeAddress(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserEditEventtLoad value) load,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
+    required TResult Function(UserEditEventtSave value) save,
+  }) {
+    return changeAddress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UserEditEventtLoad value)? load,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult? Function(UserEditEventtSave value)? save,
+  }) {
+    return changeAddress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserEditEventtLoad value)? load,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult Function(UserEditEventtSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeAddress != null) {
+      return changeAddress(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserEditEventChangeAddress implements UserEditEvent {
+  const factory UserEditEventChangeAddress({required final String value}) =
+      _$UserEditEventChangeAddressImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UserEditEventChangeAddressImplCopyWith<_$UserEditEventChangeAddressImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserEditEventChangeAddress2ImplCopyWith<$Res> {
+  factory _$$UserEditEventChangeAddress2ImplCopyWith(
+          _$UserEditEventChangeAddress2Impl value,
+          $Res Function(_$UserEditEventChangeAddress2Impl) then) =
+      __$$UserEditEventChangeAddress2ImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UserEditEventChangeAddress2ImplCopyWithImpl<$Res>
+    extends _$UserEditEventCopyWithImpl<$Res, _$UserEditEventChangeAddress2Impl>
+    implements _$$UserEditEventChangeAddress2ImplCopyWith<$Res> {
+  __$$UserEditEventChangeAddress2ImplCopyWithImpl(
+      _$UserEditEventChangeAddress2Impl _value,
+      $Res Function(_$UserEditEventChangeAddress2Impl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UserEditEventChangeAddress2Impl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserEditEventChangeAddress2Impl implements UserEditEventChangeAddress2 {
+  const _$UserEditEventChangeAddress2Impl({required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'UserEditEvent.changeAddress2(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserEditEventChangeAddress2Impl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserEditEventChangeAddress2ImplCopyWith<_$UserEditEventChangeAddress2Impl>
+      get copyWith => __$$UserEditEventChangeAddress2ImplCopyWithImpl<
+          _$UserEditEventChangeAddress2Impl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changePosition,
+    required TResult Function(double value) changeHourlyRate,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeAddress2(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changePosition,
+    TResult? Function(double value)? changeHourlyRate,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeAddress2?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changePosition,
+    TResult Function(double value)? changeHourlyRate,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeAddress2 != null) {
+      return changeAddress2(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserEditEventtLoad value) load,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
+    required TResult Function(UserEditEventtSave value) save,
+  }) {
+    return changeAddress2(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UserEditEventtLoad value)? load,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult? Function(UserEditEventtSave value)? save,
+  }) {
+    return changeAddress2?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserEditEventtLoad value)? load,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult Function(UserEditEventtSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeAddress2 != null) {
+      return changeAddress2(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserEditEventChangeAddress2 implements UserEditEvent {
+  const factory UserEditEventChangeAddress2({required final String value}) =
+      _$UserEditEventChangeAddress2Impl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UserEditEventChangeAddress2ImplCopyWith<_$UserEditEventChangeAddress2Impl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserEditEventChangeCityImplCopyWith<$Res> {
+  factory _$$UserEditEventChangeCityImplCopyWith(
+          _$UserEditEventChangeCityImpl value,
+          $Res Function(_$UserEditEventChangeCityImpl) then) =
+      __$$UserEditEventChangeCityImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UserEditEventChangeCityImplCopyWithImpl<$Res>
+    extends _$UserEditEventCopyWithImpl<$Res, _$UserEditEventChangeCityImpl>
+    implements _$$UserEditEventChangeCityImplCopyWith<$Res> {
+  __$$UserEditEventChangeCityImplCopyWithImpl(
+      _$UserEditEventChangeCityImpl _value,
+      $Res Function(_$UserEditEventChangeCityImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UserEditEventChangeCityImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserEditEventChangeCityImpl implements UserEditEventChangeCity {
+  const _$UserEditEventChangeCityImpl({required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'UserEditEvent.changeCity(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserEditEventChangeCityImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserEditEventChangeCityImplCopyWith<_$UserEditEventChangeCityImpl>
+      get copyWith => __$$UserEditEventChangeCityImplCopyWithImpl<
+          _$UserEditEventChangeCityImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changePosition,
+    required TResult Function(double value) changeHourlyRate,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeCity(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changePosition,
+    TResult? Function(double value)? changeHourlyRate,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeCity?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changePosition,
+    TResult Function(double value)? changeHourlyRate,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeCity != null) {
+      return changeCity(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserEditEventtLoad value) load,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
+    required TResult Function(UserEditEventtSave value) save,
+  }) {
+    return changeCity(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UserEditEventtLoad value)? load,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult? Function(UserEditEventtSave value)? save,
+  }) {
+    return changeCity?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserEditEventtLoad value)? load,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult Function(UserEditEventtSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeCity != null) {
+      return changeCity(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserEditEventChangeCity implements UserEditEvent {
+  const factory UserEditEventChangeCity({required final String value}) =
+      _$UserEditEventChangeCityImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UserEditEventChangeCityImplCopyWith<_$UserEditEventChangeCityImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserEditEventChangeStateImplCopyWith<$Res> {
+  factory _$$UserEditEventChangeStateImplCopyWith(
+          _$UserEditEventChangeStateImpl value,
+          $Res Function(_$UserEditEventChangeStateImpl) then) =
+      __$$UserEditEventChangeStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UserEditEventChangeStateImplCopyWithImpl<$Res>
+    extends _$UserEditEventCopyWithImpl<$Res, _$UserEditEventChangeStateImpl>
+    implements _$$UserEditEventChangeStateImplCopyWith<$Res> {
+  __$$UserEditEventChangeStateImplCopyWithImpl(
+      _$UserEditEventChangeStateImpl _value,
+      $Res Function(_$UserEditEventChangeStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UserEditEventChangeStateImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserEditEventChangeStateImpl implements UserEditEventChangeState {
+  const _$UserEditEventChangeStateImpl({required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'UserEditEvent.changeState(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserEditEventChangeStateImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserEditEventChangeStateImplCopyWith<_$UserEditEventChangeStateImpl>
+      get copyWith => __$$UserEditEventChangeStateImplCopyWithImpl<
+          _$UserEditEventChangeStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changePosition,
+    required TResult Function(double value) changeHourlyRate,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeState(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changePosition,
+    TResult? Function(double value)? changeHourlyRate,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeState?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changePosition,
+    TResult Function(double value)? changeHourlyRate,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeState != null) {
+      return changeState(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserEditEventtLoad value) load,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
+    required TResult Function(UserEditEventtSave value) save,
+  }) {
+    return changeState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UserEditEventtLoad value)? load,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult? Function(UserEditEventtSave value)? save,
+  }) {
+    return changeState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserEditEventtLoad value)? load,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult Function(UserEditEventtSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeState != null) {
+      return changeState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserEditEventChangeState implements UserEditEvent {
+  const factory UserEditEventChangeState({required final String value}) =
+      _$UserEditEventChangeStateImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UserEditEventChangeStateImplCopyWith<_$UserEditEventChangeStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserEditEventChangeZipCodeImplCopyWith<$Res> {
+  factory _$$UserEditEventChangeZipCodeImplCopyWith(
+          _$UserEditEventChangeZipCodeImpl value,
+          $Res Function(_$UserEditEventChangeZipCodeImpl) then) =
+      __$$UserEditEventChangeZipCodeImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UserEditEventChangeZipCodeImplCopyWithImpl<$Res>
+    extends _$UserEditEventCopyWithImpl<$Res, _$UserEditEventChangeZipCodeImpl>
+    implements _$$UserEditEventChangeZipCodeImplCopyWith<$Res> {
+  __$$UserEditEventChangeZipCodeImplCopyWithImpl(
+      _$UserEditEventChangeZipCodeImpl _value,
+      $Res Function(_$UserEditEventChangeZipCodeImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UserEditEventChangeZipCodeImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserEditEventChangeZipCodeImpl implements UserEditEventChangeZipCode {
+  const _$UserEditEventChangeZipCodeImpl({required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'UserEditEvent.changeZipCode(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserEditEventChangeZipCodeImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserEditEventChangeZipCodeImplCopyWith<_$UserEditEventChangeZipCodeImpl>
+      get copyWith => __$$UserEditEventChangeZipCodeImplCopyWithImpl<
+          _$UserEditEventChangeZipCodeImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changePosition,
+    required TResult Function(double value) changeHourlyRate,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeZipCode(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changePosition,
+    TResult? Function(double value)? changeHourlyRate,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeZipCode?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changePosition,
+    TResult Function(double value)? changeHourlyRate,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeZipCode != null) {
+      return changeZipCode(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserEditEventtLoad value) load,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
+    required TResult Function(UserEditEventtSave value) save,
+  }) {
+    return changeZipCode(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UserEditEventtLoad value)? load,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult? Function(UserEditEventtSave value)? save,
+  }) {
+    return changeZipCode?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserEditEventtLoad value)? load,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult Function(UserEditEventtSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeZipCode != null) {
+      return changeZipCode(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserEditEventChangeZipCode implements UserEditEvent {
+  const factory UserEditEventChangeZipCode({required final String value}) =
+      _$UserEditEventChangeZipCodeImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UserEditEventChangeZipCodeImplCopyWith<_$UserEditEventChangeZipCodeImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1234,8 +2569,13 @@ class _$UserEditEventChangeDepartmentImpl
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
     required TResult Function(String value) changeDepartment,
-    required TResult Function(String value) changeRole,
+    required TResult Function(String value) changePosition,
     required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
@@ -1253,8 +2593,13 @@ class _$UserEditEventChangeDepartmentImpl
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
     TResult? Function(String value)? changeDepartment,
-    TResult? Function(String value)? changeRole,
+    TResult? Function(String value)? changePosition,
     TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
@@ -1272,8 +2617,13 @@ class _$UserEditEventChangeDepartmentImpl
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
     TResult Function(String value)? changeDepartment,
-    TResult Function(String value)? changeRole,
+    TResult Function(String value)? changePosition,
     TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
@@ -1297,9 +2647,14 @@ class _$UserEditEventChangeDepartmentImpl
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
-    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
     required TResult Function(UserEditEventChangeHourlyRate value)
         changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
@@ -1318,8 +2673,13 @@ class _$UserEditEventChangeDepartmentImpl
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
     TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
@@ -1337,8 +2697,13 @@ class _$UserEditEventChangeDepartmentImpl
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
     TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
@@ -1365,22 +2730,22 @@ abstract class UserEditEventChangeDepartment implements UserEditEvent {
 }
 
 /// @nodoc
-abstract class _$$UserEditEventChangeRoleImplCopyWith<$Res> {
-  factory _$$UserEditEventChangeRoleImplCopyWith(
-          _$UserEditEventChangeRoleImpl value,
-          $Res Function(_$UserEditEventChangeRoleImpl) then) =
-      __$$UserEditEventChangeRoleImplCopyWithImpl<$Res>;
+abstract class _$$UserEditEventChangePositionImplCopyWith<$Res> {
+  factory _$$UserEditEventChangePositionImplCopyWith(
+          _$UserEditEventChangePositionImpl value,
+          $Res Function(_$UserEditEventChangePositionImpl) then) =
+      __$$UserEditEventChangePositionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$UserEditEventChangeRoleImplCopyWithImpl<$Res>
-    extends _$UserEditEventCopyWithImpl<$Res, _$UserEditEventChangeRoleImpl>
-    implements _$$UserEditEventChangeRoleImplCopyWith<$Res> {
-  __$$UserEditEventChangeRoleImplCopyWithImpl(
-      _$UserEditEventChangeRoleImpl _value,
-      $Res Function(_$UserEditEventChangeRoleImpl) _then)
+class __$$UserEditEventChangePositionImplCopyWithImpl<$Res>
+    extends _$UserEditEventCopyWithImpl<$Res, _$UserEditEventChangePositionImpl>
+    implements _$$UserEditEventChangePositionImplCopyWith<$Res> {
+  __$$UserEditEventChangePositionImplCopyWithImpl(
+      _$UserEditEventChangePositionImpl _value,
+      $Res Function(_$UserEditEventChangePositionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1388,7 +2753,7 @@ class __$$UserEditEventChangeRoleImplCopyWithImpl<$Res>
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$UserEditEventChangeRoleImpl(
+    return _then(_$UserEditEventChangePositionImpl(
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -1399,22 +2764,22 @@ class __$$UserEditEventChangeRoleImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserEditEventChangeRoleImpl implements UserEditEventChangeRole {
-  const _$UserEditEventChangeRoleImpl({required this.value});
+class _$UserEditEventChangePositionImpl implements UserEditEventChangePosition {
+  const _$UserEditEventChangePositionImpl({required this.value});
 
   @override
   final String value;
 
   @override
   String toString() {
-    return 'UserEditEvent.changeRole(value: $value)';
+    return 'UserEditEvent.changePosition(value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserEditEventChangeRoleImpl &&
+            other is _$UserEditEventChangePositionImpl &&
             (identical(other.value, value) || other.value == value));
   }
 
@@ -1424,9 +2789,9 @@ class _$UserEditEventChangeRoleImpl implements UserEditEventChangeRole {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserEditEventChangeRoleImplCopyWith<_$UserEditEventChangeRoleImpl>
-      get copyWith => __$$UserEditEventChangeRoleImplCopyWithImpl<
-          _$UserEditEventChangeRoleImpl>(this, _$identity);
+  _$$UserEditEventChangePositionImplCopyWith<_$UserEditEventChangePositionImpl>
+      get copyWith => __$$UserEditEventChangePositionImplCopyWithImpl<
+          _$UserEditEventChangePositionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1436,15 +2801,20 @@ class _$UserEditEventChangeRoleImpl implements UserEditEventChangeRole {
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
     required TResult Function(String value) changeDepartment,
-    required TResult Function(String value) changeRole,
+    required TResult Function(String value) changePosition,
     required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
     required TResult Function(int value) changeUserType,
     required TResult Function(VoidCallback callback) save,
   }) {
-    return changeRole(value);
+    return changePosition(value);
   }
 
   @override
@@ -1455,15 +2825,20 @@ class _$UserEditEventChangeRoleImpl implements UserEditEventChangeRole {
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
     TResult? Function(String value)? changeDepartment,
-    TResult? Function(String value)? changeRole,
+    TResult? Function(String value)? changePosition,
     TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
     TResult? Function(int value)? changeUserType,
     TResult? Function(VoidCallback callback)? save,
   }) {
-    return changeRole?.call(value);
+    return changePosition?.call(value);
   }
 
   @override
@@ -1474,8 +2849,13 @@ class _$UserEditEventChangeRoleImpl implements UserEditEventChangeRole {
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
     TResult Function(String value)? changeDepartment,
-    TResult Function(String value)? changeRole,
+    TResult Function(String value)? changePosition,
     TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
@@ -1483,8 +2863,8 @@ class _$UserEditEventChangeRoleImpl implements UserEditEventChangeRole {
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
-    if (changeRole != null) {
-      return changeRole(value);
+    if (changePosition != null) {
+      return changePosition(value);
     }
     return orElse();
   }
@@ -1499,9 +2879,14 @@ class _$UserEditEventChangeRoleImpl implements UserEditEventChangeRole {
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
-    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
     required TResult Function(UserEditEventChangeHourlyRate value)
         changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
@@ -1509,7 +2894,7 @@ class _$UserEditEventChangeRoleImpl implements UserEditEventChangeRole {
     required TResult Function(UserEditEventChangeUserType value) changeUserType,
     required TResult Function(UserEditEventtSave value) save,
   }) {
-    return changeRole(this);
+    return changePosition(this);
   }
 
   @override
@@ -1520,15 +2905,20 @@ class _$UserEditEventChangeRoleImpl implements UserEditEventChangeRole {
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
     TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
     TResult? Function(UserEditEventChangeUserType value)? changeUserType,
     TResult? Function(UserEditEventtSave value)? save,
   }) {
-    return changeRole?.call(this);
+    return changePosition?.call(this);
   }
 
   @override
@@ -1539,8 +2929,13 @@ class _$UserEditEventChangeRoleImpl implements UserEditEventChangeRole {
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
     TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
@@ -1548,20 +2943,20 @@ class _$UserEditEventChangeRoleImpl implements UserEditEventChangeRole {
     TResult Function(UserEditEventtSave value)? save,
     required TResult orElse(),
   }) {
-    if (changeRole != null) {
-      return changeRole(this);
+    if (changePosition != null) {
+      return changePosition(this);
     }
     return orElse();
   }
 }
 
-abstract class UserEditEventChangeRole implements UserEditEvent {
-  const factory UserEditEventChangeRole({required final String value}) =
-      _$UserEditEventChangeRoleImpl;
+abstract class UserEditEventChangePosition implements UserEditEvent {
+  const factory UserEditEventChangePosition({required final String value}) =
+      _$UserEditEventChangePositionImpl;
 
   String get value;
   @JsonKey(ignore: true)
-  _$$UserEditEventChangeRoleImplCopyWith<_$UserEditEventChangeRoleImpl>
+  _$$UserEditEventChangePositionImplCopyWith<_$UserEditEventChangePositionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1640,8 +3035,13 @@ class _$UserEditEventChangeHourlyRateImpl
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
     required TResult Function(String value) changeDepartment,
-    required TResult Function(String value) changeRole,
+    required TResult Function(String value) changePosition,
     required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
@@ -1659,8 +3059,13 @@ class _$UserEditEventChangeHourlyRateImpl
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
     TResult? Function(String value)? changeDepartment,
-    TResult? Function(String value)? changeRole,
+    TResult? Function(String value)? changePosition,
     TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
@@ -1678,8 +3083,13 @@ class _$UserEditEventChangeHourlyRateImpl
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
     TResult Function(String value)? changeDepartment,
-    TResult Function(String value)? changeRole,
+    TResult Function(String value)? changePosition,
     TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
@@ -1703,9 +3113,14 @@ class _$UserEditEventChangeHourlyRateImpl
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
-    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
     required TResult Function(UserEditEventChangeHourlyRate value)
         changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
@@ -1724,8 +3139,13 @@ class _$UserEditEventChangeHourlyRateImpl
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
     TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
@@ -1743,8 +3163,13 @@ class _$UserEditEventChangeHourlyRateImpl
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
     TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
@@ -1842,8 +3267,13 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
     required TResult Function(String value) changeDepartment,
-    required TResult Function(String value) changeRole,
+    required TResult Function(String value) changePosition,
     required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
@@ -1861,8 +3291,13 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
     TResult? Function(String value)? changeDepartment,
-    TResult? Function(String value)? changeRole,
+    TResult? Function(String value)? changePosition,
     TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
@@ -1880,8 +3315,13 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
     TResult Function(String value)? changeDepartment,
-    TResult Function(String value)? changeRole,
+    TResult Function(String value)? changePosition,
     TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
@@ -1905,9 +3345,14 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
-    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
     required TResult Function(UserEditEventChangeHourlyRate value)
         changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
@@ -1926,8 +3371,13 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
     TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
@@ -1945,8 +3395,13 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
     TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
@@ -2043,8 +3498,13 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
     required TResult Function(String value) changeDepartment,
-    required TResult Function(String value) changeRole,
+    required TResult Function(String value) changePosition,
     required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
@@ -2062,8 +3522,13 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
     TResult? Function(String value)? changeDepartment,
-    TResult? Function(String value)? changeRole,
+    TResult? Function(String value)? changePosition,
     TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
@@ -2081,8 +3546,13 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
     TResult Function(String value)? changeDepartment,
-    TResult Function(String value)? changeRole,
+    TResult Function(String value)? changePosition,
     TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
@@ -2106,9 +3576,14 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
-    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
     required TResult Function(UserEditEventChangeHourlyRate value)
         changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
@@ -2127,8 +3602,13 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
     TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
@@ -2146,8 +3626,13 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
     TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
@@ -2244,8 +3729,13 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
     required TResult Function(String value) changeDepartment,
-    required TResult Function(String value) changeRole,
+    required TResult Function(String value) changePosition,
     required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
@@ -2263,8 +3753,13 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
     TResult? Function(String value)? changeDepartment,
-    TResult? Function(String value)? changeRole,
+    TResult? Function(String value)? changePosition,
     TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
@@ -2282,8 +3777,13 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
     TResult Function(String value)? changeDepartment,
-    TResult Function(String value)? changeRole,
+    TResult Function(String value)? changePosition,
     TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
@@ -2307,9 +3807,14 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
-    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
     required TResult Function(UserEditEventChangeHourlyRate value)
         changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
@@ -2328,8 +3833,13 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
     TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
@@ -2347,8 +3857,13 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
     TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,
@@ -2444,8 +3959,13 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
     required TResult Function(String value) changeDepartment,
-    required TResult Function(String value) changeRole,
+    required TResult Function(String value) changePosition,
     required TResult Function(double value) changeHourlyRate,
     required TResult Function(String value) changeUsername,
     required TResult Function(String value) changePassword,
@@ -2463,8 +3983,13 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
     TResult? Function(String value)? changeDepartment,
-    TResult? Function(String value)? changeRole,
+    TResult? Function(String value)? changePosition,
     TResult? Function(double value)? changeHourlyRate,
     TResult? Function(String value)? changeUsername,
     TResult? Function(String value)? changePassword,
@@ -2482,8 +4007,13 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
     TResult Function(String value)? changeDepartment,
-    TResult Function(String value)? changeRole,
+    TResult Function(String value)? changePosition,
     TResult Function(double value)? changeHourlyRate,
     TResult Function(String value)? changeUsername,
     TResult Function(String value)? changePassword,
@@ -2507,9 +4037,14 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
     required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
     required TResult Function(UserEditEventChangeDepartment value)
         changeDepartment,
-    required TResult Function(UserEditEventChangeRole value) changeRole,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
     required TResult Function(UserEditEventChangeHourlyRate value)
         changeHourlyRate,
     required TResult Function(UserEditEventChangeUsername value) changeUsername,
@@ -2528,8 +4063,13 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult? Function(UserEditEventChangeRole value)? changeRole,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
     TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult? Function(UserEditEventChangeUsername value)? changeUsername,
     TResult? Function(UserEditEventChangePassword value)? changePassword,
@@ -2547,8 +4087,13 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
     TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
-    TResult Function(UserEditEventChangeRole value)? changeRole,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
     TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
     TResult Function(UserEditEventChangeUsername value)? changeUsername,
     TResult Function(UserEditEventChangePassword value)? changePassword,

@@ -1,6 +1,7 @@
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/const/images_const.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
+import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
 import 'package:buildnotifierrear/presentation/sign/sign_in/bloc/sign_in_bloc.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
@@ -66,20 +67,14 @@ class SignInView extends IView {
                         ),
                       ),
                       gapHeight16,
-                      TextFormField(
-                        decoration: const InputDecoration(
-                          labelText: 'User name',
-                          prefixIcon: Icon(
-                            Icons.person,
-                          ),
-                        ),
+                      BaseTextFormField(
+                        label: 'User name',
                         initialValue: state.userName,
                         onChanged: (value) {
                           bloc.add(
                             SignInEvent.changeUserName(value: value),
                           );
                         },
-                        autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter your username';
@@ -88,13 +83,8 @@ class SignInView extends IView {
                         },
                       ),
                       gapHeight16,
-                      TextFormField(
-                        decoration: const InputDecoration(
-                          labelText: 'Password',
-                          prefixIcon: Icon(
-                            Icons.lock,
-                          ),
-                        ),
+                      BaseTextFormField(
+                        label: 'Password',
                         initialValue: state.password,
                         obscureText: true,
                         onChanged: (value) {

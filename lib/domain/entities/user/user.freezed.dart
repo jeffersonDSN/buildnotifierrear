@@ -22,11 +22,17 @@ User _$UserFromJson(Map<String, dynamic> json) {
 mixin _$User {
   String get id => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
+  String get middleName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
+  String get address => throw _privateConstructorUsedError;
+  String get address2 => throw _privateConstructorUsedError;
+  String get city => throw _privateConstructorUsedError;
+  String get state => throw _privateConstructorUsedError;
+  String get zipCode => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
   String get department => throw _privateConstructorUsedError;
-  String get role => throw _privateConstructorUsedError;
+  String get position => throw _privateConstructorUsedError;
   double get hourlyRate => throw _privateConstructorUsedError;
   String get tenant => throw _privateConstructorUsedError;
   String get userName => throw _privateConstructorUsedError;
@@ -46,11 +52,17 @@ abstract class $UserCopyWith<$Res> {
   $Res call(
       {String id,
       String firstName,
+      String middleName,
       String lastName,
+      String address,
+      String address2,
+      String city,
+      String state,
+      String zipCode,
       String email,
       String phoneNumber,
       String department,
-      String role,
+      String position,
       double hourlyRate,
       String tenant,
       String userName,
@@ -73,11 +85,17 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   $Res call({
     Object? id = null,
     Object? firstName = null,
+    Object? middleName = null,
     Object? lastName = null,
+    Object? address = null,
+    Object? address2 = null,
+    Object? city = null,
+    Object? state = null,
+    Object? zipCode = null,
     Object? email = null,
     Object? phoneNumber = null,
     Object? department = null,
-    Object? role = null,
+    Object? position = null,
     Object? hourlyRate = null,
     Object? tenant = null,
     Object? userName = null,
@@ -93,9 +111,33 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String,
+      middleName: null == middleName
+          ? _value.middleName
+          : middleName // ignore: cast_nullable_to_non_nullable
+              as String,
       lastName: null == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      address2: null == address2
+          ? _value.address2
+          : address2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as String,
+      zipCode: null == zipCode
+          ? _value.zipCode
+          : zipCode // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
           ? _value.email
@@ -109,9 +151,9 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
               as String,
-      role: null == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
+      position: null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
               as String,
       hourlyRate: null == hourlyRate
           ? _value.hourlyRate
@@ -147,11 +189,17 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   $Res call(
       {String id,
       String firstName,
+      String middleName,
       String lastName,
+      String address,
+      String address2,
+      String city,
+      String state,
+      String zipCode,
       String email,
       String phoneNumber,
       String department,
-      String role,
+      String position,
       double hourlyRate,
       String tenant,
       String userName,
@@ -171,11 +219,17 @@ class __$$UserImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? firstName = null,
+    Object? middleName = null,
     Object? lastName = null,
+    Object? address = null,
+    Object? address2 = null,
+    Object? city = null,
+    Object? state = null,
+    Object? zipCode = null,
     Object? email = null,
     Object? phoneNumber = null,
     Object? department = null,
-    Object? role = null,
+    Object? position = null,
     Object? hourlyRate = null,
     Object? tenant = null,
     Object? userName = null,
@@ -191,9 +245,33 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String,
+      middleName: null == middleName
+          ? _value.middleName
+          : middleName // ignore: cast_nullable_to_non_nullable
+              as String,
       lastName: null == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      address2: null == address2
+          ? _value.address2
+          : address2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as String,
+      zipCode: null == zipCode
+          ? _value.zipCode
+          : zipCode // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
           ? _value.email
@@ -207,9 +285,9 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
               as String,
-      role: null == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
+      position: null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
               as String,
       hourlyRate: null == hourlyRate
           ? _value.hourlyRate
@@ -241,11 +319,17 @@ class _$UserImpl implements _User {
   const _$UserImpl(
       {this.id = '',
       this.firstName = '',
+      this.middleName = '',
       this.lastName = '',
+      this.address = '',
+      this.address2 = '',
+      this.city = '',
+      this.state = '',
+      this.zipCode = '',
       this.email = '',
       this.phoneNumber = '',
       this.department = '',
-      this.role = '',
+      this.position = '',
       this.hourlyRate = 0,
       this.tenant = '',
       this.userName = '',
@@ -263,7 +347,25 @@ class _$UserImpl implements _User {
   final String firstName;
   @override
   @JsonKey()
+  final String middleName;
+  @override
+  @JsonKey()
   final String lastName;
+  @override
+  @JsonKey()
+  final String address;
+  @override
+  @JsonKey()
+  final String address2;
+  @override
+  @JsonKey()
+  final String city;
+  @override
+  @JsonKey()
+  final String state;
+  @override
+  @JsonKey()
+  final String zipCode;
   @override
   @JsonKey()
   final String email;
@@ -275,7 +377,7 @@ class _$UserImpl implements _User {
   final String department;
   @override
   @JsonKey()
-  final String role;
+  final String position;
   @override
   @JsonKey()
   final double hourlyRate;
@@ -294,7 +396,7 @@ class _$UserImpl implements _User {
 
   @override
   String toString() {
-    return 'User(id: $id, firstName: $firstName, lastName: $lastName, email: $email, phoneNumber: $phoneNumber, department: $department, role: $role, hourlyRate: $hourlyRate, tenant: $tenant, userName: $userName, password: $password, userType: $userType)';
+    return 'User(id: $id, firstName: $firstName, middleName: $middleName, lastName: $lastName, address: $address, address2: $address2, city: $city, state: $state, zipCode: $zipCode, email: $email, phoneNumber: $phoneNumber, department: $department, position: $position, hourlyRate: $hourlyRate, tenant: $tenant, userName: $userName, password: $password, userType: $userType)';
   }
 
   @override
@@ -305,14 +407,23 @@ class _$UserImpl implements _User {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
+            (identical(other.middleName, middleName) ||
+                other.middleName == middleName) &&
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.address2, address2) ||
+                other.address2 == address2) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.zipCode, zipCode) || other.zipCode == zipCode) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
             (identical(other.department, department) ||
                 other.department == department) &&
-            (identical(other.role, role) || other.role == role) &&
+            (identical(other.position, position) ||
+                other.position == position) &&
             (identical(other.hourlyRate, hourlyRate) ||
                 other.hourlyRate == hourlyRate) &&
             (identical(other.tenant, tenant) || other.tenant == tenant) &&
@@ -330,11 +441,17 @@ class _$UserImpl implements _User {
       runtimeType,
       id,
       firstName,
+      middleName,
       lastName,
+      address,
+      address2,
+      city,
+      state,
+      zipCode,
       email,
       phoneNumber,
       department,
-      role,
+      position,
       hourlyRate,
       tenant,
       userName,
@@ -359,11 +476,17 @@ abstract class _User implements User {
   const factory _User(
       {final String id,
       final String firstName,
+      final String middleName,
       final String lastName,
+      final String address,
+      final String address2,
+      final String city,
+      final String state,
+      final String zipCode,
       final String email,
       final String phoneNumber,
       final String department,
-      final String role,
+      final String position,
       final double hourlyRate,
       final String tenant,
       final String userName,
@@ -377,7 +500,19 @@ abstract class _User implements User {
   @override
   String get firstName;
   @override
+  String get middleName;
+  @override
   String get lastName;
+  @override
+  String get address;
+  @override
+  String get address2;
+  @override
+  String get city;
+  @override
+  String get state;
+  @override
+  String get zipCode;
   @override
   String get email;
   @override
@@ -385,7 +520,7 @@ abstract class _User implements User {
   @override
   String get department;
   @override
-  String get role;
+  String get position;
   @override
   double get hourlyRate;
   @override
