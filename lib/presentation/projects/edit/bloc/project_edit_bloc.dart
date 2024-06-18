@@ -1,9 +1,11 @@
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/projects_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/states_controller.dart';
 import 'package:buildnotifierrear/domain/entities/client/client.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
-import 'package:flutter/material.dart';
+import 'package:buildnotifierrear/domain/entities/state/state.dart';
+import 'package:flutter/material.dart' hide State;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -12,11 +14,11 @@ part 'project_edit_event.dart';
 part 'project_edit_state.dart';
 
 class ProjectEditBloc extends Bloc<ProjectEditEvent, ProjectEditState> {
-  ProjectEditBloc(
-      {required ProjectsController controller,
-      required CRUDController<Client> clientsController,
-      required})
-      : super(
+  ProjectEditBloc({
+    required ProjectsController controller,
+    required CRUDController<Client> clientsController,
+    required StatesController statesController,
+  }) : super(
           const ProjectEditState.empty(),
         ) {
     on<ProjectEditEvent>((event, emit) async {
@@ -24,20 +26,26 @@ class ProjectEditBloc extends Bloc<ProjectEditEvent, ProjectEditState> {
         load: (type) async {
           emit(const ProjectEditState.loading());
 
-          var result = await type.when(
-            create: () async {
-              return const Project();
-            },
-            update: (id) async {
-              return controller.getById(id);
-            },
-          );
-
-          var clients = await clientsController.getAll();
+          var result = await Future.wait([
+            type.when(
+              create: () async {
+                return const Project();
+              },
+              update: (id) async {
+                return controller.getById(id);
+              },
+            ),
+            clientsController.getAll(),
+            statesController.getAll(),
+          ]);
 
           emit(
             ProjectEditState.loaded(
-                type: type, project: result, clients: clients),
+              type: type,
+              project: result[0] as Project,
+              clients: result[1] as List<Client>,
+              states: result[2] as List<State>,
+            ),
           );
         },
         changeName: (value) {
@@ -92,6 +100,15 @@ class ProjectEditBloc extends Bloc<ProjectEditEvent, ProjectEditState> {
             state.asLoaded.copyWith(
               project: state.asLoaded.project.copyWith(
                 address: value,
+              ),
+            ),
+          );
+        },
+        changeAddress2: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              project: state.asLoaded.project.copyWith(
+                address2: value,
               ),
             ),
           );

@@ -28,7 +28,7 @@ class ClientEdit extends IView {
             tenantId: appBloc(context).state.asLogged.user.tenant,
           ),
         ),
-        stateController: StatesController(
+        statesController: StatesController(
           repository: StatesFirestoreRepository(),
         ),
       ),

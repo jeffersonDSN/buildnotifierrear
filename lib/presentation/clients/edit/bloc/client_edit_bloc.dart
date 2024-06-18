@@ -15,7 +15,7 @@ part 'client_edit_state.dart';
 class ClientEditBloc extends Bloc<ClientEditEvent, ClientEditState> {
   ClientEditBloc({
     required CRUDController<Client> controller,
-    required StatesController stateController,
+    required StatesController statesController,
   }) : super(
           const ClientEditState.empty(),
         ) {
@@ -33,7 +33,7 @@ class ClientEditBloc extends Bloc<ClientEditEvent, ClientEditState> {
                 return controller.getById(id);
               },
             ),
-            stateController.getAll(),
+            statesController.getAll(),
           ]);
 
           emit(

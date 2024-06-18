@@ -26,6 +26,10 @@ class ProjectEditEvent with _$ProjectEditEvent {
     required String value,
   }) = ProjectEditEventChangeAddress;
 
+  const factory ProjectEditEvent.changeAddress2({
+    required String value,
+  }) = ProjectEditEventChangeAddress2;
+
   const factory ProjectEditEvent.changeClient({
     required String clientId,
     required String firstName,

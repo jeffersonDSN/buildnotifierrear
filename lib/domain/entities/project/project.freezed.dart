@@ -29,6 +29,7 @@ mixin _$Project {
   String get state => throw _privateConstructorUsedError;
   String get city => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
+  String get address2 => throw _privateConstructorUsedError;
   int? get latitude => throw _privateConstructorUsedError;
   int? get longitude => throw _privateConstructorUsedError;
   List<Task> get tasks => throw _privateConstructorUsedError;
@@ -53,6 +54,7 @@ abstract class $ProjectCopyWith<$Res> {
       String state,
       String city,
       String address,
+      String address2,
       int? latitude,
       int? longitude,
       List<Task> tasks});
@@ -80,6 +82,7 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
     Object? state = null,
     Object? city = null,
     Object? address = null,
+    Object? address2 = null,
     Object? latitude = freezed,
     Object? longitude = freezed,
     Object? tasks = null,
@@ -121,6 +124,10 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
+      address2: null == address2
+          ? _value.address2
+          : address2 // ignore: cast_nullable_to_non_nullable
+              as String,
       latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -154,6 +161,7 @@ abstract class _$$ProjectImplCopyWith<$Res> implements $ProjectCopyWith<$Res> {
       String state,
       String city,
       String address,
+      String address2,
       int? latitude,
       int? longitude,
       List<Task> tasks});
@@ -179,6 +187,7 @@ class __$$ProjectImplCopyWithImpl<$Res>
     Object? state = null,
     Object? city = null,
     Object? address = null,
+    Object? address2 = null,
     Object? latitude = freezed,
     Object? longitude = freezed,
     Object? tasks = null,
@@ -220,6 +229,10 @@ class __$$ProjectImplCopyWithImpl<$Res>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
+      address2: null == address2
+          ? _value.address2
+          : address2 // ignore: cast_nullable_to_non_nullable
+              as String,
       latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -249,6 +262,7 @@ class _$ProjectImpl implements _Project {
       this.state = '',
       this.city = '',
       this.address = '',
+      this.address2 = '',
       this.latitude,
       this.longitude,
       final List<Task> tasks = const []})
@@ -285,6 +299,9 @@ class _$ProjectImpl implements _Project {
   @JsonKey()
   final String address;
   @override
+  @JsonKey()
+  final String address2;
+  @override
   final int? latitude;
   @override
   final int? longitude;
@@ -299,7 +316,7 @@ class _$ProjectImpl implements _Project {
 
   @override
   String toString() {
-    return 'Project(id: $id, name: $name, clientId: $clientId, clientFirstname: $clientFirstname, clientLastname: $clientLastname, zipCode: $zipCode, state: $state, city: $city, address: $address, latitude: $latitude, longitude: $longitude, tasks: $tasks)';
+    return 'Project(id: $id, name: $name, clientId: $clientId, clientFirstname: $clientFirstname, clientLastname: $clientLastname, zipCode: $zipCode, state: $state, city: $city, address: $address, address2: $address2, latitude: $latitude, longitude: $longitude, tasks: $tasks)';
   }
 
   @override
@@ -319,6 +336,8 @@ class _$ProjectImpl implements _Project {
             (identical(other.state, state) || other.state == state) &&
             (identical(other.city, city) || other.city == city) &&
             (identical(other.address, address) || other.address == address) &&
+            (identical(other.address2, address2) ||
+                other.address2 == address2) &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
@@ -339,6 +358,7 @@ class _$ProjectImpl implements _Project {
       state,
       city,
       address,
+      address2,
       latitude,
       longitude,
       const DeepCollectionEquality().hash(_tasks));
@@ -368,6 +388,7 @@ abstract class _Project implements Project {
       final String state,
       final String city,
       final String address,
+      final String address2,
       final int? latitude,
       final int? longitude,
       final List<Task> tasks}) = _$ProjectImpl;
@@ -392,6 +413,8 @@ abstract class _Project implements Project {
   String get city;
   @override
   String get address;
+  @override
+  String get address2;
   @override
   int? get latitude;
   @override

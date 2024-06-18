@@ -17,6 +17,7 @@ _$ProjectImpl _$$ProjectImplFromJson(Map<String, dynamic> json) =>
       state: json['state'] as String? ?? '',
       city: json['city'] as String? ?? '',
       address: json['address'] as String? ?? '',
+      address2: json['address2'] as String? ?? '',
       latitude: (json['latitude'] as num?)?.toInt(),
       longitude: (json['longitude'] as num?)?.toInt(),
       tasks: (json['tasks'] as List<dynamic>?)
@@ -36,6 +37,7 @@ Map<String, dynamic> _$$ProjectImplToJson(_$ProjectImpl instance) =>
       'state': instance.state,
       'city': instance.city,
       'address': instance.address,
+      'address2': instance.address2,
       'latitude': instance.latitude,
       'longitude': instance.longitude,
       'tasks': instance.tasks,

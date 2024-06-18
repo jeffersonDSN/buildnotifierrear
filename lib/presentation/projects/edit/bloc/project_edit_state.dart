@@ -8,6 +8,7 @@ class ProjectEditState with _$ProjectEditState {
     required CrudType type,
     required Project project,
     required List<Client> clients,
+    required List<State> states,
   }) = ProjectEditStateLoaded;
 }
 

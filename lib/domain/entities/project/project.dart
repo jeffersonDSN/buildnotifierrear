@@ -16,6 +16,7 @@ class Project with _$Project {
     @Default('') String state,
     @Default('') String city,
     @Default('') String address,
+    @Default('') String address2,
     int? latitude,
     int? longitude,
     @Default([]) List<Task> tasks,

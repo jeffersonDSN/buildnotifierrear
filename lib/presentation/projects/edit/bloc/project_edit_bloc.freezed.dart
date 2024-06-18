@@ -24,6 +24,7 @@ mixin _$ProjectEditEvent {
     required TResult Function(String value) changeState,
     required TResult Function(String value) changeCity,
     required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
@@ -38,6 +39,7 @@ mixin _$ProjectEditEvent {
     TResult? Function(String value)? changeState,
     TResult? Function(String value)? changeCity,
     TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult? Function(VoidCallback callback)? save,
@@ -51,6 +53,7 @@ mixin _$ProjectEditEvent {
     TResult Function(String value)? changeState,
     TResult Function(String value)? changeCity,
     TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult Function(VoidCallback callback)? save,
@@ -67,6 +70,8 @@ mixin _$ProjectEditEvent {
     required TResult Function(ProjectEditEventChangeCity value) changeCity,
     required TResult Function(ProjectEditEventChangeAddress value)
         changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) =>
@@ -79,6 +84,7 @@ mixin _$ProjectEditEvent {
     TResult? Function(ProjectEditEventChangeState value)? changeState,
     TResult? Function(ProjectEditEventChangeCity value)? changeCity,
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) =>
@@ -91,6 +97,7 @@ mixin _$ProjectEditEvent {
     TResult Function(ProjectEditEventChangeState value)? changeState,
     TResult Function(ProjectEditEventChangeCity value)? changeCity,
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
@@ -198,6 +205,7 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     required TResult Function(String value) changeState,
     required TResult Function(String value) changeCity,
     required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
@@ -215,6 +223,7 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     TResult? Function(String value)? changeState,
     TResult? Function(String value)? changeCity,
     TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult? Function(VoidCallback callback)? save,
@@ -231,6 +240,7 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     TResult Function(String value)? changeState,
     TResult Function(String value)? changeCity,
     TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult Function(VoidCallback callback)? save,
@@ -253,6 +263,8 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     required TResult Function(ProjectEditEventChangeCity value) changeCity,
     required TResult Function(ProjectEditEventChangeAddress value)
         changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
@@ -268,6 +280,7 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     TResult? Function(ProjectEditEventChangeState value)? changeState,
     TResult? Function(ProjectEditEventChangeCity value)? changeCity,
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
@@ -283,6 +296,7 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     TResult Function(ProjectEditEventChangeState value)? changeState,
     TResult Function(ProjectEditEventChangeCity value)? changeCity,
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
@@ -378,6 +392,7 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     required TResult Function(String value) changeState,
     required TResult Function(String value) changeCity,
     required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
@@ -395,6 +410,7 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     TResult? Function(String value)? changeState,
     TResult? Function(String value)? changeCity,
     TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult? Function(VoidCallback callback)? save,
@@ -411,6 +427,7 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     TResult Function(String value)? changeState,
     TResult Function(String value)? changeCity,
     TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult Function(VoidCallback callback)? save,
@@ -433,6 +450,8 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     required TResult Function(ProjectEditEventChangeCity value) changeCity,
     required TResult Function(ProjectEditEventChangeAddress value)
         changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
@@ -448,6 +467,7 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     TResult? Function(ProjectEditEventChangeState value)? changeState,
     TResult? Function(ProjectEditEventChangeCity value)? changeCity,
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
@@ -463,6 +483,7 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     TResult Function(ProjectEditEventChangeState value)? changeState,
     TResult Function(ProjectEditEventChangeCity value)? changeCity,
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
@@ -560,6 +581,7 @@ class _$ProjectEditEventChangeZipCodeImpl
     required TResult Function(String value) changeState,
     required TResult Function(String value) changeCity,
     required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
@@ -577,6 +599,7 @@ class _$ProjectEditEventChangeZipCodeImpl
     TResult? Function(String value)? changeState,
     TResult? Function(String value)? changeCity,
     TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult? Function(VoidCallback callback)? save,
@@ -593,6 +616,7 @@ class _$ProjectEditEventChangeZipCodeImpl
     TResult Function(String value)? changeState,
     TResult Function(String value)? changeCity,
     TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult Function(VoidCallback callback)? save,
@@ -615,6 +639,8 @@ class _$ProjectEditEventChangeZipCodeImpl
     required TResult Function(ProjectEditEventChangeCity value) changeCity,
     required TResult Function(ProjectEditEventChangeAddress value)
         changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
@@ -630,6 +656,7 @@ class _$ProjectEditEventChangeZipCodeImpl
     TResult? Function(ProjectEditEventChangeState value)? changeState,
     TResult? Function(ProjectEditEventChangeCity value)? changeCity,
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
@@ -645,6 +672,7 @@ class _$ProjectEditEventChangeZipCodeImpl
     TResult Function(ProjectEditEventChangeState value)? changeState,
     TResult Function(ProjectEditEventChangeCity value)? changeCity,
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
@@ -741,6 +769,7 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     required TResult Function(String value) changeState,
     required TResult Function(String value) changeCity,
     required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
@@ -758,6 +787,7 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     TResult? Function(String value)? changeState,
     TResult? Function(String value)? changeCity,
     TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult? Function(VoidCallback callback)? save,
@@ -774,6 +804,7 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     TResult Function(String value)? changeState,
     TResult Function(String value)? changeCity,
     TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult Function(VoidCallback callback)? save,
@@ -796,6 +827,8 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     required TResult Function(ProjectEditEventChangeCity value) changeCity,
     required TResult Function(ProjectEditEventChangeAddress value)
         changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
@@ -811,6 +844,7 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     TResult? Function(ProjectEditEventChangeState value)? changeState,
     TResult? Function(ProjectEditEventChangeCity value)? changeCity,
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
@@ -826,6 +860,7 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     TResult Function(ProjectEditEventChangeState value)? changeState,
     TResult Function(ProjectEditEventChangeCity value)? changeCity,
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
@@ -921,6 +956,7 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     required TResult Function(String value) changeState,
     required TResult Function(String value) changeCity,
     required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
@@ -938,6 +974,7 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     TResult? Function(String value)? changeState,
     TResult? Function(String value)? changeCity,
     TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult? Function(VoidCallback callback)? save,
@@ -954,6 +991,7 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     TResult Function(String value)? changeState,
     TResult Function(String value)? changeCity,
     TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult Function(VoidCallback callback)? save,
@@ -976,6 +1014,8 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     required TResult Function(ProjectEditEventChangeCity value) changeCity,
     required TResult Function(ProjectEditEventChangeAddress value)
         changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
@@ -991,6 +1031,7 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     TResult? Function(ProjectEditEventChangeState value)? changeState,
     TResult? Function(ProjectEditEventChangeCity value)? changeCity,
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
@@ -1006,6 +1047,7 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     TResult Function(ProjectEditEventChangeState value)? changeState,
     TResult Function(ProjectEditEventChangeCity value)? changeCity,
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
@@ -1103,6 +1145,7 @@ class _$ProjectEditEventChangeAddressImpl
     required TResult Function(String value) changeState,
     required TResult Function(String value) changeCity,
     required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
@@ -1120,6 +1163,7 @@ class _$ProjectEditEventChangeAddressImpl
     TResult? Function(String value)? changeState,
     TResult? Function(String value)? changeCity,
     TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult? Function(VoidCallback callback)? save,
@@ -1136,6 +1180,7 @@ class _$ProjectEditEventChangeAddressImpl
     TResult Function(String value)? changeState,
     TResult Function(String value)? changeCity,
     TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult Function(VoidCallback callback)? save,
@@ -1158,6 +1203,8 @@ class _$ProjectEditEventChangeAddressImpl
     required TResult Function(ProjectEditEventChangeCity value) changeCity,
     required TResult Function(ProjectEditEventChangeAddress value)
         changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
@@ -1173,6 +1220,7 @@ class _$ProjectEditEventChangeAddressImpl
     TResult? Function(ProjectEditEventChangeState value)? changeState,
     TResult? Function(ProjectEditEventChangeCity value)? changeCity,
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
@@ -1188,6 +1236,7 @@ class _$ProjectEditEventChangeAddressImpl
     TResult Function(ProjectEditEventChangeState value)? changeState,
     TResult Function(ProjectEditEventChangeCity value)? changeCity,
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
@@ -1207,6 +1256,196 @@ abstract class ProjectEditEventChangeAddress implements ProjectEditEvent {
   @JsonKey(ignore: true)
   _$$ProjectEditEventChangeAddressImplCopyWith<
           _$ProjectEditEventChangeAddressImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProjectEditEventChangeAddress2ImplCopyWith<$Res> {
+  factory _$$ProjectEditEventChangeAddress2ImplCopyWith(
+          _$ProjectEditEventChangeAddress2Impl value,
+          $Res Function(_$ProjectEditEventChangeAddress2Impl) then) =
+      __$$ProjectEditEventChangeAddress2ImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$ProjectEditEventChangeAddress2ImplCopyWithImpl<$Res>
+    extends _$ProjectEditEventCopyWithImpl<$Res,
+        _$ProjectEditEventChangeAddress2Impl>
+    implements _$$ProjectEditEventChangeAddress2ImplCopyWith<$Res> {
+  __$$ProjectEditEventChangeAddress2ImplCopyWithImpl(
+      _$ProjectEditEventChangeAddress2Impl _value,
+      $Res Function(_$ProjectEditEventChangeAddress2Impl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ProjectEditEventChangeAddress2Impl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProjectEditEventChangeAddress2Impl
+    implements ProjectEditEventChangeAddress2 {
+  const _$ProjectEditEventChangeAddress2Impl({required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'ProjectEditEvent.changeAddress2(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProjectEditEventChangeAddress2Impl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProjectEditEventChangeAddress2ImplCopyWith<
+          _$ProjectEditEventChangeAddress2Impl>
+      get copyWith => __$$ProjectEditEventChangeAddress2ImplCopyWithImpl<
+          _$ProjectEditEventChangeAddress2Impl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeAddress2(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeAddress2?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeAddress2 != null) {
+      return changeAddress2(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectEditEventLoad value) load,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventSave value) save,
+  }) {
+    return changeAddress2(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectEditEventLoad value)? load,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventSave value)? save,
+  }) {
+    return changeAddress2?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectEditEventLoad value)? load,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeAddress2 != null) {
+      return changeAddress2(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProjectEditEventChangeAddress2 implements ProjectEditEvent {
+  const factory ProjectEditEventChangeAddress2({required final String value}) =
+      _$ProjectEditEventChangeAddress2Impl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$ProjectEditEventChangeAddress2ImplCopyWith<
+          _$ProjectEditEventChangeAddress2Impl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1308,6 +1547,7 @@ class _$ProjectEditEventChangeClientImpl
     required TResult Function(String value) changeState,
     required TResult Function(String value) changeCity,
     required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
@@ -1325,6 +1565,7 @@ class _$ProjectEditEventChangeClientImpl
     TResult? Function(String value)? changeState,
     TResult? Function(String value)? changeCity,
     TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult? Function(VoidCallback callback)? save,
@@ -1341,6 +1582,7 @@ class _$ProjectEditEventChangeClientImpl
     TResult Function(String value)? changeState,
     TResult Function(String value)? changeCity,
     TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult Function(VoidCallback callback)? save,
@@ -1363,6 +1605,8 @@ class _$ProjectEditEventChangeClientImpl
     required TResult Function(ProjectEditEventChangeCity value) changeCity,
     required TResult Function(ProjectEditEventChangeAddress value)
         changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
@@ -1378,6 +1622,7 @@ class _$ProjectEditEventChangeClientImpl
     TResult? Function(ProjectEditEventChangeState value)? changeState,
     TResult? Function(ProjectEditEventChangeCity value)? changeCity,
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
@@ -1393,6 +1638,7 @@ class _$ProjectEditEventChangeClientImpl
     TResult Function(ProjectEditEventChangeState value)? changeState,
     TResult Function(ProjectEditEventChangeCity value)? changeCity,
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
@@ -1492,6 +1738,7 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     required TResult Function(String value) changeState,
     required TResult Function(String value) changeCity,
     required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
@@ -1509,6 +1756,7 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     TResult? Function(String value)? changeState,
     TResult? Function(String value)? changeCity,
     TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult? Function(VoidCallback callback)? save,
@@ -1525,6 +1773,7 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     TResult Function(String value)? changeState,
     TResult Function(String value)? changeCity,
     TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
     TResult Function(VoidCallback callback)? save,
@@ -1547,6 +1796,8 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     required TResult Function(ProjectEditEventChangeCity value) changeCity,
     required TResult Function(ProjectEditEventChangeAddress value)
         changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
@@ -1562,6 +1813,7 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     TResult? Function(ProjectEditEventChangeState value)? changeState,
     TResult? Function(ProjectEditEventChangeCity value)? changeCity,
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
@@ -1577,6 +1829,7 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     TResult Function(ProjectEditEventChangeState value)? changeState,
     TResult Function(ProjectEditEventChangeCity value)? changeCity,
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
@@ -1604,8 +1857,8 @@ mixin _$ProjectEditState {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(
-            CrudType type, Project project, List<Client> clients)
+    required TResult Function(CrudType type, Project project,
+            List<Client> clients, List<State> states)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -1613,7 +1866,8 @@ mixin _$ProjectEditState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType type, Project project, List<Client> clients)?
+    TResult? Function(CrudType type, Project project, List<Client> clients,
+            List<State> states)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -1621,7 +1875,8 @@ mixin _$ProjectEditState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType type, Project project, List<Client> clients)?
+    TResult Function(CrudType type, Project project, List<Client> clients,
+            List<State> states)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -1710,8 +1965,8 @@ class _$ProjectEditStateEmptyImpl implements ProjectEditStateEmpty {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(
-            CrudType type, Project project, List<Client> clients)
+    required TResult Function(CrudType type, Project project,
+            List<Client> clients, List<State> states)
         loaded,
   }) {
     return empty();
@@ -1722,7 +1977,8 @@ class _$ProjectEditStateEmptyImpl implements ProjectEditStateEmpty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType type, Project project, List<Client> clients)?
+    TResult? Function(CrudType type, Project project, List<Client> clients,
+            List<State> states)?
         loaded,
   }) {
     return empty?.call();
@@ -1733,7 +1989,8 @@ class _$ProjectEditStateEmptyImpl implements ProjectEditStateEmpty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType type, Project project, List<Client> clients)?
+    TResult Function(CrudType type, Project project, List<Client> clients,
+            List<State> states)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1825,8 +2082,8 @@ class _$ProjectEditStateLoadingImpl implements ProjectEditStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(
-            CrudType type, Project project, List<Client> clients)
+    required TResult Function(CrudType type, Project project,
+            List<Client> clients, List<State> states)
         loaded,
   }) {
     return loading();
@@ -1837,7 +2094,8 @@ class _$ProjectEditStateLoadingImpl implements ProjectEditStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType type, Project project, List<Client> clients)?
+    TResult? Function(CrudType type, Project project, List<Client> clients,
+            List<State> states)?
         loaded,
   }) {
     return loading?.call();
@@ -1848,7 +2106,8 @@ class _$ProjectEditStateLoadingImpl implements ProjectEditStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType type, Project project, List<Client> clients)?
+    TResult Function(CrudType type, Project project, List<Client> clients,
+            List<State> states)?
         loaded,
     required TResult orElse(),
   }) {
@@ -1904,7 +2163,11 @@ abstract class _$$ProjectEditStateLoadedImplCopyWith<$Res> {
           $Res Function(_$ProjectEditStateLoadedImpl) then) =
       __$$ProjectEditStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({CrudType type, Project project, List<Client> clients});
+  $Res call(
+      {CrudType type,
+      Project project,
+      List<Client> clients,
+      List<State> states});
 
   $CrudTypeCopyWith<$Res> get type;
   $ProjectCopyWith<$Res> get project;
@@ -1925,6 +2188,7 @@ class __$$ProjectEditStateLoadedImplCopyWithImpl<$Res>
     Object? type = null,
     Object? project = null,
     Object? clients = null,
+    Object? states = null,
   }) {
     return _then(_$ProjectEditStateLoadedImpl(
       type: null == type
@@ -1939,6 +2203,10 @@ class __$$ProjectEditStateLoadedImplCopyWithImpl<$Res>
           ? _value._clients
           : clients // ignore: cast_nullable_to_non_nullable
               as List<Client>,
+      states: null == states
+          ? _value._states
+          : states // ignore: cast_nullable_to_non_nullable
+              as List<State>,
     ));
   }
 
@@ -1965,8 +2233,10 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
   const _$ProjectEditStateLoadedImpl(
       {required this.type,
       required this.project,
-      required final List<Client> clients})
-      : _clients = clients;
+      required final List<Client> clients,
+      required final List<State> states})
+      : _clients = clients,
+        _states = states;
 
   @override
   final CrudType type;
@@ -1980,9 +2250,17 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
     return EqualUnmodifiableListView(_clients);
   }
 
+  final List<State> _states;
+  @override
+  List<State> get states {
+    if (_states is EqualUnmodifiableListView) return _states;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_states);
+  }
+
   @override
   String toString() {
-    return 'ProjectEditState.loaded(type: $type, project: $project, clients: $clients)';
+    return 'ProjectEditState.loaded(type: $type, project: $project, clients: $clients, states: $states)';
   }
 
   @override
@@ -1992,12 +2270,17 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
             other is _$ProjectEditStateLoadedImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.project, project) || other.project == project) &&
-            const DeepCollectionEquality().equals(other._clients, _clients));
+            const DeepCollectionEquality().equals(other._clients, _clients) &&
+            const DeepCollectionEquality().equals(other._states, _states));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, project,
-      const DeepCollectionEquality().hash(_clients));
+  int get hashCode => Object.hash(
+      runtimeType,
+      type,
+      project,
+      const DeepCollectionEquality().hash(_clients),
+      const DeepCollectionEquality().hash(_states));
 
   @JsonKey(ignore: true)
   @override
@@ -2011,11 +2294,11 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(
-            CrudType type, Project project, List<Client> clients)
+    required TResult Function(CrudType type, Project project,
+            List<Client> clients, List<State> states)
         loaded,
   }) {
-    return loaded(type, project, clients);
+    return loaded(type, project, clients, states);
   }
 
   @override
@@ -2023,10 +2306,11 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType type, Project project, List<Client> clients)?
+    TResult? Function(CrudType type, Project project, List<Client> clients,
+            List<State> states)?
         loaded,
   }) {
-    return loaded?.call(type, project, clients);
+    return loaded?.call(type, project, clients, states);
   }
 
   @override
@@ -2034,12 +2318,13 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType type, Project project, List<Client> clients)?
+    TResult Function(CrudType type, Project project, List<Client> clients,
+            List<State> states)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(type, project, clients);
+      return loaded(type, project, clients, states);
     }
     return orElse();
   }
@@ -2083,11 +2368,13 @@ abstract class ProjectEditStateLoaded implements ProjectEditState {
   const factory ProjectEditStateLoaded(
       {required final CrudType type,
       required final Project project,
-      required final List<Client> clients}) = _$ProjectEditStateLoadedImpl;
+      required final List<Client> clients,
+      required final List<State> states}) = _$ProjectEditStateLoadedImpl;
 
   CrudType get type;
   Project get project;
   List<Client> get clients;
+  List<State> get states;
   @JsonKey(ignore: true)
   _$$ProjectEditStateLoadedImplCopyWith<_$ProjectEditStateLoadedImpl>
       get copyWith => throw _privateConstructorUsedError;
