@@ -7,6 +7,7 @@ class ClientEditState with _$ClientEditState {
   const factory ClientEditState.loaded({
     required CrudType type,
     required Client client,
+    ErrorFields? error,
   }) = ClientEditStateLoaded;
 }
 

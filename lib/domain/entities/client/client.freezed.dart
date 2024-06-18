@@ -22,9 +22,15 @@ Client _$ClientFromJson(Map<String, dynamic> json) {
 mixin _$Client {
   String get id => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
+  String get middleName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
+  String get address => throw _privateConstructorUsedError;
+  String get address2 => throw _privateConstructorUsedError;
+  String get city => throw _privateConstructorUsedError;
+  String get state => throw _privateConstructorUsedError;
+  String get zipCode => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,9 +45,15 @@ abstract class $ClientCopyWith<$Res> {
   $Res call(
       {String id,
       String firstName,
+      String middleName,
       String lastName,
       String email,
-      String phoneNumber});
+      String phoneNumber,
+      String address,
+      String address2,
+      String city,
+      String state,
+      String zipCode});
 }
 
 /// @nodoc
@@ -59,9 +71,15 @@ class _$ClientCopyWithImpl<$Res, $Val extends Client>
   $Res call({
     Object? id = null,
     Object? firstName = null,
+    Object? middleName = null,
     Object? lastName = null,
     Object? email = null,
     Object? phoneNumber = null,
+    Object? address = null,
+    Object? address2 = null,
+    Object? city = null,
+    Object? state = null,
+    Object? zipCode = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -71,6 +89,10 @@ class _$ClientCopyWithImpl<$Res, $Val extends Client>
       firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      middleName: null == middleName
+          ? _value.middleName
+          : middleName // ignore: cast_nullable_to_non_nullable
               as String,
       lastName: null == lastName
           ? _value.lastName
@@ -83,6 +105,26 @@ class _$ClientCopyWithImpl<$Res, $Val extends Client>
       phoneNumber: null == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      address2: null == address2
+          ? _value.address2
+          : address2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as String,
+      zipCode: null == zipCode
+          ? _value.zipCode
+          : zipCode // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -98,9 +140,15 @@ abstract class _$$ClientImplCopyWith<$Res> implements $ClientCopyWith<$Res> {
   $Res call(
       {String id,
       String firstName,
+      String middleName,
       String lastName,
       String email,
-      String phoneNumber});
+      String phoneNumber,
+      String address,
+      String address2,
+      String city,
+      String state,
+      String zipCode});
 }
 
 /// @nodoc
@@ -116,9 +164,15 @@ class __$$ClientImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? firstName = null,
+    Object? middleName = null,
     Object? lastName = null,
     Object? email = null,
     Object? phoneNumber = null,
+    Object? address = null,
+    Object? address2 = null,
+    Object? city = null,
+    Object? state = null,
+    Object? zipCode = null,
   }) {
     return _then(_$ClientImpl(
       id: null == id
@@ -128,6 +182,10 @@ class __$$ClientImplCopyWithImpl<$Res>
       firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      middleName: null == middleName
+          ? _value.middleName
+          : middleName // ignore: cast_nullable_to_non_nullable
               as String,
       lastName: null == lastName
           ? _value.lastName
@@ -141,6 +199,26 @@ class __$$ClientImplCopyWithImpl<$Res>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      address2: null == address2
+          ? _value.address2
+          : address2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as String,
+      zipCode: null == zipCode
+          ? _value.zipCode
+          : zipCode // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -151,9 +229,15 @@ class _$ClientImpl implements _Client {
   const _$ClientImpl(
       {this.id = '',
       this.firstName = '',
+      this.middleName = '',
       this.lastName = '',
       this.email = '',
-      this.phoneNumber = ''});
+      this.phoneNumber = '',
+      this.address = '',
+      this.address2 = '',
+      this.city = '',
+      this.state = '',
+      this.zipCode = ''});
 
   factory _$ClientImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClientImplFromJson(json);
@@ -166,6 +250,9 @@ class _$ClientImpl implements _Client {
   final String firstName;
   @override
   @JsonKey()
+  final String middleName;
+  @override
+  @JsonKey()
   final String lastName;
   @override
   @JsonKey()
@@ -173,10 +260,25 @@ class _$ClientImpl implements _Client {
   @override
   @JsonKey()
   final String phoneNumber;
+  @override
+  @JsonKey()
+  final String address;
+  @override
+  @JsonKey()
+  final String address2;
+  @override
+  @JsonKey()
+  final String city;
+  @override
+  @JsonKey()
+  final String state;
+  @override
+  @JsonKey()
+  final String zipCode;
 
   @override
   String toString() {
-    return 'Client(id: $id, firstName: $firstName, lastName: $lastName, email: $email, phoneNumber: $phoneNumber)';
+    return 'Client(id: $id, firstName: $firstName, middleName: $middleName, lastName: $lastName, email: $email, phoneNumber: $phoneNumber, address: $address, address2: $address2, city: $city, state: $state, zipCode: $zipCode)';
   }
 
   @override
@@ -187,17 +289,25 @@ class _$ClientImpl implements _Client {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
+            (identical(other.middleName, middleName) ||
+                other.middleName == middleName) &&
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber));
+                other.phoneNumber == phoneNumber) &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.address2, address2) ||
+                other.address2 == address2) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.zipCode, zipCode) || other.zipCode == zipCode));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, firstName, lastName, email, phoneNumber);
+  int get hashCode => Object.hash(runtimeType, id, firstName, middleName,
+      lastName, email, phoneNumber, address, address2, city, state, zipCode);
 
   @JsonKey(ignore: true)
   @override
@@ -217,9 +327,15 @@ abstract class _Client implements Client {
   const factory _Client(
       {final String id,
       final String firstName,
+      final String middleName,
       final String lastName,
       final String email,
-      final String phoneNumber}) = _$ClientImpl;
+      final String phoneNumber,
+      final String address,
+      final String address2,
+      final String city,
+      final String state,
+      final String zipCode}) = _$ClientImpl;
 
   factory _Client.fromJson(Map<String, dynamic> json) = _$ClientImpl.fromJson;
 
@@ -228,11 +344,23 @@ abstract class _Client implements Client {
   @override
   String get firstName;
   @override
+  String get middleName;
+  @override
   String get lastName;
   @override
   String get email;
   @override
   String get phoneNumber;
+  @override
+  String get address;
+  @override
+  String get address2;
+  @override
+  String get city;
+  @override
+  String get state;
+  @override
+  String get zipCode;
   @override
   @JsonKey(ignore: true)
   _$$ClientImplCopyWith<_$ClientImpl> get copyWith =>

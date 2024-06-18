@@ -10,6 +10,8 @@ class BaseTextFormField extends StatelessWidget {
   final FormFieldValidator<String>? validator;
   final bool obscureText;
   final List<TextInputFormatter>? inputFormatters;
+  final TextEditingController? controller;
+  final int? maxLines;
 
   const BaseTextFormField({
     super.key,
@@ -20,6 +22,8 @@ class BaseTextFormField extends StatelessWidget {
     this.validator,
     this.obscureText = false,
     this.inputFormatters,
+    this.controller,
+    this.maxLines = 1,
   });
 
   @override
@@ -37,8 +41,10 @@ class BaseTextFormField extends StatelessWidget {
             decoration: InputDecoration(
               hintText: hintText,
             ),
+            maxLines: maxLines,
             autovalidateMode: AutovalidateMode.onUserInteraction,
-            initialValue: initialValue,
+            initialValue: controller == null ? initialValue : null,
+            controller: controller,
             onChanged: onChanged,
             validator: validator,
             obscureText: obscureText,

@@ -90,10 +90,10 @@ class UserEditView extends IView {
                                   Expanded(
                                     child: BaseTextFormField(
                                       label: 'Middle name',
-                                      initialValue: user.firstName,
+                                      initialValue: user.middleName,
                                       onChanged: (value) {
                                         bloc.add(
-                                          UserEditEvent.changeFirstName(
+                                          UserEditEvent.changeMiddleName(
                                             value: value,
                                           ),
                                         );
@@ -192,7 +192,7 @@ class UserEditView extends IView {
                                   ),
                                   gapWidth16,
                                   Expanded(
-                                    flex: 2,
+                                    flex: 1,
                                     child: BaseTextFormField(
                                       label: '',
                                       hintText: 'Apt #, Unit, Suite, Floor',

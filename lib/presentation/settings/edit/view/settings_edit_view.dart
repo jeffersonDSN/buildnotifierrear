@@ -1,7 +1,9 @@
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
+import 'package:buildnotifierrear/presentation/core/widget/base_dropdown_button_field.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
+import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
 import 'package:buildnotifierrear/presentation/settings/edit/bloc/settings_edit_bloc.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
@@ -46,11 +48,9 @@ class SettingsEditView extends IView {
                             ),
                             child: Column(
                               children: [
-                                TextFormField(
+                                BaseTextFormField(
+                                  label: 'Company Name',
                                   initialValue: settings.name,
-                                  decoration: const InputDecoration(
-                                    labelText: 'Company Name',
-                                  ),
                                   onChanged: (value) {
                                     bloc.add(
                                       SettingsEditEvent.changeName(
@@ -60,23 +60,21 @@ class SettingsEditView extends IView {
                                   },
                                 ),
                                 gapHeight16,
-                                DropdownButtonFormField(
+                                BaseDropdownButtonField<int>(
+                                  label: 'Pay period',
                                   value: settings.payPeriod,
-                                  decoration: const InputDecoration(
-                                    labelText: 'Pay period',
-                                  ),
-                                  items: const [
-                                    DropdownMenuItem(
+                                  items: [
+                                    DropdownItem(
                                       value: 0,
-                                      child: Text('Weeky'),
+                                      title: 'Weeky',
                                     ),
-                                    DropdownMenuItem(
+                                    DropdownItem(
                                       value: 1,
-                                      child: Text('Bi-Weeky'),
+                                      title: 'Bi-Weeky',
                                     ),
-                                    DropdownMenuItem(
+                                    DropdownItem(
                                       value: 2,
-                                      child: Text('Monthy'),
+                                      title: 'Monthy',
                                     ),
                                   ],
                                   onChanged: (value) {

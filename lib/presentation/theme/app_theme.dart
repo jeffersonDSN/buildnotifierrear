@@ -43,11 +43,21 @@ InputDecorationTheme get _inputDecorationTheme => const InputDecorationTheme(
       fillColor: AppColor.lightColor,
       prefixIconColor: AppColor.primaryColorSwatch,
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(Sizes.size4)),
+        borderRadius: BorderRadius.all(
+          Radius.circular(
+            Sizes.size4,
+          ),
+        ),
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(Sizes.size4)),
-        borderSide: BorderSide(color: AppColor.primaryColorSwatch),
+        borderRadius: BorderRadius.all(
+          Radius.circular(
+            Sizes.size4,
+          ),
+        ),
+        borderSide: BorderSide(
+          color: AppColor.primaryColorSwatch,
+        ),
       ),
     );
 

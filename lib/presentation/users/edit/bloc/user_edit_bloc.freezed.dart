@@ -20,6 +20,7 @@ mixin _$UserEditEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -41,6 +42,7 @@ mixin _$UserEditEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -62,6 +64,7 @@ mixin _$UserEditEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -85,6 +88,8 @@ mixin _$UserEditEvent {
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -109,6 +114,7 @@ mixin _$UserEditEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -130,6 +136,7 @@ mixin _$UserEditEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -245,6 +252,7 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -269,6 +277,7 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -293,6 +302,7 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -322,6 +332,8 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -349,6 +361,7 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -373,6 +386,7 @@ class _$UserEditEventtLoadImpl implements UserEditEventtLoad {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -479,6 +493,7 @@ class _$UserEditEventChangeFirstNameImpl
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -503,6 +518,7 @@ class _$UserEditEventChangeFirstNameImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -527,6 +543,7 @@ class _$UserEditEventChangeFirstNameImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -556,6 +573,8 @@ class _$UserEditEventChangeFirstNameImpl
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -583,6 +602,7 @@ class _$UserEditEventChangeFirstNameImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -607,6 +627,7 @@ class _$UserEditEventChangeFirstNameImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -639,6 +660,248 @@ abstract class UserEditEventChangeFirstName implements UserEditEvent {
   @JsonKey(ignore: true)
   _$$UserEditEventChangeFirstNameImplCopyWith<
           _$UserEditEventChangeFirstNameImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserEditEventChangeMiddleNameImplCopyWith<$Res> {
+  factory _$$UserEditEventChangeMiddleNameImplCopyWith(
+          _$UserEditEventChangeMiddleNameImpl value,
+          $Res Function(_$UserEditEventChangeMiddleNameImpl) then) =
+      __$$UserEditEventChangeMiddleNameImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UserEditEventChangeMiddleNameImplCopyWithImpl<$Res>
+    extends _$UserEditEventCopyWithImpl<$Res,
+        _$UserEditEventChangeMiddleNameImpl>
+    implements _$$UserEditEventChangeMiddleNameImplCopyWith<$Res> {
+  __$$UserEditEventChangeMiddleNameImplCopyWithImpl(
+      _$UserEditEventChangeMiddleNameImpl _value,
+      $Res Function(_$UserEditEventChangeMiddleNameImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UserEditEventChangeMiddleNameImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserEditEventChangeMiddleNameImpl
+    implements UserEditEventChangeMiddleName {
+  const _$UserEditEventChangeMiddleNameImpl({required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'UserEditEvent.changeMiddleName(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserEditEventChangeMiddleNameImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserEditEventChangeMiddleNameImplCopyWith<
+          _$UserEditEventChangeMiddleNameImpl>
+      get copyWith => __$$UserEditEventChangeMiddleNameImplCopyWithImpl<
+          _$UserEditEventChangeMiddleNameImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
+    required TResult Function(String value) changeLastName,
+    required TResult Function(String value) changePhoneNumber,
+    required TResult Function(String value) changeEmail,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeDepartment,
+    required TResult Function(String value) changePosition,
+    required TResult Function(double value) changeHourlyRate,
+    required TResult Function(String value) changeUsername,
+    required TResult Function(String value) changePassword,
+    required TResult Function(int value) changeUserType,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeMiddleName(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
+    TResult? Function(String value)? changeLastName,
+    TResult? Function(String value)? changePhoneNumber,
+    TResult? Function(String value)? changeEmail,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeDepartment,
+    TResult? Function(String value)? changePosition,
+    TResult? Function(double value)? changeHourlyRate,
+    TResult? Function(String value)? changeUsername,
+    TResult? Function(String value)? changePassword,
+    TResult? Function(int value)? changeUserType,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeMiddleName?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
+    TResult Function(String value)? changeLastName,
+    TResult Function(String value)? changePhoneNumber,
+    TResult Function(String value)? changeEmail,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeDepartment,
+    TResult Function(String value)? changePosition,
+    TResult Function(double value)? changeHourlyRate,
+    TResult Function(String value)? changeUsername,
+    TResult Function(String value)? changePassword,
+    TResult Function(int value)? changeUserType,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeMiddleName != null) {
+      return changeMiddleName(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserEditEventtLoad value) load,
+    required TResult Function(UserEditEventChangeFirstName value)
+        changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
+    required TResult Function(UserEditEventChangeLastName value) changeLastName,
+    required TResult Function(UserEditEventChangePhoneNumber value)
+        changePhoneNumber,
+    required TResult Function(UserEditEventChangeEmail value) changeEmail,
+    required TResult Function(UserEditEventChangeAddress value) changeAddress,
+    required TResult Function(UserEditEventChangeAddress2 value) changeAddress2,
+    required TResult Function(UserEditEventChangeCity value) changeCity,
+    required TResult Function(UserEditEventChangeState value) changeState,
+    required TResult Function(UserEditEventChangeZipCode value) changeZipCode,
+    required TResult Function(UserEditEventChangeDepartment value)
+        changeDepartment,
+    required TResult Function(UserEditEventChangePosition value) changePosition,
+    required TResult Function(UserEditEventChangeHourlyRate value)
+        changeHourlyRate,
+    required TResult Function(UserEditEventChangeUsername value) changeUsername,
+    required TResult Function(UserEditEventChangePassword value) changePassword,
+    required TResult Function(UserEditEventChangeUserType value) changeUserType,
+    required TResult Function(UserEditEventtSave value) save,
+  }) {
+    return changeMiddleName(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UserEditEventtLoad value)? load,
+    TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
+    TResult? Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult? Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult? Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult? Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(UserEditEventChangeCity value)? changeCity,
+    TResult? Function(UserEditEventChangeState value)? changeState,
+    TResult? Function(UserEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult? Function(UserEditEventChangePosition value)? changePosition,
+    TResult? Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult? Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult? Function(UserEditEventChangePassword value)? changePassword,
+    TResult? Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult? Function(UserEditEventtSave value)? save,
+  }) {
+    return changeMiddleName?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserEditEventtLoad value)? load,
+    TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
+    TResult Function(UserEditEventChangeLastName value)? changeLastName,
+    TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
+    TResult Function(UserEditEventChangeEmail value)? changeEmail,
+    TResult Function(UserEditEventChangeAddress value)? changeAddress,
+    TResult Function(UserEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(UserEditEventChangeCity value)? changeCity,
+    TResult Function(UserEditEventChangeState value)? changeState,
+    TResult Function(UserEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(UserEditEventChangeDepartment value)? changeDepartment,
+    TResult Function(UserEditEventChangePosition value)? changePosition,
+    TResult Function(UserEditEventChangeHourlyRate value)? changeHourlyRate,
+    TResult Function(UserEditEventChangeUsername value)? changeUsername,
+    TResult Function(UserEditEventChangePassword value)? changePassword,
+    TResult Function(UserEditEventChangeUserType value)? changeUserType,
+    TResult Function(UserEditEventtSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeMiddleName != null) {
+      return changeMiddleName(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserEditEventChangeMiddleName implements UserEditEvent {
+  const factory UserEditEventChangeMiddleName({required final String value}) =
+      _$UserEditEventChangeMiddleNameImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UserEditEventChangeMiddleNameImplCopyWith<
+          _$UserEditEventChangeMiddleNameImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -711,6 +974,7 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -735,6 +999,7 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -759,6 +1024,7 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -788,6 +1054,8 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -815,6 +1083,7 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -839,6 +1108,7 @@ class _$UserEditEventChangeLastNameImpl implements UserEditEventChangeLastName {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -945,6 +1215,7 @@ class _$UserEditEventChangePhoneNumberImpl
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -969,6 +1240,7 @@ class _$UserEditEventChangePhoneNumberImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -993,6 +1265,7 @@ class _$UserEditEventChangePhoneNumberImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -1022,6 +1295,8 @@ class _$UserEditEventChangePhoneNumberImpl
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -1049,6 +1324,7 @@ class _$UserEditEventChangePhoneNumberImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -1073,6 +1349,7 @@ class _$UserEditEventChangePhoneNumberImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -1177,6 +1454,7 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -1201,6 +1479,7 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -1225,6 +1504,7 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -1254,6 +1534,8 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -1281,6 +1563,7 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -1305,6 +1588,7 @@ class _$UserEditEventChangeEmailImpl implements UserEditEventChangeEmail {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -1408,6 +1692,7 @@ class _$UserEditEventChangeAddressImpl implements UserEditEventChangeAddress {
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -1432,6 +1717,7 @@ class _$UserEditEventChangeAddressImpl implements UserEditEventChangeAddress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -1456,6 +1742,7 @@ class _$UserEditEventChangeAddressImpl implements UserEditEventChangeAddress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -1485,6 +1772,8 @@ class _$UserEditEventChangeAddressImpl implements UserEditEventChangeAddress {
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -1512,6 +1801,7 @@ class _$UserEditEventChangeAddressImpl implements UserEditEventChangeAddress {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -1536,6 +1826,7 @@ class _$UserEditEventChangeAddressImpl implements UserEditEventChangeAddress {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -1639,6 +1930,7 @@ class _$UserEditEventChangeAddress2Impl implements UserEditEventChangeAddress2 {
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -1663,6 +1955,7 @@ class _$UserEditEventChangeAddress2Impl implements UserEditEventChangeAddress2 {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -1687,6 +1980,7 @@ class _$UserEditEventChangeAddress2Impl implements UserEditEventChangeAddress2 {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -1716,6 +2010,8 @@ class _$UserEditEventChangeAddress2Impl implements UserEditEventChangeAddress2 {
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -1743,6 +2039,7 @@ class _$UserEditEventChangeAddress2Impl implements UserEditEventChangeAddress2 {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -1767,6 +2064,7 @@ class _$UserEditEventChangeAddress2Impl implements UserEditEventChangeAddress2 {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -1870,6 +2168,7 @@ class _$UserEditEventChangeCityImpl implements UserEditEventChangeCity {
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -1894,6 +2193,7 @@ class _$UserEditEventChangeCityImpl implements UserEditEventChangeCity {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -1918,6 +2218,7 @@ class _$UserEditEventChangeCityImpl implements UserEditEventChangeCity {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -1947,6 +2248,8 @@ class _$UserEditEventChangeCityImpl implements UserEditEventChangeCity {
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -1974,6 +2277,7 @@ class _$UserEditEventChangeCityImpl implements UserEditEventChangeCity {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -1998,6 +2302,7 @@ class _$UserEditEventChangeCityImpl implements UserEditEventChangeCity {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -2101,6 +2406,7 @@ class _$UserEditEventChangeStateImpl implements UserEditEventChangeState {
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -2125,6 +2431,7 @@ class _$UserEditEventChangeStateImpl implements UserEditEventChangeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -2149,6 +2456,7 @@ class _$UserEditEventChangeStateImpl implements UserEditEventChangeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -2178,6 +2486,8 @@ class _$UserEditEventChangeStateImpl implements UserEditEventChangeState {
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -2205,6 +2515,7 @@ class _$UserEditEventChangeStateImpl implements UserEditEventChangeState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -2229,6 +2540,7 @@ class _$UserEditEventChangeStateImpl implements UserEditEventChangeState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -2332,6 +2644,7 @@ class _$UserEditEventChangeZipCodeImpl implements UserEditEventChangeZipCode {
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -2356,6 +2669,7 @@ class _$UserEditEventChangeZipCodeImpl implements UserEditEventChangeZipCode {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -2380,6 +2694,7 @@ class _$UserEditEventChangeZipCodeImpl implements UserEditEventChangeZipCode {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -2409,6 +2724,8 @@ class _$UserEditEventChangeZipCodeImpl implements UserEditEventChangeZipCode {
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -2436,6 +2753,7 @@ class _$UserEditEventChangeZipCodeImpl implements UserEditEventChangeZipCode {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -2460,6 +2778,7 @@ class _$UserEditEventChangeZipCodeImpl implements UserEditEventChangeZipCode {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -2566,6 +2885,7 @@ class _$UserEditEventChangeDepartmentImpl
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -2590,6 +2910,7 @@ class _$UserEditEventChangeDepartmentImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -2614,6 +2935,7 @@ class _$UserEditEventChangeDepartmentImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -2643,6 +2965,8 @@ class _$UserEditEventChangeDepartmentImpl
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -2670,6 +2994,7 @@ class _$UserEditEventChangeDepartmentImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -2694,6 +3019,7 @@ class _$UserEditEventChangeDepartmentImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -2798,6 +3124,7 @@ class _$UserEditEventChangePositionImpl implements UserEditEventChangePosition {
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -2822,6 +3149,7 @@ class _$UserEditEventChangePositionImpl implements UserEditEventChangePosition {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -2846,6 +3174,7 @@ class _$UserEditEventChangePositionImpl implements UserEditEventChangePosition {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -2875,6 +3204,8 @@ class _$UserEditEventChangePositionImpl implements UserEditEventChangePosition {
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -2902,6 +3233,7 @@ class _$UserEditEventChangePositionImpl implements UserEditEventChangePosition {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -2926,6 +3258,7 @@ class _$UserEditEventChangePositionImpl implements UserEditEventChangePosition {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -3032,6 +3365,7 @@ class _$UserEditEventChangeHourlyRateImpl
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -3056,6 +3390,7 @@ class _$UserEditEventChangeHourlyRateImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -3080,6 +3415,7 @@ class _$UserEditEventChangeHourlyRateImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -3109,6 +3445,8 @@ class _$UserEditEventChangeHourlyRateImpl
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -3136,6 +3474,7 @@ class _$UserEditEventChangeHourlyRateImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -3160,6 +3499,7 @@ class _$UserEditEventChangeHourlyRateImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -3264,6 +3604,7 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -3288,6 +3629,7 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -3312,6 +3654,7 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -3341,6 +3684,8 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -3368,6 +3713,7 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -3392,6 +3738,7 @@ class _$UserEditEventChangeUsernameImpl implements UserEditEventChangeUsername {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -3495,6 +3842,7 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -3519,6 +3867,7 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -3543,6 +3892,7 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -3572,6 +3922,8 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -3599,6 +3951,7 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -3623,6 +3976,7 @@ class _$UserEditEventChangePasswordImpl implements UserEditEventChangePassword {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -3726,6 +4080,7 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -3750,6 +4105,7 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -3774,6 +4130,7 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -3803,6 +4160,8 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -3830,6 +4189,7 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -3854,6 +4214,7 @@ class _$UserEditEventChangeUserTypeImpl implements UserEditEventChangeUserType {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,
@@ -3956,6 +4317,7 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
   TResult when<TResult extends Object?>({
     required TResult Function(CrudType type) load,
     required TResult Function(String value) changeFirstName,
+    required TResult Function(String value) changeMiddleName,
     required TResult Function(String value) changeLastName,
     required TResult Function(String value) changePhoneNumber,
     required TResult Function(String value) changeEmail,
@@ -3980,6 +4342,7 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CrudType type)? load,
     TResult? Function(String value)? changeFirstName,
+    TResult? Function(String value)? changeMiddleName,
     TResult? Function(String value)? changeLastName,
     TResult? Function(String value)? changePhoneNumber,
     TResult? Function(String value)? changeEmail,
@@ -4004,6 +4367,7 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CrudType type)? load,
     TResult Function(String value)? changeFirstName,
+    TResult Function(String value)? changeMiddleName,
     TResult Function(String value)? changeLastName,
     TResult Function(String value)? changePhoneNumber,
     TResult Function(String value)? changeEmail,
@@ -4033,6 +4397,8 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
     required TResult Function(UserEditEventtLoad value) load,
     required TResult Function(UserEditEventChangeFirstName value)
         changeFirstName,
+    required TResult Function(UserEditEventChangeMiddleName value)
+        changeMiddleName,
     required TResult Function(UserEditEventChangeLastName value) changeLastName,
     required TResult Function(UserEditEventChangePhoneNumber value)
         changePhoneNumber,
@@ -4060,6 +4426,7 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UserEditEventtLoad value)? load,
     TResult? Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult? Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult? Function(UserEditEventChangeLastName value)? changeLastName,
     TResult? Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult? Function(UserEditEventChangeEmail value)? changeEmail,
@@ -4084,6 +4451,7 @@ class _$UserEditEventtSaveImpl implements UserEditEventtSave {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UserEditEventtLoad value)? load,
     TResult Function(UserEditEventChangeFirstName value)? changeFirstName,
+    TResult Function(UserEditEventChangeMiddleName value)? changeMiddleName,
     TResult Function(UserEditEventChangeLastName value)? changeLastName,
     TResult Function(UserEditEventChangePhoneNumber value)? changePhoneNumber,
     TResult Function(UserEditEventChangeEmail value)? changeEmail,

@@ -10,6 +10,10 @@ class UserEditEvent with _$UserEditEvent {
     required String value,
   }) = UserEditEventChangeFirstName;
 
+  const factory UserEditEvent.changeMiddleName({
+    required String value,
+  }) = UserEditEventChangeMiddleName;
+
   const factory UserEditEvent.changeLastName({
     required String value,
   }) = UserEditEventChangeLastName;

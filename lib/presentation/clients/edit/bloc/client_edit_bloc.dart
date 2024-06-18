@@ -1,4 +1,5 @@
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
+import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/client/client.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +46,15 @@ class ClientEditBloc extends Bloc<ClientEditEvent, ClientEditState> {
             ),
           );
         },
+        changeMiddleName: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              client: state.asLoaded.client.copyWith(
+                middleName: value,
+              ),
+            ),
+          );
+        },
         changeLastName: (value) {
           emit(
             state.asLoaded.copyWith(
@@ -68,6 +78,51 @@ class ClientEditBloc extends Bloc<ClientEditEvent, ClientEditState> {
             state.asLoaded.copyWith(
               client: state.asLoaded.client.copyWith(
                 phoneNumber: value,
+              ),
+            ),
+          );
+        },
+        changeAddress: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              client: state.asLoaded.client.copyWith(
+                address: value,
+              ),
+            ),
+          );
+        },
+        changeAddress2: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              client: state.asLoaded.client.copyWith(
+                address2: value,
+              ),
+            ),
+          );
+        },
+        changeCity: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              client: state.asLoaded.client.copyWith(
+                city: value,
+              ),
+            ),
+          );
+        },
+        changeState: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              client: state.asLoaded.client.copyWith(
+                state: value,
+              ),
+            ),
+          );
+        },
+        changeZipCode: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              client: state.asLoaded.client.copyWith(
+                zipCode: value,
               ),
             ),
           );

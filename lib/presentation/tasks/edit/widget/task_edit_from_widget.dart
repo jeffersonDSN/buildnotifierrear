@@ -1,4 +1,5 @@
 import 'package:buildnotifierrear/domain/entities/task/task.dart';
+import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -23,10 +24,8 @@ class TaskEditFromWidget extends StatelessWidget {
             padding: const EdgeInsets.all(Sizes.size16),
             child: Column(
               children: [
-                TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: 'Title',
-                  ),
+                BaseTextFormField(
+                  label: 'Title',
                   initialValue: task.title,
                   onChanged: onTitleChanged,
                 ),

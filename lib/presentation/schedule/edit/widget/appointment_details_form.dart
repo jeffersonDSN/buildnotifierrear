@@ -1,5 +1,7 @@
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
 import 'package:buildnotifierrear/domain/entities/task/task.dart';
+import 'package:buildnotifierrear/presentation/core/widget/base_dropdown_button_field.dart';
+import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -40,88 +42,80 @@ class AppointmentDetailsForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: 'Title',
-          ),
+        BaseTextFormField(
+          label: 'Title',
           controller: titleController,
           onChanged: onChangedTitle,
         ),
-        gapHeight8,
-        DropdownButtonFormField<({String id, String name})>(
-          decoration: const InputDecoration(
-            labelText: 'Project',
-          ),
-          isExpanded: true,
-          value: (
-            id: project.id,
-            name: project.name,
-          ),
-          items: [
-            const DropdownMenuItem(
-              value: (id: '', name: ''),
-              child: Text(''),
+        gapHeight16,
+        Row(
+          children: [
+            Expanded(
+              child: BaseDropdownButtonField(
+                label: 'Project',
+                isExpanded: true,
+                value: (id: project.id, name: project.name),
+                items: [
+                  DropdownItem(
+                    value: (id: '', name: ''),
+                    title: '',
+                  ),
+                  ...projects.map((project) {
+                    return DropdownItem(
+                      value: (id: project.id, name: project.name),
+                      title: project.name,
+                    );
+                  }),
+                ],
+                onChanged: (value) {
+                  if (value != null) {
+                    onChangedProject.call(value);
+                  }
+                },
+              ),
             ),
-            ...projects.map((project) {
-              return DropdownMenuItem(
+            gapWidth16,
+            Expanded(
+              child: BaseDropdownButtonField<({String id, String title})>(
+                label: 'Task',
+                isExpanded: true,
                 value: (
-                  id: project.id,
-                  name: project.name,
+                  id: task.id,
+                  title: task.title,
                 ),
-                child: Text(project.name),
-              );
-            }),
-          ],
-          onChanged: (value) {
-            if (value != null) {
-              onChangedProject.call(value);
-            }
-          },
-        ),
-        gapHeight8,
-        DropdownButtonFormField<({String id, String title})>(
-          decoration: const InputDecoration(
-            labelText: 'Task',
-          ),
-          isExpanded: true,
-          value: (
-            id: task.id,
-            title: task.title,
-          ),
-          items: [
-            const DropdownMenuItem(
-              value: (id: '', title: ''),
-              child: Text(''),
-            ),
-            ...tasks.map(
-              (task) {
-                return DropdownMenuItem(
-                  value: (id: task.id, title: task.title),
-                  child: Text(task.title),
-                );
-              },
+                items: [
+                  DropdownItem(
+                    value: (id: '', title: ''),
+                    title: '',
+                  ),
+                  ...tasks.map(
+                    (task) {
+                      return DropdownItem(
+                        value: (id: task.id, title: task.title),
+                        title: task.title,
+                      );
+                    },
+                  ),
+                ],
+                onChanged: (value) {
+                  if (value != null) {
+                    onChangedTask.call(value);
+                  }
+                },
+              ),
             ),
           ],
-          onChanged: (value) {
-            if (value != null) {
-              onChangedTask.call(value);
-            }
-          },
         ),
-        gapHeight8,
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: 'Location',
-          ),
+        gapHeight16,
+        BaseTextFormField(
+          label: 'Location',
           controller: locationController,
           onChanged: onChangedLocation,
         ),
-        gapHeight8,
-        TextFormField(
-          maxLines: 3,
-          decoration: const InputDecoration(
-            labelText: 'Description',
-          ),
+        gapHeight16,
+        BaseTextFormField(
+          label: 'Description',
+          maxLines: 2,
           controller: descriptionController,
           onChanged: onChangedDescription,
         ),

@@ -124,6 +124,7 @@ class UsersFireStoreRepository implements AbsIUsersRepository {
 
     var user = {
       'firstName': value.firstName,
+      'middleName': value.middleName,
       'lastName': value.lastName,
       'email': value.email.toLowerCase(),
       'phoneNumber': value.phoneNumber,
@@ -180,6 +181,7 @@ class UsersFireStoreRepository implements AbsIUsersRepository {
 
     var user = {
       'firstName': value.firstName,
+      'middleName': value.middleName,
       'lastName': value.lastName,
       'email': value.email.toLowerCase(),
       'phoneNumber': value.phoneNumber,

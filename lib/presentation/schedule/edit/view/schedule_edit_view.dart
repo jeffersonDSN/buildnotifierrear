@@ -168,7 +168,7 @@ class ScheduleEditView extends IView {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     SizedBox(
-                                      height: Sizes.size320,
+                                      height: Sizes.size332,
                                       child: AppointmentDetailsForm(
                                         titleController: titleController,
                                         locationController: locationController,

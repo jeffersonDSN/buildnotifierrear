@@ -46,6 +46,15 @@ class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
             ),
           );
         },
+        changeMiddleName: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              user: state.asLoaded.user.copyWith(
+                middleName: value,
+              ),
+            ),
+          );
+        },
         changeLastName: (value) {
           emit(
             state.asLoaded.copyWith(

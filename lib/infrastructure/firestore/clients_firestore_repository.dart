@@ -37,9 +37,15 @@ class ClientsFireStoreRepository extends FireStoreRepository
   Future<Either<ErrorFields, bool>> post(Client value) async {
     var user = {
       'firstName': value.firstName,
+      'middleName': value.middleName,
       'lastName': value.lastName,
       'email': value.email,
       'phoneNumber': value.phoneNumber,
+      'address': value.address,
+      'address2': value.address2,
+      'city': value.city,
+      'state': value.state,
+      'zipCode': value.zipCode,
     };
 
     await collection.add(user);
@@ -50,9 +56,15 @@ class ClientsFireStoreRepository extends FireStoreRepository
   Future<Either<ErrorFields, bool>> put(Client value) async {
     var user = {
       'firstName': value.firstName,
+      'middleName': value.middleName,
       'lastName': value.lastName,
       'email': value.email,
       'phoneNumber': value.phoneNumber,
+      'address': value.address,
+      'address2': value.address2,
+      'city': value.city,
+      'state': value.state,
+      'zipCode': value.zipCode,
     };
 
     await collection.doc(value.id.toString()).update(user);

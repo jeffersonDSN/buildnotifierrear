@@ -3,11 +3,12 @@ import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
+import 'package:buildnotifierrear/presentation/core/widget/base_dropdown_button_field.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
+import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/bloc/project_edit_bloc.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProjectEditView extends IView {
@@ -66,10 +67,8 @@ class ProjectEditView extends IView {
                             padding: const EdgeInsets.all(Sizes.size16),
                             child: Column(
                               children: [
-                                TextFormField(
-                                  decoration: const InputDecoration(
-                                    labelText: 'Name',
-                                  ),
+                                BaseTextFormField(
+                                  label: 'Name',
                                   initialValue: project.name,
                                   onChanged: (value) {
                                     bloc.add(
@@ -80,10 +79,8 @@ class ProjectEditView extends IView {
                                   },
                                 ),
                                 gapHeight16,
-                                DropdownButtonFormField(
-                                  decoration: const InputDecoration(
-                                    labelText: 'Client',
-                                  ),
+                                BaseDropdownButtonField(
+                                  label: 'Client',
                                   value: (
                                     id: project.clientId,
                                     firstName: project.clientFirstname,
@@ -91,29 +88,23 @@ class ProjectEditView extends IView {
                                   ),
                                   isExpanded: true,
                                   items: [
-                                    const DropdownMenuItem<
-                                        ({
-                                          String id,
-                                          String firstName,
-                                          String lastName,
-                                        })>(
+                                    DropdownItem(
                                       value: (
                                         id: '',
                                         firstName: '',
                                         lastName: '',
                                       ),
-                                      child: Text(''),
+                                      title: '',
                                     ),
                                     ...clients.map((cliente) {
-                                      return DropdownMenuItem(
+                                      return DropdownItem(
                                         value: (
                                           id: cliente.id,
                                           firstName: cliente.firstName,
                                           lastName: cliente.lastName,
                                         ),
-                                        child: Text(
-                                          '${cliente.firstName} ${cliente.lastName}',
-                                        ),
+                                        title:
+                                            '${cliente.firstName} ${cliente.lastName}',
                                       );
                                     }),
                                   ],
@@ -130,10 +121,8 @@ class ProjectEditView extends IView {
                                   },
                                 ),
                                 gapHeight16,
-                                TextFormField(
-                                  decoration: const InputDecoration(
-                                    labelText: 'Address',
-                                  ),
+                                BaseTextFormField(
+                                  label: 'Address',
                                   initialValue: project.address,
                                   onChanged: (value) {
                                     bloc.add(
@@ -144,10 +133,8 @@ class ProjectEditView extends IView {
                                   },
                                 ),
                                 gapHeight16,
-                                TextFormField(
-                                  decoration: const InputDecoration(
-                                    labelText: 'City',
-                                  ),
+                                BaseTextFormField(
+                                  label: 'City',
                                   initialValue: project.city,
                                   onChanged: (value) {
                                     bloc.add(
@@ -158,10 +145,8 @@ class ProjectEditView extends IView {
                                   },
                                 ),
                                 gapHeight16,
-                                TextFormField(
-                                  decoration: const InputDecoration(
-                                    labelText: 'State',
-                                  ),
+                                BaseTextFormField(
+                                  label: 'State',
                                   initialValue: project.state,
                                   onChanged: (value) {
                                     bloc.add(
@@ -172,10 +157,8 @@ class ProjectEditView extends IView {
                                   },
                                 ),
                                 gapHeight16,
-                                TextFormField(
-                                  decoration: const InputDecoration(
-                                    labelText: 'ZIP Code',
-                                  ),
+                                BaseTextFormField(
+                                  label: 'ZIP Code',
                                   initialValue: project.zipCode,
                                   onChanged: (value) {
                                     bloc.add(
