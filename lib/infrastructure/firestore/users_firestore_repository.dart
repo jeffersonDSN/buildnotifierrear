@@ -1,16 +1,16 @@
 import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/user/user.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_users_repository.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 
-class UsersFireStoreRepository implements AbsIUsersRepository {
-  final CollectionReference collection =
-      FirebaseFirestore.instance.collection('users');
-
+class UsersFireStoreRepository extends FireStoreRepository
+    implements AbsIUsersRepository {
   final String tenant;
 
-  UsersFireStoreRepository({required this.tenant});
+  UsersFireStoreRepository({required this.tenant})
+      : super(collectionName: 'users');
 
   @override
   Future<User?> getUserByUserNamePassword(

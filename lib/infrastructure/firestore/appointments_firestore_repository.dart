@@ -1,12 +1,11 @@
 import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_appointment_repository.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/tenant_firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 
-import 'firestore_repository.dart';
-
-class AppointmentsFirestoreRepository extends FireStoreRepository
+class AppointmentsFirestoreRepository extends TenantFireStoreRepository
     implements AbsIAppointmentRepository {
   AppointmentsFirestoreRepository({required super.tenantId})
       : super(collectionName: 'schedule');

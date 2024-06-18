@@ -1,5 +1,7 @@
+import 'package:buildnotifierrear/domain/controllers/states_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/users_controller.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/states_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/users_firestore_repository.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
@@ -24,6 +26,9 @@ class UserEdit extends IView {
           repository: UsersFireStoreRepository(
             tenant: appBloc(context).state.asLogged.user.tenant,
           ),
+        ),
+        statesController: StatesController(
+          repository: StatesFirestoreRepository(),
         ),
       ),
       child: UserEditView(

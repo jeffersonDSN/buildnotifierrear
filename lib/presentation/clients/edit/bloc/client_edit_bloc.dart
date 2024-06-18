@@ -1,8 +1,10 @@
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/states_controller.dart';
 import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/client/client.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
-import 'package:flutter/material.dart';
+import 'package:buildnotifierrear/domain/entities/state/state.dart';
+import 'package:flutter/material.dart' hide State;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -13,6 +15,7 @@ part 'client_edit_state.dart';
 class ClientEditBloc extends Bloc<ClientEditEvent, ClientEditState> {
   ClientEditBloc({
     required CRUDController<Client> controller,
+    required StatesController stateController,
   }) : super(
           const ClientEditState.empty(),
         ) {
@@ -21,19 +24,23 @@ class ClientEditBloc extends Bloc<ClientEditEvent, ClientEditState> {
         load: (type) async {
           emit(const ClientEditState.loading());
 
-          var result = await type.when(
-            create: () async {
-              return const Client();
-            },
-            update: (id) async {
-              return controller.getById(id);
-            },
-          );
+          var result = await Future.wait([
+            type.when(
+              create: () async {
+                return const Client();
+              },
+              update: (id) async {
+                return controller.getById(id);
+              },
+            ),
+            stateController.getAll(),
+          ]);
 
           emit(
             ClientEditState.loaded(
               type: type,
-              client: result,
+              client: result[0] as Client,
+              states: result[1] as List<State>,
             ),
           );
         },

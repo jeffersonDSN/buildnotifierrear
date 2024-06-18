@@ -2,12 +2,11 @@ import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
 
 import 'package:buildnotifierrear/domain/repositories/abs_i_projects_repository.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/tenant_firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 
-import 'firestore_repository.dart';
-
-class ProjectsFirestoreRepository extends FireStoreRepository
+class ProjectsFirestoreRepository extends TenantFireStoreRepository
     implements AbsIProjectsRepository {
   ProjectsFirestoreRepository({required super.tenantId})
       : super(collectionName: 'projects');

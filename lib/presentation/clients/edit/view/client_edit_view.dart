@@ -5,6 +5,7 @@ import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/clients/edit/bloc/client_edit_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_dropdown_button_field.dart';
+
 import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
@@ -56,7 +57,7 @@ class ClientEditView extends IView {
             loading: () => const Center(
               child: CircularProgressIndicator(),
             ),
-            loaded: (type, client, error) {
+            loaded: (type, client, states, error) {
               return Padding(
                 padding: const EdgeInsets.all(Sizes.size16),
                 child: Column(
@@ -175,7 +176,7 @@ class ClientEditView extends IView {
                               Row(
                                 children: [
                                   Expanded(
-                                    flex: 2,
+                                    flex: 3,
                                     child: BaseTextFormField(
                                       label: 'Address',
                                       hintText: 'Street Address, PO Box',
@@ -222,14 +223,26 @@ class ClientEditView extends IView {
                                   ),
                                   gapWidth16,
                                   Expanded(
-                                    flex: 1,
-                                    child: BaseTextFormField(
+                                    flex: 2,
+                                    child: BaseDropdownButtonField(
                                       label: 'State',
-                                      initialValue: client.state,
+                                      value: client.state,
+                                      items: [
+                                        DropdownItem(
+                                          value: '',
+                                          title: '',
+                                        ),
+                                        ...states.map((state) {
+                                          return DropdownItem(
+                                            value: state.name,
+                                            title: state.name,
+                                          );
+                                        }),
+                                      ],
                                       onChanged: (value) {
                                         bloc.add(
                                           ClientEditEvent.changeState(
-                                            value: value,
+                                            value: value ?? '',
                                           ),
                                         );
                                       },

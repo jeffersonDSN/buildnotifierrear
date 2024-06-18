@@ -2619,8 +2619,8 @@ mixin _$ClientEditState {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(
-            CrudType type, Client client, ({int code, String message})? error)
+    required TResult Function(CrudType type, Client client, List<State> states,
+            ({int code, String message})? error)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -2628,8 +2628,8 @@ mixin _$ClientEditState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(
-            CrudType type, Client client, ({int code, String message})? error)?
+    TResult? Function(CrudType type, Client client, List<State> states,
+            ({int code, String message})? error)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -2637,8 +2637,8 @@ mixin _$ClientEditState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(
-            CrudType type, Client client, ({int code, String message})? error)?
+    TResult Function(CrudType type, Client client, List<State> states,
+            ({int code, String message})? error)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -2726,8 +2726,8 @@ class _$ClientEditStateEmptyImpl implements ClientEditStateEmpty {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(
-            CrudType type, Client client, ({int code, String message})? error)
+    required TResult Function(CrudType type, Client client, List<State> states,
+            ({int code, String message})? error)
         loaded,
   }) {
     return empty();
@@ -2738,8 +2738,8 @@ class _$ClientEditStateEmptyImpl implements ClientEditStateEmpty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(
-            CrudType type, Client client, ({int code, String message})? error)?
+    TResult? Function(CrudType type, Client client, List<State> states,
+            ({int code, String message})? error)?
         loaded,
   }) {
     return empty?.call();
@@ -2750,8 +2750,8 @@ class _$ClientEditStateEmptyImpl implements ClientEditStateEmpty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(
-            CrudType type, Client client, ({int code, String message})? error)?
+    TResult Function(CrudType type, Client client, List<State> states,
+            ({int code, String message})? error)?
         loaded,
     required TResult orElse(),
   }) {
@@ -2843,8 +2843,8 @@ class _$ClientEditStateLoadingImpl implements ClientEditStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(
-            CrudType type, Client client, ({int code, String message})? error)
+    required TResult Function(CrudType type, Client client, List<State> states,
+            ({int code, String message})? error)
         loaded,
   }) {
     return loading();
@@ -2855,8 +2855,8 @@ class _$ClientEditStateLoadingImpl implements ClientEditStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(
-            CrudType type, Client client, ({int code, String message})? error)?
+    TResult? Function(CrudType type, Client client, List<State> states,
+            ({int code, String message})? error)?
         loaded,
   }) {
     return loading?.call();
@@ -2867,8 +2867,8 @@ class _$ClientEditStateLoadingImpl implements ClientEditStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(
-            CrudType type, Client client, ({int code, String message})? error)?
+    TResult Function(CrudType type, Client client, List<State> states,
+            ({int code, String message})? error)?
         loaded,
     required TResult orElse(),
   }) {
@@ -2925,7 +2925,10 @@ abstract class _$$ClientEditStateLoadedImplCopyWith<$Res> {
       __$$ClientEditStateLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
-      {CrudType type, Client client, ({int code, String message})? error});
+      {CrudType type,
+      Client client,
+      List<State> states,
+      ({int code, String message})? error});
 
   $CrudTypeCopyWith<$Res> get type;
   $ClientCopyWith<$Res> get client;
@@ -2944,6 +2947,7 @@ class __$$ClientEditStateLoadedImplCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
     Object? client = null,
+    Object? states = null,
     Object? error = freezed,
   }) {
     return _then(_$ClientEditStateLoadedImpl(
@@ -2955,6 +2959,10 @@ class __$$ClientEditStateLoadedImplCopyWithImpl<$Res>
           ? _value.client
           : client // ignore: cast_nullable_to_non_nullable
               as Client,
+      states: null == states
+          ? _value._states
+          : states // ignore: cast_nullable_to_non_nullable
+              as List<State>,
       error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -2983,18 +2991,30 @@ class __$$ClientEditStateLoadedImplCopyWithImpl<$Res>
 
 class _$ClientEditStateLoadedImpl implements ClientEditStateLoaded {
   const _$ClientEditStateLoadedImpl(
-      {required this.type, required this.client, this.error});
+      {required this.type,
+      required this.client,
+      required final List<State> states,
+      this.error})
+      : _states = states;
 
   @override
   final CrudType type;
   @override
   final Client client;
+  final List<State> _states;
+  @override
+  List<State> get states {
+    if (_states is EqualUnmodifiableListView) return _states;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_states);
+  }
+
   @override
   final ({int code, String message})? error;
 
   @override
   String toString() {
-    return 'ClientEditState.loaded(type: $type, client: $client, error: $error)';
+    return 'ClientEditState.loaded(type: $type, client: $client, states: $states, error: $error)';
   }
 
   @override
@@ -3004,11 +3024,13 @@ class _$ClientEditStateLoadedImpl implements ClientEditStateLoaded {
             other is _$ClientEditStateLoadedImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.client, client) || other.client == client) &&
+            const DeepCollectionEquality().equals(other._states, _states) &&
             (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, client, error);
+  int get hashCode => Object.hash(runtimeType, type, client,
+      const DeepCollectionEquality().hash(_states), error);
 
   @JsonKey(ignore: true)
   @override
@@ -3022,11 +3044,11 @@ class _$ClientEditStateLoadedImpl implements ClientEditStateLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(
-            CrudType type, Client client, ({int code, String message})? error)
+    required TResult Function(CrudType type, Client client, List<State> states,
+            ({int code, String message})? error)
         loaded,
   }) {
-    return loaded(type, client, error);
+    return loaded(type, client, states, error);
   }
 
   @override
@@ -3034,11 +3056,11 @@ class _$ClientEditStateLoadedImpl implements ClientEditStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(
-            CrudType type, Client client, ({int code, String message})? error)?
+    TResult? Function(CrudType type, Client client, List<State> states,
+            ({int code, String message})? error)?
         loaded,
   }) {
-    return loaded?.call(type, client, error);
+    return loaded?.call(type, client, states, error);
   }
 
   @override
@@ -3046,13 +3068,13 @@ class _$ClientEditStateLoadedImpl implements ClientEditStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(
-            CrudType type, Client client, ({int code, String message})? error)?
+    TResult Function(CrudType type, Client client, List<State> states,
+            ({int code, String message})? error)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(type, client, error);
+      return loaded(type, client, states, error);
     }
     return orElse();
   }
@@ -3096,10 +3118,12 @@ abstract class ClientEditStateLoaded implements ClientEditState {
   const factory ClientEditStateLoaded(
       {required final CrudType type,
       required final Client client,
+      required final List<State> states,
       final ({int code, String message})? error}) = _$ClientEditStateLoadedImpl;
 
   CrudType get type;
   Client get client;
+  List<State> get states;
   ({int code, String message})? get error;
   @JsonKey(ignore: true)
   _$$ClientEditStateLoadedImplCopyWith<_$ClientEditStateLoadedImpl>

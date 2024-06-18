@@ -4492,8 +4492,8 @@ mixin _$UserEditState {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(
-            CrudType type, User user, ({int code, String message})? error)
+    required TResult Function(CrudType type, User user, List<State> states,
+            ({int code, String message})? error)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -4501,8 +4501,8 @@ mixin _$UserEditState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(
-            CrudType type, User user, ({int code, String message})? error)?
+    TResult? Function(CrudType type, User user, List<State> states,
+            ({int code, String message})? error)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -4510,8 +4510,8 @@ mixin _$UserEditState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(
-            CrudType type, User user, ({int code, String message})? error)?
+    TResult Function(CrudType type, User user, List<State> states,
+            ({int code, String message})? error)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -4598,8 +4598,8 @@ class _$UserEditStateEmptyImpl implements UserEditStateEmpty {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(
-            CrudType type, User user, ({int code, String message})? error)
+    required TResult Function(CrudType type, User user, List<State> states,
+            ({int code, String message})? error)
         loaded,
   }) {
     return empty();
@@ -4610,8 +4610,8 @@ class _$UserEditStateEmptyImpl implements UserEditStateEmpty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(
-            CrudType type, User user, ({int code, String message})? error)?
+    TResult? Function(CrudType type, User user, List<State> states,
+            ({int code, String message})? error)?
         loaded,
   }) {
     return empty?.call();
@@ -4622,8 +4622,8 @@ class _$UserEditStateEmptyImpl implements UserEditStateEmpty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(
-            CrudType type, User user, ({int code, String message})? error)?
+    TResult Function(CrudType type, User user, List<State> states,
+            ({int code, String message})? error)?
         loaded,
     required TResult orElse(),
   }) {
@@ -4713,8 +4713,8 @@ class _$UserEditStateLoadingImpl implements UserEditStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(
-            CrudType type, User user, ({int code, String message})? error)
+    required TResult Function(CrudType type, User user, List<State> states,
+            ({int code, String message})? error)
         loaded,
   }) {
     return loading();
@@ -4725,8 +4725,8 @@ class _$UserEditStateLoadingImpl implements UserEditStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(
-            CrudType type, User user, ({int code, String message})? error)?
+    TResult? Function(CrudType type, User user, List<State> states,
+            ({int code, String message})? error)?
         loaded,
   }) {
     return loading?.call();
@@ -4737,8 +4737,8 @@ class _$UserEditStateLoadingImpl implements UserEditStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(
-            CrudType type, User user, ({int code, String message})? error)?
+    TResult Function(CrudType type, User user, List<State> states,
+            ({int code, String message})? error)?
         loaded,
     required TResult orElse(),
   }) {
@@ -4793,7 +4793,11 @@ abstract class _$$UserEditStateLoadedImplCopyWith<$Res> {
           $Res Function(_$UserEditStateLoadedImpl) then) =
       __$$UserEditStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({CrudType type, User user, ({int code, String message})? error});
+  $Res call(
+      {CrudType type,
+      User user,
+      List<State> states,
+      ({int code, String message})? error});
 
   $CrudTypeCopyWith<$Res> get type;
   $UserCopyWith<$Res> get user;
@@ -4812,6 +4816,7 @@ class __$$UserEditStateLoadedImplCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
     Object? user = null,
+    Object? states = null,
     Object? error = freezed,
   }) {
     return _then(_$UserEditStateLoadedImpl(
@@ -4823,6 +4828,10 @@ class __$$UserEditStateLoadedImplCopyWithImpl<$Res>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
+      states: null == states
+          ? _value._states
+          : states // ignore: cast_nullable_to_non_nullable
+              as List<State>,
       error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -4851,18 +4860,30 @@ class __$$UserEditStateLoadedImplCopyWithImpl<$Res>
 
 class _$UserEditStateLoadedImpl implements UserEditStateLoaded {
   const _$UserEditStateLoadedImpl(
-      {required this.type, required this.user, this.error});
+      {required this.type,
+      required this.user,
+      required final List<State> states,
+      this.error})
+      : _states = states;
 
   @override
   final CrudType type;
   @override
   final User user;
+  final List<State> _states;
+  @override
+  List<State> get states {
+    if (_states is EqualUnmodifiableListView) return _states;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_states);
+  }
+
   @override
   final ({int code, String message})? error;
 
   @override
   String toString() {
-    return 'UserEditState.loaded(type: $type, user: $user, error: $error)';
+    return 'UserEditState.loaded(type: $type, user: $user, states: $states, error: $error)';
   }
 
   @override
@@ -4872,11 +4893,13 @@ class _$UserEditStateLoadedImpl implements UserEditStateLoaded {
             other is _$UserEditStateLoadedImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.user, user) || other.user == user) &&
+            const DeepCollectionEquality().equals(other._states, _states) &&
             (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, user, error);
+  int get hashCode => Object.hash(runtimeType, type, user,
+      const DeepCollectionEquality().hash(_states), error);
 
   @JsonKey(ignore: true)
   @override
@@ -4890,11 +4913,11 @@ class _$UserEditStateLoadedImpl implements UserEditStateLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(
-            CrudType type, User user, ({int code, String message})? error)
+    required TResult Function(CrudType type, User user, List<State> states,
+            ({int code, String message})? error)
         loaded,
   }) {
-    return loaded(type, user, error);
+    return loaded(type, user, states, error);
   }
 
   @override
@@ -4902,11 +4925,11 @@ class _$UserEditStateLoadedImpl implements UserEditStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(
-            CrudType type, User user, ({int code, String message})? error)?
+    TResult? Function(CrudType type, User user, List<State> states,
+            ({int code, String message})? error)?
         loaded,
   }) {
-    return loaded?.call(type, user, error);
+    return loaded?.call(type, user, states, error);
   }
 
   @override
@@ -4914,13 +4937,13 @@ class _$UserEditStateLoadedImpl implements UserEditStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(
-            CrudType type, User user, ({int code, String message})? error)?
+    TResult Function(CrudType type, User user, List<State> states,
+            ({int code, String message})? error)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(type, user, error);
+      return loaded(type, user, states, error);
     }
     return orElse();
   }
@@ -4964,10 +4987,12 @@ abstract class UserEditStateLoaded implements UserEditState {
   const factory UserEditStateLoaded(
       {required final CrudType type,
       required final User user,
+      required final List<State> states,
       final ({int code, String message})? error}) = _$UserEditStateLoadedImpl;
 
   CrudType get type;
   User get user;
+  List<State> get states;
   ({int code, String message})? get error;
   @JsonKey(ignore: true)
   _$$UserEditStateLoadedImplCopyWith<_$UserEditStateLoadedImpl> get copyWith =>

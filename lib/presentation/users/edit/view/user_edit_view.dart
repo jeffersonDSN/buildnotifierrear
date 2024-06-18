@@ -57,7 +57,7 @@ class UserEditView extends IView {
             loading: () => const Center(
               child: CircularProgressIndicator(),
             ),
-            loaded: (type, user, error) {
+            loaded: (type, user, states, error) {
               return Padding(
                 padding: const EdgeInsets.all(Sizes.size16),
                 child: Column(
@@ -176,7 +176,7 @@ class UserEditView extends IView {
                               Row(
                                 children: [
                                   Expanded(
-                                    flex: 2,
+                                    flex: 3,
                                     child: BaseTextFormField(
                                       label: 'Address',
                                       hintText: 'Street Address, PO Box',
@@ -223,14 +223,26 @@ class UserEditView extends IView {
                                   ),
                                   gapWidth16,
                                   Expanded(
-                                    flex: 1,
-                                    child: BaseTextFormField(
+                                    flex: 2,
+                                    child: BaseDropdownButtonField(
                                       label: 'State',
-                                      initialValue: user.state,
+                                      value: user.state,
+                                      items: [
+                                        DropdownItem(
+                                          value: '',
+                                          title: '',
+                                        ),
+                                        ...states.map((state) {
+                                          return DropdownItem(
+                                            value: state.name,
+                                            title: state.name,
+                                          );
+                                        }),
+                                      ],
                                       onChanged: (value) {
                                         bloc.add(
                                           UserEditEvent.changeState(
-                                            value: value,
+                                            value: value ?? '',
                                           ),
                                         );
                                       },

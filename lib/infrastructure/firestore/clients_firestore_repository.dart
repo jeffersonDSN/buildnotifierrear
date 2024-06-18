@@ -1,11 +1,11 @@
 import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/client/client.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_crud_repository.dart';
-import 'package:buildnotifierrear/infrastructure/firestore/firestore_repository.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/tenant_firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 
-class ClientsFireStoreRepository extends FireStoreRepository
+class ClientsFireStoreRepository extends TenantFireStoreRepository
     implements AbsICRUDRepository<Client> {
   ClientsFireStoreRepository({required super.tenantId})
       : super(collectionName: 'clients');

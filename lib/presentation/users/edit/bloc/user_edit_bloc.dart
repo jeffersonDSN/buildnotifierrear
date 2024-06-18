@@ -1,8 +1,10 @@
+import 'package:buildnotifierrear/domain/controllers/states_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/users_controller.dart';
 import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
+import 'package:buildnotifierrear/domain/entities/state/state.dart';
 import 'package:buildnotifierrear/domain/entities/user/user.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide State;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -13,6 +15,7 @@ part 'user_edit_state.dart';
 class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
   UserEditBloc({
     required UsersController controller,
+    required StatesController statesController,
   }) : super(
           const UserEditState.empty(),
         ) {
@@ -21,19 +24,23 @@ class UserEditBloc extends Bloc<UserEditEvent, UserEditState> {
         load: (type) async {
           emit(const UserEditState.loading());
 
-          var result = await type.when(
-            create: () async {
-              return const User();
-            },
-            update: (id) async {
-              return await controller.getById(id);
-            },
-          );
+          var result = await Future.wait([
+            type.when(
+              create: () async {
+                return const User();
+              },
+              update: (id) async {
+                return await controller.getById(id);
+              },
+            ),
+            statesController.getAll(),
+          ]);
 
           emit(
             UserEditState.loaded(
               type: type,
-              user: result,
+              user: result[0] as User,
+              states: result[1] as List<State>,
             ),
           );
         },

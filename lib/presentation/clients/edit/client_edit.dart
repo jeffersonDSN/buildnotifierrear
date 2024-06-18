@@ -1,7 +1,9 @@
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/states_controller.dart';
 import 'package:buildnotifierrear/domain/entities/client/client.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/clients_firestore_repository.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/states_firestore_repository.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/clients/edit/bloc/client_edit_bloc.dart';
 import 'package:buildnotifierrear/presentation/clients/edit/view/client_edit_view.dart';
@@ -25,6 +27,9 @@ class ClientEdit extends IView {
           repository: ClientsFireStoreRepository(
             tenantId: appBloc(context).state.asLogged.user.tenant,
           ),
+        ),
+        stateController: StatesController(
+          repository: StatesFirestoreRepository(),
         ),
       ),
       child: ClientEditView(

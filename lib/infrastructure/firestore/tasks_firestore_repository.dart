@@ -1,12 +1,11 @@
 import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/task/task.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_tasks_repository.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/tenant_firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart' hide Task;
 
-import 'firestore_repository.dart';
-
-class TasksFirestoreRepository extends FireStoreRepository
+class TasksFirestoreRepository extends TenantFireStoreRepository
     implements AbsITasksRepository {
   TasksFirestoreRepository({required super.tenantId})
       : super(collectionName: 'tasks');
