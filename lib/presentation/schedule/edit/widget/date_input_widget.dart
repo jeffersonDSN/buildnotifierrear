@@ -85,6 +85,9 @@ class _DateInputWidgetState extends State<DateInputWidget> {
             border: const OutlineInputBorder(
               borderSide: BorderSide.none,
             ),
+            focusedBorder: const OutlineInputBorder(
+              borderSide: BorderSide.none,
+            ),
             suffixIcon: IconButton(
               icon: const Icon(
                 Icons.calendar_month,

@@ -122,6 +122,9 @@ class _HourInputWidgetState extends State<HourInputWidget> {
                 border: const OutlineInputBorder(
                   borderSide: BorderSide.none,
                 ),
+                focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                ),
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 4,
                   vertical: 4,
