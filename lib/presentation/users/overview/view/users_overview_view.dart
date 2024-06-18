@@ -1,5 +1,6 @@
 import 'package:buildnotifierrear/domain/entities/core/dependent_state_type.dart';
 import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
+import 'package:buildnotifierrear/domain/entities/user/user.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
@@ -244,6 +245,11 @@ class UsersOverviewView extends IView {
                                                     ),
                                                   );
                                                 },
+                                                getGrossPay: (hours, minutes) =>
+                                                    selectedUser!.getGrossPay(
+                                                  hours,
+                                                  minutes,
+                                                ),
                                               );
                                             },
                                             reading: (value) {

@@ -28,3 +28,13 @@ class User with _$User {
 
   factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);
 }
+
+extension OnUser on User {
+  double getGrossPay(int hours, int minutes) {
+    double decimalMinutes = minutes / 60.0;
+    double totalHours = hours + decimalMinutes;
+    double earnings = totalHours * hourlyRate;
+
+    return earnings;
+  }
+}

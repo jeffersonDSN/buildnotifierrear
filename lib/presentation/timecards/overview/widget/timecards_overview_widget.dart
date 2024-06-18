@@ -6,6 +6,8 @@ import 'package:buildnotifierrear/presentation/timecards/overview/widget/timecar
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+typedef ValueGetterGrossPay = double Function(int hours, int minutes);
+
 class TimecardsOverviewWidget extends StatelessWidget {
   final Period selectedPeriod;
   final List<Period> periods;
@@ -13,6 +15,7 @@ class TimecardsOverviewWidget extends StatelessWidget {
   final List<Timecard> timecards;
   final ValueChanged<DateTime> onOpenDetails;
   final bool isLoading;
+  final ValueGetterGrossPay getGrossPay;
 
   TimecardsOverviewWidget({
     super.key,
@@ -21,6 +24,7 @@ class TimecardsOverviewWidget extends StatelessWidget {
     required this.onChangePeriod,
     required this.timecards,
     required this.onOpenDetails,
+    required this.getGrossPay,
     this.isLoading = false,
   });
 
@@ -59,6 +63,12 @@ class TimecardsOverviewWidget extends StatelessWidget {
             },
           ),
           gapHeight16,
+          TimecardsListWidget(
+            timecards: timecards.dailyTotal,
+            onOpenDetails: onOpenDetails,
+          ),
+          const Divider(),
+          gapHeight16,
           ListTile(
             title: const Text(
               'Total hours of the period',
@@ -83,10 +93,33 @@ class TimecardsOverviewWidget extends StatelessWidget {
               ),
             ),
           ),
-          const Divider(),
-          TimecardsListWidget(
-            timecards: timecards.dailyTotal,
-            onOpenDetails: onOpenDetails,
+          gapHeight4,
+          ListTile(
+            title: const Text(
+              'Gross pay',
+              style: TextStyle(
+                color: AppColor.primaryColorSwatch,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            trailing: SizedBox(
+              width: Sizes.size112,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    getGrossPay(
+                      total.hours,
+                      total.minutes,
+                    ).toStringAsFixed(2),
+                    style: const TextStyle(
+                      fontSize: Sizes.size20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
