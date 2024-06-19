@@ -113,6 +113,51 @@ class ProjectEditBloc extends Bloc<ProjectEditEvent, ProjectEditState> {
             ),
           );
         },
+        changeStartDate: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              project: state.asLoaded.project.copyWith(
+                startDate: value,
+              ),
+            ),
+          );
+        },
+        changeExpectedEndDate: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              project: state.asLoaded.project.copyWith(
+                expectedCompletionDate: value,
+              ),
+            ),
+          );
+        },
+        changeBudget: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              project: state.asLoaded.project.copyWith(
+                budget: value,
+              ),
+            ),
+          );
+        },
+        changeStatus: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              project: state.asLoaded.project.copyWith(
+                status: value,
+              ),
+            ),
+          );
+        },
+        changeDescription: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              project: state.asLoaded.project.copyWith(
+                description: value,
+              ),
+            ),
+          );
+        },
         save: (callback) async {
           await state.asLoaded.type.when(
             create: () async {

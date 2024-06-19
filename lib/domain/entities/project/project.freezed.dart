@@ -22,6 +22,10 @@ Project _$ProjectFromJson(Map<String, dynamic> json) {
 mixin _$Project {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  DateTime? get startDate => throw _privateConstructorUsedError;
+  DateTime? get expectedCompletionDate => throw _privateConstructorUsedError;
+  double get budget => throw _privateConstructorUsedError;
+  int get status => throw _privateConstructorUsedError;
   String get clientId => throw _privateConstructorUsedError;
   String get clientFirstname => throw _privateConstructorUsedError;
   String get clientLastname => throw _privateConstructorUsedError;
@@ -30,6 +34,7 @@ mixin _$Project {
   String get city => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
   String get address2 => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   int? get latitude => throw _privateConstructorUsedError;
   int? get longitude => throw _privateConstructorUsedError;
   List<Task> get tasks => throw _privateConstructorUsedError;
@@ -47,6 +52,10 @@ abstract class $ProjectCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
+      DateTime? startDate,
+      DateTime? expectedCompletionDate,
+      double budget,
+      int status,
       String clientId,
       String clientFirstname,
       String clientLastname,
@@ -55,6 +64,7 @@ abstract class $ProjectCopyWith<$Res> {
       String city,
       String address,
       String address2,
+      String description,
       int? latitude,
       int? longitude,
       List<Task> tasks});
@@ -75,6 +85,10 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? startDate = freezed,
+    Object? expectedCompletionDate = freezed,
+    Object? budget = null,
+    Object? status = null,
     Object? clientId = null,
     Object? clientFirstname = null,
     Object? clientLastname = null,
@@ -83,6 +97,7 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
     Object? city = null,
     Object? address = null,
     Object? address2 = null,
+    Object? description = null,
     Object? latitude = freezed,
     Object? longitude = freezed,
     Object? tasks = null,
@@ -96,6 +111,22 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      startDate: freezed == startDate
+          ? _value.startDate
+          : startDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      expectedCompletionDate: freezed == expectedCompletionDate
+          ? _value.expectedCompletionDate
+          : expectedCompletionDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      budget: null == budget
+          ? _value.budget
+          : budget // ignore: cast_nullable_to_non_nullable
+              as double,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as int,
       clientId: null == clientId
           ? _value.clientId
           : clientId // ignore: cast_nullable_to_non_nullable
@@ -127,6 +158,10 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
       address2: null == address2
           ? _value.address2
           : address2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       latitude: freezed == latitude
           ? _value.latitude
@@ -154,6 +189,10 @@ abstract class _$$ProjectImplCopyWith<$Res> implements $ProjectCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
+      DateTime? startDate,
+      DateTime? expectedCompletionDate,
+      double budget,
+      int status,
       String clientId,
       String clientFirstname,
       String clientLastname,
@@ -162,6 +201,7 @@ abstract class _$$ProjectImplCopyWith<$Res> implements $ProjectCopyWith<$Res> {
       String city,
       String address,
       String address2,
+      String description,
       int? latitude,
       int? longitude,
       List<Task> tasks});
@@ -180,6 +220,10 @@ class __$$ProjectImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? startDate = freezed,
+    Object? expectedCompletionDate = freezed,
+    Object? budget = null,
+    Object? status = null,
     Object? clientId = null,
     Object? clientFirstname = null,
     Object? clientLastname = null,
@@ -188,6 +232,7 @@ class __$$ProjectImplCopyWithImpl<$Res>
     Object? city = null,
     Object? address = null,
     Object? address2 = null,
+    Object? description = null,
     Object? latitude = freezed,
     Object? longitude = freezed,
     Object? tasks = null,
@@ -201,6 +246,22 @@ class __$$ProjectImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      startDate: freezed == startDate
+          ? _value.startDate
+          : startDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      expectedCompletionDate: freezed == expectedCompletionDate
+          ? _value.expectedCompletionDate
+          : expectedCompletionDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      budget: null == budget
+          ? _value.budget
+          : budget // ignore: cast_nullable_to_non_nullable
+              as double,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as int,
       clientId: null == clientId
           ? _value.clientId
           : clientId // ignore: cast_nullable_to_non_nullable
@@ -233,6 +294,10 @@ class __$$ProjectImplCopyWithImpl<$Res>
           ? _value.address2
           : address2 // ignore: cast_nullable_to_non_nullable
               as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
       latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -255,6 +320,10 @@ class _$ProjectImpl implements _Project {
   const _$ProjectImpl(
       {this.id = '',
       this.name = '',
+      this.startDate,
+      this.expectedCompletionDate,
+      this.budget = 0,
+      this.status = 0,
       this.clientId = '',
       this.clientFirstname = '',
       this.clientLastname = '',
@@ -263,6 +332,7 @@ class _$ProjectImpl implements _Project {
       this.city = '',
       this.address = '',
       this.address2 = '',
+      this.description = '',
       this.latitude,
       this.longitude,
       final List<Task> tasks = const []})
@@ -277,6 +347,16 @@ class _$ProjectImpl implements _Project {
   @override
   @JsonKey()
   final String name;
+  @override
+  final DateTime? startDate;
+  @override
+  final DateTime? expectedCompletionDate;
+  @override
+  @JsonKey()
+  final double budget;
+  @override
+  @JsonKey()
+  final int status;
   @override
   @JsonKey()
   final String clientId;
@@ -302,6 +382,9 @@ class _$ProjectImpl implements _Project {
   @JsonKey()
   final String address2;
   @override
+  @JsonKey()
+  final String description;
+  @override
   final int? latitude;
   @override
   final int? longitude;
@@ -316,7 +399,7 @@ class _$ProjectImpl implements _Project {
 
   @override
   String toString() {
-    return 'Project(id: $id, name: $name, clientId: $clientId, clientFirstname: $clientFirstname, clientLastname: $clientLastname, zipCode: $zipCode, state: $state, city: $city, address: $address, address2: $address2, latitude: $latitude, longitude: $longitude, tasks: $tasks)';
+    return 'Project(id: $id, name: $name, startDate: $startDate, expectedCompletionDate: $expectedCompletionDate, budget: $budget, status: $status, clientId: $clientId, clientFirstname: $clientFirstname, clientLastname: $clientLastname, zipCode: $zipCode, state: $state, city: $city, address: $address, address2: $address2, description: $description, latitude: $latitude, longitude: $longitude, tasks: $tasks)';
   }
 
   @override
@@ -326,6 +409,12 @@ class _$ProjectImpl implements _Project {
             other is _$ProjectImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.startDate, startDate) ||
+                other.startDate == startDate) &&
+            (identical(other.expectedCompletionDate, expectedCompletionDate) ||
+                other.expectedCompletionDate == expectedCompletionDate) &&
+            (identical(other.budget, budget) || other.budget == budget) &&
+            (identical(other.status, status) || other.status == status) &&
             (identical(other.clientId, clientId) ||
                 other.clientId == clientId) &&
             (identical(other.clientFirstname, clientFirstname) ||
@@ -338,6 +427,8 @@ class _$ProjectImpl implements _Project {
             (identical(other.address, address) || other.address == address) &&
             (identical(other.address2, address2) ||
                 other.address2 == address2) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
@@ -351,6 +442,10 @@ class _$ProjectImpl implements _Project {
       runtimeType,
       id,
       name,
+      startDate,
+      expectedCompletionDate,
+      budget,
+      status,
       clientId,
       clientFirstname,
       clientLastname,
@@ -359,6 +454,7 @@ class _$ProjectImpl implements _Project {
       city,
       address,
       address2,
+      description,
       latitude,
       longitude,
       const DeepCollectionEquality().hash(_tasks));
@@ -381,6 +477,10 @@ abstract class _Project implements Project {
   const factory _Project(
       {final String id,
       final String name,
+      final DateTime? startDate,
+      final DateTime? expectedCompletionDate,
+      final double budget,
+      final int status,
       final String clientId,
       final String clientFirstname,
       final String clientLastname,
@@ -389,6 +489,7 @@ abstract class _Project implements Project {
       final String city,
       final String address,
       final String address2,
+      final String description,
       final int? latitude,
       final int? longitude,
       final List<Task> tasks}) = _$ProjectImpl;
@@ -399,6 +500,14 @@ abstract class _Project implements Project {
   String get id;
   @override
   String get name;
+  @override
+  DateTime? get startDate;
+  @override
+  DateTime? get expectedCompletionDate;
+  @override
+  double get budget;
+  @override
+  int get status;
   @override
   String get clientId;
   @override
@@ -415,6 +524,8 @@ abstract class _Project implements Project {
   String get address;
   @override
   String get address2;
+  @override
+  String get description;
   @override
   int? get latitude;
   @override

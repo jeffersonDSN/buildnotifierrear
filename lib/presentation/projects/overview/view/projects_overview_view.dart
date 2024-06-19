@@ -1,3 +1,4 @@
+import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/domain/entities/core/dependent_state_type.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
@@ -7,10 +8,11 @@ import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
 import 'package:buildnotifierrear/presentation/core/widget/total_active_card.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/bloc/projects_overview_bloc.dart';
 import 'package:buildnotifierrear/presentation/schedule/overview/widget/schedule_widget.dart';
-import 'package:buildnotifierrear/presentation/tasks/edit/widget/task_edit_widget.dart';
+import 'package:buildnotifierrear/presentation/tasks/edit/task_edit.dart';
 import 'package:buildnotifierrear/presentation/tasks/overview/widget/tasks_overview_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
+import 'package:buildnotifierrear/presentation/timecards/overview/widget/timecards_day_details_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -62,7 +64,7 @@ class ProjectsOverviewView extends IView {
               return projects.isEmpty
                   ? const Center(
                       child: Text(
-                        'has no client',
+                        'has no project',
                       ),
                     )
                   : Column(
@@ -413,16 +415,9 @@ class ProjectsOverviewView extends IView {
                                         return Container();
                                       },
                                       creating: () {
-                                        return TaskEditWidget(
-                                          title: 'New task',
-                                          task: taskSelected!,
-                                          onTitleChanged: (value) {
-                                            bloc.add(
-                                              ProjectsOverviewEvent
-                                                  .changeTitleTaskSelected(
-                                                      value: value),
-                                            );
-                                          },
+                                        return TaskEdit(
+                                          projectID: selectedProject?.id,
+                                          type: const CrudType.create(),
                                           onCancel: () {
                                             bloc.add(
                                               const ProjectsOverviewEvent
@@ -432,36 +427,18 @@ class ProjectsOverviewView extends IView {
                                               ),
                                             );
                                           },
-                                          onSave: (value) {
+                                          onSave: () {
                                             bloc.add(
-                                              ProjectsOverviewEvent
-                                                  .saveTaskSelected(
-                                                callback: () {
-                                                  bloc.add(
-                                                    const ProjectsOverviewEvent
-                                                        .changeTasksState(
-                                                      tasksState:
-                                                          DependenteStateType
-                                                              .listing(),
-                                                    ),
-                                                  );
-                                                },
-                                              ),
+                                              const ProjectsOverviewEvent
+                                                  .loadTasksOfSelectedProject(),
                                             );
                                           },
                                         );
                                       },
                                       updating: (task) {
-                                        return TaskEditWidget(
-                                          title: 'Edit task',
-                                          task: taskSelected!,
-                                          onTitleChanged: (value) {
-                                            bloc.add(
-                                              ProjectsOverviewEvent
-                                                  .changeTitleTaskSelected(
-                                                      value: value),
-                                            );
-                                          },
+                                        return TaskEdit(
+                                          projectID: selectedProject?.id,
+                                          type: CrudType.update(id: task.id),
                                           onCancel: () {
                                             bloc.add(
                                               const ProjectsOverviewEvent
@@ -471,21 +448,10 @@ class ProjectsOverviewView extends IView {
                                               ),
                                             );
                                           },
-                                          onSave: (value) {
+                                          onSave: () {
                                             bloc.add(
-                                              ProjectsOverviewEvent
-                                                  .saveTaskSelected(
-                                                callback: () {
-                                                  bloc.add(
-                                                    const ProjectsOverviewEvent
-                                                        .changeTasksState(
-                                                      tasksState:
-                                                          DependenteStateType
-                                                              .listing(),
-                                                    ),
-                                                  );
-                                                },
-                                              ),
+                                              const ProjectsOverviewEvent
+                                                  .loadTasksOfSelectedProject(),
                                             );
                                           },
                                         );

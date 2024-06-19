@@ -10,6 +10,14 @@ _$ProjectImpl _$$ProjectImplFromJson(Map<String, dynamic> json) =>
     _$ProjectImpl(
       id: json['id'] as String? ?? '',
       name: json['name'] as String? ?? '',
+      startDate: json['startDate'] == null
+          ? null
+          : DateTime.parse(json['startDate'] as String),
+      expectedCompletionDate: json['expectedCompletionDate'] == null
+          ? null
+          : DateTime.parse(json['expectedCompletionDate'] as String),
+      budget: (json['budget'] as num?)?.toDouble() ?? 0,
+      status: (json['status'] as num?)?.toInt() ?? 0,
       clientId: json['clientId'] as String? ?? '',
       clientFirstname: json['clientFirstname'] as String? ?? '',
       clientLastname: json['clientLastname'] as String? ?? '',
@@ -18,6 +26,7 @@ _$ProjectImpl _$$ProjectImplFromJson(Map<String, dynamic> json) =>
       city: json['city'] as String? ?? '',
       address: json['address'] as String? ?? '',
       address2: json['address2'] as String? ?? '',
+      description: json['description'] as String? ?? '',
       latitude: (json['latitude'] as num?)?.toInt(),
       longitude: (json['longitude'] as num?)?.toInt(),
       tasks: (json['tasks'] as List<dynamic>?)
@@ -30,6 +39,11 @@ Map<String, dynamic> _$$ProjectImplToJson(_$ProjectImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'startDate': instance.startDate?.toIso8601String(),
+      'expectedCompletionDate':
+          instance.expectedCompletionDate?.toIso8601String(),
+      'budget': instance.budget,
+      'status': instance.status,
       'clientId': instance.clientId,
       'clientFirstname': instance.clientFirstname,
       'clientLastname': instance.clientLastname,
@@ -38,6 +52,7 @@ Map<String, dynamic> _$$ProjectImplToJson(_$ProjectImpl instance) =>
       'city': instance.city,
       'address': instance.address,
       'address2': instance.address2,
+      'description': instance.description,
       'latitude': instance.latitude,
       'longitude': instance.longitude,
       'tasks': instance.tasks,

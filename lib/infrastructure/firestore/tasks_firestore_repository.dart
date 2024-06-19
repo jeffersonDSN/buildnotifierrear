@@ -80,6 +80,12 @@ class TasksFirestoreRepository extends TenantFireStoreRepository
     var schedule = {
       'title': value.title,
       'productId': value.productId,
+      'startDate': value.startDate,
+      'expectedEndDate': value.expectedEndDate,
+      'estimatedEffort': value.estimatedEffort,
+      'priority': value.priority,
+      'status': value.status,
+      'notes': value.notes,
     };
 
     await collection.doc(value.id.toString()).update(schedule);
@@ -91,6 +97,12 @@ class TasksFirestoreRepository extends TenantFireStoreRepository
     var schedule = {
       'title': value.title,
       'productId': value.productId,
+      'startDate': value.startDate,
+      'expectedEndDate': value.expectedEndDate,
+      'estimatedEffort': value.estimatedEffort,
+      'priority': value.priority,
+      'status': value.status,
+      'notes': value.notes,
     };
 
     await collection.add(schedule);

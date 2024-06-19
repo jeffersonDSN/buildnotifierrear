@@ -1,6 +1,6 @@
 import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/presentation/schedule/edit/bloc/schedule_edit_bloc.dart';
-import 'package:buildnotifierrear/presentation/schedule/edit/widget/date_input_widget.dart';
+import 'package:buildnotifierrear/presentation/core/widget/base_date_input_widget.dart';
 import 'package:buildnotifierrear/presentation/schedule/edit/widget/hour_input_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
@@ -82,7 +82,7 @@ class AppointmentDatesForm extends StatelessWidget {
                       key: formKey,
                       child: Row(
                         children: [
-                          DateInputWidget(
+                          BaseDateInputWidget(
                             value: appointment.startDateTime,
                             enabled: appointment == selectedAppointment,
                             onPressedChangeDate: () async {

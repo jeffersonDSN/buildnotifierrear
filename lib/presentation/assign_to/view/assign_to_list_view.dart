@@ -1,24 +1,24 @@
 import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
-import 'package:buildnotifierrear/presentation/schedule/schedule_edit_assign_to/bloc/schedule_edit_assign_to_bloc.dart';
+import 'package:buildnotifierrear/presentation/assign_to/bloc/assign_to_bloc.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ScheduleEditAssignToView extends StatelessWidget {
+class AssignToView extends StatelessWidget {
   final List<AppointmentUser> assignTo;
 
-  const ScheduleEditAssignToView({
+  const AssignToView({
     super.key,
     required this.assignTo,
   });
 
   @override
   Widget build(BuildContext context) {
-    var bloc = BlocProvider.of<ScheduleEditAssignToBloc>(context);
+    var bloc = BlocProvider.of<AssignToBloc>(context);
 
     bloc.add(
-      ScheduleEditAssignToEvent.load(
+      AssignToEvent.load(
         assignTo: assignTo,
       ),
     );
@@ -41,7 +41,7 @@ class ScheduleEditAssignToView extends StatelessWidget {
         child: Column(
           children: [
             const Divider(),
-            BlocBuilder<ScheduleEditAssignToBloc, ScheduleEditAssignToState>(
+            BlocBuilder<AssignToBloc, AssignToState>(
               bloc: bloc,
               builder: (context, state) {
                 return state.when(
@@ -66,7 +66,7 @@ class ScheduleEditAssignToView extends StatelessWidget {
                             ),
                             onChanged: (value) {
                               bloc.add(
-                                ScheduleEditAssignToEvent.check(
+                                AssignToEvent.check(
                                   check: value ?? false,
                                   user: user,
                                 ),

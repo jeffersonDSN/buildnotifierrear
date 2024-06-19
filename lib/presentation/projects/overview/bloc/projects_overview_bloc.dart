@@ -5,7 +5,6 @@ import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/domain/entities/core/dependent_state_type.dart';
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
 import 'package:buildnotifierrear/domain/entities/task/task.dart';
-import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
 
@@ -75,6 +74,24 @@ class ProjectsOverviewBloc
               ),
             );
           },
+          loadTasksOfSelectedProject: () async {
+            emit(
+              state.asLoaded.copyWith(
+                tasksState: const DependenteStateType.loading(),
+              ),
+            );
+
+            var result = await tasksController.getAllByProject(
+              state.asLoaded.selectedProject!.id,
+            );
+
+            emit(
+              state.asLoaded.copyWith(
+                tasksOfprojectSelected: result,
+                tasksState: const DependenteStateType.listing(),
+              ),
+            );
+          },
           changeTasksState: (tasksState) {
             tasksState.maybeWhen(
               orElse: () {
@@ -88,9 +105,7 @@ class ProjectsOverviewBloc
                 emit(
                   state.asLoaded.copyWith(
                     tasksState: tasksState,
-                    taskSelected: Task(
-                      productId: state.asLoaded.selectedProject!.id,
-                    ),
+                    taskSelected: null,
                   ),
                 );
               },
@@ -102,15 +117,6 @@ class ProjectsOverviewBloc
                   ),
                 );
               },
-            );
-          },
-          changeTitleTaskSelected: (value) {
-            emit(
-              state.asLoaded.copyWith(
-                taskSelected: state.asLoaded.taskSelected?.copyWith(
-                  title: value,
-                ),
-              ),
             );
           },
           changeSelectedDay: (selectedDay) async {
@@ -132,29 +138,6 @@ class ProjectsOverviewBloc
                 appoitmentCardsState: const DependenteStateType.listing(),
               ),
             );
-          },
-          saveTaskSelected: (callback) async {
-            await state.asLoaded.tasksState.maybeWhen(
-              orElse: () {},
-              creating: () async {
-                await tasksController.create(state.asLoaded.taskSelected!);
-              },
-              updating: (task) async {
-                await tasksController.update(state.asLoaded.taskSelected!);
-              },
-            );
-
-            var tasks = await tasksController.getAllByProject(
-              state.asLoaded.selectedProject!.id,
-            );
-
-            emit(
-              state.asLoaded.copyWith(
-                tasksOfprojectSelected: tasks,
-              ),
-            );
-
-            callback.call();
           },
           deleteAppointment: (appointmentId) async {
             await appointmentController.delete(appointmentId);

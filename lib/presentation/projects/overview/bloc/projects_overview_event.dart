@@ -8,21 +8,16 @@ class ProjectsOverviewEvent with _$ProjectsOverviewEvent {
     required Project selectedProject,
   }) = ProjectsOverviewEventChangeProjectSelected;
 
+  const factory ProjectsOverviewEvent.loadTasksOfSelectedProject() =
+      ProjectsOverviewEventLoadTasksOfSelectedProject;
+
   const factory ProjectsOverviewEvent.changeTasksState({
     required DependenteStateType tasksState,
   }) = ProjectsOverviewEventChangeTasksState;
 
-  const factory ProjectsOverviewEvent.changeTitleTaskSelected({
-    required String value,
-  }) = ProjectsOverviewEventChangeTitleTaskSelected;
-
   const factory ProjectsOverviewEvent.changeSelectedDay({
     required DateTime selectedDay,
   }) = ProjectsOverviewEventSelectedDay;
-
-  const factory ProjectsOverviewEvent.saveTaskSelected({
-    required VoidCallback callback,
-  }) = ProjectsOverviewEventSaveTaskSelected;
 
   const factory ProjectsOverviewEvent.deleteAppointment({
     required String appointmentId,

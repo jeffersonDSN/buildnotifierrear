@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:buildnotifierrear/domain/controllers/tasks_controller.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/domain/entities/task/task.dart';
@@ -59,7 +61,61 @@ class TaskEditBloc extends Bloc<TaskEditEvent, TaskEditState> {
               ),
             );
           },
-          save: () async {
+          changeStartDate: (value) {
+            emit(
+              state.asloaded.copyWith(
+                task: state.asloaded.task.copyWith(
+                  startDate: value,
+                ),
+              ),
+            );
+          },
+          changeEstimatedEffort: (value) {
+            emit(
+              state.asloaded.copyWith(
+                task: state.asloaded.task.copyWith(
+                  estimatedEffort: value,
+                ),
+              ),
+            );
+          },
+          changePriority: (value) {
+            emit(
+              state.asloaded.copyWith(
+                task: state.asloaded.task.copyWith(
+                  priority: value,
+                ),
+              ),
+            );
+          },
+          changeStatus: (value) {
+            emit(
+              state.asloaded.copyWith(
+                task: state.asloaded.task.copyWith(
+                  status: value,
+                ),
+              ),
+            );
+          },
+          changeNotes: (value) {
+            emit(
+              state.asloaded.copyWith(
+                task: state.asloaded.task.copyWith(
+                  notes: value,
+                ),
+              ),
+            );
+          },
+          changeEndDate: (value) {
+            emit(
+              state.asloaded.copyWith(
+                task: state.asloaded.task.copyWith(
+                  expectedEndDate: value,
+                ),
+              ),
+            );
+          },
+          save: (callback) async {
             await state.asloaded.crudType.when(
               create: () async {
                 await controller.create(state.asloaded.task);
@@ -68,6 +124,8 @@ class TaskEditBloc extends Bloc<TaskEditEvent, TaskEditState> {
                 await controller.update(state.asloaded.task);
               },
             );
+
+            callback.call();
           },
         );
       },

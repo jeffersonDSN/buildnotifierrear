@@ -15,5 +15,31 @@ class TaskEditEvent with _$TaskEditEvent {
     required String value,
   }) = TaskEditEventUpdateTitle;
 
-  const factory TaskEditEvent.save() = TaskEditEventSave;
+  const factory TaskEditEvent.changeStartDate({
+    required DateTime value,
+  }) = TaskEditEventStartDate;
+
+  const factory TaskEditEvent.changeEndDate({
+    required DateTime value,
+  }) = TaskEditEventExpectedEndDate;
+
+  const factory TaskEditEvent.changeEstimatedEffort({
+    required String value,
+  }) = TaskEditEventEstimatedEffort;
+
+  const factory TaskEditEvent.changePriority({
+    required int value,
+  }) = TaskEditEventTaskPriority;
+
+  const factory TaskEditEvent.changeStatus({
+    required int value,
+  }) = TaskEditEventStatus;
+
+  const factory TaskEditEvent.changeNotes({
+    required String value,
+  }) = TaskEditEventNotes;
+
+  const factory TaskEditEvent.save({
+    required VoidCallback onSave,
+  }) = TaskEditEventSave;
 }

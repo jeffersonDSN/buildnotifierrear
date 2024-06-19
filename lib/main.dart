@@ -1,6 +1,7 @@
 import 'package:buildnotifierrear/firebase_options.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
+import 'package:buildnotifierrear/presentation/core/localization/app_localizations.dart';
 import 'package:buildnotifierrear/presentation/lading/page/lading_page.dart';
 import 'package:buildnotifierrear/presentation/sign/sign_in/sign_in.dart';
 import 'package:buildnotifierrear/presentation/sign/sign_up/sign_up.dart';
@@ -52,6 +53,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Build Notifier',
       theme: AppTheme.mainTheme,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       home: BlocBuilder<AppBloc, AppState>(
         bloc: BlocProvider.of<AppBloc>(context),
         builder: (context, state) {

@@ -20,11 +20,10 @@ mixin _$ProjectsOverviewEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(Project selectedProject) changeSelectedProject,
+    required TResult Function() loadTasksOfSelectedProject,
     required TResult Function(DependenteStateType<dynamic> tasksState)
         changeTasksState,
-    required TResult Function(String value) changeTitleTaskSelected,
     required TResult Function(DateTime selectedDay) changeSelectedDay,
-    required TResult Function(VoidCallback callback) saveTaskSelected,
     required TResult Function(String appointmentId) deleteAppointment,
   }) =>
       throw _privateConstructorUsedError;
@@ -32,11 +31,10 @@ mixin _$ProjectsOverviewEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(Project selectedProject)? changeSelectedProject,
+    TResult? Function()? loadTasksOfSelectedProject,
     TResult? Function(DependenteStateType<dynamic> tasksState)?
         changeTasksState,
-    TResult? Function(String value)? changeTitleTaskSelected,
     TResult? Function(DateTime selectedDay)? changeSelectedDay,
-    TResult? Function(VoidCallback callback)? saveTaskSelected,
     TResult? Function(String appointmentId)? deleteAppointment,
   }) =>
       throw _privateConstructorUsedError;
@@ -44,10 +42,9 @@ mixin _$ProjectsOverviewEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(Project selectedProject)? changeSelectedProject,
+    TResult Function()? loadTasksOfSelectedProject,
     TResult Function(DependenteStateType<dynamic> tasksState)? changeTasksState,
-    TResult Function(String value)? changeTitleTaskSelected,
     TResult Function(DateTime selectedDay)? changeSelectedDay,
-    TResult Function(VoidCallback callback)? saveTaskSelected,
     TResult Function(String appointmentId)? deleteAppointment,
     required TResult orElse(),
   }) =>
@@ -57,15 +54,13 @@ mixin _$ProjectsOverviewEvent {
     required TResult Function(ProjectsOverviewEventLoad value) load,
     required TResult Function(ProjectsOverviewEventChangeProjectSelected value)
         changeSelectedProject,
+    required TResult Function(
+            ProjectsOverviewEventLoadTasksOfSelectedProject value)
+        loadTasksOfSelectedProject,
     required TResult Function(ProjectsOverviewEventChangeTasksState value)
         changeTasksState,
-    required TResult Function(
-            ProjectsOverviewEventChangeTitleTaskSelected value)
-        changeTitleTaskSelected,
     required TResult Function(ProjectsOverviewEventSelectedDay value)
         changeSelectedDay,
-    required TResult Function(ProjectsOverviewEventSaveTaskSelected value)
-        saveTaskSelected,
     required TResult Function(ProjectsOverviewEventDeleteAppointment value)
         deleteAppointment,
   }) =>
@@ -75,14 +70,12 @@ mixin _$ProjectsOverviewEvent {
     TResult? Function(ProjectsOverviewEventLoad value)? load,
     TResult? Function(ProjectsOverviewEventChangeProjectSelected value)?
         changeSelectedProject,
+    TResult? Function(ProjectsOverviewEventLoadTasksOfSelectedProject value)?
+        loadTasksOfSelectedProject,
     TResult? Function(ProjectsOverviewEventChangeTasksState value)?
         changeTasksState,
-    TResult? Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
     TResult? Function(ProjectsOverviewEventSelectedDay value)?
         changeSelectedDay,
-    TResult? Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
     TResult? Function(ProjectsOverviewEventDeleteAppointment value)?
         deleteAppointment,
   }) =>
@@ -92,13 +85,11 @@ mixin _$ProjectsOverviewEvent {
     TResult Function(ProjectsOverviewEventLoad value)? load,
     TResult Function(ProjectsOverviewEventChangeProjectSelected value)?
         changeSelectedProject,
+    TResult Function(ProjectsOverviewEventLoadTasksOfSelectedProject value)?
+        loadTasksOfSelectedProject,
     TResult Function(ProjectsOverviewEventChangeTasksState value)?
         changeTasksState,
-    TResult Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
     TResult Function(ProjectsOverviewEventSelectedDay value)? changeSelectedDay,
-    TResult Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
     TResult Function(ProjectsOverviewEventDeleteAppointment value)?
         deleteAppointment,
     required TResult orElse(),
@@ -169,11 +160,10 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(Project selectedProject) changeSelectedProject,
+    required TResult Function() loadTasksOfSelectedProject,
     required TResult Function(DependenteStateType<dynamic> tasksState)
         changeTasksState,
-    required TResult Function(String value) changeTitleTaskSelected,
     required TResult Function(DateTime selectedDay) changeSelectedDay,
-    required TResult Function(VoidCallback callback) saveTaskSelected,
     required TResult Function(String appointmentId) deleteAppointment,
   }) {
     return load();
@@ -184,11 +174,10 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(Project selectedProject)? changeSelectedProject,
+    TResult? Function()? loadTasksOfSelectedProject,
     TResult? Function(DependenteStateType<dynamic> tasksState)?
         changeTasksState,
-    TResult? Function(String value)? changeTitleTaskSelected,
     TResult? Function(DateTime selectedDay)? changeSelectedDay,
-    TResult? Function(VoidCallback callback)? saveTaskSelected,
     TResult? Function(String appointmentId)? deleteAppointment,
   }) {
     return load?.call();
@@ -199,10 +188,9 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(Project selectedProject)? changeSelectedProject,
+    TResult Function()? loadTasksOfSelectedProject,
     TResult Function(DependenteStateType<dynamic> tasksState)? changeTasksState,
-    TResult Function(String value)? changeTitleTaskSelected,
     TResult Function(DateTime selectedDay)? changeSelectedDay,
-    TResult Function(VoidCallback callback)? saveTaskSelected,
     TResult Function(String appointmentId)? deleteAppointment,
     required TResult orElse(),
   }) {
@@ -218,15 +206,13 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
     required TResult Function(ProjectsOverviewEventLoad value) load,
     required TResult Function(ProjectsOverviewEventChangeProjectSelected value)
         changeSelectedProject,
+    required TResult Function(
+            ProjectsOverviewEventLoadTasksOfSelectedProject value)
+        loadTasksOfSelectedProject,
     required TResult Function(ProjectsOverviewEventChangeTasksState value)
         changeTasksState,
-    required TResult Function(
-            ProjectsOverviewEventChangeTitleTaskSelected value)
-        changeTitleTaskSelected,
     required TResult Function(ProjectsOverviewEventSelectedDay value)
         changeSelectedDay,
-    required TResult Function(ProjectsOverviewEventSaveTaskSelected value)
-        saveTaskSelected,
     required TResult Function(ProjectsOverviewEventDeleteAppointment value)
         deleteAppointment,
   }) {
@@ -239,14 +225,12 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
     TResult? Function(ProjectsOverviewEventLoad value)? load,
     TResult? Function(ProjectsOverviewEventChangeProjectSelected value)?
         changeSelectedProject,
+    TResult? Function(ProjectsOverviewEventLoadTasksOfSelectedProject value)?
+        loadTasksOfSelectedProject,
     TResult? Function(ProjectsOverviewEventChangeTasksState value)?
         changeTasksState,
-    TResult? Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
     TResult? Function(ProjectsOverviewEventSelectedDay value)?
         changeSelectedDay,
-    TResult? Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
     TResult? Function(ProjectsOverviewEventDeleteAppointment value)?
         deleteAppointment,
   }) {
@@ -259,13 +243,11 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
     TResult Function(ProjectsOverviewEventLoad value)? load,
     TResult Function(ProjectsOverviewEventChangeProjectSelected value)?
         changeSelectedProject,
+    TResult Function(ProjectsOverviewEventLoadTasksOfSelectedProject value)?
+        loadTasksOfSelectedProject,
     TResult Function(ProjectsOverviewEventChangeTasksState value)?
         changeTasksState,
-    TResult Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
     TResult Function(ProjectsOverviewEventSelectedDay value)? changeSelectedDay,
-    TResult Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
     TResult Function(ProjectsOverviewEventDeleteAppointment value)?
         deleteAppointment,
     required TResult orElse(),
@@ -368,11 +350,10 @@ class _$ProjectsOverviewEventChangeProjectSelectedImpl
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(Project selectedProject) changeSelectedProject,
+    required TResult Function() loadTasksOfSelectedProject,
     required TResult Function(DependenteStateType<dynamic> tasksState)
         changeTasksState,
-    required TResult Function(String value) changeTitleTaskSelected,
     required TResult Function(DateTime selectedDay) changeSelectedDay,
-    required TResult Function(VoidCallback callback) saveTaskSelected,
     required TResult Function(String appointmentId) deleteAppointment,
   }) {
     return changeSelectedProject(selectedProject);
@@ -383,11 +364,10 @@ class _$ProjectsOverviewEventChangeProjectSelectedImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(Project selectedProject)? changeSelectedProject,
+    TResult? Function()? loadTasksOfSelectedProject,
     TResult? Function(DependenteStateType<dynamic> tasksState)?
         changeTasksState,
-    TResult? Function(String value)? changeTitleTaskSelected,
     TResult? Function(DateTime selectedDay)? changeSelectedDay,
-    TResult? Function(VoidCallback callback)? saveTaskSelected,
     TResult? Function(String appointmentId)? deleteAppointment,
   }) {
     return changeSelectedProject?.call(selectedProject);
@@ -398,10 +378,9 @@ class _$ProjectsOverviewEventChangeProjectSelectedImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(Project selectedProject)? changeSelectedProject,
+    TResult Function()? loadTasksOfSelectedProject,
     TResult Function(DependenteStateType<dynamic> tasksState)? changeTasksState,
-    TResult Function(String value)? changeTitleTaskSelected,
     TResult Function(DateTime selectedDay)? changeSelectedDay,
-    TResult Function(VoidCallback callback)? saveTaskSelected,
     TResult Function(String appointmentId)? deleteAppointment,
     required TResult orElse(),
   }) {
@@ -417,15 +396,13 @@ class _$ProjectsOverviewEventChangeProjectSelectedImpl
     required TResult Function(ProjectsOverviewEventLoad value) load,
     required TResult Function(ProjectsOverviewEventChangeProjectSelected value)
         changeSelectedProject,
+    required TResult Function(
+            ProjectsOverviewEventLoadTasksOfSelectedProject value)
+        loadTasksOfSelectedProject,
     required TResult Function(ProjectsOverviewEventChangeTasksState value)
         changeTasksState,
-    required TResult Function(
-            ProjectsOverviewEventChangeTitleTaskSelected value)
-        changeTitleTaskSelected,
     required TResult Function(ProjectsOverviewEventSelectedDay value)
         changeSelectedDay,
-    required TResult Function(ProjectsOverviewEventSaveTaskSelected value)
-        saveTaskSelected,
     required TResult Function(ProjectsOverviewEventDeleteAppointment value)
         deleteAppointment,
   }) {
@@ -438,14 +415,12 @@ class _$ProjectsOverviewEventChangeProjectSelectedImpl
     TResult? Function(ProjectsOverviewEventLoad value)? load,
     TResult? Function(ProjectsOverviewEventChangeProjectSelected value)?
         changeSelectedProject,
+    TResult? Function(ProjectsOverviewEventLoadTasksOfSelectedProject value)?
+        loadTasksOfSelectedProject,
     TResult? Function(ProjectsOverviewEventChangeTasksState value)?
         changeTasksState,
-    TResult? Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
     TResult? Function(ProjectsOverviewEventSelectedDay value)?
         changeSelectedDay,
-    TResult? Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
     TResult? Function(ProjectsOverviewEventDeleteAppointment value)?
         deleteAppointment,
   }) {
@@ -458,13 +433,11 @@ class _$ProjectsOverviewEventChangeProjectSelectedImpl
     TResult Function(ProjectsOverviewEventLoad value)? load,
     TResult Function(ProjectsOverviewEventChangeProjectSelected value)?
         changeSelectedProject,
+    TResult Function(ProjectsOverviewEventLoadTasksOfSelectedProject value)?
+        loadTasksOfSelectedProject,
     TResult Function(ProjectsOverviewEventChangeTasksState value)?
         changeTasksState,
-    TResult Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
     TResult Function(ProjectsOverviewEventSelectedDay value)? changeSelectedDay,
-    TResult Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
     TResult Function(ProjectsOverviewEventDeleteAppointment value)?
         deleteAppointment,
     required TResult orElse(),
@@ -487,6 +460,160 @@ abstract class ProjectsOverviewEventChangeProjectSelected
   _$$ProjectsOverviewEventChangeProjectSelectedImplCopyWith<
           _$ProjectsOverviewEventChangeProjectSelectedImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProjectsOverviewEventLoadTasksOfSelectedProjectImplCopyWith<
+    $Res> {
+  factory _$$ProjectsOverviewEventLoadTasksOfSelectedProjectImplCopyWith(
+          _$ProjectsOverviewEventLoadTasksOfSelectedProjectImpl value,
+          $Res Function(_$ProjectsOverviewEventLoadTasksOfSelectedProjectImpl)
+              then) =
+      __$$ProjectsOverviewEventLoadTasksOfSelectedProjectImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ProjectsOverviewEventLoadTasksOfSelectedProjectImplCopyWithImpl<$Res>
+    extends _$ProjectsOverviewEventCopyWithImpl<$Res,
+        _$ProjectsOverviewEventLoadTasksOfSelectedProjectImpl>
+    implements
+        _$$ProjectsOverviewEventLoadTasksOfSelectedProjectImplCopyWith<$Res> {
+  __$$ProjectsOverviewEventLoadTasksOfSelectedProjectImplCopyWithImpl(
+      _$ProjectsOverviewEventLoadTasksOfSelectedProjectImpl _value,
+      $Res Function(_$ProjectsOverviewEventLoadTasksOfSelectedProjectImpl)
+          _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ProjectsOverviewEventLoadTasksOfSelectedProjectImpl
+    implements ProjectsOverviewEventLoadTasksOfSelectedProject {
+  const _$ProjectsOverviewEventLoadTasksOfSelectedProjectImpl();
+
+  @override
+  String toString() {
+    return 'ProjectsOverviewEvent.loadTasksOfSelectedProject()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProjectsOverviewEventLoadTasksOfSelectedProjectImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function(Project selectedProject) changeSelectedProject,
+    required TResult Function() loadTasksOfSelectedProject,
+    required TResult Function(DependenteStateType<dynamic> tasksState)
+        changeTasksState,
+    required TResult Function(DateTime selectedDay) changeSelectedDay,
+    required TResult Function(String appointmentId) deleteAppointment,
+  }) {
+    return loadTasksOfSelectedProject();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function(Project selectedProject)? changeSelectedProject,
+    TResult? Function()? loadTasksOfSelectedProject,
+    TResult? Function(DependenteStateType<dynamic> tasksState)?
+        changeTasksState,
+    TResult? Function(DateTime selectedDay)? changeSelectedDay,
+    TResult? Function(String appointmentId)? deleteAppointment,
+  }) {
+    return loadTasksOfSelectedProject?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function(Project selectedProject)? changeSelectedProject,
+    TResult Function()? loadTasksOfSelectedProject,
+    TResult Function(DependenteStateType<dynamic> tasksState)? changeTasksState,
+    TResult Function(DateTime selectedDay)? changeSelectedDay,
+    TResult Function(String appointmentId)? deleteAppointment,
+    required TResult orElse(),
+  }) {
+    if (loadTasksOfSelectedProject != null) {
+      return loadTasksOfSelectedProject();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectsOverviewEventLoad value) load,
+    required TResult Function(ProjectsOverviewEventChangeProjectSelected value)
+        changeSelectedProject,
+    required TResult Function(
+            ProjectsOverviewEventLoadTasksOfSelectedProject value)
+        loadTasksOfSelectedProject,
+    required TResult Function(ProjectsOverviewEventChangeTasksState value)
+        changeTasksState,
+    required TResult Function(ProjectsOverviewEventSelectedDay value)
+        changeSelectedDay,
+    required TResult Function(ProjectsOverviewEventDeleteAppointment value)
+        deleteAppointment,
+  }) {
+    return loadTasksOfSelectedProject(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectsOverviewEventLoad value)? load,
+    TResult? Function(ProjectsOverviewEventChangeProjectSelected value)?
+        changeSelectedProject,
+    TResult? Function(ProjectsOverviewEventLoadTasksOfSelectedProject value)?
+        loadTasksOfSelectedProject,
+    TResult? Function(ProjectsOverviewEventChangeTasksState value)?
+        changeTasksState,
+    TResult? Function(ProjectsOverviewEventSelectedDay value)?
+        changeSelectedDay,
+    TResult? Function(ProjectsOverviewEventDeleteAppointment value)?
+        deleteAppointment,
+  }) {
+    return loadTasksOfSelectedProject?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectsOverviewEventLoad value)? load,
+    TResult Function(ProjectsOverviewEventChangeProjectSelected value)?
+        changeSelectedProject,
+    TResult Function(ProjectsOverviewEventLoadTasksOfSelectedProject value)?
+        loadTasksOfSelectedProject,
+    TResult Function(ProjectsOverviewEventChangeTasksState value)?
+        changeTasksState,
+    TResult Function(ProjectsOverviewEventSelectedDay value)? changeSelectedDay,
+    TResult Function(ProjectsOverviewEventDeleteAppointment value)?
+        deleteAppointment,
+    required TResult orElse(),
+  }) {
+    if (loadTasksOfSelectedProject != null) {
+      return loadTasksOfSelectedProject(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProjectsOverviewEventLoadTasksOfSelectedProject
+    implements ProjectsOverviewEvent {
+  const factory ProjectsOverviewEventLoadTasksOfSelectedProject() =
+      _$ProjectsOverviewEventLoadTasksOfSelectedProjectImpl;
 }
 
 /// @nodoc
@@ -573,11 +700,10 @@ class _$ProjectsOverviewEventChangeTasksStateImpl
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(Project selectedProject) changeSelectedProject,
+    required TResult Function() loadTasksOfSelectedProject,
     required TResult Function(DependenteStateType<dynamic> tasksState)
         changeTasksState,
-    required TResult Function(String value) changeTitleTaskSelected,
     required TResult Function(DateTime selectedDay) changeSelectedDay,
-    required TResult Function(VoidCallback callback) saveTaskSelected,
     required TResult Function(String appointmentId) deleteAppointment,
   }) {
     return changeTasksState(tasksState);
@@ -588,11 +714,10 @@ class _$ProjectsOverviewEventChangeTasksStateImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(Project selectedProject)? changeSelectedProject,
+    TResult? Function()? loadTasksOfSelectedProject,
     TResult? Function(DependenteStateType<dynamic> tasksState)?
         changeTasksState,
-    TResult? Function(String value)? changeTitleTaskSelected,
     TResult? Function(DateTime selectedDay)? changeSelectedDay,
-    TResult? Function(VoidCallback callback)? saveTaskSelected,
     TResult? Function(String appointmentId)? deleteAppointment,
   }) {
     return changeTasksState?.call(tasksState);
@@ -603,10 +728,9 @@ class _$ProjectsOverviewEventChangeTasksStateImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(Project selectedProject)? changeSelectedProject,
+    TResult Function()? loadTasksOfSelectedProject,
     TResult Function(DependenteStateType<dynamic> tasksState)? changeTasksState,
-    TResult Function(String value)? changeTitleTaskSelected,
     TResult Function(DateTime selectedDay)? changeSelectedDay,
-    TResult Function(VoidCallback callback)? saveTaskSelected,
     TResult Function(String appointmentId)? deleteAppointment,
     required TResult orElse(),
   }) {
@@ -622,15 +746,13 @@ class _$ProjectsOverviewEventChangeTasksStateImpl
     required TResult Function(ProjectsOverviewEventLoad value) load,
     required TResult Function(ProjectsOverviewEventChangeProjectSelected value)
         changeSelectedProject,
+    required TResult Function(
+            ProjectsOverviewEventLoadTasksOfSelectedProject value)
+        loadTasksOfSelectedProject,
     required TResult Function(ProjectsOverviewEventChangeTasksState value)
         changeTasksState,
-    required TResult Function(
-            ProjectsOverviewEventChangeTitleTaskSelected value)
-        changeTitleTaskSelected,
     required TResult Function(ProjectsOverviewEventSelectedDay value)
         changeSelectedDay,
-    required TResult Function(ProjectsOverviewEventSaveTaskSelected value)
-        saveTaskSelected,
     required TResult Function(ProjectsOverviewEventDeleteAppointment value)
         deleteAppointment,
   }) {
@@ -643,14 +765,12 @@ class _$ProjectsOverviewEventChangeTasksStateImpl
     TResult? Function(ProjectsOverviewEventLoad value)? load,
     TResult? Function(ProjectsOverviewEventChangeProjectSelected value)?
         changeSelectedProject,
+    TResult? Function(ProjectsOverviewEventLoadTasksOfSelectedProject value)?
+        loadTasksOfSelectedProject,
     TResult? Function(ProjectsOverviewEventChangeTasksState value)?
         changeTasksState,
-    TResult? Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
     TResult? Function(ProjectsOverviewEventSelectedDay value)?
         changeSelectedDay,
-    TResult? Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
     TResult? Function(ProjectsOverviewEventDeleteAppointment value)?
         deleteAppointment,
   }) {
@@ -663,13 +783,11 @@ class _$ProjectsOverviewEventChangeTasksStateImpl
     TResult Function(ProjectsOverviewEventLoad value)? load,
     TResult Function(ProjectsOverviewEventChangeProjectSelected value)?
         changeSelectedProject,
+    TResult Function(ProjectsOverviewEventLoadTasksOfSelectedProject value)?
+        loadTasksOfSelectedProject,
     TResult Function(ProjectsOverviewEventChangeTasksState value)?
         changeTasksState,
-    TResult Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
     TResult Function(ProjectsOverviewEventSelectedDay value)? changeSelectedDay,
-    TResult Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
     TResult Function(ProjectsOverviewEventDeleteAppointment value)?
         deleteAppointment,
     required TResult orElse(),
@@ -691,205 +809,6 @@ abstract class ProjectsOverviewEventChangeTasksState
   @JsonKey(ignore: true)
   _$$ProjectsOverviewEventChangeTasksStateImplCopyWith<
           _$ProjectsOverviewEventChangeTasksStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ProjectsOverviewEventChangeTitleTaskSelectedImplCopyWith<
-    $Res> {
-  factory _$$ProjectsOverviewEventChangeTitleTaskSelectedImplCopyWith(
-          _$ProjectsOverviewEventChangeTitleTaskSelectedImpl value,
-          $Res Function(_$ProjectsOverviewEventChangeTitleTaskSelectedImpl)
-              then) =
-      __$$ProjectsOverviewEventChangeTitleTaskSelectedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String value});
-}
-
-/// @nodoc
-class __$$ProjectsOverviewEventChangeTitleTaskSelectedImplCopyWithImpl<$Res>
-    extends _$ProjectsOverviewEventCopyWithImpl<$Res,
-        _$ProjectsOverviewEventChangeTitleTaskSelectedImpl>
-    implements
-        _$$ProjectsOverviewEventChangeTitleTaskSelectedImplCopyWith<$Res> {
-  __$$ProjectsOverviewEventChangeTitleTaskSelectedImplCopyWithImpl(
-      _$ProjectsOverviewEventChangeTitleTaskSelectedImpl _value,
-      $Res Function(_$ProjectsOverviewEventChangeTitleTaskSelectedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$ProjectsOverviewEventChangeTitleTaskSelectedImpl(
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ProjectsOverviewEventChangeTitleTaskSelectedImpl
-    implements ProjectsOverviewEventChangeTitleTaskSelected {
-  const _$ProjectsOverviewEventChangeTitleTaskSelectedImpl(
-      {required this.value});
-
-  @override
-  final String value;
-
-  @override
-  String toString() {
-    return 'ProjectsOverviewEvent.changeTitleTaskSelected(value: $value)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ProjectsOverviewEventChangeTitleTaskSelectedImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ProjectsOverviewEventChangeTitleTaskSelectedImplCopyWith<
-          _$ProjectsOverviewEventChangeTitleTaskSelectedImpl>
-      get copyWith =>
-          __$$ProjectsOverviewEventChangeTitleTaskSelectedImplCopyWithImpl<
-                  _$ProjectsOverviewEventChangeTitleTaskSelectedImpl>(
-              this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() load,
-    required TResult Function(Project selectedProject) changeSelectedProject,
-    required TResult Function(DependenteStateType<dynamic> tasksState)
-        changeTasksState,
-    required TResult Function(String value) changeTitleTaskSelected,
-    required TResult Function(DateTime selectedDay) changeSelectedDay,
-    required TResult Function(VoidCallback callback) saveTaskSelected,
-    required TResult Function(String appointmentId) deleteAppointment,
-  }) {
-    return changeTitleTaskSelected(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
-    TResult? Function(Project selectedProject)? changeSelectedProject,
-    TResult? Function(DependenteStateType<dynamic> tasksState)?
-        changeTasksState,
-    TResult? Function(String value)? changeTitleTaskSelected,
-    TResult? Function(DateTime selectedDay)? changeSelectedDay,
-    TResult? Function(VoidCallback callback)? saveTaskSelected,
-    TResult? Function(String appointmentId)? deleteAppointment,
-  }) {
-    return changeTitleTaskSelected?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
-    TResult Function(Project selectedProject)? changeSelectedProject,
-    TResult Function(DependenteStateType<dynamic> tasksState)? changeTasksState,
-    TResult Function(String value)? changeTitleTaskSelected,
-    TResult Function(DateTime selectedDay)? changeSelectedDay,
-    TResult Function(VoidCallback callback)? saveTaskSelected,
-    TResult Function(String appointmentId)? deleteAppointment,
-    required TResult orElse(),
-  }) {
-    if (changeTitleTaskSelected != null) {
-      return changeTitleTaskSelected(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ProjectsOverviewEventLoad value) load,
-    required TResult Function(ProjectsOverviewEventChangeProjectSelected value)
-        changeSelectedProject,
-    required TResult Function(ProjectsOverviewEventChangeTasksState value)
-        changeTasksState,
-    required TResult Function(
-            ProjectsOverviewEventChangeTitleTaskSelected value)
-        changeTitleTaskSelected,
-    required TResult Function(ProjectsOverviewEventSelectedDay value)
-        changeSelectedDay,
-    required TResult Function(ProjectsOverviewEventSaveTaskSelected value)
-        saveTaskSelected,
-    required TResult Function(ProjectsOverviewEventDeleteAppointment value)
-        deleteAppointment,
-  }) {
-    return changeTitleTaskSelected(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ProjectsOverviewEventLoad value)? load,
-    TResult? Function(ProjectsOverviewEventChangeProjectSelected value)?
-        changeSelectedProject,
-    TResult? Function(ProjectsOverviewEventChangeTasksState value)?
-        changeTasksState,
-    TResult? Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
-    TResult? Function(ProjectsOverviewEventSelectedDay value)?
-        changeSelectedDay,
-    TResult? Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
-    TResult? Function(ProjectsOverviewEventDeleteAppointment value)?
-        deleteAppointment,
-  }) {
-    return changeTitleTaskSelected?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ProjectsOverviewEventLoad value)? load,
-    TResult Function(ProjectsOverviewEventChangeProjectSelected value)?
-        changeSelectedProject,
-    TResult Function(ProjectsOverviewEventChangeTasksState value)?
-        changeTasksState,
-    TResult Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
-    TResult Function(ProjectsOverviewEventSelectedDay value)? changeSelectedDay,
-    TResult Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
-    TResult Function(ProjectsOverviewEventDeleteAppointment value)?
-        deleteAppointment,
-    required TResult orElse(),
-  }) {
-    if (changeTitleTaskSelected != null) {
-      return changeTitleTaskSelected(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ProjectsOverviewEventChangeTitleTaskSelected
-    implements ProjectsOverviewEvent {
-  const factory ProjectsOverviewEventChangeTitleTaskSelected(
-          {required final String value}) =
-      _$ProjectsOverviewEventChangeTitleTaskSelectedImpl;
-
-  String get value;
-  @JsonKey(ignore: true)
-  _$$ProjectsOverviewEventChangeTitleTaskSelectedImplCopyWith<
-          _$ProjectsOverviewEventChangeTitleTaskSelectedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -966,11 +885,10 @@ class _$ProjectsOverviewEventSelectedDayImpl
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(Project selectedProject) changeSelectedProject,
+    required TResult Function() loadTasksOfSelectedProject,
     required TResult Function(DependenteStateType<dynamic> tasksState)
         changeTasksState,
-    required TResult Function(String value) changeTitleTaskSelected,
     required TResult Function(DateTime selectedDay) changeSelectedDay,
-    required TResult Function(VoidCallback callback) saveTaskSelected,
     required TResult Function(String appointmentId) deleteAppointment,
   }) {
     return changeSelectedDay(selectedDay);
@@ -981,11 +899,10 @@ class _$ProjectsOverviewEventSelectedDayImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(Project selectedProject)? changeSelectedProject,
+    TResult? Function()? loadTasksOfSelectedProject,
     TResult? Function(DependenteStateType<dynamic> tasksState)?
         changeTasksState,
-    TResult? Function(String value)? changeTitleTaskSelected,
     TResult? Function(DateTime selectedDay)? changeSelectedDay,
-    TResult? Function(VoidCallback callback)? saveTaskSelected,
     TResult? Function(String appointmentId)? deleteAppointment,
   }) {
     return changeSelectedDay?.call(selectedDay);
@@ -996,10 +913,9 @@ class _$ProjectsOverviewEventSelectedDayImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(Project selectedProject)? changeSelectedProject,
+    TResult Function()? loadTasksOfSelectedProject,
     TResult Function(DependenteStateType<dynamic> tasksState)? changeTasksState,
-    TResult Function(String value)? changeTitleTaskSelected,
     TResult Function(DateTime selectedDay)? changeSelectedDay,
-    TResult Function(VoidCallback callback)? saveTaskSelected,
     TResult Function(String appointmentId)? deleteAppointment,
     required TResult orElse(),
   }) {
@@ -1015,15 +931,13 @@ class _$ProjectsOverviewEventSelectedDayImpl
     required TResult Function(ProjectsOverviewEventLoad value) load,
     required TResult Function(ProjectsOverviewEventChangeProjectSelected value)
         changeSelectedProject,
+    required TResult Function(
+            ProjectsOverviewEventLoadTasksOfSelectedProject value)
+        loadTasksOfSelectedProject,
     required TResult Function(ProjectsOverviewEventChangeTasksState value)
         changeTasksState,
-    required TResult Function(
-            ProjectsOverviewEventChangeTitleTaskSelected value)
-        changeTitleTaskSelected,
     required TResult Function(ProjectsOverviewEventSelectedDay value)
         changeSelectedDay,
-    required TResult Function(ProjectsOverviewEventSaveTaskSelected value)
-        saveTaskSelected,
     required TResult Function(ProjectsOverviewEventDeleteAppointment value)
         deleteAppointment,
   }) {
@@ -1036,14 +950,12 @@ class _$ProjectsOverviewEventSelectedDayImpl
     TResult? Function(ProjectsOverviewEventLoad value)? load,
     TResult? Function(ProjectsOverviewEventChangeProjectSelected value)?
         changeSelectedProject,
+    TResult? Function(ProjectsOverviewEventLoadTasksOfSelectedProject value)?
+        loadTasksOfSelectedProject,
     TResult? Function(ProjectsOverviewEventChangeTasksState value)?
         changeTasksState,
-    TResult? Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
     TResult? Function(ProjectsOverviewEventSelectedDay value)?
         changeSelectedDay,
-    TResult? Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
     TResult? Function(ProjectsOverviewEventDeleteAppointment value)?
         deleteAppointment,
   }) {
@@ -1056,13 +968,11 @@ class _$ProjectsOverviewEventSelectedDayImpl
     TResult Function(ProjectsOverviewEventLoad value)? load,
     TResult Function(ProjectsOverviewEventChangeProjectSelected value)?
         changeSelectedProject,
+    TResult Function(ProjectsOverviewEventLoadTasksOfSelectedProject value)?
+        loadTasksOfSelectedProject,
     TResult Function(ProjectsOverviewEventChangeTasksState value)?
         changeTasksState,
-    TResult Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
     TResult Function(ProjectsOverviewEventSelectedDay value)? changeSelectedDay,
-    TResult Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
     TResult Function(ProjectsOverviewEventDeleteAppointment value)?
         deleteAppointment,
     required TResult orElse(),
@@ -1084,200 +994,6 @@ abstract class ProjectsOverviewEventSelectedDay
   @JsonKey(ignore: true)
   _$$ProjectsOverviewEventSelectedDayImplCopyWith<
           _$ProjectsOverviewEventSelectedDayImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ProjectsOverviewEventSaveTaskSelectedImplCopyWith<$Res> {
-  factory _$$ProjectsOverviewEventSaveTaskSelectedImplCopyWith(
-          _$ProjectsOverviewEventSaveTaskSelectedImpl value,
-          $Res Function(_$ProjectsOverviewEventSaveTaskSelectedImpl) then) =
-      __$$ProjectsOverviewEventSaveTaskSelectedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({VoidCallback callback});
-}
-
-/// @nodoc
-class __$$ProjectsOverviewEventSaveTaskSelectedImplCopyWithImpl<$Res>
-    extends _$ProjectsOverviewEventCopyWithImpl<$Res,
-        _$ProjectsOverviewEventSaveTaskSelectedImpl>
-    implements _$$ProjectsOverviewEventSaveTaskSelectedImplCopyWith<$Res> {
-  __$$ProjectsOverviewEventSaveTaskSelectedImplCopyWithImpl(
-      _$ProjectsOverviewEventSaveTaskSelectedImpl _value,
-      $Res Function(_$ProjectsOverviewEventSaveTaskSelectedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? callback = null,
-  }) {
-    return _then(_$ProjectsOverviewEventSaveTaskSelectedImpl(
-      callback: null == callback
-          ? _value.callback
-          : callback // ignore: cast_nullable_to_non_nullable
-              as VoidCallback,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ProjectsOverviewEventSaveTaskSelectedImpl
-    implements ProjectsOverviewEventSaveTaskSelected {
-  const _$ProjectsOverviewEventSaveTaskSelectedImpl({required this.callback});
-
-  @override
-  final VoidCallback callback;
-
-  @override
-  String toString() {
-    return 'ProjectsOverviewEvent.saveTaskSelected(callback: $callback)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ProjectsOverviewEventSaveTaskSelectedImpl &&
-            (identical(other.callback, callback) ||
-                other.callback == callback));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, callback);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ProjectsOverviewEventSaveTaskSelectedImplCopyWith<
-          _$ProjectsOverviewEventSaveTaskSelectedImpl>
-      get copyWith => __$$ProjectsOverviewEventSaveTaskSelectedImplCopyWithImpl<
-          _$ProjectsOverviewEventSaveTaskSelectedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() load,
-    required TResult Function(Project selectedProject) changeSelectedProject,
-    required TResult Function(DependenteStateType<dynamic> tasksState)
-        changeTasksState,
-    required TResult Function(String value) changeTitleTaskSelected,
-    required TResult Function(DateTime selectedDay) changeSelectedDay,
-    required TResult Function(VoidCallback callback) saveTaskSelected,
-    required TResult Function(String appointmentId) deleteAppointment,
-  }) {
-    return saveTaskSelected(callback);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
-    TResult? Function(Project selectedProject)? changeSelectedProject,
-    TResult? Function(DependenteStateType<dynamic> tasksState)?
-        changeTasksState,
-    TResult? Function(String value)? changeTitleTaskSelected,
-    TResult? Function(DateTime selectedDay)? changeSelectedDay,
-    TResult? Function(VoidCallback callback)? saveTaskSelected,
-    TResult? Function(String appointmentId)? deleteAppointment,
-  }) {
-    return saveTaskSelected?.call(callback);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
-    TResult Function(Project selectedProject)? changeSelectedProject,
-    TResult Function(DependenteStateType<dynamic> tasksState)? changeTasksState,
-    TResult Function(String value)? changeTitleTaskSelected,
-    TResult Function(DateTime selectedDay)? changeSelectedDay,
-    TResult Function(VoidCallback callback)? saveTaskSelected,
-    TResult Function(String appointmentId)? deleteAppointment,
-    required TResult orElse(),
-  }) {
-    if (saveTaskSelected != null) {
-      return saveTaskSelected(callback);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ProjectsOverviewEventLoad value) load,
-    required TResult Function(ProjectsOverviewEventChangeProjectSelected value)
-        changeSelectedProject,
-    required TResult Function(ProjectsOverviewEventChangeTasksState value)
-        changeTasksState,
-    required TResult Function(
-            ProjectsOverviewEventChangeTitleTaskSelected value)
-        changeTitleTaskSelected,
-    required TResult Function(ProjectsOverviewEventSelectedDay value)
-        changeSelectedDay,
-    required TResult Function(ProjectsOverviewEventSaveTaskSelected value)
-        saveTaskSelected,
-    required TResult Function(ProjectsOverviewEventDeleteAppointment value)
-        deleteAppointment,
-  }) {
-    return saveTaskSelected(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ProjectsOverviewEventLoad value)? load,
-    TResult? Function(ProjectsOverviewEventChangeProjectSelected value)?
-        changeSelectedProject,
-    TResult? Function(ProjectsOverviewEventChangeTasksState value)?
-        changeTasksState,
-    TResult? Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
-    TResult? Function(ProjectsOverviewEventSelectedDay value)?
-        changeSelectedDay,
-    TResult? Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
-    TResult? Function(ProjectsOverviewEventDeleteAppointment value)?
-        deleteAppointment,
-  }) {
-    return saveTaskSelected?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ProjectsOverviewEventLoad value)? load,
-    TResult Function(ProjectsOverviewEventChangeProjectSelected value)?
-        changeSelectedProject,
-    TResult Function(ProjectsOverviewEventChangeTasksState value)?
-        changeTasksState,
-    TResult Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
-    TResult Function(ProjectsOverviewEventSelectedDay value)? changeSelectedDay,
-    TResult Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
-    TResult Function(ProjectsOverviewEventDeleteAppointment value)?
-        deleteAppointment,
-    required TResult orElse(),
-  }) {
-    if (saveTaskSelected != null) {
-      return saveTaskSelected(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ProjectsOverviewEventSaveTaskSelected
-    implements ProjectsOverviewEvent {
-  const factory ProjectsOverviewEventSaveTaskSelected(
-          {required final VoidCallback callback}) =
-      _$ProjectsOverviewEventSaveTaskSelectedImpl;
-
-  VoidCallback get callback;
-  @JsonKey(ignore: true)
-  _$$ProjectsOverviewEventSaveTaskSelectedImplCopyWith<
-          _$ProjectsOverviewEventSaveTaskSelectedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1356,11 +1072,10 @@ class _$ProjectsOverviewEventDeleteAppointmentImpl
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(Project selectedProject) changeSelectedProject,
+    required TResult Function() loadTasksOfSelectedProject,
     required TResult Function(DependenteStateType<dynamic> tasksState)
         changeTasksState,
-    required TResult Function(String value) changeTitleTaskSelected,
     required TResult Function(DateTime selectedDay) changeSelectedDay,
-    required TResult Function(VoidCallback callback) saveTaskSelected,
     required TResult Function(String appointmentId) deleteAppointment,
   }) {
     return deleteAppointment(appointmentId);
@@ -1371,11 +1086,10 @@ class _$ProjectsOverviewEventDeleteAppointmentImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(Project selectedProject)? changeSelectedProject,
+    TResult? Function()? loadTasksOfSelectedProject,
     TResult? Function(DependenteStateType<dynamic> tasksState)?
         changeTasksState,
-    TResult? Function(String value)? changeTitleTaskSelected,
     TResult? Function(DateTime selectedDay)? changeSelectedDay,
-    TResult? Function(VoidCallback callback)? saveTaskSelected,
     TResult? Function(String appointmentId)? deleteAppointment,
   }) {
     return deleteAppointment?.call(appointmentId);
@@ -1386,10 +1100,9 @@ class _$ProjectsOverviewEventDeleteAppointmentImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(Project selectedProject)? changeSelectedProject,
+    TResult Function()? loadTasksOfSelectedProject,
     TResult Function(DependenteStateType<dynamic> tasksState)? changeTasksState,
-    TResult Function(String value)? changeTitleTaskSelected,
     TResult Function(DateTime selectedDay)? changeSelectedDay,
-    TResult Function(VoidCallback callback)? saveTaskSelected,
     TResult Function(String appointmentId)? deleteAppointment,
     required TResult orElse(),
   }) {
@@ -1405,15 +1118,13 @@ class _$ProjectsOverviewEventDeleteAppointmentImpl
     required TResult Function(ProjectsOverviewEventLoad value) load,
     required TResult Function(ProjectsOverviewEventChangeProjectSelected value)
         changeSelectedProject,
+    required TResult Function(
+            ProjectsOverviewEventLoadTasksOfSelectedProject value)
+        loadTasksOfSelectedProject,
     required TResult Function(ProjectsOverviewEventChangeTasksState value)
         changeTasksState,
-    required TResult Function(
-            ProjectsOverviewEventChangeTitleTaskSelected value)
-        changeTitleTaskSelected,
     required TResult Function(ProjectsOverviewEventSelectedDay value)
         changeSelectedDay,
-    required TResult Function(ProjectsOverviewEventSaveTaskSelected value)
-        saveTaskSelected,
     required TResult Function(ProjectsOverviewEventDeleteAppointment value)
         deleteAppointment,
   }) {
@@ -1426,14 +1137,12 @@ class _$ProjectsOverviewEventDeleteAppointmentImpl
     TResult? Function(ProjectsOverviewEventLoad value)? load,
     TResult? Function(ProjectsOverviewEventChangeProjectSelected value)?
         changeSelectedProject,
+    TResult? Function(ProjectsOverviewEventLoadTasksOfSelectedProject value)?
+        loadTasksOfSelectedProject,
     TResult? Function(ProjectsOverviewEventChangeTasksState value)?
         changeTasksState,
-    TResult? Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
     TResult? Function(ProjectsOverviewEventSelectedDay value)?
         changeSelectedDay,
-    TResult? Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
     TResult? Function(ProjectsOverviewEventDeleteAppointment value)?
         deleteAppointment,
   }) {
@@ -1446,13 +1155,11 @@ class _$ProjectsOverviewEventDeleteAppointmentImpl
     TResult Function(ProjectsOverviewEventLoad value)? load,
     TResult Function(ProjectsOverviewEventChangeProjectSelected value)?
         changeSelectedProject,
+    TResult Function(ProjectsOverviewEventLoadTasksOfSelectedProject value)?
+        loadTasksOfSelectedProject,
     TResult Function(ProjectsOverviewEventChangeTasksState value)?
         changeTasksState,
-    TResult Function(ProjectsOverviewEventChangeTitleTaskSelected value)?
-        changeTitleTaskSelected,
     TResult Function(ProjectsOverviewEventSelectedDay value)? changeSelectedDay,
-    TResult Function(ProjectsOverviewEventSaveTaskSelected value)?
-        saveTaskSelected,
     TResult Function(ProjectsOverviewEventDeleteAppointment value)?
         deleteAppointment,
     required TResult orElse(),

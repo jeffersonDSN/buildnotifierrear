@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'schedule_edit_assign_to_bloc.dart';
+part of 'assign_to_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$ScheduleEditAssignToEvent {
+mixin _$AssignToEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<AppointmentUser> assignTo) load,
@@ -37,37 +37,36 @@ mixin _$ScheduleEditAssignToEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEditAssignToEventLoad value) load,
-    required TResult Function(ScheduleEditCheck value) check,
+    required TResult Function(AssignToEventLoad value) load,
+    required TResult Function(AssignToEventCheck value) check,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEditAssignToEventLoad value)? load,
-    TResult? Function(ScheduleEditCheck value)? check,
+    TResult? Function(AssignToEventLoad value)? load,
+    TResult? Function(AssignToEventCheck value)? check,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEditAssignToEventLoad value)? load,
-    TResult Function(ScheduleEditCheck value)? check,
+    TResult Function(AssignToEventLoad value)? load,
+    TResult Function(AssignToEventCheck value)? check,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ScheduleEditAssignToEventCopyWith<$Res> {
-  factory $ScheduleEditAssignToEventCopyWith(ScheduleEditAssignToEvent value,
-          $Res Function(ScheduleEditAssignToEvent) then) =
-      _$ScheduleEditAssignToEventCopyWithImpl<$Res, ScheduleEditAssignToEvent>;
+abstract class $AssignToEventCopyWith<$Res> {
+  factory $AssignToEventCopyWith(
+          AssignToEvent value, $Res Function(AssignToEvent) then) =
+      _$AssignToEventCopyWithImpl<$Res, AssignToEvent>;
 }
 
 /// @nodoc
-class _$ScheduleEditAssignToEventCopyWithImpl<$Res,
-        $Val extends ScheduleEditAssignToEvent>
-    implements $ScheduleEditAssignToEventCopyWith<$Res> {
-  _$ScheduleEditAssignToEventCopyWithImpl(this._value, this._then);
+class _$AssignToEventCopyWithImpl<$Res, $Val extends AssignToEvent>
+    implements $AssignToEventCopyWith<$Res> {
+  _$AssignToEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -76,23 +75,20 @@ class _$ScheduleEditAssignToEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ScheduleEditAssignToEventLoadImplCopyWith<$Res> {
-  factory _$$ScheduleEditAssignToEventLoadImplCopyWith(
-          _$ScheduleEditAssignToEventLoadImpl value,
-          $Res Function(_$ScheduleEditAssignToEventLoadImpl) then) =
-      __$$ScheduleEditAssignToEventLoadImplCopyWithImpl<$Res>;
+abstract class _$$AssignToEventLoadImplCopyWith<$Res> {
+  factory _$$AssignToEventLoadImplCopyWith(_$AssignToEventLoadImpl value,
+          $Res Function(_$AssignToEventLoadImpl) then) =
+      __$$AssignToEventLoadImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<AppointmentUser> assignTo});
 }
 
 /// @nodoc
-class __$$ScheduleEditAssignToEventLoadImplCopyWithImpl<$Res>
-    extends _$ScheduleEditAssignToEventCopyWithImpl<$Res,
-        _$ScheduleEditAssignToEventLoadImpl>
-    implements _$$ScheduleEditAssignToEventLoadImplCopyWith<$Res> {
-  __$$ScheduleEditAssignToEventLoadImplCopyWithImpl(
-      _$ScheduleEditAssignToEventLoadImpl _value,
-      $Res Function(_$ScheduleEditAssignToEventLoadImpl) _then)
+class __$$AssignToEventLoadImplCopyWithImpl<$Res>
+    extends _$AssignToEventCopyWithImpl<$Res, _$AssignToEventLoadImpl>
+    implements _$$AssignToEventLoadImplCopyWith<$Res> {
+  __$$AssignToEventLoadImplCopyWithImpl(_$AssignToEventLoadImpl _value,
+      $Res Function(_$AssignToEventLoadImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -100,7 +96,7 @@ class __$$ScheduleEditAssignToEventLoadImplCopyWithImpl<$Res>
   $Res call({
     Object? assignTo = null,
   }) {
-    return _then(_$ScheduleEditAssignToEventLoadImpl(
+    return _then(_$AssignToEventLoadImpl(
       assignTo: null == assignTo
           ? _value._assignTo
           : assignTo // ignore: cast_nullable_to_non_nullable
@@ -111,10 +107,8 @@ class __$$ScheduleEditAssignToEventLoadImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ScheduleEditAssignToEventLoadImpl
-    implements ScheduleEditAssignToEventLoad {
-  const _$ScheduleEditAssignToEventLoadImpl(
-      {required final List<AppointmentUser> assignTo})
+class _$AssignToEventLoadImpl implements AssignToEventLoad {
+  const _$AssignToEventLoadImpl({required final List<AppointmentUser> assignTo})
       : _assignTo = assignTo;
 
   final List<AppointmentUser> _assignTo;
@@ -127,14 +121,14 @@ class _$ScheduleEditAssignToEventLoadImpl
 
   @override
   String toString() {
-    return 'ScheduleEditAssignToEvent.load(assignTo: $assignTo)';
+    return 'AssignToEvent.load(assignTo: $assignTo)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ScheduleEditAssignToEventLoadImpl &&
+            other is _$AssignToEventLoadImpl &&
             const DeepCollectionEquality().equals(other._assignTo, _assignTo));
   }
 
@@ -145,10 +139,9 @@ class _$ScheduleEditAssignToEventLoadImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ScheduleEditAssignToEventLoadImplCopyWith<
-          _$ScheduleEditAssignToEventLoadImpl>
-      get copyWith => __$$ScheduleEditAssignToEventLoadImplCopyWithImpl<
-          _$ScheduleEditAssignToEventLoadImpl>(this, _$identity);
+  _$$AssignToEventLoadImplCopyWith<_$AssignToEventLoadImpl> get copyWith =>
+      __$$AssignToEventLoadImplCopyWithImpl<_$AssignToEventLoadImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -184,8 +177,8 @@ class _$ScheduleEditAssignToEventLoadImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEditAssignToEventLoad value) load,
-    required TResult Function(ScheduleEditCheck value) check,
+    required TResult Function(AssignToEventLoad value) load,
+    required TResult Function(AssignToEventCheck value) check,
   }) {
     return load(this);
   }
@@ -193,8 +186,8 @@ class _$ScheduleEditAssignToEventLoadImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEditAssignToEventLoad value)? load,
-    TResult? Function(ScheduleEditCheck value)? check,
+    TResult? Function(AssignToEventLoad value)? load,
+    TResult? Function(AssignToEventCheck value)? check,
   }) {
     return load?.call(this);
   }
@@ -202,8 +195,8 @@ class _$ScheduleEditAssignToEventLoadImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEditAssignToEventLoad value)? load,
-    TResult Function(ScheduleEditCheck value)? check,
+    TResult Function(AssignToEventLoad value)? load,
+    TResult Function(AssignToEventCheck value)? check,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -213,24 +206,22 @@ class _$ScheduleEditAssignToEventLoadImpl
   }
 }
 
-abstract class ScheduleEditAssignToEventLoad
-    implements ScheduleEditAssignToEvent {
-  const factory ScheduleEditAssignToEventLoad(
+abstract class AssignToEventLoad implements AssignToEvent {
+  const factory AssignToEventLoad(
           {required final List<AppointmentUser> assignTo}) =
-      _$ScheduleEditAssignToEventLoadImpl;
+      _$AssignToEventLoadImpl;
 
   List<AppointmentUser> get assignTo;
   @JsonKey(ignore: true)
-  _$$ScheduleEditAssignToEventLoadImplCopyWith<
-          _$ScheduleEditAssignToEventLoadImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$AssignToEventLoadImplCopyWith<_$AssignToEventLoadImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ScheduleEditCheckImplCopyWith<$Res> {
-  factory _$$ScheduleEditCheckImplCopyWith(_$ScheduleEditCheckImpl value,
-          $Res Function(_$ScheduleEditCheckImpl) then) =
-      __$$ScheduleEditCheckImplCopyWithImpl<$Res>;
+abstract class _$$AssignToEventCheckImplCopyWith<$Res> {
+  factory _$$AssignToEventCheckImplCopyWith(_$AssignToEventCheckImpl value,
+          $Res Function(_$AssignToEventCheckImpl) then) =
+      __$$AssignToEventCheckImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool check, User user});
 
@@ -238,12 +229,11 @@ abstract class _$$ScheduleEditCheckImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ScheduleEditCheckImplCopyWithImpl<$Res>
-    extends _$ScheduleEditAssignToEventCopyWithImpl<$Res,
-        _$ScheduleEditCheckImpl>
-    implements _$$ScheduleEditCheckImplCopyWith<$Res> {
-  __$$ScheduleEditCheckImplCopyWithImpl(_$ScheduleEditCheckImpl _value,
-      $Res Function(_$ScheduleEditCheckImpl) _then)
+class __$$AssignToEventCheckImplCopyWithImpl<$Res>
+    extends _$AssignToEventCopyWithImpl<$Res, _$AssignToEventCheckImpl>
+    implements _$$AssignToEventCheckImplCopyWith<$Res> {
+  __$$AssignToEventCheckImplCopyWithImpl(_$AssignToEventCheckImpl _value,
+      $Res Function(_$AssignToEventCheckImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -252,7 +242,7 @@ class __$$ScheduleEditCheckImplCopyWithImpl<$Res>
     Object? check = null,
     Object? user = null,
   }) {
-    return _then(_$ScheduleEditCheckImpl(
+    return _then(_$AssignToEventCheckImpl(
       check: null == check
           ? _value.check
           : check // ignore: cast_nullable_to_non_nullable
@@ -275,8 +265,8 @@ class __$$ScheduleEditCheckImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ScheduleEditCheckImpl implements ScheduleEditCheck {
-  const _$ScheduleEditCheckImpl({required this.check, required this.user});
+class _$AssignToEventCheckImpl implements AssignToEventCheck {
+  const _$AssignToEventCheckImpl({required this.check, required this.user});
 
   @override
   final bool check;
@@ -285,14 +275,14 @@ class _$ScheduleEditCheckImpl implements ScheduleEditCheck {
 
   @override
   String toString() {
-    return 'ScheduleEditAssignToEvent.check(check: $check, user: $user)';
+    return 'AssignToEvent.check(check: $check, user: $user)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ScheduleEditCheckImpl &&
+            other is _$AssignToEventCheckImpl &&
             (identical(other.check, check) || other.check == check) &&
             (identical(other.user, user) || other.user == user));
   }
@@ -303,8 +293,8 @@ class _$ScheduleEditCheckImpl implements ScheduleEditCheck {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ScheduleEditCheckImplCopyWith<_$ScheduleEditCheckImpl> get copyWith =>
-      __$$ScheduleEditCheckImplCopyWithImpl<_$ScheduleEditCheckImpl>(
+  _$$AssignToEventCheckImplCopyWith<_$AssignToEventCheckImpl> get copyWith =>
+      __$$AssignToEventCheckImplCopyWithImpl<_$AssignToEventCheckImpl>(
           this, _$identity);
 
   @override
@@ -341,8 +331,8 @@ class _$ScheduleEditCheckImpl implements ScheduleEditCheck {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEditAssignToEventLoad value) load,
-    required TResult Function(ScheduleEditCheck value) check,
+    required TResult Function(AssignToEventLoad value) load,
+    required TResult Function(AssignToEventCheck value) check,
   }) {
     return check(this);
   }
@@ -350,8 +340,8 @@ class _$ScheduleEditCheckImpl implements ScheduleEditCheck {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEditAssignToEventLoad value)? load,
-    TResult? Function(ScheduleEditCheck value)? check,
+    TResult? Function(AssignToEventLoad value)? load,
+    TResult? Function(AssignToEventCheck value)? check,
   }) {
     return check?.call(this);
   }
@@ -359,8 +349,8 @@ class _$ScheduleEditCheckImpl implements ScheduleEditCheck {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEditAssignToEventLoad value)? load,
-    TResult Function(ScheduleEditCheck value)? check,
+    TResult Function(AssignToEventLoad value)? load,
+    TResult Function(AssignToEventCheck value)? check,
     required TResult orElse(),
   }) {
     if (check != null) {
@@ -370,20 +360,20 @@ class _$ScheduleEditCheckImpl implements ScheduleEditCheck {
   }
 }
 
-abstract class ScheduleEditCheck implements ScheduleEditAssignToEvent {
-  const factory ScheduleEditCheck(
+abstract class AssignToEventCheck implements AssignToEvent {
+  const factory AssignToEventCheck(
       {required final bool check,
-      required final User user}) = _$ScheduleEditCheckImpl;
+      required final User user}) = _$AssignToEventCheckImpl;
 
   bool get check;
   User get user;
   @JsonKey(ignore: true)
-  _$$ScheduleEditCheckImplCopyWith<_$ScheduleEditCheckImpl> get copyWith =>
+  _$$AssignToEventCheckImplCopyWith<_$AssignToEventCheckImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$ScheduleEditAssignToState {
+mixin _$AssignToState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
@@ -409,40 +399,39 @@ mixin _$ScheduleEditAssignToState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEditAssignToStateEmpty value) empty,
-    required TResult Function(ScheduleEditAssignToStateLoading value) loading,
-    required TResult Function(ScheduleEditAssignToStateLoaded value) loaded,
+    required TResult Function(AssignToStateEmpty value) empty,
+    required TResult Function(AssignToStateLoading value) loading,
+    required TResult Function(AssignToStateLoaded value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEditAssignToStateEmpty value)? empty,
-    TResult? Function(ScheduleEditAssignToStateLoading value)? loading,
-    TResult? Function(ScheduleEditAssignToStateLoaded value)? loaded,
+    TResult? Function(AssignToStateEmpty value)? empty,
+    TResult? Function(AssignToStateLoading value)? loading,
+    TResult? Function(AssignToStateLoaded value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEditAssignToStateEmpty value)? empty,
-    TResult Function(ScheduleEditAssignToStateLoading value)? loading,
-    TResult Function(ScheduleEditAssignToStateLoaded value)? loaded,
+    TResult Function(AssignToStateEmpty value)? empty,
+    TResult Function(AssignToStateLoading value)? loading,
+    TResult Function(AssignToStateLoaded value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ScheduleEditAssignToStateCopyWith<$Res> {
-  factory $ScheduleEditAssignToStateCopyWith(ScheduleEditAssignToState value,
-          $Res Function(ScheduleEditAssignToState) then) =
-      _$ScheduleEditAssignToStateCopyWithImpl<$Res, ScheduleEditAssignToState>;
+abstract class $AssignToStateCopyWith<$Res> {
+  factory $AssignToStateCopyWith(
+          AssignToState value, $Res Function(AssignToState) then) =
+      _$AssignToStateCopyWithImpl<$Res, AssignToState>;
 }
 
 /// @nodoc
-class _$ScheduleEditAssignToStateCopyWithImpl<$Res,
-        $Val extends ScheduleEditAssignToState>
-    implements $ScheduleEditAssignToStateCopyWith<$Res> {
-  _$ScheduleEditAssignToStateCopyWithImpl(this._value, this._then);
+class _$AssignToStateCopyWithImpl<$Res, $Val extends AssignToState>
+    implements $AssignToStateCopyWith<$Res> {
+  _$AssignToStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -451,40 +440,35 @@ class _$ScheduleEditAssignToStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ScheduleEditAssignToStateEmptyImplCopyWith<$Res> {
-  factory _$$ScheduleEditAssignToStateEmptyImplCopyWith(
-          _$ScheduleEditAssignToStateEmptyImpl value,
-          $Res Function(_$ScheduleEditAssignToStateEmptyImpl) then) =
-      __$$ScheduleEditAssignToStateEmptyImplCopyWithImpl<$Res>;
+abstract class _$$AssignToStateEmptyImplCopyWith<$Res> {
+  factory _$$AssignToStateEmptyImplCopyWith(_$AssignToStateEmptyImpl value,
+          $Res Function(_$AssignToStateEmptyImpl) then) =
+      __$$AssignToStateEmptyImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ScheduleEditAssignToStateEmptyImplCopyWithImpl<$Res>
-    extends _$ScheduleEditAssignToStateCopyWithImpl<$Res,
-        _$ScheduleEditAssignToStateEmptyImpl>
-    implements _$$ScheduleEditAssignToStateEmptyImplCopyWith<$Res> {
-  __$$ScheduleEditAssignToStateEmptyImplCopyWithImpl(
-      _$ScheduleEditAssignToStateEmptyImpl _value,
-      $Res Function(_$ScheduleEditAssignToStateEmptyImpl) _then)
+class __$$AssignToStateEmptyImplCopyWithImpl<$Res>
+    extends _$AssignToStateCopyWithImpl<$Res, _$AssignToStateEmptyImpl>
+    implements _$$AssignToStateEmptyImplCopyWith<$Res> {
+  __$$AssignToStateEmptyImplCopyWithImpl(_$AssignToStateEmptyImpl _value,
+      $Res Function(_$AssignToStateEmptyImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ScheduleEditAssignToStateEmptyImpl
-    implements ScheduleEditAssignToStateEmpty {
-  const _$ScheduleEditAssignToStateEmptyImpl();
+class _$AssignToStateEmptyImpl implements AssignToStateEmpty {
+  const _$AssignToStateEmptyImpl();
 
   @override
   String toString() {
-    return 'ScheduleEditAssignToState.empty()';
+    return 'AssignToState.empty()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ScheduleEditAssignToStateEmptyImpl);
+        (other.runtimeType == runtimeType && other is _$AssignToStateEmptyImpl);
   }
 
   @override
@@ -528,9 +512,9 @@ class _$ScheduleEditAssignToStateEmptyImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEditAssignToStateEmpty value) empty,
-    required TResult Function(ScheduleEditAssignToStateLoading value) loading,
-    required TResult Function(ScheduleEditAssignToStateLoaded value) loaded,
+    required TResult Function(AssignToStateEmpty value) empty,
+    required TResult Function(AssignToStateLoading value) loading,
+    required TResult Function(AssignToStateLoaded value) loaded,
   }) {
     return empty(this);
   }
@@ -538,9 +522,9 @@ class _$ScheduleEditAssignToStateEmptyImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEditAssignToStateEmpty value)? empty,
-    TResult? Function(ScheduleEditAssignToStateLoading value)? loading,
-    TResult? Function(ScheduleEditAssignToStateLoaded value)? loaded,
+    TResult? Function(AssignToStateEmpty value)? empty,
+    TResult? Function(AssignToStateLoading value)? loading,
+    TResult? Function(AssignToStateLoaded value)? loaded,
   }) {
     return empty?.call(this);
   }
@@ -548,9 +532,9 @@ class _$ScheduleEditAssignToStateEmptyImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEditAssignToStateEmpty value)? empty,
-    TResult Function(ScheduleEditAssignToStateLoading value)? loading,
-    TResult Function(ScheduleEditAssignToStateLoaded value)? loaded,
+    TResult Function(AssignToStateEmpty value)? empty,
+    TResult Function(AssignToStateLoading value)? loading,
+    TResult Function(AssignToStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -560,30 +544,25 @@ class _$ScheduleEditAssignToStateEmptyImpl
   }
 }
 
-abstract class ScheduleEditAssignToStateEmpty
-    implements ScheduleEditAssignToState {
-  const factory ScheduleEditAssignToStateEmpty() =
-      _$ScheduleEditAssignToStateEmptyImpl;
+abstract class AssignToStateEmpty implements AssignToState {
+  const factory AssignToStateEmpty() = _$AssignToStateEmptyImpl;
 }
 
 /// @nodoc
-abstract class _$$ScheduleEditAssignToStateLoadingImplCopyWith<$Res> {
-  factory _$$ScheduleEditAssignToStateLoadingImplCopyWith(
-          _$ScheduleEditAssignToStateLoadingImpl value,
-          $Res Function(_$ScheduleEditAssignToStateLoadingImpl) then) =
-      __$$ScheduleEditAssignToStateLoadingImplCopyWithImpl<$Res>;
+abstract class _$$AssignToStateLoadingImplCopyWith<$Res> {
+  factory _$$AssignToStateLoadingImplCopyWith(_$AssignToStateLoadingImpl value,
+          $Res Function(_$AssignToStateLoadingImpl) then) =
+      __$$AssignToStateLoadingImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<AppointmentUser> assignTo});
 }
 
 /// @nodoc
-class __$$ScheduleEditAssignToStateLoadingImplCopyWithImpl<$Res>
-    extends _$ScheduleEditAssignToStateCopyWithImpl<$Res,
-        _$ScheduleEditAssignToStateLoadingImpl>
-    implements _$$ScheduleEditAssignToStateLoadingImplCopyWith<$Res> {
-  __$$ScheduleEditAssignToStateLoadingImplCopyWithImpl(
-      _$ScheduleEditAssignToStateLoadingImpl _value,
-      $Res Function(_$ScheduleEditAssignToStateLoadingImpl) _then)
+class __$$AssignToStateLoadingImplCopyWithImpl<$Res>
+    extends _$AssignToStateCopyWithImpl<$Res, _$AssignToStateLoadingImpl>
+    implements _$$AssignToStateLoadingImplCopyWith<$Res> {
+  __$$AssignToStateLoadingImplCopyWithImpl(_$AssignToStateLoadingImpl _value,
+      $Res Function(_$AssignToStateLoadingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -591,7 +570,7 @@ class __$$ScheduleEditAssignToStateLoadingImplCopyWithImpl<$Res>
   $Res call({
     Object? assignTo = null,
   }) {
-    return _then(_$ScheduleEditAssignToStateLoadingImpl(
+    return _then(_$AssignToStateLoadingImpl(
       assignTo: null == assignTo
           ? _value._assignTo
           : assignTo // ignore: cast_nullable_to_non_nullable
@@ -602,9 +581,8 @@ class __$$ScheduleEditAssignToStateLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ScheduleEditAssignToStateLoadingImpl
-    implements ScheduleEditAssignToStateLoading {
-  const _$ScheduleEditAssignToStateLoadingImpl(
+class _$AssignToStateLoadingImpl implements AssignToStateLoading {
+  const _$AssignToStateLoadingImpl(
       {required final List<AppointmentUser> assignTo})
       : _assignTo = assignTo;
 
@@ -618,14 +596,14 @@ class _$ScheduleEditAssignToStateLoadingImpl
 
   @override
   String toString() {
-    return 'ScheduleEditAssignToState.loading(assignTo: $assignTo)';
+    return 'AssignToState.loading(assignTo: $assignTo)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ScheduleEditAssignToStateLoadingImpl &&
+            other is _$AssignToStateLoadingImpl &&
             const DeepCollectionEquality().equals(other._assignTo, _assignTo));
   }
 
@@ -636,10 +614,10 @@ class _$ScheduleEditAssignToStateLoadingImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ScheduleEditAssignToStateLoadingImplCopyWith<
-          _$ScheduleEditAssignToStateLoadingImpl>
-      get copyWith => __$$ScheduleEditAssignToStateLoadingImplCopyWithImpl<
-          _$ScheduleEditAssignToStateLoadingImpl>(this, _$identity);
+  _$$AssignToStateLoadingImplCopyWith<_$AssignToStateLoadingImpl>
+      get copyWith =>
+          __$$AssignToStateLoadingImplCopyWithImpl<_$AssignToStateLoadingImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -679,9 +657,9 @@ class _$ScheduleEditAssignToStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEditAssignToStateEmpty value) empty,
-    required TResult Function(ScheduleEditAssignToStateLoading value) loading,
-    required TResult Function(ScheduleEditAssignToStateLoaded value) loaded,
+    required TResult Function(AssignToStateEmpty value) empty,
+    required TResult Function(AssignToStateLoading value) loading,
+    required TResult Function(AssignToStateLoaded value) loaded,
   }) {
     return loading(this);
   }
@@ -689,9 +667,9 @@ class _$ScheduleEditAssignToStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEditAssignToStateEmpty value)? empty,
-    TResult? Function(ScheduleEditAssignToStateLoading value)? loading,
-    TResult? Function(ScheduleEditAssignToStateLoaded value)? loaded,
+    TResult? Function(AssignToStateEmpty value)? empty,
+    TResult? Function(AssignToStateLoading value)? loading,
+    TResult? Function(AssignToStateLoaded value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -699,9 +677,9 @@ class _$ScheduleEditAssignToStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEditAssignToStateEmpty value)? empty,
-    TResult Function(ScheduleEditAssignToStateLoading value)? loading,
-    TResult Function(ScheduleEditAssignToStateLoaded value)? loaded,
+    TResult Function(AssignToStateEmpty value)? empty,
+    TResult Function(AssignToStateLoading value)? loading,
+    TResult Function(AssignToStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -711,37 +689,32 @@ class _$ScheduleEditAssignToStateLoadingImpl
   }
 }
 
-abstract class ScheduleEditAssignToStateLoading
-    implements ScheduleEditAssignToState {
-  const factory ScheduleEditAssignToStateLoading(
+abstract class AssignToStateLoading implements AssignToState {
+  const factory AssignToStateLoading(
           {required final List<AppointmentUser> assignTo}) =
-      _$ScheduleEditAssignToStateLoadingImpl;
+      _$AssignToStateLoadingImpl;
 
   List<AppointmentUser> get assignTo;
   @JsonKey(ignore: true)
-  _$$ScheduleEditAssignToStateLoadingImplCopyWith<
-          _$ScheduleEditAssignToStateLoadingImpl>
+  _$$AssignToStateLoadingImplCopyWith<_$AssignToStateLoadingImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ScheduleEditAssignToStateLoadedImplCopyWith<$Res> {
-  factory _$$ScheduleEditAssignToStateLoadedImplCopyWith(
-          _$ScheduleEditAssignToStateLoadedImpl value,
-          $Res Function(_$ScheduleEditAssignToStateLoadedImpl) then) =
-      __$$ScheduleEditAssignToStateLoadedImplCopyWithImpl<$Res>;
+abstract class _$$AssignToStateLoadedImplCopyWith<$Res> {
+  factory _$$AssignToStateLoadedImplCopyWith(_$AssignToStateLoadedImpl value,
+          $Res Function(_$AssignToStateLoadedImpl) then) =
+      __$$AssignToStateLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<AppointmentUser> assignTo, List<User> users});
 }
 
 /// @nodoc
-class __$$ScheduleEditAssignToStateLoadedImplCopyWithImpl<$Res>
-    extends _$ScheduleEditAssignToStateCopyWithImpl<$Res,
-        _$ScheduleEditAssignToStateLoadedImpl>
-    implements _$$ScheduleEditAssignToStateLoadedImplCopyWith<$Res> {
-  __$$ScheduleEditAssignToStateLoadedImplCopyWithImpl(
-      _$ScheduleEditAssignToStateLoadedImpl _value,
-      $Res Function(_$ScheduleEditAssignToStateLoadedImpl) _then)
+class __$$AssignToStateLoadedImplCopyWithImpl<$Res>
+    extends _$AssignToStateCopyWithImpl<$Res, _$AssignToStateLoadedImpl>
+    implements _$$AssignToStateLoadedImplCopyWith<$Res> {
+  __$$AssignToStateLoadedImplCopyWithImpl(_$AssignToStateLoadedImpl _value,
+      $Res Function(_$AssignToStateLoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -750,7 +723,7 @@ class __$$ScheduleEditAssignToStateLoadedImplCopyWithImpl<$Res>
     Object? assignTo = null,
     Object? users = null,
   }) {
-    return _then(_$ScheduleEditAssignToStateLoadedImpl(
+    return _then(_$AssignToStateLoadedImpl(
       assignTo: null == assignTo
           ? _value._assignTo
           : assignTo // ignore: cast_nullable_to_non_nullable
@@ -765,9 +738,8 @@ class __$$ScheduleEditAssignToStateLoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ScheduleEditAssignToStateLoadedImpl
-    implements ScheduleEditAssignToStateLoaded {
-  const _$ScheduleEditAssignToStateLoadedImpl(
+class _$AssignToStateLoadedImpl implements AssignToStateLoaded {
+  const _$AssignToStateLoadedImpl(
       {required final List<AppointmentUser> assignTo,
       required final List<User> users})
       : _assignTo = assignTo,
@@ -791,14 +763,14 @@ class _$ScheduleEditAssignToStateLoadedImpl
 
   @override
   String toString() {
-    return 'ScheduleEditAssignToState.loaded(assignTo: $assignTo, users: $users)';
+    return 'AssignToState.loaded(assignTo: $assignTo, users: $users)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ScheduleEditAssignToStateLoadedImpl &&
+            other is _$AssignToStateLoadedImpl &&
             const DeepCollectionEquality().equals(other._assignTo, _assignTo) &&
             const DeepCollectionEquality().equals(other._users, _users));
   }
@@ -812,10 +784,9 @@ class _$ScheduleEditAssignToStateLoadedImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ScheduleEditAssignToStateLoadedImplCopyWith<
-          _$ScheduleEditAssignToStateLoadedImpl>
-      get copyWith => __$$ScheduleEditAssignToStateLoadedImplCopyWithImpl<
-          _$ScheduleEditAssignToStateLoadedImpl>(this, _$identity);
+  _$$AssignToStateLoadedImplCopyWith<_$AssignToStateLoadedImpl> get copyWith =>
+      __$$AssignToStateLoadedImplCopyWithImpl<_$AssignToStateLoadedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -855,9 +826,9 @@ class _$ScheduleEditAssignToStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEditAssignToStateEmpty value) empty,
-    required TResult Function(ScheduleEditAssignToStateLoading value) loading,
-    required TResult Function(ScheduleEditAssignToStateLoaded value) loaded,
+    required TResult Function(AssignToStateEmpty value) empty,
+    required TResult Function(AssignToStateLoading value) loading,
+    required TResult Function(AssignToStateLoaded value) loaded,
   }) {
     return loaded(this);
   }
@@ -865,9 +836,9 @@ class _$ScheduleEditAssignToStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEditAssignToStateEmpty value)? empty,
-    TResult? Function(ScheduleEditAssignToStateLoading value)? loading,
-    TResult? Function(ScheduleEditAssignToStateLoaded value)? loaded,
+    TResult? Function(AssignToStateEmpty value)? empty,
+    TResult? Function(AssignToStateLoading value)? loading,
+    TResult? Function(AssignToStateLoaded value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -875,9 +846,9 @@ class _$ScheduleEditAssignToStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEditAssignToStateEmpty value)? empty,
-    TResult Function(ScheduleEditAssignToStateLoading value)? loading,
-    TResult Function(ScheduleEditAssignToStateLoaded value)? loaded,
+    TResult Function(AssignToStateEmpty value)? empty,
+    TResult Function(AssignToStateLoading value)? loading,
+    TResult Function(AssignToStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -887,16 +858,14 @@ class _$ScheduleEditAssignToStateLoadedImpl
   }
 }
 
-abstract class ScheduleEditAssignToStateLoaded
-    implements ScheduleEditAssignToState {
-  const factory ScheduleEditAssignToStateLoaded(
+abstract class AssignToStateLoaded implements AssignToState {
+  const factory AssignToStateLoaded(
       {required final List<AppointmentUser> assignTo,
-      required final List<User> users}) = _$ScheduleEditAssignToStateLoadedImpl;
+      required final List<User> users}) = _$AssignToStateLoadedImpl;
 
   List<AppointmentUser> get assignTo;
   List<User> get users;
   @JsonKey(ignore: true)
-  _$$ScheduleEditAssignToStateLoadedImplCopyWith<
-          _$ScheduleEditAssignToStateLoadedImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$AssignToStateLoadedImplCopyWith<_$AssignToStateLoadedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

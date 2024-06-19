@@ -1,5 +1,6 @@
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/const/images_const.dart';
+import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
 import 'package:buildnotifierrear/presentation/sign/sign_in/bloc/sign_in_bloc.dart';
@@ -32,9 +33,9 @@ class SignInView extends IView {
                     Image.asset(
                       '$assetImage$logo2',
                     ),
-                    const Text(
-                      'Welcome Back!',
-                      style: TextStyle(
+                    Text(
+                      context.tr.welcome,
+                      style: const TextStyle(
                         fontSize: Sizes.size32,
                         color: AppColor.lightColor,
                         fontWeight: FontWeight.bold,
@@ -52,23 +53,23 @@ class SignInView extends IView {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        'Hello!',
-                        style: TextStyle(
+                      Text(
+                        context.tr.hello,
+                        style: const TextStyle(
                           fontSize: Sizes.size32,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const Text(
-                        'Sign in to your account',
-                        style: TextStyle(
+                      Text(
+                        context.tr.signinYourAccount,
+                        style: const TextStyle(
                           fontSize: Sizes.size16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       gapHeight16,
                       BaseTextFormField(
-                        label: 'User name',
+                        label: context.tr.userName,
                         initialValue: state.userName,
                         onChanged: (value) {
                           bloc.add(
@@ -77,14 +78,14 @@ class SignInView extends IView {
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter your username';
+                            return context.tr.enterYourUserName;
                           }
                           return null;
                         },
                       ),
                       gapHeight16,
                       BaseTextFormField(
-                        label: 'Password',
+                        label: context.tr.password,
                         initialValue: state.password,
                         obscureText: true,
                         onChanged: (value) {
@@ -94,16 +95,16 @@ class SignInView extends IView {
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter your password';
+                            return context.tr.enterYourpassword;
                           }
                           return null;
                         },
                       ),
                       gapHeight8,
                       if (state.isSignInError)
-                        const Text(
-                          'The username or password you’ve entered is incorrect.',
-                          style: TextStyle(
+                        Text(
+                          context.tr.usernamePasswordIncorrect,
+                          style: const TextStyle(
                             color: AppColor.red,
                           ),
                         ),
@@ -113,8 +114,8 @@ class SignInView extends IView {
                             ? const CircularProgressIndicator(
                                 color: AppColor.lightColor,
                               )
-                            : const Text(
-                                'Sign in',
+                            : Text(
+                                context.tr.signin,
                               ),
                         onPressed: () {
                           if (_formKey.currentState?.validate() ?? false) {
@@ -144,9 +145,9 @@ class SignInView extends IView {
                       gapHeight24,
                       Row(
                         children: [
-                          const Text('Don’t have an account?'),
+                          Text(context.tr.donotHaveAccount),
                           TextButton(
-                            child: const Text("Sign up"),
+                            child: Text(context.tr.signup),
                             onPressed: () {
                               appBloc(context).add(
                                 const AppEvent.createNewUser(),

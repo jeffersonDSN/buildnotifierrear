@@ -2,6 +2,7 @@ import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/core/const/images_const.dart';
+import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +51,7 @@ class LandingPage extends StatelessWidget {
                             iconColor: Colors.white,
                             textColor: Colors.white,
                             leading: const Icon(Icons.home),
-                            title: const Text('Home'),
+                            title: Text(context.tr.home),
                             selected: bloc.state.asLogged.mod.isModHome,
                             onTap: () {
                               bloc.add(
@@ -69,7 +70,7 @@ class LandingPage extends StatelessWidget {
                             iconColor: Colors.white,
                             textColor: Colors.white,
                             leading: const Icon(Icons.calendar_month),
-                            title: const Text('Schedule'),
+                            title: Text(context.tr.schedule),
                             selected: bloc.state.asLogged.mod.isModSchedule,
                             onTap: () {
                               bloc.add(
@@ -90,7 +91,7 @@ class LandingPage extends StatelessWidget {
                             iconColor: Colors.white,
                             textColor: Colors.white,
                             leading: const Icon(Icons.business),
-                            title: const Text('Projects'),
+                            title: Text(context.tr.projects),
                             selected: bloc.state.asLogged.mod.isModProjects,
                             onTap: () {
                               bloc.add(
@@ -111,7 +112,7 @@ class LandingPage extends StatelessWidget {
                             iconColor: Colors.white,
                             textColor: Colors.white,
                             leading: const Icon(Icons.people),
-                            title: const Text('Clients'),
+                            title: Text(context.tr.clients),
                             selected: bloc.state.asLogged.mod.isModClients,
                             onTap: () {
                               bloc.add(
@@ -132,7 +133,7 @@ class LandingPage extends StatelessWidget {
                             iconColor: Colors.white,
                             textColor: Colors.white,
                             leading: const Icon(Icons.badge),
-                            title: const Text('Users'),
+                            title: Text(context.tr.users),
                             selected: bloc.state.asLogged.mod.isModUsers,
                             onTap: () {
                               bloc.add(
@@ -154,7 +155,7 @@ class LandingPage extends StatelessWidget {
                     iconColor: Colors.white,
                     textColor: Colors.white,
                     leading: const Icon(Icons.settings),
-                    title: const Text('Settings'),
+                    title: Text(context.tr.settings),
                     onTap: () {
                       bloc.add(
                         const AppEvent.changeView(
@@ -167,7 +168,7 @@ class LandingPage extends StatelessWidget {
                     iconColor: Colors.white,
                     textColor: Colors.white,
                     leading: const Icon(Icons.logout),
-                    title: const Text('Sign out'),
+                    title: Text(context.tr.signout),
                     onTap: () {
                       bloc.add(
                         const AppEvent.signOut(),

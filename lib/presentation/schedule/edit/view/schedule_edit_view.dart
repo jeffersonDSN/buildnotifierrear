@@ -8,7 +8,7 @@ import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
 import 'package:buildnotifierrear/presentation/schedule/edit/bloc/schedule_edit_bloc.dart';
 import 'package:buildnotifierrear/presentation/schedule/edit/widget/appointment_dates_form.dart';
 import 'package:buildnotifierrear/presentation/schedule/edit/widget/appointment_details_form.dart';
-import 'package:buildnotifierrear/presentation/schedule/schedule_edit_assign_to/schedule_edit_assign_to_list.dart';
+import 'package:buildnotifierrear/presentation/assign_to/assign_to_list.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
@@ -252,7 +252,7 @@ class ScheduleEditView extends IView {
                                                 List<AppointmentUser>?>(
                                               context: context,
                                               builder: (context) {
-                                                return ScheduleEditAssignToList(
+                                                return AssignToList(
                                                   assignTo: selectedAppointment
                                                       .assignTo,
                                                 );

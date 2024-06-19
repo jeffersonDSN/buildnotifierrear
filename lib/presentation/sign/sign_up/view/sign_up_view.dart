@@ -1,5 +1,6 @@
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/const/images_const.dart';
+import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
 import 'package:buildnotifierrear/presentation/sign/sign_up/bloc/sign_up_bloc.dart';
@@ -32,9 +33,9 @@ class SignUpView extends IView {
                     Image.asset(
                       '$assetImage$logo2',
                     ),
-                    const Text(
-                      'Welcome! Ready to explore what’s new?',
-                      style: TextStyle(
+                    Text(
+                      context.tr.welcomeCaption,
+                      style: const TextStyle(
                         fontSize: Sizes.size32,
                         color: AppColor.lightColor,
                         fontWeight: FontWeight.bold,
@@ -58,23 +59,23 @@ class SignUpView extends IView {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          'Hello!',
-                          style: TextStyle(
+                        Text(
+                          context.tr.hello,
+                          style: const TextStyle(
                             fontSize: Sizes.size32,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const Text(
-                          'Start your free trial today and unlock a world of possibilities!',
-                          style: TextStyle(
+                        Text(
+                          context.tr.startTrialToday,
+                          style: const TextStyle(
                             fontSize: Sizes.size16,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         gapHeight24,
                         BaseTextFormField(
-                          label: 'First name',
+                          label: context.tr.firstName,
                           initialValue: state.user.firstName,
                           onChanged: (value) {
                             bloc.add(
@@ -83,14 +84,14 @@ class SignUpView extends IView {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'First name is required';
+                              return '${context.tr.firstName} ${context.tr.isRequired}';
                             }
                             return null;
                           },
                         ),
                         gapHeight16,
                         BaseTextFormField(
-                          label: 'Last name',
+                          label: context.tr.lastName,
                           initialValue: state.user.lastName,
                           onChanged: (value) {
                             bloc.add(
@@ -99,14 +100,14 @@ class SignUpView extends IView {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Last name is required';
+                              return '${context.tr.lastName} ${context.tr.isRequired}';
                             }
                             return null;
                           },
                         ),
                         gapHeight16,
                         BaseTextFormField(
-                          label: 'Company name',
+                          label: context.tr.companyName,
                           initialValue: state.settings.name,
                           onChanged: (value) {
                             bloc.add(
@@ -115,14 +116,14 @@ class SignUpView extends IView {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Company name is required';
+                              return '${context.tr.companyName} ${context.tr.isRequired}';
                             }
                             return null;
                           },
                         ),
                         gapHeight16,
                         BaseTextFormField(
-                          label: 'Email',
+                          label: context.tr.email,
                           initialValue: state.user.email,
                           onChanged: (value) {
                             bloc.add(
@@ -131,7 +132,7 @@ class SignUpView extends IView {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Email is required';
+                              return '${context.tr.email} ${context.tr.isRequired}';
                             }
                             return null;
                           },
@@ -146,7 +147,7 @@ class SignUpView extends IView {
                           ),
                         gapHeight16,
                         BaseTextFormField(
-                          label: 'Phone number',
+                          label: context.tr.phoneNumber,
                           initialValue: state.user.phoneNumber,
                           onChanged: (value) {
                             bloc.add(
@@ -155,14 +156,14 @@ class SignUpView extends IView {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Phone number is required';
+                              return '${context.tr.phoneNumber} ${context.tr.isRequired}';
                             }
                             return null;
                           },
                         ),
                         gapHeight16,
                         BaseTextFormField(
-                          label: 'Username',
+                          label: context.tr.userName,
                           initialValue: state.user.userName,
                           onChanged: (value) {
                             bloc.add(
@@ -171,7 +172,7 @@ class SignUpView extends IView {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Username is required';
+                              return '${context.tr.userName} ${context.tr.isRequired}';
                             }
                             return null;
                           },
@@ -186,7 +187,7 @@ class SignUpView extends IView {
                           ),
                         gapHeight16,
                         BaseTextFormField(
-                          label: 'Password',
+                          label: context.tr.password,
                           initialValue: state.user.password,
                           obscureText: true,
                           onChanged: (value) {
@@ -196,7 +197,7 @@ class SignUpView extends IView {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Password is required';
+                              return '${context.tr.password} ${context.tr.isRequired}';
                             }
                             return null;
                           },
@@ -207,9 +208,7 @@ class SignUpView extends IView {
                               ? const CircularProgressIndicator(
                                   color: AppColor.lightColor,
                                 )
-                              : const Text(
-                                  'Sign Up',
-                                ),
+                              : Text(context.tr.signup),
                           onPressed: () {
                             if (_formKey.currentState?.validate() ?? false) {
                               // ScaffoldMessenger.of(context).showSnackBar(
@@ -238,9 +237,9 @@ class SignUpView extends IView {
                         gapHeight24,
                         Row(
                           children: [
-                            const Text('Have an account?'),
+                            Text(context.tr.haveAccount),
                             TextButton(
-                              child: const Text("Sign in"),
+                              child: Text(context.tr.signin),
                               onPressed: () {
                                 appBloc(context).add(
                                   const AppEvent.signOut(),

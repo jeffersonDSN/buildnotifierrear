@@ -4,22 +4,21 @@ import 'package:buildnotifierrear/domain/entities/user/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
 
-part 'schedule_edit_assign_to_bloc.freezed.dart';
-part 'schedule_edit_assign_to_event.dart';
-part 'schedule_edit_assign_to_state.dart';
+part 'assign_to_bloc.freezed.dart';
+part 'assign_to_event.dart';
+part 'assign_to_state.dart';
 
-class ScheduleEditAssignToBloc
-    extends Bloc<ScheduleEditAssignToEvent, ScheduleEditAssignToState> {
-  ScheduleEditAssignToBloc({
+class AssignToBloc extends Bloc<AssignToEvent, AssignToState> {
+  AssignToBloc({
     required UsersController controller,
   }) : super(
-          const ScheduleEditAssignToState.empty(),
+          const AssignToState.empty(),
         ) {
-    on<ScheduleEditAssignToEvent>((event, emit) async {
+    on<AssignToEvent>((event, emit) async {
       await event.when(
         load: (assignTo) async {
           emit(
-            ScheduleEditAssignToState.loading(
+            AssignToState.loading(
               assignTo: assignTo,
             ),
           );
@@ -27,7 +26,7 @@ class ScheduleEditAssignToBloc
           var users = await controller.getAll();
 
           emit(
-            ScheduleEditAssignToState.loaded(
+            AssignToState.loaded(
               users: users,
               assignTo: assignTo,
             ),

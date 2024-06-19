@@ -3,15 +3,15 @@ import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/users_firestore_repository.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
-import 'package:buildnotifierrear/presentation/schedule/schedule_edit_assign_to/bloc/schedule_edit_assign_to_bloc.dart';
-import 'package:buildnotifierrear/presentation/schedule/schedule_edit_assign_to/view/schedule_edit_assign_to_list_view.dart';
+import 'package:buildnotifierrear/presentation/assign_to/bloc/assign_to_bloc.dart';
+import 'package:buildnotifierrear/presentation/assign_to/view/assign_to_list_view.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ScheduleEditAssignToList extends IView {
+class AssignToList extends IView {
   final List<AppointmentUser> assignTo;
 
-  const ScheduleEditAssignToList({
+  const AssignToList({
     super.key,
     required this.assignTo,
   });
@@ -21,14 +21,14 @@ class ScheduleEditAssignToList extends IView {
     var tenantId = appBloc(context).state.asLogged.user.tenant;
 
     return BlocProvider(
-      create: (context) => ScheduleEditAssignToBloc(
+      create: (context) => AssignToBloc(
         controller: UsersController(
           repository: UsersFireStoreRepository(
             tenant: tenantId,
           ),
         ),
       ),
-      child: ScheduleEditAssignToView(
+      child: AssignToView(
         assignTo: assignTo,
       ),
     );

@@ -4,25 +4,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
-class DateInputWidget extends StatefulWidget {
-  final DateTime value;
+class BaseDateInputWidget extends StatefulWidget {
+  final String label;
+  final String? hintText;
+  final DateTime? value;
   final bool enabled;
   final VoidCallback? onPressedChangeDate;
   final ValueChanged<DateTime> onChangeDate;
 
-  const DateInputWidget({
+  const BaseDateInputWidget({
     super.key,
-    required this.value,
-    required this.enabled,
+    this.label = '',
+    this.hintText,
+    this.value,
+    this.enabled = true,
     required this.onPressedChangeDate,
     required this.onChangeDate,
   });
 
   @override
-  State<StatefulWidget> createState() => _DateInputWidgetState();
+  State<StatefulWidget> createState() => _BaseDateInputWidgetState();
 }
 
-class _DateInputWidgetState extends State<DateInputWidget> {
+class _BaseDateInputWidgetState extends State<BaseDateInputWidget> {
   final FocusNode _focusNode = FocusNode();
   final DateFormat eFormat = DateFormat.E();
   final DateFormat dateFormat = DateFormat.yMd();
@@ -47,60 +51,74 @@ class _DateInputWidgetState extends State<DateInputWidget> {
 
     widget.onChangeDate.call(
       dateTime.copyWith(
-        hour: widget.value.hour,
-        minute: widget.value.minute,
+        hour: widget.value?.hour,
+        minute: widget.value?.minute,
       ),
     );
   }
 
   @override
-  Widget build(Object context) {
-    dateController.text = dateFormat.format(widget.value);
+  Widget build(BuildContext context) {
+    dateController.text =
+        widget.value != null ? dateFormat.format(widget.value!) : '';
 
-    return SizedBox(
-      width: Sizes.size164,
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
-            Sizes.size12,
-          ),
-          side: const BorderSide(
-            width: 0.5,
-          ),
-        ),
-        child: TextFormField(
-          focusNode: _focusNode,
-          inputFormatters: [DateTextInputFormatter()],
-          enabled: widget.enabled,
-          controller: dateController,
-          style: const TextStyle(
-            fontSize: 14,
-          ),
-          decoration: InputDecoration(
-            isDense: true,
-            hintText: 'Date',
-            prefix: Text(
-              '${eFormat.format(widget.value)} ',
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (widget.label.isNotEmpty)
+          Padding(
+            padding: const EdgeInsets.only(bottom: Sizes.size4),
+            child: Text(
+              widget.label,
+              style: Theme.of(context).inputDecorationTheme.labelStyle,
             ),
-            border: const OutlineInputBorder(
-              borderSide: BorderSide.none,
-            ),
-            focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide.none,
-            ),
-            suffixIcon: IconButton(
-              icon: const Icon(
-                Icons.calendar_month,
-                color: AppColor.primaryColorSwatch,
+          ),
+        SizedBox(
+          width: Sizes.size164,
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                Sizes.size4,
               ),
-              onPressed: widget.onPressedChangeDate,
+              side: const BorderSide(
+                width: 0.5,
+              ),
+            ),
+            child: TextFormField(
+              focusNode: _focusNode,
+              inputFormatters: [DateTextInputFormatter()],
+              enabled: widget.enabled,
+              controller: dateController,
+              style: const TextStyle(
+                fontSize: 14,
+              ),
+              decoration: InputDecoration(
+                isDense: true,
+                hintText: widget.hintText,
+                prefix: Text(
+                  '${widget.value != null ? eFormat.format(widget.value!) : ''} ',
+                ),
+                border: const OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                ),
+                focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                ),
+                suffixIcon: IconButton(
+                  icon: const Icon(
+                    Icons.calendar_month,
+                    color: AppColor.primaryColorSwatch,
+                  ),
+                  onPressed: widget.onPressedChangeDate,
+                ),
+              ),
+              onEditingComplete: () {
+                changeDate();
+              },
             ),
           ),
-          onEditingComplete: () {
-            changeDate();
-          },
         ),
-      ),
+      ],
     );
   }
 }

@@ -36,6 +36,26 @@ class ProjectEditEvent with _$ProjectEditEvent {
     required String lastName,
   }) = ProjectEditEventChangeClient;
 
+  const factory ProjectEditEvent.changeStartDate({
+    required DateTime value,
+  }) = ProjectEditEventChangeStartDate;
+
+  const factory ProjectEditEvent.changeExpectedEndDate({
+    required DateTime value,
+  }) = ProjectEditEventChangeExpectedEndDate;
+
+  const factory ProjectEditEvent.changeBudget({
+    required double value,
+  }) = ProjectEditEventChangeBudget;
+
+  const factory ProjectEditEvent.changeStatus({
+    required int value,
+  }) = ProjectEditEventChangeStatus;
+
+  const factory ProjectEditEvent.changeDescription({
+    required String value,
+  }) = ProjectEditEventChangeDescription;
+
   const factory ProjectEditEvent.save({
     required VoidCallback callback,
   }) = ProjectEditEventSave;

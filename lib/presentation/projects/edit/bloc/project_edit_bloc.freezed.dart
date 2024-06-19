@@ -28,6 +28,11 @@ mixin _$ProjectEditEvent {
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changeStatus,
+    required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) =>
       throw _privateConstructorUsedError;
@@ -42,6 +47,11 @@ mixin _$ProjectEditEvent {
     TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +66,11 @@ mixin _$ProjectEditEvent {
     TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changeStatus,
+    TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) =>
@@ -73,6 +88,14 @@ mixin _$ProjectEditEvent {
     required TResult Function(ProjectEditEventChangeAddress2 value)
         changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
     required TResult Function(ProjectEditEventSave value) save,
   }) =>
       throw _privateConstructorUsedError;
@@ -86,6 +109,13 @@ mixin _$ProjectEditEvent {
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult? Function(ProjectEditEventSave value)? save,
   }) =>
       throw _privateConstructorUsedError;
@@ -99,6 +129,13 @@ mixin _$ProjectEditEvent {
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) =>
@@ -209,6 +246,11 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changeStatus,
+    required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
     return load(type);
@@ -226,6 +268,11 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
     return load?.call(type);
@@ -243,6 +290,11 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changeStatus,
+    TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -266,6 +318,14 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     required TResult Function(ProjectEditEventChangeAddress2 value)
         changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
     return load(this);
@@ -282,6 +342,13 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
     return load?.call(this);
@@ -298,6 +365,13 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -396,6 +470,11 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changeStatus,
+    required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
     return changeName(value);
@@ -413,6 +492,11 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
     return changeName?.call(value);
@@ -430,6 +514,11 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changeStatus,
+    TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -453,6 +542,14 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     required TResult Function(ProjectEditEventChangeAddress2 value)
         changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
     return changeName(this);
@@ -469,6 +566,13 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
     return changeName?.call(this);
@@ -485,6 +589,13 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -585,6 +696,11 @@ class _$ProjectEditEventChangeZipCodeImpl
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changeStatus,
+    required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
     return changeZipCode(value);
@@ -602,6 +718,11 @@ class _$ProjectEditEventChangeZipCodeImpl
     TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
     return changeZipCode?.call(value);
@@ -619,6 +740,11 @@ class _$ProjectEditEventChangeZipCodeImpl
     TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changeStatus,
+    TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -642,6 +768,14 @@ class _$ProjectEditEventChangeZipCodeImpl
     required TResult Function(ProjectEditEventChangeAddress2 value)
         changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
     return changeZipCode(this);
@@ -658,6 +792,13 @@ class _$ProjectEditEventChangeZipCodeImpl
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
     return changeZipCode?.call(this);
@@ -674,6 +815,13 @@ class _$ProjectEditEventChangeZipCodeImpl
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -773,6 +921,11 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changeStatus,
+    required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
     return changeState(value);
@@ -790,6 +943,11 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
     return changeState?.call(value);
@@ -807,6 +965,11 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changeStatus,
+    TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -830,6 +993,14 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     required TResult Function(ProjectEditEventChangeAddress2 value)
         changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
     return changeState(this);
@@ -846,6 +1017,13 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
     return changeState?.call(this);
@@ -862,6 +1040,13 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -960,6 +1145,11 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changeStatus,
+    required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
     return changeCity(value);
@@ -977,6 +1167,11 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
     return changeCity?.call(value);
@@ -994,6 +1189,11 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changeStatus,
+    TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -1017,6 +1217,14 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     required TResult Function(ProjectEditEventChangeAddress2 value)
         changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
     return changeCity(this);
@@ -1033,6 +1241,13 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
     return changeCity?.call(this);
@@ -1049,6 +1264,13 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -1149,6 +1371,11 @@ class _$ProjectEditEventChangeAddressImpl
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changeStatus,
+    required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
     return changeAddress(value);
@@ -1166,6 +1393,11 @@ class _$ProjectEditEventChangeAddressImpl
     TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
     return changeAddress?.call(value);
@@ -1183,6 +1415,11 @@ class _$ProjectEditEventChangeAddressImpl
     TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changeStatus,
+    TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -1206,6 +1443,14 @@ class _$ProjectEditEventChangeAddressImpl
     required TResult Function(ProjectEditEventChangeAddress2 value)
         changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
     return changeAddress(this);
@@ -1222,6 +1467,13 @@ class _$ProjectEditEventChangeAddressImpl
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
     return changeAddress?.call(this);
@@ -1238,6 +1490,13 @@ class _$ProjectEditEventChangeAddressImpl
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -1339,6 +1598,11 @@ class _$ProjectEditEventChangeAddress2Impl
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changeStatus,
+    required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
     return changeAddress2(value);
@@ -1356,6 +1620,11 @@ class _$ProjectEditEventChangeAddress2Impl
     TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
     return changeAddress2?.call(value);
@@ -1373,6 +1642,11 @@ class _$ProjectEditEventChangeAddress2Impl
     TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changeStatus,
+    TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -1396,6 +1670,14 @@ class _$ProjectEditEventChangeAddress2Impl
     required TResult Function(ProjectEditEventChangeAddress2 value)
         changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
     return changeAddress2(this);
@@ -1412,6 +1694,13 @@ class _$ProjectEditEventChangeAddress2Impl
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
     return changeAddress2?.call(this);
@@ -1428,6 +1717,13 @@ class _$ProjectEditEventChangeAddress2Impl
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -1551,6 +1847,11 @@ class _$ProjectEditEventChangeClientImpl
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changeStatus,
+    required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
     return changeClient(clientId, firstName, lastName);
@@ -1568,6 +1869,11 @@ class _$ProjectEditEventChangeClientImpl
     TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
     return changeClient?.call(clientId, firstName, lastName);
@@ -1585,6 +1891,11 @@ class _$ProjectEditEventChangeClientImpl
     TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changeStatus,
+    TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -1608,6 +1919,14 @@ class _$ProjectEditEventChangeClientImpl
     required TResult Function(ProjectEditEventChangeAddress2 value)
         changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
     return changeClient(this);
@@ -1624,6 +1943,13 @@ class _$ProjectEditEventChangeClientImpl
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
     return changeClient?.call(this);
@@ -1640,6 +1966,13 @@ class _$ProjectEditEventChangeClientImpl
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -1662,6 +1995,1143 @@ abstract class ProjectEditEventChangeClient implements ProjectEditEvent {
   @JsonKey(ignore: true)
   _$$ProjectEditEventChangeClientImplCopyWith<
           _$ProjectEditEventChangeClientImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProjectEditEventChangeStartDateImplCopyWith<$Res> {
+  factory _$$ProjectEditEventChangeStartDateImplCopyWith(
+          _$ProjectEditEventChangeStartDateImpl value,
+          $Res Function(_$ProjectEditEventChangeStartDateImpl) then) =
+      __$$ProjectEditEventChangeStartDateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DateTime value});
+}
+
+/// @nodoc
+class __$$ProjectEditEventChangeStartDateImplCopyWithImpl<$Res>
+    extends _$ProjectEditEventCopyWithImpl<$Res,
+        _$ProjectEditEventChangeStartDateImpl>
+    implements _$$ProjectEditEventChangeStartDateImplCopyWith<$Res> {
+  __$$ProjectEditEventChangeStartDateImplCopyWithImpl(
+      _$ProjectEditEventChangeStartDateImpl _value,
+      $Res Function(_$ProjectEditEventChangeStartDateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ProjectEditEventChangeStartDateImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProjectEditEventChangeStartDateImpl
+    implements ProjectEditEventChangeStartDate {
+  const _$ProjectEditEventChangeStartDateImpl({required this.value});
+
+  @override
+  final DateTime value;
+
+  @override
+  String toString() {
+    return 'ProjectEditEvent.changeStartDate(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProjectEditEventChangeStartDateImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProjectEditEventChangeStartDateImplCopyWith<
+          _$ProjectEditEventChangeStartDateImpl>
+      get copyWith => __$$ProjectEditEventChangeStartDateImplCopyWithImpl<
+          _$ProjectEditEventChangeStartDateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changeStatus,
+    required TResult Function(String value) changeDescription,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeStartDate(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeStartDate?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changeStatus,
+    TResult Function(String value)? changeDescription,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeStartDate != null) {
+      return changeStartDate(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectEditEventLoad value) load,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
+    required TResult Function(ProjectEditEventSave value) save,
+  }) {
+    return changeStartDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectEditEventLoad value)? load,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
+    TResult? Function(ProjectEditEventSave value)? save,
+  }) {
+    return changeStartDate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectEditEventLoad value)? load,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
+    TResult Function(ProjectEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeStartDate != null) {
+      return changeStartDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProjectEditEventChangeStartDate implements ProjectEditEvent {
+  const factory ProjectEditEventChangeStartDate(
+      {required final DateTime value}) = _$ProjectEditEventChangeStartDateImpl;
+
+  DateTime get value;
+  @JsonKey(ignore: true)
+  _$$ProjectEditEventChangeStartDateImplCopyWith<
+          _$ProjectEditEventChangeStartDateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProjectEditEventChangeExpectedEndDateImplCopyWith<$Res> {
+  factory _$$ProjectEditEventChangeExpectedEndDateImplCopyWith(
+          _$ProjectEditEventChangeExpectedEndDateImpl value,
+          $Res Function(_$ProjectEditEventChangeExpectedEndDateImpl) then) =
+      __$$ProjectEditEventChangeExpectedEndDateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DateTime value});
+}
+
+/// @nodoc
+class __$$ProjectEditEventChangeExpectedEndDateImplCopyWithImpl<$Res>
+    extends _$ProjectEditEventCopyWithImpl<$Res,
+        _$ProjectEditEventChangeExpectedEndDateImpl>
+    implements _$$ProjectEditEventChangeExpectedEndDateImplCopyWith<$Res> {
+  __$$ProjectEditEventChangeExpectedEndDateImplCopyWithImpl(
+      _$ProjectEditEventChangeExpectedEndDateImpl _value,
+      $Res Function(_$ProjectEditEventChangeExpectedEndDateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ProjectEditEventChangeExpectedEndDateImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProjectEditEventChangeExpectedEndDateImpl
+    implements ProjectEditEventChangeExpectedEndDate {
+  const _$ProjectEditEventChangeExpectedEndDateImpl({required this.value});
+
+  @override
+  final DateTime value;
+
+  @override
+  String toString() {
+    return 'ProjectEditEvent.changeExpectedEndDate(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProjectEditEventChangeExpectedEndDateImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProjectEditEventChangeExpectedEndDateImplCopyWith<
+          _$ProjectEditEventChangeExpectedEndDateImpl>
+      get copyWith => __$$ProjectEditEventChangeExpectedEndDateImplCopyWithImpl<
+          _$ProjectEditEventChangeExpectedEndDateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changeStatus,
+    required TResult Function(String value) changeDescription,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeExpectedEndDate(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeExpectedEndDate?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changeStatus,
+    TResult Function(String value)? changeDescription,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeExpectedEndDate != null) {
+      return changeExpectedEndDate(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectEditEventLoad value) load,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
+    required TResult Function(ProjectEditEventSave value) save,
+  }) {
+    return changeExpectedEndDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectEditEventLoad value)? load,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
+    TResult? Function(ProjectEditEventSave value)? save,
+  }) {
+    return changeExpectedEndDate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectEditEventLoad value)? load,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
+    TResult Function(ProjectEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeExpectedEndDate != null) {
+      return changeExpectedEndDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProjectEditEventChangeExpectedEndDate
+    implements ProjectEditEvent {
+  const factory ProjectEditEventChangeExpectedEndDate(
+          {required final DateTime value}) =
+      _$ProjectEditEventChangeExpectedEndDateImpl;
+
+  DateTime get value;
+  @JsonKey(ignore: true)
+  _$$ProjectEditEventChangeExpectedEndDateImplCopyWith<
+          _$ProjectEditEventChangeExpectedEndDateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProjectEditEventChangeBudgetImplCopyWith<$Res> {
+  factory _$$ProjectEditEventChangeBudgetImplCopyWith(
+          _$ProjectEditEventChangeBudgetImpl value,
+          $Res Function(_$ProjectEditEventChangeBudgetImpl) then) =
+      __$$ProjectEditEventChangeBudgetImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({double value});
+}
+
+/// @nodoc
+class __$$ProjectEditEventChangeBudgetImplCopyWithImpl<$Res>
+    extends _$ProjectEditEventCopyWithImpl<$Res,
+        _$ProjectEditEventChangeBudgetImpl>
+    implements _$$ProjectEditEventChangeBudgetImplCopyWith<$Res> {
+  __$$ProjectEditEventChangeBudgetImplCopyWithImpl(
+      _$ProjectEditEventChangeBudgetImpl _value,
+      $Res Function(_$ProjectEditEventChangeBudgetImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ProjectEditEventChangeBudgetImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProjectEditEventChangeBudgetImpl
+    implements ProjectEditEventChangeBudget {
+  const _$ProjectEditEventChangeBudgetImpl({required this.value});
+
+  @override
+  final double value;
+
+  @override
+  String toString() {
+    return 'ProjectEditEvent.changeBudget(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProjectEditEventChangeBudgetImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProjectEditEventChangeBudgetImplCopyWith<
+          _$ProjectEditEventChangeBudgetImpl>
+      get copyWith => __$$ProjectEditEventChangeBudgetImplCopyWithImpl<
+          _$ProjectEditEventChangeBudgetImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changeStatus,
+    required TResult Function(String value) changeDescription,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeBudget(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeBudget?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changeStatus,
+    TResult Function(String value)? changeDescription,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeBudget != null) {
+      return changeBudget(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectEditEventLoad value) load,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
+    required TResult Function(ProjectEditEventSave value) save,
+  }) {
+    return changeBudget(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectEditEventLoad value)? load,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
+    TResult? Function(ProjectEditEventSave value)? save,
+  }) {
+    return changeBudget?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectEditEventLoad value)? load,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
+    TResult Function(ProjectEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeBudget != null) {
+      return changeBudget(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProjectEditEventChangeBudget implements ProjectEditEvent {
+  const factory ProjectEditEventChangeBudget({required final double value}) =
+      _$ProjectEditEventChangeBudgetImpl;
+
+  double get value;
+  @JsonKey(ignore: true)
+  _$$ProjectEditEventChangeBudgetImplCopyWith<
+          _$ProjectEditEventChangeBudgetImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProjectEditEventChangeStatusImplCopyWith<$Res> {
+  factory _$$ProjectEditEventChangeStatusImplCopyWith(
+          _$ProjectEditEventChangeStatusImpl value,
+          $Res Function(_$ProjectEditEventChangeStatusImpl) then) =
+      __$$ProjectEditEventChangeStatusImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int value});
+}
+
+/// @nodoc
+class __$$ProjectEditEventChangeStatusImplCopyWithImpl<$Res>
+    extends _$ProjectEditEventCopyWithImpl<$Res,
+        _$ProjectEditEventChangeStatusImpl>
+    implements _$$ProjectEditEventChangeStatusImplCopyWith<$Res> {
+  __$$ProjectEditEventChangeStatusImplCopyWithImpl(
+      _$ProjectEditEventChangeStatusImpl _value,
+      $Res Function(_$ProjectEditEventChangeStatusImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ProjectEditEventChangeStatusImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProjectEditEventChangeStatusImpl
+    implements ProjectEditEventChangeStatus {
+  const _$ProjectEditEventChangeStatusImpl({required this.value});
+
+  @override
+  final int value;
+
+  @override
+  String toString() {
+    return 'ProjectEditEvent.changeStatus(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProjectEditEventChangeStatusImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProjectEditEventChangeStatusImplCopyWith<
+          _$ProjectEditEventChangeStatusImpl>
+      get copyWith => __$$ProjectEditEventChangeStatusImplCopyWithImpl<
+          _$ProjectEditEventChangeStatusImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changeStatus,
+    required TResult Function(String value) changeDescription,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeStatus(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeStatus?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changeStatus,
+    TResult Function(String value)? changeDescription,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeStatus != null) {
+      return changeStatus(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectEditEventLoad value) load,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
+    required TResult Function(ProjectEditEventSave value) save,
+  }) {
+    return changeStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectEditEventLoad value)? load,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
+    TResult? Function(ProjectEditEventSave value)? save,
+  }) {
+    return changeStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectEditEventLoad value)? load,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
+    TResult Function(ProjectEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeStatus != null) {
+      return changeStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProjectEditEventChangeStatus implements ProjectEditEvent {
+  const factory ProjectEditEventChangeStatus({required final int value}) =
+      _$ProjectEditEventChangeStatusImpl;
+
+  int get value;
+  @JsonKey(ignore: true)
+  _$$ProjectEditEventChangeStatusImplCopyWith<
+          _$ProjectEditEventChangeStatusImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProjectEditEventChangeDescriptionImplCopyWith<$Res> {
+  factory _$$ProjectEditEventChangeDescriptionImplCopyWith(
+          _$ProjectEditEventChangeDescriptionImpl value,
+          $Res Function(_$ProjectEditEventChangeDescriptionImpl) then) =
+      __$$ProjectEditEventChangeDescriptionImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$ProjectEditEventChangeDescriptionImplCopyWithImpl<$Res>
+    extends _$ProjectEditEventCopyWithImpl<$Res,
+        _$ProjectEditEventChangeDescriptionImpl>
+    implements _$$ProjectEditEventChangeDescriptionImplCopyWith<$Res> {
+  __$$ProjectEditEventChangeDescriptionImplCopyWithImpl(
+      _$ProjectEditEventChangeDescriptionImpl _value,
+      $Res Function(_$ProjectEditEventChangeDescriptionImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ProjectEditEventChangeDescriptionImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProjectEditEventChangeDescriptionImpl
+    implements ProjectEditEventChangeDescription {
+  const _$ProjectEditEventChangeDescriptionImpl({required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'ProjectEditEvent.changeDescription(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProjectEditEventChangeDescriptionImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProjectEditEventChangeDescriptionImplCopyWith<
+          _$ProjectEditEventChangeDescriptionImpl>
+      get copyWith => __$$ProjectEditEventChangeDescriptionImplCopyWithImpl<
+          _$ProjectEditEventChangeDescriptionImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changeStatus,
+    required TResult Function(String value) changeDescription,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeDescription(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeDescription?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changeStatus,
+    TResult Function(String value)? changeDescription,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeDescription != null) {
+      return changeDescription(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectEditEventLoad value) load,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
+    required TResult Function(ProjectEditEventSave value) save,
+  }) {
+    return changeDescription(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectEditEventLoad value)? load,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
+    TResult? Function(ProjectEditEventSave value)? save,
+  }) {
+    return changeDescription?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectEditEventLoad value)? load,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
+    TResult Function(ProjectEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeDescription != null) {
+      return changeDescription(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProjectEditEventChangeDescription implements ProjectEditEvent {
+  const factory ProjectEditEventChangeDescription(
+      {required final String value}) = _$ProjectEditEventChangeDescriptionImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$ProjectEditEventChangeDescriptionImplCopyWith<
+          _$ProjectEditEventChangeDescriptionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1742,6 +3212,11 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     required TResult Function(
             String clientId, String firstName, String lastName)
         changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changeStatus,
+    required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
     return save(callback);
@@ -1759,6 +3234,11 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     TResult? Function(String value)? changeAddress2,
     TResult? Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
     return save?.call(callback);
@@ -1776,6 +3256,11 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     TResult Function(String value)? changeAddress2,
     TResult Function(String clientId, String firstName, String lastName)?
         changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changeStatus,
+    TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
   }) {
@@ -1799,6 +3284,14 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     required TResult Function(ProjectEditEventChangeAddress2 value)
         changeAddress2,
     required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
     required TResult Function(ProjectEditEventSave value) save,
   }) {
     return save(this);
@@ -1815,6 +3308,13 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult? Function(ProjectEditEventSave value)? save,
   }) {
     return save?.call(this);
@@ -1831,6 +3331,13 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
     TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
     TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
     TResult Function(ProjectEditEventSave value)? save,
     required TResult orElse(),
   }) {
