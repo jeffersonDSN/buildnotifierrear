@@ -23,6 +23,7 @@ mixin _$Mod {
     required TResult Function(ViewType type) projects,
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) users,
+    required TResult Function(ViewType type) timecards,
     required TResult Function() settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -33,6 +34,7 @@ mixin _$Mod {
     TResult? Function(ViewType type)? projects,
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? users,
+    TResult? Function(ViewType type)? timecards,
     TResult? Function()? settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +45,7 @@ mixin _$Mod {
     TResult Function(ViewType type)? projects,
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? users,
+    TResult Function(ViewType type)? timecards,
     TResult Function()? settings,
     required TResult orElse(),
   }) =>
@@ -54,6 +57,7 @@ mixin _$Mod {
     required TResult Function(ModProjects value) projects,
     required TResult Function(ModClients value) clients,
     required TResult Function(ModUsers value) users,
+    required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModSettings value) settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -64,6 +68,7 @@ mixin _$Mod {
     TResult? Function(ModProjects value)? projects,
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModUsers value)? users,
+    TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModSettings value)? settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -74,6 +79,7 @@ mixin _$Mod {
     TResult Function(ModProjects value)? projects,
     TResult Function(ModClients value)? clients,
     TResult Function(ModUsers value)? users,
+    TResult Function(ModTimecards value)? timecards,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) =>
@@ -139,6 +145,7 @@ class _$ModHomeImpl implements ModHome {
     required TResult Function(ViewType type) projects,
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) users,
+    required TResult Function(ViewType type) timecards,
     required TResult Function() settings,
   }) {
     return home();
@@ -152,6 +159,7 @@ class _$ModHomeImpl implements ModHome {
     TResult? Function(ViewType type)? projects,
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? users,
+    TResult? Function(ViewType type)? timecards,
     TResult? Function()? settings,
   }) {
     return home?.call();
@@ -165,6 +173,7 @@ class _$ModHomeImpl implements ModHome {
     TResult Function(ViewType type)? projects,
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? users,
+    TResult Function(ViewType type)? timecards,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -182,6 +191,7 @@ class _$ModHomeImpl implements ModHome {
     required TResult Function(ModProjects value) projects,
     required TResult Function(ModClients value) clients,
     required TResult Function(ModUsers value) users,
+    required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModSettings value) settings,
   }) {
     return home(this);
@@ -195,6 +205,7 @@ class _$ModHomeImpl implements ModHome {
     TResult? Function(ModProjects value)? projects,
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModUsers value)? users,
+    TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModSettings value)? settings,
   }) {
     return home?.call(this);
@@ -208,6 +219,7 @@ class _$ModHomeImpl implements ModHome {
     TResult Function(ModProjects value)? projects,
     TResult Function(ModClients value)? clients,
     TResult Function(ModUsers value)? users,
+    TResult Function(ModTimecards value)? timecards,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -301,6 +313,7 @@ class _$ModScheduleImpl implements ModSchedule {
     required TResult Function(ViewType type) projects,
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) users,
+    required TResult Function(ViewType type) timecards,
     required TResult Function() settings,
   }) {
     return schedule(type);
@@ -314,6 +327,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult? Function(ViewType type)? projects,
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? users,
+    TResult? Function(ViewType type)? timecards,
     TResult? Function()? settings,
   }) {
     return schedule?.call(type);
@@ -327,6 +341,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult Function(ViewType type)? projects,
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? users,
+    TResult Function(ViewType type)? timecards,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -344,6 +359,7 @@ class _$ModScheduleImpl implements ModSchedule {
     required TResult Function(ModProjects value) projects,
     required TResult Function(ModClients value) clients,
     required TResult Function(ModUsers value) users,
+    required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModSettings value) settings,
   }) {
     return schedule(this);
@@ -357,6 +373,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult? Function(ModProjects value)? projects,
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModUsers value)? users,
+    TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModSettings value)? settings,
   }) {
     return schedule?.call(this);
@@ -370,6 +387,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult Function(ModProjects value)? projects,
     TResult Function(ModClients value)? clients,
     TResult Function(ModUsers value)? users,
+    TResult Function(ModTimecards value)? timecards,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -468,6 +486,7 @@ class _$ModProjectsImpl implements ModProjects {
     required TResult Function(ViewType type) projects,
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) users,
+    required TResult Function(ViewType type) timecards,
     required TResult Function() settings,
   }) {
     return projects(type);
@@ -481,6 +500,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult? Function(ViewType type)? projects,
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? users,
+    TResult? Function(ViewType type)? timecards,
     TResult? Function()? settings,
   }) {
     return projects?.call(type);
@@ -494,6 +514,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult Function(ViewType type)? projects,
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? users,
+    TResult Function(ViewType type)? timecards,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -511,6 +532,7 @@ class _$ModProjectsImpl implements ModProjects {
     required TResult Function(ModProjects value) projects,
     required TResult Function(ModClients value) clients,
     required TResult Function(ModUsers value) users,
+    required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModSettings value) settings,
   }) {
     return projects(this);
@@ -524,6 +546,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult? Function(ModProjects value)? projects,
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModUsers value)? users,
+    TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModSettings value)? settings,
   }) {
     return projects?.call(this);
@@ -537,6 +560,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult Function(ModProjects value)? projects,
     TResult Function(ModClients value)? clients,
     TResult Function(ModUsers value)? users,
+    TResult Function(ModTimecards value)? timecards,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -635,6 +659,7 @@ class _$ModClientsImpl implements ModClients {
     required TResult Function(ViewType type) projects,
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) users,
+    required TResult Function(ViewType type) timecards,
     required TResult Function() settings,
   }) {
     return clients(type);
@@ -648,6 +673,7 @@ class _$ModClientsImpl implements ModClients {
     TResult? Function(ViewType type)? projects,
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? users,
+    TResult? Function(ViewType type)? timecards,
     TResult? Function()? settings,
   }) {
     return clients?.call(type);
@@ -661,6 +687,7 @@ class _$ModClientsImpl implements ModClients {
     TResult Function(ViewType type)? projects,
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? users,
+    TResult Function(ViewType type)? timecards,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -678,6 +705,7 @@ class _$ModClientsImpl implements ModClients {
     required TResult Function(ModProjects value) projects,
     required TResult Function(ModClients value) clients,
     required TResult Function(ModUsers value) users,
+    required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModSettings value) settings,
   }) {
     return clients(this);
@@ -691,6 +719,7 @@ class _$ModClientsImpl implements ModClients {
     TResult? Function(ModProjects value)? projects,
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModUsers value)? users,
+    TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModSettings value)? settings,
   }) {
     return clients?.call(this);
@@ -704,6 +733,7 @@ class _$ModClientsImpl implements ModClients {
     TResult Function(ModProjects value)? projects,
     TResult Function(ModClients value)? clients,
     TResult Function(ModUsers value)? users,
+    TResult Function(ModTimecards value)? timecards,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -802,6 +832,7 @@ class _$ModUsersImpl implements ModUsers {
     required TResult Function(ViewType type) projects,
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) users,
+    required TResult Function(ViewType type) timecards,
     required TResult Function() settings,
   }) {
     return users(type);
@@ -815,6 +846,7 @@ class _$ModUsersImpl implements ModUsers {
     TResult? Function(ViewType type)? projects,
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? users,
+    TResult? Function(ViewType type)? timecards,
     TResult? Function()? settings,
   }) {
     return users?.call(type);
@@ -828,6 +860,7 @@ class _$ModUsersImpl implements ModUsers {
     TResult Function(ViewType type)? projects,
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? users,
+    TResult Function(ViewType type)? timecards,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -845,6 +878,7 @@ class _$ModUsersImpl implements ModUsers {
     required TResult Function(ModProjects value) projects,
     required TResult Function(ModClients value) clients,
     required TResult Function(ModUsers value) users,
+    required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModSettings value) settings,
   }) {
     return users(this);
@@ -858,6 +892,7 @@ class _$ModUsersImpl implements ModUsers {
     TResult? Function(ModProjects value)? projects,
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModUsers value)? users,
+    TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModSettings value)? settings,
   }) {
     return users?.call(this);
@@ -871,6 +906,7 @@ class _$ModUsersImpl implements ModUsers {
     TResult Function(ModProjects value)? projects,
     TResult Function(ModClients value)? clients,
     TResult Function(ModUsers value)? users,
+    TResult Function(ModTimecards value)? timecards,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -887,6 +923,180 @@ abstract class ModUsers implements Mod {
   ViewType get type;
   @JsonKey(ignore: true)
   _$$ModUsersImplCopyWith<_$ModUsersImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ModTimecardsImplCopyWith<$Res> {
+  factory _$$ModTimecardsImplCopyWith(
+          _$ModTimecardsImpl value, $Res Function(_$ModTimecardsImpl) then) =
+      __$$ModTimecardsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ViewType type});
+
+  $ViewTypeCopyWith<$Res> get type;
+}
+
+/// @nodoc
+class __$$ModTimecardsImplCopyWithImpl<$Res>
+    extends _$ModCopyWithImpl<$Res, _$ModTimecardsImpl>
+    implements _$$ModTimecardsImplCopyWith<$Res> {
+  __$$ModTimecardsImplCopyWithImpl(
+      _$ModTimecardsImpl _value, $Res Function(_$ModTimecardsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+  }) {
+    return _then(_$ModTimecardsImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ViewType,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ViewTypeCopyWith<$Res> get type {
+    return $ViewTypeCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ModTimecardsImpl implements ModTimecards {
+  const _$ModTimecardsImpl({required this.type});
+
+  @override
+  final ViewType type;
+
+  @override
+  String toString() {
+    return 'Mod.timecards(type: $type)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ModTimecardsImpl &&
+            (identical(other.type, type) || other.type == type));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, type);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModTimecardsImplCopyWith<_$ModTimecardsImpl> get copyWith =>
+      __$$ModTimecardsImplCopyWithImpl<_$ModTimecardsImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() home,
+    required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) projects,
+    required TResult Function(ViewType type) clients,
+    required TResult Function(ViewType type) users,
+    required TResult Function(ViewType type) timecards,
+    required TResult Function() settings,
+  }) {
+    return timecards(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? home,
+    TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? projects,
+    TResult? Function(ViewType type)? clients,
+    TResult? Function(ViewType type)? users,
+    TResult? Function(ViewType type)? timecards,
+    TResult? Function()? settings,
+  }) {
+    return timecards?.call(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? home,
+    TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? projects,
+    TResult Function(ViewType type)? clients,
+    TResult Function(ViewType type)? users,
+    TResult Function(ViewType type)? timecards,
+    TResult Function()? settings,
+    required TResult orElse(),
+  }) {
+    if (timecards != null) {
+      return timecards(type);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ModHome value) home,
+    required TResult Function(ModSchedule value) schedule,
+    required TResult Function(ModProjects value) projects,
+    required TResult Function(ModClients value) clients,
+    required TResult Function(ModUsers value) users,
+    required TResult Function(ModTimecards value) timecards,
+    required TResult Function(ModSettings value) settings,
+  }) {
+    return timecards(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ModHome value)? home,
+    TResult? Function(ModSchedule value)? schedule,
+    TResult? Function(ModProjects value)? projects,
+    TResult? Function(ModClients value)? clients,
+    TResult? Function(ModUsers value)? users,
+    TResult? Function(ModTimecards value)? timecards,
+    TResult? Function(ModSettings value)? settings,
+  }) {
+    return timecards?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ModHome value)? home,
+    TResult Function(ModSchedule value)? schedule,
+    TResult Function(ModProjects value)? projects,
+    TResult Function(ModClients value)? clients,
+    TResult Function(ModUsers value)? users,
+    TResult Function(ModTimecards value)? timecards,
+    TResult Function(ModSettings value)? settings,
+    required TResult orElse(),
+  }) {
+    if (timecards != null) {
+      return timecards(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ModTimecards implements Mod {
+  const factory ModTimecards({required final ViewType type}) =
+      _$ModTimecardsImpl;
+
+  ViewType get type;
+  @JsonKey(ignore: true)
+  _$$ModTimecardsImplCopyWith<_$ModTimecardsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -933,6 +1143,7 @@ class _$ModSettingsImpl implements ModSettings {
     required TResult Function(ViewType type) projects,
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) users,
+    required TResult Function(ViewType type) timecards,
     required TResult Function() settings,
   }) {
     return settings();
@@ -946,6 +1157,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult? Function(ViewType type)? projects,
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? users,
+    TResult? Function(ViewType type)? timecards,
     TResult? Function()? settings,
   }) {
     return settings?.call();
@@ -959,6 +1171,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult Function(ViewType type)? projects,
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? users,
+    TResult Function(ViewType type)? timecards,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -976,6 +1189,7 @@ class _$ModSettingsImpl implements ModSettings {
     required TResult Function(ModProjects value) projects,
     required TResult Function(ModClients value) clients,
     required TResult Function(ModUsers value) users,
+    required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModSettings value) settings,
   }) {
     return settings(this);
@@ -989,6 +1203,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult? Function(ModProjects value)? projects,
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModUsers value)? users,
+    TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModSettings value)? settings,
   }) {
     return settings?.call(this);
@@ -1002,6 +1217,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult Function(ModProjects value)? projects,
     TResult Function(ModClients value)? clients,
     TResult Function(ModUsers value)? users,
+    TResult Function(ModTimecards value)? timecards,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {

@@ -1,4 +1,6 @@
+import 'package:buildnotifierrear/domain/core/time_utils.dart';
 import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
+import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:buildnotifierrear/presentation/timecards/overview/widget/timecards_day_details_list_widget.dart';
@@ -10,7 +12,6 @@ class TaskEditWidget extends StatelessWidget {
   final VoidCallback onCancel;
 
   final DateFormat dayFormat = DateFormat('EEEE, MMM d yyyy');
-  final NumberFormat numberFormat = NumberFormat('00');
 
   TaskEditWidget({
     super.key,
@@ -42,35 +43,29 @@ class TaskEditWidget extends StatelessWidget {
       body: Column(
         children: [
           const Divider(),
+          Expanded(
+            child: TimecardsDayDetailsListWidget(
+              timecards: timecards,
+            ),
+          ),
+          gapHeight16,
+          const Divider(),
+          gapHeight16,
           ListTile(
-            title: const Text(
-              'Total hours of the day',
-              style: TextStyle(
+            title: Text(
+              context.tr.totalHours,
+              style: const TextStyle(
                 color: AppColor.primaryColorSwatch,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            trailing: SizedBox(
-              width: Sizes.size112,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    '${numberFormat.format(total.hours)}:${numberFormat.format(total.minutes)}',
-                    style: const TextStyle(
-                      fontSize: Sizes.size20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+            trailing: Text(
+              textAlign: TextAlign.end,
+              formatTime(total.hours, total.minutes),
+              style: const TextStyle(
+                fontSize: Sizes.size20,
+                fontWeight: FontWeight.bold,
               ),
-            ),
-          ),
-          const Divider(),
-          gapHeight16,
-          Expanded(
-            child: TimecardsDayDetailsListWidget(
-              timecards: timecards,
             ),
           ),
         ],

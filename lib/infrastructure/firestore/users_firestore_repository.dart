@@ -83,6 +83,20 @@ class UsersFireStoreRepository extends FireStoreRepository
   }
 
   @override
+  Future<List<User>> getUsersByID(List<String> ids) async {
+    List<Future<DocumentSnapshot>> futures = ids.map((id) {
+      return collection.doc(id).get();
+    }).toList();
+
+    var querySnapshot = await Future.wait(futures);
+
+    return querySnapshot.map((snapshot) {
+      var doc = snapshot.data() as Map<String, dynamic>;
+      return User.fromJson({...doc, 'id': snapshot.id});
+    }).toList();
+  }
+
+  @override
   Future<User> getById(String id) async {
     var snapshot = await collection.doc(id).get();
 

@@ -65,7 +65,7 @@ class UsersOverviewBloc extends Bloc<UsersOverviewEvent, UsersOverviewState> {
           );
 
           var result = await Future.wait([
-            timecardsController.getAllOfPeriod(
+            timecardsController.getAllOfByUserAndPeriod(
               selectedUser.id,
               state.asLoaded.selectedPeriod,
             ),
@@ -120,7 +120,7 @@ class UsersOverviewBloc extends Bloc<UsersOverviewEvent, UsersOverviewState> {
             ),
           );
 
-          var periods = await timecardsController.getAllOfPeriod(
+          var periods = await timecardsController.getAllOfByUserAndPeriod(
             state.asLoaded.selectedUser!.id,
             selectedPeriod,
           );

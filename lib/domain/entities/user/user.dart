@@ -1,3 +1,4 @@
+import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user.freezed.dart';
@@ -34,6 +35,29 @@ extension OnUser on User {
     double decimalMinutes = minutes / 60.0;
     double totalHours = hours + decimalMinutes;
     double earnings = totalHours * hourlyRate;
+
+    return earnings;
+  }
+}
+
+extension OnUserList on List<User> {
+  double getGrossPay(List<Timecard> timecards) {
+    double earnings = 0;
+
+    for (var user in this) {
+      var timecardsOfUser = timecards
+          .where(
+            (timecard) => timecard.userId == user.id,
+          )
+          .toList();
+
+      var totalHoursAndMinutes = timecardsOfUser.totalHoursAndMinutes;
+
+      earnings += user.getGrossPay(
+        totalHoursAndMinutes.hours,
+        totalHoursAndMinutes.minutes,
+      );
+    }
 
     return earnings;
   }

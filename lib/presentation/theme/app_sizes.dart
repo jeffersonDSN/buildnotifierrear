@@ -23,6 +23,7 @@ class Sizes {
   static const size120 = 120.0;
   static const size124 = 124.0;
   static const size164 = 164.0;
+  static const size180 = 180.0;
   static const size200 = 200.0;
   static const size240 = 240.0;
   static const size300 = 300.0;

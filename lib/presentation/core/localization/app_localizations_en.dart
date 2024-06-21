@@ -178,8 +178,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get updateTask => 'Update task';
 
   @override
+  String get timecards => 'Timecards';
+
+  @override
+  String get totalHours => 'Total hours';
+
+  @override
+  get totalPayroll => 'Total Payroll';
+
+  @override
   String get save => 'Save';
 
   @override
   String get cancel => 'Cancel';
+
+  @override
+  String get end => 'End';
+
+  @override
+  String get started => 'Started';
 }

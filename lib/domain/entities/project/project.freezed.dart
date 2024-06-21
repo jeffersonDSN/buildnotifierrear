@@ -37,7 +37,6 @@ mixin _$Project {
   String get description => throw _privateConstructorUsedError;
   int? get latitude => throw _privateConstructorUsedError;
   int? get longitude => throw _privateConstructorUsedError;
-  List<Task> get tasks => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -66,8 +65,7 @@ abstract class $ProjectCopyWith<$Res> {
       String address2,
       String description,
       int? latitude,
-      int? longitude,
-      List<Task> tasks});
+      int? longitude});
 }
 
 /// @nodoc
@@ -100,7 +98,6 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
     Object? description = null,
     Object? latitude = freezed,
     Object? longitude = freezed,
-    Object? tasks = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -171,10 +168,6 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as int?,
-      tasks: null == tasks
-          ? _value.tasks
-          : tasks // ignore: cast_nullable_to_non_nullable
-              as List<Task>,
     ) as $Val);
   }
 }
@@ -203,8 +196,7 @@ abstract class _$$ProjectImplCopyWith<$Res> implements $ProjectCopyWith<$Res> {
       String address2,
       String description,
       int? latitude,
-      int? longitude,
-      List<Task> tasks});
+      int? longitude});
 }
 
 /// @nodoc
@@ -235,7 +227,6 @@ class __$$ProjectImplCopyWithImpl<$Res>
     Object? description = null,
     Object? latitude = freezed,
     Object? longitude = freezed,
-    Object? tasks = null,
   }) {
     return _then(_$ProjectImpl(
       id: null == id
@@ -306,10 +297,6 @@ class __$$ProjectImplCopyWithImpl<$Res>
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as int?,
-      tasks: null == tasks
-          ? _value._tasks
-          : tasks // ignore: cast_nullable_to_non_nullable
-              as List<Task>,
     ));
   }
 }
@@ -334,9 +321,7 @@ class _$ProjectImpl implements _Project {
       this.address2 = '',
       this.description = '',
       this.latitude,
-      this.longitude,
-      final List<Task> tasks = const []})
-      : _tasks = tasks;
+      this.longitude});
 
   factory _$ProjectImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProjectImplFromJson(json);
@@ -388,18 +373,10 @@ class _$ProjectImpl implements _Project {
   final int? latitude;
   @override
   final int? longitude;
-  final List<Task> _tasks;
-  @override
-  @JsonKey()
-  List<Task> get tasks {
-    if (_tasks is EqualUnmodifiableListView) return _tasks;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tasks);
-  }
 
   @override
   String toString() {
-    return 'Project(id: $id, name: $name, startDate: $startDate, expectedCompletionDate: $expectedCompletionDate, budget: $budget, status: $status, clientId: $clientId, clientFirstname: $clientFirstname, clientLastname: $clientLastname, zipCode: $zipCode, state: $state, city: $city, address: $address, address2: $address2, description: $description, latitude: $latitude, longitude: $longitude, tasks: $tasks)';
+    return 'Project(id: $id, name: $name, startDate: $startDate, expectedCompletionDate: $expectedCompletionDate, budget: $budget, status: $status, clientId: $clientId, clientFirstname: $clientFirstname, clientLastname: $clientLastname, zipCode: $zipCode, state: $state, city: $city, address: $address, address2: $address2, description: $description, latitude: $latitude, longitude: $longitude)';
   }
 
   @override
@@ -432,8 +409,7 @@ class _$ProjectImpl implements _Project {
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
-            const DeepCollectionEquality().equals(other._tasks, _tasks));
+                other.longitude == longitude));
   }
 
   @JsonKey(ignore: true)
@@ -456,8 +432,7 @@ class _$ProjectImpl implements _Project {
       address2,
       description,
       latitude,
-      longitude,
-      const DeepCollectionEquality().hash(_tasks));
+      longitude);
 
   @JsonKey(ignore: true)
   @override
@@ -491,8 +466,7 @@ abstract class _Project implements Project {
       final String address2,
       final String description,
       final int? latitude,
-      final int? longitude,
-      final List<Task> tasks}) = _$ProjectImpl;
+      final int? longitude}) = _$ProjectImpl;
 
   factory _Project.fromJson(Map<String, dynamic> json) = _$ProjectImpl.fromJson;
 
@@ -530,8 +504,6 @@ abstract class _Project implements Project {
   int? get latitude;
   @override
   int? get longitude;
-  @override
-  List<Task> get tasks;
   @override
   @JsonKey(ignore: true)
   _$$ProjectImplCopyWith<_$ProjectImpl> get copyWith =>

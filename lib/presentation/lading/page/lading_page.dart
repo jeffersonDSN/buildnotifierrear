@@ -146,6 +146,27 @@ class LandingPage extends StatelessWidget {
                             },
                           ),
                         ),
+                        Container(
+                          color: bloc.state.asLogged.mod.isModTimeCards
+                              ? AppColor.backgroundColor
+                              : Colors.transparent,
+                          child: ListTile(
+                            iconColor: Colors.white,
+                            textColor: Colors.white,
+                            leading: const Icon(Icons.pending_actions),
+                            title: Text(context.tr.timecards),
+                            selected: bloc.state.asLogged.mod.isModTimeCards,
+                            onTap: () {
+                              bloc.add(
+                                const AppEvent.changeView(
+                                  mod: Mod.timecards(
+                                    type: ViewType.overview(),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
                       ],
                     ),
                   ),

@@ -52,9 +52,11 @@ class ClientsOverviewView extends IView {
               projectsState,
             ) {
               return clients.isEmpty
-                  ? const Center(
-                      child: Text(
-                        'has no client',
+                  ? const Card(
+                      child: Center(
+                        child: Text(
+                          'has no client',
+                        ),
                       ),
                     )
                   : Column(

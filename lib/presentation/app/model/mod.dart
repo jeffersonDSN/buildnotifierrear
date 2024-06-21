@@ -8,6 +8,7 @@ import 'package:buildnotifierrear/presentation/projects/overview/projects_overvi
 import 'package:buildnotifierrear/presentation/schedule/edit/schedule_edit.dart';
 import 'package:buildnotifierrear/presentation/schedule/overview/schedule_overview.dart';
 import 'package:buildnotifierrear/presentation/settings/edit/settings_edit.dart';
+import 'package:buildnotifierrear/presentation/timecards/overview/timecards.dart';
 import 'package:buildnotifierrear/presentation/users/edit/user_edit.dart';
 import 'package:buildnotifierrear/presentation/users/overview/users_overvire.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,10 @@ class Mod with _$Mod {
     required ViewType type,
   }) = ModUsers;
 
+  const factory Mod.timecards({
+    required ViewType type,
+  }) = ModTimecards;
+
   const factory Mod.settings() = ModSettings;
 }
 
@@ -40,12 +45,14 @@ extension OnModel on Mod {
   bool get isModProjects => this is ModProjects;
   bool get isModClients => this is ModClients;
   bool get isModUsers => this is ModUsers;
+  bool get isModTimeCards => this is ModTimecards;
 
   ModHome get asModHome => this as ModHome;
   ModSchedule get asModSchedule => this as ModSchedule;
   ModProjects get asModProjects => this as ModProjects;
   ModClients get asModClients => this as ModClients;
   ModUsers get asModUsers => this as ModUsers;
+  ModTimecards get asModtimecards => this as ModTimecards;
 
   Widget view() {
     return when(
@@ -69,6 +76,11 @@ extension OnModel on Mod {
         overview: () => const UsersOverview(),
         create: () => const UserEdit(),
         update: (id) => UserEdit(type: CrudType.update(id: id)),
+      ),
+      timecards: (viewType) => viewType.when(
+        overview: () => const Timecards(),
+        create: () => const Timecards(),
+        update: (id) => const Timecards(),
       ),
       settings: () => const SettingsEdit(),
     );

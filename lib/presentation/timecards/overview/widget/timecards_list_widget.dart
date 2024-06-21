@@ -1,3 +1,4 @@
+import 'package:buildnotifierrear/domain/core/time_utils.dart';
 import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
@@ -6,17 +7,16 @@ import 'package:intl/intl.dart';
 
 class TimecardsListWidget extends StatelessWidget {
   final List<DailyTotal> timecards;
-  final ValueChanged<DateTime> onOpenDetails;
+  final ValueChanged<DateTime>? onOpenDetails;
 
   final DateFormat dayFormat = DateFormat("EEEE");
   final DateFormat dateFormat = DateFormat("MMM dd");
   final DateFormat hourFormat = DateFormat.jm();
-  final NumberFormat numberFormat = NumberFormat('00');
 
   TimecardsListWidget({
     super.key,
     required this.timecards,
-    required this.onOpenDetails,
+    this.onOpenDetails,
   });
 
   @override
@@ -43,26 +43,31 @@ class TimecardsListWidget extends StatelessWidget {
                   trailing: SizedBox(
                     width: Sizes.size112,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text(
-                          '${numberFormat.format(timecard.hours)}:${numberFormat.format(
-                            timecard.minutes,
-                          )}',
+                          formatTime(timecard.hours, timecard.minutes),
+                          textAlign: TextAlign.end,
                           style: const TextStyle(
                             fontSize: Sizes.size20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        IconButton(
-                          icon: const Icon(
-                            Icons.work_history_outlined,
-                            color: AppColor.primaryColorSwatch,
-                          ),
-                          onPressed: () {
-                            onOpenDetails.call(timecard.day);
-                          },
-                        )
+                        if (onOpenDetails != null)
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              left: Sizes.size8,
+                            ),
+                            child: IconButton(
+                              icon: const Icon(
+                                Icons.work_history_outlined,
+                                color: AppColor.primaryColorSwatch,
+                              ),
+                              onPressed: () {
+                                onOpenDetails?.call(timecard.day);
+                              },
+                            ),
+                          )
                       ],
                     ),
                   ),

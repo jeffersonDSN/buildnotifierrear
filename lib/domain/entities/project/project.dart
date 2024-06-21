@@ -1,4 +1,3 @@
-import 'package:buildnotifierrear/domain/entities/task/task.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'project.freezed.dart';
@@ -24,7 +23,6 @@ class Project with _$Project {
     @Default('') String description,
     int? latitude,
     int? longitude,
-    @Default([]) List<Task> tasks,
   }) = _Project;
 
   factory Project.fromJson(Map<String, Object?> json) =>

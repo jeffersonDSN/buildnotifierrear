@@ -28,7 +28,7 @@ class BaseScaffold extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           const Divider(),
-          gapHeight16,
+          gapHeight8,
           Expanded(
             child: child,
           ),

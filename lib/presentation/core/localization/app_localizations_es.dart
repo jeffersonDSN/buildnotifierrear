@@ -231,4 +231,24 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   // TODO: implement updateTask
   String get updateTask => throw UnimplementedError();
+
+  @override
+  // TODO: implement timecard
+  String get timecards => throw UnimplementedError();
+
+  @override
+  // TODO: implement totalPayroll
+  String get totalPayroll => throw UnimplementedError();
+
+  @override
+  // TODO: implement totalHours
+  String get totalHours => throw UnimplementedError();
+
+  @override
+  // TODO: implement started
+  String get started => throw UnimplementedError();
+
+  @override
+  // TODO: implement end
+  String get end => throw UnimplementedError();
 }

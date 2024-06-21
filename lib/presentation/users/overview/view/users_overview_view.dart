@@ -1,10 +1,12 @@
 import 'package:buildnotifierrear/domain/entities/core/dependent_state_type.dart';
+import 'package:buildnotifierrear/domain/entities/period/period.dart';
 import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
 import 'package:buildnotifierrear/domain/entities/user/user.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
+import 'package:buildnotifierrear/presentation/core/widget/base_dropdown_button_field.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
 import 'package:buildnotifierrear/presentation/schedule/overview/widget/schedule_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
@@ -14,12 +16,14 @@ import 'package:buildnotifierrear/presentation/timecards/overview/widget/timecar
 import 'package:buildnotifierrear/presentation/users/overview/bloc/users_overview_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 class UsersOverviewView extends IView {
   const UsersOverviewView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final DateFormat dateFormat = DateFormat.yMd();
     var bloc = BlocProvider.of<UsersOverviewBloc>(context);
 
     bloc.add(const UsersOverviewEvent.load());
@@ -218,38 +222,63 @@ class UsersOverviewView extends IView {
                                         children: [
                                           timecardsState.maybeWhen(
                                             orElse: () {
-                                              return TimecardsOverviewWidget(
-                                                selectedPeriod: selectedPeriod,
-                                                periods: periods,
-                                                timecards:
-                                                    timecardsOfselectedUser,
-                                                isLoading:
-                                                    timecardsState.isLoading,
-                                                onChangePeriod: (value) {
-                                                  bloc.add(
-                                                    UsersOverviewEvent
-                                                        .changeSelectedPeriod(
-                                                      selectedPeriod: value,
-                                                    ),
-                                                  );
-                                                },
-                                                onOpenDetails: (value) {
-                                                  bloc.add(
-                                                    UsersOverviewEvent
-                                                        .updateTimecardState(
-                                                      timecardsState:
-                                                          DependenteStateType
-                                                              .reading(
-                                                        value: value,
+                                              return Column(
+                                                children: [
+                                                  BaseDropdownButtonField<
+                                                      Period>(
+                                                    label: 'Select period',
+                                                    value: selectedPeriod,
+                                                    items:
+                                                        periods.map((period) {
+                                                      return DropdownItem(
+                                                        value: period,
+                                                        title:
+                                                            '${period.name}: ${dateFormat.format(period.startDate)} - ${dateFormat.format(period.endDate)} ',
+                                                      );
+                                                    }).toList(),
+                                                    onChanged: (value) {
+                                                      if (value != null) {
+                                                        bloc.add(
+                                                          UsersOverviewEvent
+                                                              .changeSelectedPeriod(
+                                                            selectedPeriod:
+                                                                value,
+                                                          ),
+                                                        );
+                                                      }
+                                                    },
+                                                  ),
+                                                  Expanded(
+                                                    child:
+                                                        TimecardsOverviewWidget(
+                                                      selectedPeriod:
+                                                          selectedPeriod,
+                                                      timecards:
+                                                          timecardsOfselectedUser,
+                                                      isLoading: timecardsState
+                                                          .isLoading,
+                                                      onOpenDetails: (value) {
+                                                        bloc.add(
+                                                          UsersOverviewEvent
+                                                              .updateTimecardState(
+                                                            timecardsState:
+                                                                DependenteStateType
+                                                                    .reading(
+                                                              value: value,
+                                                            ),
+                                                          ),
+                                                        );
+                                                      },
+                                                      getGrossPay:
+                                                          (hours, minutes) =>
+                                                              selectedUser!
+                                                                  .getGrossPay(
+                                                        hours,
+                                                        minutes,
                                                       ),
                                                     ),
-                                                  );
-                                                },
-                                                getGrossPay: (hours, minutes) =>
-                                                    selectedUser!.getGrossPay(
-                                                  hours,
-                                                  minutes,
-                                                ),
+                                                  ),
+                                                ],
                                               );
                                             },
                                             reading: (value) {

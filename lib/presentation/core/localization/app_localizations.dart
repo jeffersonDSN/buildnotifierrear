@@ -150,6 +150,16 @@ abstract class AppLocalizations {
 
   String get updateTask;
 
+  String get timecards;
+
+  String get totalHours;
+
+  String get totalPayroll;
+
+  String get started;
+
+  String get end;
+
   String get save;
 
   String get cancel;

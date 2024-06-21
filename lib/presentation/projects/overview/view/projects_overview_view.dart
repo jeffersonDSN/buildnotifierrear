@@ -48,8 +48,10 @@ class ProjectsOverviewView extends IView {
         builder: (context, state) {
           return state.when(
             empty: () => Container(),
-            loading: () => const Center(
-              child: CircularProgressIndicator(),
+            loading: () => const Card(
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
             ),
             loaded: (
               projects,
@@ -62,9 +64,11 @@ class ProjectsOverviewView extends IView {
               appoitmentCardsState,
             ) {
               return projects.isEmpty
-                  ? const Center(
-                      child: Text(
-                        'has no project',
+                  ? const Card(
+                      child: Center(
+                        child: Text(
+                          'has no project',
+                        ),
                       ),
                     )
                   : Column(

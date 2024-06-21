@@ -12,4 +12,8 @@ class UsersController extends CRUDController<User> {
   Future<User?> getUserByUserNamePassword(String userName, String password) {
     return _repository.getUserByUserNamePassword(userName, password);
   }
+
+  Future<List<User>> getUsersByID(List<String> ids) {
+    return _repository.getUsersByID(ids);
+  }
 }
