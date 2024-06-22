@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:buildnotifierrear/domain/core/time_utils.dart';
 import 'package:buildnotifierrear/domain/entities/activity/activity.dart';
 import 'package:buildnotifierrear/domain/entities/period/period.dart';
@@ -26,6 +28,16 @@ class TimecardsOverviewView extends IView {
 
     bloc.add(const TimecardsOverviewEvent.load(employeeId: ''));
 
+    Color _generateRandomColor() {
+      final Random random = Random();
+      return Color.fromARGB(
+        255,
+        random.nextInt(256), // Red
+        random.nextInt(256), // Green
+        random.nextInt(256), // Blue
+      );
+    }
+
     BarChartGroupData makeGroupData(
       int x,
       double y,
@@ -35,11 +47,9 @@ class TimecardsOverviewView extends IView {
         barRods: [
           BarChartRodData(
             toY: y,
-            color: x >= 4 ? Colors.transparent : Colors.red,
+            color: _generateRandomColor(),
             borderRadius: BorderRadius.zero,
-            borderDashArray: x >= 4 ? [4, 4] : null,
-            width: 5,
-            borderSide: BorderSide(color: Colors.red, width: 2.0),
+            width: Sizes.size8,
           ),
         ],
       );
@@ -67,7 +77,7 @@ class TimecardsOverviewView extends IView {
             children: [
               if (!state.isEmpty)
                 BaseDropdownButtonField<Period>(
-                  label: 'Select period',
+                  label: context.tr.selectPeriod,
                   value: selectedPeriod,
                   items: periods.map((period) {
                     return DropdownItem(
@@ -87,52 +97,50 @@ class TimecardsOverviewView extends IView {
                   },
                 ),
               if (!state.isEmpty)
-                Padding(
-                  padding: const EdgeInsets.only(top: Sizes.size16),
-                  child: Row(
-                    children: [
-                      Card(
-                        child: SizedBox(
-                          width: Sizes.size300,
-                          height: Sizes.size180,
-                          child: Padding(
-                            padding: const EdgeInsets.all(Sizes.size16),
-                            child: () {
-                              var isLoaded = state.isLoaded;
+                () {
+                  var isLoaded = state.isLoaded;
 
-                              ({int hours, int minutes})? totalHoursProject;
-                              ({int hours, int minutes})? totalHours;
+                  List<Activity> activities = [];
+                  ({int hours, int minutes})? totalHoursProject;
+                  ({int hours, int minutes})? totalHours;
 
-                              if (isLoaded) {
-                                var asLoaded = state.asLoaded;
-                                totalHoursProject =
-                                    asLoaded.activities.totalHoursAndMinutes;
+                  if (isLoaded) {
+                    var asLoaded = state.asLoaded;
+                    activities = asLoaded.activities;
+                    totalHoursProject = activities.totalHoursAndMinutes;
 
-                                totalHours =
-                                    asLoaded.timeCards.totalHoursAndMinutes;
+                    totalHours = asLoaded.timeCards.totalHoursAndMinutes;
 
-                                int remainingHours =
-                                    totalHours.hours - totalHoursProject.hours;
-                                int remainingMinutes = totalHours.minutes -
-                                    totalHoursProject.minutes;
+                    int remainingHours =
+                        totalHours.hours - totalHoursProject.hours;
+                    int remainingMinutes =
+                        totalHours.minutes - totalHoursProject.minutes;
 
-                                if (remainingMinutes < 0) {
-                                  remainingHours -= 1;
-                                  remainingMinutes += 60;
-                                }
+                    if (remainingMinutes < 0) {
+                      remainingHours -= 1;
+                      remainingMinutes += 60;
+                    }
 
-                                totalHours = (
-                                  hours: remainingHours,
-                                  minutes: remainingMinutes
-                                );
-                              }
+                    totalHours =
+                        (hours: remainingHours, minutes: remainingMinutes);
+                  }
 
-                              return Column(
+                  return Padding(
+                    padding: const EdgeInsets.only(top: Sizes.size16),
+                    child: Row(
+                      children: [
+                        Card(
+                          child: SizedBox(
+                            width: Sizes.size300,
+                            height: Sizes.size180,
+                            child: Padding(
+                              padding: const EdgeInsets.all(Sizes.size16),
+                              child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  const Text(
-                                    'Allocation of hours in a project',
-                                    style: TextStyle(
+                                  Text(
+                                    context.tr.allocationHoursProject,
+                                    style: const TextStyle(
                                       fontSize: Sizes.size16,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -184,7 +192,7 @@ class TimecardsOverviewView extends IView {
                                       ),
                                       gapWidth8,
                                       Text(
-                                        'Hours assigned to a project ${isLoaded ? formatTime(totalHoursProject!.hours, totalHoursProject.minutes) : ''}',
+                                        '${context.tr.hoursAssignedProject} ${isLoaded ? formatTime(totalHoursProject!.hours, totalHoursProject.minutes) : ''}',
                                       ),
                                     ],
                                   ),
@@ -197,144 +205,182 @@ class TimecardsOverviewView extends IView {
                                       ),
                                       gapWidth8,
                                       Text(
-                                        'Hours not assigned to a project ${isLoaded ? formatTime(totalHours!.hours, totalHours.minutes) : ''}',
+                                        '${context.tr.hoursNotAssignedProject} ${isLoaded ? formatTime(totalHours!.hours, totalHours.minutes) : ''}',
                                       )
                                     ],
                                   ),
                                 ],
-                              );
-                            }(),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                      // gapWidth8,
-                      // Card(
-                      //   child: SizedBox(
-                      //     width: Sizes.size300,
-                      //     height: Sizes.size180,
-                      //     child: Padding(
-                      //       padding: const EdgeInsets.all(Sizes.size8),
-                      //       child: Column(
-                      //         crossAxisAlignment: CrossAxisAlignment.center,
-                      //         children: [
-                      //           const Text(
-                      //             'Task status',
-                      //             style: TextStyle(
-                      //               fontSize: Sizes.size16,
-                      //               fontWeight: FontWeight.bold,
-                      //             ),
-                      //           ),
-                      //           gapHeight16,
-                      //           Expanded(
-                      //             child: BarChart(
-                      //               BarChartData(
-                      //                 maxY: 300.0,
-                      //                 barTouchData: BarTouchData(
-                      //                   enabled: false,
-                      //                 ),
-                      //                 titlesData: const FlTitlesData(
-                      //                   show: true,
-                      //                   bottomTitles: AxisTitles(
-                      //                     sideTitles: SideTitles(
-                      //                       showTitles: false,
-                      //                     ),
-                      //                   ),
-                      //                   leftTitles: AxisTitles(
-                      //                     sideTitles: SideTitles(
-                      //                       showTitles: false,
-                      //                     ),
-                      //                   ),
-                      //                   topTitles: AxisTitles(
-                      //                     sideTitles: SideTitles(
-                      //                       showTitles: false,
-                      //                     ),
-                      //                   ),
-                      //                   rightTitles: AxisTitles(
-                      //                     sideTitles: SideTitles(
-                      //                       showTitles: false,
-                      //                     ),
-                      //                   ),
-                      //                 ),
-                      //                 borderData: FlBorderData(
-                      //                   show: false,
-                      //                 ),
-                      //                 barGroups: List.generate(
-                      //                   25,
-                      //                   (i) => makeGroupData(
-                      //                     i,
-                      //                     Random().nextInt(290).toDouble() + 50,
-                      //                   ),
-                      //                 ),
-                      //                 gridData: const FlGridData(show: false),
-                      //               ),
-                      //             ),
-                      //           ),
-                      //         ],
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                      // gapWidth8,
-                      // Card(
-                      //   child: SizedBox(
-                      //     width: 200,
-                      //     height: 125,
-                      //     child: Padding(
-                      //       padding: const EdgeInsets.all(Sizes.size8),
-                      //       child: Column(
-                      //         crossAxisAlignment: CrossAxisAlignment.center,
-                      //         children: [
-                      //           const Text(
-                      //             'Description',
-                      //             style: TextStyle(
-                      //               fontSize: Sizes.size16,
-                      //               fontWeight: FontWeight.bold,
-                      //             ),
-                      //           ),
-                      //           gapHeight8,
-                      //           Row(
-                      //             children: [
-                      //               Container(
-                      //                 color: AppColor.green,
-                      //                 width: 10,
-                      //                 height: 10,
-                      //               ),
-                      //               gapWidth8,
-                      //               const Text('On Track')
-                      //             ],
-                      //           ),
-                      //           gapHeight8,
-                      //           Row(
-                      //             children: [
-                      //               Container(
-                      //                 color: AppColor.warning,
-                      //                 width: 10,
-                      //                 height: 10,
-                      //               ),
-                      //               gapWidth8,
-                      //               const Text('At Risk of Delay')
-                      //             ],
-                      //           ),
-                      //           gapHeight8,
-                      //           Row(
-                      //             children: [
-                      //               Container(
-                      //                 color: AppColor.red,
-                      //                 width: 10,
-                      //                 height: 10,
-                      //               ),
-                      //               gapWidth8,
-                      //               const Text('Delayed')
-                      //             ],
-                      //           ),
-                      //         ],
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                    ],
-                  ),
-                ),
+                        // gapWidth8,
+                        // Card(
+                        //   child: SizedBox(
+                        //     width: Sizes.size300,
+                        //     height: Sizes.size180,
+                        //     child: Padding(
+                        //       padding: const EdgeInsets.all(Sizes.size8),
+                        //       child: Column(
+                        //         crossAxisAlignment: CrossAxisAlignment.center,
+                        //         children: [
+                        //           const Text(
+                        //             'Task status',
+                        //             style: TextStyle(
+                        //               fontSize: Sizes.size16,
+                        //               fontWeight: FontWeight.bold,
+                        //             ),
+                        //           ),
+                        //           gapHeight16,
+                        //           Expanded(
+                        //             child: BarChart(
+                        //               BarChartData(
+                        //                 maxY: 300.0,
+                        //                 barTouchData: BarTouchData(
+                        //                   enabled: false,
+                        //                 ),
+                        //                 titlesData: const FlTitlesData(
+                        //                   show: true,
+                        //                   bottomTitles: AxisTitles(
+                        //                     sideTitles: SideTitles(
+                        //                       showTitles: false,
+                        //                     ),
+                        //                   ),
+                        //                   leftTitles: AxisTitles(
+                        //                     sideTitles: SideTitles(
+                        //                       showTitles: false,
+                        //                     ),
+                        //                   ),
+                        //                   topTitles: AxisTitles(
+                        //                     sideTitles: SideTitles(
+                        //                       showTitles: false,
+                        //                     ),
+                        //                   ),
+                        //                   rightTitles: AxisTitles(
+                        //                     sideTitles: SideTitles(
+                        //                       showTitles: false,
+                        //                     ),
+                        //                   ),
+                        //                 ),
+                        //                 borderData: FlBorderData(
+                        //                   show: false,
+                        //                 ),
+                        //                 barGroups: [
+                        //                   BarChartGroupData(
+                        //                     x: 1,
+                        //                     barRods: [
+                        //                       BarChartRodData(
+                        //                         toY: 8,
+                        //                         color:
+                        //                             AppColor.primaryColorSwatch,
+                        //                         borderRadius: BorderRadius.zero,
+                        //                         width: Sizes.size8,
+                        //                       ),
+                        //                     ],
+                        //                   ),
+                        //                   BarChartGroupData(
+                        //                     x: 2,
+                        //                     barRods: [
+                        //                       BarChartRodData(
+                        //                         toY: 21,
+                        //                         color: AppColor.warning,
+                        //                         borderRadius: BorderRadius.zero,
+                        //                         width: Sizes.size8,
+                        //                       ),
+                        //                     ],
+                        //                   ),
+                        //                   BarChartGroupData(
+                        //                     x: 3,
+                        //                     barRods: [
+                        //                       BarChartRodData(
+                        //                         toY: 8,
+                        //                         color: AppColor.green,
+                        //                         borderRadius: BorderRadius.zero,
+                        //                         width: Sizes.size8,
+                        //                       ),
+                        //                     ],
+                        //                   ),
+                        //                 ],
+
+                        //                 // List.generate(
+                        //                 //   25,
+                        //                 //   (i) => makeGroupData(
+                        //                 //     i,
+                        //                 //     Random().nextInt(290).toDouble() +
+                        //                 //         50,
+                        //                 //   ),
+                        //                 // ),
+                        //                 gridData: const FlGridData(show: false),
+                        //               ),
+                        //             ),
+                        //           ),
+                        //         ],
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
+                        // gapWidth8,
+                        // Card(
+                        //   child: SizedBox(
+                        //     width: 200,
+                        //     height: 125,
+                        //     child: Padding(
+                        //       padding: const EdgeInsets.all(Sizes.size8),
+                        //       child: Column(
+                        //         crossAxisAlignment: CrossAxisAlignment.center,
+                        //         children: [
+                        //           const Text(
+                        //             'Description',
+                        //             style: TextStyle(
+                        //               fontSize: Sizes.size16,
+                        //               fontWeight: FontWeight.bold,
+                        //             ),
+                        //           ),
+                        //           gapHeight8,
+                        //           Row(
+                        //             children: [
+                        //               Container(
+                        //                 color: AppColor.green,
+                        //                 width: 10,
+                        //                 height: 10,
+                        //               ),
+                        //               gapWidth8,
+                        //               const Text('On Track')
+                        //             ],
+                        //           ),
+                        //           gapHeight8,
+                        //           Row(
+                        //             children: [
+                        //               Container(
+                        //                 color: AppColor.warning,
+                        //                 width: 10,
+                        //                 height: 10,
+                        //               ),
+                        //               gapWidth8,
+                        //               const Text('At Risk of Delay')
+                        //             ],
+                        //           ),
+                        //           gapHeight8,
+                        //           Row(
+                        //             children: [
+                        //               Container(
+                        //                 color: AppColor.red,
+                        //                 width: 10,
+                        //                 height: 10,
+                        //               ),
+                        //               gapWidth8,
+                        //               const Text('Delayed')
+                        //             ],
+                        //           ),
+                        //         ],
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
+                      ],
+                    ),
+                  );
+                }(),
               Expanded(
                 child: state.when(
                   empty: () => Container(),

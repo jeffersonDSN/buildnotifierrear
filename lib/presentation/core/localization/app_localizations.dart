@@ -160,6 +160,14 @@ abstract class AppLocalizations {
 
   String get end;
 
+  String get selectPeriod;
+
+  String get allocationHoursProject;
+
+  String get hoursAssignedProject;
+
+  String get hoursNotAssignedProject;
+
   String get save;
 
   String get cancel;

@@ -193,6 +193,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get cancel => 'Cancel';
 
   @override
+  String get selectPeriod => 'Select period';
+
+  @override
+  String get allocationHoursProject => 'Allocation of hours in a project';
+
+  @override
+  String get hoursAssignedProject => 'Hours assigned to a project';
+
+  @override
+  String get hoursNotAssignedProject => 'Hours not assigned to a project';
+
+  @override
   String get end => 'End';
 
   @override

@@ -57,6 +57,28 @@ extension OnListActivity on List<Activity> {
     return (hours: hours, minutes: minutes);
   }
 
+  Map<String, ({int hours, int minutes})> get totalHoursByProject {
+    Map<String, int> projectMinutes = {};
+
+    forEach((activity) {
+      if (activity.end != null) {
+        int minutes = activity.end!.difference(activity.start).inMinutes;
+        if (projectMinutes.containsKey(activity.projectId)) {
+          projectMinutes[activity.projectId] =
+              projectMinutes[activity.projectId]! + minutes;
+        } else {
+          projectMinutes[activity.projectId] = minutes;
+        }
+      }
+    });
+
+    return projectMinutes.map((projectId, totalMinutes) {
+      int hours = totalMinutes ~/ 60;
+      int minutes = totalMinutes % 60;
+      return MapEntry(projectId, (hours: hours, minutes: minutes));
+    });
+  }
+
   List<DailyTotal> get dailyTotal {
     List<DailyTotal> result = [];
 

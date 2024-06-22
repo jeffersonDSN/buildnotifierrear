@@ -31,14 +31,18 @@ class AppointmentsGeneralListdWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                width: Sizes.size600,
+                width: Sizes.size400,
                 child: Row(
                   children: [
                     Text(
                       '${hourFormat.format(appointment.startDateTime)} - ${hourFormat.format(appointment.endDateTime)}',
                     ),
                     gapWidth24,
-                    Text(appointment.title),
+                    Text(
+                      appointment.title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ],
                 ),
               ),
@@ -47,6 +51,8 @@ class AppointmentsGeneralListdWidget extends StatelessWidget {
                   children: [
                     const Text(
                       'Project:',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         color: AppColor.primaryColorSwatch,
                       ),
@@ -71,6 +77,8 @@ class AppointmentsGeneralListdWidget extends StatelessWidget {
                     ),
                     gapWidth4,
                     Text(
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       appointment.taskName.isNotEmpty
                           ? appointment.taskName
                           : 'N/A',
@@ -93,12 +101,14 @@ class AppointmentsGeneralListdWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                width: Sizes.size600,
+                width: Sizes.size400,
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     const Text(
                       'Assign to:',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         color: AppColor.primaryColorSwatch,
                       ),
@@ -122,6 +132,7 @@ class AppointmentsGeneralListdWidget extends StatelessWidget {
                 ),
               ),
               Expanded(
+                flex: 2,
                 child: Row(
                   children: [
                     const Icon(

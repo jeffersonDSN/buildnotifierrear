@@ -251,4 +251,20 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   // TODO: implement end
   String get end => throw UnimplementedError();
+
+  @override
+  // TODO: implement selectPeriod
+  String get selectPeriod => throw UnimplementedError();
+
+  @override
+  // TODO: implement allocationHoursProject
+  String get allocationHoursProject => throw UnimplementedError();
+
+  @override
+  // TODO: implement hoursAssignedProject
+  String get hoursAssignedProject => throw UnimplementedError();
+
+  @override
+  // TODO: implement hoursNotAssignedProject
+  String get hoursNotAssignedProject => throw UnimplementedError();
 }
