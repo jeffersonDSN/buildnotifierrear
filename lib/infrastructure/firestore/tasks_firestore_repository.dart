@@ -148,11 +148,11 @@ class TasksFirestoreRepository extends TenantFireStoreRepository
       case 'en':
         final response = await Future.wait([
           model.generateContent([
-            Content.text('Translated to pt, without including details'),
+            Content.text('Translated to pt'),
             Content.text(notes),
           ]),
           model.generateContent([
-            Content.text('Translated to es, without including details'),
+            Content.text('Translated to es'),
             Content.text(notes),
           ]),
         ]);
@@ -168,11 +168,11 @@ class TasksFirestoreRepository extends TenantFireStoreRepository
       case 'es':
         final response = await Future.wait([
           model.generateContent([
-            Content.text('Translated to en, without including details'),
+            Content.text('Translated to en'),
             Content.text(notes),
           ]),
           model.generateContent([
-            Content.text('Translated to pt, without including details'),
+            Content.text('Translated to pt'),
             Content.text(notes),
           ]),
         ]);
@@ -188,11 +188,11 @@ class TasksFirestoreRepository extends TenantFireStoreRepository
       case 'pt':
         final response = await Future.wait([
           model.generateContent([
-            Content.text('Translated to en, without including details'),
+            Content.text('Translated to en'),
             Content.text(notes),
           ]),
           model.generateContent([
-            Content.text('Translated to es, without including details'),
+            Content.text('Translated to es'),
             Content.text(notes),
           ]),
         ]);

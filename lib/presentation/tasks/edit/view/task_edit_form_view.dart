@@ -236,7 +236,7 @@ class TaskEditFormView extends StatelessWidget {
                     BaseTextFormField(
                       key: Key('notes-${context.languageCode}'),
                       label: context.tr.notes,
-                      maxLines: 2,
+                      maxLines: 5,
                       initialValue: task.notesList[context.languageCode],
                       onChanged: (value) {
                         bloc.add(
@@ -286,8 +286,9 @@ class TaskEditFormView extends StatelessWidget {
                         ),
                       ],
                     ),
+                    gapHeight8,
                     SizedBox(
-                      height: Sizes.size180,
+                      height: Sizes.size152,
                       child: ListView.builder(
                         itemCount: task.assignTo.length,
                         itemBuilder: (context, index) {
