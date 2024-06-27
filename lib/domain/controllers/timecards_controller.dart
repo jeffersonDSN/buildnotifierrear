@@ -11,15 +11,11 @@ class TimecardsController extends CRUDController<Timecard> {
   })  : _repository = repository,
         super(repository: repository);
 
-  Future<List<Timecard>> getAllByUserId(String userId) {
-    return _repository.getAllByUserId(userId);
-  }
-
-  Future<List<Timecard>> getAllOfByUserAndPeriod(
+  Future<List<Timecard>> getAllOfByEmployeeAndPeriod(
     String userId,
     Period period,
   ) async {
-    return _repository.getAllOfByUserAndPeriod(
+    return _repository.getAllOfByEmployeeAndPeriod(
       userId,
       period.startDate,
       period.endDate,

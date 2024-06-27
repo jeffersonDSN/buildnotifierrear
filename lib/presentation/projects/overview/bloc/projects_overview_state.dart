@@ -6,13 +6,6 @@ class ProjectsOverviewState with _$ProjectsOverviewState {
   const factory ProjectsOverviewState.loading() = ProjectsOverviewEventLoading;
   const factory ProjectsOverviewState.loaded({
     required List<Project> projects,
-    Project? selectedProject,
-    required List<Task> tasksOfprojectSelected,
-    Task? taskSelected,
-    required DependenteStateType tasksState,
-    required DateTime selectedDay,
-    required List<Appointment> appoitmentOfSelecedDay,
-    required DependenteStateType appoitmentCardsState,
   }) = ProjectsOverviewEventLoaded;
 }
 

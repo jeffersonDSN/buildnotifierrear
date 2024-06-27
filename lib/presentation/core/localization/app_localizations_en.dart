@@ -2,10 +2,13 @@ import 'app_localizations.dart';
 
 /// The translations for English (`en`).
 class AppLocalizationsEn extends AppLocalizations {
-  AppLocalizationsEn([String locale = 'en']) : super(locale);
+  AppLocalizationsEn([super.locale = 'en']);
 
   @override
   String get text => 'Text';
+
+  @override
+  String get selectLanguage => 'Select your language';
 
   @override
   String get english => 'English';
@@ -29,13 +32,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get schedule => 'Schedule';
 
   @override
+  String get project => 'Project';
+
+  @override
   String get projects => 'Projects';
 
   @override
   String get clients => 'Clients';
 
   @override
-  String get users => 'Users';
+  String get employees => 'Employees';
 
   @override
   String get settings => 'Settings';
@@ -88,7 +94,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get companyName => 'Company name';
 
   @override
-  String get email => 'Email';
+  String get email => 'E-mail';
 
   @override
   String get phoneNumber => 'Phone number';
@@ -205,8 +211,95 @@ class AppLocalizationsEn extends AppLocalizations {
   String get hoursNotAssignedProject => 'Hours not assigned to a project';
 
   @override
+  String get action => 'Action';
+
+  @override
+  String get tasks => 'Tasks';
+
+  @override
+  String get notes => 'Notes';
+
+  @override
+  String get assignTo => 'Assign to';
+
+  @override
+  String get addEmployee => 'Add a employee';
+
+  @override
   String get end => 'End';
 
   @override
+  String get close => 'Close';
+
+  @override
   String get started => 'Started';
+
+  @override
+  String get newClient => 'New client';
+
+  @override
+  String get editClient => 'Edit client';
+
+  @override
+  String get hasNoTask => 'Has no task';
+
+  @override
+  String get hasNoClient => 'Has no client';
+
+  @override
+  String get middleName => 'Middle name';
+
+  @override
+  String get newEmployee => 'New employee';
+
+  @override
+  String get department => 'Department';
+
+  @override
+  String get position => 'Position';
+
+  @override
+  String get editEmployee => 'Edit employee';
+
+  @override
+  String get account => 'Account';
+
+  @override
+  String get hourlyRate => 'Hourly rate';
+
+  @override
+  String get employee => 'Employee';
+
+  @override
+  String get planning => 'Planning';
+
+  @override
+  String get planned => 'Planned';
+
+  @override
+  String get inProgress => 'In Progress';
+
+  @override
+  String get blocked => 'Blocked';
+
+  @override
+  String get concluded => 'Concluded';
+
+  @override
+  String get low => 'Low';
+
+  @override
+  String get medium => 'Medium';
+
+  @override
+  String get high => 'High';
+
+  @override
+  String get toDo => 'To do';
+
+  @override
+  String get doing => 'Doing';
+
+  @override
+  String get done => 'Done';
 }

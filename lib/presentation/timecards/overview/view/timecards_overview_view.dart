@@ -1,10 +1,8 @@
-import 'dart:math';
-
 import 'package:buildnotifierrear/domain/core/time_utils.dart';
 import 'package:buildnotifierrear/domain/entities/activity/activity.dart';
 import 'package:buildnotifierrear/domain/entities/period/period.dart';
 import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
-import 'package:buildnotifierrear/domain/entities/user/user.dart';
+import 'package:buildnotifierrear/domain/entities/employee/employee.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_dropdown_button_field.dart';
@@ -28,32 +26,32 @@ class TimecardsOverviewView extends IView {
 
     bloc.add(const TimecardsOverviewEvent.load(employeeId: ''));
 
-    Color _generateRandomColor() {
-      final Random random = Random();
-      return Color.fromARGB(
-        255,
-        random.nextInt(256), // Red
-        random.nextInt(256), // Green
-        random.nextInt(256), // Blue
-      );
-    }
+    // Color _generateRandomColor() {
+    //   final Random random = Random();
+    //   return Color.fromARGB(
+    //     255,
+    //     random.nextInt(256), // Red
+    //     random.nextInt(256), // Green
+    //     random.nextInt(256), // Blue
+    //   );
+    // }
 
-    BarChartGroupData makeGroupData(
-      int x,
-      double y,
-    ) {
-      return BarChartGroupData(
-        x: x,
-        barRods: [
-          BarChartRodData(
-            toY: y,
-            color: _generateRandomColor(),
-            borderRadius: BorderRadius.zero,
-            width: Sizes.size8,
-          ),
-        ],
-      );
-    }
+    // BarChartGroupData makeGroupData(
+    //   int x,
+    //   double y,
+    // ) {
+    //   return BarChartGroupData(
+    //     x: x,
+    //     barRods: [
+    //       BarChartRodData(
+    //         toY: y,
+    //         color: _generateRandomColor(),
+    //         borderRadius: BorderRadius.zero,
+    //         width: Sizes.size8,
+    //       ),
+    //     ],
+    //   );
+    // }
 
     return BaseScaffold(
       title: context.tr.timecards,

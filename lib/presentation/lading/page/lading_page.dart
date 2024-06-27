@@ -34,13 +34,87 @@ class LandingPage extends StatelessWidget {
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  gapWidth4,
                   Image.asset(
                     '$assetImage$logo2',
                     height: 48,
                   ),
-                  gapHeight32,
+                  gapHeight16,
+                  const Divider(),
+                  Padding(
+                    padding: const EdgeInsets.all(Sizes.size4),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            const CircleAvatar(),
+                            gapWidth8,
+                            Text(
+                              bloc.state.asLogged.user.firstName,
+                              style: const TextStyle(
+                                color: AppColor.lightColor,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              context.tr.selectLanguage,
+                              style: const TextStyle(
+                                color: AppColor.lightColor,
+                              ),
+                            ),
+                            PopupMenuButton(
+                              tooltip: '',
+                              icon: const Icon(
+                                Icons.keyboard_arrow_down,
+                                color: AppColor.lightColor,
+                              ),
+                              itemBuilder: (context) => [
+                                PopupMenuItem(
+                                  child: Text(context.tr.english),
+                                  onTap: () {
+                                    bloc.add(
+                                      AppEvent.changeLanguage(
+                                        locale: Locale('en'),
+                                      ),
+                                    );
+                                  },
+                                ),
+                                PopupMenuItem(
+                                  child: Text(context.tr.portuguese),
+                                  onTap: () {
+                                    bloc.add(
+                                      AppEvent.changeLanguage(
+                                        locale: Locale('pt'),
+                                      ),
+                                    );
+                                  },
+                                ),
+                                PopupMenuItem(
+                                  child: Text(context.tr.spanish),
+                                  onTap: () {
+                                    bloc.add(
+                                      AppEvent.changeLanguage(
+                                        locale: Locale('es'),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Divider(),
                   Expanded(
+                    flex: 2,
                     child: ListView(
                       children: [
                         Container(
@@ -105,6 +179,27 @@ class LandingPage extends StatelessWidget {
                           ),
                         ),
                         Container(
+                          color: bloc.state.asLogged.mod.isModTasks
+                              ? AppColor.backgroundColor
+                              : Colors.transparent,
+                          child: ListTile(
+                            iconColor: Colors.white,
+                            textColor: Colors.white,
+                            leading: const Icon(Icons.task),
+                            title: Text(context.tr.tasks),
+                            selected: bloc.state.asLogged.mod.isModTasks,
+                            onTap: () {
+                              bloc.add(
+                                const AppEvent.changeView(
+                                  mod: Mod.tasks(
+                                    type: ViewType.overview(),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        Container(
                           color: bloc.state.asLogged.mod.isModClients
                               ? AppColor.backgroundColor
                               : Colors.transparent,
@@ -126,19 +221,19 @@ class LandingPage extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          color: bloc.state.asLogged.mod.isModUsers
+                          color: bloc.state.asLogged.mod.isModEmployees
                               ? AppColor.backgroundColor
                               : Colors.transparent,
                           child: ListTile(
                             iconColor: Colors.white,
                             textColor: Colors.white,
                             leading: const Icon(Icons.badge),
-                            title: Text(context.tr.users),
-                            selected: bloc.state.asLogged.mod.isModUsers,
+                            title: Text(context.tr.employees),
+                            selected: bloc.state.asLogged.mod.isModEmployees,
                             onTap: () {
                               bloc.add(
                                 const AppEvent.changeView(
-                                  mod: Mod.users(
+                                  mod: Mod.employees(
                                     type: ViewType.overview(),
                                   ),
                                 ),
@@ -153,7 +248,7 @@ class LandingPage extends StatelessWidget {
                           child: ListTile(
                             iconColor: Colors.white,
                             textColor: Colors.white,
-                            leading: const Icon(Icons.pending_actions),
+                            leading: const Icon(Icons.pending_actions_rounded),
                             title: Text(context.tr.timecards),
                             selected: bloc.state.asLogged.mod.isModTimeCards,
                             onTap: () {

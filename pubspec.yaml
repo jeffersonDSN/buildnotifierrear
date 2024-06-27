@@ -26,7 +26,10 @@ dependencies:
   http: ^1.2.1
   dartz: ^0.10.1
   dropdown_search: ^5.0.6
-
+  data_table_2: ^2.5.15  
+  google_generative_ai: ^0.4.3
+  flutter_langdetect: ^0.0.2
+  
 
 dev_dependencies:
   flutter_test:

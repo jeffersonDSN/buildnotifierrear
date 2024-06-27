@@ -8,9 +8,11 @@ import 'package:buildnotifierrear/presentation/projects/overview/projects_overvi
 import 'package:buildnotifierrear/presentation/schedule/edit/schedule_edit.dart';
 import 'package:buildnotifierrear/presentation/schedule/overview/schedule_overview.dart';
 import 'package:buildnotifierrear/presentation/settings/edit/settings_edit.dart';
+import 'package:buildnotifierrear/presentation/tasks/edit/task_edit.dart';
+import 'package:buildnotifierrear/presentation/tasks/overview/tasks_overview.dart';
 import 'package:buildnotifierrear/presentation/timecards/overview/timecards.dart';
-import 'package:buildnotifierrear/presentation/users/edit/user_edit.dart';
-import 'package:buildnotifierrear/presentation/users/overview/users_overvire.dart';
+import 'package:buildnotifierrear/presentation/employees/edit/employee_edit.dart';
+import 'package:buildnotifierrear/presentation/employees/overview/users_overvire.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -25,12 +27,15 @@ class Mod with _$Mod {
   const factory Mod.projects({
     required ViewType type,
   }) = ModProjects;
+  const factory Mod.tasks({
+    required ViewType type,
+  }) = ModTasks;
   const factory Mod.clients({
     required ViewType type,
   }) = ModClients;
-  const factory Mod.users({
+  const factory Mod.employees({
     required ViewType type,
-  }) = ModUsers;
+  }) = ModEmployees;
 
   const factory Mod.timecards({
     required ViewType type,
@@ -43,15 +48,17 @@ extension OnModel on Mod {
   bool get isModHome => this is ModHome;
   bool get isModSchedule => this is ModSchedule;
   bool get isModProjects => this is ModProjects;
+  bool get isModTasks => this is ModTasks;
   bool get isModClients => this is ModClients;
-  bool get isModUsers => this is ModUsers;
+  bool get isModEmployees => this is ModEmployees;
   bool get isModTimeCards => this is ModTimecards;
 
   ModHome get asModHome => this as ModHome;
   ModSchedule get asModSchedule => this as ModSchedule;
   ModProjects get asModProjects => this as ModProjects;
+  ModTasks get asModTasks => this as ModTasks;
   ModClients get asModClients => this as ModClients;
-  ModUsers get asModUsers => this as ModUsers;
+  ModEmployees get asModEmployees => this as ModEmployees;
   ModTimecards get asModtimecards => this as ModTimecards;
 
   Widget view() {
@@ -67,15 +74,20 @@ extension OnModel on Mod {
         create: () => const ProjectEdit(),
         update: (id) => ProjectEdit(type: CrudType.update(id: id)),
       ),
+      tasks: (viewType) => viewType.when(
+        overview: () => const TasksOverview(),
+        create: () => const TaskEdit(),
+        update: (id) => TaskEdit(type: CrudType.update(id: id)),
+      ),
       clients: (viewType) => viewType.when(
         overview: () => const ClientsOverview(),
         create: () => const ClientEdit(),
         update: (id) => ClientEdit(type: CrudType.update(id: id)),
       ),
-      users: (viewType) => viewType.when(
+      employees: (viewType) => viewType.when(
         overview: () => const UsersOverview(),
-        create: () => const UserEdit(),
-        update: (id) => UserEdit(type: CrudType.update(id: id)),
+        create: () => const EmployeeEdit(),
+        update: (id) => EmployeeEdit(type: CrudType.update(id: id)),
       ),
       timecards: (viewType) => viewType.when(
         overview: () => const Timecards(),

@@ -1,7 +1,6 @@
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
 import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
-import 'package:buildnotifierrear/domain/entities/period/period.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_appointment_repository.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_location_repository.dart';
 import 'package:dartz/dartz.dart';

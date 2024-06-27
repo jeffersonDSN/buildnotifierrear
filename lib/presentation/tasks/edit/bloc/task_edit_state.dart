@@ -7,11 +7,14 @@ class TaskEditState with _$TaskEditState {
   const factory TaskEditState.loaded({
     required CrudType crudType,
     required Task task,
+    required List<Project> projects,
   }) = TaskEditStateLoaded;
 }
 
 extension OnTaskEditState on TaskEditState {
+  bool get isLoaded => this is TaskEditStateLoaded;
+
   TaskEditStateEmpty get asEmpty => this as TaskEditStateEmpty;
   TaskEditStateLoading get asLoading => this as TaskEditStateLoading;
-  TaskEditStateLoaded get asloaded => this as TaskEditStateLoaded;
+  TaskEditStateLoaded get asLoaded => this as TaskEditStateLoaded;
 }

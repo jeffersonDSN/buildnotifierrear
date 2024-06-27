@@ -1,7 +1,12 @@
 import 'dart:ui';
 
+import 'package:buildnotifierrear/domain/controllers/projects_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/tasks_controller.dart';
+import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
+import 'package:buildnotifierrear/domain/entities/enums/task_priority_enums.dart';
+import 'package:buildnotifierrear/domain/entities/enums/task_status_enums.dart';
+import 'package:buildnotifierrear/domain/entities/project/project.dart';
 import 'package:buildnotifierrear/domain/entities/task/task.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
@@ -13,49 +18,48 @@ part 'task_edit_state.dart';
 class TaskEditBloc extends Bloc<TaskEditEvent, TaskEditState> {
   TaskEditBloc({
     required TasksController controller,
-  }) : super(
-          const TaskEditState.empty(),
-        ) {
+    required ProjectsController projectsController,
+  }) : super(const TaskEditState.empty()) {
     on<TaskEditEvent>(
       (event, emit) async {
         await event.when(
           load: (projectId, crudType) async {
-            await crudType.when(
-              create: () async {
-                emit(
-                  TaskEditState.loaded(
-                    crudType: crudType,
-                    task: Task(
-                      productId: projectId,
-                    ),
-                  ),
-                );
-              },
-              update: (id) async {
-                var task = await controller.getById(id);
+            var result = await Future.wait([
+              crudType.when(
+                create: () async {
+                  return Task(
+                    productId: projectId,
+                  );
+                },
+                update: (id) async {
+                  return controller.getById(id);
+                },
+              ),
+              projectsController.getAll(),
+            ]);
 
-                emit(
-                  TaskEditState.loaded(
-                    crudType: crudType,
-                    task: task,
-                  ),
-                );
-              },
+            emit(
+              TaskEditState.loaded(
+                crudType: crudType,
+                task: result[0] as Task,
+                projects: result[1] as List<Project>,
+              ),
             );
           },
-          updateProjectId: (value) async {
+          changeProject: (projectId, projectName) async {
             emit(
-              state.asloaded.copyWith(
-                task: state.asloaded.task.copyWith(
-                  productId: value,
+              state.asLoaded.copyWith(
+                task: state.asLoaded.task.copyWith(
+                  productId: projectId,
+                  projectName: projectName,
                 ),
               ),
             );
           },
           updateTitle: (value) async {
             emit(
-              state.asloaded.copyWith(
-                task: state.asloaded.task.copyWith(
+              state.asLoaded.copyWith(
+                task: state.asLoaded.task.copyWith(
                   title: value,
                 ),
               ),
@@ -63,8 +67,8 @@ class TaskEditBloc extends Bloc<TaskEditEvent, TaskEditState> {
           },
           changeStartDate: (value) {
             emit(
-              state.asloaded.copyWith(
-                task: state.asloaded.task.copyWith(
+              state.asLoaded.copyWith(
+                task: state.asLoaded.task.copyWith(
                   startDate: value,
                 ),
               ),
@@ -72,8 +76,8 @@ class TaskEditBloc extends Bloc<TaskEditEvent, TaskEditState> {
           },
           changeEstimatedEffort: (value) {
             emit(
-              state.asloaded.copyWith(
-                task: state.asloaded.task.copyWith(
+              state.asLoaded.copyWith(
+                task: state.asLoaded.task.copyWith(
                   estimatedEffort: value,
                 ),
               ),
@@ -81,8 +85,8 @@ class TaskEditBloc extends Bloc<TaskEditEvent, TaskEditState> {
           },
           changePriority: (value) {
             emit(
-              state.asloaded.copyWith(
-                task: state.asloaded.task.copyWith(
+              state.asLoaded.copyWith(
+                task: state.asLoaded.task.copyWith(
                   priority: value,
                 ),
               ),
@@ -90,8 +94,8 @@ class TaskEditBloc extends Bloc<TaskEditEvent, TaskEditState> {
           },
           changeStatus: (value) {
             emit(
-              state.asloaded.copyWith(
-                task: state.asloaded.task.copyWith(
+              state.asLoaded.copyWith(
+                task: state.asLoaded.task.copyWith(
                   status: value,
                 ),
               ),
@@ -99,8 +103,8 @@ class TaskEditBloc extends Bloc<TaskEditEvent, TaskEditState> {
           },
           changeNotes: (value) {
             emit(
-              state.asloaded.copyWith(
-                task: state.asloaded.task.copyWith(
+              state.asLoaded.copyWith(
+                task: state.asLoaded.task.copyWith(
                   notes: value,
                 ),
               ),
@@ -108,20 +112,37 @@ class TaskEditBloc extends Bloc<TaskEditEvent, TaskEditState> {
           },
           changeEndDate: (value) {
             emit(
-              state.asloaded.copyWith(
-                task: state.asloaded.task.copyWith(
+              state.asLoaded.copyWith(
+                task: state.asLoaded.task.copyWith(
                   expectedEndDate: value,
                 ),
               ),
             );
           },
+          changeSelectedTaskAssignTo: (employees) {
+            emit(
+              state.asLoaded.copyWith(
+                task: state.asLoaded.task.copyWith(assignTo: employees),
+              ),
+            );
+          },
+          removeSelectedTaskAssignTo: (employee) {
+            var list = [...state.asLoaded.task.assignTo];
+            list.remove(employee);
+
+            emit(
+              state.asLoaded.copyWith(
+                task: state.asLoaded.task.copyWith(assignTo: list),
+              ),
+            );
+          },
           save: (callback) async {
-            await state.asloaded.crudType.when(
+            await state.asLoaded.crudType.when(
               create: () async {
-                await controller.create(state.asloaded.task);
+                await controller.create(state.asLoaded.task);
               },
               update: (id) async {
-                await controller.update(state.asloaded.task);
+                await controller.update(state.asLoaded.task);
               },
             );
 

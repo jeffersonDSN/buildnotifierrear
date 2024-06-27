@@ -7,9 +7,10 @@ class TaskEditEvent with _$TaskEditEvent {
     @Default(CrudType.create()) CrudType crudType,
   }) = TaskEditEventLoad;
 
-  const factory TaskEditEvent.updateProjectId({
-    required String value,
-  }) = TaskEditEventUpdateProjectId;
+  const factory TaskEditEvent.changeProject({
+    required String projectId,
+    required String projectName,
+  }) = TaskEditEventChangeProject;
 
   const factory TaskEditEvent.updateTitle({
     required String value,
@@ -28,16 +29,24 @@ class TaskEditEvent with _$TaskEditEvent {
   }) = TaskEditEventEstimatedEffort;
 
   const factory TaskEditEvent.changePriority({
-    required int value,
+    required TaskPriority value,
   }) = TaskEditEventTaskPriority;
 
   const factory TaskEditEvent.changeStatus({
-    required int value,
+    required TaskStatus value,
   }) = TaskEditEventStatus;
 
   const factory TaskEditEvent.changeNotes({
     required String value,
   }) = TaskEditEventNotes;
+
+  const factory TaskEditEvent.changeSelectedTaskAssignTo({
+    required List<AppointmentUser> employees,
+  }) = TaskEditEventChangeSelectedTaskAssignTo;
+
+  const factory TaskEditEvent.removeSelectedTaskAssignTo({
+    required AppointmentUser employee,
+  }) = TaskEditEventRemoveSelectedTaskAssignTo;
 
   const factory TaskEditEvent.save({
     required VoidCallback onSave,

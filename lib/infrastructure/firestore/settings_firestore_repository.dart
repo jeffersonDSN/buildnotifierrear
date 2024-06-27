@@ -1,5 +1,5 @@
 import 'package:buildnotifierrear/domain/entities/settings/settings.dart';
-import 'package:buildnotifierrear/domain/entities/user/user.dart';
+import 'package:buildnotifierrear/domain/entities/employee/employee.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_settings_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart' hide Settings;
 
@@ -31,7 +31,7 @@ class SettingsFirestoreRepository implements AbsISettingsRepository {
   }
 
   @override
-  Future<String> post(Settings value, User createBy) async {
+  Future<String> post(Settings value, Employee createBy) async {
     var settings = {
       'profile': value.toJson(),
       'createBy': createBy.toJson(),

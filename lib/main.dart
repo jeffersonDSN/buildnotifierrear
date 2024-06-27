@@ -9,6 +9,7 @@ import 'package:buildnotifierrear/presentation/theme/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_langdetect/flutter_langdetect.dart' as langdetect;
 import 'dart:html' as html;
 
 void main() async {
@@ -36,6 +37,8 @@ void main() async {
     }
   });
 
+  await langdetect.initLangDetect();
+
   runApp(
     BlocProvider(
       create: (context) => AppBloc(),
@@ -61,9 +64,14 @@ class MyApp extends StatelessWidget {
           return state.when(
             signIn: () => const SignIn(),
             signUp: () => const SignUp(),
-            logged: (user, mod) => LandingPage(
-              bloc: BlocProvider.of<AppBloc>(context),
-              child: mod.view(),
+            logged: (user, mod, locale) => Localizations.override(
+              delegates: AppLocalizations.localizationsDelegates,
+              context: context,
+              locale: locale,
+              child: LandingPage(
+                bloc: BlocProvider.of<AppBloc>(context),
+                child: mod.view(),
+              ),
             ),
           );
         },

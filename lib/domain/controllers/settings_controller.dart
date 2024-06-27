@@ -1,5 +1,5 @@
 import 'package:buildnotifierrear/domain/entities/settings/settings.dart';
-import 'package:buildnotifierrear/domain/entities/user/user.dart';
+import 'package:buildnotifierrear/domain/entities/employee/employee.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_settings_repository.dart';
 
 class SettingsController {
@@ -13,7 +13,7 @@ class SettingsController {
     return _repository.get();
   }
 
-  Future<String> createNewAccount(Settings value, User createBy) {
+  Future<String> createNewAccount(Settings value, Employee createBy) {
     return _repository.post(value, createBy);
   }
 

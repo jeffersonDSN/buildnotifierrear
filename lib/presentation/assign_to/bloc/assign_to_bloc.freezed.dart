@@ -19,19 +19,19 @@ mixin _$AssignToEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<AppointmentUser> assignTo) load,
-    required TResult Function(bool check, User user) check,
+    required TResult Function(bool check, Employee user) check,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<AppointmentUser> assignTo)? load,
-    TResult? Function(bool check, User user)? check,
+    TResult? Function(bool check, Employee user)? check,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<AppointmentUser> assignTo)? load,
-    TResult Function(bool check, User user)? check,
+    TResult Function(bool check, Employee user)? check,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -147,7 +147,7 @@ class _$AssignToEventLoadImpl implements AssignToEventLoad {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<AppointmentUser> assignTo) load,
-    required TResult Function(bool check, User user) check,
+    required TResult Function(bool check, Employee user) check,
   }) {
     return load(assignTo);
   }
@@ -156,7 +156,7 @@ class _$AssignToEventLoadImpl implements AssignToEventLoad {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<AppointmentUser> assignTo)? load,
-    TResult? Function(bool check, User user)? check,
+    TResult? Function(bool check, Employee user)? check,
   }) {
     return load?.call(assignTo);
   }
@@ -165,7 +165,7 @@ class _$AssignToEventLoadImpl implements AssignToEventLoad {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<AppointmentUser> assignTo)? load,
-    TResult Function(bool check, User user)? check,
+    TResult Function(bool check, Employee user)? check,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -223,9 +223,9 @@ abstract class _$$AssignToEventCheckImplCopyWith<$Res> {
           $Res Function(_$AssignToEventCheckImpl) then) =
       __$$AssignToEventCheckImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({bool check, User user});
+  $Res call({bool check, Employee user});
 
-  $UserCopyWith<$Res> get user;
+  $EmployeeCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -250,14 +250,14 @@ class __$$AssignToEventCheckImplCopyWithImpl<$Res>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as Employee,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
+  $EmployeeCopyWith<$Res> get user {
+    return $EmployeeCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
     });
   }
@@ -271,7 +271,7 @@ class _$AssignToEventCheckImpl implements AssignToEventCheck {
   @override
   final bool check;
   @override
-  final User user;
+  final Employee user;
 
   @override
   String toString() {
@@ -301,7 +301,7 @@ class _$AssignToEventCheckImpl implements AssignToEventCheck {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<AppointmentUser> assignTo) load,
-    required TResult Function(bool check, User user) check,
+    required TResult Function(bool check, Employee user) check,
   }) {
     return check(this.check, user);
   }
@@ -310,7 +310,7 @@ class _$AssignToEventCheckImpl implements AssignToEventCheck {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<AppointmentUser> assignTo)? load,
-    TResult? Function(bool check, User user)? check,
+    TResult? Function(bool check, Employee user)? check,
   }) {
     return check?.call(this.check, user);
   }
@@ -319,7 +319,7 @@ class _$AssignToEventCheckImpl implements AssignToEventCheck {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<AppointmentUser> assignTo)? load,
-    TResult Function(bool check, User user)? check,
+    TResult Function(bool check, Employee user)? check,
     required TResult orElse(),
   }) {
     if (check != null) {
@@ -363,10 +363,10 @@ class _$AssignToEventCheckImpl implements AssignToEventCheck {
 abstract class AssignToEventCheck implements AssignToEvent {
   const factory AssignToEventCheck(
       {required final bool check,
-      required final User user}) = _$AssignToEventCheckImpl;
+      required final Employee user}) = _$AssignToEventCheckImpl;
 
   bool get check;
-  User get user;
+  Employee get user;
   @JsonKey(ignore: true)
   _$$AssignToEventCheckImplCopyWith<_$AssignToEventCheckImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -378,7 +378,8 @@ mixin _$AssignToState {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function(List<AppointmentUser> assignTo) loading,
-    required TResult Function(List<AppointmentUser> assignTo, List<User> users)
+    required TResult Function(
+            List<AppointmentUser> assignTo, List<Employee> users)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -386,14 +387,16 @@ mixin _$AssignToState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function(List<AppointmentUser> assignTo)? loading,
-    TResult? Function(List<AppointmentUser> assignTo, List<User> users)? loaded,
+    TResult? Function(List<AppointmentUser> assignTo, List<Employee> users)?
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function(List<AppointmentUser> assignTo)? loading,
-    TResult Function(List<AppointmentUser> assignTo, List<User> users)? loaded,
+    TResult Function(List<AppointmentUser> assignTo, List<Employee> users)?
+        loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -479,7 +482,8 @@ class _$AssignToStateEmptyImpl implements AssignToStateEmpty {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function(List<AppointmentUser> assignTo) loading,
-    required TResult Function(List<AppointmentUser> assignTo, List<User> users)
+    required TResult Function(
+            List<AppointmentUser> assignTo, List<Employee> users)
         loaded,
   }) {
     return empty();
@@ -490,7 +494,8 @@ class _$AssignToStateEmptyImpl implements AssignToStateEmpty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function(List<AppointmentUser> assignTo)? loading,
-    TResult? Function(List<AppointmentUser> assignTo, List<User> users)? loaded,
+    TResult? Function(List<AppointmentUser> assignTo, List<Employee> users)?
+        loaded,
   }) {
     return empty?.call();
   }
@@ -500,7 +505,8 @@ class _$AssignToStateEmptyImpl implements AssignToStateEmpty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function(List<AppointmentUser> assignTo)? loading,
-    TResult Function(List<AppointmentUser> assignTo, List<User> users)? loaded,
+    TResult Function(List<AppointmentUser> assignTo, List<Employee> users)?
+        loaded,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -624,7 +630,8 @@ class _$AssignToStateLoadingImpl implements AssignToStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function(List<AppointmentUser> assignTo) loading,
-    required TResult Function(List<AppointmentUser> assignTo, List<User> users)
+    required TResult Function(
+            List<AppointmentUser> assignTo, List<Employee> users)
         loaded,
   }) {
     return loading(assignTo);
@@ -635,7 +642,8 @@ class _$AssignToStateLoadingImpl implements AssignToStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function(List<AppointmentUser> assignTo)? loading,
-    TResult? Function(List<AppointmentUser> assignTo, List<User> users)? loaded,
+    TResult? Function(List<AppointmentUser> assignTo, List<Employee> users)?
+        loaded,
   }) {
     return loading?.call(assignTo);
   }
@@ -645,7 +653,8 @@ class _$AssignToStateLoadingImpl implements AssignToStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function(List<AppointmentUser> assignTo)? loading,
-    TResult Function(List<AppointmentUser> assignTo, List<User> users)? loaded,
+    TResult Function(List<AppointmentUser> assignTo, List<Employee> users)?
+        loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -706,7 +715,7 @@ abstract class _$$AssignToStateLoadedImplCopyWith<$Res> {
           $Res Function(_$AssignToStateLoadedImpl) then) =
       __$$AssignToStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<AppointmentUser> assignTo, List<User> users});
+  $Res call({List<AppointmentUser> assignTo, List<Employee> users});
 }
 
 /// @nodoc
@@ -731,7 +740,7 @@ class __$$AssignToStateLoadedImplCopyWithImpl<$Res>
       users: null == users
           ? _value._users
           : users // ignore: cast_nullable_to_non_nullable
-              as List<User>,
+              as List<Employee>,
     ));
   }
 }
@@ -741,7 +750,7 @@ class __$$AssignToStateLoadedImplCopyWithImpl<$Res>
 class _$AssignToStateLoadedImpl implements AssignToStateLoaded {
   const _$AssignToStateLoadedImpl(
       {required final List<AppointmentUser> assignTo,
-      required final List<User> users})
+      required final List<Employee> users})
       : _assignTo = assignTo,
         _users = users;
 
@@ -753,9 +762,9 @@ class _$AssignToStateLoadedImpl implements AssignToStateLoaded {
     return EqualUnmodifiableListView(_assignTo);
   }
 
-  final List<User> _users;
+  final List<Employee> _users;
   @override
-  List<User> get users {
+  List<Employee> get users {
     if (_users is EqualUnmodifiableListView) return _users;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_users);
@@ -793,7 +802,8 @@ class _$AssignToStateLoadedImpl implements AssignToStateLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function(List<AppointmentUser> assignTo) loading,
-    required TResult Function(List<AppointmentUser> assignTo, List<User> users)
+    required TResult Function(
+            List<AppointmentUser> assignTo, List<Employee> users)
         loaded,
   }) {
     return loaded(assignTo, users);
@@ -804,7 +814,8 @@ class _$AssignToStateLoadedImpl implements AssignToStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function(List<AppointmentUser> assignTo)? loading,
-    TResult? Function(List<AppointmentUser> assignTo, List<User> users)? loaded,
+    TResult? Function(List<AppointmentUser> assignTo, List<Employee> users)?
+        loaded,
   }) {
     return loaded?.call(assignTo, users);
   }
@@ -814,7 +825,8 @@ class _$AssignToStateLoadedImpl implements AssignToStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function(List<AppointmentUser> assignTo)? loading,
-    TResult Function(List<AppointmentUser> assignTo, List<User> users)? loaded,
+    TResult Function(List<AppointmentUser> assignTo, List<Employee> users)?
+        loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -861,10 +873,10 @@ class _$AssignToStateLoadedImpl implements AssignToStateLoaded {
 abstract class AssignToStateLoaded implements AssignToState {
   const factory AssignToStateLoaded(
       {required final List<AppointmentUser> assignTo,
-      required final List<User> users}) = _$AssignToStateLoadedImpl;
+      required final List<Employee> users}) = _$AssignToStateLoadedImpl;
 
   List<AppointmentUser> get assignTo;
-  List<User> get users;
+  List<Employee> get users;
   @JsonKey(ignore: true)
   _$$AssignToStateLoadedImplCopyWith<_$AssignToStateLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;

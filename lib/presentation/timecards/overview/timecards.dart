@@ -2,12 +2,12 @@ import 'package:buildnotifierrear/domain/controllers/activities_controller.dart'
 import 'package:buildnotifierrear/domain/controllers/appointment_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/period_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/timecards_controller.dart';
-import 'package:buildnotifierrear/domain/controllers/users_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/employees_controller.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/activities_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/appointments_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/settings_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/timecards_firestore_repository.dart';
-import 'package:buildnotifierrear/infrastructure/firestore/users_firestore_repository.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/employees_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/http/location_repository.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
@@ -36,8 +36,8 @@ class Timecards extends IView {
             tenantId: tenantId,
           ),
         ),
-        usersController: UsersController(
-          repository: UsersFireStoreRepository(
+        employeesController: EmployeesController(
+          repository: EmployeesFireStoreRepository(
             tenant: tenantId,
           ),
         ),

@@ -10,7 +10,7 @@ class AssignToState with _$AssignToState {
 
   const factory AssignToState.loaded({
     required List<AppointmentUser> assignTo,
-    required List<User> users,
+    required List<Employee> users,
   }) = AssignToStateLoaded;
 }
 

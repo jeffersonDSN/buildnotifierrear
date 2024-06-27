@@ -9,6 +9,7 @@ part of 'task.dart';
 _$TaskImpl _$$TaskImplFromJson(Map<String, dynamic> json) => _$TaskImpl(
       id: json['id'] as String? ?? '',
       productId: json['productId'] as String? ?? '',
+      projectName: json['projectName'] as String? ?? '',
       title: json['title'] as String? ?? '',
       startDate: json['startDate'] == null
           ? null
@@ -17,20 +18,37 @@ _$TaskImpl _$$TaskImplFromJson(Map<String, dynamic> json) => _$TaskImpl(
           ? null
           : DateTime.parse(json['expectedEndDate'] as String),
       estimatedEffort: json['estimatedEffort'] as String? ?? '',
-      priority: (json['priority'] as num?)?.toInt() ?? 0,
-      status: (json['status'] as num?)?.toInt() ?? 0,
+      priority: json['priority'] == null
+          ? TaskPriority.low
+          : const TaskPriorityConverter()
+              .fromJson((json['priority'] as num).toInt()),
+      status: json['status'] == null
+          ? TaskStatus.toDo
+          : const TaskStatusConverter()
+              .fromJson((json['status'] as num).toInt()),
       notes: json['notes'] as String? ?? '',
+      notesList: (json['notesList'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, e as String),
+          ) ??
+          const {},
+      assignTo: (json['assignTo'] as List<dynamic>?)
+              ?.map((e) => AppointmentUser.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$TaskImplToJson(_$TaskImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'productId': instance.productId,
+      'projectName': instance.projectName,
       'title': instance.title,
       'startDate': instance.startDate?.toIso8601String(),
       'expectedEndDate': instance.expectedEndDate?.toIso8601String(),
       'estimatedEffort': instance.estimatedEffort,
-      'priority': instance.priority,
-      'status': instance.status,
+      'priority': const TaskPriorityConverter().toJson(instance.priority),
+      'status': const TaskStatusConverter().toJson(instance.status),
       'notes': instance.notes,
+      'notesList': instance.notesList,
+      'assignTo': instance.assignTo,
     };

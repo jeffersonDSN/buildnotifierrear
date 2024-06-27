@@ -2,13 +2,13 @@ import 'package:buildnotifierrear/domain/controllers/activities_controller.dart'
 import 'package:buildnotifierrear/domain/controllers/appointment_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/period_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/timecards_controller.dart';
-import 'package:buildnotifierrear/domain/controllers/users_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/employees_controller.dart';
 import 'package:buildnotifierrear/domain/entities/activity/activity.dart';
 import 'package:buildnotifierrear/domain/entities/core/dependent_state_type.dart';
 import 'package:buildnotifierrear/domain/entities/period/period.dart';
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
 import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
-import 'package:buildnotifierrear/domain/entities/user/user.dart';
+import 'package:buildnotifierrear/domain/entities/employee/employee.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
 
@@ -21,7 +21,7 @@ class TimecardsOverviewBloc
   TimecardsOverviewBloc({
     required TimecardsController controller,
     required PeriodController periodController,
-    required UsersController usersController,
+    required EmployeesController employeesController,
     required AppointmentController appointmentController,
     required ActivitiesController activitiesController,
   }) : super(const TimecardsOverviewState.empty()) {
@@ -39,7 +39,7 @@ class TimecardsOverviewBloc
 
           var result = await Future.wait([
             employeeId.isNotEmpty
-                ? controller.getAllOfByUserAndPeriod(employeeId, periods[0])
+                ? controller.getAllOfByEmployeeAndPeriod(employeeId, periods[0])
                 : controller.getAllOfPeriod(periods[0]),
             activitiesController.getAllActivityInThePeriod(periods[0]),
           ]);
@@ -55,7 +55,7 @@ class TimecardsOverviewBloc
               periods: periods,
               selectedPeriod: periods[0],
               timeCards: timeCards,
-              users: [],
+              employees: [],
               usersState: const DependenteStateType.loading(),
               projects: [],
               projectsState: const DependenteStateType.loading(),
@@ -81,7 +81,8 @@ class TimecardsOverviewBloc
 
           var result = await Future.wait([
             loaded.employeeId.isNotEmpty
-                ? controller.getAllOfByUserAndPeriod(loaded.employeeId, period)
+                ? controller.getAllOfByEmployeeAndPeriod(
+                    loaded.employeeId, period)
                 : controller.getAllOfPeriod(period),
             activitiesController.getAllActivityInThePeriod(period),
           ]);
@@ -97,7 +98,7 @@ class TimecardsOverviewBloc
               periods: loaded.periods,
               selectedPeriod: period,
               timeCards: timeCards,
-              users: [],
+              employees: [],
               usersState: const DependenteStateType.loading(),
               projects: [],
               projectsState: const DependenteStateType.loading(),
@@ -112,13 +113,13 @@ class TimecardsOverviewBloc
           add(TimecardsOverviewEvent.loadUsers(userIds: userIds));
         },
         loadUsers: (userIds) async {
-          var users = await usersController.getUsersByID(
+          var employees = await employeesController.getEmployeesByID(
             userIds.toSet().toList(),
           );
 
           emit(
             state.asLoaded.copyWith(
-              users: users,
+              employees: employees,
               usersState: const DependenteStateType.listing(),
             ),
           );

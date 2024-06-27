@@ -25,7 +25,7 @@ mixin _$SignUpEvent {
     required TResult Function(String value) changePhone,
     required TResult Function(String value) changeUserName,
     required TResult Function(String value) changePassword,
-    required TResult Function(ValueChanged<User> callback) signUp,
+    required TResult Function(ValueChanged<Employee> callback) signUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$SignUpEvent {
     TResult? Function(String value)? changePhone,
     TResult? Function(String value)? changeUserName,
     TResult? Function(String value)? changePassword,
-    TResult? Function(ValueChanged<User> callback)? signUp,
+    TResult? Function(ValueChanged<Employee> callback)? signUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -49,7 +49,7 @@ mixin _$SignUpEvent {
     TResult Function(String value)? changePhone,
     TResult Function(String value)? changeUserName,
     TResult Function(String value)? changePassword,
-    TResult Function(ValueChanged<User> callback)? signUp,
+    TResult Function(ValueChanged<Employee> callback)? signUp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -185,7 +185,7 @@ class _$SignUpEventChangeFirstNameImpl implements SignUpEventChangeFirstName {
     required TResult Function(String value) changePhone,
     required TResult Function(String value) changeUserName,
     required TResult Function(String value) changePassword,
-    required TResult Function(ValueChanged<User> callback) signUp,
+    required TResult Function(ValueChanged<Employee> callback) signUp,
   }) {
     return changeFirstName(value);
   }
@@ -200,7 +200,7 @@ class _$SignUpEventChangeFirstNameImpl implements SignUpEventChangeFirstName {
     TResult? Function(String value)? changePhone,
     TResult? Function(String value)? changeUserName,
     TResult? Function(String value)? changePassword,
-    TResult? Function(ValueChanged<User> callback)? signUp,
+    TResult? Function(ValueChanged<Employee> callback)? signUp,
   }) {
     return changeFirstName?.call(value);
   }
@@ -215,7 +215,7 @@ class _$SignUpEventChangeFirstNameImpl implements SignUpEventChangeFirstName {
     TResult Function(String value)? changePhone,
     TResult Function(String value)? changeUserName,
     TResult Function(String value)? changePassword,
-    TResult Function(ValueChanged<User> callback)? signUp,
+    TResult Function(ValueChanged<Employee> callback)? signUp,
     required TResult orElse(),
   }) {
     if (changeFirstName != null) {
@@ -359,7 +359,7 @@ class _$SignUpEventChangeLastnameImpl implements SignUpEventChangeLastname {
     required TResult Function(String value) changePhone,
     required TResult Function(String value) changeUserName,
     required TResult Function(String value) changePassword,
-    required TResult Function(ValueChanged<User> callback) signUp,
+    required TResult Function(ValueChanged<Employee> callback) signUp,
   }) {
     return changeLastName(value);
   }
@@ -374,7 +374,7 @@ class _$SignUpEventChangeLastnameImpl implements SignUpEventChangeLastname {
     TResult? Function(String value)? changePhone,
     TResult? Function(String value)? changeUserName,
     TResult? Function(String value)? changePassword,
-    TResult? Function(ValueChanged<User> callback)? signUp,
+    TResult? Function(ValueChanged<Employee> callback)? signUp,
   }) {
     return changeLastName?.call(value);
   }
@@ -389,7 +389,7 @@ class _$SignUpEventChangeLastnameImpl implements SignUpEventChangeLastname {
     TResult Function(String value)? changePhone,
     TResult Function(String value)? changeUserName,
     TResult Function(String value)? changePassword,
-    TResult Function(ValueChanged<User> callback)? signUp,
+    TResult Function(ValueChanged<Employee> callback)? signUp,
     required TResult orElse(),
   }) {
     if (changeLastName != null) {
@@ -535,7 +535,7 @@ class _$SignUpEventChangeCompanyNameImpl
     required TResult Function(String value) changePhone,
     required TResult Function(String value) changeUserName,
     required TResult Function(String value) changePassword,
-    required TResult Function(ValueChanged<User> callback) signUp,
+    required TResult Function(ValueChanged<Employee> callback) signUp,
   }) {
     return changeCompanyName(value);
   }
@@ -550,7 +550,7 @@ class _$SignUpEventChangeCompanyNameImpl
     TResult? Function(String value)? changePhone,
     TResult? Function(String value)? changeUserName,
     TResult? Function(String value)? changePassword,
-    TResult? Function(ValueChanged<User> callback)? signUp,
+    TResult? Function(ValueChanged<Employee> callback)? signUp,
   }) {
     return changeCompanyName?.call(value);
   }
@@ -565,7 +565,7 @@ class _$SignUpEventChangeCompanyNameImpl
     TResult Function(String value)? changePhone,
     TResult Function(String value)? changeUserName,
     TResult Function(String value)? changePassword,
-    TResult Function(ValueChanged<User> callback)? signUp,
+    TResult Function(ValueChanged<Employee> callback)? signUp,
     required TResult orElse(),
   }) {
     if (changeCompanyName != null) {
@@ -710,7 +710,7 @@ class _$SignUpEventChangeEmailImpl implements SignUpEventChangeEmail {
     required TResult Function(String value) changePhone,
     required TResult Function(String value) changeUserName,
     required TResult Function(String value) changePassword,
-    required TResult Function(ValueChanged<User> callback) signUp,
+    required TResult Function(ValueChanged<Employee> callback) signUp,
   }) {
     return changeEmail(value);
   }
@@ -725,7 +725,7 @@ class _$SignUpEventChangeEmailImpl implements SignUpEventChangeEmail {
     TResult? Function(String value)? changePhone,
     TResult? Function(String value)? changeUserName,
     TResult? Function(String value)? changePassword,
-    TResult? Function(ValueChanged<User> callback)? signUp,
+    TResult? Function(ValueChanged<Employee> callback)? signUp,
   }) {
     return changeEmail?.call(value);
   }
@@ -740,7 +740,7 @@ class _$SignUpEventChangeEmailImpl implements SignUpEventChangeEmail {
     TResult Function(String value)? changePhone,
     TResult Function(String value)? changeUserName,
     TResult Function(String value)? changePassword,
-    TResult Function(ValueChanged<User> callback)? signUp,
+    TResult Function(ValueChanged<Employee> callback)? signUp,
     required TResult orElse(),
   }) {
     if (changeEmail != null) {
@@ -884,7 +884,7 @@ class _$SignUpEventChangePhoneImpl implements SignUpEventChangePhone {
     required TResult Function(String value) changePhone,
     required TResult Function(String value) changeUserName,
     required TResult Function(String value) changePassword,
-    required TResult Function(ValueChanged<User> callback) signUp,
+    required TResult Function(ValueChanged<Employee> callback) signUp,
   }) {
     return changePhone(value);
   }
@@ -899,7 +899,7 @@ class _$SignUpEventChangePhoneImpl implements SignUpEventChangePhone {
     TResult? Function(String value)? changePhone,
     TResult? Function(String value)? changeUserName,
     TResult? Function(String value)? changePassword,
-    TResult? Function(ValueChanged<User> callback)? signUp,
+    TResult? Function(ValueChanged<Employee> callback)? signUp,
   }) {
     return changePhone?.call(value);
   }
@@ -914,7 +914,7 @@ class _$SignUpEventChangePhoneImpl implements SignUpEventChangePhone {
     TResult Function(String value)? changePhone,
     TResult Function(String value)? changeUserName,
     TResult Function(String value)? changePassword,
-    TResult Function(ValueChanged<User> callback)? signUp,
+    TResult Function(ValueChanged<Employee> callback)? signUp,
     required TResult orElse(),
   }) {
     if (changePhone != null) {
@@ -1058,7 +1058,7 @@ class _$SignUpEventChangeUserNameImpl implements SignUpEventChangeUserName {
     required TResult Function(String value) changePhone,
     required TResult Function(String value) changeUserName,
     required TResult Function(String value) changePassword,
-    required TResult Function(ValueChanged<User> callback) signUp,
+    required TResult Function(ValueChanged<Employee> callback) signUp,
   }) {
     return changeUserName(value);
   }
@@ -1073,7 +1073,7 @@ class _$SignUpEventChangeUserNameImpl implements SignUpEventChangeUserName {
     TResult? Function(String value)? changePhone,
     TResult? Function(String value)? changeUserName,
     TResult? Function(String value)? changePassword,
-    TResult? Function(ValueChanged<User> callback)? signUp,
+    TResult? Function(ValueChanged<Employee> callback)? signUp,
   }) {
     return changeUserName?.call(value);
   }
@@ -1088,7 +1088,7 @@ class _$SignUpEventChangeUserNameImpl implements SignUpEventChangeUserName {
     TResult Function(String value)? changePhone,
     TResult Function(String value)? changeUserName,
     TResult Function(String value)? changePassword,
-    TResult Function(ValueChanged<User> callback)? signUp,
+    TResult Function(ValueChanged<Employee> callback)? signUp,
     required TResult orElse(),
   }) {
     if (changeUserName != null) {
@@ -1232,7 +1232,7 @@ class _$SignUpEventChangePasswordImpl implements SignUpEventChangePassword {
     required TResult Function(String value) changePhone,
     required TResult Function(String value) changeUserName,
     required TResult Function(String value) changePassword,
-    required TResult Function(ValueChanged<User> callback) signUp,
+    required TResult Function(ValueChanged<Employee> callback) signUp,
   }) {
     return changePassword(value);
   }
@@ -1247,7 +1247,7 @@ class _$SignUpEventChangePasswordImpl implements SignUpEventChangePassword {
     TResult? Function(String value)? changePhone,
     TResult? Function(String value)? changeUserName,
     TResult? Function(String value)? changePassword,
-    TResult? Function(ValueChanged<User> callback)? signUp,
+    TResult? Function(ValueChanged<Employee> callback)? signUp,
   }) {
     return changePassword?.call(value);
   }
@@ -1262,7 +1262,7 @@ class _$SignUpEventChangePasswordImpl implements SignUpEventChangePassword {
     TResult Function(String value)? changePhone,
     TResult Function(String value)? changeUserName,
     TResult Function(String value)? changePassword,
-    TResult Function(ValueChanged<User> callback)? signUp,
+    TResult Function(ValueChanged<Employee> callback)? signUp,
     required TResult orElse(),
   }) {
     if (changePassword != null) {
@@ -1338,7 +1338,7 @@ abstract class _$$SignUpEventSignUpImplCopyWith<$Res> {
           $Res Function(_$SignUpEventSignUpImpl) then) =
       __$$SignUpEventSignUpImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ValueChanged<User> callback});
+  $Res call({ValueChanged<Employee> callback});
 }
 
 /// @nodoc
@@ -1358,7 +1358,7 @@ class __$$SignUpEventSignUpImplCopyWithImpl<$Res>
       callback: null == callback
           ? _value.callback
           : callback // ignore: cast_nullable_to_non_nullable
-              as ValueChanged<User>,
+              as ValueChanged<Employee>,
     ));
   }
 }
@@ -1369,7 +1369,7 @@ class _$SignUpEventSignUpImpl implements SignUpEventSignUp {
   const _$SignUpEventSignUpImpl({required this.callback});
 
   @override
-  final ValueChanged<User> callback;
+  final ValueChanged<Employee> callback;
 
   @override
   String toString() {
@@ -1405,7 +1405,7 @@ class _$SignUpEventSignUpImpl implements SignUpEventSignUp {
     required TResult Function(String value) changePhone,
     required TResult Function(String value) changeUserName,
     required TResult Function(String value) changePassword,
-    required TResult Function(ValueChanged<User> callback) signUp,
+    required TResult Function(ValueChanged<Employee> callback) signUp,
   }) {
     return signUp(callback);
   }
@@ -1420,7 +1420,7 @@ class _$SignUpEventSignUpImpl implements SignUpEventSignUp {
     TResult? Function(String value)? changePhone,
     TResult? Function(String value)? changeUserName,
     TResult? Function(String value)? changePassword,
-    TResult? Function(ValueChanged<User> callback)? signUp,
+    TResult? Function(ValueChanged<Employee> callback)? signUp,
   }) {
     return signUp?.call(callback);
   }
@@ -1435,7 +1435,7 @@ class _$SignUpEventSignUpImpl implements SignUpEventSignUp {
     TResult Function(String value)? changePhone,
     TResult Function(String value)? changeUserName,
     TResult Function(String value)? changePassword,
-    TResult Function(ValueChanged<User> callback)? signUp,
+    TResult Function(ValueChanged<Employee> callback)? signUp,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -1497,9 +1497,10 @@ class _$SignUpEventSignUpImpl implements SignUpEventSignUp {
 
 abstract class SignUpEventSignUp implements SignUpEvent {
   const factory SignUpEventSignUp(
-      {required final ValueChanged<User> callback}) = _$SignUpEventSignUpImpl;
+          {required final ValueChanged<Employee> callback}) =
+      _$SignUpEventSignUpImpl;
 
-  ValueChanged<User> get callback;
+  ValueChanged<Employee> get callback;
   @JsonKey(ignore: true)
   _$$SignUpEventSignUpImplCopyWith<_$SignUpEventSignUpImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1507,32 +1508,32 @@ abstract class SignUpEventSignUp implements SignUpEvent {
 
 /// @nodoc
 mixin _$SignUpState {
-  User get user => throw _privateConstructorUsedError;
+  Employee get user => throw _privateConstructorUsedError;
   Settings get settings => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user, Settings settings) init,
-    required TResult Function(User user, Settings settings) signUp,
-    required TResult Function(
-            User user, Settings settings, ({int code, String message}) error)
+    required TResult Function(Employee user, Settings settings) init,
+    required TResult Function(Employee user, Settings settings) signUp,
+    required TResult Function(Employee user, Settings settings,
+            ({int code, String message}) error)
         signUpError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(User user, Settings settings)? init,
-    TResult? Function(User user, Settings settings)? signUp,
-    TResult? Function(
-            User user, Settings settings, ({int code, String message}) error)?
+    TResult? Function(Employee user, Settings settings)? init,
+    TResult? Function(Employee user, Settings settings)? signUp,
+    TResult? Function(Employee user, Settings settings,
+            ({int code, String message}) error)?
         signUpError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user, Settings settings)? init,
-    TResult Function(User user, Settings settings)? signUp,
-    TResult Function(
-            User user, Settings settings, ({int code, String message}) error)?
+    TResult Function(Employee user, Settings settings)? init,
+    TResult Function(Employee user, Settings settings)? signUp,
+    TResult Function(Employee user, Settings settings,
+            ({int code, String message}) error)?
         signUpError,
     required TResult orElse(),
   }) =>
@@ -1571,9 +1572,9 @@ abstract class $SignUpStateCopyWith<$Res> {
           SignUpState value, $Res Function(SignUpState) then) =
       _$SignUpStateCopyWithImpl<$Res, SignUpState>;
   @useResult
-  $Res call({User user, Settings settings});
+  $Res call({Employee user, Settings settings});
 
-  $UserCopyWith<$Res> get user;
+  $EmployeeCopyWith<$Res> get user;
   $SettingsCopyWith<$Res> get settings;
 }
 
@@ -1597,7 +1598,7 @@ class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as Employee,
       settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
@@ -1607,8 +1608,8 @@ class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
+  $EmployeeCopyWith<$Res> get user {
+    return $EmployeeCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
@@ -1630,10 +1631,10 @@ abstract class _$$SignUpStateUpImplCopyWith<$Res>
       __$$SignUpStateUpImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({User user, Settings settings});
+  $Res call({Employee user, Settings settings});
 
   @override
-  $UserCopyWith<$Res> get user;
+  $EmployeeCopyWith<$Res> get user;
   @override
   $SettingsCopyWith<$Res> get settings;
 }
@@ -1656,7 +1657,7 @@ class __$$SignUpStateUpImplCopyWithImpl<$Res>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as Employee,
       settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
@@ -1671,7 +1672,7 @@ class _$SignUpStateUpImpl implements SignUpStateUp {
   const _$SignUpStateUpImpl({required this.user, required this.settings});
 
   @override
-  final User user;
+  final Employee user;
   @override
   final Settings settings;
 
@@ -1702,10 +1703,10 @@ class _$SignUpStateUpImpl implements SignUpStateUp {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user, Settings settings) init,
-    required TResult Function(User user, Settings settings) signUp,
-    required TResult Function(
-            User user, Settings settings, ({int code, String message}) error)
+    required TResult Function(Employee user, Settings settings) init,
+    required TResult Function(Employee user, Settings settings) signUp,
+    required TResult Function(Employee user, Settings settings,
+            ({int code, String message}) error)
         signUpError,
   }) {
     return init(user, settings);
@@ -1714,10 +1715,10 @@ class _$SignUpStateUpImpl implements SignUpStateUp {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(User user, Settings settings)? init,
-    TResult? Function(User user, Settings settings)? signUp,
-    TResult? Function(
-            User user, Settings settings, ({int code, String message}) error)?
+    TResult? Function(Employee user, Settings settings)? init,
+    TResult? Function(Employee user, Settings settings)? signUp,
+    TResult? Function(Employee user, Settings settings,
+            ({int code, String message}) error)?
         signUpError,
   }) {
     return init?.call(user, settings);
@@ -1726,10 +1727,10 @@ class _$SignUpStateUpImpl implements SignUpStateUp {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user, Settings settings)? init,
-    TResult Function(User user, Settings settings)? signUp,
-    TResult Function(
-            User user, Settings settings, ({int code, String message}) error)?
+    TResult Function(Employee user, Settings settings)? init,
+    TResult Function(Employee user, Settings settings)? signUp,
+    TResult Function(Employee user, Settings settings,
+            ({int code, String message}) error)?
         signUpError,
     required TResult orElse(),
   }) {
@@ -1776,11 +1777,11 @@ class _$SignUpStateUpImpl implements SignUpStateUp {
 
 abstract class SignUpStateUp implements SignUpState {
   const factory SignUpStateUp(
-      {required final User user,
+      {required final Employee user,
       required final Settings settings}) = _$SignUpStateUpImpl;
 
   @override
-  User get user;
+  Employee get user;
   @override
   Settings get settings;
   @override
@@ -1797,10 +1798,10 @@ abstract class _$$SignUpStateSignUpImplCopyWith<$Res>
       __$$SignUpStateSignUpImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({User user, Settings settings});
+  $Res call({Employee user, Settings settings});
 
   @override
-  $UserCopyWith<$Res> get user;
+  $EmployeeCopyWith<$Res> get user;
   @override
   $SettingsCopyWith<$Res> get settings;
 }
@@ -1823,7 +1824,7 @@ class __$$SignUpStateSignUpImplCopyWithImpl<$Res>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as Employee,
       settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
@@ -1838,7 +1839,7 @@ class _$SignUpStateSignUpImpl implements SignUpStateSignUp {
   const _$SignUpStateSignUpImpl({required this.user, required this.settings});
 
   @override
-  final User user;
+  final Employee user;
   @override
   final Settings settings;
 
@@ -1870,10 +1871,10 @@ class _$SignUpStateSignUpImpl implements SignUpStateSignUp {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user, Settings settings) init,
-    required TResult Function(User user, Settings settings) signUp,
-    required TResult Function(
-            User user, Settings settings, ({int code, String message}) error)
+    required TResult Function(Employee user, Settings settings) init,
+    required TResult Function(Employee user, Settings settings) signUp,
+    required TResult Function(Employee user, Settings settings,
+            ({int code, String message}) error)
         signUpError,
   }) {
     return signUp(user, settings);
@@ -1882,10 +1883,10 @@ class _$SignUpStateSignUpImpl implements SignUpStateSignUp {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(User user, Settings settings)? init,
-    TResult? Function(User user, Settings settings)? signUp,
-    TResult? Function(
-            User user, Settings settings, ({int code, String message}) error)?
+    TResult? Function(Employee user, Settings settings)? init,
+    TResult? Function(Employee user, Settings settings)? signUp,
+    TResult? Function(Employee user, Settings settings,
+            ({int code, String message}) error)?
         signUpError,
   }) {
     return signUp?.call(user, settings);
@@ -1894,10 +1895,10 @@ class _$SignUpStateSignUpImpl implements SignUpStateSignUp {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user, Settings settings)? init,
-    TResult Function(User user, Settings settings)? signUp,
-    TResult Function(
-            User user, Settings settings, ({int code, String message}) error)?
+    TResult Function(Employee user, Settings settings)? init,
+    TResult Function(Employee user, Settings settings)? signUp,
+    TResult Function(Employee user, Settings settings,
+            ({int code, String message}) error)?
         signUpError,
     required TResult orElse(),
   }) {
@@ -1944,11 +1945,11 @@ class _$SignUpStateSignUpImpl implements SignUpStateSignUp {
 
 abstract class SignUpStateSignUp implements SignUpState {
   const factory SignUpStateSignUp(
-      {required final User user,
+      {required final Employee user,
       required final Settings settings}) = _$SignUpStateSignUpImpl;
 
   @override
-  User get user;
+  Employee get user;
   @override
   Settings get settings;
   @override
@@ -1966,10 +1967,11 @@ abstract class _$$SignUpStateSignUpErrorImplCopyWith<$Res>
       __$$SignUpStateSignUpErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({User user, Settings settings, ({int code, String message}) error});
+  $Res call(
+      {Employee user, Settings settings, ({int code, String message}) error});
 
   @override
-  $UserCopyWith<$Res> get user;
+  $EmployeeCopyWith<$Res> get user;
   @override
   $SettingsCopyWith<$Res> get settings;
 }
@@ -1994,7 +1996,7 @@ class __$$SignUpStateSignUpErrorImplCopyWithImpl<$Res>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as Employee,
       settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
@@ -2014,7 +2016,7 @@ class _$SignUpStateSignUpErrorImpl implements SignUpStateSignUpError {
       {required this.user, required this.settings, required this.error});
 
   @override
-  final User user;
+  final Employee user;
   @override
   final Settings settings;
   @override
@@ -2049,10 +2051,10 @@ class _$SignUpStateSignUpErrorImpl implements SignUpStateSignUpError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user, Settings settings) init,
-    required TResult Function(User user, Settings settings) signUp,
-    required TResult Function(
-            User user, Settings settings, ({int code, String message}) error)
+    required TResult Function(Employee user, Settings settings) init,
+    required TResult Function(Employee user, Settings settings) signUp,
+    required TResult Function(Employee user, Settings settings,
+            ({int code, String message}) error)
         signUpError,
   }) {
     return signUpError(user, settings, error);
@@ -2061,10 +2063,10 @@ class _$SignUpStateSignUpErrorImpl implements SignUpStateSignUpError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(User user, Settings settings)? init,
-    TResult? Function(User user, Settings settings)? signUp,
-    TResult? Function(
-            User user, Settings settings, ({int code, String message}) error)?
+    TResult? Function(Employee user, Settings settings)? init,
+    TResult? Function(Employee user, Settings settings)? signUp,
+    TResult? Function(Employee user, Settings settings,
+            ({int code, String message}) error)?
         signUpError,
   }) {
     return signUpError?.call(user, settings, error);
@@ -2073,10 +2075,10 @@ class _$SignUpStateSignUpErrorImpl implements SignUpStateSignUpError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user, Settings settings)? init,
-    TResult Function(User user, Settings settings)? signUp,
-    TResult Function(
-            User user, Settings settings, ({int code, String message}) error)?
+    TResult Function(Employee user, Settings settings)? init,
+    TResult Function(Employee user, Settings settings)? signUp,
+    TResult Function(Employee user, Settings settings,
+            ({int code, String message}) error)?
         signUpError,
     required TResult orElse(),
   }) {
@@ -2123,13 +2125,13 @@ class _$SignUpStateSignUpErrorImpl implements SignUpStateSignUpError {
 
 abstract class SignUpStateSignUpError implements SignUpState {
   const factory SignUpStateSignUpError(
-          {required final User user,
+          {required final Employee user,
           required final Settings settings,
           required final ({int code, String message}) error}) =
       _$SignUpStateSignUpErrorImpl;
 
   @override
-  User get user;
+  Employee get user;
   @override
   Settings get settings;
   ({int code, String message}) get error;

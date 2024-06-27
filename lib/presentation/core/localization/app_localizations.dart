@@ -38,6 +38,8 @@ abstract class AppLocalizations {
 
   String get text;
 
+  String get selectLanguage;
+
   String get english;
 
   String get spanish;
@@ -54,11 +56,15 @@ abstract class AppLocalizations {
 
   String get schedule;
 
+  String get project;
+
   String get projects;
 
   String get clients;
 
-  String get users;
+  String get employee;
+
+  String get employees;
 
   String get settings;
 
@@ -85,6 +91,8 @@ abstract class AppLocalizations {
   String get startTrialToday;
 
   String get firstName;
+
+  String get middleName;
 
   String get isRequired;
 
@@ -114,6 +122,8 @@ abstract class AppLocalizations {
 
   String get status;
 
+  String get action;
+
   String get address;
 
   String get city;
@@ -142,7 +152,17 @@ abstract class AppLocalizations {
 
   String get priority;
 
+  String get tasks;
+
   String get newTask;
+
+  String get newClient;
+
+  String get newEmployee;
+
+  String get editEmployee;
+
+  String get editClient;
 
   String get editTask;
 
@@ -168,9 +188,51 @@ abstract class AppLocalizations {
 
   String get hoursNotAssignedProject;
 
+  String get notes;
+
+  String get assignTo;
+
+  String get addEmployee;
+
+  String get hasNoTask;
+
+  String get hasNoClient;
+
+  String get department;
+
+  String get position;
+
+  String get hourlyRate;
+
+  String get account;
+
+  String get planning;
+
+  String get planned;
+
+  String get inProgress;
+
+  String get blocked;
+
+  String get concluded;
+
   String get save;
 
   String get cancel;
+
+  String get close;
+
+  String get low;
+
+  String get medium;
+
+  String get high;
+
+  String get toDo;
+
+  String get doing;
+
+  String get done;
 }
 
 class _AppLocalizationsDelegate

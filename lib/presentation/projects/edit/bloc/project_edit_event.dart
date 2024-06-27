@@ -49,7 +49,7 @@ class ProjectEditEvent with _$ProjectEditEvent {
   }) = ProjectEditEventChangeBudget;
 
   const factory ProjectEditEvent.changeStatus({
-    required int value,
+    required ProjectStatus value,
   }) = ProjectEditEventChangeStatus;
 
   const factory ProjectEditEvent.changeDescription({

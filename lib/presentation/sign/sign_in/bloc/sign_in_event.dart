@@ -11,6 +11,6 @@ class SignInEvent with _$SignInEvent {
   }) = SignInEventChangePassword;
 
   const factory SignInEvent.signIn({
-    required ValueChanged<User> callback,
+    required ValueChanged<Employee> callback,
   }) = SignInEventSignIn;
 }

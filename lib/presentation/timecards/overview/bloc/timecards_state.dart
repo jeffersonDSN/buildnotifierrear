@@ -12,7 +12,7 @@ class TimecardsOverviewState with _$TimecardsOverviewState {
     required List<Period> periods,
     required Period selectedPeriod,
     required List<Timecard> timeCards,
-    required List<User> users,
+    required List<Employee> employees,
     required DependenteStateType usersState,
     required List<Project> projects,
     required DependenteStateType projectsState,

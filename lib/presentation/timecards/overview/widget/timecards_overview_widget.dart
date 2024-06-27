@@ -17,7 +17,7 @@ class TimecardsOverviewWidget extends StatelessWidget {
   final bool isLoading;
   final ValueGetterGrossPay getGrossPay;
 
-  TimecardsOverviewWidget({
+  const TimecardsOverviewWidget({
     super.key,
     required this.selectedPeriod,
     required this.timecards,

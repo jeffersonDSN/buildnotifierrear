@@ -3,6 +3,7 @@ import 'package:buildnotifierrear/domain/controllers/projects_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/states_controller.dart';
 import 'package:buildnotifierrear/domain/entities/client/client.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
+import 'package:buildnotifierrear/domain/entities/enums/project_status_enums.dart';
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
 import 'package:buildnotifierrear/domain/entities/state/state.dart';
 import 'package:flutter/material.dart' hide State;

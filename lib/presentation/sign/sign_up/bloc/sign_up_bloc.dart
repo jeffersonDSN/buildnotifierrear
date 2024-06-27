@@ -1,8 +1,8 @@
 import 'package:buildnotifierrear/domain/controllers/settings_controller.dart';
-import 'package:buildnotifierrear/domain/controllers/users_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/employees_controller.dart';
 import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/settings/settings.dart';
-import 'package:buildnotifierrear/domain/entities/user/user.dart';
+import 'package:buildnotifierrear/domain/entities/employee/employee.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
@@ -13,11 +13,11 @@ part 'sign_up_state.dart';
 
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   SignUpBloc({
-    required UsersController controller,
+    required EmployeesController controller,
     required SettingsController settingsController,
   }) : super(
           SignUpState.init(
-            user: const User(
+            user: const Employee(
               userType: 1,
             ),
             settings: Settings(
@@ -131,7 +131,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
                       );
                     },
                     (response) async {
-                      var user = await controller.getUserByUserNamePassword(
+                      var user = await controller.getEmployeeByUserNamePassword(
                         state.user.userName,
                         state.user.password,
                       );

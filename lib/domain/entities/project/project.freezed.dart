@@ -25,7 +25,8 @@ mixin _$Project {
   DateTime? get startDate => throw _privateConstructorUsedError;
   DateTime? get expectedCompletionDate => throw _privateConstructorUsedError;
   double get budget => throw _privateConstructorUsedError;
-  int get status => throw _privateConstructorUsedError;
+  @ProjectTypeConverter()
+  ProjectStatus get status => throw _privateConstructorUsedError;
   String get clientId => throw _privateConstructorUsedError;
   String get clientFirstname => throw _privateConstructorUsedError;
   String get clientLastname => throw _privateConstructorUsedError;
@@ -54,7 +55,7 @@ abstract class $ProjectCopyWith<$Res> {
       DateTime? startDate,
       DateTime? expectedCompletionDate,
       double budget,
-      int status,
+      @ProjectTypeConverter() ProjectStatus status,
       String clientId,
       String clientFirstname,
       String clientLastname,
@@ -123,7 +124,7 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int,
+              as ProjectStatus,
       clientId: null == clientId
           ? _value.clientId
           : clientId // ignore: cast_nullable_to_non_nullable
@@ -185,7 +186,7 @@ abstract class _$$ProjectImplCopyWith<$Res> implements $ProjectCopyWith<$Res> {
       DateTime? startDate,
       DateTime? expectedCompletionDate,
       double budget,
-      int status,
+      @ProjectTypeConverter() ProjectStatus status,
       String clientId,
       String clientFirstname,
       String clientLastname,
@@ -252,7 +253,7 @@ class __$$ProjectImplCopyWithImpl<$Res>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int,
+              as ProjectStatus,
       clientId: null == clientId
           ? _value.clientId
           : clientId // ignore: cast_nullable_to_non_nullable
@@ -310,7 +311,7 @@ class _$ProjectImpl implements _Project {
       this.startDate,
       this.expectedCompletionDate,
       this.budget = 0,
-      this.status = 0,
+      @ProjectTypeConverter() this.status = ProjectStatus.planning,
       this.clientId = '',
       this.clientFirstname = '',
       this.clientLastname = '',
@@ -341,7 +342,8 @@ class _$ProjectImpl implements _Project {
   final double budget;
   @override
   @JsonKey()
-  final int status;
+  @ProjectTypeConverter()
+  final ProjectStatus status;
   @override
   @JsonKey()
   final String clientId;
@@ -455,7 +457,7 @@ abstract class _Project implements Project {
       final DateTime? startDate,
       final DateTime? expectedCompletionDate,
       final double budget,
-      final int status,
+      @ProjectTypeConverter() final ProjectStatus status,
       final String clientId,
       final String clientFirstname,
       final String clientLastname,
@@ -481,7 +483,8 @@ abstract class _Project implements Project {
   @override
   double get budget;
   @override
-  int get status;
+  @ProjectTypeConverter()
+  ProjectStatus get status;
   @override
   String get clientId;
   @override

@@ -31,6 +31,6 @@ class SignUpEvent with _$SignUpEvent {
   }) = SignUpEventChangePassword;
 
   const factory SignUpEvent.signUp({
-    required ValueChanged<User> callback,
+    required ValueChanged<Employee> callback,
   }) = SignUpEventSignUp;
 }

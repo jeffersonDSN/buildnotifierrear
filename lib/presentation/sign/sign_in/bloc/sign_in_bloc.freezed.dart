@@ -20,21 +20,21 @@ mixin _$SignInEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String value) changeUserName,
     required TResult Function(String value) changePassword,
-    required TResult Function(ValueChanged<User> callback) signIn,
+    required TResult Function(ValueChanged<Employee> callback) signIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? changeUserName,
     TResult? Function(String value)? changePassword,
-    TResult? Function(ValueChanged<User> callback)? signIn,
+    TResult? Function(ValueChanged<Employee> callback)? signIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? changeUserName,
     TResult Function(String value)? changePassword,
-    TResult Function(ValueChanged<User> callback)? signIn,
+    TResult Function(ValueChanged<Employee> callback)? signIn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -149,7 +149,7 @@ class _$SignInEventChangeUserNameImpl implements SignInEventChangeUserName {
   TResult when<TResult extends Object?>({
     required TResult Function(String value) changeUserName,
     required TResult Function(String value) changePassword,
-    required TResult Function(ValueChanged<User> callback) signIn,
+    required TResult Function(ValueChanged<Employee> callback) signIn,
   }) {
     return changeUserName(value);
   }
@@ -159,7 +159,7 @@ class _$SignInEventChangeUserNameImpl implements SignInEventChangeUserName {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? changeUserName,
     TResult? Function(String value)? changePassword,
-    TResult? Function(ValueChanged<User> callback)? signIn,
+    TResult? Function(ValueChanged<Employee> callback)? signIn,
   }) {
     return changeUserName?.call(value);
   }
@@ -169,7 +169,7 @@ class _$SignInEventChangeUserNameImpl implements SignInEventChangeUserName {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? changeUserName,
     TResult Function(String value)? changePassword,
-    TResult Function(ValueChanged<User> callback)? signIn,
+    TResult Function(ValueChanged<Employee> callback)? signIn,
     required TResult orElse(),
   }) {
     if (changeUserName != null) {
@@ -292,7 +292,7 @@ class _$SignInEventChangePasswordImpl implements SignInEventChangePassword {
   TResult when<TResult extends Object?>({
     required TResult Function(String value) changeUserName,
     required TResult Function(String value) changePassword,
-    required TResult Function(ValueChanged<User> callback) signIn,
+    required TResult Function(ValueChanged<Employee> callback) signIn,
   }) {
     return changePassword(value);
   }
@@ -302,7 +302,7 @@ class _$SignInEventChangePasswordImpl implements SignInEventChangePassword {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? changeUserName,
     TResult? Function(String value)? changePassword,
-    TResult? Function(ValueChanged<User> callback)? signIn,
+    TResult? Function(ValueChanged<Employee> callback)? signIn,
   }) {
     return changePassword?.call(value);
   }
@@ -312,7 +312,7 @@ class _$SignInEventChangePasswordImpl implements SignInEventChangePassword {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? changeUserName,
     TResult Function(String value)? changePassword,
-    TResult Function(ValueChanged<User> callback)? signIn,
+    TResult Function(ValueChanged<Employee> callback)? signIn,
     required TResult orElse(),
   }) {
     if (changePassword != null) {
@@ -372,7 +372,7 @@ abstract class _$$SignInEventSignInImplCopyWith<$Res> {
           $Res Function(_$SignInEventSignInImpl) then) =
       __$$SignInEventSignInImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ValueChanged<User> callback});
+  $Res call({ValueChanged<Employee> callback});
 }
 
 /// @nodoc
@@ -392,7 +392,7 @@ class __$$SignInEventSignInImplCopyWithImpl<$Res>
       callback: null == callback
           ? _value.callback
           : callback // ignore: cast_nullable_to_non_nullable
-              as ValueChanged<User>,
+              as ValueChanged<Employee>,
     ));
   }
 }
@@ -403,7 +403,7 @@ class _$SignInEventSignInImpl implements SignInEventSignIn {
   const _$SignInEventSignInImpl({required this.callback});
 
   @override
-  final ValueChanged<User> callback;
+  final ValueChanged<Employee> callback;
 
   @override
   String toString() {
@@ -434,7 +434,7 @@ class _$SignInEventSignInImpl implements SignInEventSignIn {
   TResult when<TResult extends Object?>({
     required TResult Function(String value) changeUserName,
     required TResult Function(String value) changePassword,
-    required TResult Function(ValueChanged<User> callback) signIn,
+    required TResult Function(ValueChanged<Employee> callback) signIn,
   }) {
     return signIn(callback);
   }
@@ -444,7 +444,7 @@ class _$SignInEventSignInImpl implements SignInEventSignIn {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? changeUserName,
     TResult? Function(String value)? changePassword,
-    TResult? Function(ValueChanged<User> callback)? signIn,
+    TResult? Function(ValueChanged<Employee> callback)? signIn,
   }) {
     return signIn?.call(callback);
   }
@@ -454,7 +454,7 @@ class _$SignInEventSignInImpl implements SignInEventSignIn {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? changeUserName,
     TResult Function(String value)? changePassword,
-    TResult Function(ValueChanged<User> callback)? signIn,
+    TResult Function(ValueChanged<Employee> callback)? signIn,
     required TResult orElse(),
   }) {
     if (signIn != null) {
@@ -500,9 +500,10 @@ class _$SignInEventSignInImpl implements SignInEventSignIn {
 
 abstract class SignInEventSignIn implements SignInEvent {
   const factory SignInEventSignIn(
-      {required final ValueChanged<User> callback}) = _$SignInEventSignInImpl;
+          {required final ValueChanged<Employee> callback}) =
+      _$SignInEventSignInImpl;
 
-  ValueChanged<User> get callback;
+  ValueChanged<Employee> get callback;
   @JsonKey(ignore: true)
   _$$SignInEventSignInImplCopyWith<_$SignInEventSignInImpl> get copyWith =>
       throw _privateConstructorUsedError;

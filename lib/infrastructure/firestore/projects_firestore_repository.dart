@@ -1,4 +1,5 @@
 import 'package:buildnotifierrear/domain/core/types_defs.dart';
+import 'package:buildnotifierrear/domain/entities/enums/project_status_enums.dart';
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
 
 import 'package:buildnotifierrear/domain/repositories/abs_i_projects_repository.dart';
@@ -86,7 +87,7 @@ class ProjectsFirestoreRepository extends TenantFireStoreRepository
       'startDate': value.startDate,
       'expectedCompletionDate': value.expectedCompletionDate,
       'budget': value.budget,
-      'status': value.status,
+      'status': value.status.id,
       'description': value.description,
       'zipCode': value.zipCode,
       'state': value.state,
@@ -110,7 +111,7 @@ class ProjectsFirestoreRepository extends TenantFireStoreRepository
       'startDate': value.startDate,
       'expectedCompletionDate': value.expectedCompletionDate,
       'budget': value.budget,
-      'status': value.status,
+      'status': value.status.id,
       'description': value.description,
       'zipCode': value.zipCode,
       'state': value.state,

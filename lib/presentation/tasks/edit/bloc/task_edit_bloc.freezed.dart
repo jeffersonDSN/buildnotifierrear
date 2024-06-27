@@ -19,42 +19,53 @@ mixin _$TaskEditEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String projectId, CrudType crudType) load,
-    required TResult Function(String value) updateProjectId,
+    required TResult Function(String projectId, String projectName)
+        changeProject,
     required TResult Function(String value) updateTitle,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
-    required TResult Function(int value) changePriority,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(TaskPriority value) changePriority,
+    required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
+    required TResult Function(List<AppointmentUser> employees)
+        changeSelectedTaskAssignTo,
+    required TResult Function(AppointmentUser employee)
+        removeSelectedTaskAssignTo,
     required TResult Function(VoidCallback onSave) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String projectId, CrudType crudType)? load,
-    TResult? Function(String value)? updateProjectId,
+    TResult? Function(String projectId, String projectName)? changeProject,
     TResult? Function(String value)? updateTitle,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
-    TResult? Function(int value)? changePriority,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(TaskPriority value)? changePriority,
+    TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
+    TResult? Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult? Function(VoidCallback onSave)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String projectId, CrudType crudType)? load,
-    TResult Function(String value)? updateProjectId,
+    TResult Function(String projectId, String projectName)? changeProject,
     TResult Function(String value)? updateTitle,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
-    TResult Function(int value)? changePriority,
-    TResult Function(int value)? changeStatus,
+    TResult Function(TaskPriority value)? changePriority,
+    TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
+    TResult Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult Function(VoidCallback onSave)? save,
     required TResult orElse(),
   }) =>
@@ -62,8 +73,7 @@ mixin _$TaskEditEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TaskEditEventLoad value) load,
-    required TResult Function(TaskEditEventUpdateProjectId value)
-        updateProjectId,
+    required TResult Function(TaskEditEventChangeProject value) changeProject,
     required TResult Function(TaskEditEventUpdateTitle value) updateTitle,
     required TResult Function(TaskEditEventStartDate value) changeStartDate,
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
@@ -72,13 +82,17 @@ mixin _$TaskEditEvent {
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
+    required TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)
+        changeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)
+        removeSelectedTaskAssignTo,
     required TResult Function(TaskEditEventSave value) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TaskEditEventLoad value)? load,
-    TResult? Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult? Function(TaskEditEventChangeProject value)? changeProject,
     TResult? Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult? Function(TaskEditEventStartDate value)? changeStartDate,
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -87,13 +101,17 @@ mixin _$TaskEditEvent {
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
+    TResult? Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult? Function(TaskEditEventSave value)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TaskEditEventLoad value)? load,
-    TResult Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult Function(TaskEditEventChangeProject value)? changeProject,
     TResult Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -101,6 +119,10 @@ mixin _$TaskEditEvent {
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
+    TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult Function(TaskEditEventSave value)? save,
     required TResult orElse(),
   }) =>
@@ -214,14 +236,19 @@ class _$TaskEditEventLoadImpl implements TaskEditEventLoad {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String projectId, CrudType crudType) load,
-    required TResult Function(String value) updateProjectId,
+    required TResult Function(String projectId, String projectName)
+        changeProject,
     required TResult Function(String value) updateTitle,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
-    required TResult Function(int value) changePriority,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(TaskPriority value) changePriority,
+    required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
+    required TResult Function(List<AppointmentUser> employees)
+        changeSelectedTaskAssignTo,
+    required TResult Function(AppointmentUser employee)
+        removeSelectedTaskAssignTo,
     required TResult Function(VoidCallback onSave) save,
   }) {
     return load(projectId, crudType);
@@ -231,14 +258,17 @@ class _$TaskEditEventLoadImpl implements TaskEditEventLoad {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String projectId, CrudType crudType)? load,
-    TResult? Function(String value)? updateProjectId,
+    TResult? Function(String projectId, String projectName)? changeProject,
     TResult? Function(String value)? updateTitle,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
-    TResult? Function(int value)? changePriority,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(TaskPriority value)? changePriority,
+    TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
+    TResult? Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult? Function(VoidCallback onSave)? save,
   }) {
     return load?.call(projectId, crudType);
@@ -248,14 +278,17 @@ class _$TaskEditEventLoadImpl implements TaskEditEventLoad {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String projectId, CrudType crudType)? load,
-    TResult Function(String value)? updateProjectId,
+    TResult Function(String projectId, String projectName)? changeProject,
     TResult Function(String value)? updateTitle,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
-    TResult Function(int value)? changePriority,
-    TResult Function(int value)? changeStatus,
+    TResult Function(TaskPriority value)? changePriority,
+    TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
+    TResult Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult Function(VoidCallback onSave)? save,
     required TResult orElse(),
   }) {
@@ -269,8 +302,7 @@ class _$TaskEditEventLoadImpl implements TaskEditEventLoad {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TaskEditEventLoad value) load,
-    required TResult Function(TaskEditEventUpdateProjectId value)
-        updateProjectId,
+    required TResult Function(TaskEditEventChangeProject value) changeProject,
     required TResult Function(TaskEditEventUpdateTitle value) updateTitle,
     required TResult Function(TaskEditEventStartDate value) changeStartDate,
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
@@ -279,6 +311,10 @@ class _$TaskEditEventLoadImpl implements TaskEditEventLoad {
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
+    required TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)
+        changeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)
+        removeSelectedTaskAssignTo,
     required TResult Function(TaskEditEventSave value) save,
   }) {
     return load(this);
@@ -288,7 +324,7 @@ class _$TaskEditEventLoadImpl implements TaskEditEventLoad {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TaskEditEventLoad value)? load,
-    TResult? Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult? Function(TaskEditEventChangeProject value)? changeProject,
     TResult? Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult? Function(TaskEditEventStartDate value)? changeStartDate,
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -297,6 +333,10 @@ class _$TaskEditEventLoadImpl implements TaskEditEventLoad {
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
+    TResult? Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult? Function(TaskEditEventSave value)? save,
   }) {
     return load?.call(this);
@@ -306,7 +346,7 @@ class _$TaskEditEventLoadImpl implements TaskEditEventLoad {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TaskEditEventLoad value)? load,
-    TResult Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult Function(TaskEditEventChangeProject value)? changeProject,
     TResult Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -314,6 +354,10 @@ class _$TaskEditEventLoadImpl implements TaskEditEventLoad {
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
+    TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult Function(TaskEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -337,34 +381,38 @@ abstract class TaskEditEventLoad implements TaskEditEvent {
 }
 
 /// @nodoc
-abstract class _$$TaskEditEventUpdateProjectIdImplCopyWith<$Res> {
-  factory _$$TaskEditEventUpdateProjectIdImplCopyWith(
-          _$TaskEditEventUpdateProjectIdImpl value,
-          $Res Function(_$TaskEditEventUpdateProjectIdImpl) then) =
-      __$$TaskEditEventUpdateProjectIdImplCopyWithImpl<$Res>;
+abstract class _$$TaskEditEventChangeProjectImplCopyWith<$Res> {
+  factory _$$TaskEditEventChangeProjectImplCopyWith(
+          _$TaskEditEventChangeProjectImpl value,
+          $Res Function(_$TaskEditEventChangeProjectImpl) then) =
+      __$$TaskEditEventChangeProjectImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String value});
+  $Res call({String projectId, String projectName});
 }
 
 /// @nodoc
-class __$$TaskEditEventUpdateProjectIdImplCopyWithImpl<$Res>
-    extends _$TaskEditEventCopyWithImpl<$Res,
-        _$TaskEditEventUpdateProjectIdImpl>
-    implements _$$TaskEditEventUpdateProjectIdImplCopyWith<$Res> {
-  __$$TaskEditEventUpdateProjectIdImplCopyWithImpl(
-      _$TaskEditEventUpdateProjectIdImpl _value,
-      $Res Function(_$TaskEditEventUpdateProjectIdImpl) _then)
+class __$$TaskEditEventChangeProjectImplCopyWithImpl<$Res>
+    extends _$TaskEditEventCopyWithImpl<$Res, _$TaskEditEventChangeProjectImpl>
+    implements _$$TaskEditEventChangeProjectImplCopyWith<$Res> {
+  __$$TaskEditEventChangeProjectImplCopyWithImpl(
+      _$TaskEditEventChangeProjectImpl _value,
+      $Res Function(_$TaskEditEventChangeProjectImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = null,
+    Object? projectId = null,
+    Object? projectName = null,
   }) {
-    return _then(_$TaskEditEventUpdateProjectIdImpl(
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
+    return _then(_$TaskEditEventChangeProjectImpl(
+      projectId: null == projectId
+          ? _value.projectId
+          : projectId // ignore: cast_nullable_to_non_nullable
+              as String,
+      projectName: null == projectName
+          ? _value.projectName
+          : projectName // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -372,88 +420,103 @@ class __$$TaskEditEventUpdateProjectIdImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TaskEditEventUpdateProjectIdImpl
-    implements TaskEditEventUpdateProjectId {
-  const _$TaskEditEventUpdateProjectIdImpl({required this.value});
+class _$TaskEditEventChangeProjectImpl implements TaskEditEventChangeProject {
+  const _$TaskEditEventChangeProjectImpl(
+      {required this.projectId, required this.projectName});
 
   @override
-  final String value;
+  final String projectId;
+  @override
+  final String projectName;
 
   @override
   String toString() {
-    return 'TaskEditEvent.updateProjectId(value: $value)';
+    return 'TaskEditEvent.changeProject(projectId: $projectId, projectName: $projectName)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TaskEditEventUpdateProjectIdImpl &&
-            (identical(other.value, value) || other.value == value));
+            other is _$TaskEditEventChangeProjectImpl &&
+            (identical(other.projectId, projectId) ||
+                other.projectId == projectId) &&
+            (identical(other.projectName, projectName) ||
+                other.projectName == projectName));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode => Object.hash(runtimeType, projectId, projectName);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TaskEditEventUpdateProjectIdImplCopyWith<
-          _$TaskEditEventUpdateProjectIdImpl>
-      get copyWith => __$$TaskEditEventUpdateProjectIdImplCopyWithImpl<
-          _$TaskEditEventUpdateProjectIdImpl>(this, _$identity);
+  _$$TaskEditEventChangeProjectImplCopyWith<_$TaskEditEventChangeProjectImpl>
+      get copyWith => __$$TaskEditEventChangeProjectImplCopyWithImpl<
+          _$TaskEditEventChangeProjectImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String projectId, CrudType crudType) load,
-    required TResult Function(String value) updateProjectId,
+    required TResult Function(String projectId, String projectName)
+        changeProject,
     required TResult Function(String value) updateTitle,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
-    required TResult Function(int value) changePriority,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(TaskPriority value) changePriority,
+    required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
+    required TResult Function(List<AppointmentUser> employees)
+        changeSelectedTaskAssignTo,
+    required TResult Function(AppointmentUser employee)
+        removeSelectedTaskAssignTo,
     required TResult Function(VoidCallback onSave) save,
   }) {
-    return updateProjectId(value);
+    return changeProject(projectId, projectName);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String projectId, CrudType crudType)? load,
-    TResult? Function(String value)? updateProjectId,
+    TResult? Function(String projectId, String projectName)? changeProject,
     TResult? Function(String value)? updateTitle,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
-    TResult? Function(int value)? changePriority,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(TaskPriority value)? changePriority,
+    TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
+    TResult? Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult? Function(VoidCallback onSave)? save,
   }) {
-    return updateProjectId?.call(value);
+    return changeProject?.call(projectId, projectName);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String projectId, CrudType crudType)? load,
-    TResult Function(String value)? updateProjectId,
+    TResult Function(String projectId, String projectName)? changeProject,
     TResult Function(String value)? updateTitle,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
-    TResult Function(int value)? changePriority,
-    TResult Function(int value)? changeStatus,
+    TResult Function(TaskPriority value)? changePriority,
+    TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
+    TResult Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult Function(VoidCallback onSave)? save,
     required TResult orElse(),
   }) {
-    if (updateProjectId != null) {
-      return updateProjectId(value);
+    if (changeProject != null) {
+      return changeProject(projectId, projectName);
     }
     return orElse();
   }
@@ -462,8 +525,7 @@ class _$TaskEditEventUpdateProjectIdImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TaskEditEventLoad value) load,
-    required TResult Function(TaskEditEventUpdateProjectId value)
-        updateProjectId,
+    required TResult Function(TaskEditEventChangeProject value) changeProject,
     required TResult Function(TaskEditEventUpdateTitle value) updateTitle,
     required TResult Function(TaskEditEventStartDate value) changeStartDate,
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
@@ -472,16 +534,20 @@ class _$TaskEditEventUpdateProjectIdImpl
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
+    required TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)
+        changeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)
+        removeSelectedTaskAssignTo,
     required TResult Function(TaskEditEventSave value) save,
   }) {
-    return updateProjectId(this);
+    return changeProject(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TaskEditEventLoad value)? load,
-    TResult? Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult? Function(TaskEditEventChangeProject value)? changeProject,
     TResult? Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult? Function(TaskEditEventStartDate value)? changeStartDate,
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -490,16 +556,20 @@ class _$TaskEditEventUpdateProjectIdImpl
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
+    TResult? Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult? Function(TaskEditEventSave value)? save,
   }) {
-    return updateProjectId?.call(this);
+    return changeProject?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TaskEditEventLoad value)? load,
-    TResult Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult Function(TaskEditEventChangeProject value)? changeProject,
     TResult Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -507,24 +577,29 @@ class _$TaskEditEventUpdateProjectIdImpl
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
+    TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult Function(TaskEditEventSave value)? save,
     required TResult orElse(),
   }) {
-    if (updateProjectId != null) {
-      return updateProjectId(this);
+    if (changeProject != null) {
+      return changeProject(this);
     }
     return orElse();
   }
 }
 
-abstract class TaskEditEventUpdateProjectId implements TaskEditEvent {
-  const factory TaskEditEventUpdateProjectId({required final String value}) =
-      _$TaskEditEventUpdateProjectIdImpl;
+abstract class TaskEditEventChangeProject implements TaskEditEvent {
+  const factory TaskEditEventChangeProject(
+      {required final String projectId,
+      required final String projectName}) = _$TaskEditEventChangeProjectImpl;
 
-  String get value;
+  String get projectId;
+  String get projectName;
   @JsonKey(ignore: true)
-  _$$TaskEditEventUpdateProjectIdImplCopyWith<
-          _$TaskEditEventUpdateProjectIdImpl>
+  _$$TaskEditEventChangeProjectImplCopyWith<_$TaskEditEventChangeProjectImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -596,14 +671,19 @@ class _$TaskEditEventUpdateTitleImpl implements TaskEditEventUpdateTitle {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String projectId, CrudType crudType) load,
-    required TResult Function(String value) updateProjectId,
+    required TResult Function(String projectId, String projectName)
+        changeProject,
     required TResult Function(String value) updateTitle,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
-    required TResult Function(int value) changePriority,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(TaskPriority value) changePriority,
+    required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
+    required TResult Function(List<AppointmentUser> employees)
+        changeSelectedTaskAssignTo,
+    required TResult Function(AppointmentUser employee)
+        removeSelectedTaskAssignTo,
     required TResult Function(VoidCallback onSave) save,
   }) {
     return updateTitle(value);
@@ -613,14 +693,17 @@ class _$TaskEditEventUpdateTitleImpl implements TaskEditEventUpdateTitle {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String projectId, CrudType crudType)? load,
-    TResult? Function(String value)? updateProjectId,
+    TResult? Function(String projectId, String projectName)? changeProject,
     TResult? Function(String value)? updateTitle,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
-    TResult? Function(int value)? changePriority,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(TaskPriority value)? changePriority,
+    TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
+    TResult? Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult? Function(VoidCallback onSave)? save,
   }) {
     return updateTitle?.call(value);
@@ -630,14 +713,17 @@ class _$TaskEditEventUpdateTitleImpl implements TaskEditEventUpdateTitle {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String projectId, CrudType crudType)? load,
-    TResult Function(String value)? updateProjectId,
+    TResult Function(String projectId, String projectName)? changeProject,
     TResult Function(String value)? updateTitle,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
-    TResult Function(int value)? changePriority,
-    TResult Function(int value)? changeStatus,
+    TResult Function(TaskPriority value)? changePriority,
+    TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
+    TResult Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult Function(VoidCallback onSave)? save,
     required TResult orElse(),
   }) {
@@ -651,8 +737,7 @@ class _$TaskEditEventUpdateTitleImpl implements TaskEditEventUpdateTitle {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TaskEditEventLoad value) load,
-    required TResult Function(TaskEditEventUpdateProjectId value)
-        updateProjectId,
+    required TResult Function(TaskEditEventChangeProject value) changeProject,
     required TResult Function(TaskEditEventUpdateTitle value) updateTitle,
     required TResult Function(TaskEditEventStartDate value) changeStartDate,
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
@@ -661,6 +746,10 @@ class _$TaskEditEventUpdateTitleImpl implements TaskEditEventUpdateTitle {
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
+    required TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)
+        changeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)
+        removeSelectedTaskAssignTo,
     required TResult Function(TaskEditEventSave value) save,
   }) {
     return updateTitle(this);
@@ -670,7 +759,7 @@ class _$TaskEditEventUpdateTitleImpl implements TaskEditEventUpdateTitle {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TaskEditEventLoad value)? load,
-    TResult? Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult? Function(TaskEditEventChangeProject value)? changeProject,
     TResult? Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult? Function(TaskEditEventStartDate value)? changeStartDate,
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -679,6 +768,10 @@ class _$TaskEditEventUpdateTitleImpl implements TaskEditEventUpdateTitle {
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
+    TResult? Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult? Function(TaskEditEventSave value)? save,
   }) {
     return updateTitle?.call(this);
@@ -688,7 +781,7 @@ class _$TaskEditEventUpdateTitleImpl implements TaskEditEventUpdateTitle {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TaskEditEventLoad value)? load,
-    TResult Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult Function(TaskEditEventChangeProject value)? changeProject,
     TResult Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -696,6 +789,10 @@ class _$TaskEditEventUpdateTitleImpl implements TaskEditEventUpdateTitle {
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
+    TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult Function(TaskEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -784,14 +881,19 @@ class _$TaskEditEventStartDateImpl implements TaskEditEventStartDate {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String projectId, CrudType crudType) load,
-    required TResult Function(String value) updateProjectId,
+    required TResult Function(String projectId, String projectName)
+        changeProject,
     required TResult Function(String value) updateTitle,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
-    required TResult Function(int value) changePriority,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(TaskPriority value) changePriority,
+    required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
+    required TResult Function(List<AppointmentUser> employees)
+        changeSelectedTaskAssignTo,
+    required TResult Function(AppointmentUser employee)
+        removeSelectedTaskAssignTo,
     required TResult Function(VoidCallback onSave) save,
   }) {
     return changeStartDate(value);
@@ -801,14 +903,17 @@ class _$TaskEditEventStartDateImpl implements TaskEditEventStartDate {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String projectId, CrudType crudType)? load,
-    TResult? Function(String value)? updateProjectId,
+    TResult? Function(String projectId, String projectName)? changeProject,
     TResult? Function(String value)? updateTitle,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
-    TResult? Function(int value)? changePriority,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(TaskPriority value)? changePriority,
+    TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
+    TResult? Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult? Function(VoidCallback onSave)? save,
   }) {
     return changeStartDate?.call(value);
@@ -818,14 +923,17 @@ class _$TaskEditEventStartDateImpl implements TaskEditEventStartDate {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String projectId, CrudType crudType)? load,
-    TResult Function(String value)? updateProjectId,
+    TResult Function(String projectId, String projectName)? changeProject,
     TResult Function(String value)? updateTitle,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
-    TResult Function(int value)? changePriority,
-    TResult Function(int value)? changeStatus,
+    TResult Function(TaskPriority value)? changePriority,
+    TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
+    TResult Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult Function(VoidCallback onSave)? save,
     required TResult orElse(),
   }) {
@@ -839,8 +947,7 @@ class _$TaskEditEventStartDateImpl implements TaskEditEventStartDate {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TaskEditEventLoad value) load,
-    required TResult Function(TaskEditEventUpdateProjectId value)
-        updateProjectId,
+    required TResult Function(TaskEditEventChangeProject value) changeProject,
     required TResult Function(TaskEditEventUpdateTitle value) updateTitle,
     required TResult Function(TaskEditEventStartDate value) changeStartDate,
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
@@ -849,6 +956,10 @@ class _$TaskEditEventStartDateImpl implements TaskEditEventStartDate {
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
+    required TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)
+        changeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)
+        removeSelectedTaskAssignTo,
     required TResult Function(TaskEditEventSave value) save,
   }) {
     return changeStartDate(this);
@@ -858,7 +969,7 @@ class _$TaskEditEventStartDateImpl implements TaskEditEventStartDate {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TaskEditEventLoad value)? load,
-    TResult? Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult? Function(TaskEditEventChangeProject value)? changeProject,
     TResult? Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult? Function(TaskEditEventStartDate value)? changeStartDate,
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -867,6 +978,10 @@ class _$TaskEditEventStartDateImpl implements TaskEditEventStartDate {
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
+    TResult? Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult? Function(TaskEditEventSave value)? save,
   }) {
     return changeStartDate?.call(this);
@@ -876,7 +991,7 @@ class _$TaskEditEventStartDateImpl implements TaskEditEventStartDate {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TaskEditEventLoad value)? load,
-    TResult Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult Function(TaskEditEventChangeProject value)? changeProject,
     TResult Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -884,6 +999,10 @@ class _$TaskEditEventStartDateImpl implements TaskEditEventStartDate {
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
+    TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult Function(TaskEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -975,14 +1094,19 @@ class _$TaskEditEventExpectedEndDateImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String projectId, CrudType crudType) load,
-    required TResult Function(String value) updateProjectId,
+    required TResult Function(String projectId, String projectName)
+        changeProject,
     required TResult Function(String value) updateTitle,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
-    required TResult Function(int value) changePriority,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(TaskPriority value) changePriority,
+    required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
+    required TResult Function(List<AppointmentUser> employees)
+        changeSelectedTaskAssignTo,
+    required TResult Function(AppointmentUser employee)
+        removeSelectedTaskAssignTo,
     required TResult Function(VoidCallback onSave) save,
   }) {
     return changeEndDate(value);
@@ -992,14 +1116,17 @@ class _$TaskEditEventExpectedEndDateImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String projectId, CrudType crudType)? load,
-    TResult? Function(String value)? updateProjectId,
+    TResult? Function(String projectId, String projectName)? changeProject,
     TResult? Function(String value)? updateTitle,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
-    TResult? Function(int value)? changePriority,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(TaskPriority value)? changePriority,
+    TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
+    TResult? Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult? Function(VoidCallback onSave)? save,
   }) {
     return changeEndDate?.call(value);
@@ -1009,14 +1136,17 @@ class _$TaskEditEventExpectedEndDateImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String projectId, CrudType crudType)? load,
-    TResult Function(String value)? updateProjectId,
+    TResult Function(String projectId, String projectName)? changeProject,
     TResult Function(String value)? updateTitle,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
-    TResult Function(int value)? changePriority,
-    TResult Function(int value)? changeStatus,
+    TResult Function(TaskPriority value)? changePriority,
+    TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
+    TResult Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult Function(VoidCallback onSave)? save,
     required TResult orElse(),
   }) {
@@ -1030,8 +1160,7 @@ class _$TaskEditEventExpectedEndDateImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TaskEditEventLoad value) load,
-    required TResult Function(TaskEditEventUpdateProjectId value)
-        updateProjectId,
+    required TResult Function(TaskEditEventChangeProject value) changeProject,
     required TResult Function(TaskEditEventUpdateTitle value) updateTitle,
     required TResult Function(TaskEditEventStartDate value) changeStartDate,
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
@@ -1040,6 +1169,10 @@ class _$TaskEditEventExpectedEndDateImpl
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
+    required TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)
+        changeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)
+        removeSelectedTaskAssignTo,
     required TResult Function(TaskEditEventSave value) save,
   }) {
     return changeEndDate(this);
@@ -1049,7 +1182,7 @@ class _$TaskEditEventExpectedEndDateImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TaskEditEventLoad value)? load,
-    TResult? Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult? Function(TaskEditEventChangeProject value)? changeProject,
     TResult? Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult? Function(TaskEditEventStartDate value)? changeStartDate,
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -1058,6 +1191,10 @@ class _$TaskEditEventExpectedEndDateImpl
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
+    TResult? Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult? Function(TaskEditEventSave value)? save,
   }) {
     return changeEndDate?.call(this);
@@ -1067,7 +1204,7 @@ class _$TaskEditEventExpectedEndDateImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TaskEditEventLoad value)? load,
-    TResult Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult Function(TaskEditEventChangeProject value)? changeProject,
     TResult Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -1075,6 +1212,10 @@ class _$TaskEditEventExpectedEndDateImpl
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
+    TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult Function(TaskEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -1167,14 +1308,19 @@ class _$TaskEditEventEstimatedEffortImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String projectId, CrudType crudType) load,
-    required TResult Function(String value) updateProjectId,
+    required TResult Function(String projectId, String projectName)
+        changeProject,
     required TResult Function(String value) updateTitle,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
-    required TResult Function(int value) changePriority,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(TaskPriority value) changePriority,
+    required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
+    required TResult Function(List<AppointmentUser> employees)
+        changeSelectedTaskAssignTo,
+    required TResult Function(AppointmentUser employee)
+        removeSelectedTaskAssignTo,
     required TResult Function(VoidCallback onSave) save,
   }) {
     return changeEstimatedEffort(value);
@@ -1184,14 +1330,17 @@ class _$TaskEditEventEstimatedEffortImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String projectId, CrudType crudType)? load,
-    TResult? Function(String value)? updateProjectId,
+    TResult? Function(String projectId, String projectName)? changeProject,
     TResult? Function(String value)? updateTitle,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
-    TResult? Function(int value)? changePriority,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(TaskPriority value)? changePriority,
+    TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
+    TResult? Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult? Function(VoidCallback onSave)? save,
   }) {
     return changeEstimatedEffort?.call(value);
@@ -1201,14 +1350,17 @@ class _$TaskEditEventEstimatedEffortImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String projectId, CrudType crudType)? load,
-    TResult Function(String value)? updateProjectId,
+    TResult Function(String projectId, String projectName)? changeProject,
     TResult Function(String value)? updateTitle,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
-    TResult Function(int value)? changePriority,
-    TResult Function(int value)? changeStatus,
+    TResult Function(TaskPriority value)? changePriority,
+    TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
+    TResult Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult Function(VoidCallback onSave)? save,
     required TResult orElse(),
   }) {
@@ -1222,8 +1374,7 @@ class _$TaskEditEventEstimatedEffortImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TaskEditEventLoad value) load,
-    required TResult Function(TaskEditEventUpdateProjectId value)
-        updateProjectId,
+    required TResult Function(TaskEditEventChangeProject value) changeProject,
     required TResult Function(TaskEditEventUpdateTitle value) updateTitle,
     required TResult Function(TaskEditEventStartDate value) changeStartDate,
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
@@ -1232,6 +1383,10 @@ class _$TaskEditEventEstimatedEffortImpl
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
+    required TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)
+        changeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)
+        removeSelectedTaskAssignTo,
     required TResult Function(TaskEditEventSave value) save,
   }) {
     return changeEstimatedEffort(this);
@@ -1241,7 +1396,7 @@ class _$TaskEditEventEstimatedEffortImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TaskEditEventLoad value)? load,
-    TResult? Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult? Function(TaskEditEventChangeProject value)? changeProject,
     TResult? Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult? Function(TaskEditEventStartDate value)? changeStartDate,
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -1250,6 +1405,10 @@ class _$TaskEditEventEstimatedEffortImpl
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
+    TResult? Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult? Function(TaskEditEventSave value)? save,
   }) {
     return changeEstimatedEffort?.call(this);
@@ -1259,7 +1418,7 @@ class _$TaskEditEventEstimatedEffortImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TaskEditEventLoad value)? load,
-    TResult Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult Function(TaskEditEventChangeProject value)? changeProject,
     TResult Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -1267,6 +1426,10 @@ class _$TaskEditEventEstimatedEffortImpl
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
+    TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult Function(TaskEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -1295,7 +1458,7 @@ abstract class _$$TaskEditEventTaskPriorityImplCopyWith<$Res> {
           $Res Function(_$TaskEditEventTaskPriorityImpl) then) =
       __$$TaskEditEventTaskPriorityImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int value});
+  $Res call({TaskPriority value});
 }
 
 /// @nodoc
@@ -1316,7 +1479,7 @@ class __$$TaskEditEventTaskPriorityImplCopyWithImpl<$Res>
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as int,
+              as TaskPriority,
     ));
   }
 }
@@ -1327,7 +1490,7 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
   const _$TaskEditEventTaskPriorityImpl({required this.value});
 
   @override
-  final int value;
+  final TaskPriority value;
 
   @override
   String toString() {
@@ -1356,14 +1519,19 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String projectId, CrudType crudType) load,
-    required TResult Function(String value) updateProjectId,
+    required TResult Function(String projectId, String projectName)
+        changeProject,
     required TResult Function(String value) updateTitle,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
-    required TResult Function(int value) changePriority,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(TaskPriority value) changePriority,
+    required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
+    required TResult Function(List<AppointmentUser> employees)
+        changeSelectedTaskAssignTo,
+    required TResult Function(AppointmentUser employee)
+        removeSelectedTaskAssignTo,
     required TResult Function(VoidCallback onSave) save,
   }) {
     return changePriority(value);
@@ -1373,14 +1541,17 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String projectId, CrudType crudType)? load,
-    TResult? Function(String value)? updateProjectId,
+    TResult? Function(String projectId, String projectName)? changeProject,
     TResult? Function(String value)? updateTitle,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
-    TResult? Function(int value)? changePriority,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(TaskPriority value)? changePriority,
+    TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
+    TResult? Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult? Function(VoidCallback onSave)? save,
   }) {
     return changePriority?.call(value);
@@ -1390,14 +1561,17 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String projectId, CrudType crudType)? load,
-    TResult Function(String value)? updateProjectId,
+    TResult Function(String projectId, String projectName)? changeProject,
     TResult Function(String value)? updateTitle,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
-    TResult Function(int value)? changePriority,
-    TResult Function(int value)? changeStatus,
+    TResult Function(TaskPriority value)? changePriority,
+    TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
+    TResult Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult Function(VoidCallback onSave)? save,
     required TResult orElse(),
   }) {
@@ -1411,8 +1585,7 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TaskEditEventLoad value) load,
-    required TResult Function(TaskEditEventUpdateProjectId value)
-        updateProjectId,
+    required TResult Function(TaskEditEventChangeProject value) changeProject,
     required TResult Function(TaskEditEventUpdateTitle value) updateTitle,
     required TResult Function(TaskEditEventStartDate value) changeStartDate,
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
@@ -1421,6 +1594,10 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
+    required TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)
+        changeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)
+        removeSelectedTaskAssignTo,
     required TResult Function(TaskEditEventSave value) save,
   }) {
     return changePriority(this);
@@ -1430,7 +1607,7 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TaskEditEventLoad value)? load,
-    TResult? Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult? Function(TaskEditEventChangeProject value)? changeProject,
     TResult? Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult? Function(TaskEditEventStartDate value)? changeStartDate,
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -1439,6 +1616,10 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
+    TResult? Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult? Function(TaskEditEventSave value)? save,
   }) {
     return changePriority?.call(this);
@@ -1448,7 +1629,7 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TaskEditEventLoad value)? load,
-    TResult Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult Function(TaskEditEventChangeProject value)? changeProject,
     TResult Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -1456,6 +1637,10 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
+    TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult Function(TaskEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -1467,10 +1652,10 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
 }
 
 abstract class TaskEditEventTaskPriority implements TaskEditEvent {
-  const factory TaskEditEventTaskPriority({required final int value}) =
+  const factory TaskEditEventTaskPriority({required final TaskPriority value}) =
       _$TaskEditEventTaskPriorityImpl;
 
-  int get value;
+  TaskPriority get value;
   @JsonKey(ignore: true)
   _$$TaskEditEventTaskPriorityImplCopyWith<_$TaskEditEventTaskPriorityImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1482,7 +1667,7 @@ abstract class _$$TaskEditEventStatusImplCopyWith<$Res> {
           $Res Function(_$TaskEditEventStatusImpl) then) =
       __$$TaskEditEventStatusImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int value});
+  $Res call({TaskStatus value});
 }
 
 /// @nodoc
@@ -1502,7 +1687,7 @@ class __$$TaskEditEventStatusImplCopyWithImpl<$Res>
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as int,
+              as TaskStatus,
     ));
   }
 }
@@ -1513,7 +1698,7 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
   const _$TaskEditEventStatusImpl({required this.value});
 
   @override
-  final int value;
+  final TaskStatus value;
 
   @override
   String toString() {
@@ -1542,14 +1727,19 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String projectId, CrudType crudType) load,
-    required TResult Function(String value) updateProjectId,
+    required TResult Function(String projectId, String projectName)
+        changeProject,
     required TResult Function(String value) updateTitle,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
-    required TResult Function(int value) changePriority,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(TaskPriority value) changePriority,
+    required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
+    required TResult Function(List<AppointmentUser> employees)
+        changeSelectedTaskAssignTo,
+    required TResult Function(AppointmentUser employee)
+        removeSelectedTaskAssignTo,
     required TResult Function(VoidCallback onSave) save,
   }) {
     return changeStatus(value);
@@ -1559,14 +1749,17 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String projectId, CrudType crudType)? load,
-    TResult? Function(String value)? updateProjectId,
+    TResult? Function(String projectId, String projectName)? changeProject,
     TResult? Function(String value)? updateTitle,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
-    TResult? Function(int value)? changePriority,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(TaskPriority value)? changePriority,
+    TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
+    TResult? Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult? Function(VoidCallback onSave)? save,
   }) {
     return changeStatus?.call(value);
@@ -1576,14 +1769,17 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String projectId, CrudType crudType)? load,
-    TResult Function(String value)? updateProjectId,
+    TResult Function(String projectId, String projectName)? changeProject,
     TResult Function(String value)? updateTitle,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
-    TResult Function(int value)? changePriority,
-    TResult Function(int value)? changeStatus,
+    TResult Function(TaskPriority value)? changePriority,
+    TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
+    TResult Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult Function(VoidCallback onSave)? save,
     required TResult orElse(),
   }) {
@@ -1597,8 +1793,7 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TaskEditEventLoad value) load,
-    required TResult Function(TaskEditEventUpdateProjectId value)
-        updateProjectId,
+    required TResult Function(TaskEditEventChangeProject value) changeProject,
     required TResult Function(TaskEditEventUpdateTitle value) updateTitle,
     required TResult Function(TaskEditEventStartDate value) changeStartDate,
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
@@ -1607,6 +1802,10 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
+    required TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)
+        changeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)
+        removeSelectedTaskAssignTo,
     required TResult Function(TaskEditEventSave value) save,
   }) {
     return changeStatus(this);
@@ -1616,7 +1815,7 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TaskEditEventLoad value)? load,
-    TResult? Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult? Function(TaskEditEventChangeProject value)? changeProject,
     TResult? Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult? Function(TaskEditEventStartDate value)? changeStartDate,
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -1625,6 +1824,10 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
+    TResult? Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult? Function(TaskEditEventSave value)? save,
   }) {
     return changeStatus?.call(this);
@@ -1634,7 +1837,7 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TaskEditEventLoad value)? load,
-    TResult Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult Function(TaskEditEventChangeProject value)? changeProject,
     TResult Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -1642,6 +1845,10 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
+    TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult Function(TaskEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -1653,10 +1860,10 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
 }
 
 abstract class TaskEditEventStatus implements TaskEditEvent {
-  const factory TaskEditEventStatus({required final int value}) =
+  const factory TaskEditEventStatus({required final TaskStatus value}) =
       _$TaskEditEventStatusImpl;
 
-  int get value;
+  TaskStatus get value;
   @JsonKey(ignore: true)
   _$$TaskEditEventStatusImplCopyWith<_$TaskEditEventStatusImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1728,14 +1935,19 @@ class _$TaskEditEventNotesImpl implements TaskEditEventNotes {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String projectId, CrudType crudType) load,
-    required TResult Function(String value) updateProjectId,
+    required TResult Function(String projectId, String projectName)
+        changeProject,
     required TResult Function(String value) updateTitle,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
-    required TResult Function(int value) changePriority,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(TaskPriority value) changePriority,
+    required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
+    required TResult Function(List<AppointmentUser> employees)
+        changeSelectedTaskAssignTo,
+    required TResult Function(AppointmentUser employee)
+        removeSelectedTaskAssignTo,
     required TResult Function(VoidCallback onSave) save,
   }) {
     return changeNotes(value);
@@ -1745,14 +1957,17 @@ class _$TaskEditEventNotesImpl implements TaskEditEventNotes {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String projectId, CrudType crudType)? load,
-    TResult? Function(String value)? updateProjectId,
+    TResult? Function(String projectId, String projectName)? changeProject,
     TResult? Function(String value)? updateTitle,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
-    TResult? Function(int value)? changePriority,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(TaskPriority value)? changePriority,
+    TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
+    TResult? Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult? Function(VoidCallback onSave)? save,
   }) {
     return changeNotes?.call(value);
@@ -1762,14 +1977,17 @@ class _$TaskEditEventNotesImpl implements TaskEditEventNotes {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String projectId, CrudType crudType)? load,
-    TResult Function(String value)? updateProjectId,
+    TResult Function(String projectId, String projectName)? changeProject,
     TResult Function(String value)? updateTitle,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
-    TResult Function(int value)? changePriority,
-    TResult Function(int value)? changeStatus,
+    TResult Function(TaskPriority value)? changePriority,
+    TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
+    TResult Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult Function(VoidCallback onSave)? save,
     required TResult orElse(),
   }) {
@@ -1783,8 +2001,7 @@ class _$TaskEditEventNotesImpl implements TaskEditEventNotes {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TaskEditEventLoad value) load,
-    required TResult Function(TaskEditEventUpdateProjectId value)
-        updateProjectId,
+    required TResult Function(TaskEditEventChangeProject value) changeProject,
     required TResult Function(TaskEditEventUpdateTitle value) updateTitle,
     required TResult Function(TaskEditEventStartDate value) changeStartDate,
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
@@ -1793,6 +2010,10 @@ class _$TaskEditEventNotesImpl implements TaskEditEventNotes {
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
+    required TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)
+        changeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)
+        removeSelectedTaskAssignTo,
     required TResult Function(TaskEditEventSave value) save,
   }) {
     return changeNotes(this);
@@ -1802,7 +2023,7 @@ class _$TaskEditEventNotesImpl implements TaskEditEventNotes {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TaskEditEventLoad value)? load,
-    TResult? Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult? Function(TaskEditEventChangeProject value)? changeProject,
     TResult? Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult? Function(TaskEditEventStartDate value)? changeStartDate,
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -1811,6 +2032,10 @@ class _$TaskEditEventNotesImpl implements TaskEditEventNotes {
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
+    TResult? Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult? Function(TaskEditEventSave value)? save,
   }) {
     return changeNotes?.call(this);
@@ -1820,7 +2045,7 @@ class _$TaskEditEventNotesImpl implements TaskEditEventNotes {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TaskEditEventLoad value)? load,
-    TResult Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult Function(TaskEditEventChangeProject value)? changeProject,
     TResult Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -1828,6 +2053,10 @@ class _$TaskEditEventNotesImpl implements TaskEditEventNotes {
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
+    TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult Function(TaskEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -1846,6 +2075,460 @@ abstract class TaskEditEventNotes implements TaskEditEvent {
   @JsonKey(ignore: true)
   _$$TaskEditEventNotesImplCopyWith<_$TaskEditEventNotesImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TaskEditEventChangeSelectedTaskAssignToImplCopyWith<$Res> {
+  factory _$$TaskEditEventChangeSelectedTaskAssignToImplCopyWith(
+          _$TaskEditEventChangeSelectedTaskAssignToImpl value,
+          $Res Function(_$TaskEditEventChangeSelectedTaskAssignToImpl) then) =
+      __$$TaskEditEventChangeSelectedTaskAssignToImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<AppointmentUser> employees});
+}
+
+/// @nodoc
+class __$$TaskEditEventChangeSelectedTaskAssignToImplCopyWithImpl<$Res>
+    extends _$TaskEditEventCopyWithImpl<$Res,
+        _$TaskEditEventChangeSelectedTaskAssignToImpl>
+    implements _$$TaskEditEventChangeSelectedTaskAssignToImplCopyWith<$Res> {
+  __$$TaskEditEventChangeSelectedTaskAssignToImplCopyWithImpl(
+      _$TaskEditEventChangeSelectedTaskAssignToImpl _value,
+      $Res Function(_$TaskEditEventChangeSelectedTaskAssignToImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? employees = null,
+  }) {
+    return _then(_$TaskEditEventChangeSelectedTaskAssignToImpl(
+      employees: null == employees
+          ? _value._employees
+          : employees // ignore: cast_nullable_to_non_nullable
+              as List<AppointmentUser>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TaskEditEventChangeSelectedTaskAssignToImpl
+    implements TaskEditEventChangeSelectedTaskAssignTo {
+  const _$TaskEditEventChangeSelectedTaskAssignToImpl(
+      {required final List<AppointmentUser> employees})
+      : _employees = employees;
+
+  final List<AppointmentUser> _employees;
+  @override
+  List<AppointmentUser> get employees {
+    if (_employees is EqualUnmodifiableListView) return _employees;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_employees);
+  }
+
+  @override
+  String toString() {
+    return 'TaskEditEvent.changeSelectedTaskAssignTo(employees: $employees)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TaskEditEventChangeSelectedTaskAssignToImpl &&
+            const DeepCollectionEquality()
+                .equals(other._employees, _employees));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_employees));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TaskEditEventChangeSelectedTaskAssignToImplCopyWith<
+          _$TaskEditEventChangeSelectedTaskAssignToImpl>
+      get copyWith =>
+          __$$TaskEditEventChangeSelectedTaskAssignToImplCopyWithImpl<
+              _$TaskEditEventChangeSelectedTaskAssignToImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String projectId, CrudType crudType) load,
+    required TResult Function(String projectId, String projectName)
+        changeProject,
+    required TResult Function(String value) updateTitle,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(TaskPriority value) changePriority,
+    required TResult Function(TaskStatus value) changeStatus,
+    required TResult Function(String value) changeNotes,
+    required TResult Function(List<AppointmentUser> employees)
+        changeSelectedTaskAssignTo,
+    required TResult Function(AppointmentUser employee)
+        removeSelectedTaskAssignTo,
+    required TResult Function(VoidCallback onSave) save,
+  }) {
+    return changeSelectedTaskAssignTo(employees);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String projectId, CrudType crudType)? load,
+    TResult? Function(String projectId, String projectName)? changeProject,
+    TResult? Function(String value)? updateTitle,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(TaskPriority value)? changePriority,
+    TResult? Function(TaskStatus value)? changeStatus,
+    TResult? Function(String value)? changeNotes,
+    TResult? Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
+    TResult? Function(VoidCallback onSave)? save,
+  }) {
+    return changeSelectedTaskAssignTo?.call(employees);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String projectId, CrudType crudType)? load,
+    TResult Function(String projectId, String projectName)? changeProject,
+    TResult Function(String value)? updateTitle,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(TaskPriority value)? changePriority,
+    TResult Function(TaskStatus value)? changeStatus,
+    TResult Function(String value)? changeNotes,
+    TResult Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
+    TResult Function(VoidCallback onSave)? save,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedTaskAssignTo != null) {
+      return changeSelectedTaskAssignTo(employees);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TaskEditEventLoad value) load,
+    required TResult Function(TaskEditEventChangeProject value) changeProject,
+    required TResult Function(TaskEditEventUpdateTitle value) updateTitle,
+    required TResult Function(TaskEditEventStartDate value) changeStartDate,
+    required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
+    required TResult Function(TaskEditEventEstimatedEffort value)
+        changeEstimatedEffort,
+    required TResult Function(TaskEditEventTaskPriority value) changePriority,
+    required TResult Function(TaskEditEventStatus value) changeStatus,
+    required TResult Function(TaskEditEventNotes value) changeNotes,
+    required TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)
+        changeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)
+        removeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventSave value) save,
+  }) {
+    return changeSelectedTaskAssignTo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TaskEditEventLoad value)? load,
+    TResult? Function(TaskEditEventChangeProject value)? changeProject,
+    TResult? Function(TaskEditEventUpdateTitle value)? updateTitle,
+    TResult? Function(TaskEditEventStartDate value)? changeStartDate,
+    TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
+    TResult? Function(TaskEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
+    TResult? Function(TaskEditEventTaskPriority value)? changePriority,
+    TResult? Function(TaskEditEventStatus value)? changeStatus,
+    TResult? Function(TaskEditEventNotes value)? changeNotes,
+    TResult? Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventSave value)? save,
+  }) {
+    return changeSelectedTaskAssignTo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TaskEditEventLoad value)? load,
+    TResult Function(TaskEditEventChangeProject value)? changeProject,
+    TResult Function(TaskEditEventUpdateTitle value)? updateTitle,
+    TResult Function(TaskEditEventStartDate value)? changeStartDate,
+    TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
+    TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventTaskPriority value)? changePriority,
+    TResult Function(TaskEditEventStatus value)? changeStatus,
+    TResult Function(TaskEditEventNotes value)? changeNotes,
+    TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeSelectedTaskAssignTo != null) {
+      return changeSelectedTaskAssignTo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TaskEditEventChangeSelectedTaskAssignTo
+    implements TaskEditEvent {
+  const factory TaskEditEventChangeSelectedTaskAssignTo(
+          {required final List<AppointmentUser> employees}) =
+      _$TaskEditEventChangeSelectedTaskAssignToImpl;
+
+  List<AppointmentUser> get employees;
+  @JsonKey(ignore: true)
+  _$$TaskEditEventChangeSelectedTaskAssignToImplCopyWith<
+          _$TaskEditEventChangeSelectedTaskAssignToImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TaskEditEventRemoveSelectedTaskAssignToImplCopyWith<$Res> {
+  factory _$$TaskEditEventRemoveSelectedTaskAssignToImplCopyWith(
+          _$TaskEditEventRemoveSelectedTaskAssignToImpl value,
+          $Res Function(_$TaskEditEventRemoveSelectedTaskAssignToImpl) then) =
+      __$$TaskEditEventRemoveSelectedTaskAssignToImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AppointmentUser employee});
+
+  $AppointmentUserCopyWith<$Res> get employee;
+}
+
+/// @nodoc
+class __$$TaskEditEventRemoveSelectedTaskAssignToImplCopyWithImpl<$Res>
+    extends _$TaskEditEventCopyWithImpl<$Res,
+        _$TaskEditEventRemoveSelectedTaskAssignToImpl>
+    implements _$$TaskEditEventRemoveSelectedTaskAssignToImplCopyWith<$Res> {
+  __$$TaskEditEventRemoveSelectedTaskAssignToImplCopyWithImpl(
+      _$TaskEditEventRemoveSelectedTaskAssignToImpl _value,
+      $Res Function(_$TaskEditEventRemoveSelectedTaskAssignToImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? employee = null,
+  }) {
+    return _then(_$TaskEditEventRemoveSelectedTaskAssignToImpl(
+      employee: null == employee
+          ? _value.employee
+          : employee // ignore: cast_nullable_to_non_nullable
+              as AppointmentUser,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AppointmentUserCopyWith<$Res> get employee {
+    return $AppointmentUserCopyWith<$Res>(_value.employee, (value) {
+      return _then(_value.copyWith(employee: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$TaskEditEventRemoveSelectedTaskAssignToImpl
+    implements TaskEditEventRemoveSelectedTaskAssignTo {
+  const _$TaskEditEventRemoveSelectedTaskAssignToImpl({required this.employee});
+
+  @override
+  final AppointmentUser employee;
+
+  @override
+  String toString() {
+    return 'TaskEditEvent.removeSelectedTaskAssignTo(employee: $employee)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TaskEditEventRemoveSelectedTaskAssignToImpl &&
+            (identical(other.employee, employee) ||
+                other.employee == employee));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, employee);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TaskEditEventRemoveSelectedTaskAssignToImplCopyWith<
+          _$TaskEditEventRemoveSelectedTaskAssignToImpl>
+      get copyWith =>
+          __$$TaskEditEventRemoveSelectedTaskAssignToImplCopyWithImpl<
+              _$TaskEditEventRemoveSelectedTaskAssignToImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String projectId, CrudType crudType) load,
+    required TResult Function(String projectId, String projectName)
+        changeProject,
+    required TResult Function(String value) updateTitle,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(TaskPriority value) changePriority,
+    required TResult Function(TaskStatus value) changeStatus,
+    required TResult Function(String value) changeNotes,
+    required TResult Function(List<AppointmentUser> employees)
+        changeSelectedTaskAssignTo,
+    required TResult Function(AppointmentUser employee)
+        removeSelectedTaskAssignTo,
+    required TResult Function(VoidCallback onSave) save,
+  }) {
+    return removeSelectedTaskAssignTo(employee);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String projectId, CrudType crudType)? load,
+    TResult? Function(String projectId, String projectName)? changeProject,
+    TResult? Function(String value)? updateTitle,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(TaskPriority value)? changePriority,
+    TResult? Function(TaskStatus value)? changeStatus,
+    TResult? Function(String value)? changeNotes,
+    TResult? Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
+    TResult? Function(VoidCallback onSave)? save,
+  }) {
+    return removeSelectedTaskAssignTo?.call(employee);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String projectId, CrudType crudType)? load,
+    TResult Function(String projectId, String projectName)? changeProject,
+    TResult Function(String value)? updateTitle,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(TaskPriority value)? changePriority,
+    TResult Function(TaskStatus value)? changeStatus,
+    TResult Function(String value)? changeNotes,
+    TResult Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
+    TResult Function(VoidCallback onSave)? save,
+    required TResult orElse(),
+  }) {
+    if (removeSelectedTaskAssignTo != null) {
+      return removeSelectedTaskAssignTo(employee);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TaskEditEventLoad value) load,
+    required TResult Function(TaskEditEventChangeProject value) changeProject,
+    required TResult Function(TaskEditEventUpdateTitle value) updateTitle,
+    required TResult Function(TaskEditEventStartDate value) changeStartDate,
+    required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
+    required TResult Function(TaskEditEventEstimatedEffort value)
+        changeEstimatedEffort,
+    required TResult Function(TaskEditEventTaskPriority value) changePriority,
+    required TResult Function(TaskEditEventStatus value) changeStatus,
+    required TResult Function(TaskEditEventNotes value) changeNotes,
+    required TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)
+        changeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)
+        removeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventSave value) save,
+  }) {
+    return removeSelectedTaskAssignTo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TaskEditEventLoad value)? load,
+    TResult? Function(TaskEditEventChangeProject value)? changeProject,
+    TResult? Function(TaskEditEventUpdateTitle value)? updateTitle,
+    TResult? Function(TaskEditEventStartDate value)? changeStartDate,
+    TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
+    TResult? Function(TaskEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
+    TResult? Function(TaskEditEventTaskPriority value)? changePriority,
+    TResult? Function(TaskEditEventStatus value)? changeStatus,
+    TResult? Function(TaskEditEventNotes value)? changeNotes,
+    TResult? Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventSave value)? save,
+  }) {
+    return removeSelectedTaskAssignTo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TaskEditEventLoad value)? load,
+    TResult Function(TaskEditEventChangeProject value)? changeProject,
+    TResult Function(TaskEditEventUpdateTitle value)? updateTitle,
+    TResult Function(TaskEditEventStartDate value)? changeStartDate,
+    TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
+    TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventTaskPriority value)? changePriority,
+    TResult Function(TaskEditEventStatus value)? changeStatus,
+    TResult Function(TaskEditEventNotes value)? changeNotes,
+    TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (removeSelectedTaskAssignTo != null) {
+      return removeSelectedTaskAssignTo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TaskEditEventRemoveSelectedTaskAssignTo
+    implements TaskEditEvent {
+  const factory TaskEditEventRemoveSelectedTaskAssignTo(
+          {required final AppointmentUser employee}) =
+      _$TaskEditEventRemoveSelectedTaskAssignToImpl;
+
+  AppointmentUser get employee;
+  @JsonKey(ignore: true)
+  _$$TaskEditEventRemoveSelectedTaskAssignToImplCopyWith<
+          _$TaskEditEventRemoveSelectedTaskAssignToImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1914,14 +2597,19 @@ class _$TaskEditEventSaveImpl implements TaskEditEventSave {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String projectId, CrudType crudType) load,
-    required TResult Function(String value) updateProjectId,
+    required TResult Function(String projectId, String projectName)
+        changeProject,
     required TResult Function(String value) updateTitle,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
-    required TResult Function(int value) changePriority,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(TaskPriority value) changePriority,
+    required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
+    required TResult Function(List<AppointmentUser> employees)
+        changeSelectedTaskAssignTo,
+    required TResult Function(AppointmentUser employee)
+        removeSelectedTaskAssignTo,
     required TResult Function(VoidCallback onSave) save,
   }) {
     return save(onSave);
@@ -1931,14 +2619,17 @@ class _$TaskEditEventSaveImpl implements TaskEditEventSave {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String projectId, CrudType crudType)? load,
-    TResult? Function(String value)? updateProjectId,
+    TResult? Function(String projectId, String projectName)? changeProject,
     TResult? Function(String value)? updateTitle,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
-    TResult? Function(int value)? changePriority,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(TaskPriority value)? changePriority,
+    TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
+    TResult? Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult? Function(VoidCallback onSave)? save,
   }) {
     return save?.call(onSave);
@@ -1948,14 +2639,17 @@ class _$TaskEditEventSaveImpl implements TaskEditEventSave {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String projectId, CrudType crudType)? load,
-    TResult Function(String value)? updateProjectId,
+    TResult Function(String projectId, String projectName)? changeProject,
     TResult Function(String value)? updateTitle,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
-    TResult Function(int value)? changePriority,
-    TResult Function(int value)? changeStatus,
+    TResult Function(TaskPriority value)? changePriority,
+    TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
+    TResult Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
     TResult Function(VoidCallback onSave)? save,
     required TResult orElse(),
   }) {
@@ -1969,8 +2663,7 @@ class _$TaskEditEventSaveImpl implements TaskEditEventSave {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TaskEditEventLoad value) load,
-    required TResult Function(TaskEditEventUpdateProjectId value)
-        updateProjectId,
+    required TResult Function(TaskEditEventChangeProject value) changeProject,
     required TResult Function(TaskEditEventUpdateTitle value) updateTitle,
     required TResult Function(TaskEditEventStartDate value) changeStartDate,
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
@@ -1979,6 +2672,10 @@ class _$TaskEditEventSaveImpl implements TaskEditEventSave {
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
+    required TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)
+        changeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)
+        removeSelectedTaskAssignTo,
     required TResult Function(TaskEditEventSave value) save,
   }) {
     return save(this);
@@ -1988,7 +2685,7 @@ class _$TaskEditEventSaveImpl implements TaskEditEventSave {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TaskEditEventLoad value)? load,
-    TResult? Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult? Function(TaskEditEventChangeProject value)? changeProject,
     TResult? Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult? Function(TaskEditEventStartDate value)? changeStartDate,
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -1997,6 +2694,10 @@ class _$TaskEditEventSaveImpl implements TaskEditEventSave {
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
+    TResult? Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult? Function(TaskEditEventSave value)? save,
   }) {
     return save?.call(this);
@@ -2006,7 +2707,7 @@ class _$TaskEditEventSaveImpl implements TaskEditEventSave {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TaskEditEventLoad value)? load,
-    TResult Function(TaskEditEventUpdateProjectId value)? updateProjectId,
+    TResult Function(TaskEditEventChangeProject value)? changeProject,
     TResult Function(TaskEditEventUpdateTitle value)? updateTitle,
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
@@ -2014,6 +2715,10 @@ class _$TaskEditEventSaveImpl implements TaskEditEventSave {
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
+    TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
     TResult Function(TaskEditEventSave value)? save,
     required TResult orElse(),
   }) {
@@ -2040,21 +2745,25 @@ mixin _$TaskEditState {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(CrudType crudType, Task task) loaded,
+    required TResult Function(
+            CrudType crudType, Task task, List<Project> projects)
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType crudType, Task task)? loaded,
+    TResult? Function(CrudType crudType, Task task, List<Project> projects)?
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType crudType, Task task)? loaded,
+    TResult Function(CrudType crudType, Task task, List<Project> projects)?
+        loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -2140,7 +2849,9 @@ class _$TaskEditStateEmptyImpl implements TaskEditStateEmpty {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(CrudType crudType, Task task) loaded,
+    required TResult Function(
+            CrudType crudType, Task task, List<Project> projects)
+        loaded,
   }) {
     return empty();
   }
@@ -2150,7 +2861,8 @@ class _$TaskEditStateEmptyImpl implements TaskEditStateEmpty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType crudType, Task task)? loaded,
+    TResult? Function(CrudType crudType, Task task, List<Project> projects)?
+        loaded,
   }) {
     return empty?.call();
   }
@@ -2160,7 +2872,8 @@ class _$TaskEditStateEmptyImpl implements TaskEditStateEmpty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType crudType, Task task)? loaded,
+    TResult Function(CrudType crudType, Task task, List<Project> projects)?
+        loaded,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -2249,7 +2962,9 @@ class _$TaskEditStateLoadingImpl implements TaskEditStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(CrudType crudType, Task task) loaded,
+    required TResult Function(
+            CrudType crudType, Task task, List<Project> projects)
+        loaded,
   }) {
     return loading();
   }
@@ -2259,7 +2974,8 @@ class _$TaskEditStateLoadingImpl implements TaskEditStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType crudType, Task task)? loaded,
+    TResult? Function(CrudType crudType, Task task, List<Project> projects)?
+        loaded,
   }) {
     return loading?.call();
   }
@@ -2269,7 +2985,8 @@ class _$TaskEditStateLoadingImpl implements TaskEditStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType crudType, Task task)? loaded,
+    TResult Function(CrudType crudType, Task task, List<Project> projects)?
+        loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -2323,7 +3040,7 @@ abstract class _$$TaskEditStateLoadedImplCopyWith<$Res> {
           $Res Function(_$TaskEditStateLoadedImpl) then) =
       __$$TaskEditStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({CrudType crudType, Task task});
+  $Res call({CrudType crudType, Task task, List<Project> projects});
 
   $CrudTypeCopyWith<$Res> get crudType;
   $TaskCopyWith<$Res> get task;
@@ -2342,6 +3059,7 @@ class __$$TaskEditStateLoadedImplCopyWithImpl<$Res>
   $Res call({
     Object? crudType = null,
     Object? task = null,
+    Object? projects = null,
   }) {
     return _then(_$TaskEditStateLoadedImpl(
       crudType: null == crudType
@@ -2352,6 +3070,10 @@ class __$$TaskEditStateLoadedImplCopyWithImpl<$Res>
           ? _value.task
           : task // ignore: cast_nullable_to_non_nullable
               as Task,
+      projects: null == projects
+          ? _value._projects
+          : projects // ignore: cast_nullable_to_non_nullable
+              as List<Project>,
     ));
   }
 
@@ -2375,16 +3097,27 @@ class __$$TaskEditStateLoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$TaskEditStateLoadedImpl implements TaskEditStateLoaded {
-  const _$TaskEditStateLoadedImpl({required this.crudType, required this.task});
+  const _$TaskEditStateLoadedImpl(
+      {required this.crudType,
+      required this.task,
+      required final List<Project> projects})
+      : _projects = projects;
 
   @override
   final CrudType crudType;
   @override
   final Task task;
+  final List<Project> _projects;
+  @override
+  List<Project> get projects {
+    if (_projects is EqualUnmodifiableListView) return _projects;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_projects);
+  }
 
   @override
   String toString() {
-    return 'TaskEditState.loaded(crudType: $crudType, task: $task)';
+    return 'TaskEditState.loaded(crudType: $crudType, task: $task, projects: $projects)';
   }
 
   @override
@@ -2394,11 +3127,13 @@ class _$TaskEditStateLoadedImpl implements TaskEditStateLoaded {
             other is _$TaskEditStateLoadedImpl &&
             (identical(other.crudType, crudType) ||
                 other.crudType == crudType) &&
-            (identical(other.task, task) || other.task == task));
+            (identical(other.task, task) || other.task == task) &&
+            const DeepCollectionEquality().equals(other._projects, _projects));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, crudType, task);
+  int get hashCode => Object.hash(runtimeType, crudType, task,
+      const DeepCollectionEquality().hash(_projects));
 
   @JsonKey(ignore: true)
   @override
@@ -2412,9 +3147,11 @@ class _$TaskEditStateLoadedImpl implements TaskEditStateLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() empty,
     required TResult Function() loading,
-    required TResult Function(CrudType crudType, Task task) loaded,
+    required TResult Function(
+            CrudType crudType, Task task, List<Project> projects)
+        loaded,
   }) {
-    return loaded(crudType, task);
+    return loaded(crudType, task, projects);
   }
 
   @override
@@ -2422,9 +3159,10 @@ class _$TaskEditStateLoadedImpl implements TaskEditStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType crudType, Task task)? loaded,
+    TResult? Function(CrudType crudType, Task task, List<Project> projects)?
+        loaded,
   }) {
-    return loaded?.call(crudType, task);
+    return loaded?.call(crudType, task, projects);
   }
 
   @override
@@ -2432,11 +3170,12 @@ class _$TaskEditStateLoadedImpl implements TaskEditStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType crudType, Task task)? loaded,
+    TResult Function(CrudType crudType, Task task, List<Project> projects)?
+        loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(crudType, task);
+      return loaded(crudType, task, projects);
     }
     return orElse();
   }
@@ -2479,10 +3218,12 @@ class _$TaskEditStateLoadedImpl implements TaskEditStateLoaded {
 abstract class TaskEditStateLoaded implements TaskEditState {
   const factory TaskEditStateLoaded(
       {required final CrudType crudType,
-      required final Task task}) = _$TaskEditStateLoadedImpl;
+      required final Task task,
+      required final List<Project> projects}) = _$TaskEditStateLoadedImpl;
 
   CrudType get crudType;
   Task get task;
+  List<Project> get projects;
   @JsonKey(ignore: true)
   _$$TaskEditStateLoadedImplCopyWith<_$TaskEditStateLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;

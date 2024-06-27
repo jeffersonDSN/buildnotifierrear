@@ -1,10 +1,14 @@
 import 'app_localizations.dart';
 
+/// The translations for Portuguese (`pt`).
 class AppLocalizationsPt extends AppLocalizations {
   AppLocalizationsPt([super.locale = 'pt']);
 
   @override
   String get text => 'Texto';
+
+  @override
+  String get selectLanguage => 'Selecione seu idioma';
 
   @override
   String get english => 'Inglês';
@@ -16,255 +20,287 @@ class AppLocalizationsPt extends AppLocalizations {
   String get portuguese => 'Português';
 
   @override
-  String get welcome => 'Bem vindo';
+  String get welcome => 'Bem-vindo!';
+
+  @override
+  String get hello => 'Olá!';
+
+  @override
+  String get home => 'Início';
+
+  @override
+  String get schedule => 'Agenda';
+
+  @override
+  String get project => 'Projeto';
+
+  @override
+  String get projects => 'Projetos';
+
+  @override
+  String get clients => 'Clientes';
+
+  @override
+  String get employees => 'Funcionários';
+
+  @override
+  String get settings => 'Configurações';
+
+  @override
+  String get signout => 'Sair';
+
+  @override
+  String get signinYourAccount => 'Faça login na sua conta';
+
+  @override
+  String get userName => 'Nome de usuário';
+
+  @override
+  String get password => 'Senha';
+
+  @override
+  String get signin => 'Entrar';
+
+  @override
+  String get donotHaveAccount => 'Não tem uma conta?';
+
+  @override
+  String get signup => 'Inscrever-se';
+
+  @override
+  String get enterYourUserName => 'Por favor, insira seu nome de usuário';
+
+  @override
+  String get enterYourpassword => 'Por favor, insira sua senha';
+
+  @override
+  String get usernamePasswordIncorrect =>
+      'O nome de usuário ou senha que você inseriu está incorreto.';
 
   @override
   String get welcomeCaption =>
       'Bem-vindo! Pronto para explorar o que há de novo?';
 
   @override
-  String get save => 'Save';
+  String get startTrialToday =>
+      'Comece seu teste gratuito hoje e desbloqueie um mundo de possibilidades!';
 
   @override
-  String get cancel => 'Cancel';
+  String get firstName => 'Primeiro nome';
 
   @override
-  // TODO: implement donotHaveAccount
-  String get donotHaveAccount => throw UnimplementedError();
+  String get lastName => 'Último nome';
 
   @override
-  // TODO: implement hello
-  String get hello => throw UnimplementedError();
+  String get companyName => 'Nome da empresa';
 
   @override
-  // TODO: implement password
-  String get password => throw UnimplementedError();
+  String get email => 'E-mail';
 
   @override
-  // TODO: implement signin
-  String get signin => throw UnimplementedError();
+  String get phoneNumber => 'Número de telefone';
 
   @override
-  // TODO: implement signinYourAccount
-  String get signinYourAccount => throw UnimplementedError();
+  String get isRequired => 'é obrigatório';
 
   @override
-  // TODO: implement signup
-  String get signup => throw UnimplementedError();
+  String get haveAccount => 'Já tem uma conta';
 
   @override
-  // TODO: implement userName
-  String get userName => throw UnimplementedError();
+  String get newProject => 'Novo projeto';
 
   @override
-  // TODO: implement enterYourpassword
-  String get enterYourpassword => throw UnimplementedError();
+  String get editProject => 'Editar projeto';
 
   @override
-  // TODO: implement enterYourUserName
-  String get enterYourUserName => throw UnimplementedError();
+  String get name => 'Nome';
 
   @override
-  // TODO: implement usernamePasswordIncorrect
-  String get usernamePasswordIncorrect => throw UnimplementedError();
+  String get client => 'Cliente';
 
   @override
-  // TODO: implement startTrialToday
-  String get startTrialToday => throw UnimplementedError();
+  String get startDate => 'Data de início';
 
   @override
-  // TODO: implement companyName
-  String get companyName => throw UnimplementedError();
+  String get expectedEndDate => 'Data prevista de término';
 
   @override
-  // TODO: implement email
-  String get email => throw UnimplementedError();
+  String get budget => 'Orçamento';
 
   @override
-  // TODO: implement firstName
-  String get firstName => throw UnimplementedError();
+  String get status => 'Status';
 
   @override
-  // TODO: implement lastName
-  String get lastName => throw UnimplementedError();
+  String get address => 'Endereço';
 
   @override
-  // TODO: implement phoneNumber
-  String get phoneNumber => throw UnimplementedError();
+  String get city => 'Cidade';
 
   @override
-  // TODO: implement isRequired
-  String get isRequired => throw UnimplementedError();
+  String get state => 'Estado';
 
   @override
-  // TODO: implement haveAccount
-  String get haveAccount => throw UnimplementedError();
+  String get zipCode => 'CEP';
 
   @override
-  // TODO: implement clients
-  String get clients => throw UnimplementedError();
+  String get details => 'Detalhes';
 
   @override
-  // TODO: implement home
-  String get home => throw UnimplementedError();
+  String get description => 'Descrição';
 
   @override
-  // TODO: implement projects
-  String get projects => throw UnimplementedError();
+  String get createProject => 'Criar projeto';
 
   @override
-  // TODO: implement schedule
-  String get schedule => throw UnimplementedError();
+  String get updateProject => 'Atualizar projeto';
 
   @override
-  // TODO: implement settings
-  String get settings => throw UnimplementedError();
+  String get streetAddress => 'Endereço, Caixa Postal';
 
   @override
-  // TODO: implement signout
-  String get signout => throw UnimplementedError();
+  String get aptUnit => 'Apt #, Unidade, Suíte, Andar';
 
   @override
-  // TODO: implement users
-  String get users => throw UnimplementedError();
+  String get title => 'Título';
 
   @override
-  // TODO: implement address
-  String get address => throw UnimplementedError();
+  String get estEffort => 'Esforço Est.';
 
   @override
-  // TODO: implement budget
-  String get budget => throw UnimplementedError();
+  String get hours => 'horas';
 
   @override
-  // TODO: implement city
-  String get city => throw UnimplementedError();
+  String get priority => 'Prioridade';
 
   @override
-  // TODO: implement client
-  String get client => throw UnimplementedError();
+  String get newTask => 'Nova tarefa';
 
   @override
-  // TODO: implement description
-  String get description => throw UnimplementedError();
+  String get editTask => 'Editar tarefa';
 
   @override
-  // TODO: implement details
-  String get details => throw UnimplementedError();
+  String get createTask => 'Criar tarefa';
 
   @override
-  // TODO: implement editProject
-  String get editProject => throw UnimplementedError();
+  String get updateTask => 'Atualizar tarefa';
 
   @override
-  // TODO: implement expectedEndDate
-  String get expectedEndDate => throw UnimplementedError();
+  String get timecards => 'Cartões de ponto';
 
   @override
-  // TODO: implement name
-  String get name => throw UnimplementedError();
+  String get totalHours => 'Horas totais';
 
   @override
-  // TODO: implement newProject
-  String get newProject => throw UnimplementedError();
+  get totalPayroll => 'Folha de Pagamento Total';
 
   @override
-  // TODO: implement startDate
-  String get startDate => throw UnimplementedError();
+  String get save => 'Salvar';
 
   @override
-  // TODO: implement state
-  String get state => throw UnimplementedError();
+  String get cancel => 'Cancelar';
 
   @override
-  // TODO: implement status
-  String get status => throw UnimplementedError();
+  String get selectPeriod => 'Selecionar período';
 
   @override
-  // TODO: implement zipCode
-  String get zipCode => throw UnimplementedError();
+  String get allocationHoursProject => 'Alocação de horas em um projeto';
 
   @override
-  // TODO: implement createProject
-  String get createProject => throw UnimplementedError();
+  String get hoursAssignedProject => 'Horas atribuídas a um projeto';
 
   @override
-  // TODO: implement updateProject
-  String get updateProject => throw UnimplementedError();
+  String get hoursNotAssignedProject => 'Horas não atribuídas a um projeto';
 
   @override
-  // TODO: implement aptUnit
-  String get aptUnit => throw UnimplementedError();
+  String get action => 'Ação';
 
   @override
-  // TODO: implement streetAddress
-  String get streetAddress => throw UnimplementedError();
+  String get tasks => 'Tarefas';
 
   @override
-  // TODO: implement estEffort
-  String get estEffort => throw UnimplementedError();
+  String get notes => 'Notas';
 
   @override
-  // TODO: implement hours
-  String get hours => throw UnimplementedError();
+  String get assignTo => 'Atribuir a';
 
   @override
-  // TODO: implement priority
-  String get priority => throw UnimplementedError();
+  String get addEmployee => 'Adicionar funcionário';
 
   @override
-  // TODO: implement title
-  String get title => throw UnimplementedError();
+  String get end => 'Fim';
 
   @override
-  // TODO: implement editTask
-  String get editTask => throw UnimplementedError();
+  String get close => 'Fechar';
 
   @override
-  // TODO: implement newTask
-  String get newTask => throw UnimplementedError();
+  String get started => 'Iniciado';
 
   @override
-  // TODO: implement createTask
-  String get createTask => throw UnimplementedError();
+  String get newClient => 'Novo cliente';
 
   @override
-  // TODO: implement updateTask
-  String get updateTask => throw UnimplementedError();
+  String get editClient => 'Editar cliente';
 
   @override
-  // TODO: implement timecard
-  String get timecards => throw UnimplementedError();
+  String get hasNoTask => 'Não tem tarefa';
 
   @override
-  // TODO: implement totalPayroll
-  String get totalPayroll => throw UnimplementedError();
+  String get hasNoClient => 'Não tem cliente';
 
   @override
-  // TODO: implement totalHours
-  String get totalHours => throw UnimplementedError();
+  String get middleName => 'Nome do meio';
 
   @override
-  // TODO: implement started
-  String get started => throw UnimplementedError();
+  String get newEmployee => 'Novo funcionário';
 
   @override
-  // TODO: implement end
-  String get end => throw UnimplementedError();
+  String get department => 'Departamento';
 
   @override
-  // TODO: implement selectPeriod
-  String get selectPeriod => throw UnimplementedError();
+  String get position => 'Posição';
 
   @override
-  // TODO: implement allocationHoursProject
-  String get allocationHoursProject => throw UnimplementedError();
+  String get editEmployee => 'Editar funcionário';
 
   @override
-  // TODO: implement hoursAssignedProject
-  String get hoursAssignedProject => throw UnimplementedError();
+  String get account => 'Conta';
 
   @override
-  // TODO: implement hoursNotAssignedProject
-  String get hoursNotAssignedProject => throw UnimplementedError();
+  String get hourlyRate => 'Taxa horária';
+
+  @override
+  String get employee => 'Funcionário';
+
+  @override
+  String get planning => 'Planejamento';
+
+  @override
+  String get planned => 'Planejado';
+
+  @override
+  String get inProgress => 'Em Progresso';
+
+  @override
+  String get blocked => 'Bloqueado';
+
+  @override
+  String get concluded => 'Concluído';
+
+  @override
+  String get low => 'Baixa';
+
+  @override
+  String get medium => 'Média';
+
+  @override
+  String get high => 'Alta';
+
+  @override
+  String get toDo => 'Para fazer';
+
+  @override
+  String get doing => 'Fazendo';
+
+  @override
+  String get done => 'Feito';
 }

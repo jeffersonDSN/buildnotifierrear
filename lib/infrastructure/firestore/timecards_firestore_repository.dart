@@ -33,7 +33,7 @@ class TimecardsFireStoreRepository extends TenantFireStoreRepository
   }
 
   @override
-  Future<List<Timecard>> getAllOfByUserAndPeriod(
+  Future<List<Timecard>> getAllOfByEmployeeAndPeriod(
     String userId,
     DateTime startDate,
     DateTime endDate,
@@ -70,31 +70,6 @@ class TimecardsFireStoreRepository extends TenantFireStoreRepository
     var querySnapshot = await collection
         .where('start', isGreaterThanOrEqualTo: startDate)
         .where('start', isLessThanOrEqualTo: endDate)
-        .get();
-
-    return querySnapshot.docs
-        .map((DocumentSnapshot document) {
-          var doc = document.data() as Map<String, dynamic>;
-          var result = doc.map((key, value) {
-            if (value is Timestamp) {
-              return MapEntry(key, value.toDate().toString());
-            } else {
-              return MapEntry(key, value);
-            }
-          });
-
-          return {...result, 'id': document.id};
-        })
-        .toList()
-        .map((e) => Timecard.fromJson(e))
-        .toList();
-  }
-
-  @override
-  Future<List<Timecard>> getAllByUserId(String userId) async {
-    var querySnapshot = await collection
-        .where('userId', isEqualTo: userId)
-        .orderBy('start', descending: true)
         .get();
 
     return querySnapshot.docs

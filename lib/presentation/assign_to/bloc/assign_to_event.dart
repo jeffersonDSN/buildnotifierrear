@@ -8,6 +8,6 @@ class AssignToEvent with _$AssignToEvent {
 
   const factory AssignToEvent.check({
     required bool check,
-    required User user,
+    required Employee user,
   }) = AssignToEventCheck;
 }

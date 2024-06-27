@@ -1,5 +1,5 @@
-import 'package:buildnotifierrear/domain/controllers/users_controller.dart';
-import 'package:buildnotifierrear/domain/entities/user/user.dart';
+import 'package:buildnotifierrear/domain/controllers/employees_controller.dart';
+import 'package:buildnotifierrear/domain/entities/employee/employee.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
@@ -9,7 +9,7 @@ part 'sign_in_event.dart';
 part 'sign_in_state.dart';
 
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
-  SignInBloc({required UsersController controller})
+  SignInBloc({required EmployeesController controller})
       : super(
           const SignInState.init(
             userName: '',
@@ -40,7 +40,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
             ),
           );
 
-          var user = await controller.getUserByUserNamePassword(
+          var user = await controller.getEmployeeByUserNamePassword(
             state.userName,
             state.password,
           );

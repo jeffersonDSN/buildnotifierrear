@@ -570,7 +570,7 @@ mixin _$TimecardsOverviewState {
             List<Period> periods,
             Period selectedPeriod,
             List<Timecard> timeCards,
-            List<User> users,
+            List<Employee> employees,
             DependenteStateType<dynamic> usersState,
             List<Project> projects,
             DependenteStateType<dynamic> projectsState,
@@ -587,7 +587,7 @@ mixin _$TimecardsOverviewState {
             List<Period> periods,
             Period selectedPeriod,
             List<Timecard> timeCards,
-            List<User> users,
+            List<Employee> employees,
             DependenteStateType<dynamic> usersState,
             List<Project> projects,
             DependenteStateType<dynamic> projectsState,
@@ -604,7 +604,7 @@ mixin _$TimecardsOverviewState {
             List<Period> periods,
             Period selectedPeriod,
             List<Timecard> timeCards,
-            List<User> users,
+            List<Employee> employees,
             DependenteStateType<dynamic> usersState,
             List<Project> projects,
             DependenteStateType<dynamic> projectsState,
@@ -706,7 +706,7 @@ class _$TimecardsOverviewStateEmptyImpl implements TimecardsOverviewStateEmpty {
             List<Period> periods,
             Period selectedPeriod,
             List<Timecard> timeCards,
-            List<User> users,
+            List<Employee> employees,
             DependenteStateType<dynamic> usersState,
             List<Project> projects,
             DependenteStateType<dynamic> projectsState,
@@ -726,7 +726,7 @@ class _$TimecardsOverviewStateEmptyImpl implements TimecardsOverviewStateEmpty {
             List<Period> periods,
             Period selectedPeriod,
             List<Timecard> timeCards,
-            List<User> users,
+            List<Employee> employees,
             DependenteStateType<dynamic> usersState,
             List<Project> projects,
             DependenteStateType<dynamic> projectsState,
@@ -746,7 +746,7 @@ class _$TimecardsOverviewStateEmptyImpl implements TimecardsOverviewStateEmpty {
             List<Period> periods,
             Period selectedPeriod,
             List<Timecard> timeCards,
-            List<User> users,
+            List<Employee> employees,
             DependenteStateType<dynamic> usersState,
             List<Project> projects,
             DependenteStateType<dynamic> projectsState,
@@ -906,7 +906,7 @@ class _$TimecardsOverviewStateLoadingImpl
             List<Period> periods,
             Period selectedPeriod,
             List<Timecard> timeCards,
-            List<User> users,
+            List<Employee> employees,
             DependenteStateType<dynamic> usersState,
             List<Project> projects,
             DependenteStateType<dynamic> projectsState,
@@ -926,7 +926,7 @@ class _$TimecardsOverviewStateLoadingImpl
             List<Period> periods,
             Period selectedPeriod,
             List<Timecard> timeCards,
-            List<User> users,
+            List<Employee> employees,
             DependenteStateType<dynamic> usersState,
             List<Project> projects,
             DependenteStateType<dynamic> projectsState,
@@ -946,7 +946,7 @@ class _$TimecardsOverviewStateLoadingImpl
             List<Period> periods,
             Period selectedPeriod,
             List<Timecard> timeCards,
-            List<User> users,
+            List<Employee> employees,
             DependenteStateType<dynamic> usersState,
             List<Project> projects,
             DependenteStateType<dynamic> projectsState,
@@ -1021,7 +1021,7 @@ abstract class _$$TimecardsOverviewStateLoadedImplCopyWith<$Res> {
       List<Period> periods,
       Period selectedPeriod,
       List<Timecard> timeCards,
-      List<User> users,
+      List<Employee> employees,
       DependenteStateType<dynamic> usersState,
       List<Project> projects,
       DependenteStateType<dynamic> projectsState,
@@ -1049,7 +1049,7 @@ class __$$TimecardsOverviewStateLoadedImplCopyWithImpl<$Res>
     Object? periods = null,
     Object? selectedPeriod = null,
     Object? timeCards = null,
-    Object? users = null,
+    Object? employees = null,
     Object? usersState = null,
     Object? projects = null,
     Object? projectsState = null,
@@ -1072,10 +1072,10 @@ class __$$TimecardsOverviewStateLoadedImplCopyWithImpl<$Res>
           ? _value._timeCards
           : timeCards // ignore: cast_nullable_to_non_nullable
               as List<Timecard>,
-      users: null == users
-          ? _value._users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<User>,
+      employees: null == employees
+          ? _value._employees
+          : employees // ignore: cast_nullable_to_non_nullable
+              as List<Employee>,
       usersState: null == usersState
           ? _value.usersState
           : usersState // ignore: cast_nullable_to_non_nullable
@@ -1131,14 +1131,14 @@ class _$TimecardsOverviewStateLoadedImpl
       required final List<Period> periods,
       required this.selectedPeriod,
       required final List<Timecard> timeCards,
-      required final List<User> users,
+      required final List<Employee> employees,
       required this.usersState,
       required final List<Project> projects,
       required this.projectsState,
       required final List<Activity> activities})
       : _periods = periods,
         _timeCards = timeCards,
-        _users = users,
+        _employees = employees,
         _projects = projects,
         _activities = activities;
 
@@ -1162,12 +1162,12 @@ class _$TimecardsOverviewStateLoadedImpl
     return EqualUnmodifiableListView(_timeCards);
   }
 
-  final List<User> _users;
+  final List<Employee> _employees;
   @override
-  List<User> get users {
-    if (_users is EqualUnmodifiableListView) return _users;
+  List<Employee> get employees {
+    if (_employees is EqualUnmodifiableListView) return _employees;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_users);
+    return EqualUnmodifiableListView(_employees);
   }
 
   @override
@@ -1192,7 +1192,7 @@ class _$TimecardsOverviewStateLoadedImpl
 
   @override
   String toString() {
-    return 'TimecardsOverviewState.loaded(employeeId: $employeeId, periods: $periods, selectedPeriod: $selectedPeriod, timeCards: $timeCards, users: $users, usersState: $usersState, projects: $projects, projectsState: $projectsState, activities: $activities)';
+    return 'TimecardsOverviewState.loaded(employeeId: $employeeId, periods: $periods, selectedPeriod: $selectedPeriod, timeCards: $timeCards, employees: $employees, usersState: $usersState, projects: $projects, projectsState: $projectsState, activities: $activities)';
   }
 
   @override
@@ -1207,7 +1207,8 @@ class _$TimecardsOverviewStateLoadedImpl
                 other.selectedPeriod == selectedPeriod) &&
             const DeepCollectionEquality()
                 .equals(other._timeCards, _timeCards) &&
-            const DeepCollectionEquality().equals(other._users, _users) &&
+            const DeepCollectionEquality()
+                .equals(other._employees, _employees) &&
             (identical(other.usersState, usersState) ||
                 other.usersState == usersState) &&
             const DeepCollectionEquality().equals(other._projects, _projects) &&
@@ -1224,7 +1225,7 @@ class _$TimecardsOverviewStateLoadedImpl
       const DeepCollectionEquality().hash(_periods),
       selectedPeriod,
       const DeepCollectionEquality().hash(_timeCards),
-      const DeepCollectionEquality().hash(_users),
+      const DeepCollectionEquality().hash(_employees),
       usersState,
       const DeepCollectionEquality().hash(_projects),
       projectsState,
@@ -1249,14 +1250,14 @@ class _$TimecardsOverviewStateLoadedImpl
             List<Period> periods,
             Period selectedPeriod,
             List<Timecard> timeCards,
-            List<User> users,
+            List<Employee> employees,
             DependenteStateType<dynamic> usersState,
             List<Project> projects,
             DependenteStateType<dynamic> projectsState,
             List<Activity> activities)
         loaded,
   }) {
-    return loaded(employeeId, periods, selectedPeriod, timeCards, users,
+    return loaded(employeeId, periods, selectedPeriod, timeCards, employees,
         usersState, projects, projectsState, activities);
   }
 
@@ -1270,15 +1271,15 @@ class _$TimecardsOverviewStateLoadedImpl
             List<Period> periods,
             Period selectedPeriod,
             List<Timecard> timeCards,
-            List<User> users,
+            List<Employee> employees,
             DependenteStateType<dynamic> usersState,
             List<Project> projects,
             DependenteStateType<dynamic> projectsState,
             List<Activity> activities)?
         loaded,
   }) {
-    return loaded?.call(employeeId, periods, selectedPeriod, timeCards, users,
-        usersState, projects, projectsState, activities);
+    return loaded?.call(employeeId, periods, selectedPeriod, timeCards,
+        employees, usersState, projects, projectsState, activities);
   }
 
   @override
@@ -1291,7 +1292,7 @@ class _$TimecardsOverviewStateLoadedImpl
             List<Period> periods,
             Period selectedPeriod,
             List<Timecard> timeCards,
-            List<User> users,
+            List<Employee> employees,
             DependenteStateType<dynamic> usersState,
             List<Project> projects,
             DependenteStateType<dynamic> projectsState,
@@ -1300,7 +1301,7 @@ class _$TimecardsOverviewStateLoadedImpl
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(employeeId, periods, selectedPeriod, timeCards, users,
+      return loaded(employeeId, periods, selectedPeriod, timeCards, employees,
           usersState, projects, projectsState, activities);
     }
     return orElse();
@@ -1347,7 +1348,7 @@ abstract class TimecardsOverviewStateLoaded implements TimecardsOverviewState {
           required final List<Period> periods,
           required final Period selectedPeriod,
           required final List<Timecard> timeCards,
-          required final List<User> users,
+          required final List<Employee> employees,
           required final DependenteStateType<dynamic> usersState,
           required final List<Project> projects,
           required final DependenteStateType<dynamic> projectsState,
@@ -1358,7 +1359,7 @@ abstract class TimecardsOverviewStateLoaded implements TimecardsOverviewState {
   List<Period> get periods;
   Period get selectedPeriod;
   List<Timecard> get timeCards;
-  List<User> get users;
+  List<Employee> get employees;
   DependenteStateType<dynamic> get usersState;
   List<Project> get projects;
   DependenteStateType<dynamic> get projectsState;

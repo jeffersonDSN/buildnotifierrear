@@ -31,7 +31,7 @@ mixin _$ProjectEditEvent {
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
     required TResult Function(double value) changeBudget,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) =>
@@ -50,7 +50,7 @@ mixin _$ProjectEditEvent {
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
     TResult? Function(double value)? changeBudget,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) =>
@@ -69,7 +69,7 @@ mixin _$ProjectEditEvent {
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
     TResult Function(double value)? changeBudget,
-    TResult Function(int value)? changeStatus,
+    TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
@@ -249,7 +249,7 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
     required TResult Function(double value) changeBudget,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
@@ -271,7 +271,7 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
     TResult? Function(double value)? changeBudget,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
@@ -293,7 +293,7 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
     TResult Function(double value)? changeBudget,
-    TResult Function(int value)? changeStatus,
+    TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
@@ -473,7 +473,7 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
     required TResult Function(double value) changeBudget,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
@@ -495,7 +495,7 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
     TResult? Function(double value)? changeBudget,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
@@ -517,7 +517,7 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
     TResult Function(double value)? changeBudget,
-    TResult Function(int value)? changeStatus,
+    TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
@@ -699,7 +699,7 @@ class _$ProjectEditEventChangeZipCodeImpl
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
     required TResult Function(double value) changeBudget,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
@@ -721,7 +721,7 @@ class _$ProjectEditEventChangeZipCodeImpl
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
     TResult? Function(double value)? changeBudget,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
@@ -743,7 +743,7 @@ class _$ProjectEditEventChangeZipCodeImpl
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
     TResult Function(double value)? changeBudget,
-    TResult Function(int value)? changeStatus,
+    TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
@@ -924,7 +924,7 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
     required TResult Function(double value) changeBudget,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
@@ -946,7 +946,7 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
     TResult? Function(double value)? changeBudget,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
@@ -968,7 +968,7 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
     TResult Function(double value)? changeBudget,
-    TResult Function(int value)? changeStatus,
+    TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
@@ -1148,7 +1148,7 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
     required TResult Function(double value) changeBudget,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
@@ -1170,7 +1170,7 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
     TResult? Function(double value)? changeBudget,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
@@ -1192,7 +1192,7 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
     TResult Function(double value)? changeBudget,
-    TResult Function(int value)? changeStatus,
+    TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
@@ -1374,7 +1374,7 @@ class _$ProjectEditEventChangeAddressImpl
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
     required TResult Function(double value) changeBudget,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
@@ -1396,7 +1396,7 @@ class _$ProjectEditEventChangeAddressImpl
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
     TResult? Function(double value)? changeBudget,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
@@ -1418,7 +1418,7 @@ class _$ProjectEditEventChangeAddressImpl
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
     TResult Function(double value)? changeBudget,
-    TResult Function(int value)? changeStatus,
+    TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
@@ -1601,7 +1601,7 @@ class _$ProjectEditEventChangeAddress2Impl
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
     required TResult Function(double value) changeBudget,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
@@ -1623,7 +1623,7 @@ class _$ProjectEditEventChangeAddress2Impl
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
     TResult? Function(double value)? changeBudget,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
@@ -1645,7 +1645,7 @@ class _$ProjectEditEventChangeAddress2Impl
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
     TResult Function(double value)? changeBudget,
-    TResult Function(int value)? changeStatus,
+    TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
@@ -1850,7 +1850,7 @@ class _$ProjectEditEventChangeClientImpl
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
     required TResult Function(double value) changeBudget,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
@@ -1872,7 +1872,7 @@ class _$ProjectEditEventChangeClientImpl
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
     TResult? Function(double value)? changeBudget,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
@@ -1894,7 +1894,7 @@ class _$ProjectEditEventChangeClientImpl
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
     TResult Function(double value)? changeBudget,
-    TResult Function(int value)? changeStatus,
+    TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
@@ -2081,7 +2081,7 @@ class _$ProjectEditEventChangeStartDateImpl
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
     required TResult Function(double value) changeBudget,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
@@ -2103,7 +2103,7 @@ class _$ProjectEditEventChangeStartDateImpl
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
     TResult? Function(double value)? changeBudget,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
@@ -2125,7 +2125,7 @@ class _$ProjectEditEventChangeStartDateImpl
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
     TResult Function(double value)? changeBudget,
-    TResult Function(int value)? changeStatus,
+    TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
@@ -2308,7 +2308,7 @@ class _$ProjectEditEventChangeExpectedEndDateImpl
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
     required TResult Function(double value) changeBudget,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
@@ -2330,7 +2330,7 @@ class _$ProjectEditEventChangeExpectedEndDateImpl
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
     TResult? Function(double value)? changeBudget,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
@@ -2352,7 +2352,7 @@ class _$ProjectEditEventChangeExpectedEndDateImpl
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
     TResult Function(double value)? changeBudget,
-    TResult Function(int value)? changeStatus,
+    TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
@@ -2537,7 +2537,7 @@ class _$ProjectEditEventChangeBudgetImpl
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
     required TResult Function(double value) changeBudget,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
@@ -2559,7 +2559,7 @@ class _$ProjectEditEventChangeBudgetImpl
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
     TResult? Function(double value)? changeBudget,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
@@ -2581,7 +2581,7 @@ class _$ProjectEditEventChangeBudgetImpl
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
     TResult Function(double value)? changeBudget,
-    TResult Function(int value)? changeStatus,
+    TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
@@ -2688,7 +2688,7 @@ abstract class _$$ProjectEditEventChangeStatusImplCopyWith<$Res> {
           $Res Function(_$ProjectEditEventChangeStatusImpl) then) =
       __$$ProjectEditEventChangeStatusImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int value});
+  $Res call({ProjectStatus value});
 }
 
 /// @nodoc
@@ -2710,7 +2710,7 @@ class __$$ProjectEditEventChangeStatusImplCopyWithImpl<$Res>
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as int,
+              as ProjectStatus,
     ));
   }
 }
@@ -2722,7 +2722,7 @@ class _$ProjectEditEventChangeStatusImpl
   const _$ProjectEditEventChangeStatusImpl({required this.value});
 
   @override
-  final int value;
+  final ProjectStatus value;
 
   @override
   String toString() {
@@ -2764,7 +2764,7 @@ class _$ProjectEditEventChangeStatusImpl
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
     required TResult Function(double value) changeBudget,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
@@ -2786,7 +2786,7 @@ class _$ProjectEditEventChangeStatusImpl
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
     TResult? Function(double value)? changeBudget,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
@@ -2808,7 +2808,7 @@ class _$ProjectEditEventChangeStatusImpl
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
     TResult Function(double value)? changeBudget,
-    TResult Function(int value)? changeStatus,
+    TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
@@ -2898,10 +2898,11 @@ class _$ProjectEditEventChangeStatusImpl
 }
 
 abstract class ProjectEditEventChangeStatus implements ProjectEditEvent {
-  const factory ProjectEditEventChangeStatus({required final int value}) =
+  const factory ProjectEditEventChangeStatus(
+          {required final ProjectStatus value}) =
       _$ProjectEditEventChangeStatusImpl;
 
-  int get value;
+  ProjectStatus get value;
   @JsonKey(ignore: true)
   _$$ProjectEditEventChangeStatusImplCopyWith<
           _$ProjectEditEventChangeStatusImpl>
@@ -2991,7 +2992,7 @@ class _$ProjectEditEventChangeDescriptionImpl
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
     required TResult Function(double value) changeBudget,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
@@ -3013,7 +3014,7 @@ class _$ProjectEditEventChangeDescriptionImpl
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
     TResult? Function(double value)? changeBudget,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
@@ -3035,7 +3036,7 @@ class _$ProjectEditEventChangeDescriptionImpl
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
     TResult Function(double value)? changeBudget,
-    TResult Function(int value)? changeStatus,
+    TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),
@@ -3215,7 +3216,7 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
     required TResult Function(double value) changeBudget,
-    required TResult Function(int value) changeStatus,
+    required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
     required TResult Function(VoidCallback callback) save,
   }) {
@@ -3237,7 +3238,7 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
     TResult? Function(double value)? changeBudget,
-    TResult? Function(int value)? changeStatus,
+    TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
     TResult? Function(VoidCallback callback)? save,
   }) {
@@ -3259,7 +3260,7 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
     TResult Function(double value)? changeBudget,
-    TResult Function(int value)? changeStatus,
+    TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
     TResult Function(VoidCallback callback)? save,
     required TResult orElse(),

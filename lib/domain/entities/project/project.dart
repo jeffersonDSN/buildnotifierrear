@@ -1,3 +1,5 @@
+import 'package:buildnotifierrear/domain/entities/converters/project_status_converter.dart';
+import 'package:buildnotifierrear/domain/entities/enums/project_status_enums.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'project.freezed.dart';
@@ -11,7 +13,9 @@ class Project with _$Project {
     DateTime? startDate,
     DateTime? expectedCompletionDate,
     @Default(0) double budget,
-    @Default(0) int status,
+    @ProjectTypeConverter()
+    @Default(ProjectStatus.planning)
+    ProjectStatus status,
     @Default('') String clientId,
     @Default('') String clientFirstname,
     @Default('') String clientLastname,

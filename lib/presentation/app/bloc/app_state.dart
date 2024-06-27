@@ -7,8 +7,9 @@ class AppState with _$AppState {
   const factory AppState.signUp() = AppStateUp;
 
   const factory AppState.logged({
-    required User user,
+    required Employee user,
     required Mod mod,
+    required Locale locale,
   }) = AppStateLogged;
 }
 

@@ -3,17 +3,17 @@ part of 'sign_up_bloc.dart';
 @freezed
 class SignUpState with _$SignUpState {
   const factory SignUpState.init({
-    required User user,
+    required Employee user,
     required Settings settings,
   }) = SignUpStateUp;
 
   const factory SignUpState.signUp({
-    required User user,
+    required Employee user,
     required Settings settings,
   }) = SignUpStateSignUp;
 
   const factory SignUpState.signUpError({
-    required User user,
+    required Employee user,
     required Settings settings,
     required ErrorFields error,
   }) = SignUpStateSignUpError;

@@ -22,13 +22,18 @@ Task _$TaskFromJson(Map<String, dynamic> json) {
 mixin _$Task {
   String get id => throw _privateConstructorUsedError;
   String get productId => throw _privateConstructorUsedError;
+  String get projectName => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   DateTime? get startDate => throw _privateConstructorUsedError;
   DateTime? get expectedEndDate => throw _privateConstructorUsedError;
   String get estimatedEffort => throw _privateConstructorUsedError;
-  int get priority => throw _privateConstructorUsedError;
-  int get status => throw _privateConstructorUsedError;
+  @TaskPriorityConverter()
+  TaskPriority get priority => throw _privateConstructorUsedError;
+  @TaskStatusConverter()
+  TaskStatus get status => throw _privateConstructorUsedError;
   String get notes => throw _privateConstructorUsedError;
+  Map<String, String> get notesList => throw _privateConstructorUsedError;
+  List<AppointmentUser> get assignTo => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,13 +48,16 @@ abstract class $TaskCopyWith<$Res> {
   $Res call(
       {String id,
       String productId,
+      String projectName,
       String title,
       DateTime? startDate,
       DateTime? expectedEndDate,
       String estimatedEffort,
-      int priority,
-      int status,
-      String notes});
+      @TaskPriorityConverter() TaskPriority priority,
+      @TaskStatusConverter() TaskStatus status,
+      String notes,
+      Map<String, String> notesList,
+      List<AppointmentUser> assignTo});
 }
 
 /// @nodoc
@@ -67,6 +75,7 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
   $Res call({
     Object? id = null,
     Object? productId = null,
+    Object? projectName = null,
     Object? title = null,
     Object? startDate = freezed,
     Object? expectedEndDate = freezed,
@@ -74,6 +83,8 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
     Object? priority = null,
     Object? status = null,
     Object? notes = null,
+    Object? notesList = null,
+    Object? assignTo = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -83,6 +94,10 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
       productId: null == productId
           ? _value.productId
           : productId // ignore: cast_nullable_to_non_nullable
+              as String,
+      projectName: null == projectName
+          ? _value.projectName
+          : projectName // ignore: cast_nullable_to_non_nullable
               as String,
       title: null == title
           ? _value.title
@@ -103,15 +118,23 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
       priority: null == priority
           ? _value.priority
           : priority // ignore: cast_nullable_to_non_nullable
-              as int,
+              as TaskPriority,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int,
+              as TaskStatus,
       notes: null == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String,
+      notesList: null == notesList
+          ? _value.notesList
+          : notesList // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
+      assignTo: null == assignTo
+          ? _value.assignTo
+          : assignTo // ignore: cast_nullable_to_non_nullable
+              as List<AppointmentUser>,
     ) as $Val);
   }
 }
@@ -126,13 +149,16 @@ abstract class _$$TaskImplCopyWith<$Res> implements $TaskCopyWith<$Res> {
   $Res call(
       {String id,
       String productId,
+      String projectName,
       String title,
       DateTime? startDate,
       DateTime? expectedEndDate,
       String estimatedEffort,
-      int priority,
-      int status,
-      String notes});
+      @TaskPriorityConverter() TaskPriority priority,
+      @TaskStatusConverter() TaskStatus status,
+      String notes,
+      Map<String, String> notesList,
+      List<AppointmentUser> assignTo});
 }
 
 /// @nodoc
@@ -147,6 +173,7 @@ class __$$TaskImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? productId = null,
+    Object? projectName = null,
     Object? title = null,
     Object? startDate = freezed,
     Object? expectedEndDate = freezed,
@@ -154,6 +181,8 @@ class __$$TaskImplCopyWithImpl<$Res>
     Object? priority = null,
     Object? status = null,
     Object? notes = null,
+    Object? notesList = null,
+    Object? assignTo = null,
   }) {
     return _then(_$TaskImpl(
       id: null == id
@@ -163,6 +192,10 @@ class __$$TaskImplCopyWithImpl<$Res>
       productId: null == productId
           ? _value.productId
           : productId // ignore: cast_nullable_to_non_nullable
+              as String,
+      projectName: null == projectName
+          ? _value.projectName
+          : projectName // ignore: cast_nullable_to_non_nullable
               as String,
       title: null == title
           ? _value.title
@@ -183,15 +216,23 @@ class __$$TaskImplCopyWithImpl<$Res>
       priority: null == priority
           ? _value.priority
           : priority // ignore: cast_nullable_to_non_nullable
-              as int,
+              as TaskPriority,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int,
+              as TaskStatus,
       notes: null == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String,
+      notesList: null == notesList
+          ? _value._notesList
+          : notesList // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
+      assignTo: null == assignTo
+          ? _value._assignTo
+          : assignTo // ignore: cast_nullable_to_non_nullable
+              as List<AppointmentUser>,
     ));
   }
 }
@@ -202,13 +243,18 @@ class _$TaskImpl implements _Task {
   const _$TaskImpl(
       {this.id = '',
       this.productId = '',
+      this.projectName = '',
       this.title = '',
       this.startDate,
       this.expectedEndDate,
       this.estimatedEffort = '',
-      this.priority = 0,
-      this.status = 0,
-      this.notes = ''});
+      @TaskPriorityConverter() this.priority = TaskPriority.low,
+      @TaskStatusConverter() this.status = TaskStatus.toDo,
+      this.notes = '',
+      final Map<String, String> notesList = const {},
+      final List<AppointmentUser> assignTo = const []})
+      : _notesList = notesList,
+        _assignTo = assignTo;
 
   factory _$TaskImpl.fromJson(Map<String, dynamic> json) =>
       _$$TaskImplFromJson(json);
@@ -221,6 +267,9 @@ class _$TaskImpl implements _Task {
   final String productId;
   @override
   @JsonKey()
+  final String projectName;
+  @override
+  @JsonKey()
   final String title;
   @override
   final DateTime? startDate;
@@ -231,17 +280,36 @@ class _$TaskImpl implements _Task {
   final String estimatedEffort;
   @override
   @JsonKey()
-  final int priority;
+  @TaskPriorityConverter()
+  final TaskPriority priority;
   @override
   @JsonKey()
-  final int status;
+  @TaskStatusConverter()
+  final TaskStatus status;
   @override
   @JsonKey()
   final String notes;
+  final Map<String, String> _notesList;
+  @override
+  @JsonKey()
+  Map<String, String> get notesList {
+    if (_notesList is EqualUnmodifiableMapView) return _notesList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_notesList);
+  }
+
+  final List<AppointmentUser> _assignTo;
+  @override
+  @JsonKey()
+  List<AppointmentUser> get assignTo {
+    if (_assignTo is EqualUnmodifiableListView) return _assignTo;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_assignTo);
+  }
 
   @override
   String toString() {
-    return 'Task(id: $id, productId: $productId, title: $title, startDate: $startDate, expectedEndDate: $expectedEndDate, estimatedEffort: $estimatedEffort, priority: $priority, status: $status, notes: $notes)';
+    return 'Task(id: $id, productId: $productId, projectName: $projectName, title: $title, startDate: $startDate, expectedEndDate: $expectedEndDate, estimatedEffort: $estimatedEffort, priority: $priority, status: $status, notes: $notes, notesList: $notesList, assignTo: $assignTo)';
   }
 
   @override
@@ -252,6 +320,8 @@ class _$TaskImpl implements _Task {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.productId, productId) ||
                 other.productId == productId) &&
+            (identical(other.projectName, projectName) ||
+                other.projectName == projectName) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.startDate, startDate) ||
                 other.startDate == startDate) &&
@@ -262,13 +332,28 @@ class _$TaskImpl implements _Task {
             (identical(other.priority, priority) ||
                 other.priority == priority) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.notes, notes) || other.notes == notes));
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality()
+                .equals(other._notesList, _notesList) &&
+            const DeepCollectionEquality().equals(other._assignTo, _assignTo));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, productId, title, startDate,
-      expectedEndDate, estimatedEffort, priority, status, notes);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      productId,
+      projectName,
+      title,
+      startDate,
+      expectedEndDate,
+      estimatedEffort,
+      priority,
+      status,
+      notes,
+      const DeepCollectionEquality().hash(_notesList),
+      const DeepCollectionEquality().hash(_assignTo));
 
   @JsonKey(ignore: true)
   @override
@@ -288,13 +373,16 @@ abstract class _Task implements Task {
   const factory _Task(
       {final String id,
       final String productId,
+      final String projectName,
       final String title,
       final DateTime? startDate,
       final DateTime? expectedEndDate,
       final String estimatedEffort,
-      final int priority,
-      final int status,
-      final String notes}) = _$TaskImpl;
+      @TaskPriorityConverter() final TaskPriority priority,
+      @TaskStatusConverter() final TaskStatus status,
+      final String notes,
+      final Map<String, String> notesList,
+      final List<AppointmentUser> assignTo}) = _$TaskImpl;
 
   factory _Task.fromJson(Map<String, dynamic> json) = _$TaskImpl.fromJson;
 
@@ -302,6 +390,8 @@ abstract class _Task implements Task {
   String get id;
   @override
   String get productId;
+  @override
+  String get projectName;
   @override
   String get title;
   @override
@@ -311,11 +401,17 @@ abstract class _Task implements Task {
   @override
   String get estimatedEffort;
   @override
-  int get priority;
+  @TaskPriorityConverter()
+  TaskPriority get priority;
   @override
-  int get status;
+  @TaskStatusConverter()
+  TaskStatus get status;
   @override
   String get notes;
+  @override
+  Map<String, String> get notesList;
+  @override
+  List<AppointmentUser> get assignTo;
   @override
   @JsonKey(ignore: true)
   _$$TaskImplCopyWith<_$TaskImpl> get copyWith =>

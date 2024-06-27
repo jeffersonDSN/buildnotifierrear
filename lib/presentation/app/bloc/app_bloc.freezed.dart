@@ -18,25 +18,31 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AppEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user) signIn,
+    required TResult Function(Employee user) signIn,
     required TResult Function() createNewUser,
     required TResult Function(Mod mod) changeView,
+    required TResult Function() goBack,
+    required TResult Function(Locale locale) changeLanguage,
     required TResult Function() signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(User user)? signIn,
+    TResult? Function(Employee user)? signIn,
     TResult? Function()? createNewUser,
     TResult? Function(Mod mod)? changeView,
+    TResult? Function()? goBack,
+    TResult? Function(Locale locale)? changeLanguage,
     TResult? Function()? signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user)? signIn,
+    TResult Function(Employee user)? signIn,
     TResult Function()? createNewUser,
     TResult Function(Mod mod)? changeView,
+    TResult Function()? goBack,
+    TResult Function(Locale locale)? changeLanguage,
     TResult Function()? signOut,
     required TResult orElse(),
   }) =>
@@ -46,6 +52,8 @@ mixin _$AppEvent {
     required TResult Function(AppEventSignIn value) signIn,
     required TResult Function(AppEventCreateNewUser value) createNewUser,
     required TResult Function(AppEventChangeView value) changeView,
+    required TResult Function(AppEventGoBack value) goBack,
+    required TResult Function(AppEventChangeLanguage value) changeLanguage,
     required TResult Function(AppEventSignOut value) signOut,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +62,8 @@ mixin _$AppEvent {
     TResult? Function(AppEventSignIn value)? signIn,
     TResult? Function(AppEventCreateNewUser value)? createNewUser,
     TResult? Function(AppEventChangeView value)? changeView,
+    TResult? Function(AppEventGoBack value)? goBack,
+    TResult? Function(AppEventChangeLanguage value)? changeLanguage,
     TResult? Function(AppEventSignOut value)? signOut,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +72,8 @@ mixin _$AppEvent {
     TResult Function(AppEventSignIn value)? signIn,
     TResult Function(AppEventCreateNewUser value)? createNewUser,
     TResult Function(AppEventChangeView value)? changeView,
+    TResult Function(AppEventGoBack value)? goBack,
+    TResult Function(AppEventChangeLanguage value)? changeLanguage,
     TResult Function(AppEventSignOut value)? signOut,
     required TResult orElse(),
   }) =>
@@ -91,9 +103,9 @@ abstract class _$$AppEventSignInImplCopyWith<$Res> {
           $Res Function(_$AppEventSignInImpl) then) =
       __$$AppEventSignInImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({User user});
+  $Res call({Employee user});
 
-  $UserCopyWith<$Res> get user;
+  $EmployeeCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -113,14 +125,14 @@ class __$$AppEventSignInImplCopyWithImpl<$Res>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as Employee,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
+  $EmployeeCopyWith<$Res> get user {
+    return $EmployeeCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
     });
   }
@@ -132,7 +144,7 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   const _$AppEventSignInImpl({required this.user});
 
   @override
-  final User user;
+  final Employee user;
 
   @override
   String toString() {
@@ -160,9 +172,11 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user) signIn,
+    required TResult Function(Employee user) signIn,
     required TResult Function() createNewUser,
     required TResult Function(Mod mod) changeView,
+    required TResult Function() goBack,
+    required TResult Function(Locale locale) changeLanguage,
     required TResult Function() signOut,
   }) {
     return signIn(user);
@@ -171,9 +185,11 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(User user)? signIn,
+    TResult? Function(Employee user)? signIn,
     TResult? Function()? createNewUser,
     TResult? Function(Mod mod)? changeView,
+    TResult? Function()? goBack,
+    TResult? Function(Locale locale)? changeLanguage,
     TResult? Function()? signOut,
   }) {
     return signIn?.call(user);
@@ -182,9 +198,11 @@ class _$AppEventSignInImpl implements AppEventSignIn {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user)? signIn,
+    TResult Function(Employee user)? signIn,
     TResult Function()? createNewUser,
     TResult Function(Mod mod)? changeView,
+    TResult Function()? goBack,
+    TResult Function(Locale locale)? changeLanguage,
     TResult Function()? signOut,
     required TResult orElse(),
   }) {
@@ -200,6 +218,8 @@ class _$AppEventSignInImpl implements AppEventSignIn {
     required TResult Function(AppEventSignIn value) signIn,
     required TResult Function(AppEventCreateNewUser value) createNewUser,
     required TResult Function(AppEventChangeView value) changeView,
+    required TResult Function(AppEventGoBack value) goBack,
+    required TResult Function(AppEventChangeLanguage value) changeLanguage,
     required TResult Function(AppEventSignOut value) signOut,
   }) {
     return signIn(this);
@@ -211,6 +231,8 @@ class _$AppEventSignInImpl implements AppEventSignIn {
     TResult? Function(AppEventSignIn value)? signIn,
     TResult? Function(AppEventCreateNewUser value)? createNewUser,
     TResult? Function(AppEventChangeView value)? changeView,
+    TResult? Function(AppEventGoBack value)? goBack,
+    TResult? Function(AppEventChangeLanguage value)? changeLanguage,
     TResult? Function(AppEventSignOut value)? signOut,
   }) {
     return signIn?.call(this);
@@ -222,6 +244,8 @@ class _$AppEventSignInImpl implements AppEventSignIn {
     TResult Function(AppEventSignIn value)? signIn,
     TResult Function(AppEventCreateNewUser value)? createNewUser,
     TResult Function(AppEventChangeView value)? changeView,
+    TResult Function(AppEventGoBack value)? goBack,
+    TResult Function(AppEventChangeLanguage value)? changeLanguage,
     TResult Function(AppEventSignOut value)? signOut,
     required TResult orElse(),
   }) {
@@ -233,10 +257,10 @@ class _$AppEventSignInImpl implements AppEventSignIn {
 }
 
 abstract class AppEventSignIn implements AppEvent {
-  const factory AppEventSignIn({required final User user}) =
+  const factory AppEventSignIn({required final Employee user}) =
       _$AppEventSignInImpl;
 
-  User get user;
+  Employee get user;
   @JsonKey(ignore: true)
   _$$AppEventSignInImplCopyWith<_$AppEventSignInImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -282,9 +306,11 @@ class _$AppEventCreateNewUserImpl implements AppEventCreateNewUser {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user) signIn,
+    required TResult Function(Employee user) signIn,
     required TResult Function() createNewUser,
     required TResult Function(Mod mod) changeView,
+    required TResult Function() goBack,
+    required TResult Function(Locale locale) changeLanguage,
     required TResult Function() signOut,
   }) {
     return createNewUser();
@@ -293,9 +319,11 @@ class _$AppEventCreateNewUserImpl implements AppEventCreateNewUser {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(User user)? signIn,
+    TResult? Function(Employee user)? signIn,
     TResult? Function()? createNewUser,
     TResult? Function(Mod mod)? changeView,
+    TResult? Function()? goBack,
+    TResult? Function(Locale locale)? changeLanguage,
     TResult? Function()? signOut,
   }) {
     return createNewUser?.call();
@@ -304,9 +332,11 @@ class _$AppEventCreateNewUserImpl implements AppEventCreateNewUser {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user)? signIn,
+    TResult Function(Employee user)? signIn,
     TResult Function()? createNewUser,
     TResult Function(Mod mod)? changeView,
+    TResult Function()? goBack,
+    TResult Function(Locale locale)? changeLanguage,
     TResult Function()? signOut,
     required TResult orElse(),
   }) {
@@ -322,6 +352,8 @@ class _$AppEventCreateNewUserImpl implements AppEventCreateNewUser {
     required TResult Function(AppEventSignIn value) signIn,
     required TResult Function(AppEventCreateNewUser value) createNewUser,
     required TResult Function(AppEventChangeView value) changeView,
+    required TResult Function(AppEventGoBack value) goBack,
+    required TResult Function(AppEventChangeLanguage value) changeLanguage,
     required TResult Function(AppEventSignOut value) signOut,
   }) {
     return createNewUser(this);
@@ -333,6 +365,8 @@ class _$AppEventCreateNewUserImpl implements AppEventCreateNewUser {
     TResult? Function(AppEventSignIn value)? signIn,
     TResult? Function(AppEventCreateNewUser value)? createNewUser,
     TResult? Function(AppEventChangeView value)? changeView,
+    TResult? Function(AppEventGoBack value)? goBack,
+    TResult? Function(AppEventChangeLanguage value)? changeLanguage,
     TResult? Function(AppEventSignOut value)? signOut,
   }) {
     return createNewUser?.call(this);
@@ -344,6 +378,8 @@ class _$AppEventCreateNewUserImpl implements AppEventCreateNewUser {
     TResult Function(AppEventSignIn value)? signIn,
     TResult Function(AppEventCreateNewUser value)? createNewUser,
     TResult Function(AppEventChangeView value)? changeView,
+    TResult Function(AppEventGoBack value)? goBack,
+    TResult Function(AppEventChangeLanguage value)? changeLanguage,
     TResult Function(AppEventSignOut value)? signOut,
     required TResult orElse(),
   }) {
@@ -433,9 +469,11 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user) signIn,
+    required TResult Function(Employee user) signIn,
     required TResult Function() createNewUser,
     required TResult Function(Mod mod) changeView,
+    required TResult Function() goBack,
+    required TResult Function(Locale locale) changeLanguage,
     required TResult Function() signOut,
   }) {
     return changeView(mod);
@@ -444,9 +482,11 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(User user)? signIn,
+    TResult? Function(Employee user)? signIn,
     TResult? Function()? createNewUser,
     TResult? Function(Mod mod)? changeView,
+    TResult? Function()? goBack,
+    TResult? Function(Locale locale)? changeLanguage,
     TResult? Function()? signOut,
   }) {
     return changeView?.call(mod);
@@ -455,9 +495,11 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user)? signIn,
+    TResult Function(Employee user)? signIn,
     TResult Function()? createNewUser,
     TResult Function(Mod mod)? changeView,
+    TResult Function()? goBack,
+    TResult Function(Locale locale)? changeLanguage,
     TResult Function()? signOut,
     required TResult orElse(),
   }) {
@@ -473,6 +515,8 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
     required TResult Function(AppEventSignIn value) signIn,
     required TResult Function(AppEventCreateNewUser value) createNewUser,
     required TResult Function(AppEventChangeView value) changeView,
+    required TResult Function(AppEventGoBack value) goBack,
+    required TResult Function(AppEventChangeLanguage value) changeLanguage,
     required TResult Function(AppEventSignOut value) signOut,
   }) {
     return changeView(this);
@@ -484,6 +528,8 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
     TResult? Function(AppEventSignIn value)? signIn,
     TResult? Function(AppEventCreateNewUser value)? createNewUser,
     TResult? Function(AppEventChangeView value)? changeView,
+    TResult? Function(AppEventGoBack value)? goBack,
+    TResult? Function(AppEventChangeLanguage value)? changeLanguage,
     TResult? Function(AppEventSignOut value)? signOut,
   }) {
     return changeView?.call(this);
@@ -495,6 +541,8 @@ class _$AppEventChangeViewImpl implements AppEventChangeView {
     TResult Function(AppEventSignIn value)? signIn,
     TResult Function(AppEventCreateNewUser value)? createNewUser,
     TResult Function(AppEventChangeView value)? changeView,
+    TResult Function(AppEventGoBack value)? goBack,
+    TResult Function(AppEventChangeLanguage value)? changeLanguage,
     TResult Function(AppEventSignOut value)? signOut,
     required TResult orElse(),
   }) {
@@ -513,6 +561,293 @@ abstract class AppEventChangeView implements AppEvent {
   @JsonKey(ignore: true)
   _$$AppEventChangeViewImplCopyWith<_$AppEventChangeViewImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AppEventGoBackImplCopyWith<$Res> {
+  factory _$$AppEventGoBackImplCopyWith(_$AppEventGoBackImpl value,
+          $Res Function(_$AppEventGoBackImpl) then) =
+      __$$AppEventGoBackImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AppEventGoBackImplCopyWithImpl<$Res>
+    extends _$AppEventCopyWithImpl<$Res, _$AppEventGoBackImpl>
+    implements _$$AppEventGoBackImplCopyWith<$Res> {
+  __$$AppEventGoBackImplCopyWithImpl(
+      _$AppEventGoBackImpl _value, $Res Function(_$AppEventGoBackImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AppEventGoBackImpl implements AppEventGoBack {
+  const _$AppEventGoBackImpl();
+
+  @override
+  String toString() {
+    return 'AppEvent.goBack()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AppEventGoBackImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Employee user) signIn,
+    required TResult Function() createNewUser,
+    required TResult Function(Mod mod) changeView,
+    required TResult Function() goBack,
+    required TResult Function(Locale locale) changeLanguage,
+    required TResult Function() signOut,
+  }) {
+    return goBack();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Employee user)? signIn,
+    TResult? Function()? createNewUser,
+    TResult? Function(Mod mod)? changeView,
+    TResult? Function()? goBack,
+    TResult? Function(Locale locale)? changeLanguage,
+    TResult? Function()? signOut,
+  }) {
+    return goBack?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Employee user)? signIn,
+    TResult Function()? createNewUser,
+    TResult Function(Mod mod)? changeView,
+    TResult Function()? goBack,
+    TResult Function(Locale locale)? changeLanguage,
+    TResult Function()? signOut,
+    required TResult orElse(),
+  }) {
+    if (goBack != null) {
+      return goBack();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppEventSignIn value) signIn,
+    required TResult Function(AppEventCreateNewUser value) createNewUser,
+    required TResult Function(AppEventChangeView value) changeView,
+    required TResult Function(AppEventGoBack value) goBack,
+    required TResult Function(AppEventChangeLanguage value) changeLanguage,
+    required TResult Function(AppEventSignOut value) signOut,
+  }) {
+    return goBack(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppEventSignIn value)? signIn,
+    TResult? Function(AppEventCreateNewUser value)? createNewUser,
+    TResult? Function(AppEventChangeView value)? changeView,
+    TResult? Function(AppEventGoBack value)? goBack,
+    TResult? Function(AppEventChangeLanguage value)? changeLanguage,
+    TResult? Function(AppEventSignOut value)? signOut,
+  }) {
+    return goBack?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppEventSignIn value)? signIn,
+    TResult Function(AppEventCreateNewUser value)? createNewUser,
+    TResult Function(AppEventChangeView value)? changeView,
+    TResult Function(AppEventGoBack value)? goBack,
+    TResult Function(AppEventChangeLanguage value)? changeLanguage,
+    TResult Function(AppEventSignOut value)? signOut,
+    required TResult orElse(),
+  }) {
+    if (goBack != null) {
+      return goBack(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AppEventGoBack implements AppEvent {
+  const factory AppEventGoBack() = _$AppEventGoBackImpl;
+}
+
+/// @nodoc
+abstract class _$$AppEventChangeLanguageImplCopyWith<$Res> {
+  factory _$$AppEventChangeLanguageImplCopyWith(
+          _$AppEventChangeLanguageImpl value,
+          $Res Function(_$AppEventChangeLanguageImpl) then) =
+      __$$AppEventChangeLanguageImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Locale locale});
+}
+
+/// @nodoc
+class __$$AppEventChangeLanguageImplCopyWithImpl<$Res>
+    extends _$AppEventCopyWithImpl<$Res, _$AppEventChangeLanguageImpl>
+    implements _$$AppEventChangeLanguageImplCopyWith<$Res> {
+  __$$AppEventChangeLanguageImplCopyWithImpl(
+      _$AppEventChangeLanguageImpl _value,
+      $Res Function(_$AppEventChangeLanguageImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? locale = null,
+  }) {
+    return _then(_$AppEventChangeLanguageImpl(
+      locale: null == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AppEventChangeLanguageImpl implements AppEventChangeLanguage {
+  const _$AppEventChangeLanguageImpl({required this.locale});
+
+  @override
+  final Locale locale;
+
+  @override
+  String toString() {
+    return 'AppEvent.changeLanguage(locale: $locale)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AppEventChangeLanguageImpl &&
+            (identical(other.locale, locale) || other.locale == locale));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, locale);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AppEventChangeLanguageImplCopyWith<_$AppEventChangeLanguageImpl>
+      get copyWith => __$$AppEventChangeLanguageImplCopyWithImpl<
+          _$AppEventChangeLanguageImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Employee user) signIn,
+    required TResult Function() createNewUser,
+    required TResult Function(Mod mod) changeView,
+    required TResult Function() goBack,
+    required TResult Function(Locale locale) changeLanguage,
+    required TResult Function() signOut,
+  }) {
+    return changeLanguage(locale);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Employee user)? signIn,
+    TResult? Function()? createNewUser,
+    TResult? Function(Mod mod)? changeView,
+    TResult? Function()? goBack,
+    TResult? Function(Locale locale)? changeLanguage,
+    TResult? Function()? signOut,
+  }) {
+    return changeLanguage?.call(locale);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Employee user)? signIn,
+    TResult Function()? createNewUser,
+    TResult Function(Mod mod)? changeView,
+    TResult Function()? goBack,
+    TResult Function(Locale locale)? changeLanguage,
+    TResult Function()? signOut,
+    required TResult orElse(),
+  }) {
+    if (changeLanguage != null) {
+      return changeLanguage(locale);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppEventSignIn value) signIn,
+    required TResult Function(AppEventCreateNewUser value) createNewUser,
+    required TResult Function(AppEventChangeView value) changeView,
+    required TResult Function(AppEventGoBack value) goBack,
+    required TResult Function(AppEventChangeLanguage value) changeLanguage,
+    required TResult Function(AppEventSignOut value) signOut,
+  }) {
+    return changeLanguage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppEventSignIn value)? signIn,
+    TResult? Function(AppEventCreateNewUser value)? createNewUser,
+    TResult? Function(AppEventChangeView value)? changeView,
+    TResult? Function(AppEventGoBack value)? goBack,
+    TResult? Function(AppEventChangeLanguage value)? changeLanguage,
+    TResult? Function(AppEventSignOut value)? signOut,
+  }) {
+    return changeLanguage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppEventSignIn value)? signIn,
+    TResult Function(AppEventCreateNewUser value)? createNewUser,
+    TResult Function(AppEventChangeView value)? changeView,
+    TResult Function(AppEventGoBack value)? goBack,
+    TResult Function(AppEventChangeLanguage value)? changeLanguage,
+    TResult Function(AppEventSignOut value)? signOut,
+    required TResult orElse(),
+  }) {
+    if (changeLanguage != null) {
+      return changeLanguage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AppEventChangeLanguage implements AppEvent {
+  const factory AppEventChangeLanguage({required final Locale locale}) =
+      _$AppEventChangeLanguageImpl;
+
+  Locale get locale;
+  @JsonKey(ignore: true)
+  _$$AppEventChangeLanguageImplCopyWith<_$AppEventChangeLanguageImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -553,9 +888,11 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User user) signIn,
+    required TResult Function(Employee user) signIn,
     required TResult Function() createNewUser,
     required TResult Function(Mod mod) changeView,
+    required TResult Function() goBack,
+    required TResult Function(Locale locale) changeLanguage,
     required TResult Function() signOut,
   }) {
     return signOut();
@@ -564,9 +901,11 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(User user)? signIn,
+    TResult? Function(Employee user)? signIn,
     TResult? Function()? createNewUser,
     TResult? Function(Mod mod)? changeView,
+    TResult? Function()? goBack,
+    TResult? Function(Locale locale)? changeLanguage,
     TResult? Function()? signOut,
   }) {
     return signOut?.call();
@@ -575,9 +914,11 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user)? signIn,
+    TResult Function(Employee user)? signIn,
     TResult Function()? createNewUser,
     TResult Function(Mod mod)? changeView,
+    TResult Function()? goBack,
+    TResult Function(Locale locale)? changeLanguage,
     TResult Function()? signOut,
     required TResult orElse(),
   }) {
@@ -593,6 +934,8 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
     required TResult Function(AppEventSignIn value) signIn,
     required TResult Function(AppEventCreateNewUser value) createNewUser,
     required TResult Function(AppEventChangeView value) changeView,
+    required TResult Function(AppEventGoBack value) goBack,
+    required TResult Function(AppEventChangeLanguage value) changeLanguage,
     required TResult Function(AppEventSignOut value) signOut,
   }) {
     return signOut(this);
@@ -604,6 +947,8 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
     TResult? Function(AppEventSignIn value)? signIn,
     TResult? Function(AppEventCreateNewUser value)? createNewUser,
     TResult? Function(AppEventChangeView value)? changeView,
+    TResult? Function(AppEventGoBack value)? goBack,
+    TResult? Function(AppEventChangeLanguage value)? changeLanguage,
     TResult? Function(AppEventSignOut value)? signOut,
   }) {
     return signOut?.call(this);
@@ -615,6 +960,8 @@ class _$AppEventSignOutImpl implements AppEventSignOut {
     TResult Function(AppEventSignIn value)? signIn,
     TResult Function(AppEventCreateNewUser value)? createNewUser,
     TResult Function(AppEventChangeView value)? changeView,
+    TResult Function(AppEventGoBack value)? goBack,
+    TResult Function(AppEventChangeLanguage value)? changeLanguage,
     TResult Function(AppEventSignOut value)? signOut,
     required TResult orElse(),
   }) {
@@ -635,21 +982,21 @@ mixin _$AppState {
   TResult when<TResult extends Object?>({
     required TResult Function() signIn,
     required TResult Function() signUp,
-    required TResult Function(User user, Mod mod) logged,
+    required TResult Function(Employee user, Mod mod, Locale locale) logged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? signIn,
     TResult? Function()? signUp,
-    TResult? Function(User user, Mod mod)? logged,
+    TResult? Function(Employee user, Mod mod, Locale locale)? logged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signIn,
     TResult Function()? signUp,
-    TResult Function(User user, Mod mod)? logged,
+    TResult Function(Employee user, Mod mod, Locale locale)? logged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -734,7 +1081,7 @@ class _$AppStateInImpl implements AppStateIn {
   TResult when<TResult extends Object?>({
     required TResult Function() signIn,
     required TResult Function() signUp,
-    required TResult Function(User user, Mod mod) logged,
+    required TResult Function(Employee user, Mod mod, Locale locale) logged,
   }) {
     return signIn();
   }
@@ -744,7 +1091,7 @@ class _$AppStateInImpl implements AppStateIn {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? signIn,
     TResult? Function()? signUp,
-    TResult? Function(User user, Mod mod)? logged,
+    TResult? Function(Employee user, Mod mod, Locale locale)? logged,
   }) {
     return signIn?.call();
   }
@@ -754,7 +1101,7 @@ class _$AppStateInImpl implements AppStateIn {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signIn,
     TResult Function()? signUp,
-    TResult Function(User user, Mod mod)? logged,
+    TResult Function(Employee user, Mod mod, Locale locale)? logged,
     required TResult orElse(),
   }) {
     if (signIn != null) {
@@ -842,7 +1189,7 @@ class _$AppStateUpImpl implements AppStateUp {
   TResult when<TResult extends Object?>({
     required TResult Function() signIn,
     required TResult Function() signUp,
-    required TResult Function(User user, Mod mod) logged,
+    required TResult Function(Employee user, Mod mod, Locale locale) logged,
   }) {
     return signUp();
   }
@@ -852,7 +1199,7 @@ class _$AppStateUpImpl implements AppStateUp {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? signIn,
     TResult? Function()? signUp,
-    TResult? Function(User user, Mod mod)? logged,
+    TResult? Function(Employee user, Mod mod, Locale locale)? logged,
   }) {
     return signUp?.call();
   }
@@ -862,7 +1209,7 @@ class _$AppStateUpImpl implements AppStateUp {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signIn,
     TResult Function()? signUp,
-    TResult Function(User user, Mod mod)? logged,
+    TResult Function(Employee user, Mod mod, Locale locale)? logged,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -916,9 +1263,9 @@ abstract class _$$AppStateLoggedImplCopyWith<$Res> {
           $Res Function(_$AppStateLoggedImpl) then) =
       __$$AppStateLoggedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({User user, Mod mod});
+  $Res call({Employee user, Mod mod, Locale locale});
 
-  $UserCopyWith<$Res> get user;
+  $EmployeeCopyWith<$Res> get user;
   $ModCopyWith<$Res> get mod;
 }
 
@@ -935,23 +1282,28 @@ class __$$AppStateLoggedImplCopyWithImpl<$Res>
   $Res call({
     Object? user = null,
     Object? mod = null,
+    Object? locale = null,
   }) {
     return _then(_$AppStateLoggedImpl(
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as Employee,
       mod: null == mod
           ? _value.mod
           : mod // ignore: cast_nullable_to_non_nullable
               as Mod,
+      locale: null == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
+  $EmployeeCopyWith<$Res> get user {
+    return $EmployeeCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
     });
   }
@@ -968,16 +1320,19 @@ class __$$AppStateLoggedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AppStateLoggedImpl implements AppStateLogged {
-  const _$AppStateLoggedImpl({required this.user, required this.mod});
+  const _$AppStateLoggedImpl(
+      {required this.user, required this.mod, required this.locale});
 
   @override
-  final User user;
+  final Employee user;
   @override
   final Mod mod;
+  @override
+  final Locale locale;
 
   @override
   String toString() {
-    return 'AppState.logged(user: $user, mod: $mod)';
+    return 'AppState.logged(user: $user, mod: $mod, locale: $locale)';
   }
 
   @override
@@ -986,11 +1341,12 @@ class _$AppStateLoggedImpl implements AppStateLogged {
         (other.runtimeType == runtimeType &&
             other is _$AppStateLoggedImpl &&
             (identical(other.user, user) || other.user == user) &&
-            (identical(other.mod, mod) || other.mod == mod));
+            (identical(other.mod, mod) || other.mod == mod) &&
+            (identical(other.locale, locale) || other.locale == locale));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, user, mod);
+  int get hashCode => Object.hash(runtimeType, user, mod, locale);
 
   @JsonKey(ignore: true)
   @override
@@ -1004,9 +1360,9 @@ class _$AppStateLoggedImpl implements AppStateLogged {
   TResult when<TResult extends Object?>({
     required TResult Function() signIn,
     required TResult Function() signUp,
-    required TResult Function(User user, Mod mod) logged,
+    required TResult Function(Employee user, Mod mod, Locale locale) logged,
   }) {
-    return logged(user, mod);
+    return logged(user, mod, locale);
   }
 
   @override
@@ -1014,9 +1370,9 @@ class _$AppStateLoggedImpl implements AppStateLogged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? signIn,
     TResult? Function()? signUp,
-    TResult? Function(User user, Mod mod)? logged,
+    TResult? Function(Employee user, Mod mod, Locale locale)? logged,
   }) {
-    return logged?.call(user, mod);
+    return logged?.call(user, mod, locale);
   }
 
   @override
@@ -1024,11 +1380,11 @@ class _$AppStateLoggedImpl implements AppStateLogged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signIn,
     TResult Function()? signUp,
-    TResult Function(User user, Mod mod)? logged,
+    TResult Function(Employee user, Mod mod, Locale locale)? logged,
     required TResult orElse(),
   }) {
     if (logged != null) {
-      return logged(user, mod);
+      return logged(user, mod, locale);
     }
     return orElse();
   }
@@ -1070,11 +1426,13 @@ class _$AppStateLoggedImpl implements AppStateLogged {
 
 abstract class AppStateLogged implements AppState {
   const factory AppStateLogged(
-      {required final User user,
-      required final Mod mod}) = _$AppStateLoggedImpl;
+      {required final Employee user,
+      required final Mod mod,
+      required final Locale locale}) = _$AppStateLoggedImpl;
 
-  User get user;
+  Employee get user;
   Mod get mod;
+  Locale get locale;
   @JsonKey(ignore: true)
   _$$AppStateLoggedImplCopyWith<_$AppStateLoggedImpl> get copyWith =>
       throw _privateConstructorUsedError;

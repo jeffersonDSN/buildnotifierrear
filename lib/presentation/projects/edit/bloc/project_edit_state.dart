@@ -13,5 +13,7 @@ class ProjectEditState with _$ProjectEditState {
 }
 
 extension OnProjectEditState on ProjectEditState {
+  bool get isLoaded => this is ProjectEditStateLoaded;
+
   ProjectEditStateLoaded get asLoaded => this as ProjectEditStateLoaded;
 }

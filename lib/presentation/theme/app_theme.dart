@@ -12,6 +12,7 @@ class AppTheme {
     cardTheme: _cardTheme,
     textTheme: _textTheme,
     listTileTheme: _listTileTheme,
+    filledButtonTheme: _filledButtonThemeData,
     outlinedButtonTheme: _outlinedButtonThemeData,
     floatingActionButtonTheme: _floatingActionButtonThemeData,
     scrollbarTheme: _scrollbarThemeData,
@@ -61,14 +62,21 @@ InputDecorationTheme get _inputDecorationTheme => const InputDecorationTheme(
       ),
     );
 
-CardTheme get _cardTheme => const CardTheme(
+CardTheme get _cardTheme => CardTheme(
       color: AppColor.lightColor,
       elevation: 0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(Sizes.size24),
+        side: BorderSide(
+          color: AppColor.primaryColorSwatch.withOpacity(
+            .4,
+          ),
+          width: .5,
+        ),
+        borderRadius: BorderRadius.circular(
+          Sizes.size8,
         ),
       ),
+      shadowColor: AppColor.primaryColorSwatch.withOpacity(.1),
     );
 
 TextTheme get _textTheme => const TextTheme(
@@ -86,6 +94,18 @@ ListTileThemeData get _listTileTheme => const ListTileThemeData(
       selectedTileColor: AppColor.backgroundColor,
     );
 
+FilledButtonThemeData get _filledButtonThemeData => FilledButtonThemeData(
+      style: ButtonStyle(
+        shape: WidgetStatePropertyAll(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(
+              Sizes.size4,
+            ),
+          ),
+        ),
+      ),
+    );
+
 OutlinedButtonThemeData get _outlinedButtonThemeData => OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
         side: const BorderSide(
@@ -100,10 +120,10 @@ FloatingActionButtonThemeData get _floatingActionButtonThemeData =>
     );
 
 ScrollbarThemeData get _scrollbarThemeData => const ScrollbarThemeData(
-      thumbVisibility: MaterialStatePropertyAll(true),
-      thumbColor: MaterialStatePropertyAll(AppColor.primaryColorSwatch),
-      trackColor: MaterialStatePropertyAll(Colors.grey),
-      trackVisibility: MaterialStatePropertyAll(true),
+      thumbVisibility: WidgetStatePropertyAll(true),
+      thumbColor: WidgetStatePropertyAll(AppColor.primaryColorSwatch),
+      trackColor: WidgetStatePropertyAll(Colors.grey),
+      trackVisibility: WidgetStatePropertyAll(true),
     );
 
 SystemUiOverlayStyle get loginSystemUiOverlayStyle =>
