@@ -230,19 +230,21 @@ class ProjectsOverviewView extends IView {
                       // ),
                     ],
                   ),
-                  ProjectsTableWidget(
-                    projects: projects,
-                    onPressed: (project) {
-                      appBloc(context).add(
-                        AppEvent.changeView(
-                          mod: Mod.projects(
-                            type: ViewType.update(
-                              id: project.id,
+                  Expanded(
+                    child: ProjectsTableWidget(
+                      projects: projects,
+                      onPressed: (project) {
+                        appBloc(context).add(
+                          AppEvent.changeView(
+                            mod: Mod.projects(
+                              type: ViewType.update(
+                                id: project.id,
+                              ),
                             ),
                           ),
-                        ),
-                      );
-                    },
+                        );
+                      },
+                    ),
                   ),
                 ],
               );

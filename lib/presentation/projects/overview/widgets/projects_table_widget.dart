@@ -17,96 +17,94 @@ class ProjectsTableWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.all(
-            Sizes.size16,
-          ),
-          child: DataTable2(
-            columns: [
-              DataColumn2(
-                label: Expanded(
-                  child: Text(context.tr.name),
-                ),
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(
+          Sizes.size16,
+        ),
+        child: DataTable2(
+          columns: [
+            DataColumn2(
+              label: Expanded(
+                child: Text(context.tr.name),
               ),
-              DataColumn2(
-                label: Expanded(
-                  child: Text(context.tr.client),
-                ),
+            ),
+            DataColumn2(
+              label: Expanded(
+                child: Text(context.tr.client),
               ),
-              DataColumn2(
-                label: Expanded(
-                  child: Text(context.tr.status),
-                ),
+            ),
+            DataColumn2(
+              label: Expanded(
+                child: Text(context.tr.status),
               ),
-              DataColumn2(
-                numeric: true,
-                label: Text(context.tr.action),
-              ),
-            ],
-            rows: projects.map((project) {
-              return DataRow(
-                cells: [
-                  DataCell(Text(project.name)),
-                  DataCell(Text(project.clientFirstname)),
-                  DataCell(Text(project.status.name(context))),
-                  DataCell(
-                    IconButton(
-                      icon: const Icon(Icons.arrow_forward_ios),
-                      onPressed: () {
-                        onPressed.call(project);
-                      },
-                    ),
-                    // PopupMenuButton(
-                    //   itemBuilder: (context) => [
-                    //     const PopupMenuItem(
-                    //       child: Row(
-                    //         children: [
-                    //           Icon(
-                    //             size: 20,
-                    //             color: AppColor.green,
-                    //             Icons.shopping_bag_outlined,
-                    //           ),
-                    //           SizedBox(width: 10),
-                    //           Text('Adicionar Pedido'),
-                    //         ],
-                    //       ),
-                    //     ),
-                    //     PopupMenuItem(
-                    //         child: const Row(
-                    //           children: [
-                    //             Icon(
-                    //               size: 20,
-                    //               color: AppColor.orange,
-                    //               Icons.edit_outlined,
-                    //             ),
-                    //             SizedBox(width: 10),
-                    //             Text('Editar'),
-                    //           ],
-                    //         ),
-                    //         onTap: () {}),
-                    //     PopupMenuItem(
-                    //       child: const Row(
-                    //         children: [
-                    //           Icon(
-                    //             size: 20,
-                    //             color: AppColor.red,
-                    //             Icons.delete_outline,
-                    //           ),
-                    //           SizedBox(width: 10),
-                    //           Text('Excluir'),
-                    //         ],
-                    //       ),
-                    //       onTap: () {},
-                    //     ),
-                    //   ],
-                    // ),
+            ),
+            DataColumn2(
+              numeric: true,
+              label: Text(context.tr.action),
+            ),
+          ],
+          rows: projects.map((project) {
+            return DataRow(
+              cells: [
+                DataCell(Text(project.name)),
+                DataCell(Text(project.clientFirstname)),
+                DataCell(Text(project.status.name(context))),
+                DataCell(
+                  IconButton(
+                    icon: const Icon(Icons.arrow_forward_ios),
+                    onPressed: () {
+                      onPressed.call(project);
+                    },
                   ),
-                ],
-              );
-            }).toList(),
-          ),
+                  // PopupMenuButton(
+                  //   itemBuilder: (context) => [
+                  //     const PopupMenuItem(
+                  //       child: Row(
+                  //         children: [
+                  //           Icon(
+                  //             size: 20,
+                  //             color: AppColor.green,
+                  //             Icons.shopping_bag_outlined,
+                  //           ),
+                  //           SizedBox(width: 10),
+                  //           Text('Adicionar Pedido'),
+                  //         ],
+                  //       ),
+                  //     ),
+                  //     PopupMenuItem(
+                  //         child: const Row(
+                  //           children: [
+                  //             Icon(
+                  //               size: 20,
+                  //               color: AppColor.orange,
+                  //               Icons.edit_outlined,
+                  //             ),
+                  //             SizedBox(width: 10),
+                  //             Text('Editar'),
+                  //           ],
+                  //         ),
+                  //         onTap: () {}),
+                  //     PopupMenuItem(
+                  //       child: const Row(
+                  //         children: [
+                  //           Icon(
+                  //             size: 20,
+                  //             color: AppColor.red,
+                  //             Icons.delete_outline,
+                  //           ),
+                  //           SizedBox(width: 10),
+                  //           Text('Excluir'),
+                  //         ],
+                  //       ),
+                  //       onTap: () {},
+                  //     ),
+                  //   ],
+                  // ),
+                ),
+              ],
+            );
+          }).toList(),
         ),
       ),
     );

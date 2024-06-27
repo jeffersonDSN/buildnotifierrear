@@ -46,8 +46,22 @@ class ProjectEditView extends IView {
                   indicatorSize: TabBarIndicatorSize.tab,
                   dividerColor: Colors.transparent,
                   tabs: [
-                    Tab(text: context.tr.project),
-                    Tab(text: context.tr.tasks),
+                    Tab(
+                      child: Text(
+                        context.tr.project,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Tab(
+                      child: Text(
+                        context.tr.tasks,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

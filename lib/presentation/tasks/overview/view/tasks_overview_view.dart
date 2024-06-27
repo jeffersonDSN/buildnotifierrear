@@ -46,24 +46,19 @@ class TasksOverviewView extends IView {
               ),
             ),
             loaded: (tasks) {
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TasksTableWidget(
-                    tasks: tasks,
-                    onPressed: (task) {
-                      appBloc(context).add(
-                        AppEvent.changeView(
-                          mod: Mod.tasks(
-                            type: ViewType.update(
-                              id: task.id,
-                            ),
-                          ),
+              return TasksTableWidget(
+                tasks: tasks,
+                onPressed: (task) {
+                  appBloc(context).add(
+                    AppEvent.changeView(
+                      mod: Mod.tasks(
+                        type: ViewType.update(
+                          id: task.id,
                         ),
-                      );
-                    },
-                  ),
-                ],
+                      ),
+                    ),
+                  );
+                },
               );
             },
           );
