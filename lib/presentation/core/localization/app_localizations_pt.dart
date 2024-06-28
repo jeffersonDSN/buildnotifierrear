@@ -303,4 +303,10 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get done => 'Feito';
+
+  @override
+  String get chat => 'Bate papo';
+
+  @override
+  String get sendMessage => 'Envie uma mensagem...';
 }

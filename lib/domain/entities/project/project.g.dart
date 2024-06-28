@@ -30,6 +30,10 @@ _$ProjectImpl _$$ProjectImplFromJson(Map<String, dynamic> json) =>
       address: json['address'] as String? ?? '',
       address2: json['address2'] as String? ?? '',
       description: json['description'] as String? ?? '',
+      descriptionList: (json['descriptionList'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, e as String),
+          ) ??
+          const {},
       latitude: (json['latitude'] as num?)?.toInt(),
       longitude: (json['longitude'] as num?)?.toInt(),
     );
@@ -52,6 +56,7 @@ Map<String, dynamic> _$$ProjectImplToJson(_$ProjectImpl instance) =>
       'address': instance.address,
       'address2': instance.address2,
       'description': instance.description,
+      'descriptionList': instance.descriptionList,
       'latitude': instance.latitude,
       'longitude': instance.longitude,
     };

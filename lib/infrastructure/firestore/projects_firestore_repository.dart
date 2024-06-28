@@ -3,11 +3,12 @@ import 'package:buildnotifierrear/domain/entities/enums/project_status_enums.dar
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
 
 import 'package:buildnotifierrear/domain/repositories/abs_i_projects_repository.dart';
+import 'package:buildnotifierrear/infrastructure/core/transleted.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/tenant_firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 
-class ProjectsFirestoreRepository extends TenantFireStoreRepository
+class ProjectsFirestoreRepository extends TenantFirestoreRepository
     implements AbsIProjectsRepository {
   ProjectsFirestoreRepository({required super.tenantId})
       : super(collectionName: 'projects');
@@ -79,6 +80,8 @@ class ProjectsFirestoreRepository extends TenantFireStoreRepository
 
   @override
   Future<Either<ErrorFields, bool>> put(Project value) async {
+    var descriptionList = await getValueList(value.description);
+
     var schedule = {
       'name': value.name,
       'clientId': value.clientId,
@@ -89,6 +92,7 @@ class ProjectsFirestoreRepository extends TenantFireStoreRepository
       'budget': value.budget,
       'status': value.status.id,
       'description': value.description,
+      'descriptionList': descriptionList,
       'zipCode': value.zipCode,
       'state': value.state,
       'city': value.city,
@@ -103,6 +107,8 @@ class ProjectsFirestoreRepository extends TenantFireStoreRepository
 
   @override
   Future<Either<ErrorFields, bool>> post(Project value) async {
+    var descriptionList = await getValueList(value.description);
+
     var schedule = {
       'name': value.name,
       'clientId': value.clientId,
@@ -113,6 +119,7 @@ class ProjectsFirestoreRepository extends TenantFireStoreRepository
       'budget': value.budget,
       'status': value.status.id,
       'description': value.description,
+      'descriptionList': descriptionList,
       'zipCode': value.zipCode,
       'state': value.state,
       'city': value.city,

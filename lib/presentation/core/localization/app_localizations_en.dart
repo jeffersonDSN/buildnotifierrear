@@ -302,4 +302,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get done => 'Done';
+
+  @override
+  String get chat => 'Chat';
+
+  @override
+  String get sendMessage => 'Send a message...';
 }

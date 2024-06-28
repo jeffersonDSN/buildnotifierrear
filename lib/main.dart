@@ -18,6 +18,8 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
+  await langdetect.initLangDetect();
+
   html.document.onContextMenu.listen((html.MouseEvent event) {
     event.preventDefault();
   });
@@ -36,8 +38,6 @@ void main() async {
       event.stopPropagation();
     }
   });
-
-  await langdetect.initLangDetect();
 
   runApp(
     BlocProvider(

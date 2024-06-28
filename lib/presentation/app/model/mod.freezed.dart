@@ -25,6 +25,7 @@ mixin _$Mod {
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
+    required TResult Function(ViewType type) chat,
     required TResult Function() settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +38,7 @@ mixin _$Mod {
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
+    TResult? Function(ViewType type)? chat,
     TResult? Function()? settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +51,7 @@ mixin _$Mod {
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
+    TResult Function(ViewType type)? chat,
     TResult Function()? settings,
     required TResult orElse(),
   }) =>
@@ -62,6 +65,7 @@ mixin _$Mod {
     required TResult Function(ModClients value) clients,
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
+    required TResult Function(ModChat value) chat,
     required TResult Function(ModSettings value) settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -74,6 +78,7 @@ mixin _$Mod {
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
+    TResult? Function(ModChat value)? chat,
     TResult? Function(ModSettings value)? settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -86,6 +91,7 @@ mixin _$Mod {
     TResult Function(ModClients value)? clients,
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
+    TResult Function(ModChat value)? chat,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) =>
@@ -153,6 +159,7 @@ class _$ModHomeImpl implements ModHome {
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
+    required TResult Function(ViewType type) chat,
     required TResult Function() settings,
   }) {
     return home();
@@ -168,6 +175,7 @@ class _$ModHomeImpl implements ModHome {
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
+    TResult? Function(ViewType type)? chat,
     TResult? Function()? settings,
   }) {
     return home?.call();
@@ -183,6 +191,7 @@ class _$ModHomeImpl implements ModHome {
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
+    TResult Function(ViewType type)? chat,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -202,6 +211,7 @@ class _$ModHomeImpl implements ModHome {
     required TResult Function(ModClients value) clients,
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
+    required TResult Function(ModChat value) chat,
     required TResult Function(ModSettings value) settings,
   }) {
     return home(this);
@@ -217,6 +227,7 @@ class _$ModHomeImpl implements ModHome {
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
+    TResult? Function(ModChat value)? chat,
     TResult? Function(ModSettings value)? settings,
   }) {
     return home?.call(this);
@@ -232,6 +243,7 @@ class _$ModHomeImpl implements ModHome {
     TResult Function(ModClients value)? clients,
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
+    TResult Function(ModChat value)? chat,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -327,6 +339,7 @@ class _$ModScheduleImpl implements ModSchedule {
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
+    required TResult Function(ViewType type) chat,
     required TResult Function() settings,
   }) {
     return schedule(type);
@@ -342,6 +355,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
+    TResult? Function(ViewType type)? chat,
     TResult? Function()? settings,
   }) {
     return schedule?.call(type);
@@ -357,6 +371,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
+    TResult Function(ViewType type)? chat,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -376,6 +391,7 @@ class _$ModScheduleImpl implements ModSchedule {
     required TResult Function(ModClients value) clients,
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
+    required TResult Function(ModChat value) chat,
     required TResult Function(ModSettings value) settings,
   }) {
     return schedule(this);
@@ -391,6 +407,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
+    TResult? Function(ModChat value)? chat,
     TResult? Function(ModSettings value)? settings,
   }) {
     return schedule?.call(this);
@@ -406,6 +423,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult Function(ModClients value)? clients,
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
+    TResult Function(ModChat value)? chat,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -506,6 +524,7 @@ class _$ModProjectsImpl implements ModProjects {
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
+    required TResult Function(ViewType type) chat,
     required TResult Function() settings,
   }) {
     return projects(type);
@@ -521,6 +540,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
+    TResult? Function(ViewType type)? chat,
     TResult? Function()? settings,
   }) {
     return projects?.call(type);
@@ -536,6 +556,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
+    TResult Function(ViewType type)? chat,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -555,6 +576,7 @@ class _$ModProjectsImpl implements ModProjects {
     required TResult Function(ModClients value) clients,
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
+    required TResult Function(ModChat value) chat,
     required TResult Function(ModSettings value) settings,
   }) {
     return projects(this);
@@ -570,6 +592,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
+    TResult? Function(ModChat value)? chat,
     TResult? Function(ModSettings value)? settings,
   }) {
     return projects?.call(this);
@@ -585,6 +608,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult Function(ModClients value)? clients,
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
+    TResult Function(ModChat value)? chat,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -685,6 +709,7 @@ class _$ModTasksImpl implements ModTasks {
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
+    required TResult Function(ViewType type) chat,
     required TResult Function() settings,
   }) {
     return tasks(type);
@@ -700,6 +725,7 @@ class _$ModTasksImpl implements ModTasks {
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
+    TResult? Function(ViewType type)? chat,
     TResult? Function()? settings,
   }) {
     return tasks?.call(type);
@@ -715,6 +741,7 @@ class _$ModTasksImpl implements ModTasks {
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
+    TResult Function(ViewType type)? chat,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -734,6 +761,7 @@ class _$ModTasksImpl implements ModTasks {
     required TResult Function(ModClients value) clients,
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
+    required TResult Function(ModChat value) chat,
     required TResult Function(ModSettings value) settings,
   }) {
     return tasks(this);
@@ -749,6 +777,7 @@ class _$ModTasksImpl implements ModTasks {
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
+    TResult? Function(ModChat value)? chat,
     TResult? Function(ModSettings value)? settings,
   }) {
     return tasks?.call(this);
@@ -764,6 +793,7 @@ class _$ModTasksImpl implements ModTasks {
     TResult Function(ModClients value)? clients,
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
+    TResult Function(ModChat value)? chat,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -864,6 +894,7 @@ class _$ModClientsImpl implements ModClients {
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
+    required TResult Function(ViewType type) chat,
     required TResult Function() settings,
   }) {
     return clients(type);
@@ -879,6 +910,7 @@ class _$ModClientsImpl implements ModClients {
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
+    TResult? Function(ViewType type)? chat,
     TResult? Function()? settings,
   }) {
     return clients?.call(type);
@@ -894,6 +926,7 @@ class _$ModClientsImpl implements ModClients {
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
+    TResult Function(ViewType type)? chat,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -913,6 +946,7 @@ class _$ModClientsImpl implements ModClients {
     required TResult Function(ModClients value) clients,
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
+    required TResult Function(ModChat value) chat,
     required TResult Function(ModSettings value) settings,
   }) {
     return clients(this);
@@ -928,6 +962,7 @@ class _$ModClientsImpl implements ModClients {
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
+    TResult? Function(ModChat value)? chat,
     TResult? Function(ModSettings value)? settings,
   }) {
     return clients?.call(this);
@@ -943,6 +978,7 @@ class _$ModClientsImpl implements ModClients {
     TResult Function(ModClients value)? clients,
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
+    TResult Function(ModChat value)? chat,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -1043,6 +1079,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
+    required TResult Function(ViewType type) chat,
     required TResult Function() settings,
   }) {
     return employees(type);
@@ -1058,6 +1095,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
+    TResult? Function(ViewType type)? chat,
     TResult? Function()? settings,
   }) {
     return employees?.call(type);
@@ -1073,6 +1111,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
+    TResult Function(ViewType type)? chat,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -1092,6 +1131,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     required TResult Function(ModClients value) clients,
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
+    required TResult Function(ModChat value) chat,
     required TResult Function(ModSettings value) settings,
   }) {
     return employees(this);
@@ -1107,6 +1147,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
+    TResult? Function(ModChat value)? chat,
     TResult? Function(ModSettings value)? settings,
   }) {
     return employees?.call(this);
@@ -1122,6 +1163,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     TResult Function(ModClients value)? clients,
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
+    TResult Function(ModChat value)? chat,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -1223,6 +1265,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
+    required TResult Function(ViewType type) chat,
     required TResult Function() settings,
   }) {
     return timecards(type);
@@ -1238,6 +1281,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
+    TResult? Function(ViewType type)? chat,
     TResult? Function()? settings,
   }) {
     return timecards?.call(type);
@@ -1253,6 +1297,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
+    TResult Function(ViewType type)? chat,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -1272,6 +1317,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     required TResult Function(ModClients value) clients,
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
+    required TResult Function(ModChat value) chat,
     required TResult Function(ModSettings value) settings,
   }) {
     return timecards(this);
@@ -1287,6 +1333,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
+    TResult? Function(ModChat value)? chat,
     TResult? Function(ModSettings value)? settings,
   }) {
     return timecards?.call(this);
@@ -1302,6 +1349,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     TResult Function(ModClients value)? clients,
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
+    TResult Function(ModChat value)? chat,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -1319,6 +1367,191 @@ abstract class ModTimecards implements Mod {
   ViewType get type;
   @JsonKey(ignore: true)
   _$$ModTimecardsImplCopyWith<_$ModTimecardsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ModChatImplCopyWith<$Res> {
+  factory _$$ModChatImplCopyWith(
+          _$ModChatImpl value, $Res Function(_$ModChatImpl) then) =
+      __$$ModChatImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ViewType type});
+
+  $ViewTypeCopyWith<$Res> get type;
+}
+
+/// @nodoc
+class __$$ModChatImplCopyWithImpl<$Res>
+    extends _$ModCopyWithImpl<$Res, _$ModChatImpl>
+    implements _$$ModChatImplCopyWith<$Res> {
+  __$$ModChatImplCopyWithImpl(
+      _$ModChatImpl _value, $Res Function(_$ModChatImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+  }) {
+    return _then(_$ModChatImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ViewType,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ViewTypeCopyWith<$Res> get type {
+    return $ViewTypeCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ModChatImpl implements ModChat {
+  const _$ModChatImpl({required this.type});
+
+  @override
+  final ViewType type;
+
+  @override
+  String toString() {
+    return 'Mod.chat(type: $type)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ModChatImpl &&
+            (identical(other.type, type) || other.type == type));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, type);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModChatImplCopyWith<_$ModChatImpl> get copyWith =>
+      __$$ModChatImplCopyWithImpl<_$ModChatImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() home,
+    required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) projects,
+    required TResult Function(ViewType type) tasks,
+    required TResult Function(ViewType type) clients,
+    required TResult Function(ViewType type) employees,
+    required TResult Function(ViewType type) timecards,
+    required TResult Function(ViewType type) chat,
+    required TResult Function() settings,
+  }) {
+    return chat(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? home,
+    TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? projects,
+    TResult? Function(ViewType type)? tasks,
+    TResult? Function(ViewType type)? clients,
+    TResult? Function(ViewType type)? employees,
+    TResult? Function(ViewType type)? timecards,
+    TResult? Function(ViewType type)? chat,
+    TResult? Function()? settings,
+  }) {
+    return chat?.call(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? home,
+    TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? projects,
+    TResult Function(ViewType type)? tasks,
+    TResult Function(ViewType type)? clients,
+    TResult Function(ViewType type)? employees,
+    TResult Function(ViewType type)? timecards,
+    TResult Function(ViewType type)? chat,
+    TResult Function()? settings,
+    required TResult orElse(),
+  }) {
+    if (chat != null) {
+      return chat(type);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ModHome value) home,
+    required TResult Function(ModSchedule value) schedule,
+    required TResult Function(ModProjects value) projects,
+    required TResult Function(ModTasks value) tasks,
+    required TResult Function(ModClients value) clients,
+    required TResult Function(ModEmployees value) employees,
+    required TResult Function(ModTimecards value) timecards,
+    required TResult Function(ModChat value) chat,
+    required TResult Function(ModSettings value) settings,
+  }) {
+    return chat(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ModHome value)? home,
+    TResult? Function(ModSchedule value)? schedule,
+    TResult? Function(ModProjects value)? projects,
+    TResult? Function(ModTasks value)? tasks,
+    TResult? Function(ModClients value)? clients,
+    TResult? Function(ModEmployees value)? employees,
+    TResult? Function(ModTimecards value)? timecards,
+    TResult? Function(ModChat value)? chat,
+    TResult? Function(ModSettings value)? settings,
+  }) {
+    return chat?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ModHome value)? home,
+    TResult Function(ModSchedule value)? schedule,
+    TResult Function(ModProjects value)? projects,
+    TResult Function(ModTasks value)? tasks,
+    TResult Function(ModClients value)? clients,
+    TResult Function(ModEmployees value)? employees,
+    TResult Function(ModTimecards value)? timecards,
+    TResult Function(ModChat value)? chat,
+    TResult Function(ModSettings value)? settings,
+    required TResult orElse(),
+  }) {
+    if (chat != null) {
+      return chat(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ModChat implements Mod {
+  const factory ModChat({required final ViewType type}) = _$ModChatImpl;
+
+  ViewType get type;
+  @JsonKey(ignore: true)
+  _$$ModChatImplCopyWith<_$ModChatImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1367,6 +1600,7 @@ class _$ModSettingsImpl implements ModSettings {
     required TResult Function(ViewType type) clients,
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
+    required TResult Function(ViewType type) chat,
     required TResult Function() settings,
   }) {
     return settings();
@@ -1382,6 +1616,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult? Function(ViewType type)? clients,
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
+    TResult? Function(ViewType type)? chat,
     TResult? Function()? settings,
   }) {
     return settings?.call();
@@ -1397,6 +1632,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult Function(ViewType type)? clients,
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
+    TResult Function(ViewType type)? chat,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -1416,6 +1652,7 @@ class _$ModSettingsImpl implements ModSettings {
     required TResult Function(ModClients value) clients,
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
+    required TResult Function(ModChat value) chat,
     required TResult Function(ModSettings value) settings,
   }) {
     return settings(this);
@@ -1431,6 +1668,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult? Function(ModClients value)? clients,
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
+    TResult? Function(ModChat value)? chat,
     TResult? Function(ModSettings value)? settings,
   }) {
     return settings?.call(this);
@@ -1446,6 +1684,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult Function(ModClients value)? clients,
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
+    TResult Function(ModChat value)? chat,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {

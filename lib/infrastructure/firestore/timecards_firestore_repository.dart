@@ -5,7 +5,7 @@ import 'package:buildnotifierrear/infrastructure/firestore/tenant_firestore_repo
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 
-class TimecardsFireStoreRepository extends TenantFireStoreRepository
+class TimecardsFireStoreRepository extends TenantFirestoreRepository
     implements AbsITimecardRepository {
   TimecardsFireStoreRepository({required super.tenantId})
       : super(collectionName: 'timecard');

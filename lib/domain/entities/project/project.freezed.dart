@@ -36,6 +36,7 @@ mixin _$Project {
   String get address => throw _privateConstructorUsedError;
   String get address2 => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
+  Map<String, String> get descriptionList => throw _privateConstructorUsedError;
   int? get latitude => throw _privateConstructorUsedError;
   int? get longitude => throw _privateConstructorUsedError;
 
@@ -65,6 +66,7 @@ abstract class $ProjectCopyWith<$Res> {
       String address,
       String address2,
       String description,
+      Map<String, String> descriptionList,
       int? latitude,
       int? longitude});
 }
@@ -97,6 +99,7 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
     Object? address = null,
     Object? address2 = null,
     Object? description = null,
+    Object? descriptionList = null,
     Object? latitude = freezed,
     Object? longitude = freezed,
   }) {
@@ -161,6 +164,10 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      descriptionList: null == descriptionList
+          ? _value.descriptionList
+          : descriptionList // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
       latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -196,6 +203,7 @@ abstract class _$$ProjectImplCopyWith<$Res> implements $ProjectCopyWith<$Res> {
       String address,
       String address2,
       String description,
+      Map<String, String> descriptionList,
       int? latitude,
       int? longitude});
 }
@@ -226,6 +234,7 @@ class __$$ProjectImplCopyWithImpl<$Res>
     Object? address = null,
     Object? address2 = null,
     Object? description = null,
+    Object? descriptionList = null,
     Object? latitude = freezed,
     Object? longitude = freezed,
   }) {
@@ -290,6 +299,10 @@ class __$$ProjectImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      descriptionList: null == descriptionList
+          ? _value._descriptionList
+          : descriptionList // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
       latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
@@ -321,8 +334,10 @@ class _$ProjectImpl implements _Project {
       this.address = '',
       this.address2 = '',
       this.description = '',
+      final Map<String, String> descriptionList = const {},
       this.latitude,
-      this.longitude});
+      this.longitude})
+      : _descriptionList = descriptionList;
 
   factory _$ProjectImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProjectImplFromJson(json);
@@ -371,6 +386,15 @@ class _$ProjectImpl implements _Project {
   @override
   @JsonKey()
   final String description;
+  final Map<String, String> _descriptionList;
+  @override
+  @JsonKey()
+  Map<String, String> get descriptionList {
+    if (_descriptionList is EqualUnmodifiableMapView) return _descriptionList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_descriptionList);
+  }
+
   @override
   final int? latitude;
   @override
@@ -378,7 +402,7 @@ class _$ProjectImpl implements _Project {
 
   @override
   String toString() {
-    return 'Project(id: $id, name: $name, startDate: $startDate, expectedCompletionDate: $expectedCompletionDate, budget: $budget, status: $status, clientId: $clientId, clientFirstname: $clientFirstname, clientLastname: $clientLastname, zipCode: $zipCode, state: $state, city: $city, address: $address, address2: $address2, description: $description, latitude: $latitude, longitude: $longitude)';
+    return 'Project(id: $id, name: $name, startDate: $startDate, expectedCompletionDate: $expectedCompletionDate, budget: $budget, status: $status, clientId: $clientId, clientFirstname: $clientFirstname, clientLastname: $clientLastname, zipCode: $zipCode, state: $state, city: $city, address: $address, address2: $address2, description: $description, descriptionList: $descriptionList, latitude: $latitude, longitude: $longitude)';
   }
 
   @override
@@ -408,6 +432,8 @@ class _$ProjectImpl implements _Project {
                 other.address2 == address2) &&
             (identical(other.description, description) ||
                 other.description == description) &&
+            const DeepCollectionEquality()
+                .equals(other._descriptionList, _descriptionList) &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
@@ -433,6 +459,7 @@ class _$ProjectImpl implements _Project {
       address,
       address2,
       description,
+      const DeepCollectionEquality().hash(_descriptionList),
       latitude,
       longitude);
 
@@ -467,6 +494,7 @@ abstract class _Project implements Project {
       final String address,
       final String address2,
       final String description,
+      final Map<String, String> descriptionList,
       final int? latitude,
       final int? longitude}) = _$ProjectImpl;
 
@@ -503,6 +531,8 @@ abstract class _Project implements Project {
   String get address2;
   @override
   String get description;
+  @override
+  Map<String, String> get descriptionList;
   @override
   int? get latitude;
   @override

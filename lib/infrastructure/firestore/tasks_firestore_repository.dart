@@ -4,13 +4,12 @@ import 'package:buildnotifierrear/domain/entities/enums/task_priority_enums.dart
 import 'package:buildnotifierrear/domain/entities/enums/task_status_enums.dart';
 import 'package:buildnotifierrear/domain/entities/task/task.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_tasks_repository.dart';
+import 'package:buildnotifierrear/infrastructure/core/transleted.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/tenant_firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:google_generative_ai/google_generative_ai.dart';
-import 'package:flutter_langdetect/flutter_langdetect.dart' as langdetect;
 import 'package:dartz/dartz.dart' hide Task;
 
-class TasksFirestoreRepository extends TenantFireStoreRepository
+class TasksFirestoreRepository extends TenantFirestoreRepository
     implements AbsITasksRepository {
   TasksFirestoreRepository({required super.tenantId})
       : super(collectionName: 'tasks');
@@ -82,7 +81,7 @@ class TasksFirestoreRepository extends TenantFireStoreRepository
 
   @override
   Future<Either<ErrorFields, bool>> put(Task value) async {
-    var notesList = await getNotesList(value.notes);
+    var notesList = await getValueList(value.notes);
 
     var schedule = {
       'title': value.title,
@@ -104,7 +103,7 @@ class TasksFirestoreRepository extends TenantFireStoreRepository
 
   @override
   Future<Either<ErrorFields, bool>> post(Task value) async {
-    var notesList = await getNotesList(value.notes);
+    var notesList = await getValueList(value.notes);
 
     var schedule = {
       'title': value.title,
@@ -128,84 +127,5 @@ class TasksFirestoreRepository extends TenantFireStoreRepository
   Future<bool> delete(String id) async {
     await collection.doc(id.toString()).delete();
     return true;
-  }
-
-  Future<Map<String, String>> getNotesList(String notes) async {
-    Map<String, String> notesList = {};
-
-    if (notes.isEmpty) {
-      return notesList;
-    }
-
-    final language = langdetect.detect(notes);
-
-    final model = GenerativeModel(
-      model: "gemini-1.5-flash",
-      apiKey: 'AIzaSyD8Mviw4fLJVFogTjBzInBsfkOmRFL8iuY',
-    );
-
-    switch (language) {
-      case 'en':
-        final response = await Future.wait([
-          model.generateContent([
-            Content.text('Translated to pt'),
-            Content.text(notes),
-          ]),
-          model.generateContent([
-            Content.text('Translated to es'),
-            Content.text(notes),
-          ]),
-        ]);
-
-        notesList.addAll({
-          'en': notes,
-          'pt': response[0].text ?? '',
-          'es': response[1].text ?? '',
-        });
-
-        break;
-
-      case 'es':
-        final response = await Future.wait([
-          model.generateContent([
-            Content.text('Translated to en'),
-            Content.text(notes),
-          ]),
-          model.generateContent([
-            Content.text('Translated to pt'),
-            Content.text(notes),
-          ]),
-        ]);
-
-        notesList.addAll({
-          'en': response[0].text ?? '',
-          'pt': response[1].text ?? '',
-          'es': notes,
-        });
-
-        break;
-
-      case 'pt':
-        final response = await Future.wait([
-          model.generateContent([
-            Content.text('Translated to en'),
-            Content.text(notes),
-          ]),
-          model.generateContent([
-            Content.text('Translated to es'),
-            Content.text(notes),
-          ]),
-        ]);
-
-        notesList.addAll({
-          'en': response[0].text ?? '',
-          'pt': notes,
-          'es': response[1].text ?? '',
-        });
-
-        break;
-    }
-
-    return notesList;
   }
 }

@@ -4,7 +4,7 @@ import 'package:buildnotifierrear/infrastructure/firestore/tenant_firestore_repo
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class ActivitiesFirestoreRepository extends TenantFireStoreRepository
+class ActivitiesFirestoreRepository extends TenantFirestoreRepository
     implements AbsIActivitiesRepository {
   ActivitiesFirestoreRepository({required super.tenantId})
       : super(collectionName: 'activity');

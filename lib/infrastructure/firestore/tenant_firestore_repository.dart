@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class TenantFireStoreRepository {
-  final CollectionReference collection;
+class TenantFirestoreRepository {
+  final CollectionReference<Map<String, dynamic>> collection;
 
-  TenantFireStoreRepository({
+  TenantFirestoreRepository({
     required String collectionName,
     required String tenantId,
   }) : collection = FirebaseFirestore.instance

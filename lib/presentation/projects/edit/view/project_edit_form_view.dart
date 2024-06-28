@@ -319,9 +319,11 @@ class ProjectEditFormView extends StatelessWidget {
                     gapHeight24,
                     Expanded(
                       child: BaseTextFormField(
+                        key: Key('description-${context.languageCode}'),
                         label: context.tr.description,
                         maxLines: 7,
-                        initialValue: project.description,
+                        initialValue:
+                            project.descriptionList[context.languageCode],
                         onChanged: (value) {
                           bloc.add(
                             ProjectEditEvent.changeDescription(value: value),

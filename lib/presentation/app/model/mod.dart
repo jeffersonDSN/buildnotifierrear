@@ -1,5 +1,6 @@
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
+import 'package:buildnotifierrear/presentation/chat/overview/chat_overview.dart';
 import 'package:buildnotifierrear/presentation/clients/edit/client_edit.dart';
 import 'package:buildnotifierrear/presentation/clients/overview/clients_overview.dart';
 import 'package:buildnotifierrear/presentation/home/page/home_page.dart';
@@ -41,6 +42,10 @@ class Mod with _$Mod {
     required ViewType type,
   }) = ModTimecards;
 
+  const factory Mod.chat({
+    required ViewType type,
+  }) = ModChat;
+
   const factory Mod.settings() = ModSettings;
 }
 
@@ -52,6 +57,7 @@ extension OnModel on Mod {
   bool get isModClients => this is ModClients;
   bool get isModEmployees => this is ModEmployees;
   bool get isModTimeCards => this is ModTimecards;
+  bool get isModChat => this is ModChat;
 
   ModHome get asModHome => this as ModHome;
   ModSchedule get asModSchedule => this as ModSchedule;
@@ -60,6 +66,7 @@ extension OnModel on Mod {
   ModClients get asModClients => this as ModClients;
   ModEmployees get asModEmployees => this as ModEmployees;
   ModTimecards get asModtimecards => this as ModTimecards;
+  ModChat get asModchat => this as ModChat;
 
   Widget view() {
     return when(
@@ -93,6 +100,11 @@ extension OnModel on Mod {
         overview: () => const Timecards(),
         create: () => const Timecards(),
         update: (id) => const Timecards(),
+      ),
+      chat: (viewType) => viewType.when(
+        overview: () => const ChatOverview(),
+        create: () => const ChatOverview(),
+        update: (id) => const ChatOverview(),
       ),
       settings: () => const SettingsEdit(),
     );

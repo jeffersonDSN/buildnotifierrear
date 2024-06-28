@@ -233,6 +233,10 @@ abstract class AppLocalizations {
   String get doing;
 
   String get done;
+
+  String get chat;
+
+  String get sendMessage;
 }
 
 class _AppLocalizationsDelegate

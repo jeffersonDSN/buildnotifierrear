@@ -262,6 +262,27 @@ class LandingPage extends StatelessWidget {
                             },
                           ),
                         ),
+                        Container(
+                          color: bloc.state.asLogged.mod.isModChat
+                              ? AppColor.backgroundColor
+                              : Colors.transparent,
+                          child: ListTile(
+                            iconColor: Colors.white,
+                            textColor: Colors.white,
+                            leading: const Icon(Icons.chat),
+                            title: Text(context.tr.chat),
+                            selected: bloc.state.asLogged.mod.isModChat,
+                            onTap: () {
+                              bloc.add(
+                                const AppEvent.changeView(
+                                  mod: Mod.chat(
+                                    type: ViewType.overview(),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
                       ],
                     ),
                   ),

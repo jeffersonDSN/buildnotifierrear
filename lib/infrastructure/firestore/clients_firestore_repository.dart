@@ -5,7 +5,7 @@ import 'package:buildnotifierrear/infrastructure/firestore/tenant_firestore_repo
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 
-class ClientsFireStoreRepository extends TenantFireStoreRepository
+class ClientsFireStoreRepository extends TenantFirestoreRepository
     implements AbsICRUDRepository<Client> {
   ClientsFireStoreRepository({required super.tenantId})
       : super(collectionName: 'clients');
