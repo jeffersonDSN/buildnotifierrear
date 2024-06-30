@@ -64,7 +64,7 @@ class TimecardsOverviewBloc
           );
 
           var userIds = timeCards.map((timecard) {
-            return timecard.userId;
+            return timecard.employeeId;
           }).toList();
 
           add(TimecardsOverviewEvent.loadUsers(userIds: userIds));
@@ -107,7 +107,7 @@ class TimecardsOverviewBloc
           );
 
           var userIds = timeCards.map((timecard) {
-            return timecard.userId;
+            return timecard.employeeId;
           }).toList();
 
           add(TimecardsOverviewEvent.loadUsers(userIds: userIds));

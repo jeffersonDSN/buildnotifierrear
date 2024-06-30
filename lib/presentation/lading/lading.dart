@@ -7,11 +7,11 @@ import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 
-class LandingPage extends StatelessWidget {
+class Landing extends StatelessWidget {
   final Widget child;
   final AppBloc bloc;
 
-  const LandingPage({
+  const Landing({
     super.key,
     required this.child,
     required this.bloc,
@@ -20,6 +20,130 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leadingWidth: MediaQuery.of(context).size.width * 0.2,
+        leading: Container(
+          width: MediaQuery.of(context).size.width * 0.2,
+          decoration: const BoxDecoration(
+            color: AppColor.primaryColorSwatch,
+          ),
+          child: Image.asset(
+            '$assetImage$logo2',
+          ),
+        ),
+        title: Text(
+          bloc.state.asLogged.mod.title(context),
+        ),
+        actions: [
+          Stack(
+            children: [
+              IconButton(
+                  icon: Icon(
+                    Icons.notifications,
+                  ),
+                  onPressed: () {}),
+              Positioned(
+                top: 7,
+                right: 7,
+                child: Container(
+                  width: Sizes.size12,
+                  height: Sizes.size12,
+                  padding: const EdgeInsets.all(Sizes.size4),
+                  decoration: BoxDecoration(
+                    color: AppColor.primaryColorSwatch,
+                    borderRadius: BorderRadius.circular(Sizes.size32),
+                    border: Border.all(
+                      color: AppColor.lightColor,
+                      width: 2,
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+          VerticalDivider(),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(
+              Sizes.size8,
+              Sizes.size0,
+              Sizes.size16,
+              Sizes.size0,
+            ),
+            child: Row(
+              children: [
+                Card(
+                  child: SizedBox.square(
+                    dimension: Sizes.size40,
+                  ),
+                ),
+                gapWidth8,
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      bloc.state.asLogged.user.firstName,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    PopupMenuButton(
+                      child: Row(
+                        children: [
+                          Text(
+                            context.tr.selectLanguage,
+                            style: TextStyle(
+                              color: AppColor.secondaryColorSwatch.shade200,
+                            ),
+                          ),
+                          Icon(
+                            Icons.keyboard_arrow_down,
+                            color: AppColor.secondaryColorSwatch.shade200,
+                          ),
+                        ],
+                      ),
+                      position: PopupMenuPosition.under,
+                      tooltip: '',
+                      itemBuilder: (context) => [
+                        PopupMenuItem(
+                          child: Text(context.tr.english),
+                          onTap: () {
+                            bloc.add(
+                              AppEvent.changeLanguage(
+                                locale: Locale('en'),
+                              ),
+                            );
+                          },
+                        ),
+                        PopupMenuItem(
+                          child: Text(context.tr.portuguese),
+                          onTap: () {
+                            bloc.add(
+                              AppEvent.changeLanguage(
+                                locale: Locale('pt'),
+                              ),
+                            );
+                          },
+                        ),
+                        PopupMenuItem(
+                          child: Text(context.tr.spanish),
+                          onTap: () {
+                            bloc.add(
+                              AppEvent.changeLanguage(
+                                locale: Locale('es'),
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -28,91 +152,11 @@ class LandingPage extends StatelessWidget {
             child: Container(
               decoration: const BoxDecoration(
                 color: AppColor.primaryColorSwatch,
-                borderRadius: BorderRadius.horizontal(
-                  right: Radius.circular(Sizes.size24),
-                ),
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  gapWidth4,
-                  Image.asset(
-                    '$assetImage$logo2',
-                    height: 48,
-                  ),
-                  gapHeight16,
-                  const Divider(),
-                  Padding(
-                    padding: const EdgeInsets.all(Sizes.size4),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            const CircleAvatar(),
-                            gapWidth8,
-                            Text(
-                              bloc.state.asLogged.user.firstName,
-                              style: const TextStyle(
-                                color: AppColor.lightColor,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              context.tr.selectLanguage,
-                              style: const TextStyle(
-                                color: AppColor.lightColor,
-                              ),
-                            ),
-                            PopupMenuButton(
-                              tooltip: '',
-                              icon: const Icon(
-                                Icons.keyboard_arrow_down,
-                                color: AppColor.lightColor,
-                              ),
-                              itemBuilder: (context) => [
-                                PopupMenuItem(
-                                  child: Text(context.tr.english),
-                                  onTap: () {
-                                    bloc.add(
-                                      AppEvent.changeLanguage(
-                                        locale: Locale('en'),
-                                      ),
-                                    );
-                                  },
-                                ),
-                                PopupMenuItem(
-                                  child: Text(context.tr.portuguese),
-                                  onTap: () {
-                                    bloc.add(
-                                      AppEvent.changeLanguage(
-                                        locale: Locale('pt'),
-                                      ),
-                                    );
-                                  },
-                                ),
-                                PopupMenuItem(
-                                  child: Text(context.tr.spanish),
-                                  onTap: () {
-                                    bloc.add(
-                                      AppEvent.changeLanguage(
-                                        locale: Locale('es'),
-                                      ),
-                                    );
-                                  },
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  const Divider(),
                   Expanded(
                     flex: 2,
                     child: ListView(

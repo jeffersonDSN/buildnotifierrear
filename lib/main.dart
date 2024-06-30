@@ -2,7 +2,7 @@ import 'package:buildnotifierrear/firebase_options.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/core/localization/app_localizations.dart';
-import 'package:buildnotifierrear/presentation/lading/page/lading_page.dart';
+import 'package:buildnotifierrear/presentation/lading/lading.dart';
 import 'package:buildnotifierrear/presentation/sign/sign_in/sign_in.dart';
 import 'package:buildnotifierrear/presentation/sign/sign_up/sign_up.dart';
 import 'package:buildnotifierrear/presentation/theme/app_theme.dart';
@@ -68,7 +68,7 @@ class MyApp extends StatelessWidget {
               delegates: AppLocalizations.localizationsDelegates,
               context: context,
               locale: locale,
-              child: LandingPage(
+              child: Landing(
                 bloc: BlocProvider.of<AppBloc>(context),
                 child: mod.view(),
               ),

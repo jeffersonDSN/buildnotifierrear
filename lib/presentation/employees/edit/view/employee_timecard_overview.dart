@@ -20,7 +20,12 @@ class EmployeeTimecardOverview extends StatelessWidget {
     var bloc = BlocProvider.of<EmployeeTimecardOverviewBloc>(context);
 
     return Padding(
-      padding: const EdgeInsets.all(Sizes.size16),
+      padding: const EdgeInsets.fromLTRB(
+        Sizes.size32,
+        Sizes.size16,
+        Sizes.size32,
+        Sizes.size16,
+      ),
       child: BlocBuilder<EmployeeTimecardOverviewBloc,
           EmployeeTimecardOverviewState>(
         bloc: bloc,

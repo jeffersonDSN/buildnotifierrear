@@ -5,7 +5,7 @@ import 'package:buildnotifierrear/presentation/clients/overview/bloc/clients_ove
 import 'package:buildnotifierrear/presentation/clients/overview/widgets/clients_table_widget.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
-import 'package:buildnotifierrear/presentation/core/widget/base_scaffold.dart';
+import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,56 +18,61 @@ class ClientsOverviewView extends IView {
 
     bloc.add(const ClientsOverviewEvent.load());
 
-    return BaseScaffold(
-      title: context.tr.clients,
-      actions: [
-        FilledButton.icon(
-          icon: const Icon(Icons.add),
-          label: Text(context.tr.newClient),
-          onPressed: () {
-            appBloc(context).add(
-              const AppEvent.changeView(
-                mod: Mod.clients(
-                  type: ViewType.create(),
+    return BlocBuilder<ClientsOverviewBloc, ClientsOverviewState>(
+      bloc: bloc,
+      builder: (context, state) {
+        return state.maybeWhen(
+          orElse: () => const Card(
+            child: Center(
+              child: CircularProgressIndicator(),
+            ),
+          ),
+          loaded: (
+            clients,
+            selectedClient,
+            ptojectsOfselectedClient,
+            projectsState,
+          ) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(Sizes.size8),
+                  child: FilledButton.icon(
+                    icon: const Icon(Icons.add),
+                    label: Text(context.tr.newClient),
+                    onPressed: () {
+                      appBloc(context).add(
+                        const AppEvent.changeView(
+                          mod: Mod.clients(
+                            type: ViewType.create(),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 ),
-              ),
+                Expanded(
+                  child: ClientsTableWidget(
+                    clients: clients,
+                    onPressed: (client) {
+                      appBloc(context).add(
+                        AppEvent.changeView(
+                          mod: Mod.clients(
+                            type: ViewType.update(
+                              id: client.id,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
             );
           },
-        )
-      ],
-      child: BlocBuilder<ClientsOverviewBloc, ClientsOverviewState>(
-        bloc: bloc,
-        builder: (context, state) {
-          return state.maybeWhen(
-            orElse: () => const Card(
-              child: Center(
-                child: CircularProgressIndicator(),
-              ),
-            ),
-            loaded: (
-              clients,
-              selectedClient,
-              ptojectsOfselectedClient,
-              projectsState,
-            ) {
-              return ClientsTableWidget(
-                clients: clients,
-                onPressed: (client) {
-                  appBloc(context).add(
-                    AppEvent.changeView(
-                      mod: Mod.clients(
-                        type: ViewType.update(
-                          id: client.id,
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              );
-            },
-          );
-        },
-      ),
+        );
+      },
     );
   }
 }

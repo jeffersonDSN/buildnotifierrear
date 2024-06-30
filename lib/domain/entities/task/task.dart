@@ -27,3 +27,9 @@ class Task with _$Task {
 
   factory Task.fromJson(Map<String, Object?> json) => _$TaskFromJson(json);
 }
+
+extension OnTaskList on List<Task> {
+  int lengthOf(TaskStatus status) {
+    return this.where((task) => task.status == status).toList().length;
+  }
+}

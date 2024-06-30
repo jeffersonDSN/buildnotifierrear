@@ -171,21 +171,21 @@ abstract class TasksOverviewEventLoad implements TasksOverviewEvent {
 mixin _$TasksOverviewState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() empty,
+    required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(List<Task> tasks) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? empty,
+    TResult? Function()? init,
     TResult? Function()? loading,
     TResult? Function(List<Task> tasks)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? empty,
+    TResult Function()? init,
     TResult Function()? loading,
     TResult Function(List<Task> tasks)? loaded,
     required TResult orElse(),
@@ -193,21 +193,21 @@ mixin _$TasksOverviewState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(TasksOverviewStateEmpty value) empty,
+    required TResult Function(TasksOverviewStateInit value) init,
     required TResult Function(TasksOverviewStateLoading value) loading,
     required TResult Function(TasksOverviewStateloaded value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(TasksOverviewStateEmpty value)? empty,
+    TResult? Function(TasksOverviewStateInit value)? init,
     TResult? Function(TasksOverviewStateLoading value)? loading,
     TResult? Function(TasksOverviewStateloaded value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(TasksOverviewStateEmpty value)? empty,
+    TResult Function(TasksOverviewStateInit value)? init,
     TResult Function(TasksOverviewStateLoading value)? loading,
     TResult Function(TasksOverviewStateloaded value)? loaded,
     required TResult orElse(),
@@ -234,39 +234,38 @@ class _$TasksOverviewStateCopyWithImpl<$Res, $Val extends TasksOverviewState>
 }
 
 /// @nodoc
-abstract class _$$TasksOverviewStateEmptyImplCopyWith<$Res> {
-  factory _$$TasksOverviewStateEmptyImplCopyWith(
-          _$TasksOverviewStateEmptyImpl value,
-          $Res Function(_$TasksOverviewStateEmptyImpl) then) =
-      __$$TasksOverviewStateEmptyImplCopyWithImpl<$Res>;
+abstract class _$$TasksOverviewStateInitImplCopyWith<$Res> {
+  factory _$$TasksOverviewStateInitImplCopyWith(
+          _$TasksOverviewStateInitImpl value,
+          $Res Function(_$TasksOverviewStateInitImpl) then) =
+      __$$TasksOverviewStateInitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$TasksOverviewStateEmptyImplCopyWithImpl<$Res>
-    extends _$TasksOverviewStateCopyWithImpl<$Res,
-        _$TasksOverviewStateEmptyImpl>
-    implements _$$TasksOverviewStateEmptyImplCopyWith<$Res> {
-  __$$TasksOverviewStateEmptyImplCopyWithImpl(
-      _$TasksOverviewStateEmptyImpl _value,
-      $Res Function(_$TasksOverviewStateEmptyImpl) _then)
+class __$$TasksOverviewStateInitImplCopyWithImpl<$Res>
+    extends _$TasksOverviewStateCopyWithImpl<$Res, _$TasksOverviewStateInitImpl>
+    implements _$$TasksOverviewStateInitImplCopyWith<$Res> {
+  __$$TasksOverviewStateInitImplCopyWithImpl(
+      _$TasksOverviewStateInitImpl _value,
+      $Res Function(_$TasksOverviewStateInitImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$TasksOverviewStateEmptyImpl implements TasksOverviewStateEmpty {
-  const _$TasksOverviewStateEmptyImpl();
+class _$TasksOverviewStateInitImpl implements TasksOverviewStateInit {
+  const _$TasksOverviewStateInitImpl();
 
   @override
   String toString() {
-    return 'TasksOverviewState.empty()';
+    return 'TasksOverviewState.init()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TasksOverviewStateEmptyImpl);
+            other is _$TasksOverviewStateInitImpl);
   }
 
   @override
@@ -275,33 +274,33 @@ class _$TasksOverviewStateEmptyImpl implements TasksOverviewStateEmpty {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() empty,
+    required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(List<Task> tasks) loaded,
   }) {
-    return empty();
+    return init();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? empty,
+    TResult? Function()? init,
     TResult? Function()? loading,
     TResult? Function(List<Task> tasks)? loaded,
   }) {
-    return empty?.call();
+    return init?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? empty,
+    TResult Function()? init,
     TResult Function()? loading,
     TResult Function(List<Task> tasks)? loaded,
     required TResult orElse(),
   }) {
-    if (empty != null) {
-      return empty();
+    if (init != null) {
+      return init();
     }
     return orElse();
   }
@@ -309,40 +308,40 @@ class _$TasksOverviewStateEmptyImpl implements TasksOverviewStateEmpty {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(TasksOverviewStateEmpty value) empty,
+    required TResult Function(TasksOverviewStateInit value) init,
     required TResult Function(TasksOverviewStateLoading value) loading,
     required TResult Function(TasksOverviewStateloaded value) loaded,
   }) {
-    return empty(this);
+    return init(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(TasksOverviewStateEmpty value)? empty,
+    TResult? Function(TasksOverviewStateInit value)? init,
     TResult? Function(TasksOverviewStateLoading value)? loading,
     TResult? Function(TasksOverviewStateloaded value)? loaded,
   }) {
-    return empty?.call(this);
+    return init?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(TasksOverviewStateEmpty value)? empty,
+    TResult Function(TasksOverviewStateInit value)? init,
     TResult Function(TasksOverviewStateLoading value)? loading,
     TResult Function(TasksOverviewStateloaded value)? loaded,
     required TResult orElse(),
   }) {
-    if (empty != null) {
-      return empty(this);
+    if (init != null) {
+      return init(this);
     }
     return orElse();
   }
 }
 
-abstract class TasksOverviewStateEmpty implements TasksOverviewState {
-  const factory TasksOverviewStateEmpty() = _$TasksOverviewStateEmptyImpl;
+abstract class TasksOverviewStateInit implements TasksOverviewState {
+  const factory TasksOverviewStateInit() = _$TasksOverviewStateInitImpl;
 }
 
 /// @nodoc
@@ -387,7 +386,7 @@ class _$TasksOverviewStateLoadingImpl implements TasksOverviewStateLoading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() empty,
+    required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(List<Task> tasks) loaded,
   }) {
@@ -397,7 +396,7 @@ class _$TasksOverviewStateLoadingImpl implements TasksOverviewStateLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? empty,
+    TResult? Function()? init,
     TResult? Function()? loading,
     TResult? Function(List<Task> tasks)? loaded,
   }) {
@@ -407,7 +406,7 @@ class _$TasksOverviewStateLoadingImpl implements TasksOverviewStateLoading {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? empty,
+    TResult Function()? init,
     TResult Function()? loading,
     TResult Function(List<Task> tasks)? loaded,
     required TResult orElse(),
@@ -421,7 +420,7 @@ class _$TasksOverviewStateLoadingImpl implements TasksOverviewStateLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(TasksOverviewStateEmpty value) empty,
+    required TResult Function(TasksOverviewStateInit value) init,
     required TResult Function(TasksOverviewStateLoading value) loading,
     required TResult Function(TasksOverviewStateloaded value) loaded,
   }) {
@@ -431,7 +430,7 @@ class _$TasksOverviewStateLoadingImpl implements TasksOverviewStateLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(TasksOverviewStateEmpty value)? empty,
+    TResult? Function(TasksOverviewStateInit value)? init,
     TResult? Function(TasksOverviewStateLoading value)? loading,
     TResult? Function(TasksOverviewStateloaded value)? loaded,
   }) {
@@ -441,7 +440,7 @@ class _$TasksOverviewStateLoadingImpl implements TasksOverviewStateLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(TasksOverviewStateEmpty value)? empty,
+    TResult Function(TasksOverviewStateInit value)? init,
     TResult Function(TasksOverviewStateLoading value)? loading,
     TResult Function(TasksOverviewStateloaded value)? loaded,
     required TResult orElse(),
@@ -532,7 +531,7 @@ class _$TasksOverviewStateloadedImpl implements TasksOverviewStateloaded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() empty,
+    required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(List<Task> tasks) loaded,
   }) {
@@ -542,7 +541,7 @@ class _$TasksOverviewStateloadedImpl implements TasksOverviewStateloaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? empty,
+    TResult? Function()? init,
     TResult? Function()? loading,
     TResult? Function(List<Task> tasks)? loaded,
   }) {
@@ -552,7 +551,7 @@ class _$TasksOverviewStateloadedImpl implements TasksOverviewStateloaded {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? empty,
+    TResult Function()? init,
     TResult Function()? loading,
     TResult Function(List<Task> tasks)? loaded,
     required TResult orElse(),
@@ -566,7 +565,7 @@ class _$TasksOverviewStateloadedImpl implements TasksOverviewStateloaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(TasksOverviewStateEmpty value) empty,
+    required TResult Function(TasksOverviewStateInit value) init,
     required TResult Function(TasksOverviewStateLoading value) loading,
     required TResult Function(TasksOverviewStateloaded value) loaded,
   }) {
@@ -576,7 +575,7 @@ class _$TasksOverviewStateloadedImpl implements TasksOverviewStateloaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(TasksOverviewStateEmpty value)? empty,
+    TResult? Function(TasksOverviewStateInit value)? init,
     TResult? Function(TasksOverviewStateLoading value)? loading,
     TResult? Function(TasksOverviewStateloaded value)? loaded,
   }) {
@@ -586,7 +585,7 @@ class _$TasksOverviewStateloadedImpl implements TasksOverviewStateloaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(TasksOverviewStateEmpty value)? empty,
+    TResult Function(TasksOverviewStateInit value)? init,
     TResult Function(TasksOverviewStateLoading value)? loading,
     TResult Function(TasksOverviewStateloaded value)? loaded,
     required TResult orElse(),

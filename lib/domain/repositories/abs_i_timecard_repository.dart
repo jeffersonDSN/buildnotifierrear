@@ -13,4 +13,6 @@ abstract interface class AbsITimecardRepository
     DateTime startDate,
     DateTime endDate,
   );
+
+  Stream<List<Timecard>> getAllEmployeesWhoCheckedIn();
 }

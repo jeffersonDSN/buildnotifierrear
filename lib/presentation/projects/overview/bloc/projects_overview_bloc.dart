@@ -11,7 +11,7 @@ class ProjectsOverviewBloc
     extends Bloc<ProjectsOverviewEvent, ProjectsOverviewState> {
   ProjectsOverviewBloc({
     required ProjectsController controller,
-  }) : super(const ProjectsOverviewState.empty()) {
+  }) : super(const ProjectsOverviewState.init()) {
     on<ProjectsOverviewEvent>(
       (event, emit) async {
         await event.when(

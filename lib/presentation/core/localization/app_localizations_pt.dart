@@ -309,4 +309,28 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get sendMessage => 'Envie uma mensagem...';
+
+  @override
+  String get hasNoEmployeesCheckedIn => 'Nenhum Funcionário Fez Check-in';
+
+  @override
+  String get employeesWhoCheckedIn => 'Funcionários que Registraram Entrada';
+
+  @override
+  String get lastCheckIn => 'Último Registro de Entrada';
+
+  @override
+  String get location => 'Localização';
+
+  @override
+  String get projectStatusDistribution => 'Distribuição de Status dos Projetos';
+
+  @override
+  String get taskStatusDistribution => 'Distribuição de Status das Atividades';
+
+  @override
+  String get newAppointment => 'Novo compromisso';
+
+  @override
+  String get editAppointment => 'Editar compromisso';
 }

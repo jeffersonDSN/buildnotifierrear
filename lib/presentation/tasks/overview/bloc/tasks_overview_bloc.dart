@@ -10,7 +10,7 @@ part 'tasks_overview_state.dart';
 class TasksOverviewBloc extends Bloc<TasksOverviewEvent, TasksOverviewState> {
   TasksOverviewBloc({
     required TasksController controller,
-  }) : super(const TasksOverviewState.empty()) {
+  }) : super(const TasksOverviewState.init()) {
     on<TasksOverviewEvent>(
       (event, emit) async {
         await event.when(

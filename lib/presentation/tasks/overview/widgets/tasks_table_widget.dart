@@ -31,26 +31,22 @@ class TasksTableWidget extends StatelessWidget {
           ),
           columns: [
             DataColumn2(
-              label: Expanded(
-                child: Text(context.tr.title),
-              ),
+              size: ColumnSize.L,
+              label: Text(context.tr.title),
             ),
             DataColumn2(
-              label: Expanded(
-                child: Text(context.tr.project),
-              ),
+              label: Text(context.tr.project),
             ),
             DataColumn2(
-              label: Expanded(
-                child: Text(context.tr.priority),
-              ),
+              size: ColumnSize.S,
+              label: Text(context.tr.priority),
             ),
             DataColumn2(
-              label: Expanded(
-                child: Text(context.tr.status),
-              ),
+              size: ColumnSize.S,
+              label: Text(context.tr.status),
             ),
             DataColumn2(
+              size: ColumnSize.S,
               numeric: true,
               label: Text(context.tr.action),
             ),

@@ -3,7 +3,8 @@ import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/chat/overview/chat_overview.dart';
 import 'package:buildnotifierrear/presentation/clients/edit/client_edit.dart';
 import 'package:buildnotifierrear/presentation/clients/overview/clients_overview.dart';
-import 'package:buildnotifierrear/presentation/home/page/home_page.dart';
+import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
+import 'package:buildnotifierrear/presentation/home/overview/home_overview.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/project_edit.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/projects_overview.dart';
 import 'package:buildnotifierrear/presentation/schedule/edit/schedule_edit.dart';
@@ -70,7 +71,7 @@ extension OnModel on Mod {
 
   Widget view() {
     return when(
-      home: () => const HomeView(),
+      home: () => const HomeOverview(),
       schedule: (viewType) => viewType.when(
         overview: () => const ScheduleOverview(),
         create: () => const ScheduleEdit(),
@@ -107,6 +108,48 @@ extension OnModel on Mod {
         update: (id) => const ChatOverview(),
       ),
       settings: () => const SettingsEdit(),
+    );
+  }
+
+  String title(BuildContext context) {
+    return when(
+      home: () => context.tr.home,
+      schedule: (viewType) => viewType.when(
+        overview: () => context.tr.schedule,
+        create: () => context.tr.newAppointment,
+        update: (id) => context.tr.editAppointment,
+      ),
+      projects: (viewType) => viewType.when(
+        overview: () => context.tr.projects,
+        create: () => context.tr.newProject,
+        update: (id) => context.tr.editProject,
+      ),
+      tasks: (viewType) => viewType.when(
+        overview: () => context.tr.tasks,
+        create: () => context.tr.newTask,
+        update: (id) => context.tr.editTask,
+      ),
+      clients: (viewType) => viewType.when(
+        overview: () => context.tr.clients,
+        create: () => context.tr.newClient,
+        update: (id) => context.tr.editClient,
+      ),
+      employees: (viewType) => viewType.when(
+        overview: () => context.tr.employees,
+        create: () => context.tr.newEmployee,
+        update: (id) => context.tr.editEmployee,
+      ),
+      timecards: (viewType) => viewType.when(
+        overview: () => context.tr.timecards,
+        create: () => context.tr.timecards,
+        update: (id) => context.tr.timecards,
+      ),
+      chat: (viewType) => viewType.when(
+        overview: () => context.tr.chat,
+        create: () => context.tr.chat,
+        update: (id) => context.tr.chat,
+      ),
+      settings: () => context.tr.settings,
     );
   }
 }

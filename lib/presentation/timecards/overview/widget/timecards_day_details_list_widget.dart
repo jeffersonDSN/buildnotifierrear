@@ -4,12 +4,9 @@ import 'package:buildnotifierrear/presentation/core/extensions/build_context_ext
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class TimecardsDayDetailsListWidget extends StatelessWidget {
   final List<Timecard> timecards;
-
-  final DateFormat hourFormat = DateFormat.jm();
 
   TimecardsDayDetailsListWidget({
     super.key,
@@ -49,7 +46,7 @@ class TimecardsDayDetailsListWidget extends StatelessWidget {
                         ),
                         gapWidth8,
                         Text(
-                          hourFormat.format(timecard.start),
+                          hourFormatByDateTime(timecard.start),
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: Sizes.size16,
@@ -92,7 +89,7 @@ class TimecardsDayDetailsListWidget extends StatelessWidget {
                           ),
                           gapWidth8,
                           Text(
-                            hourFormat.format(timecard.end!),
+                            hourFormatByDateTime(timecard.end!),
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: Sizes.size16,
@@ -131,7 +128,7 @@ class TimecardsDayDetailsListWidget extends StatelessWidget {
                   Sizes.size24,
                 ),
                 child: Text(
-                  formatTime(total.hours, total.minutes),
+                  hourFormatByHoursAndMinutes(total.hours, total.minutes),
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Sizes.size24,

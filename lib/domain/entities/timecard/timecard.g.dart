@@ -9,7 +9,9 @@ part of 'timecard.dart';
 _$TimecardImpl _$$TimecardImplFromJson(Map<String, dynamic> json) =>
     _$TimecardImpl(
       id: json['id'] as String? ?? '',
-      userId: json['userId'] as String,
+      employeeId: json['employeeId'] as String,
+      employeeFirstName: json['employeeFirstName'] as String? ?? '',
+      employeeLastName: json['employeeLastName'] as String? ?? '',
       start: DateTime.parse(json['start'] as String),
       startLatitude: (json['startLatitude'] as num?)?.toDouble(),
       startLongitude: (json['startLongitude'] as num?)?.toDouble(),
@@ -23,7 +25,9 @@ _$TimecardImpl _$$TimecardImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$TimecardImplToJson(_$TimecardImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'userId': instance.userId,
+      'employeeId': instance.employeeId,
+      'employeeFirstName': instance.employeeFirstName,
+      'employeeLastName': instance.employeeLastName,
       'start': instance.start.toIso8601String(),
       'startLatitude': instance.startLatitude,
       'startLongitude': instance.startLongitude,

@@ -64,7 +64,7 @@ class TimecardsOverviewWidget extends StatelessWidget {
               ),
             ),
             trailing: Text(
-              formatTime(total.hours, total.minutes),
+              hourFormatByHoursAndMinutes(total.hours, total.minutes),
               textAlign: TextAlign.end,
               style: const TextStyle(
                 fontSize: Sizes.size20,

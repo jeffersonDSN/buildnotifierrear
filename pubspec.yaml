@@ -29,6 +29,7 @@ dependencies:
   data_table_2: ^2.5.15  
   google_generative_ai: ^0.4.3
   flutter_langdetect: ^0.0.2
+  graphic: ^2.2.1
   
 
 dev_dependencies:

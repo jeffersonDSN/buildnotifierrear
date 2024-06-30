@@ -48,7 +48,7 @@ extension OnEmployeeList on List<Employee> {
     for (var employee in this) {
       var timecardsOfUser = timecards
           .where(
-            (timecard) => timecard.userId == employee.id,
+            (timecard) => timecard.employeeId == employee.id,
           )
           .toList();
 

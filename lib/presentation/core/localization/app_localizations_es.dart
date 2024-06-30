@@ -308,4 +308,29 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get sendMessage => 'Enviar un mensaje...';
+
+  @override
+  String get hasNoEmployeesCheckedIn => 'Nenhum Funcionário Fez Check-in';
+
+  @override
+  String get employeesWhoCheckedIn => 'Empleados que Registraron Entrada';
+
+  @override
+  String get lastCheckIn => 'Último Registro de Entrada';
+
+  @override
+  String get location => 'Ubicación';
+
+  @override
+  String get projectStatusDistribution =>
+      'Distribución del Estado de los Proyectos';
+
+  @override
+  String get taskStatusDistribution => 'Distribución del Estado de las tareas';
+
+  @override
+  String get newAppointment => 'Nueva cita';
+
+  @override
+  String get editAppointment => 'Editar cita';
 }

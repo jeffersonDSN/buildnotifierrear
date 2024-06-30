@@ -30,4 +30,8 @@ class TimecardsController extends CRUDController<Timecard> {
       period.endDate,
     );
   }
+
+  Stream<List<Timecard>> getAllEmployeesWhoCheckedIn() {
+    return _repository.getAllEmployeesWhoCheckedIn();
+  }
 }

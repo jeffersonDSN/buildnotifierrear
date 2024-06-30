@@ -173,21 +173,21 @@ abstract class ProjectsOverviewEventLoad implements ProjectsOverviewEvent {
 mixin _$ProjectsOverviewState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() empty,
+    required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(List<Project> projects) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? empty,
+    TResult? Function()? init,
     TResult? Function()? loading,
     TResult? Function(List<Project> projects)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? empty,
+    TResult Function()? init,
     TResult Function()? loading,
     TResult Function(List<Project> projects)? loaded,
     required TResult orElse(),
@@ -195,21 +195,21 @@ mixin _$ProjectsOverviewState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ProjectsOverviewEventEmpty value) empty,
+    required TResult Function(ProjectsOverviewEventInit value) init,
     required TResult Function(ProjectsOverviewEventLoading value) loading,
     required TResult Function(ProjectsOverviewEventLoaded value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ProjectsOverviewEventEmpty value)? empty,
+    TResult? Function(ProjectsOverviewEventInit value)? init,
     TResult? Function(ProjectsOverviewEventLoading value)? loading,
     TResult? Function(ProjectsOverviewEventLoaded value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ProjectsOverviewEventEmpty value)? empty,
+    TResult Function(ProjectsOverviewEventInit value)? init,
     TResult Function(ProjectsOverviewEventLoading value)? loading,
     TResult Function(ProjectsOverviewEventLoaded value)? loaded,
     required TResult orElse(),
@@ -237,39 +237,39 @@ class _$ProjectsOverviewStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ProjectsOverviewEventEmptyImplCopyWith<$Res> {
-  factory _$$ProjectsOverviewEventEmptyImplCopyWith(
-          _$ProjectsOverviewEventEmptyImpl value,
-          $Res Function(_$ProjectsOverviewEventEmptyImpl) then) =
-      __$$ProjectsOverviewEventEmptyImplCopyWithImpl<$Res>;
+abstract class _$$ProjectsOverviewEventInitImplCopyWith<$Res> {
+  factory _$$ProjectsOverviewEventInitImplCopyWith(
+          _$ProjectsOverviewEventInitImpl value,
+          $Res Function(_$ProjectsOverviewEventInitImpl) then) =
+      __$$ProjectsOverviewEventInitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ProjectsOverviewEventEmptyImplCopyWithImpl<$Res>
+class __$$ProjectsOverviewEventInitImplCopyWithImpl<$Res>
     extends _$ProjectsOverviewStateCopyWithImpl<$Res,
-        _$ProjectsOverviewEventEmptyImpl>
-    implements _$$ProjectsOverviewEventEmptyImplCopyWith<$Res> {
-  __$$ProjectsOverviewEventEmptyImplCopyWithImpl(
-      _$ProjectsOverviewEventEmptyImpl _value,
-      $Res Function(_$ProjectsOverviewEventEmptyImpl) _then)
+        _$ProjectsOverviewEventInitImpl>
+    implements _$$ProjectsOverviewEventInitImplCopyWith<$Res> {
+  __$$ProjectsOverviewEventInitImplCopyWithImpl(
+      _$ProjectsOverviewEventInitImpl _value,
+      $Res Function(_$ProjectsOverviewEventInitImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ProjectsOverviewEventEmptyImpl implements ProjectsOverviewEventEmpty {
-  const _$ProjectsOverviewEventEmptyImpl();
+class _$ProjectsOverviewEventInitImpl implements ProjectsOverviewEventInit {
+  const _$ProjectsOverviewEventInitImpl();
 
   @override
   String toString() {
-    return 'ProjectsOverviewState.empty()';
+    return 'ProjectsOverviewState.init()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProjectsOverviewEventEmptyImpl);
+            other is _$ProjectsOverviewEventInitImpl);
   }
 
   @override
@@ -278,33 +278,33 @@ class _$ProjectsOverviewEventEmptyImpl implements ProjectsOverviewEventEmpty {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() empty,
+    required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(List<Project> projects) loaded,
   }) {
-    return empty();
+    return init();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? empty,
+    TResult? Function()? init,
     TResult? Function()? loading,
     TResult? Function(List<Project> projects)? loaded,
   }) {
-    return empty?.call();
+    return init?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? empty,
+    TResult Function()? init,
     TResult Function()? loading,
     TResult Function(List<Project> projects)? loaded,
     required TResult orElse(),
   }) {
-    if (empty != null) {
-      return empty();
+    if (init != null) {
+      return init();
     }
     return orElse();
   }
@@ -312,40 +312,40 @@ class _$ProjectsOverviewEventEmptyImpl implements ProjectsOverviewEventEmpty {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ProjectsOverviewEventEmpty value) empty,
+    required TResult Function(ProjectsOverviewEventInit value) init,
     required TResult Function(ProjectsOverviewEventLoading value) loading,
     required TResult Function(ProjectsOverviewEventLoaded value) loaded,
   }) {
-    return empty(this);
+    return init(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ProjectsOverviewEventEmpty value)? empty,
+    TResult? Function(ProjectsOverviewEventInit value)? init,
     TResult? Function(ProjectsOverviewEventLoading value)? loading,
     TResult? Function(ProjectsOverviewEventLoaded value)? loaded,
   }) {
-    return empty?.call(this);
+    return init?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ProjectsOverviewEventEmpty value)? empty,
+    TResult Function(ProjectsOverviewEventInit value)? init,
     TResult Function(ProjectsOverviewEventLoading value)? loading,
     TResult Function(ProjectsOverviewEventLoaded value)? loaded,
     required TResult orElse(),
   }) {
-    if (empty != null) {
-      return empty(this);
+    if (init != null) {
+      return init(this);
     }
     return orElse();
   }
 }
 
-abstract class ProjectsOverviewEventEmpty implements ProjectsOverviewState {
-  const factory ProjectsOverviewEventEmpty() = _$ProjectsOverviewEventEmptyImpl;
+abstract class ProjectsOverviewEventInit implements ProjectsOverviewState {
+  const factory ProjectsOverviewEventInit() = _$ProjectsOverviewEventInitImpl;
 }
 
 /// @nodoc
@@ -391,7 +391,7 @@ class _$ProjectsOverviewEventLoadingImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() empty,
+    required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(List<Project> projects) loaded,
   }) {
@@ -401,7 +401,7 @@ class _$ProjectsOverviewEventLoadingImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? empty,
+    TResult? Function()? init,
     TResult? Function()? loading,
     TResult? Function(List<Project> projects)? loaded,
   }) {
@@ -411,7 +411,7 @@ class _$ProjectsOverviewEventLoadingImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? empty,
+    TResult Function()? init,
     TResult Function()? loading,
     TResult Function(List<Project> projects)? loaded,
     required TResult orElse(),
@@ -425,7 +425,7 @@ class _$ProjectsOverviewEventLoadingImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ProjectsOverviewEventEmpty value) empty,
+    required TResult Function(ProjectsOverviewEventInit value) init,
     required TResult Function(ProjectsOverviewEventLoading value) loading,
     required TResult Function(ProjectsOverviewEventLoaded value) loaded,
   }) {
@@ -435,7 +435,7 @@ class _$ProjectsOverviewEventLoadingImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ProjectsOverviewEventEmpty value)? empty,
+    TResult? Function(ProjectsOverviewEventInit value)? init,
     TResult? Function(ProjectsOverviewEventLoading value)? loading,
     TResult? Function(ProjectsOverviewEventLoaded value)? loaded,
   }) {
@@ -445,7 +445,7 @@ class _$ProjectsOverviewEventLoadingImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ProjectsOverviewEventEmpty value)? empty,
+    TResult Function(ProjectsOverviewEventInit value)? init,
     TResult Function(ProjectsOverviewEventLoading value)? loading,
     TResult Function(ProjectsOverviewEventLoaded value)? loaded,
     required TResult orElse(),
@@ -538,7 +538,7 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() empty,
+    required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(List<Project> projects) loaded,
   }) {
@@ -548,7 +548,7 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? empty,
+    TResult? Function()? init,
     TResult? Function()? loading,
     TResult? Function(List<Project> projects)? loaded,
   }) {
@@ -558,7 +558,7 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? empty,
+    TResult Function()? init,
     TResult Function()? loading,
     TResult Function(List<Project> projects)? loaded,
     required TResult orElse(),
@@ -572,7 +572,7 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ProjectsOverviewEventEmpty value) empty,
+    required TResult Function(ProjectsOverviewEventInit value) init,
     required TResult Function(ProjectsOverviewEventLoading value) loading,
     required TResult Function(ProjectsOverviewEventLoaded value) loaded,
   }) {
@@ -582,7 +582,7 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ProjectsOverviewEventEmpty value)? empty,
+    TResult? Function(ProjectsOverviewEventInit value)? init,
     TResult? Function(ProjectsOverviewEventLoading value)? loading,
     TResult? Function(ProjectsOverviewEventLoaded value)? loaded,
   }) {
@@ -592,7 +592,7 @@ class _$ProjectsOverviewEventLoadedImpl implements ProjectsOverviewEventLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ProjectsOverviewEventEmpty value)? empty,
+    TResult Function(ProjectsOverviewEventInit value)? init,
     TResult Function(ProjectsOverviewEventLoading value)? loading,
     TResult Function(ProjectsOverviewEventLoaded value)? loaded,
     required TResult orElse(),

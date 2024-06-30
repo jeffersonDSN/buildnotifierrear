@@ -20,14 +20,13 @@ class AppTheme {
 }
 
 AppBarTheme get _appBarTheme => const AppBarTheme(
-      backgroundColor: AppColor.backgroundColor,
+      backgroundColor: AppColor.lightColor,
       titleTextStyle: TextStyle(
         color: AppColor.primaryColorSwatch,
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
       iconTheme: IconThemeData(
-        color: AppColor.primaryColorSwatch,
         size: 24,
       ),
     );

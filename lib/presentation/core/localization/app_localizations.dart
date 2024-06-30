@@ -237,6 +237,22 @@ abstract class AppLocalizations {
   String get chat;
 
   String get sendMessage;
+
+  String get hasNoEmployeesCheckedIn;
+
+  String get employeesWhoCheckedIn;
+
+  String get lastCheckIn;
+
+  String get location;
+
+  String get projectStatusDistribution;
+
+  String get taskStatusDistribution;
+
+  String get newAppointment;
+
+  String get editAppointment;
 }
 
 class _AppLocalizationsDelegate

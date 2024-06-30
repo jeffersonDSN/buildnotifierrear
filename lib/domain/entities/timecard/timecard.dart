@@ -7,7 +7,9 @@ part 'timecard.g.dart';
 class Timecard with _$Timecard {
   factory Timecard({
     @Default('') String id,
-    required String userId,
+    required String employeeId,
+    @Default('') String employeeFirstName,
+    @Default('') String employeeLastName,
     required DateTime start,
     double? startLatitude,
     double? startLongitude,

@@ -308,4 +308,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sendMessage => 'Send a message...';
+
+  @override
+  String get hasNoEmployeesCheckedIn => 'Has no Employees Checked In';
+
+  @override
+  String get employeesWhoCheckedIn => 'Employees Who Checked In';
+
+  @override
+  String get lastCheckIn => 'Last Check-In';
+
+  @override
+  String get location => 'Location';
+
+  @override
+  String get projectStatusDistribution => 'Project Status Distribution';
+
+  @override
+  String get taskStatusDistribution => 'Task Status Distribution';
+
+  @override
+  String get newAppointment => 'New appointment';
+
+  @override
+  String get editAppointment => 'Edit appointment';
 }

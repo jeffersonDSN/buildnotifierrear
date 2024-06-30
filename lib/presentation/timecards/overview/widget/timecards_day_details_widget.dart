@@ -61,7 +61,7 @@ class TaskEditWidget extends StatelessWidget {
             ),
             trailing: Text(
               textAlign: TextAlign.end,
-              formatTime(total.hours, total.minutes),
+              hourFormatByHoursAndMinutes(total.hours, total.minutes),
               style: const TextStyle(
                 fontSize: Sizes.size20,
                 fontWeight: FontWeight.bold,

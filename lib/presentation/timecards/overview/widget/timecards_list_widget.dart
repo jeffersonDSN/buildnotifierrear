@@ -11,7 +11,6 @@ class TimecardsListWidget extends StatelessWidget {
 
   final DateFormat dayFormat = DateFormat("EEEE");
   final DateFormat dateFormat = DateFormat("MMM dd");
-  final DateFormat hourFormat = DateFormat.jm();
 
   TimecardsListWidget({
     super.key,
@@ -46,7 +45,10 @@ class TimecardsListWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text(
-                          formatTime(timecard.hours, timecard.minutes),
+                          hourFormatByHoursAndMinutes(
+                            timecard.hours,
+                            timecard.minutes,
+                          ),
                           textAlign: TextAlign.end,
                           style: const TextStyle(
                             fontSize: Sizes.size20,

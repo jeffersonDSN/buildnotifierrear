@@ -34,12 +34,12 @@ class TimecardsFireStoreRepository extends TenantFirestoreRepository
 
   @override
   Future<List<Timecard>> getAllOfByEmployeeAndPeriod(
-    String userId,
+    String employeeId,
     DateTime startDate,
     DateTime endDate,
   ) async {
     var querySnapshot = await collection
-        .where('userId', isEqualTo: userId)
+        .where('employeeId', isEqualTo: employeeId)
         .where('start', isGreaterThanOrEqualTo: startDate)
         .where('start', isLessThanOrEqualTo: endDate)
         .get();
@@ -90,10 +90,41 @@ class TimecardsFireStoreRepository extends TenantFirestoreRepository
         .toList();
   }
 
+  Stream<List<Timecard>> getAllEmployeesWhoCheckedIn() {
+    return collection
+        .where(
+          'start',
+          isGreaterThan: DateTime.now().copyWith(hour: 0, minute: 0),
+        )
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs
+          .map((DocumentSnapshot document) {
+            var doc = document.data() as Map<String, dynamic>;
+            var result = doc.map((key, value) {
+              if (value is Timestamp) {
+                return MapEntry(key, value.toDate().toString());
+              } else {
+                return MapEntry(key, value);
+              }
+            });
+
+            return {...result, 'id': document.id};
+          })
+          .toList()
+          .map((e) => Timecard.fromJson(e))
+          .toList()
+          .where((element) => element.end == null)
+          .toList();
+    });
+  }
+
   @override
   Future<Either<ErrorFields, bool>> post(Timecard clock) async {
     var schedule = {
-      'userId': clock.userId,
+      'employeeId': clock.employeeId,
+      'employeeFirstName': clock.employeeFirstName,
+      'employeeLastName': clock.employeeLastName,
       'start': clock.start,
       'startLatitude': clock.startLatitude,
       'startLongitude': clock.startLongitude,
@@ -111,7 +142,9 @@ class TimecardsFireStoreRepository extends TenantFirestoreRepository
   @override
   Future<Either<ErrorFields, bool>> put(Timecard clock) async {
     var schedule = {
-      'userId': clock.userId,
+      'employeeId': clock.employeeId,
+      'employeeFirstName': clock.employeeFirstName,
+      'employeeLastName': clock.employeeLastName,
       'start': clock.start,
       'startLatitude': clock.startLatitude,
       'startLongitude': clock.startLongitude,

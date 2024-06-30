@@ -1,14 +1,12 @@
+import 'package:buildnotifierrear/domain/core/time_utils.dart';
 import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class AppointmentsProjectListdWidget extends StatelessWidget {
   final List<Appointment> appointments;
   final ValueChanged<String> onDelete;
-
-  final DateFormat hourFormat = DateFormat.jm();
 
   AppointmentsProjectListdWidget({
     super.key,
@@ -32,7 +30,7 @@ class AppointmentsProjectListdWidget extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  '${hourFormat.format(appointment.startDateTime)} - ${hourFormat.format(appointment.endDateTime)}',
+                  '${hourFormatByDateTime(appointment.startDateTime)} - ${hourFormatByDateTime(appointment.endDateTime)}',
                 ),
               ),
               Expanded(

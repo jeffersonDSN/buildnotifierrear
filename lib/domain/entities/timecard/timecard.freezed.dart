@@ -21,7 +21,9 @@ Timecard _$TimecardFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Timecard {
   String get id => throw _privateConstructorUsedError;
-  String get userId => throw _privateConstructorUsedError;
+  String get employeeId => throw _privateConstructorUsedError;
+  String get employeeFirstName => throw _privateConstructorUsedError;
+  String get employeeLastName => throw _privateConstructorUsedError;
   DateTime get start => throw _privateConstructorUsedError;
   double? get startLatitude => throw _privateConstructorUsedError;
   double? get startLongitude => throw _privateConstructorUsedError;
@@ -44,7 +46,9 @@ abstract class $TimecardCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String userId,
+      String employeeId,
+      String employeeFirstName,
+      String employeeLastName,
       DateTime start,
       double? startLatitude,
       double? startLongitude,
@@ -69,7 +73,9 @@ class _$TimecardCopyWithImpl<$Res, $Val extends Timecard>
   @override
   $Res call({
     Object? id = null,
-    Object? userId = null,
+    Object? employeeId = null,
+    Object? employeeFirstName = null,
+    Object? employeeLastName = null,
     Object? start = null,
     Object? startLatitude = freezed,
     Object? startLongitude = freezed,
@@ -84,9 +90,17 @@ class _$TimecardCopyWithImpl<$Res, $Val extends Timecard>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
+      employeeId: null == employeeId
+          ? _value.employeeId
+          : employeeId // ignore: cast_nullable_to_non_nullable
+              as String,
+      employeeFirstName: null == employeeFirstName
+          ? _value.employeeFirstName
+          : employeeFirstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      employeeLastName: null == employeeLastName
+          ? _value.employeeLastName
+          : employeeLastName // ignore: cast_nullable_to_non_nullable
               as String,
       start: null == start
           ? _value.start
@@ -134,7 +148,9 @@ abstract class _$$TimecardImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      String userId,
+      String employeeId,
+      String employeeFirstName,
+      String employeeLastName,
       DateTime start,
       double? startLatitude,
       double? startLongitude,
@@ -157,7 +173,9 @@ class __$$TimecardImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? userId = null,
+    Object? employeeId = null,
+    Object? employeeFirstName = null,
+    Object? employeeLastName = null,
     Object? start = null,
     Object? startLatitude = freezed,
     Object? startLongitude = freezed,
@@ -172,9 +190,17 @@ class __$$TimecardImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
+      employeeId: null == employeeId
+          ? _value.employeeId
+          : employeeId // ignore: cast_nullable_to_non_nullable
+              as String,
+      employeeFirstName: null == employeeFirstName
+          ? _value.employeeFirstName
+          : employeeFirstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      employeeLastName: null == employeeLastName
+          ? _value.employeeLastName
+          : employeeLastName // ignore: cast_nullable_to_non_nullable
               as String,
       start: null == start
           ? _value.start
@@ -217,7 +243,9 @@ class __$$TimecardImplCopyWithImpl<$Res>
 class _$TimecardImpl implements _Timecard {
   _$TimecardImpl(
       {this.id = '',
-      required this.userId,
+      required this.employeeId,
+      this.employeeFirstName = '',
+      this.employeeLastName = '',
       required this.start,
       this.startLatitude,
       this.startLongitude,
@@ -234,7 +262,13 @@ class _$TimecardImpl implements _Timecard {
   @JsonKey()
   final String id;
   @override
-  final String userId;
+  final String employeeId;
+  @override
+  @JsonKey()
+  final String employeeFirstName;
+  @override
+  @JsonKey()
+  final String employeeLastName;
   @override
   final DateTime start;
   @override
@@ -254,7 +288,7 @@ class _$TimecardImpl implements _Timecard {
 
   @override
   String toString() {
-    return 'Timecard(id: $id, userId: $userId, start: $start, startLatitude: $startLatitude, startLongitude: $startLongitude, startLocation: $startLocation, end: $end, endLatitude: $endLatitude, endLongitude: $endLongitude, endLocation: $endLocation)';
+    return 'Timecard(id: $id, employeeId: $employeeId, employeeFirstName: $employeeFirstName, employeeLastName: $employeeLastName, start: $start, startLatitude: $startLatitude, startLongitude: $startLongitude, startLocation: $startLocation, end: $end, endLatitude: $endLatitude, endLongitude: $endLongitude, endLocation: $endLocation)';
   }
 
   @override
@@ -263,7 +297,12 @@ class _$TimecardImpl implements _Timecard {
         (other.runtimeType == runtimeType &&
             other is _$TimecardImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.employeeId, employeeId) ||
+                other.employeeId == employeeId) &&
+            (identical(other.employeeFirstName, employeeFirstName) ||
+                other.employeeFirstName == employeeFirstName) &&
+            (identical(other.employeeLastName, employeeLastName) ||
+                other.employeeLastName == employeeLastName) &&
             (identical(other.start, start) || other.start == start) &&
             (identical(other.startLatitude, startLatitude) ||
                 other.startLatitude == startLatitude) &&
@@ -285,7 +324,9 @@ class _$TimecardImpl implements _Timecard {
   int get hashCode => Object.hash(
       runtimeType,
       id,
-      userId,
+      employeeId,
+      employeeFirstName,
+      employeeLastName,
       start,
       startLatitude,
       startLongitude,
@@ -312,7 +353,9 @@ class _$TimecardImpl implements _Timecard {
 abstract class _Timecard implements Timecard {
   factory _Timecard(
       {final String id,
-      required final String userId,
+      required final String employeeId,
+      final String employeeFirstName,
+      final String employeeLastName,
       required final DateTime start,
       final double? startLatitude,
       final double? startLongitude,
@@ -328,7 +371,11 @@ abstract class _Timecard implements Timecard {
   @override
   String get id;
   @override
-  String get userId;
+  String get employeeId;
+  @override
+  String get employeeFirstName;
+  @override
+  String get employeeLastName;
   @override
   DateTime get start;
   @override

@@ -33,3 +33,9 @@ class Project with _$Project {
   factory Project.fromJson(Map<String, Object?> json) =>
       _$ProjectFromJson(json);
 }
+
+extension OnProjectList on List<Project> {
+  int lengthOf(ProjectStatus status) {
+    return this.where((project) => project.status == status).toList().length;
+  }
+}
