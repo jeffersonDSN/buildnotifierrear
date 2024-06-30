@@ -298,9 +298,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get toDo => 'Por hacer';
 
   @override
-  String get doing => 'Haciendo';
-
-  @override
   String get done => 'Hecho';
 
   @override
@@ -333,4 +330,10 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get editAppointment => 'Editar cita';
+
+  @override
+  String get table => 'Tabla';
+
+  @override
+  String get board => 'Tablero';
 }

@@ -362,15 +362,7 @@ class Landing extends StatelessWidget {
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.8,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(
-                Sizes.size16,
-                Sizes.size32,
-                Sizes.size16,
-                Sizes.size32,
-              ),
-              child: child,
-            ),
+            child: child,
           ),
         ],
       ),

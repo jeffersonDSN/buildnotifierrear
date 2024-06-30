@@ -19,32 +19,39 @@ mixin _$TasksOverviewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function(Task task, TaskStatus status) changeStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function(Task task, TaskStatus status)? changeStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function(Task task, TaskStatus status)? changeStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TasksOverviewEventLoad value) load,
+    required TResult Function(TasksOverviewEventChangeStatus value)
+        changeStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TasksOverviewEventLoad value)? load,
+    TResult? Function(TasksOverviewEventChangeStatus value)? changeStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TasksOverviewEventLoad value)? load,
+    TResult Function(TasksOverviewEventChangeStatus value)? changeStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -110,6 +117,7 @@ class _$TasksOverviewEventLoadImpl implements TasksOverviewEventLoad {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function(Task task, TaskStatus status) changeStatus,
   }) {
     return load();
   }
@@ -118,6 +126,7 @@ class _$TasksOverviewEventLoadImpl implements TasksOverviewEventLoad {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function(Task task, TaskStatus status)? changeStatus,
   }) {
     return load?.call();
   }
@@ -126,6 +135,7 @@ class _$TasksOverviewEventLoadImpl implements TasksOverviewEventLoad {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function(Task task, TaskStatus status)? changeStatus,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -138,6 +148,8 @@ class _$TasksOverviewEventLoadImpl implements TasksOverviewEventLoad {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TasksOverviewEventLoad value) load,
+    required TResult Function(TasksOverviewEventChangeStatus value)
+        changeStatus,
   }) {
     return load(this);
   }
@@ -146,6 +158,7 @@ class _$TasksOverviewEventLoadImpl implements TasksOverviewEventLoad {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TasksOverviewEventLoad value)? load,
+    TResult? Function(TasksOverviewEventChangeStatus value)? changeStatus,
   }) {
     return load?.call(this);
   }
@@ -154,6 +167,7 @@ class _$TasksOverviewEventLoadImpl implements TasksOverviewEventLoad {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TasksOverviewEventLoad value)? load,
+    TResult Function(TasksOverviewEventChangeStatus value)? changeStatus,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -165,6 +179,169 @@ class _$TasksOverviewEventLoadImpl implements TasksOverviewEventLoad {
 
 abstract class TasksOverviewEventLoad implements TasksOverviewEvent {
   const factory TasksOverviewEventLoad() = _$TasksOverviewEventLoadImpl;
+}
+
+/// @nodoc
+abstract class _$$TasksOverviewEventChangeStatusImplCopyWith<$Res> {
+  factory _$$TasksOverviewEventChangeStatusImplCopyWith(
+          _$TasksOverviewEventChangeStatusImpl value,
+          $Res Function(_$TasksOverviewEventChangeStatusImpl) then) =
+      __$$TasksOverviewEventChangeStatusImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Task task, TaskStatus status});
+
+  $TaskCopyWith<$Res> get task;
+}
+
+/// @nodoc
+class __$$TasksOverviewEventChangeStatusImplCopyWithImpl<$Res>
+    extends _$TasksOverviewEventCopyWithImpl<$Res,
+        _$TasksOverviewEventChangeStatusImpl>
+    implements _$$TasksOverviewEventChangeStatusImplCopyWith<$Res> {
+  __$$TasksOverviewEventChangeStatusImplCopyWithImpl(
+      _$TasksOverviewEventChangeStatusImpl _value,
+      $Res Function(_$TasksOverviewEventChangeStatusImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? task = null,
+    Object? status = null,
+  }) {
+    return _then(_$TasksOverviewEventChangeStatusImpl(
+      task: null == task
+          ? _value.task
+          : task // ignore: cast_nullable_to_non_nullable
+              as Task,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as TaskStatus,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TaskCopyWith<$Res> get task {
+    return $TaskCopyWith<$Res>(_value.task, (value) {
+      return _then(_value.copyWith(task: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$TasksOverviewEventChangeStatusImpl
+    implements TasksOverviewEventChangeStatus {
+  const _$TasksOverviewEventChangeStatusImpl(
+      {required this.task, required this.status});
+
+  @override
+  final Task task;
+  @override
+  final TaskStatus status;
+
+  @override
+  String toString() {
+    return 'TasksOverviewEvent.changeStatus(task: $task, status: $status)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TasksOverviewEventChangeStatusImpl &&
+            (identical(other.task, task) || other.task == task) &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, task, status);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TasksOverviewEventChangeStatusImplCopyWith<
+          _$TasksOverviewEventChangeStatusImpl>
+      get copyWith => __$$TasksOverviewEventChangeStatusImplCopyWithImpl<
+          _$TasksOverviewEventChangeStatusImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function(Task task, TaskStatus status) changeStatus,
+  }) {
+    return changeStatus(task, status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function(Task task, TaskStatus status)? changeStatus,
+  }) {
+    return changeStatus?.call(task, status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function(Task task, TaskStatus status)? changeStatus,
+    required TResult orElse(),
+  }) {
+    if (changeStatus != null) {
+      return changeStatus(task, status);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TasksOverviewEventLoad value) load,
+    required TResult Function(TasksOverviewEventChangeStatus value)
+        changeStatus,
+  }) {
+    return changeStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TasksOverviewEventLoad value)? load,
+    TResult? Function(TasksOverviewEventChangeStatus value)? changeStatus,
+  }) {
+    return changeStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TasksOverviewEventLoad value)? load,
+    TResult Function(TasksOverviewEventChangeStatus value)? changeStatus,
+    required TResult orElse(),
+  }) {
+    if (changeStatus != null) {
+      return changeStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TasksOverviewEventChangeStatus implements TasksOverviewEvent {
+  const factory TasksOverviewEventChangeStatus(
+      {required final Task task,
+      required final TaskStatus status}) = _$TasksOverviewEventChangeStatusImpl;
+
+  Task get task;
+  TaskStatus get status;
+  @JsonKey(ignore: true)
+  _$$TasksOverviewEventChangeStatusImplCopyWith<
+          _$TasksOverviewEventChangeStatusImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

@@ -1,9 +1,10 @@
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
+import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:flutter/material.dart';
 
 enum TaskStatus {
   toDo,
-  doing,
+  inProgress,
   blocked,
   done,
 }
@@ -13,7 +14,7 @@ extension OnTaskStatus on TaskStatus {
     switch (this) {
       case TaskStatus.toDo:
         return 0;
-      case TaskStatus.doing:
+      case TaskStatus.inProgress:
         return 1;
       case TaskStatus.blocked:
         return 2;
@@ -24,12 +25,27 @@ extension OnTaskStatus on TaskStatus {
     }
   }
 
+  Color get color {
+    switch (this) {
+      case TaskStatus.toDo:
+        return AppColor.warning;
+      case TaskStatus.inProgress:
+        return AppColor.green;
+      case TaskStatus.blocked:
+        return AppColor.red;
+      case TaskStatus.done:
+        return AppColor.success;
+      default:
+        return AppColor.warning;
+    }
+  }
+
   String name(BuildContext context) {
     switch (this) {
       case TaskStatus.toDo:
         return context.tr.toDo;
-      case TaskStatus.doing:
-        return context.tr.doing;
+      case TaskStatus.inProgress:
+        return context.tr.inProgress;
       case TaskStatus.blocked:
         return context.tr.blocked;
       case TaskStatus.done:

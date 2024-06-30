@@ -1,5 +1,6 @@
 import 'package:buildnotifierrear/domain/controllers/tasks_controller.dart';
 import 'package:buildnotifierrear/domain/entities/task/task.dart';
+import 'package:buildnotifierrear/domain/entities/enums/task_status_enums.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
 
@@ -24,6 +25,20 @@ class TasksOverviewBloc extends Bloc<TasksOverviewEvent, TasksOverviewState> {
                 tasks: tasks,
               ),
             );
+          },
+          changeStatus: (task, status) {
+            var value = task.copyWith(status: status);
+
+            emit(TasksOverviewState.loaded(
+                tasks: state.asLoaded.tasks.map((task) {
+              if (task.id == value.id) {
+                return value;
+              }
+
+              return task;
+            }).toList()));
+
+            controller.updateStatus(task.id, status);
           },
         );
       },

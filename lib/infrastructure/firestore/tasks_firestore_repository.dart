@@ -83,7 +83,7 @@ class TasksFirestoreRepository extends TenantFirestoreRepository
   Future<Either<ErrorFields, bool>> put(Task value) async {
     var notesList = await getValueList(value.notes);
 
-    var schedule = {
+    var task = {
       'title': value.title,
       'productId': value.productId,
       'projectName': value.projectName,
@@ -97,7 +97,7 @@ class TasksFirestoreRepository extends TenantFirestoreRepository
       'assignTo': value.assignTo.toJson()
     };
 
-    await collection.doc(value.id.toString()).update(schedule);
+    await collection.doc(value.id.toString()).update(task);
     return right(true);
   }
 
@@ -105,7 +105,7 @@ class TasksFirestoreRepository extends TenantFirestoreRepository
   Future<Either<ErrorFields, bool>> post(Task value) async {
     var notesList = await getValueList(value.notes);
 
-    var schedule = {
+    var task = {
       'title': value.title,
       'productId': value.productId,
       'projectName': value.projectName,
@@ -119,13 +119,23 @@ class TasksFirestoreRepository extends TenantFirestoreRepository
       'assignTo': value.assignTo.toJson()
     };
 
-    await collection.add(schedule);
+    await collection.add(task);
     return right(true);
   }
 
   @override
   Future<bool> delete(String id) async {
     await collection.doc(id.toString()).delete();
+    return true;
+  }
+
+  @override
+  Future<bool> updateStatus(String id, TaskStatus status) async {
+    var task = {
+      'status': status.id,
+    };
+
+    await collection.doc(id).update(task);
     return true;
   }
 }

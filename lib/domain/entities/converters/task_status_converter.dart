@@ -10,7 +10,7 @@ class TaskStatusConverter implements JsonConverter<TaskStatus, int> {
       case 0:
         return TaskStatus.toDo;
       case 1:
-        return TaskStatus.doing;
+        return TaskStatus.inProgress;
       case 2:
         return TaskStatus.blocked;
       case 3:
@@ -25,7 +25,7 @@ class TaskStatusConverter implements JsonConverter<TaskStatus, int> {
     switch (value) {
       case TaskStatus.toDo:
         return 0;
-      case TaskStatus.doing:
+      case TaskStatus.inProgress:
         return 1;
       case TaskStatus.blocked:
         return 2;

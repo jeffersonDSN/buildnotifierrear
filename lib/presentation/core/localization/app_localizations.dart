@@ -230,8 +230,6 @@ abstract class AppLocalizations {
 
   String get toDo;
 
-  String get doing;
-
   String get done;
 
   String get chat;
@@ -253,6 +251,10 @@ abstract class AppLocalizations {
   String get newAppointment;
 
   String get editAppointment;
+
+  String get table;
+
+  String get board;
 }
 
 class _AppLocalizationsDelegate

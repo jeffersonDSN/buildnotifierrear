@@ -37,7 +37,7 @@ class TaskStatusDistributionChart extends StatelessWidget {
               bloc: bloc,
               builder: (context, state) {
                 var toDo = TaskStatus.toDo.name(context);
-                var doing = TaskStatus.doing.name(context);
+                var inProgress = TaskStatus.inProgress.name(context);
                 var blocked = TaskStatus.blocked.name(context);
 
                 return state.maybeWhen(
@@ -48,8 +48,8 @@ class TaskStatusDistributionChart extends StatelessWidget {
                     var lengthOfToDo = tasks.lengthOf(
                       TaskStatus.toDo,
                     );
-                    var lengthOfDoing = tasks.lengthOf(
-                      TaskStatus.doing,
+                    var lengthOfInProgress = tasks.lengthOf(
+                      TaskStatus.inProgress,
                     );
 
                     var lengthOfBlocked = tasks.lengthOf(
@@ -63,7 +63,7 @@ class TaskStatusDistributionChart extends StatelessWidget {
                           child: Chart(
                             data: [
                               {'genre': toDo, 'sold': lengthOfToDo},
-                              {'genre': doing, 'sold': lengthOfDoing},
+                              {'genre': inProgress, 'sold': lengthOfInProgress},
                               {'genre': blocked, 'sold': lengthOfBlocked},
                             ],
                             variables: {
@@ -123,7 +123,7 @@ class TaskStatusDistributionChart extends StatelessWidget {
                                   height: 10,
                                 ),
                                 gapWidth8,
-                                Text('$doing $lengthOfDoing'),
+                                Text('$inProgress $lengthOfInProgress'),
                               ],
                             ),
                             Row(

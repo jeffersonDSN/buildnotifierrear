@@ -30,6 +30,7 @@ dependencies:
   google_generative_ai: ^0.4.3
   flutter_langdetect: ^0.0.2
   graphic: ^2.2.1
+  drag_and_drop_lists: ^0.4.1
   
 
 dev_dependencies:

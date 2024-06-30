@@ -11,4 +11,6 @@ class TasksOverviewState with _$TasksOverviewState {
 
 extension OnTasksOverviewState on TasksOverviewState {
   bool get isInit => this is TasksOverviewStateInit;
+
+  TasksOverviewStateloaded get asLoaded => this as TasksOverviewStateloaded;
 }
