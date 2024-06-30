@@ -16,7 +16,7 @@ class ProjectStatusDistributionChart extends StatelessWidget {
     var bloc = BlocProvider.of<ProjectsOverviewBloc>(context);
 
     if (bloc.state.isInit) {
-      bloc.add(ProjectsOverviewEvent.load());
+      bloc.add(const ProjectsOverviewEvent.load());
     }
 
     return Card(
@@ -28,7 +28,7 @@ class ProjectStatusDistributionChart extends StatelessWidget {
           children: [
             Text(
               context.tr.projectStatusDistribution,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -42,7 +42,7 @@ class ProjectStatusDistributionChart extends StatelessWidget {
                 var blocked = ProjectStatus.blocked.name(context);
 
                 return state.maybeWhen(
-                  orElse: () => Center(
+                  orElse: () => const Center(
                     child: CircularProgressIndicator(),
                   ),
                   loaded: (projects) {
@@ -61,9 +61,8 @@ class ProjectStatusDistributionChart extends StatelessWidget {
 
                     return Row(
                       children: [
-                        Container(
-                          width: 150,
-                          height: 150,
+                        SizedBox.square(
+                          dimension: Sizes.size160,
                           child: Chart(
                             data: [
                               {'genre': planning, 'sold': lengthOfPlanning},
@@ -118,7 +117,7 @@ class ProjectStatusDistributionChart extends StatelessWidget {
                                   height: 10,
                                 ),
                                 gapWidth8,
-                                Text('${planning} ${lengthOfPlanning}'),
+                                Text('$planning $lengthOfPlanning'),
                               ],
                             ),
                             Row(
@@ -129,7 +128,7 @@ class ProjectStatusDistributionChart extends StatelessWidget {
                                   height: 10,
                                 ),
                                 gapWidth8,
-                                Text('${planned} ${lengthOfPlanned}'),
+                                Text('$planned $lengthOfPlanned'),
                               ],
                             ),
                             Row(
@@ -140,7 +139,7 @@ class ProjectStatusDistributionChart extends StatelessWidget {
                                   height: 10,
                                 ),
                                 gapWidth8,
-                                Text('${inProgress} ${lengthOfInProgress}'),
+                                Text('$inProgress $lengthOfInProgress'),
                               ],
                             ),
                             Row(
@@ -151,7 +150,7 @@ class ProjectStatusDistributionChart extends StatelessWidget {
                                   height: 10,
                                 ),
                                 gapWidth8,
-                                Text('${blocked} ${lengthOfBlocked}'),
+                                Text('$blocked $lengthOfBlocked'),
                               ],
                             ),
                           ],

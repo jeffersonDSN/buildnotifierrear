@@ -14,7 +14,7 @@ class EmployeesWhoCheckedInBloc
   }) : super(const EmployeesWhoCheckedInState.init()) {
     on<EmployeesWhoCheckedInEvent>((event, emit) async {
       await event.when(load: () async {
-        emit(EmployeesWhoCheckedInState.loading());
+        emit(const EmployeesWhoCheckedInState.loading());
 
         final messagesStream = controller.getAllEmployeesWhoCheckedIn();
 

@@ -33,7 +33,7 @@ class TaskEditFormView extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           orElse: () {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           },

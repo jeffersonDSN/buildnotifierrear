@@ -1,5 +1,5 @@
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
-import 'package:buildnotifierrear/presentation/employees/who_checked_In/view/employees_who_checked_In_table.dart';
+import 'package:buildnotifierrear/presentation/employees/who_checked_In/view/employees_who_checked_in_table.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/view/project_status_distribution_chart.dart';
 import 'package:buildnotifierrear/presentation/tasks/overview/view/task_status_distribution_chart.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
@@ -10,7 +10,7 @@ class HomeOverviewView extends IView {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.fromLTRB(
           Sizes.size16,

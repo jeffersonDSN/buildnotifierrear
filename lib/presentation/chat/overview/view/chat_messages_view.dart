@@ -18,7 +18,7 @@ class ChatMessagesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController _controller = TextEditingController();
+    final TextEditingController controller = TextEditingController();
 
     var bloc = BlocProvider.of<ChatOverviewBloc>(context);
 
@@ -36,7 +36,7 @@ class ChatMessagesView extends StatelessWidget {
             bloc: bloc,
             builder: (context, state) {
               return state.maybeWhen(
-                orElse: () => Center(
+                orElse: () => const Center(
                   child: CircularProgressIndicator(),
                 ),
                 loaded: (messages) {
@@ -65,13 +65,13 @@ class ChatMessagesView extends StatelessWidget {
             children: <Widget>[
               Expanded(
                 child: TextField(
-                  controller: _controller,
+                  controller: controller,
                   decoration: InputDecoration(
                     hintText: context.tr.sendMessage,
                   ),
                   onEditingComplete: () {
                     final message = Message(
-                      text: _controller.text,
+                      text: controller.text,
                       sender: senderId,
                       recipient: recipientId,
                       timestamp: DateTime.now(),
@@ -81,15 +81,15 @@ class ChatMessagesView extends StatelessWidget {
                       ChatOverviewEvent.sendMessage(message: message),
                     );
 
-                    _controller.text = '';
+                    controller.text = '';
                   },
                 ),
               ),
               IconButton(
-                icon: Icon(Icons.send),
+                icon: const Icon(Icons.send),
                 onPressed: () {
                   final message = Message(
-                    text: _controller.text,
+                    text: controller.text,
                     sender: senderId,
                     recipient: recipientId,
                     timestamp: DateTime.now(),
@@ -99,7 +99,7 @@ class ChatMessagesView extends StatelessWidget {
                     ChatOverviewEvent.sendMessage(message: message),
                   );
 
-                  _controller.text = '';
+                  controller.text = '';
                 },
               ),
             ],
@@ -115,8 +115,7 @@ class MessageBubble extends StatelessWidget {
   final bool isMe;
   final String sender;
 
-  const MessageBubble(this.message, this.isMe, this.sender, {Key? key})
-      : super(key: key);
+  const MessageBubble(this.message, this.isMe, this.sender, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -127,15 +126,17 @@ class MessageBubble extends StatelessWidget {
           decoration: BoxDecoration(
             color: isMe ? Colors.grey[300] : AppColor.primaryColorSwatch,
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(12),
-              topRight: Radius.circular(12),
-              bottomLeft: !isMe ? Radius.circular(0) : Radius.circular(12),
-              bottomRight: isMe ? Radius.circular(0) : Radius.circular(12),
+              topLeft: const Radius.circular(12),
+              topRight: const Radius.circular(12),
+              bottomLeft:
+                  !isMe ? const Radius.circular(0) : const Radius.circular(12),
+              bottomRight:
+                  isMe ? const Radius.circular(0) : const Radius.circular(12),
             ),
           ),
           width: 140,
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-          margin: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+          margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
           child: Column(
             crossAxisAlignment:
                 isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,

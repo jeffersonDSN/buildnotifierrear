@@ -38,7 +38,7 @@ class Landing extends StatelessWidget {
           Stack(
             children: [
               IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.notifications,
                   ),
                   onPressed: () {}),
@@ -61,7 +61,7 @@ class Landing extends StatelessWidget {
               )
             ],
           ),
-          VerticalDivider(),
+          const VerticalDivider(),
           Padding(
             padding: const EdgeInsets.fromLTRB(
               Sizes.size8,
@@ -71,7 +71,7 @@ class Landing extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Card(
+                const Card(
                   child: SizedBox.square(
                     dimension: Sizes.size40,
                   ),
@@ -88,6 +88,40 @@ class Landing extends StatelessWidget {
                       ),
                     ),
                     PopupMenuButton(
+                      position: PopupMenuPosition.under,
+                      tooltip: '',
+                      itemBuilder: (context) => [
+                        PopupMenuItem(
+                          child: Text(context.tr.english),
+                          onTap: () {
+                            bloc.add(
+                              const AppEvent.changeLanguage(
+                                locale: Locale('en'),
+                              ),
+                            );
+                          },
+                        ),
+                        PopupMenuItem(
+                          child: Text(context.tr.portuguese),
+                          onTap: () {
+                            bloc.add(
+                              const AppEvent.changeLanguage(
+                                locale: Locale('pt'),
+                              ),
+                            );
+                          },
+                        ),
+                        PopupMenuItem(
+                          child: Text(context.tr.spanish),
+                          onTap: () {
+                            bloc.add(
+                              const AppEvent.changeLanguage(
+                                locale: Locale('es'),
+                              ),
+                            );
+                          },
+                        ),
+                      ],
                       child: Row(
                         children: [
                           Text(
@@ -102,40 +136,6 @@ class Landing extends StatelessWidget {
                           ),
                         ],
                       ),
-                      position: PopupMenuPosition.under,
-                      tooltip: '',
-                      itemBuilder: (context) => [
-                        PopupMenuItem(
-                          child: Text(context.tr.english),
-                          onTap: () {
-                            bloc.add(
-                              AppEvent.changeLanguage(
-                                locale: Locale('en'),
-                              ),
-                            );
-                          },
-                        ),
-                        PopupMenuItem(
-                          child: Text(context.tr.portuguese),
-                          onTap: () {
-                            bloc.add(
-                              AppEvent.changeLanguage(
-                                locale: Locale('pt'),
-                              ),
-                            );
-                          },
-                        ),
-                        PopupMenuItem(
-                          child: Text(context.tr.spanish),
-                          onTap: () {
-                            bloc.add(
-                              AppEvent.changeLanguage(
-                                locale: Locale('es'),
-                              ),
-                            );
-                          },
-                        ),
-                      ],
                     ),
                   ],
                 ),

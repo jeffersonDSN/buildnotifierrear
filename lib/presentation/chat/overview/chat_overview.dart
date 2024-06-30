@@ -7,7 +7,7 @@ import 'package:buildnotifierrear/presentation/chat/overview/bloc/chat_overview_
 import 'package:buildnotifierrear/presentation/chat/overview/bloc/chat_user_list_bloc.dart';
 import 'package:buildnotifierrear/presentation/chat/overview/view/chat_overview_view.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ChatOverview extends IView {

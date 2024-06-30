@@ -10,11 +10,11 @@ part 'chat_user_list_state.dart';
 class ChatUserListBloc extends Bloc<ChatUserListEvent, ChatUserListState> {
   ChatUserListBloc({
     required EmployeesController controller,
-  }) : super(ChatUserListState.initial()) {
+  }) : super(const ChatUserListState.initial()) {
     on<ChatUserListEvent>((event, emit) async {
       await event.when(
         load: () async {
-          emit(ChatUserListState.loading());
+          emit(const ChatUserListState.loading());
 
           var employees = await controller.getAll();
 

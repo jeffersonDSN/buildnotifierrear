@@ -36,6 +36,6 @@ class Project with _$Project {
 
 extension OnProjectList on List<Project> {
   int lengthOf(ProjectStatus status) {
-    return this.where((project) => project.status == status).toList().length;
+    return where((project) => project.status == status).toList().length;
   }
 }

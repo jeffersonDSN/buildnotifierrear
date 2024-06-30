@@ -8,7 +8,7 @@ class AppointmentsUserListdWidget extends StatelessWidget {
   final List<Appointment> appointments;
   final ValueChanged<String> onDelete;
 
-  AppointmentsUserListdWidget({
+  const AppointmentsUserListdWidget({
     super.key,
     required this.appointments,
     required this.onDelete,

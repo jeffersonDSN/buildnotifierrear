@@ -14,7 +14,7 @@ class EmployeesWhoCheckedInTable extends StatelessWidget {
   Widget build(BuildContext context) {
     var bloc = BlocProvider.of<EmployeesWhoCheckedInBloc>(context);
 
-    bloc.add(EmployeesWhoCheckedInEvent.load());
+    bloc.add(const EmployeesWhoCheckedInEvent.load());
 
     return Card(
       child: Padding(
@@ -26,8 +26,8 @@ class EmployeesWhoCheckedInTable extends StatelessWidget {
           children: [
             Row(
               children: [
-                SizedBox(
-                  width: 10,
+                const SizedBox(
+                  width: Sizes.size12,
                 ),
                 Text(
                   context.tr.employeesWhoCheckedIn,

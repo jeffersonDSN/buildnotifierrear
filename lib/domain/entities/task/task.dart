@@ -30,6 +30,6 @@ class Task with _$Task {
 
 extension OnTaskList on List<Task> {
   int lengthOf(TaskStatus status) {
-    return this.where((task) => task.status == status).toList().length;
+    return where((task) => task.status == status).toList().length;
   }
 }

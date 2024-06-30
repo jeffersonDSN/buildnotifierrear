@@ -63,7 +63,7 @@ Future<Map<String, String>> getValueList(String value) async {
     return valueList;
   }
 
-  final language = await langdetect.detect(value);
+  final language = langdetect.detect(value);
 
   switch (language) {
     case 'en':
@@ -195,7 +195,7 @@ Future<Map<String, String>> getValueListWithContext(
     return valueList;
   }
 
-  final language = await langdetect.detect(value);
+  final language = langdetect.detect(value);
 
   switch (language) {
     case 'en':
@@ -203,14 +203,14 @@ Future<Map<String, String>> getValueListWithContext(
         model.generateContent(
           [
             Content.text(
-              'translate "${value}" to pt, Based on this last message "${values['pt']}", just the translation',
+              'translate "$value" to pt, Based on this last message "${values['pt']}", just the translation',
             ),
           ],
         ),
         model.generateContent(
           [
             Content.text(
-              'translate "${value}" to es, Based on this last message "${values['es']}", just the translation',
+              'translate "$value" to es, Based on this last message "${values['es']}", just the translation',
             ),
           ],
         ),
@@ -229,7 +229,7 @@ Future<Map<String, String>> getValueListWithContext(
         model.generateContent(
           [
             Content.text(
-              'translate "${value}" to en, Based on this last message "${values['en']}", just the translation',
+              'translate "$value" to en, Based on this last message "${values['en']}", just the translation',
             ),
           ],
           generationConfig: generationConfig,
@@ -237,7 +237,7 @@ Future<Map<String, String>> getValueListWithContext(
         model.generateContent(
           [
             Content.text(
-              'translate "${value}" to pt, Based on this last message "${values['pt']}", just the translation',
+              'translate "$value" to pt, Based on this last message "${values['pt']}", just the translation',
             ),
           ],
           generationConfig: generationConfig,
@@ -257,14 +257,14 @@ Future<Map<String, String>> getValueListWithContext(
         model.generateContent(
           [
             Content.text(
-              'translate "${value}" to en, Based on this last message "${values['en']}", just the translation',
+              'translate "$value" to en, Based on this last message "${values['en']}", just the translation',
             ),
           ],
         ),
         model.generateContent(
           [
             Content.text(
-              'translate "${value}" to es, Based on this last message "${values['es']}", just the translation',
+              'translate "$value" to es, Based on this last message "${values['es']}", just the translation',
             ),
           ],
           generationConfig: generationConfig,
@@ -283,20 +283,20 @@ Future<Map<String, String>> getValueListWithContext(
       final response = await Future.wait([
         model.generateContent([
           Content.text(
-            'translate "${value}" to en, Based on this last message "${values['en']}", just the translation',
+            'translate "$value" to en, Based on this last message "${values['en']}", just the translation',
           ),
         ]),
         model.generateContent(
           [
             Content.text(
-              'translate "${value}" to pt, Based on this last message "${values['pt']}", just the translation',
+              'translate "$value" to pt, Based on this last message "${values['pt']}", just the translation',
             ),
           ],
         ),
         model.generateContent(
           [
             Content.text(
-              'translate "${value}" to es, Based on this last message "${values['es']}", just the translation',
+              'translate "$value" to es, Based on this last message "${values['es']}", just the translation',
             ),
           ],
           generationConfig: generationConfig,

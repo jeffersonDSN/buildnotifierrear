@@ -8,22 +8,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ChatOverviewView extends StatelessWidget {
   final String senderId;
 
-  const ChatOverviewView({required this.senderId});
+  const ChatOverviewView({super.key, required this.senderId});
 
   @override
   Widget build(BuildContext context) {
     var bloc = BlocProvider.of<ChatUserListBloc>(context);
 
-    bloc.add(
-      ChatUserListEvent.load(),
-    );
+    bloc.add(const ChatUserListEvent.load());
 
     return BaseCustomCardWidget(
       body: BlocBuilder<ChatUserListBloc, ChatUserListState>(
         builder: (context, state) {
           return state.maybeWhen(
             orElse: () {
-              return Row(
+              return const Row(
                 children: [
                   Expanded(
                     flex: 1,
@@ -58,7 +56,7 @@ class ChatOverviewView extends StatelessWidget {
                           selectedTileColor:
                               AppColor.primaryColorSwatch.withOpacity(.1),
                           selected: employee == selectedEmployee,
-                          leading: CircleAvatar(),
+                          leading: const CircleAvatar(),
                           title: Text(
                             '${employee.firstName} ${employee.lastName}',
                           ),
@@ -72,11 +70,11 @@ class ChatOverviewView extends StatelessWidget {
                         );
                       },
                       separatorBuilder: (context, index) {
-                        return Divider();
+                        return const Divider();
                       },
                     ),
                   ),
-                  VerticalDivider(),
+                  const VerticalDivider(),
                   Expanded(
                     flex: 2,
                     child: ChatMessagesView(

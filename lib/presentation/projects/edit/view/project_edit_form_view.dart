@@ -31,7 +31,7 @@ class ProjectEditFormView extends StatelessWidget {
       builder: (context, state) {
         return bloc.state.maybeWhen(
           orElse: () {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           },

@@ -16,7 +16,7 @@ class TaskStatusDistributionChart extends StatelessWidget {
     var bloc = BlocProvider.of<TasksOverviewBloc>(context);
 
     if (bloc.state.isInit) {
-      bloc.add(TasksOverviewEvent.load());
+      bloc.add(const TasksOverviewEvent.load());
     }
 
     return Card(
@@ -28,7 +28,7 @@ class TaskStatusDistributionChart extends StatelessWidget {
           children: [
             Text(
               context.tr.taskStatusDistribution,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -41,7 +41,7 @@ class TaskStatusDistributionChart extends StatelessWidget {
                 var blocked = TaskStatus.blocked.name(context);
 
                 return state.maybeWhen(
-                  orElse: () => Center(
+                  orElse: () => const Center(
                     child: CircularProgressIndicator(),
                   ),
                   loaded: (tasks) {
@@ -58,9 +58,8 @@ class TaskStatusDistributionChart extends StatelessWidget {
 
                     return Row(
                       children: [
-                        Container(
-                          width: 150,
-                          height: 150,
+                        SizedBox.square(
+                          dimension: Sizes.size160,
                           child: Chart(
                             data: [
                               {'genre': toDo, 'sold': lengthOfToDo},
@@ -113,7 +112,7 @@ class TaskStatusDistributionChart extends StatelessWidget {
                                   height: 10,
                                 ),
                                 gapWidth8,
-                                Text('${toDo} ${lengthOfToDo}'),
+                                Text('$toDo $lengthOfToDo'),
                               ],
                             ),
                             Row(
@@ -124,7 +123,7 @@ class TaskStatusDistributionChart extends StatelessWidget {
                                   height: 10,
                                 ),
                                 gapWidth8,
-                                Text('${doing} ${lengthOfDoing}'),
+                                Text('$doing $lengthOfDoing'),
                               ],
                             ),
                             Row(
@@ -135,7 +134,7 @@ class TaskStatusDistributionChart extends StatelessWidget {
                                   height: 10,
                                 ),
                                 gapWidth8,
-                                Text('${blocked} ${lengthOfBlocked}'),
+                                Text('$blocked $lengthOfBlocked'),
                               ],
                             ),
                           ],

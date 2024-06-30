@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 class TimecardsDayDetailsListWidget extends StatelessWidget {
   final List<Timecard> timecards;
 
-  TimecardsDayDetailsListWidget({
+  const TimecardsDayDetailsListWidget({
     super.key,
     required this.timecards,
   });

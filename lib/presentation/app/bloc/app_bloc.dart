@@ -19,7 +19,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
             AppState.logged(
               mod: const Mod.home(),
               user: user,
-              locale: Locale('en'),
+              locale: const Locale('en'),
             ),
           );
         },

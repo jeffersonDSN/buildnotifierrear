@@ -10,7 +10,8 @@ import 'package:buildnotifierrear/presentation/employees/who_checked_In/bloc/emp
 import 'package:buildnotifierrear/presentation/home/overview/home_overview_view.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/bloc/projects_overview_bloc.dart';
 import 'package:buildnotifierrear/presentation/tasks/overview/bloc/tasks_overview_bloc.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeOverview extends IView {
@@ -46,7 +47,7 @@ class HomeOverview extends IView {
           ),
         )
       ],
-      child: HomeOverviewView(),
+      child: const HomeOverviewView(),
     );
   }
 }

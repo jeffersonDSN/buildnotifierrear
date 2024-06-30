@@ -90,6 +90,7 @@ class TimecardsFireStoreRepository extends TenantFirestoreRepository
         .toList();
   }
 
+  @override
   Stream<List<Timecard>> getAllEmployeesWhoCheckedIn() {
     return collection
         .where(
