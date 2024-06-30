@@ -114,33 +114,31 @@ class TasksOverviewView extends IView {
                       ),
                     ),
                     loaded: (tasks) {
-                      return Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Row(
-                              children: [
-                                TaskStatusDistributionChart(),
-                              ],
-                            ),
-                            Expanded(
-                              child: TasksTableWidget(
-                                tasks: tasks,
-                                onPressed: (task) {
-                                  appBloc(context).add(
-                                    AppEvent.changeView(
-                                      mod: Mod.tasks(
-                                        type: ViewType.update(
-                                          id: task.id,
-                                        ),
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Row(
+                            children: [
+                              TaskStatusDistributionChart(),
+                            ],
+                          ),
+                          Expanded(
+                            child: TasksTableWidget(
+                              tasks: tasks,
+                              onPressed: (task) {
+                                appBloc(context).add(
+                                  AppEvent.changeView(
+                                    mod: Mod.tasks(
+                                      type: ViewType.update(
+                                        id: task.id,
                                       ),
                                     ),
-                                  );
-                                },
-                              ),
+                                  ),
+                                );
+                              },
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       );
                     },
                   );
