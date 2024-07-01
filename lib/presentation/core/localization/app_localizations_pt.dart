@@ -242,6 +242,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get editClient => 'Editar cliente';
 
   @override
+  String get hasNoProject => 'Não tem projeto';
+
+  @override
   String get hasNoTask => 'Não tem tarefa';
 
   @override

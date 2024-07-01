@@ -196,6 +196,8 @@ abstract class AppLocalizations {
 
   String get hasNoTask;
 
+  String get hasNoProject;
+
   String get hasNoClient;
 
   String get department;

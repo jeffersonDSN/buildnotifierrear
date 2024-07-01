@@ -5,7 +5,7 @@ import 'package:buildnotifierrear/presentation/core/extensions/build_context_ext
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/tasks/overview/bloc/tasks_overview_bloc.dart';
 import 'package:buildnotifierrear/presentation/tasks/overview/view/task_status_distribution_chart.dart';
-import 'package:buildnotifierrear/presentation/tasks/overview/widgets/task_board_widget.dart';
+import 'package:buildnotifierrear/presentation/tasks/overview/view/task_board_widget.dart';
 import 'package:buildnotifierrear/presentation/tasks/overview/widgets/tasks_table_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';

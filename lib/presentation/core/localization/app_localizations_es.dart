@@ -241,6 +241,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get editClient => 'Editar cliente';
 
   @override
+  String get hasNoProject => 'No tiene proyecto';
+
+  @override
   String get hasNoTask => 'No tiene tarea';
 
   @override

@@ -19,32 +19,40 @@ mixin _$ProjectsOverviewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function(Project project, ProjectStatus status)
+        changeStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function(Project project, ProjectStatus status)? changeStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function(Project project, ProjectStatus status)? changeStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ProjectsOverviewEventLoad value) load,
+    required TResult Function(ProjectsOverviewEventChangeStatus value)
+        changeStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ProjectsOverviewEventLoad value)? load,
+    TResult? Function(ProjectsOverviewEventChangeStatus value)? changeStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProjectsOverviewEventLoad value)? load,
+    TResult Function(ProjectsOverviewEventChangeStatus value)? changeStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -112,6 +120,8 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function(Project project, ProjectStatus status)
+        changeStatus,
   }) {
     return load();
   }
@@ -120,6 +130,7 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function(Project project, ProjectStatus status)? changeStatus,
   }) {
     return load?.call();
   }
@@ -128,6 +139,7 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function(Project project, ProjectStatus status)? changeStatus,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -140,6 +152,8 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ProjectsOverviewEventLoad value) load,
+    required TResult Function(ProjectsOverviewEventChangeStatus value)
+        changeStatus,
   }) {
     return load(this);
   }
@@ -148,6 +162,7 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ProjectsOverviewEventLoad value)? load,
+    TResult? Function(ProjectsOverviewEventChangeStatus value)? changeStatus,
   }) {
     return load?.call(this);
   }
@@ -156,6 +171,7 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ProjectsOverviewEventLoad value)? load,
+    TResult Function(ProjectsOverviewEventChangeStatus value)? changeStatus,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -167,6 +183,173 @@ class _$ProjectsOverviewEventLoadImpl implements ProjectsOverviewEventLoad {
 
 abstract class ProjectsOverviewEventLoad implements ProjectsOverviewEvent {
   const factory ProjectsOverviewEventLoad() = _$ProjectsOverviewEventLoadImpl;
+}
+
+/// @nodoc
+abstract class _$$ProjectsOverviewEventChangeStatusImplCopyWith<$Res> {
+  factory _$$ProjectsOverviewEventChangeStatusImplCopyWith(
+          _$ProjectsOverviewEventChangeStatusImpl value,
+          $Res Function(_$ProjectsOverviewEventChangeStatusImpl) then) =
+      __$$ProjectsOverviewEventChangeStatusImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Project project, ProjectStatus status});
+
+  $ProjectCopyWith<$Res> get project;
+}
+
+/// @nodoc
+class __$$ProjectsOverviewEventChangeStatusImplCopyWithImpl<$Res>
+    extends _$ProjectsOverviewEventCopyWithImpl<$Res,
+        _$ProjectsOverviewEventChangeStatusImpl>
+    implements _$$ProjectsOverviewEventChangeStatusImplCopyWith<$Res> {
+  __$$ProjectsOverviewEventChangeStatusImplCopyWithImpl(
+      _$ProjectsOverviewEventChangeStatusImpl _value,
+      $Res Function(_$ProjectsOverviewEventChangeStatusImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? project = null,
+    Object? status = freezed,
+  }) {
+    return _then(_$ProjectsOverviewEventChangeStatusImpl(
+      project: null == project
+          ? _value.project
+          : project // ignore: cast_nullable_to_non_nullable
+              as Project,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ProjectStatus,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ProjectCopyWith<$Res> get project {
+    return $ProjectCopyWith<$Res>(_value.project, (value) {
+      return _then(_value.copyWith(project: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ProjectsOverviewEventChangeStatusImpl
+    implements ProjectsOverviewEventChangeStatus {
+  const _$ProjectsOverviewEventChangeStatusImpl(
+      {required this.project, required this.status});
+
+  @override
+  final Project project;
+  @override
+  final ProjectStatus status;
+
+  @override
+  String toString() {
+    return 'ProjectsOverviewEvent.changeStatus(project: $project, status: $status)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProjectsOverviewEventChangeStatusImpl &&
+            (identical(other.project, project) || other.project == project) &&
+            const DeepCollectionEquality().equals(other.status, status));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, project, const DeepCollectionEquality().hash(status));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProjectsOverviewEventChangeStatusImplCopyWith<
+          _$ProjectsOverviewEventChangeStatusImpl>
+      get copyWith => __$$ProjectsOverviewEventChangeStatusImplCopyWithImpl<
+          _$ProjectsOverviewEventChangeStatusImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function(Project project, ProjectStatus status)
+        changeStatus,
+  }) {
+    return changeStatus(project, status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function(Project project, ProjectStatus status)? changeStatus,
+  }) {
+    return changeStatus?.call(project, status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function(Project project, ProjectStatus status)? changeStatus,
+    required TResult orElse(),
+  }) {
+    if (changeStatus != null) {
+      return changeStatus(project, status);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectsOverviewEventLoad value) load,
+    required TResult Function(ProjectsOverviewEventChangeStatus value)
+        changeStatus,
+  }) {
+    return changeStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectsOverviewEventLoad value)? load,
+    TResult? Function(ProjectsOverviewEventChangeStatus value)? changeStatus,
+  }) {
+    return changeStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectsOverviewEventLoad value)? load,
+    TResult Function(ProjectsOverviewEventChangeStatus value)? changeStatus,
+    required TResult orElse(),
+  }) {
+    if (changeStatus != null) {
+      return changeStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProjectsOverviewEventChangeStatus
+    implements ProjectsOverviewEvent {
+  const factory ProjectsOverviewEventChangeStatus(
+          {required final Project project,
+          required final ProjectStatus status}) =
+      _$ProjectsOverviewEventChangeStatusImpl;
+
+  Project get project;
+  ProjectStatus get status;
+  @JsonKey(ignore: true)
+  _$$ProjectsOverviewEventChangeStatusImplCopyWith<
+          _$ProjectsOverviewEventChangeStatusImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

@@ -1,44 +1,45 @@
-import 'package:buildnotifierrear/domain/entities/enums/task_status_enums.dart';
-import 'package:buildnotifierrear/domain/entities/enums/task_priority_enums.dart';
-import 'package:buildnotifierrear/domain/entities/task/task.dart';
+import 'package:buildnotifierrear/domain/entities/enums/project_status_enums.dart';
+import 'package:buildnotifierrear/domain/entities/project/project.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
-import 'package:buildnotifierrear/presentation/tasks/overview/bloc/tasks_overview_bloc.dart';
+import 'package:buildnotifierrear/presentation/projects/overview/bloc/projects_overview_bloc.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:drag_and_drop_lists/drag_and_drop_lists.dart';
 
-class TaskBoardWidget extends StatelessWidget {
-  const TaskBoardWidget({super.key});
+class ProjectsBoardWidget extends StatelessWidget {
+  const ProjectsBoardWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var bloc = BlocProvider.of<TasksOverviewBloc>(context);
+    var bloc = BlocProvider.of<ProjectsOverviewBloc>(context);
 
     if (bloc.state.isInit) {
-      bloc.add(const TasksOverviewEvent.load());
+      bloc.add(const ProjectsOverviewEvent.load());
     }
 
-    return BlocBuilder<TasksOverviewBloc, TasksOverviewState>(
+    return BlocBuilder<ProjectsOverviewBloc, ProjectsOverviewState>(
       bloc: bloc,
       builder: (context, state) {
         return state.maybeWhen(
           orElse: () => const Center(
             child: CircularProgressIndicator(),
           ),
-          loaded: (tasks) {
-            List<List<Task>> lists = [];
+          loaded: (projects) {
+            List<List<Project>> lists = [];
 
             return DragAndDropLists(
               axis: Axis.horizontal,
               listWidth: 250,
-              children: TaskStatus.values.map((status) {
+              children: ProjectStatus.values.map((status) {
                 lists.add(
-                  tasks.where((task) => task.status == status).toList(),
+                  projects
+                      .where((project) => project.status == status)
+                      .toList(),
                 );
 
                 return DragAndDropList(
-                  contentsWhenEmpty: Text(context.tr.hasNoTask),
+                  contentsWhenEmpty: Text(context.tr.hasNoProject),
                   canDrag: false,
                   header: Row(
                     children: <Widget>[
@@ -59,19 +60,31 @@ class TaskBoardWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                  children: lists.last.map((task) {
+                  children: lists.last.map((project) {
                     return DragAndDropItem(
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(
-                          Sizes.size16,
+                          Sizes.size8,
                           Sizes.size0,
-                          Sizes.size16,
+                          Sizes.size8,
                           Sizes.size0,
                         ),
                         child: Card(
-                          child: ListTile(
-                            title: Text(task.title),
-                            subtitle: Text(task.priority.name(context)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(Sizes.size16),
+                            child: SizedBox(
+                              width: Sizes.size240,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(project.name),
+                                  gapHeight8,
+                                  Text(
+                                    '${project.clientFirstname} ${project.clientLastname}',
+                                  )
+                                ],
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -86,9 +99,9 @@ class TaskBoardWidget extends StatelessWidget {
                 newListIndex,
               ) {
                 bloc.add(
-                  TasksOverviewEvent.changeStatus(
-                    task: lists[oldListIndex].removeAt(oldItemIndex),
-                    status: TaskStatus.values[newListIndex],
+                  ProjectsOverviewEvent.changeStatus(
+                    project: lists[oldListIndex].removeAt(oldItemIndex),
+                    status: ProjectStatus.values[newListIndex],
                   ),
                 );
               },

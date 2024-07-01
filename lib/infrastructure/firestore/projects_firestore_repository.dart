@@ -82,7 +82,7 @@ class ProjectsFirestoreRepository extends TenantFirestoreRepository
   Future<Either<ErrorFields, bool>> put(Project value) async {
     var descriptionList = await getValueList(value.description);
 
-    var schedule = {
+    var project = {
       'name': value.name,
       'clientId': value.clientId,
       'clientFirstname': value.clientFirstname,
@@ -101,7 +101,7 @@ class ProjectsFirestoreRepository extends TenantFirestoreRepository
       'longitude': value.longitude,
     };
 
-    await collection.doc(value.id.toString()).update(schedule);
+    await collection.doc(value.id.toString()).update(project);
     return right(true);
   }
 
@@ -109,7 +109,7 @@ class ProjectsFirestoreRepository extends TenantFirestoreRepository
   Future<Either<ErrorFields, bool>> post(Project value) async {
     var descriptionList = await getValueList(value.description);
 
-    var schedule = {
+    var project = {
       'name': value.name,
       'clientId': value.clientId,
       'clientFirstname': value.clientFirstname,
@@ -128,13 +128,24 @@ class ProjectsFirestoreRepository extends TenantFirestoreRepository
       'longitude': value.longitude,
     };
 
-    await collection.add(schedule);
+    await collection.add(project);
     return right(true);
   }
 
   @override
   Future<bool> delete(String id) async {
     await collection.doc(id.toString()).delete();
+    return true;
+  }
+
+  @override
+  Future<bool> updateStatus(String id, ProjectStatus status) async {
+    var project = {
+      'status': status.id,
+    };
+
+    await collection.doc(id).update(project);
+
     return true;
   }
 }

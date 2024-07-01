@@ -23,6 +23,11 @@ class ProjectsTableWidget extends StatelessWidget {
           Sizes.size16,
         ),
         child: DataTable2(
+          empty: Center(
+            child: Text(
+              context.tr.hasNoProject,
+            ),
+          ),
           columns: [
             DataColumn2(
               label: Expanded(
