@@ -72,7 +72,7 @@ class DependencyLine extends CustomPainter {
 
 class ChartBars extends StatelessWidget {
   final List<Task> data;
-  final Color color;
+
   final BoxConstraints constraints;
   final ScrollController horizontalController;
 
@@ -80,7 +80,6 @@ class ChartBars extends StatelessWidget {
     super.key,
     required this.constraints,
     required this.horizontalController,
-    this.color = Colors.blue,
     this.data = const [],
   });
 

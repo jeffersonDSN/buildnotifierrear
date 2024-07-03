@@ -10,13 +10,11 @@ import 'package:intl/intl.dart';
 class GanttChart extends StatelessWidget {
   final List<Task> userData;
   final BuildContext context;
-  final Color color;
 
   const GanttChart({
     super.key,
     required this.userData,
     required this.context,
-    required this.color,
   });
 
   @override
@@ -65,7 +63,7 @@ class GanttChart extends StatelessWidget {
                                   ? AppColor.primaryColorSwatch.withOpacity(.4)
                                   : day.weekday > 5
                                       ? AppColor.backgroundColor
-                                      : null,
+                                      : AppColor.lightColor,
                               border: Border(
                                 right: BorderSide(
                                   color: Colors.grey.withAlpha(100),
@@ -79,7 +77,6 @@ class GanttChart extends StatelessWidget {
                       ChartBars(
                         horizontalController: horizontalController,
                         constraints: constraints,
-                        color: color,
                         data: userData,
                       )
                     ],

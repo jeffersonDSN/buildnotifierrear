@@ -47,42 +47,28 @@ class GanttChartApp extends StatelessWidget {
             isPanMiddleActive,
             isPanEndActive,
           ) {
-            if (tasks.isNotEmpty) {
-              List<Task> data = [...tasks];
+            List<Task> data = [...tasks];
 
-              data.sort((a, b) {
-                int startOrder = a.startDate!.compareTo(b.startDate!);
+            data.sort((a, b) {
+              int startOrder = a.startDate!.compareTo(b.startDate!);
+
+              if (startOrder == 0) {
+                startOrder = a.expectedEndDate!.compareTo(b.expectedEndDate!);
 
                 if (startOrder == 0) {
-                  startOrder = a.expectedEndDate!.compareTo(b.expectedEndDate!);
-
-                  if (startOrder == 0) {
-                    startOrder = a.startDate!.compareTo(b.startDate!);
-                    return startOrder;
-                  } else {
-                    return startOrder;
-                  }
+                  startOrder = a.startDate!.compareTo(b.startDate!);
+                  return startOrder;
                 } else {
                   return startOrder;
                 }
-              });
+              } else {
+                return startOrder;
+              }
+            });
 
-              return GanttChart(
-                userData: data,
-                context: context,
-                color: Colors.blueAccent,
-              );
-            }
-
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text('Não possui tarefas'),
-                TextButton(
-                  onPressed: () async {},
-                  child: const Text('Criar a primeira agora'),
-                ),
-              ],
+            return GanttChart(
+              userData: data,
+              context: context,
             );
           },
         );
