@@ -6,4 +6,5 @@ abstract interface class AbsITasksRepository
     implements AbsICRUDRepository<Task> {
   Future<List<Task>> getAllByProject(String projectId);
   Future<bool> updateStatus(String id, TaskStatus status);
+  Future<bool> updateDates(String id, DateTime startDate, DateTime endDate);
 }

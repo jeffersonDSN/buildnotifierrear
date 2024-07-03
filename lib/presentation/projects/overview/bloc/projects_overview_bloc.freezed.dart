@@ -211,14 +211,14 @@ class __$$ProjectsOverviewEventChangeStatusImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? project = null,
-    Object? status = freezed,
+    Object? status = null,
   }) {
     return _then(_$ProjectsOverviewEventChangeStatusImpl(
       project: null == project
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project,
-      status: freezed == status
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProjectStatus,
@@ -257,12 +257,11 @@ class _$ProjectsOverviewEventChangeStatusImpl
         (other.runtimeType == runtimeType &&
             other is _$ProjectsOverviewEventChangeStatusImpl &&
             (identical(other.project, project) || other.project == project) &&
-            const DeepCollectionEquality().equals(other.status, status));
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, project, const DeepCollectionEquality().hash(status));
+  int get hashCode => Object.hash(runtimeType, project, status);
 
   @JsonKey(ignore: true)
   @override

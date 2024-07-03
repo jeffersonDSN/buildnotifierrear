@@ -31,6 +31,13 @@ dependencies:
   flutter_langdetect: ^0.0.2
   graphic: ^2.2.1
   drag_and_drop_lists: ^0.4.1
+
+  linked_scroll_controller: ^0.2.0
+  universal_html: ^2.0.8
+  shared_preferences: ^2.0.13
+  url_launcher: ^6.0.20    
+  multi_select_flutter: ^4.0.0  
+  
   
 
 dev_dependencies:

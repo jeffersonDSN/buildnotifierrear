@@ -55,7 +55,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       scrollBehavior: const MaterialScrollBehavior().copyWith(
-        dragDevices: {PointerDeviceKind.mouse},
+        dragDevices: {
+          PointerDeviceKind.touch,
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.stylus,
+        },
       ),
       debugShowCheckedModeBanner: false,
       title: 'Build Notifier',

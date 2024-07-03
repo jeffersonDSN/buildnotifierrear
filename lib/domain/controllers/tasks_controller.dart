@@ -18,4 +18,8 @@ class TasksController extends CRUDController<Task> {
   Future<bool> updateStatus(String id, TaskStatus status) {
     return _repository.updateStatus(id, status);
   }
+
+  Future<bool> updateDates(String id, DateTime startDate, DateTime endDate) {
+    return _repository.updateDates(id, startDate, endDate);
+  }
 }

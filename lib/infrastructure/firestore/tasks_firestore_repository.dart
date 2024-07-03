@@ -94,7 +94,8 @@ class TasksFirestoreRepository extends TenantFirestoreRepository
       'status': value.status.id,
       'notes': value.notes,
       'notesList': notesList,
-      'assignTo': value.assignTo.toJson()
+      'assignTo': value.assignTo.toJson(),
+      'dependencies': value.dependencies,
     };
 
     await collection.doc(value.id.toString()).update(task);
@@ -116,7 +117,8 @@ class TasksFirestoreRepository extends TenantFirestoreRepository
       'status': value.status.id,
       'notes': value.notes,
       'notesList': notesList,
-      'assignTo': value.assignTo.toJson()
+      'assignTo': value.assignTo.toJson(),
+      'dependencies': value.dependencies,
     };
 
     await collection.add(task);
@@ -133,6 +135,21 @@ class TasksFirestoreRepository extends TenantFirestoreRepository
   Future<bool> updateStatus(String id, TaskStatus status) async {
     var task = {
       'status': status.id,
+    };
+
+    await collection.doc(id).update(task);
+    return true;
+  }
+
+  @override
+  Future<bool> updateDates(
+    String id,
+    DateTime startDate,
+    DateTime endDate,
+  ) async {
+    var task = {
+      'startDate': startDate,
+      'expectedEndDate': endDate,
     };
 
     await collection.doc(id).update(task);
