@@ -35,6 +35,7 @@ class TasksTableWidget extends StatelessWidget {
               label: Text(context.tr.title),
             ),
             DataColumn2(
+              size: ColumnSize.L,
               label: Text(context.tr.project),
             ),
             DataColumn2(

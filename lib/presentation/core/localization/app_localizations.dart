@@ -257,6 +257,8 @@ abstract class AppLocalizations {
   String get table;
 
   String get board;
+
+  String get ganttChart;
 }
 
 class _AppLocalizationsDelegate

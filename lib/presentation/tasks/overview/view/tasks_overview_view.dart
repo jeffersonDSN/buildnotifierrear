@@ -13,13 +13,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TasksOverviewView extends IView {
-  const TasksOverviewView({super.key});
+  final String projectId;
+
+  const TasksOverviewView({
+    super.key,
+    this.projectId = '',
+  });
 
   @override
   Widget build(BuildContext context) {
     var bloc = BlocProvider.of<TasksOverviewBloc>(context);
 
-    bloc.add(const TasksOverviewEvent.load());
+    bloc.add(TasksOverviewEvent.load(projectId: projectId));
 
     return DefaultTabController(
       initialIndex: 0,

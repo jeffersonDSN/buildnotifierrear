@@ -7,6 +7,7 @@ import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/bloc/project_edit_bloc.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/view/project_edit_form_view.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/view/gantt_chart_app.dart';
+import 'package:buildnotifierrear/presentation/tasks/overview/tasks_overview.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
@@ -181,7 +182,9 @@ class ProjectEditView extends IView {
                             ],
                             update: (id) {
                               return [
-                                Container(),
+                                TasksOverview(
+                                  projectId: project.id,
+                                ),
                                 GanttChartApp(
                                   projectId: project.id,
                                   startDate: project.startDate!,

@@ -18,19 +18,19 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$TasksOverviewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() load,
+    required TResult Function(String projectId) load,
     required TResult Function(Task task, TaskStatus status) changeStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
+    TResult? Function(String projectId)? load,
     TResult? Function(Task task, TaskStatus status)? changeStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
+    TResult Function(String projectId)? load,
     TResult Function(Task task, TaskStatus status)? changeStatus,
     required TResult orElse(),
   }) =>
@@ -81,6 +81,8 @@ abstract class _$$TasksOverviewEventLoadImplCopyWith<$Res> {
           _$TasksOverviewEventLoadImpl value,
           $Res Function(_$TasksOverviewEventLoadImpl) then) =
       __$$TasksOverviewEventLoadImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String projectId});
 }
 
 /// @nodoc
@@ -91,55 +93,81 @@ class __$$TasksOverviewEventLoadImplCopyWithImpl<$Res>
       _$TasksOverviewEventLoadImpl _value,
       $Res Function(_$TasksOverviewEventLoadImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? projectId = null,
+  }) {
+    return _then(_$TasksOverviewEventLoadImpl(
+      projectId: null == projectId
+          ? _value.projectId
+          : projectId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$TasksOverviewEventLoadImpl implements TasksOverviewEventLoad {
-  const _$TasksOverviewEventLoadImpl();
+  const _$TasksOverviewEventLoadImpl({this.projectId = ''});
+
+  @override
+  @JsonKey()
+  final String projectId;
 
   @override
   String toString() {
-    return 'TasksOverviewEvent.load()';
+    return 'TasksOverviewEvent.load(projectId: $projectId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TasksOverviewEventLoadImpl);
+            other is _$TasksOverviewEventLoadImpl &&
+            (identical(other.projectId, projectId) ||
+                other.projectId == projectId));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, projectId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TasksOverviewEventLoadImplCopyWith<_$TasksOverviewEventLoadImpl>
+      get copyWith => __$$TasksOverviewEventLoadImplCopyWithImpl<
+          _$TasksOverviewEventLoadImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() load,
+    required TResult Function(String projectId) load,
     required TResult Function(Task task, TaskStatus status) changeStatus,
   }) {
-    return load();
+    return load(projectId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
+    TResult? Function(String projectId)? load,
     TResult? Function(Task task, TaskStatus status)? changeStatus,
   }) {
-    return load?.call();
+    return load?.call(projectId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
+    TResult Function(String projectId)? load,
     TResult Function(Task task, TaskStatus status)? changeStatus,
     required TResult orElse(),
   }) {
     if (load != null) {
-      return load();
+      return load(projectId);
     }
     return orElse();
   }
@@ -178,7 +206,13 @@ class _$TasksOverviewEventLoadImpl implements TasksOverviewEventLoad {
 }
 
 abstract class TasksOverviewEventLoad implements TasksOverviewEvent {
-  const factory TasksOverviewEventLoad() = _$TasksOverviewEventLoadImpl;
+  const factory TasksOverviewEventLoad({final String projectId}) =
+      _$TasksOverviewEventLoadImpl;
+
+  String get projectId;
+  @JsonKey(ignore: true)
+  _$$TasksOverviewEventLoadImplCopyWith<_$TasksOverviewEventLoadImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -270,7 +304,7 @@ class _$TasksOverviewEventChangeStatusImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() load,
+    required TResult Function(String projectId) load,
     required TResult Function(Task task, TaskStatus status) changeStatus,
   }) {
     return changeStatus(task, status);
@@ -279,7 +313,7 @@ class _$TasksOverviewEventChangeStatusImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
+    TResult? Function(String projectId)? load,
     TResult? Function(Task task, TaskStatus status)? changeStatus,
   }) {
     return changeStatus?.call(task, status);
@@ -288,7 +322,7 @@ class _$TasksOverviewEventChangeStatusImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
+    TResult Function(String projectId)? load,
     TResult Function(Task task, TaskStatus status)? changeStatus,
     required TResult orElse(),
   }) {

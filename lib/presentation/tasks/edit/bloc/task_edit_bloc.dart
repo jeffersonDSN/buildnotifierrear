@@ -28,7 +28,7 @@ class TaskEditBloc extends Bloc<TaskEditEvent, TaskEditState> {
               crudType.when(
                 create: () async {
                   return Task(
-                    productId: projectId,
+                    projectId: projectId,
                   );
                 },
                 update: (id) async {
@@ -50,7 +50,7 @@ class TaskEditBloc extends Bloc<TaskEditEvent, TaskEditState> {
             emit(
               state.asLoaded.copyWith(
                 task: state.asLoaded.task.copyWith(
-                  productId: projectId,
+                  projectId: projectId,
                   projectName: projectName,
                 ),
               ),

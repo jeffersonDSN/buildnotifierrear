@@ -339,4 +339,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get board => 'Quadro';
+
+  @override
+  String get ganttChart => 'Gráfico de Gantt';
 }

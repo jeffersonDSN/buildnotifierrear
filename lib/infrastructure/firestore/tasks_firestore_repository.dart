@@ -40,7 +40,7 @@ class TasksFirestoreRepository extends TenantFirestoreRepository
   Future<List<Task>> getAllByProject(String projectId) async {
     var querySnapshot = await collection
         .where(
-          'productId',
+          'projectId',
           isEqualTo: projectId,
         )
         .get();
@@ -85,7 +85,7 @@ class TasksFirestoreRepository extends TenantFirestoreRepository
 
     var task = {
       'title': value.title,
-      'productId': value.productId,
+      'projectId': value.projectId,
       'projectName': value.projectName,
       'startDate': value.startDate,
       'expectedEndDate': value.expectedEndDate,
@@ -108,7 +108,7 @@ class TasksFirestoreRepository extends TenantFirestoreRepository
 
     var task = {
       'title': value.title,
-      'productId': value.productId,
+      'projectId': value.projectId,
       'projectName': value.projectName,
       'startDate': value.startDate,
       'expectedEndDate': value.expectedEndDate,

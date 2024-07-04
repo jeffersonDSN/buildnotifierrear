@@ -9,7 +9,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TasksOverview extends IView {
-  const TasksOverview({super.key});
+  final String projectId;
+
+  const TasksOverview({
+    super.key,
+    this.projectId = '',
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +26,7 @@ class TasksOverview extends IView {
           ),
         ),
       ),
-      child: const TasksOverviewView(),
+      child: TasksOverviewView(projectId: projectId),
     );
   }
 }

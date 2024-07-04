@@ -15,10 +15,12 @@ class TasksOverviewBloc extends Bloc<TasksOverviewEvent, TasksOverviewState> {
     on<TasksOverviewEvent>(
       (event, emit) async {
         await event.when(
-          load: () async {
+          load: (projectId) async {
             emit(const TasksOverviewState.loading());
 
-            var tasks = await controller.getAll();
+            var tasks = projectId.isNotEmpty
+                ? await controller.getAllByProject(projectId)
+                : await controller.getAll();
 
             emit(
               TasksOverviewState.loaded(

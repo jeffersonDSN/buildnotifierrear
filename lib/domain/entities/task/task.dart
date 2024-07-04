@@ -12,7 +12,7 @@ part 'task.g.dart';
 class Task with _$Task {
   const factory Task({
     @Default('') String id,
-    @Default('') String productId,
+    @Default('') String projectId,
     @Default('') String projectName,
     @Default('') String title,
     DateTime? startDate,

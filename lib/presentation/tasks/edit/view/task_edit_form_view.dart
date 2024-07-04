@@ -70,7 +70,7 @@ class TaskEditFormView extends StatelessWidget {
                             child: BaseDropdownButtonField(
                               label: context.tr.project,
                               value: (
-                                id: task.productId,
+                                id: task.projectId,
                                 name: task.projectName,
                               ),
                               isExpanded: true,

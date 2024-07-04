@@ -21,7 +21,7 @@ Task _$TaskFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Task {
   String get id => throw _privateConstructorUsedError;
-  String get productId => throw _privateConstructorUsedError;
+  String get projectId => throw _privateConstructorUsedError;
   String get projectName => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   DateTime? get startDate => throw _privateConstructorUsedError;
@@ -52,7 +52,7 @@ abstract class $TaskCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String productId,
+      String projectId,
       String projectName,
       String title,
       DateTime? startDate,
@@ -84,7 +84,7 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
   @override
   $Res call({
     Object? id = null,
-    Object? productId = null,
+    Object? projectId = null,
     Object? projectName = null,
     Object? title = null,
     Object? startDate = freezed,
@@ -106,9 +106,9 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      productId: null == productId
-          ? _value.productId
-          : productId // ignore: cast_nullable_to_non_nullable
+      projectId: null == projectId
+          ? _value.projectId
+          : projectId // ignore: cast_nullable_to_non_nullable
               as String,
       projectName: null == projectName
           ? _value.projectName
@@ -183,7 +183,7 @@ abstract class _$$TaskImplCopyWith<$Res> implements $TaskCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String productId,
+      String projectId,
       String projectName,
       String title,
       DateTime? startDate,
@@ -212,7 +212,7 @@ class __$$TaskImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? productId = null,
+    Object? projectId = null,
     Object? projectName = null,
     Object? title = null,
     Object? startDate = freezed,
@@ -234,9 +234,9 @@ class __$$TaskImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      productId: null == productId
-          ? _value.productId
-          : productId // ignore: cast_nullable_to_non_nullable
+      projectId: null == projectId
+          ? _value.projectId
+          : projectId // ignore: cast_nullable_to_non_nullable
               as String,
       projectName: null == projectName
           ? _value.projectName
@@ -307,7 +307,7 @@ class __$$TaskImplCopyWithImpl<$Res>
 class _$TaskImpl implements _Task {
   const _$TaskImpl(
       {this.id = '',
-      this.productId = '',
+      this.projectId = '',
       this.projectName = '',
       this.title = '',
       this.startDate,
@@ -335,7 +335,7 @@ class _$TaskImpl implements _Task {
   final String id;
   @override
   @JsonKey()
-  final String productId;
+  final String projectId;
   @override
   @JsonKey()
   final String projectName;
@@ -401,7 +401,7 @@ class _$TaskImpl implements _Task {
 
   @override
   String toString() {
-    return 'Task(id: $id, productId: $productId, projectName: $projectName, title: $title, startDate: $startDate, expectedEndDate: $expectedEndDate, estimatedEffort: $estimatedEffort, priority: $priority, status: $status, notes: $notes, notesList: $notesList, assignTo: $assignTo, dependencies: $dependencies, width: $width, dragPosFactor: $dragPosFactor, draggingRemainingWidth: $draggingRemainingWidth, remainingWidth: $remainingWidth)';
+    return 'Task(id: $id, projectId: $projectId, projectName: $projectName, title: $title, startDate: $startDate, expectedEndDate: $expectedEndDate, estimatedEffort: $estimatedEffort, priority: $priority, status: $status, notes: $notes, notesList: $notesList, assignTo: $assignTo, dependencies: $dependencies, width: $width, dragPosFactor: $dragPosFactor, draggingRemainingWidth: $draggingRemainingWidth, remainingWidth: $remainingWidth)';
   }
 
   @override
@@ -410,8 +410,8 @@ class _$TaskImpl implements _Task {
         (other.runtimeType == runtimeType &&
             other is _$TaskImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.productId, productId) ||
-                other.productId == productId) &&
+            (identical(other.projectId, projectId) ||
+                other.projectId == projectId) &&
             (identical(other.projectName, projectName) ||
                 other.projectName == projectName) &&
             (identical(other.title, title) || other.title == title) &&
@@ -444,7 +444,7 @@ class _$TaskImpl implements _Task {
   int get hashCode => Object.hash(
       runtimeType,
       id,
-      productId,
+      projectId,
       projectName,
       title,
       startDate,
@@ -478,7 +478,7 @@ class _$TaskImpl implements _Task {
 abstract class _Task implements Task {
   const factory _Task(
       {final String id,
-      final String productId,
+      final String projectId,
       final String projectName,
       final String title,
       final DateTime? startDate,
@@ -500,7 +500,7 @@ abstract class _Task implements Task {
   @override
   String get id;
   @override
-  String get productId;
+  String get projectId;
   @override
   String get projectName;
   @override
