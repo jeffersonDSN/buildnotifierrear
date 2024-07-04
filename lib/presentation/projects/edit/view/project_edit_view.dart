@@ -88,7 +88,7 @@ class ProjectEditView extends IView {
                                     ),
                                   ),
                                   gapWidth4,
-                                  const Text('Gantt chart'),
+                                  Text(context.tr.ganttChart),
                                 ],
                               ),
                             ]),
