@@ -43,4 +43,8 @@ class TasksProjectEditEvent with _$TasksProjectEditEvent {
     required double chartAreaWidth,
     required double pixels,
   }) = TasksProjectEditEventChangeDates;
+
+  const factory TasksProjectEditEvent.changeViewRangeToFitScreen({
+    required double value,
+  }) = TasksProjectEditEventChangeViewRangeToFitScreen;
 }

@@ -34,6 +34,7 @@ mixin _$TasksProjectEditEvent {
     required TResult Function(Task task, double mediaQueryWidth,
             double globalPositionDx, double chartAreaWidth, double pixels)
         changeDates,
+    required TResult Function(double value) changeViewRangeToFitScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,6 +55,7 @@ mixin _$TasksProjectEditEvent {
     TResult? Function(Task task, double mediaQueryWidth,
             double globalPositionDx, double chartAreaWidth, double pixels)?
         changeDates,
+    TResult? Function(double value)? changeViewRangeToFitScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -74,6 +76,7 @@ mixin _$TasksProjectEditEvent {
     TResult Function(Task task, double mediaQueryWidth, double globalPositionDx,
             double chartAreaWidth, double pixels)?
         changeDates,
+    TResult Function(double value)? changeViewRangeToFitScreen,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -88,6 +91,9 @@ mixin _$TasksProjectEditEvent {
         changeEndDate,
     required TResult Function(TasksProjectEditEventChangeDates value)
         changeDates,
+    required TResult Function(
+            TasksProjectEditEventChangeViewRangeToFitScreen value)
+        changeViewRangeToFitScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -99,6 +105,8 @@ mixin _$TasksProjectEditEvent {
         changeStartDate,
     TResult? Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
     TResult? Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult? Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -110,6 +118,8 @@ mixin _$TasksProjectEditEvent {
         changeStartDate,
     TResult Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
     TResult Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -242,6 +252,7 @@ class _$TasksProjectEditEventLoadImpl implements TasksProjectEditEventLoad {
     required TResult Function(Task task, double mediaQueryWidth,
             double globalPositionDx, double chartAreaWidth, double pixels)
         changeDates,
+    required TResult Function(double value) changeViewRangeToFitScreen,
   }) {
     return load(projectId, projectStartDate, projectEndDate);
   }
@@ -265,6 +276,7 @@ class _$TasksProjectEditEventLoadImpl implements TasksProjectEditEventLoad {
     TResult? Function(Task task, double mediaQueryWidth,
             double globalPositionDx, double chartAreaWidth, double pixels)?
         changeDates,
+    TResult? Function(double value)? changeViewRangeToFitScreen,
   }) {
     return load?.call(projectId, projectStartDate, projectEndDate);
   }
@@ -288,6 +300,7 @@ class _$TasksProjectEditEventLoadImpl implements TasksProjectEditEventLoad {
     TResult Function(Task task, double mediaQueryWidth, double globalPositionDx,
             double chartAreaWidth, double pixels)?
         changeDates,
+    TResult Function(double value)? changeViewRangeToFitScreen,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -308,6 +321,9 @@ class _$TasksProjectEditEventLoadImpl implements TasksProjectEditEventLoad {
         changeEndDate,
     required TResult Function(TasksProjectEditEventChangeDates value)
         changeDates,
+    required TResult Function(
+            TasksProjectEditEventChangeViewRangeToFitScreen value)
+        changeViewRangeToFitScreen,
   }) {
     return load(this);
   }
@@ -322,6 +338,8 @@ class _$TasksProjectEditEventLoadImpl implements TasksProjectEditEventLoad {
         changeStartDate,
     TResult? Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
     TResult? Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult? Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
   }) {
     return load?.call(this);
   }
@@ -336,6 +354,8 @@ class _$TasksProjectEditEventLoadImpl implements TasksProjectEditEventLoad {
         changeStartDate,
     TResult Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
     TResult Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -486,6 +506,7 @@ class _$TasksProjectEditEventStartPanImpl
     required TResult Function(Task task, double mediaQueryWidth,
             double globalPositionDx, double chartAreaWidth, double pixels)
         changeDates,
+    required TResult Function(double value) changeViewRangeToFitScreen,
   }) {
     return startPan(task, type, startMousePos, initX);
   }
@@ -509,6 +530,7 @@ class _$TasksProjectEditEventStartPanImpl
     TResult? Function(Task task, double mediaQueryWidth,
             double globalPositionDx, double chartAreaWidth, double pixels)?
         changeDates,
+    TResult? Function(double value)? changeViewRangeToFitScreen,
   }) {
     return startPan?.call(task, type, startMousePos, initX);
   }
@@ -532,6 +554,7 @@ class _$TasksProjectEditEventStartPanImpl
     TResult Function(Task task, double mediaQueryWidth, double globalPositionDx,
             double chartAreaWidth, double pixels)?
         changeDates,
+    TResult Function(double value)? changeViewRangeToFitScreen,
     required TResult orElse(),
   }) {
     if (startPan != null) {
@@ -552,6 +575,9 @@ class _$TasksProjectEditEventStartPanImpl
         changeEndDate,
     required TResult Function(TasksProjectEditEventChangeDates value)
         changeDates,
+    required TResult Function(
+            TasksProjectEditEventChangeViewRangeToFitScreen value)
+        changeViewRangeToFitScreen,
   }) {
     return startPan(this);
   }
@@ -566,6 +592,8 @@ class _$TasksProjectEditEventStartPanImpl
         changeStartDate,
     TResult? Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
     TResult? Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult? Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
   }) {
     return startPan?.call(this);
   }
@@ -580,6 +608,8 @@ class _$TasksProjectEditEventStartPanImpl
         changeStartDate,
     TResult Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
     TResult Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
     required TResult orElse(),
   }) {
     if (startPan != null) {
@@ -709,6 +739,7 @@ class _$TasksProjectEditEventEndPanImpl implements TasksProjectEditEventEndPan {
     required TResult Function(Task task, double mediaQueryWidth,
             double globalPositionDx, double chartAreaWidth, double pixels)
         changeDates,
+    required TResult Function(double value) changeViewRangeToFitScreen,
   }) {
     return endPan(task, type);
   }
@@ -732,6 +763,7 @@ class _$TasksProjectEditEventEndPanImpl implements TasksProjectEditEventEndPan {
     TResult? Function(Task task, double mediaQueryWidth,
             double globalPositionDx, double chartAreaWidth, double pixels)?
         changeDates,
+    TResult? Function(double value)? changeViewRangeToFitScreen,
   }) {
     return endPan?.call(task, type);
   }
@@ -755,6 +787,7 @@ class _$TasksProjectEditEventEndPanImpl implements TasksProjectEditEventEndPan {
     TResult Function(Task task, double mediaQueryWidth, double globalPositionDx,
             double chartAreaWidth, double pixels)?
         changeDates,
+    TResult Function(double value)? changeViewRangeToFitScreen,
     required TResult orElse(),
   }) {
     if (endPan != null) {
@@ -775,6 +808,9 @@ class _$TasksProjectEditEventEndPanImpl implements TasksProjectEditEventEndPan {
         changeEndDate,
     required TResult Function(TasksProjectEditEventChangeDates value)
         changeDates,
+    required TResult Function(
+            TasksProjectEditEventChangeViewRangeToFitScreen value)
+        changeViewRangeToFitScreen,
   }) {
     return endPan(this);
   }
@@ -789,6 +825,8 @@ class _$TasksProjectEditEventEndPanImpl implements TasksProjectEditEventEndPan {
         changeStartDate,
     TResult? Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
     TResult? Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult? Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
   }) {
     return endPan?.call(this);
   }
@@ -803,6 +841,8 @@ class _$TasksProjectEditEventEndPanImpl implements TasksProjectEditEventEndPan {
         changeStartDate,
     TResult Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
     TResult Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
     required TResult orElse(),
   }) {
     if (endPan != null) {
@@ -966,6 +1006,7 @@ class _$TasksProjectEditEventChangeStartDateImpl
     required TResult Function(Task task, double mediaQueryWidth,
             double globalPositionDx, double chartAreaWidth, double pixels)
         changeDates,
+    required TResult Function(double value) changeViewRangeToFitScreen,
   }) {
     return changeStartDate(
         task, mediaQueryWidth, globalPositionDx, chartAreaWidth, pixels);
@@ -990,6 +1031,7 @@ class _$TasksProjectEditEventChangeStartDateImpl
     TResult? Function(Task task, double mediaQueryWidth,
             double globalPositionDx, double chartAreaWidth, double pixels)?
         changeDates,
+    TResult? Function(double value)? changeViewRangeToFitScreen,
   }) {
     return changeStartDate?.call(
         task, mediaQueryWidth, globalPositionDx, chartAreaWidth, pixels);
@@ -1014,6 +1056,7 @@ class _$TasksProjectEditEventChangeStartDateImpl
     TResult Function(Task task, double mediaQueryWidth, double globalPositionDx,
             double chartAreaWidth, double pixels)?
         changeDates,
+    TResult Function(double value)? changeViewRangeToFitScreen,
     required TResult orElse(),
   }) {
     if (changeStartDate != null) {
@@ -1035,6 +1078,9 @@ class _$TasksProjectEditEventChangeStartDateImpl
         changeEndDate,
     required TResult Function(TasksProjectEditEventChangeDates value)
         changeDates,
+    required TResult Function(
+            TasksProjectEditEventChangeViewRangeToFitScreen value)
+        changeViewRangeToFitScreen,
   }) {
     return changeStartDate(this);
   }
@@ -1049,6 +1095,8 @@ class _$TasksProjectEditEventChangeStartDateImpl
         changeStartDate,
     TResult? Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
     TResult? Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult? Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
   }) {
     return changeStartDate?.call(this);
   }
@@ -1063,6 +1111,8 @@ class _$TasksProjectEditEventChangeStartDateImpl
         changeStartDate,
     TResult Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
     TResult Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
     required TResult orElse(),
   }) {
     if (changeStartDate != null) {
@@ -1235,6 +1285,7 @@ class _$TasksProjectEditEventChangeEndDateImpl
     required TResult Function(Task task, double mediaQueryWidth,
             double globalPositionDx, double chartAreaWidth, double pixels)
         changeDates,
+    required TResult Function(double value) changeViewRangeToFitScreen,
   }) {
     return changeEndDate(
         task, mediaQueryWidth, globalPositionDx, chartAreaWidth, pixels);
@@ -1259,6 +1310,7 @@ class _$TasksProjectEditEventChangeEndDateImpl
     TResult? Function(Task task, double mediaQueryWidth,
             double globalPositionDx, double chartAreaWidth, double pixels)?
         changeDates,
+    TResult? Function(double value)? changeViewRangeToFitScreen,
   }) {
     return changeEndDate?.call(
         task, mediaQueryWidth, globalPositionDx, chartAreaWidth, pixels);
@@ -1283,6 +1335,7 @@ class _$TasksProjectEditEventChangeEndDateImpl
     TResult Function(Task task, double mediaQueryWidth, double globalPositionDx,
             double chartAreaWidth, double pixels)?
         changeDates,
+    TResult Function(double value)? changeViewRangeToFitScreen,
     required TResult orElse(),
   }) {
     if (changeEndDate != null) {
@@ -1304,6 +1357,9 @@ class _$TasksProjectEditEventChangeEndDateImpl
         changeEndDate,
     required TResult Function(TasksProjectEditEventChangeDates value)
         changeDates,
+    required TResult Function(
+            TasksProjectEditEventChangeViewRangeToFitScreen value)
+        changeViewRangeToFitScreen,
   }) {
     return changeEndDate(this);
   }
@@ -1318,6 +1374,8 @@ class _$TasksProjectEditEventChangeEndDateImpl
         changeStartDate,
     TResult? Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
     TResult? Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult? Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
   }) {
     return changeEndDate?.call(this);
   }
@@ -1332,6 +1390,8 @@ class _$TasksProjectEditEventChangeEndDateImpl
         changeStartDate,
     TResult Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
     TResult Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
     required TResult orElse(),
   }) {
     if (changeEndDate != null) {
@@ -1503,6 +1563,7 @@ class _$TasksProjectEditEventChangeDatesImpl
     required TResult Function(Task task, double mediaQueryWidth,
             double globalPositionDx, double chartAreaWidth, double pixels)
         changeDates,
+    required TResult Function(double value) changeViewRangeToFitScreen,
   }) {
     return changeDates(
         task, mediaQueryWidth, globalPositionDx, chartAreaWidth, pixels);
@@ -1527,6 +1588,7 @@ class _$TasksProjectEditEventChangeDatesImpl
     TResult? Function(Task task, double mediaQueryWidth,
             double globalPositionDx, double chartAreaWidth, double pixels)?
         changeDates,
+    TResult? Function(double value)? changeViewRangeToFitScreen,
   }) {
     return changeDates?.call(
         task, mediaQueryWidth, globalPositionDx, chartAreaWidth, pixels);
@@ -1551,6 +1613,7 @@ class _$TasksProjectEditEventChangeDatesImpl
     TResult Function(Task task, double mediaQueryWidth, double globalPositionDx,
             double chartAreaWidth, double pixels)?
         changeDates,
+    TResult Function(double value)? changeViewRangeToFitScreen,
     required TResult orElse(),
   }) {
     if (changeDates != null) {
@@ -1572,6 +1635,9 @@ class _$TasksProjectEditEventChangeDatesImpl
         changeEndDate,
     required TResult Function(TasksProjectEditEventChangeDates value)
         changeDates,
+    required TResult Function(
+            TasksProjectEditEventChangeViewRangeToFitScreen value)
+        changeViewRangeToFitScreen,
   }) {
     return changeDates(this);
   }
@@ -1586,6 +1652,8 @@ class _$TasksProjectEditEventChangeDatesImpl
         changeStartDate,
     TResult? Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
     TResult? Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult? Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
   }) {
     return changeDates?.call(this);
   }
@@ -1600,6 +1668,8 @@ class _$TasksProjectEditEventChangeDatesImpl
         changeStartDate,
     TResult Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
     TResult Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
     required TResult orElse(),
   }) {
     if (changeDates != null) {
@@ -1630,6 +1700,225 @@ abstract class TasksProjectEditEventChangeDates
 }
 
 /// @nodoc
+abstract class _$$TasksProjectEditEventChangeViewRangeToFitScreenImplCopyWith<
+    $Res> {
+  factory _$$TasksProjectEditEventChangeViewRangeToFitScreenImplCopyWith(
+          _$TasksProjectEditEventChangeViewRangeToFitScreenImpl value,
+          $Res Function(_$TasksProjectEditEventChangeViewRangeToFitScreenImpl)
+              then) =
+      __$$TasksProjectEditEventChangeViewRangeToFitScreenImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({double value});
+}
+
+/// @nodoc
+class __$$TasksProjectEditEventChangeViewRangeToFitScreenImplCopyWithImpl<$Res>
+    extends _$TasksProjectEditEventCopyWithImpl<$Res,
+        _$TasksProjectEditEventChangeViewRangeToFitScreenImpl>
+    implements
+        _$$TasksProjectEditEventChangeViewRangeToFitScreenImplCopyWith<$Res> {
+  __$$TasksProjectEditEventChangeViewRangeToFitScreenImplCopyWithImpl(
+      _$TasksProjectEditEventChangeViewRangeToFitScreenImpl _value,
+      $Res Function(_$TasksProjectEditEventChangeViewRangeToFitScreenImpl)
+          _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$TasksProjectEditEventChangeViewRangeToFitScreenImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TasksProjectEditEventChangeViewRangeToFitScreenImpl
+    implements TasksProjectEditEventChangeViewRangeToFitScreen {
+  const _$TasksProjectEditEventChangeViewRangeToFitScreenImpl(
+      {required this.value});
+
+  @override
+  final double value;
+
+  @override
+  String toString() {
+    return 'TasksProjectEditEvent.changeViewRangeToFitScreen(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TasksProjectEditEventChangeViewRangeToFitScreenImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TasksProjectEditEventChangeViewRangeToFitScreenImplCopyWith<
+          _$TasksProjectEditEventChangeViewRangeToFitScreenImpl>
+      get copyWith =>
+          __$$TasksProjectEditEventChangeViewRangeToFitScreenImplCopyWithImpl<
+                  _$TasksProjectEditEventChangeViewRangeToFitScreenImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String projectId, DateTime projectStartDate,
+            DateTime projectEndDate)
+        load,
+    required TResult Function(
+            Task task, PanType type, double startMousePos, double initX)
+        startPan,
+    required TResult Function(Task task, PanType type) endPan,
+    required TResult Function(Task task, double mediaQueryWidth,
+            double globalPositionDx, double chartAreaWidth, double pixels)
+        changeStartDate,
+    required TResult Function(Task task, double mediaQueryWidth,
+            double globalPositionDx, double chartAreaWidth, double pixels)
+        changeEndDate,
+    required TResult Function(Task task, double mediaQueryWidth,
+            double globalPositionDx, double chartAreaWidth, double pixels)
+        changeDates,
+    required TResult Function(double value) changeViewRangeToFitScreen,
+  }) {
+    return changeViewRangeToFitScreen(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String projectId, DateTime projectStartDate,
+            DateTime projectEndDate)?
+        load,
+    TResult? Function(
+            Task task, PanType type, double startMousePos, double initX)?
+        startPan,
+    TResult? Function(Task task, PanType type)? endPan,
+    TResult? Function(Task task, double mediaQueryWidth,
+            double globalPositionDx, double chartAreaWidth, double pixels)?
+        changeStartDate,
+    TResult? Function(Task task, double mediaQueryWidth,
+            double globalPositionDx, double chartAreaWidth, double pixels)?
+        changeEndDate,
+    TResult? Function(Task task, double mediaQueryWidth,
+            double globalPositionDx, double chartAreaWidth, double pixels)?
+        changeDates,
+    TResult? Function(double value)? changeViewRangeToFitScreen,
+  }) {
+    return changeViewRangeToFitScreen?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String projectId, DateTime projectStartDate,
+            DateTime projectEndDate)?
+        load,
+    TResult Function(
+            Task task, PanType type, double startMousePos, double initX)?
+        startPan,
+    TResult Function(Task task, PanType type)? endPan,
+    TResult Function(Task task, double mediaQueryWidth, double globalPositionDx,
+            double chartAreaWidth, double pixels)?
+        changeStartDate,
+    TResult Function(Task task, double mediaQueryWidth, double globalPositionDx,
+            double chartAreaWidth, double pixels)?
+        changeEndDate,
+    TResult Function(Task task, double mediaQueryWidth, double globalPositionDx,
+            double chartAreaWidth, double pixels)?
+        changeDates,
+    TResult Function(double value)? changeViewRangeToFitScreen,
+    required TResult orElse(),
+  }) {
+    if (changeViewRangeToFitScreen != null) {
+      return changeViewRangeToFitScreen(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TasksProjectEditEventLoad value) load,
+    required TResult Function(TasksProjectEditEventStartPan value) startPan,
+    required TResult Function(TasksProjectEditEventEndPan value) endPan,
+    required TResult Function(TasksProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(TasksProjectEditEventChangeEndDate value)
+        changeEndDate,
+    required TResult Function(TasksProjectEditEventChangeDates value)
+        changeDates,
+    required TResult Function(
+            TasksProjectEditEventChangeViewRangeToFitScreen value)
+        changeViewRangeToFitScreen,
+  }) {
+    return changeViewRangeToFitScreen(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TasksProjectEditEventLoad value)? load,
+    TResult? Function(TasksProjectEditEventStartPan value)? startPan,
+    TResult? Function(TasksProjectEditEventEndPan value)? endPan,
+    TResult? Function(TasksProjectEditEventChangeStartDate value)?
+        changeStartDate,
+    TResult? Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
+    TResult? Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult? Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
+  }) {
+    return changeViewRangeToFitScreen?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TasksProjectEditEventLoad value)? load,
+    TResult Function(TasksProjectEditEventStartPan value)? startPan,
+    TResult Function(TasksProjectEditEventEndPan value)? endPan,
+    TResult Function(TasksProjectEditEventChangeStartDate value)?
+        changeStartDate,
+    TResult Function(TasksProjectEditEventChangeEndDate value)? changeEndDate,
+    TResult Function(TasksProjectEditEventChangeDates value)? changeDates,
+    TResult Function(TasksProjectEditEventChangeViewRangeToFitScreen value)?
+        changeViewRangeToFitScreen,
+    required TResult orElse(),
+  }) {
+    if (changeViewRangeToFitScreen != null) {
+      return changeViewRangeToFitScreen(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TasksProjectEditEventChangeViewRangeToFitScreen
+    implements TasksProjectEditEvent {
+  const factory TasksProjectEditEventChangeViewRangeToFitScreen(
+          {required final double value}) =
+      _$TasksProjectEditEventChangeViewRangeToFitScreenImpl;
+
+  double get value;
+  @JsonKey(ignore: true)
+  _$$TasksProjectEditEventChangeViewRangeToFitScreenImplCopyWith<
+          _$TasksProjectEditEventChangeViewRangeToFitScreenImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$TasksProjectEditState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -1643,6 +1932,7 @@ mixin _$TasksProjectEditState {
             DateTime endDate,
             List<DateTime> viewRange,
             List<Task> tasks,
+            double viewRangeToFitScreen,
             Task? selectedTask,
             double initX,
             double width,
@@ -1665,6 +1955,7 @@ mixin _$TasksProjectEditState {
             DateTime endDate,
             List<DateTime> viewRange,
             List<Task> tasks,
+            double viewRangeToFitScreen,
             Task? selectedTask,
             double initX,
             double width,
@@ -1687,6 +1978,7 @@ mixin _$TasksProjectEditState {
             DateTime endDate,
             List<DateTime> viewRange,
             List<Task> tasks,
+            double viewRangeToFitScreen,
             Task? selectedTask,
             double initX,
             double width,
@@ -1793,6 +2085,7 @@ class _$TasksProjectEditStateInitImpl implements TasksProjectEditStateInit {
             DateTime endDate,
             List<DateTime> viewRange,
             List<Task> tasks,
+            double viewRangeToFitScreen,
             Task? selectedTask,
             double initX,
             double width,
@@ -1818,6 +2111,7 @@ class _$TasksProjectEditStateInitImpl implements TasksProjectEditStateInit {
             DateTime endDate,
             List<DateTime> viewRange,
             List<Task> tasks,
+            double viewRangeToFitScreen,
             Task? selectedTask,
             double initX,
             double width,
@@ -1843,6 +2137,7 @@ class _$TasksProjectEditStateInitImpl implements TasksProjectEditStateInit {
             DateTime endDate,
             List<DateTime> viewRange,
             List<Task> tasks,
+            double viewRangeToFitScreen,
             Task? selectedTask,
             double initX,
             double width,
@@ -2020,6 +2315,7 @@ class _$TasksProjectEditStateLoadingImpl
             DateTime endDate,
             List<DateTime> viewRange,
             List<Task> tasks,
+            double viewRangeToFitScreen,
             Task? selectedTask,
             double initX,
             double width,
@@ -2045,6 +2341,7 @@ class _$TasksProjectEditStateLoadingImpl
             DateTime endDate,
             List<DateTime> viewRange,
             List<Task> tasks,
+            double viewRangeToFitScreen,
             Task? selectedTask,
             double initX,
             double width,
@@ -2070,6 +2367,7 @@ class _$TasksProjectEditStateLoadingImpl
             DateTime endDate,
             List<DateTime> viewRange,
             List<Task> tasks,
+            double viewRangeToFitScreen,
             Task? selectedTask,
             double initX,
             double width,
@@ -2152,6 +2450,7 @@ abstract class _$$TasksProjectEditStateloadedImplCopyWith<$Res> {
       DateTime endDate,
       List<DateTime> viewRange,
       List<Task> tasks,
+      double viewRangeToFitScreen,
       Task? selectedTask,
       double initX,
       double width,
@@ -2181,6 +2480,7 @@ class __$$TasksProjectEditStateloadedImplCopyWithImpl<$Res>
     Object? endDate = null,
     Object? viewRange = null,
     Object? tasks = null,
+    Object? viewRangeToFitScreen = null,
     Object? selectedTask = freezed,
     Object? initX = null,
     Object? width = null,
@@ -2210,6 +2510,10 @@ class __$$TasksProjectEditStateloadedImplCopyWithImpl<$Res>
           ? _value._tasks
           : tasks // ignore: cast_nullable_to_non_nullable
               as List<Task>,
+      viewRangeToFitScreen: null == viewRangeToFitScreen
+          ? _value.viewRangeToFitScreen
+          : viewRangeToFitScreen // ignore: cast_nullable_to_non_nullable
+              as double,
       selectedTask: freezed == selectedTask
           ? _value.selectedTask
           : selectedTask // ignore: cast_nullable_to_non_nullable
@@ -2259,6 +2563,7 @@ class _$TasksProjectEditStateloadedImpl implements TasksProjectEditStateloaded {
       required this.endDate,
       required final List<DateTime> viewRange,
       required final List<Task> tasks,
+      this.viewRangeToFitScreen = 25,
       this.selectedTask,
       this.initX = 0,
       this.width = 0,
@@ -2292,6 +2597,9 @@ class _$TasksProjectEditStateloadedImpl implements TasksProjectEditStateloaded {
   }
 
   @override
+  @JsonKey()
+  final double viewRangeToFitScreen;
+  @override
   final Task? selectedTask;
   @override
   @JsonKey()
@@ -2314,7 +2622,7 @@ class _$TasksProjectEditStateloadedImpl implements TasksProjectEditStateloaded {
 
   @override
   String toString() {
-    return 'TasksProjectEditState.loaded(projectId: $projectId, startDate: $startDate, endDate: $endDate, viewRange: $viewRange, tasks: $tasks, selectedTask: $selectedTask, initX: $initX, width: $width, startPanChartPos: $startPanChartPos, isPanStartActive: $isPanStartActive, isPanMiddleActive: $isPanMiddleActive, isPanEndActive: $isPanEndActive)';
+    return 'TasksProjectEditState.loaded(projectId: $projectId, startDate: $startDate, endDate: $endDate, viewRange: $viewRange, tasks: $tasks, viewRangeToFitScreen: $viewRangeToFitScreen, selectedTask: $selectedTask, initX: $initX, width: $width, startPanChartPos: $startPanChartPos, isPanStartActive: $isPanStartActive, isPanMiddleActive: $isPanMiddleActive, isPanEndActive: $isPanEndActive)';
   }
 
   @override
@@ -2330,6 +2638,8 @@ class _$TasksProjectEditStateloadedImpl implements TasksProjectEditStateloaded {
             const DeepCollectionEquality()
                 .equals(other._viewRange, _viewRange) &&
             const DeepCollectionEquality().equals(other._tasks, _tasks) &&
+            (identical(other.viewRangeToFitScreen, viewRangeToFitScreen) ||
+                other.viewRangeToFitScreen == viewRangeToFitScreen) &&
             (identical(other.selectedTask, selectedTask) ||
                 other.selectedTask == selectedTask) &&
             (identical(other.initX, initX) || other.initX == initX) &&
@@ -2352,6 +2662,7 @@ class _$TasksProjectEditStateloadedImpl implements TasksProjectEditStateloaded {
       endDate,
       const DeepCollectionEquality().hash(_viewRange),
       const DeepCollectionEquality().hash(_tasks),
+      viewRangeToFitScreen,
       selectedTask,
       initX,
       width,
@@ -2380,6 +2691,7 @@ class _$TasksProjectEditStateloadedImpl implements TasksProjectEditStateloaded {
             DateTime endDate,
             List<DateTime> viewRange,
             List<Task> tasks,
+            double viewRangeToFitScreen,
             Task? selectedTask,
             double initX,
             double width,
@@ -2395,6 +2707,7 @@ class _$TasksProjectEditStateloadedImpl implements TasksProjectEditStateloaded {
         endDate,
         viewRange,
         tasks,
+        viewRangeToFitScreen,
         selectedTask,
         initX,
         width,
@@ -2417,6 +2730,7 @@ class _$TasksProjectEditStateloadedImpl implements TasksProjectEditStateloaded {
             DateTime endDate,
             List<DateTime> viewRange,
             List<Task> tasks,
+            double viewRangeToFitScreen,
             Task? selectedTask,
             double initX,
             double width,
@@ -2432,6 +2746,7 @@ class _$TasksProjectEditStateloadedImpl implements TasksProjectEditStateloaded {
         endDate,
         viewRange,
         tasks,
+        viewRangeToFitScreen,
         selectedTask,
         initX,
         width,
@@ -2454,6 +2769,7 @@ class _$TasksProjectEditStateloadedImpl implements TasksProjectEditStateloaded {
             DateTime endDate,
             List<DateTime> viewRange,
             List<Task> tasks,
+            double viewRangeToFitScreen,
             Task? selectedTask,
             double initX,
             double width,
@@ -2471,6 +2787,7 @@ class _$TasksProjectEditStateloadedImpl implements TasksProjectEditStateloaded {
           endDate,
           viewRange,
           tasks,
+          viewRangeToFitScreen,
           selectedTask,
           initX,
           width,
@@ -2524,6 +2841,7 @@ abstract class TasksProjectEditStateloaded implements TasksProjectEditState {
       required final DateTime endDate,
       required final List<DateTime> viewRange,
       required final List<Task> tasks,
+      final double viewRangeToFitScreen,
       final Task? selectedTask,
       final double initX,
       final double width,
@@ -2537,6 +2855,7 @@ abstract class TasksProjectEditStateloaded implements TasksProjectEditState {
   DateTime get endDate;
   List<DateTime> get viewRange;
   List<Task> get tasks;
+  double get viewRangeToFitScreen;
   Task? get selectedTask;
   double get initX;
   double get width;

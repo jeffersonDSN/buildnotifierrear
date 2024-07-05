@@ -14,7 +14,6 @@ enum PanType {
 }
 
 double chartViewWidth = 1200;
-int viewRangeToFitScreen = 25;
 
 class TasksProjectEditBloc
     extends Bloc<TasksProjectEditEvent, TasksProjectEditState> {
@@ -87,19 +86,25 @@ class TasksProjectEditBloc
             var width = state.asLoaded.width;
 
             int daysInterval =
-                (width / (chartViewWidth / viewRangeToFitScreen)).abs().round();
+                (width / (chartViewWidth / state.asLoaded.viewRangeToFitScreen))
+                    .abs()
+                    .round();
 
             if (daysInterval > 0) {
               if (type == PanType.start || type == PanType.middle) {
                 if (state.asLoaded.width >
-                    (chartViewWidth / viewRangeToFitScreen * 0.5)) {
+                    (chartViewWidth /
+                        state.asLoaded.viewRangeToFitScreen *
+                        0.5)) {
                   newTask = newTask.copyWith(
                     startDate: newTask.startDate!.add(
                       Duration(days: daysInterval),
                     ),
                   );
                 } else if (width <
-                    -(chartViewWidth / viewRangeToFitScreen * 0.5)) {
+                    -(chartViewWidth /
+                        state.asLoaded.viewRangeToFitScreen *
+                        0.5)) {
                   newTask = newTask.copyWith(
                     startDate: newTask.startDate!.subtract(
                       Duration(days: daysInterval),
@@ -109,14 +114,19 @@ class TasksProjectEditBloc
               }
 
               if (type == PanType.end || type == PanType.middle) {
-                if (width > (chartViewWidth / viewRangeToFitScreen * 0.5)) {
+                if (width >
+                    (chartViewWidth /
+                        state.asLoaded.viewRangeToFitScreen *
+                        0.5)) {
                   newTask = newTask.copyWith(
                     expectedEndDate: newTask.expectedEndDate!.add(
                       Duration(days: daysInterval),
                     ),
                   );
                 } else if (width <
-                    -(chartViewWidth / viewRangeToFitScreen * 0.5)) {
+                    -(chartViewWidth /
+                        state.asLoaded.viewRangeToFitScreen *
+                        0.5)) {
                   newTask = newTask.copyWith(
                     expectedEndDate: newTask.expectedEndDate!.subtract(
                       Duration(days: daysInterval),
@@ -163,14 +173,16 @@ class TasksProjectEditBloc
               task.expectedEndDate!,
             );
 
-            if (remainingWidth * chartViewWidth / viewRangeToFitScreen -
+            if (remainingWidth *
+                        chartViewWidth /
+                        state.asLoaded.viewRangeToFitScreen -
                     (globalPositionDx -
                         (globalPositionDx - 1) -
                         (asLoaded.startPanChartPos - pixels)) >=
-                chartViewWidth / viewRangeToFitScreen) {
+                chartViewWidth / state.asLoaded.viewRangeToFitScreen) {
               if (calculateDistanceToLeftBorder(task.startDate!) *
                           chartViewWidth /
-                          viewRangeToFitScreen +
+                          state.asLoaded.viewRangeToFitScreen +
                       (globalPositionDx -
                           (globalPositionDx - 1) -
                           (asLoaded.startPanChartPos - pixels)) >
@@ -188,8 +200,9 @@ class TasksProjectEditBloc
                 return;
               }
             } else {
-              double width =
-                  (remainingWidth - 1) * chartViewWidth / viewRangeToFitScreen;
+              double width = (remainingWidth - 1) *
+                  chartViewWidth /
+                  state.asLoaded.viewRangeToFitScreen;
 
               emit(
                 state.asLoaded.copyWith(
@@ -211,23 +224,25 @@ class TasksProjectEditBloc
               task.expectedEndDate!,
             );
 
-            if (remainingWidth * chartViewWidth / viewRangeToFitScreen +
+            if (remainingWidth *
+                        chartViewWidth /
+                        state.asLoaded.viewRangeToFitScreen +
                     (globalPositionDx -
                         asLoaded.initX -
                         (asLoaded.startPanChartPos - pixels)) >=
-                chartViewWidth / viewRangeToFitScreen) {
+                chartViewWidth / state.asLoaded.viewRangeToFitScreen) {
               if (calculateDistanceToLeftBorder(task.startDate!) *
                               chartViewWidth /
-                              viewRangeToFitScreen -
+                              state.asLoaded.viewRangeToFitScreen -
                           (globalPositionDx -
                               asLoaded.initX -
                               (asLoaded.startPanChartPos - pixels)) <
                       chartViewWidth /
-                          viewRangeToFitScreen *
+                          state.asLoaded.viewRangeToFitScreen *
                           asLoaded.viewRange.length &&
                   calculateDistanceToRightBorder(task.expectedEndDate!) *
                               chartViewWidth /
-                              viewRangeToFitScreen -
+                              state.asLoaded.viewRangeToFitScreen -
                           (globalPositionDx -
                               asLoaded.initX -
                               (asLoaded.startPanChartPos - pixels)) >
@@ -245,8 +260,9 @@ class TasksProjectEditBloc
                 return;
               }
             } else {
-              double width =
-                  (remainingWidth - 1) * chartViewWidth / -viewRangeToFitScreen;
+              double width = (remainingWidth - 1) *
+                  chartViewWidth /
+                  -state.asLoaded.viewRangeToFitScreen;
 
               emit(
                 state.asLoaded.copyWith(
@@ -266,23 +282,23 @@ class TasksProjectEditBloc
 
             if (calculateDistanceToLeftBorder(task.startDate!) *
                             chartViewWidth /
-                            viewRangeToFitScreen +
+                            state.asLoaded.viewRangeToFitScreen +
                         (globalPositionDx -
                             asLoaded.initX -
                             (asLoaded.startPanChartPos - pixels)) >
                     0 &&
                 calculateDistanceToLeftBorder(task.startDate!) *
                             chartViewWidth /
-                            viewRangeToFitScreen +
+                            state.asLoaded.viewRangeToFitScreen +
                         (globalPositionDx -
                             asLoaded.initX -
                             (asLoaded.startPanChartPos - pixels)) <
                     chartViewWidth /
-                        viewRangeToFitScreen *
+                        state.asLoaded.viewRangeToFitScreen *
                         asLoaded.viewRange.length &&
                 calculateDistanceToRightBorder(task.expectedEndDate!) *
                             chartViewWidth /
-                            viewRangeToFitScreen -
+                            state.asLoaded.viewRangeToFitScreen -
                         (globalPositionDx -
                             asLoaded.initX -
                             (asLoaded.startPanChartPos - pixels)) >
@@ -299,6 +315,11 @@ class TasksProjectEditBloc
             } else {
               return;
             }
+          },
+          changeViewRangeToFitScreen: (value) {
+            emit(state.asLoaded.copyWith(
+              viewRangeToFitScreen: value,
+            ));
           },
         );
       },

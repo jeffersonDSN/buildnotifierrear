@@ -38,6 +38,7 @@ class GanttChartApp extends StatelessWidget {
             endDate,
             viewRange,
             tasks,
+            viewRangeToFitScreen,
             selectedTask,
             initX,
             width,

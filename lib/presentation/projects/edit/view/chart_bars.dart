@@ -37,7 +37,7 @@ class DependencyLine extends CustomPainter {
           double issueLeft =
               bloc.calculateDistanceToLeftBorder(task.startDate!) *
                       chartViewWidth /
-                      viewRangeToFitScreen +
+                      state.viewRangeToFitScreen +
                   ((state.isPanStartActive || state.isPanMiddleActive) &&
                           state.selectedTask == task
                       ? state.width
@@ -45,16 +45,27 @@ class DependencyLine extends CustomPainter {
           double depIssueLeft =
               bloc.calculateDistanceToLeftBorder(el.startDate!) *
                       chartViewWidth /
-                      viewRangeToFitScreen +
+                      state.viewRangeToFitScreen +
                   ((state.isPanStartActive || state.isPanMiddleActive) &&
                           state.selectedTask == el
                       ? state.width
                       : 0);
           canvas.drawPath(
             Path()
-              ..moveTo(issueLeft + 7.5, 15 + 2)
+              ..moveTo(
+                  issueLeft +
+                      (0.15 * (chartViewWidth / state.viewRangeToFitScreen)),
+                  (0.31 * (chartViewWidth / state.viewRangeToFitScreen)) +
+                      (0.04 * (chartViewWidth / state.viewRangeToFitScreen)))
               ..relativeLineTo(-(issueLeft - depIssueLeft), 0)
-              ..relativeLineTo(0, (-30 - 4) * indexDif.toDouble() + 14),
+              ..relativeLineTo(
+                  0,
+                  (-(0.60 * (chartViewWidth / state.viewRangeToFitScreen)) -
+                              (0.08 *
+                                  (chartViewWidth /
+                                      state.viewRangeToFitScreen))) *
+                          indexDif.toDouble() +
+                      (0.29 * (chartViewWidth / state.viewRangeToFitScreen))),
             Paint()
               ..color = AppColor.primaryColorSwatch
               ..style = PaintingStyle.stroke
@@ -122,8 +133,12 @@ class ChartBars extends StatelessWidget {
                         child: SizedBox(
                           width: state.viewRange.length *
                               chartViewWidth /
-                              viewRangeToFitScreen,
-                          height: (data.length * 34) - 4,
+                              state.viewRangeToFitScreen,
+                          height: (data.length *
+                                  (0.67 *
+                                      (chartViewWidth /
+                                          state.viewRangeToFitScreen))) -
+                              4,
                         ),
                       ),
                     ),
@@ -144,10 +159,11 @@ class ChartBars extends StatelessWidget {
                             : AppColor.green.withAlpha(100),
                         borderRadius: BorderRadius.circular(10.0),
                       ),
-                      height: 30.0,
+                      height:
+                          0.67 * (chartViewWidth / state.viewRangeToFitScreen),
                       width: remainingWidth *
                               chartViewWidth /
-                              viewRangeToFitScreen -
+                              state.viewRangeToFitScreen -
                           (state.isPanStartActive && task == state.selectedTask
                               ? state.width
                               : state.isPanEndActive &&
@@ -158,7 +174,7 @@ class ChartBars extends StatelessWidget {
                         left: bloc.calculateDistanceToLeftBorder(
                                     task.startDate!) *
                                 chartViewWidth /
-                                viewRangeToFitScreen +
+                                state.viewRangeToFitScreen +
                             ((state.isPanStartActive ||
                                         state.isPanMiddleActive) &&
                                     task == state.selectedTask
@@ -167,7 +183,7 @@ class ChartBars extends StatelessWidget {
                         right: bloc.calculateDistanceToRightBorder(
                                     task.expectedEndDate!) *
                                 chartViewWidth /
-                                viewRangeToFitScreen -
+                                state.viewRangeToFitScreen -
                             ((state.isPanEndActive ||
                                         state.isPanMiddleActive) &&
                                     task == state.selectedTask
@@ -214,7 +230,8 @@ class ChartBars extends StatelessWidget {
                             child: Container(
                               width: (remainingWidth *
                                                       chartViewWidth /
-                                                      viewRangeToFitScreen -
+                                                      state
+                                                          .viewRangeToFitScreen -
                                                   (state.isPanStartActive &&
                                                           task ==
                                                               state.selectedTask
@@ -230,7 +247,7 @@ class ChartBars extends StatelessWidget {
                                       15
                                   ? (remainingWidth *
                                                   chartViewWidth /
-                                                  viewRangeToFitScreen -
+                                                  state.viewRangeToFitScreen -
                                               (state.isPanStartActive &&
                                                       task == state.selectedTask
                                                   ? state.width
@@ -343,7 +360,8 @@ class ChartBars extends StatelessWidget {
                             child: Container(
                               width: (remainingWidth *
                                                       chartViewWidth /
-                                                      viewRangeToFitScreen -
+                                                      state
+                                                          .viewRangeToFitScreen -
                                                   (state.isPanStartActive &&
                                                           task ==
                                                               state.selectedTask
@@ -359,7 +377,7 @@ class ChartBars extends StatelessWidget {
                                       15
                                   ? (remainingWidth *
                                                   chartViewWidth /
-                                                  viewRangeToFitScreen -
+                                                  state.viewRangeToFitScreen -
                                               (state.isPanStartActive &&
                                                       task == state.selectedTask
                                                   ? state.width

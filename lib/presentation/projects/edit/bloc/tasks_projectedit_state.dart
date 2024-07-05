@@ -16,6 +16,7 @@ class TasksProjectEditState with _$TasksProjectEditState {
     required DateTime endDate,
     required List<DateTime> viewRange,
     required List<Task> tasks,
+    @Default(25) double viewRangeToFitScreen,
     Task? selectedTask,
     @Default(0) double initX,
     @Default(0) double width,
