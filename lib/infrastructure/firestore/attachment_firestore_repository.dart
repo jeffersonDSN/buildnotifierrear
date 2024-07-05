@@ -1,5 +1,5 @@
 import 'dart:typed_data';
-
+import 'package:http/http.dart' as http;
 import 'package:buildnotifierrear/domain/entities/enums/file_extension_enums.dart';
 import 'package:buildnotifierrear/domain/entities/file_item/file_item.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_file_item_repository.dart';
@@ -7,6 +7,7 @@ import 'package:buildnotifierrear/infrastructure/firestore/tenant_firestore_repo
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
 
 class AttachmentFirestoreRepository extends TenantFirestoreRepository
     implements AbsIAttachmentRepository {
@@ -35,8 +36,13 @@ class AttachmentFirestoreRepository extends TenantFirestoreRepository
   }
 
   @override
-  Future<Uint8List?> getFileData(String id) {
-    return storage.child(id).getData(1024 * 1024);
+  Future<Uint8List?> getFileData(String id) async {
+    try {
+      return await storage.child(id).getData(1024 * 1024);
+    } catch (e) {
+      print('Error fetching file data: $e');
+      return null;
+    }
   }
 
   @override
@@ -49,8 +55,12 @@ class AttachmentFirestoreRepository extends TenantFirestoreRepository
 
     var doc = await collection.add(item);
 
-    if (data != null) {
-      await storage.child(doc.id).putData(data);
+    try {
+      if (data != null) {
+        await storage.child(doc.id).putData(data);
+      }
+    } catch (e) {
+      print('Error fetching file data: $e');
     }
 
     return doc.id;

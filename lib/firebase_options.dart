@@ -48,12 +48,12 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyCkAWF90wB-qvCi22QlWEwI3CVhodZ0xGQ',
-    appId: '1:1056176794632:web:9324eda2dde955a8a375bd',
+    appId: '1:1056176794632:web:04375d29208c2b2ea375bd',
     messagingSenderId: '1056176794632',
     projectId: 'buildnotifier-e5c6e',
     authDomain: 'buildnotifier-e5c6e.firebaseapp.com',
     storageBucket: 'buildnotifier-e5c6e.appspot.com',
-    measurementId: 'G-V77G6QNPJR',
+    measurementId: 'G-52ZPXB989S',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(

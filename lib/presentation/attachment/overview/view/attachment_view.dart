@@ -1,5 +1,6 @@
 import 'dart:async';
-import 'dart:convert';
+import 'dart:html';
+import 'dart:typed_data';
 import 'package:buildnotifierrear/domain/entities/enums/file_extension_enums.dart';
 import 'package:buildnotifierrear/domain/entities/file_item/file_item.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
@@ -9,10 +10,8 @@ import 'package:buildnotifierrear/presentation/core/extensions/build_context_ext
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
-import 'package:file_selector/file_selector.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:path/path.dart' as path;
 
@@ -38,26 +37,41 @@ class AttachmentView extends IView {
       ),
     );
 
-    void addAttachment() async {
-      const typeGroup = XTypeGroup(
-        label: 'files',
-        extensions: ['pdf', 'jpg', 'jpeg', 'png', 'gif', 'txt', 'pptx'],
-      );
-      final XFile? file = await openFile(acceptedTypeGroups: [typeGroup]);
+    addAttachment() async {
+      FileUploadInputElement uploadInput = FileUploadInputElement();
+      uploadInput.accept = 'pdf, jpg, jpeg, png, gif, txt, pptx';
+      uploadInput.multiple = false;
+      uploadInput.click();
 
-      if (file != null) {
-        bloc.add(
-          AttachmentEvent.addFile(
-            fileItem: FileItem(
-              name: file.name,
-              folderId: bloc.state.asLoaded.folderId,
-              fileExtension:
-                  path.extension(file.name).toLowerCase().fileExtension,
-            ),
-            data: await file.readAsBytes(),
-          ),
-        );
-      }
+      uploadInput.onChange.listen((e) {
+        final files = uploadInput.files;
+        if (files != null && files.isNotEmpty) {
+          final file = files[0];
+          FileReader reader = FileReader();
+
+          Uint8List? uploadedImage;
+
+          reader.onLoadEnd.listen((e) {
+            uploadedImage = reader.result as Uint8List?;
+
+            print('type ${file.type}');
+
+            bloc.add(
+              AttachmentEvent.addFile(
+                fileItem: FileItem(
+                  name: file.name,
+                  folderId: bloc.state.asLoaded.folderId,
+                  fileExtension:
+                      path.extension(file.name).toLowerCase().fileExtension,
+                ),
+                data: uploadedImage,
+              ),
+            );
+          });
+
+          reader.readAsArrayBuffer(file);
+        }
+      });
     }
 
     Future<void> openItemMenu(Offset position, Size size) async {

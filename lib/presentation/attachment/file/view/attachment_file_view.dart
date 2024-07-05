@@ -7,7 +7,6 @@ import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/attachment/file/bloc/attachment_file_view_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
-import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:printing/printing.dart';
