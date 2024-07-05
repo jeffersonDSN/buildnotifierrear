@@ -26,6 +26,7 @@ mixin _$Mod {
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
     required TResult Function(ViewType type) chat,
+    required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,6 +40,7 @@ mixin _$Mod {
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
     TResult? Function(ViewType type)? chat,
+    TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -52,6 +54,7 @@ mixin _$Mod {
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
     TResult Function(ViewType type)? chat,
+    TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? settings,
     required TResult orElse(),
   }) =>
@@ -66,6 +69,7 @@ mixin _$Mod {
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModChat value) chat,
+    required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModSettings value) settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -79,6 +83,7 @@ mixin _$Mod {
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModChat value)? chat,
+    TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModSettings value)? settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -92,6 +97,7 @@ mixin _$Mod {
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
     TResult Function(ModChat value)? chat,
+    TResult Function(ModAttachment value)? attachment,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) =>
@@ -160,6 +166,7 @@ class _$ModHomeImpl implements ModHome {
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
     required TResult Function(ViewType type) chat,
+    required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() settings,
   }) {
     return home();
@@ -176,6 +183,7 @@ class _$ModHomeImpl implements ModHome {
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
     TResult? Function(ViewType type)? chat,
+    TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? settings,
   }) {
     return home?.call();
@@ -192,6 +200,7 @@ class _$ModHomeImpl implements ModHome {
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
     TResult Function(ViewType type)? chat,
+    TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -212,6 +221,7 @@ class _$ModHomeImpl implements ModHome {
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModChat value) chat,
+    required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModSettings value) settings,
   }) {
     return home(this);
@@ -228,6 +238,7 @@ class _$ModHomeImpl implements ModHome {
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModChat value)? chat,
+    TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModSettings value)? settings,
   }) {
     return home?.call(this);
@@ -244,6 +255,7 @@ class _$ModHomeImpl implements ModHome {
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
     TResult Function(ModChat value)? chat,
+    TResult Function(ModAttachment value)? attachment,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -340,6 +352,7 @@ class _$ModScheduleImpl implements ModSchedule {
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
     required TResult Function(ViewType type) chat,
+    required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() settings,
   }) {
     return schedule(type);
@@ -356,6 +369,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
     TResult? Function(ViewType type)? chat,
+    TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? settings,
   }) {
     return schedule?.call(type);
@@ -372,6 +386,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
     TResult Function(ViewType type)? chat,
+    TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -392,6 +407,7 @@ class _$ModScheduleImpl implements ModSchedule {
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModChat value) chat,
+    required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModSettings value) settings,
   }) {
     return schedule(this);
@@ -408,6 +424,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModChat value)? chat,
+    TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModSettings value)? settings,
   }) {
     return schedule?.call(this);
@@ -424,6 +441,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
     TResult Function(ModChat value)? chat,
+    TResult Function(ModAttachment value)? attachment,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -525,6 +543,7 @@ class _$ModProjectsImpl implements ModProjects {
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
     required TResult Function(ViewType type) chat,
+    required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() settings,
   }) {
     return projects(type);
@@ -541,6 +560,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
     TResult? Function(ViewType type)? chat,
+    TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? settings,
   }) {
     return projects?.call(type);
@@ -557,6 +577,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
     TResult Function(ViewType type)? chat,
+    TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -577,6 +598,7 @@ class _$ModProjectsImpl implements ModProjects {
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModChat value) chat,
+    required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModSettings value) settings,
   }) {
     return projects(this);
@@ -593,6 +615,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModChat value)? chat,
+    TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModSettings value)? settings,
   }) {
     return projects?.call(this);
@@ -609,6 +632,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
     TResult Function(ModChat value)? chat,
+    TResult Function(ModAttachment value)? attachment,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -710,6 +734,7 @@ class _$ModTasksImpl implements ModTasks {
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
     required TResult Function(ViewType type) chat,
+    required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() settings,
   }) {
     return tasks(type);
@@ -726,6 +751,7 @@ class _$ModTasksImpl implements ModTasks {
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
     TResult? Function(ViewType type)? chat,
+    TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? settings,
   }) {
     return tasks?.call(type);
@@ -742,6 +768,7 @@ class _$ModTasksImpl implements ModTasks {
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
     TResult Function(ViewType type)? chat,
+    TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -762,6 +789,7 @@ class _$ModTasksImpl implements ModTasks {
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModChat value) chat,
+    required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModSettings value) settings,
   }) {
     return tasks(this);
@@ -778,6 +806,7 @@ class _$ModTasksImpl implements ModTasks {
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModChat value)? chat,
+    TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModSettings value)? settings,
   }) {
     return tasks?.call(this);
@@ -794,6 +823,7 @@ class _$ModTasksImpl implements ModTasks {
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
     TResult Function(ModChat value)? chat,
+    TResult Function(ModAttachment value)? attachment,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -895,6 +925,7 @@ class _$ModClientsImpl implements ModClients {
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
     required TResult Function(ViewType type) chat,
+    required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() settings,
   }) {
     return clients(type);
@@ -911,6 +942,7 @@ class _$ModClientsImpl implements ModClients {
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
     TResult? Function(ViewType type)? chat,
+    TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? settings,
   }) {
     return clients?.call(type);
@@ -927,6 +959,7 @@ class _$ModClientsImpl implements ModClients {
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
     TResult Function(ViewType type)? chat,
+    TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -947,6 +980,7 @@ class _$ModClientsImpl implements ModClients {
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModChat value) chat,
+    required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModSettings value) settings,
   }) {
     return clients(this);
@@ -963,6 +997,7 @@ class _$ModClientsImpl implements ModClients {
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModChat value)? chat,
+    TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModSettings value)? settings,
   }) {
     return clients?.call(this);
@@ -979,6 +1014,7 @@ class _$ModClientsImpl implements ModClients {
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
     TResult Function(ModChat value)? chat,
+    TResult Function(ModAttachment value)? attachment,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -1080,6 +1116,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
     required TResult Function(ViewType type) chat,
+    required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() settings,
   }) {
     return employees(type);
@@ -1096,6 +1133,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
     TResult? Function(ViewType type)? chat,
+    TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? settings,
   }) {
     return employees?.call(type);
@@ -1112,6 +1150,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
     TResult Function(ViewType type)? chat,
+    TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -1132,6 +1171,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModChat value) chat,
+    required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModSettings value) settings,
   }) {
     return employees(this);
@@ -1148,6 +1188,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModChat value)? chat,
+    TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModSettings value)? settings,
   }) {
     return employees?.call(this);
@@ -1164,6 +1205,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
     TResult Function(ModChat value)? chat,
+    TResult Function(ModAttachment value)? attachment,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -1266,6 +1308,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
     required TResult Function(ViewType type) chat,
+    required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() settings,
   }) {
     return timecards(type);
@@ -1282,6 +1325,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
     TResult? Function(ViewType type)? chat,
+    TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? settings,
   }) {
     return timecards?.call(type);
@@ -1298,6 +1342,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
     TResult Function(ViewType type)? chat,
+    TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -1318,6 +1363,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModChat value) chat,
+    required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModSettings value) settings,
   }) {
     return timecards(this);
@@ -1334,6 +1380,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModChat value)? chat,
+    TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModSettings value)? settings,
   }) {
     return timecards?.call(this);
@@ -1350,6 +1397,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
     TResult Function(ModChat value)? chat,
+    TResult Function(ModAttachment value)? attachment,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -1452,6 +1500,7 @@ class _$ModChatImpl implements ModChat {
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
     required TResult Function(ViewType type) chat,
+    required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() settings,
   }) {
     return chat(type);
@@ -1468,6 +1517,7 @@ class _$ModChatImpl implements ModChat {
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
     TResult? Function(ViewType type)? chat,
+    TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? settings,
   }) {
     return chat?.call(type);
@@ -1484,6 +1534,7 @@ class _$ModChatImpl implements ModChat {
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
     TResult Function(ViewType type)? chat,
+    TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -1504,6 +1555,7 @@ class _$ModChatImpl implements ModChat {
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModChat value) chat,
+    required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModSettings value) settings,
   }) {
     return chat(this);
@@ -1520,6 +1572,7 @@ class _$ModChatImpl implements ModChat {
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModChat value)? chat,
+    TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModSettings value)? settings,
   }) {
     return chat?.call(this);
@@ -1536,6 +1589,7 @@ class _$ModChatImpl implements ModChat {
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
     TResult Function(ModChat value)? chat,
+    TResult Function(ModAttachment value)? attachment,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -1552,6 +1606,199 @@ abstract class ModChat implements Mod {
   ViewType get type;
   @JsonKey(ignore: true)
   _$$ModChatImplCopyWith<_$ModChatImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ModAttachmentImplCopyWith<$Res> {
+  factory _$$ModAttachmentImplCopyWith(
+          _$ModAttachmentImpl value, $Res Function(_$ModAttachmentImpl) then) =
+      __$$ModAttachmentImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({FileItem fileItemId});
+
+  $FileItemCopyWith<$Res> get fileItemId;
+}
+
+/// @nodoc
+class __$$ModAttachmentImplCopyWithImpl<$Res>
+    extends _$ModCopyWithImpl<$Res, _$ModAttachmentImpl>
+    implements _$$ModAttachmentImplCopyWith<$Res> {
+  __$$ModAttachmentImplCopyWithImpl(
+      _$ModAttachmentImpl _value, $Res Function(_$ModAttachmentImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? fileItemId = null,
+  }) {
+    return _then(_$ModAttachmentImpl(
+      fileItemId: null == fileItemId
+          ? _value.fileItemId
+          : fileItemId // ignore: cast_nullable_to_non_nullable
+              as FileItem,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $FileItemCopyWith<$Res> get fileItemId {
+    return $FileItemCopyWith<$Res>(_value.fileItemId, (value) {
+      return _then(_value.copyWith(fileItemId: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ModAttachmentImpl implements ModAttachment {
+  const _$ModAttachmentImpl({required this.fileItemId});
+
+  @override
+  final FileItem fileItemId;
+
+  @override
+  String toString() {
+    return 'Mod.attachment(fileItemId: $fileItemId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ModAttachmentImpl &&
+            (identical(other.fileItemId, fileItemId) ||
+                other.fileItemId == fileItemId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, fileItemId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModAttachmentImplCopyWith<_$ModAttachmentImpl> get copyWith =>
+      __$$ModAttachmentImplCopyWithImpl<_$ModAttachmentImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() home,
+    required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) projects,
+    required TResult Function(ViewType type) tasks,
+    required TResult Function(ViewType type) clients,
+    required TResult Function(ViewType type) employees,
+    required TResult Function(ViewType type) timecards,
+    required TResult Function(ViewType type) chat,
+    required TResult Function(FileItem fileItemId) attachment,
+    required TResult Function() settings,
+  }) {
+    return attachment(fileItemId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? home,
+    TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? projects,
+    TResult? Function(ViewType type)? tasks,
+    TResult? Function(ViewType type)? clients,
+    TResult? Function(ViewType type)? employees,
+    TResult? Function(ViewType type)? timecards,
+    TResult? Function(ViewType type)? chat,
+    TResult? Function(FileItem fileItemId)? attachment,
+    TResult? Function()? settings,
+  }) {
+    return attachment?.call(fileItemId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? home,
+    TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? projects,
+    TResult Function(ViewType type)? tasks,
+    TResult Function(ViewType type)? clients,
+    TResult Function(ViewType type)? employees,
+    TResult Function(ViewType type)? timecards,
+    TResult Function(ViewType type)? chat,
+    TResult Function(FileItem fileItemId)? attachment,
+    TResult Function()? settings,
+    required TResult orElse(),
+  }) {
+    if (attachment != null) {
+      return attachment(fileItemId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ModHome value) home,
+    required TResult Function(ModSchedule value) schedule,
+    required TResult Function(ModProjects value) projects,
+    required TResult Function(ModTasks value) tasks,
+    required TResult Function(ModClients value) clients,
+    required TResult Function(ModEmployees value) employees,
+    required TResult Function(ModTimecards value) timecards,
+    required TResult Function(ModChat value) chat,
+    required TResult Function(ModAttachment value) attachment,
+    required TResult Function(ModSettings value) settings,
+  }) {
+    return attachment(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ModHome value)? home,
+    TResult? Function(ModSchedule value)? schedule,
+    TResult? Function(ModProjects value)? projects,
+    TResult? Function(ModTasks value)? tasks,
+    TResult? Function(ModClients value)? clients,
+    TResult? Function(ModEmployees value)? employees,
+    TResult? Function(ModTimecards value)? timecards,
+    TResult? Function(ModChat value)? chat,
+    TResult? Function(ModAttachment value)? attachment,
+    TResult? Function(ModSettings value)? settings,
+  }) {
+    return attachment?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ModHome value)? home,
+    TResult Function(ModSchedule value)? schedule,
+    TResult Function(ModProjects value)? projects,
+    TResult Function(ModTasks value)? tasks,
+    TResult Function(ModClients value)? clients,
+    TResult Function(ModEmployees value)? employees,
+    TResult Function(ModTimecards value)? timecards,
+    TResult Function(ModChat value)? chat,
+    TResult Function(ModAttachment value)? attachment,
+    TResult Function(ModSettings value)? settings,
+    required TResult orElse(),
+  }) {
+    if (attachment != null) {
+      return attachment(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ModAttachment implements Mod {
+  const factory ModAttachment({required final FileItem fileItemId}) =
+      _$ModAttachmentImpl;
+
+  FileItem get fileItemId;
+  @JsonKey(ignore: true)
+  _$$ModAttachmentImplCopyWith<_$ModAttachmentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1601,6 +1848,7 @@ class _$ModSettingsImpl implements ModSettings {
     required TResult Function(ViewType type) employees,
     required TResult Function(ViewType type) timecards,
     required TResult Function(ViewType type) chat,
+    required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() settings,
   }) {
     return settings();
@@ -1617,6 +1865,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult? Function(ViewType type)? employees,
     TResult? Function(ViewType type)? timecards,
     TResult? Function(ViewType type)? chat,
+    TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? settings,
   }) {
     return settings?.call();
@@ -1633,6 +1882,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult Function(ViewType type)? employees,
     TResult Function(ViewType type)? timecards,
     TResult Function(ViewType type)? chat,
+    TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -1653,6 +1903,7 @@ class _$ModSettingsImpl implements ModSettings {
     required TResult Function(ModEmployees value) employees,
     required TResult Function(ModTimecards value) timecards,
     required TResult Function(ModChat value) chat,
+    required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModSettings value) settings,
   }) {
     return settings(this);
@@ -1669,6 +1920,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult? Function(ModEmployees value)? employees,
     TResult? Function(ModTimecards value)? timecards,
     TResult? Function(ModChat value)? chat,
+    TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModSettings value)? settings,
   }) {
     return settings?.call(this);
@@ -1685,6 +1937,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult Function(ModEmployees value)? employees,
     TResult Function(ModTimecards value)? timecards,
     TResult Function(ModChat value)? chat,
+    TResult Function(ModAttachment value)? attachment,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {

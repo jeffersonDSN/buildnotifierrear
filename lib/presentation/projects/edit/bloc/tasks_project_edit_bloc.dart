@@ -41,13 +41,32 @@ class TasksProjectEditBloc
 
             var tasks = await controller.getAllByProject(projectId);
 
+            List<Task> data = [...tasks];
+
+            data.sort((a, b) {
+              int startOrder = a.startDate!.compareTo(b.startDate!);
+
+              if (startOrder == 0) {
+                startOrder = a.expectedEndDate!.compareTo(b.expectedEndDate!);
+
+                if (startOrder == 0) {
+                  startOrder = a.startDate!.compareTo(b.startDate!);
+                  return startOrder;
+                } else {
+                  return startOrder;
+                }
+              } else {
+                return startOrder;
+              }
+            });
+
             emit(
               TasksProjectEditState.loaded(
                 projectId: projectId,
                 startDate: projectStartDate,
                 endDate: projectEndDate,
                 viewRange: viewRange,
-                tasks: tasks,
+                tasks: data,
               ),
             );
           },

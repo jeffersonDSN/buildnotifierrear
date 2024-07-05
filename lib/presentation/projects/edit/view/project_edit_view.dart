@@ -2,6 +2,7 @@ import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
+import 'package:buildnotifierrear/presentation/attachment/overview/attachment.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/bloc/project_edit_bloc.dart';
@@ -29,7 +30,7 @@ class ProjectEditView extends IView {
 
     return DefaultTabController(
       initialIndex: 0,
-      length: 3,
+      length: 4,
       child: Column(
         children: [
           Container(
@@ -39,7 +40,7 @@ class ProjectEditView extends IView {
               mainAxisSize: MainAxisSize.max,
               children: [
                 SizedBox(
-                  width: Sizes.size440,
+                  width: Sizes.size564,
                   child: Padding(
                     padding: const EdgeInsets.all(
                       Sizes.size8,
@@ -89,6 +90,13 @@ class ProjectEditView extends IView {
                                   ),
                                   gapWidth4,
                                   Text(context.tr.ganttChart),
+                                ],
+                              ),
+                              const Row(
+                                children: [
+                                  Icon(Icons.attach_file),
+                                  gapWidth4,
+                                  Text('Attachment'),
                                 ],
                               ),
                             ]),
@@ -179,6 +187,7 @@ class ProjectEditView extends IView {
                             create: () => [
                               Container(),
                               Container(),
+                              Container(),
                             ],
                             update: (id) {
                               return [
@@ -189,6 +198,9 @@ class ProjectEditView extends IView {
                                   projectId: project.id,
                                   startDate: project.startDate!,
                                   endDate: project.expectedCompletionDate!,
+                                ),
+                                Attachment(
+                                  folderId: project.id,
                                 ),
                               ];
                             },

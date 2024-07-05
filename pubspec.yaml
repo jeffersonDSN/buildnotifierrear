@@ -36,10 +36,14 @@ dependencies:
   universal_html: ^2.0.8
   shared_preferences: ^2.0.13
   url_launcher: ^6.0.20    
-  multi_select_flutter: ^4.0.0  
+  multi_select_flutter: ^4.0.0    
+  pdf: ^3.11.0
+  path_provider: ^2.1.3
+  printing: ^5.13.1
+  file_selector: ^1.0.3
+  firebase_storage: ^11.0.1
   
   
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,5 +1,7 @@
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
+import 'package:buildnotifierrear/domain/entities/file_item/file_item.dart';
 import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
+import 'package:buildnotifierrear/presentation/attachment/file/attachment_file.dart';
 import 'package:buildnotifierrear/presentation/chat/overview/chat_overview.dart';
 import 'package:buildnotifierrear/presentation/clients/edit/client_edit.dart';
 import 'package:buildnotifierrear/presentation/clients/overview/clients_overview.dart';
@@ -46,6 +48,10 @@ class Mod with _$Mod {
   const factory Mod.chat({
     required ViewType type,
   }) = ModChat;
+
+  const factory Mod.attachment({
+    required FileItem fileItemId,
+  }) = ModAttachment;
 
   const factory Mod.settings() = ModSettings;
 }
@@ -107,6 +113,9 @@ extension OnModel on Mod {
         create: () => const ChatOverview(),
         update: (id) => const ChatOverview(),
       ),
+      attachment: (fileItem) => AttachmentFile(
+        fileItem: fileItem,
+      ),
       settings: () => const SettingsEdit(),
     );
   }
@@ -149,6 +158,8 @@ extension OnModel on Mod {
         create: () => context.tr.chat,
         update: (id) => context.tr.chat,
       ),
+      //TO DO
+      attachment: (fileItemId) => '',
       settings: () => context.tr.settings,
     );
   }
