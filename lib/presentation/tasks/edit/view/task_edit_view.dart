@@ -1,8 +1,6 @@
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
-import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
+import 'package:buildnotifierrear/presentation/attachment/overview/attachment.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
-import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
-import 'package:buildnotifierrear/presentation/core/widget/base_custom_card_widget.dart';
 import 'package:buildnotifierrear/presentation/tasks/edit/bloc/task_edit_bloc.dart';
 import 'package:buildnotifierrear/presentation/tasks/edit/view/task_edit_form_view.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
@@ -10,7 +8,7 @@ import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class TaskEditView extends IView {
+class TaskEditView extends StatelessWidget {
   final CrudType type;
 
   const TaskEditView({
@@ -28,44 +26,97 @@ class TaskEditView extends IView {
       ),
     );
 
-    return BaseCustomCardWidget(
-      body: const TaskEditFormView(),
-      footer: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+    return DefaultTabController(
+      initialIndex: 0,
+      length: 2,
+      child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(Sizes.size8),
-            child: FilledButton.icon(
-              style: const ButtonStyle(
-                backgroundColor: WidgetStatePropertyAll(
-                  AppColor.warning,
+          Container(
+            color: AppColor.lightColor,
+            height: Sizes.size64,
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                SizedBox(
+                  width: Sizes.size300,
+                  child: Padding(
+                    padding: const EdgeInsets.all(
+                      Sizes.size8,
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(
+                          Sizes.size4,
+                        ),
+                        color: AppColor.greyColorSwatch.shade200,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(2),
+                        child: TabBar(
+                          indicator: BoxDecoration(
+                            borderRadius: BorderRadius.circular(
+                              Sizes.size4,
+                            ),
+                            color: Colors.white,
+                          ),
+                          labelColor: Colors.black,
+                          unselectedLabelColor: Colors.black,
+                          indicatorSize: TabBarIndicatorSize.tab,
+                          dividerColor: Colors.transparent,
+                          tabs: [
+                            Row(
+                              children: [
+                                const Icon(Icons.task),
+                                gapWidth4,
+                                Text(context.tr.tasks),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                const Icon(Icons.attach_file),
+                                gapWidth4,
+                                Text(context.tr.attachment),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-              icon: const Icon(Icons.close),
-              label: Text(context.tr.close),
-              onPressed: () {
-                appBloc(context).add(
-                  const AppEvent.goBack(),
-                );
-              },
+              ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(Sizes.size8),
-            child: FilledButton.icon(
-              icon: const Icon(
-                Icons.check,
-              ),
-              label: Text(context.tr.save),
-              onPressed: () {
-                bloc.add(
-                  TaskEditEvent.save(
-                    onSave: () {
-                      appBloc(context).add(
-                        const AppEvent.goBack(),
-                      );
-                    },
+          const Divider(
+            height: 2,
+          ),
+          Expanded(
+            child: BlocBuilder<TaskEditBloc, TaskEditState>(
+              bloc: bloc,
+              builder: (context, state) {
+                return state.maybeWhen(
+                  orElse: () => const Center(
+                    child: CircularProgressIndicator(),
                   ),
+                  loaded: (type, task, projects) {
+                    return TabBarView(
+                      children: [
+                        TaskEditFormView(
+                          key: GlobalKey(),
+                        ),
+                        ...type.when(
+                          create: () => [
+                            Container(),
+                          ],
+                          update: (id) => [
+                            Attachment(
+                              folderId: task.id,
+                            )
+                          ],
+                        )
+                      ],
+                    );
+                  },
                 );
               },
             ),

@@ -1,8 +1,10 @@
 import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/domain/entities/enums/task_priority_enums.dart';
 import 'package:buildnotifierrear/domain/entities/enums/task_status_enums.dart';
+import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/assign_to/assign_to_list.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
+import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_date_input_widget.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_dropdown_button_field.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
@@ -13,7 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class TaskEditFormView extends StatelessWidget {
+class TaskEditFormView extends IView {
   const TaskEditFormView({super.key});
 
   @override
@@ -28,17 +30,15 @@ class TaskEditFormView extends StatelessWidget {
     }
 
     var bloc = BlocProvider.of<TaskEditBloc>(context);
+    var state = bloc.state.asLoaded;
 
-    return BlocBuilder<TaskEditBloc, TaskEditState>(
-      builder: (context, state) {
-        return state.maybeWhen(
-          orElse: () {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          },
-          loaded: (crudType, task, projects) {
-            return SingleChildScrollView(
+    return Container(
+      color: AppColor.lightColor,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
               child: Form(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(
@@ -55,7 +55,7 @@ class TaskEditFormView extends StatelessWidget {
                           Expanded(
                             child: BaseTextFormField(
                               label: context.tr.title,
-                              initialValue: task.title,
+                              initialValue: state.task.title,
                               onChanged: (value) {
                                 bloc.add(
                                   TaskEditEvent.updateTitle(
@@ -70,8 +70,8 @@ class TaskEditFormView extends StatelessWidget {
                             child: BaseDropdownButtonField(
                               label: context.tr.project,
                               value: (
-                                id: task.projectId,
-                                name: task.projectName,
+                                id: state.task.projectId,
+                                name: state.task.projectName,
                               ),
                               isExpanded: true,
                               items: [
@@ -82,7 +82,7 @@ class TaskEditFormView extends StatelessWidget {
                                   ),
                                   title: '',
                                 ),
-                                ...projects.map(
+                                ...state.projects.map(
                                   (project) {
                                     return DropdownItem(
                                       value: (
@@ -113,7 +113,7 @@ class TaskEditFormView extends StatelessWidget {
                         children: [
                           BaseDateInputWidget(
                             label: context.tr.startDate,
-                            value: task.startDate,
+                            value: state.task.startDate,
                             onPressedChangeDate: () async {
                               var date = await getDate();
 
@@ -136,7 +136,7 @@ class TaskEditFormView extends StatelessWidget {
                           gapWidth8,
                           BaseDateInputWidget(
                             label: context.tr.expectedEndDate,
-                            value: task.expectedEndDate,
+                            value: state.task.expectedEndDate,
                             onPressedChangeDate: () async {
                               var date = await getDate();
 
@@ -160,7 +160,7 @@ class TaskEditFormView extends StatelessWidget {
                           Expanded(
                             child: BaseTextFormField(
                               label: context.tr.estEffort,
-                              initialValue: task.estimatedEffort,
+                              initialValue: state.task.estimatedEffort,
                               hintText: context.tr.hours,
                               inputFormatters: <TextInputFormatter>[
                                 FilteringTextInputFormatter.allow(
@@ -194,7 +194,7 @@ class TaskEditFormView extends StatelessWidget {
                           Expanded(
                             child: BaseDropdownButtonField(
                               label: context.tr.priority,
-                              value: task.priority,
+                              value: state.task.priority,
                               isExpanded: true,
                               items: TaskPriority.values.map((priority) {
                                 return DropdownItem(
@@ -217,7 +217,7 @@ class TaskEditFormView extends StatelessWidget {
                           Expanded(
                             child: BaseDropdownButtonField(
                               label: context.tr.status,
-                              value: task.status,
+                              value: state.task.status,
                               isExpanded: true,
                               items: TaskStatus.values.map((status) {
                                 return DropdownItem(
@@ -243,7 +243,8 @@ class TaskEditFormView extends StatelessWidget {
                         key: Key('notes-${context.languageCode}'),
                         label: context.tr.notes,
                         maxLines: 5,
-                        initialValue: task.notesList[context.languageCode],
+                        initialValue:
+                            state.task.notesList[context.languageCode],
                         onChanged: (value) {
                           bloc.add(
                             TaskEditEvent.changeNotes(
@@ -276,7 +277,7 @@ class TaskEditFormView extends StatelessWidget {
                                 context: context,
                                 builder: (context) {
                                   return AssignToList(
-                                    assignTo: task.assignTo,
+                                    assignTo: state.task.assignTo,
                                   );
                                 },
                               );
@@ -296,9 +297,9 @@ class TaskEditFormView extends StatelessWidget {
                       SizedBox(
                         height: Sizes.size152,
                         child: ListView.builder(
-                          itemCount: task.assignTo.length,
+                          itemCount: state.task.assignTo.length,
                           itemBuilder: (context, index) {
-                            var employee = task.assignTo[index];
+                            var employee = state.task.assignTo[index];
 
                             return ListTile(
                               title: Text(
@@ -325,10 +326,53 @@ class TaskEditFormView extends StatelessWidget {
                   ),
                 ),
               ),
-            );
-          },
-        );
-      },
+            ),
+          ),
+          const Divider(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(Sizes.size8),
+                child: FilledButton.icon(
+                  style: const ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(
+                      AppColor.warning,
+                    ),
+                  ),
+                  icon: const Icon(Icons.close),
+                  label: Text(context.tr.close),
+                  onPressed: () {
+                    appBloc(context).add(
+                      const AppEvent.goBack(),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(Sizes.size8),
+                child: FilledButton.icon(
+                  icon: const Icon(
+                    Icons.check,
+                  ),
+                  label: Text(context.tr.save),
+                  onPressed: () {
+                    bloc.add(
+                      TaskEditEvent.save(
+                        onSave: () {
+                          appBloc(context).add(
+                            const AppEvent.goBack(),
+                          );
+                        },
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

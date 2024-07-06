@@ -280,7 +280,7 @@ class AttachmentView extends IView {
                             padding: const EdgeInsets.all(Sizes.size8),
                             child: FilledButton.icon(
                               icon: const Icon(Icons.add),
-                              label: const Text('Add an attachment'),
+                              label: Text(context.tr.addAttachment),
                               onPressed: () {
                                 addAttachment();
                               },

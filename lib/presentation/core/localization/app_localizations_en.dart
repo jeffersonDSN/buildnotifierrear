@@ -341,4 +341,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ganttChart => 'Gantt chart';
+
+  @override
+  String get attachment => 'Attachment';
+
+  @override
+  String get addAttachment => 'Add attachment';
 }

@@ -1,5 +1,9 @@
 import 'package:buildnotifierrear/domain/entities/enums/project_status_enums.dart';
+import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
+import 'package:buildnotifierrear/presentation/app/model/mod.dart';
+import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
+import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_date_input_widget.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_dropdown_button_field.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
@@ -10,7 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ProjectEditFormView extends StatelessWidget {
+class ProjectEditFormView extends IView {
   const ProjectEditFormView({super.key});
 
   @override
@@ -25,18 +29,15 @@ class ProjectEditFormView extends StatelessWidget {
     }
 
     var bloc = BlocProvider.of<ProjectEditBloc>(context);
+    var state = bloc.state.asLoaded;
 
-    return BlocBuilder<ProjectEditBloc, ProjectEditState>(
-      bloc: bloc,
-      builder: (context, state) {
-        return bloc.state.maybeWhen(
-          orElse: () {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          },
-          loaded: (type, project, clients, states) {
-            return SingleChildScrollView(
+    return Container(
+      color: AppColor.lightColor,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
               child: Form(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(
@@ -53,7 +54,7 @@ class ProjectEditFormView extends StatelessWidget {
                           Expanded(
                             child: BaseTextFormField(
                               label: context.tr.name,
-                              initialValue: project.name,
+                              initialValue: state.project.name,
                               onChanged: (value) {
                                 bloc.add(
                                   ProjectEditEvent.changeName(
@@ -68,9 +69,9 @@ class ProjectEditFormView extends StatelessWidget {
                             child: BaseDropdownButtonField(
                               label: context.tr.client,
                               value: (
-                                id: project.clientId,
-                                firstName: project.clientFirstname,
-                                lastName: project.clientLastname,
+                                id: state.project.clientId,
+                                firstName: state.project.clientFirstname,
+                                lastName: state.project.clientLastname,
                               ),
                               isExpanded: true,
                               items: [
@@ -82,7 +83,7 @@ class ProjectEditFormView extends StatelessWidget {
                                   ),
                                   title: '',
                                 ),
-                                ...clients.map((cliente) {
+                                ...state.clients.map((cliente) {
                                   return DropdownItem(
                                     value: (
                                       id: cliente.id,
@@ -114,7 +115,7 @@ class ProjectEditFormView extends StatelessWidget {
                         children: [
                           BaseDateInputWidget(
                             label: context.tr.startDate,
-                            value: project.startDate,
+                            value: state.project.startDate,
                             onPressedChangeDate: () async {
                               var date = await getDate();
 
@@ -137,7 +138,7 @@ class ProjectEditFormView extends StatelessWidget {
                           gapWidth16,
                           BaseDateInputWidget(
                             label: context.tr.expectedEndDate,
-                            value: project.expectedCompletionDate,
+                            value: state.project.expectedCompletionDate,
                             onPressedChangeDate: () async {
                               var date = await getDate();
 
@@ -167,8 +168,8 @@ class ProjectEditFormView extends StatelessWidget {
                                   RegExp(r'^\d+\.?\d{0,2}'),
                                 ),
                               ],
-                              initialValue: project.budget > 0
-                                  ? project.budget.toStringAsFixed(2)
+                              initialValue: state.project.budget > 0
+                                  ? state.project.budget.toStringAsFixed(2)
                                   : '',
                               onChanged: (value) {
                                 bloc.add(
@@ -184,7 +185,7 @@ class ProjectEditFormView extends StatelessWidget {
                             flex: 2,
                             child: BaseDropdownButtonField(
                               label: context.tr.status,
-                              value: project.status,
+                              value: state.project.status,
                               isExpanded: true,
                               items: ProjectStatus.values.map(
                                 (status) {
@@ -226,7 +227,7 @@ class ProjectEditFormView extends StatelessWidget {
                             child: BaseTextFormField(
                               label: context.tr.address,
                               hintText: context.tr.streetAddress,
-                              initialValue: project.address,
+                              initialValue: state.project.address,
                               onChanged: (value) {
                                 bloc.add(
                                   ProjectEditEvent.changeAddress(
@@ -242,7 +243,7 @@ class ProjectEditFormView extends StatelessWidget {
                             child: BaseTextFormField(
                               label: '',
                               hintText: context.tr.aptUnit,
-                              initialValue: project.address2,
+                              initialValue: state.project.address2,
                               onChanged: (value) {
                                 bloc.add(
                                   ProjectEditEvent.changeAddress2(
@@ -257,7 +258,7 @@ class ProjectEditFormView extends StatelessWidget {
                             flex: 2,
                             child: BaseTextFormField(
                               label: context.tr.city,
-                              initialValue: project.city,
+                              initialValue: state.project.city,
                               onChanged: (value) {
                                 bloc.add(
                                   ProjectEditEvent.changeCity(
@@ -272,13 +273,13 @@ class ProjectEditFormView extends StatelessWidget {
                             flex: 2,
                             child: BaseDropdownButtonField(
                               label: context.tr.state,
-                              value: project.state,
+                              value: state.project.state,
                               items: [
                                 DropdownItem(
                                   value: '',
                                   title: '',
                                 ),
-                                ...states.map((state) {
+                                ...state.states.map((state) {
                                   return DropdownItem(
                                     value: state.name,
                                     title: state.name,
@@ -299,7 +300,7 @@ class ProjectEditFormView extends StatelessWidget {
                             flex: 1,
                             child: BaseTextFormField(
                               label: context.tr.zipCode,
-                              initialValue: project.zipCode,
+                              initialValue: state.project.zipCode,
                               onChanged: (value) {
                                 bloc.add(
                                   ProjectEditEvent.changeZipCode(
@@ -328,7 +329,7 @@ class ProjectEditFormView extends StatelessWidget {
                         label: context.tr.description,
                         maxLines: 7,
                         initialValue:
-                            project.descriptionList[context.languageCode],
+                            state.project.descriptionList[context.languageCode],
                         onChanged: (value) {
                           bloc.add(
                             ProjectEditEvent.changeDescription(value: value),
@@ -339,10 +340,57 @@ class ProjectEditFormView extends StatelessWidget {
                   ),
                 ),
               ),
-            );
-          },
-        );
-      },
+            ),
+          ),
+          const Divider(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(Sizes.size8),
+                child: FilledButton.icon(
+                  style: const ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(
+                      AppColor.warning,
+                    ),
+                  ),
+                  icon: const Icon(Icons.close),
+                  label: Text(context.tr.close),
+                  onPressed: () {
+                    appBloc(context).add(
+                      const AppEvent.changeView(
+                        mod: Mod.projects(
+                          type: ViewType.overview(),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(Sizes.size8),
+                child: FilledButton.icon(
+                  icon: const Icon(
+                    Icons.check,
+                  ),
+                  label: Text(context.tr.save),
+                  onPressed: () {
+                    bloc.add(
+                      ProjectEditEvent.save(
+                        callback: () {
+                          appBloc(context).add(
+                            const AppEvent.goBack(),
+                          );
+                        },
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 }

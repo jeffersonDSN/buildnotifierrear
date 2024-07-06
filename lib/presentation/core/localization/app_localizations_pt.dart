@@ -342,4 +342,10 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get ganttChart => 'Gráfico de Gantt';
+
+  @override
+  String get attachment => 'Anexo';
+
+  @override
+  String get addAttachment => 'Adicionar anexo';
 }

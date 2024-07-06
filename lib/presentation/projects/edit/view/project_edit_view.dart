@@ -1,7 +1,4 @@
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
-import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
-import 'package:buildnotifierrear/presentation/app/model/mod.dart';
-import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/attachment/overview/attachment.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
@@ -40,7 +37,7 @@ class ProjectEditView extends IView {
               mainAxisSize: MainAxisSize.max,
               children: [
                 SizedBox(
-                  width: Sizes.size564,
+                  width: Sizes.size700,
                   child: Padding(
                     padding: const EdgeInsets.all(
                       Sizes.size8,
@@ -92,11 +89,11 @@ class ProjectEditView extends IView {
                                   Text(context.tr.ganttChart),
                                 ],
                               ),
-                              const Row(
+                              Row(
                                 children: [
-                                  Icon(Icons.attach_file),
+                                  const Icon(Icons.attach_file),
                                   gapWidth4,
-                                  Text('Attachment'),
+                                  Text(context.tr.attachment),
                                 ],
                               ),
                             ]),
@@ -122,66 +119,8 @@ class ProjectEditView extends IView {
                       return TabBarView(
                         physics: const NeverScrollableScrollPhysics(),
                         children: [
-                          Container(
-                            color: AppColor.lightColor,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Expanded(
-                                  child: ProjectEditFormView(),
-                                ),
-                                const Divider(),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.all(Sizes.size8),
-                                      child: FilledButton.icon(
-                                        style: const ButtonStyle(
-                                          backgroundColor:
-                                              WidgetStatePropertyAll(
-                                            AppColor.warning,
-                                          ),
-                                        ),
-                                        icon: const Icon(Icons.close),
-                                        label: Text(context.tr.close),
-                                        onPressed: () {
-                                          appBloc(context).add(
-                                            const AppEvent.changeView(
-                                              mod: Mod.projects(
-                                                type: ViewType.overview(),
-                                              ),
-                                            ),
-                                          );
-                                        },
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.all(Sizes.size8),
-                                      child: FilledButton.icon(
-                                        icon: const Icon(
-                                          Icons.check,
-                                        ),
-                                        label: Text(context.tr.save),
-                                        onPressed: () {
-                                          bloc.add(
-                                            ProjectEditEvent.save(
-                                              callback: () {
-                                                appBloc(context).add(
-                                                  const AppEvent.goBack(),
-                                                );
-                                              },
-                                            ),
-                                          );
-                                        },
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
+                          ProjectEditFormView(
+                            key: GlobalKey(),
                           ),
                           ...type.when(
                             create: () => [

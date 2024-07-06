@@ -259,6 +259,10 @@ abstract class AppLocalizations {
   String get board;
 
   String get ganttChart;
+
+  String get attachment;
+
+  String get addAttachment;
 }
 
 class _AppLocalizationsDelegate
