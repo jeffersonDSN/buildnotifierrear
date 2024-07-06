@@ -16,6 +16,7 @@ _$ProjectImpl _$$ProjectImplFromJson(Map<String, dynamic> json) =>
       expectedCompletionDate: json['expectedCompletionDate'] == null
           ? null
           : DateTime.parse(json['expectedCompletionDate'] as String),
+      estimatedEffort: json['estimatedEffort'] as String? ?? '',
       budget: (json['budget'] as num?)?.toDouble() ?? 0,
       status: json['status'] == null
           ? ProjectStatus.planning
@@ -45,6 +46,7 @@ Map<String, dynamic> _$$ProjectImplToJson(_$ProjectImpl instance) =>
       'startDate': instance.startDate?.toIso8601String(),
       'expectedCompletionDate':
           instance.expectedCompletionDate?.toIso8601String(),
+      'estimatedEffort': instance.estimatedEffort,
       'budget': instance.budget,
       'status': const ProjectTypeConverter().toJson(instance.status),
       'clientId': instance.clientId,

@@ -132,6 +132,15 @@ class ProjectEditBloc extends Bloc<ProjectEditEvent, ProjectEditState> {
             ),
           );
         },
+        changeEstimatedEffort: (value) {
+          emit(
+            state.asLoaded.copyWith(
+              project: state.asLoaded.project.copyWith(
+                estimatedEffort: value,
+              ),
+            ),
+          );
+        },
         changeBudget: (value) {
           emit(
             state.asLoaded.copyWith(

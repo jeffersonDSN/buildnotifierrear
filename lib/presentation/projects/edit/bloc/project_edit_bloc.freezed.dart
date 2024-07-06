@@ -30,6 +30,7 @@ mixin _$ProjectEditEvent {
         changeClient,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
     required TResult Function(double value) changeBudget,
     required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
@@ -49,6 +50,7 @@ mixin _$ProjectEditEvent {
         changeClient,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
     TResult? Function(double value)? changeBudget,
     TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
@@ -68,6 +70,7 @@ mixin _$ProjectEditEvent {
         changeClient,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
     TResult Function(double value)? changeBudget,
     TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
@@ -92,6 +95,8 @@ mixin _$ProjectEditEvent {
         changeStartDate,
     required TResult Function(ProjectEditEventChangeExpectedEndDate value)
         changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
     required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
     required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
     required TResult Function(ProjectEditEventChangeDescription value)
@@ -112,6 +117,8 @@ mixin _$ProjectEditEvent {
     TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult? Function(ProjectEditEventChangeDescription value)?
@@ -132,6 +139,8 @@ mixin _$ProjectEditEvent {
     TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult Function(ProjectEditEventChangeDescription value)?
@@ -248,6 +257,7 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
         changeClient,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
     required TResult Function(double value) changeBudget,
     required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
@@ -270,6 +280,7 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
         changeClient,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
     TResult? Function(double value)? changeBudget,
     TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
@@ -292,6 +303,7 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
         changeClient,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
     TResult Function(double value)? changeBudget,
     TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
@@ -322,6 +334,8 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
         changeStartDate,
     required TResult Function(ProjectEditEventChangeExpectedEndDate value)
         changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
     required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
     required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
     required TResult Function(ProjectEditEventChangeDescription value)
@@ -345,6 +359,8 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult? Function(ProjectEditEventChangeDescription value)?
@@ -368,6 +384,8 @@ class _$ProjectEditEventLoadImpl implements ProjectEditEventLoad {
     TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult Function(ProjectEditEventChangeDescription value)?
@@ -472,6 +490,7 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
         changeClient,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
     required TResult Function(double value) changeBudget,
     required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
@@ -494,6 +513,7 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
         changeClient,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
     TResult? Function(double value)? changeBudget,
     TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
@@ -516,6 +536,7 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
         changeClient,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
     TResult Function(double value)? changeBudget,
     TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
@@ -546,6 +567,8 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
         changeStartDate,
     required TResult Function(ProjectEditEventChangeExpectedEndDate value)
         changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
     required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
     required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
     required TResult Function(ProjectEditEventChangeDescription value)
@@ -569,6 +592,8 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult? Function(ProjectEditEventChangeDescription value)?
@@ -592,6 +617,8 @@ class _$ProjectEditEventChangeNameImpl implements ProjectEditEventChangeName {
     TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult Function(ProjectEditEventChangeDescription value)?
@@ -698,6 +725,7 @@ class _$ProjectEditEventChangeZipCodeImpl
         changeClient,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
     required TResult Function(double value) changeBudget,
     required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
@@ -720,6 +748,7 @@ class _$ProjectEditEventChangeZipCodeImpl
         changeClient,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
     TResult? Function(double value)? changeBudget,
     TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
@@ -742,6 +771,7 @@ class _$ProjectEditEventChangeZipCodeImpl
         changeClient,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
     TResult Function(double value)? changeBudget,
     TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
@@ -772,6 +802,8 @@ class _$ProjectEditEventChangeZipCodeImpl
         changeStartDate,
     required TResult Function(ProjectEditEventChangeExpectedEndDate value)
         changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
     required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
     required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
     required TResult Function(ProjectEditEventChangeDescription value)
@@ -795,6 +827,8 @@ class _$ProjectEditEventChangeZipCodeImpl
     TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult? Function(ProjectEditEventChangeDescription value)?
@@ -818,6 +852,8 @@ class _$ProjectEditEventChangeZipCodeImpl
     TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult Function(ProjectEditEventChangeDescription value)?
@@ -923,6 +959,7 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
         changeClient,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
     required TResult Function(double value) changeBudget,
     required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
@@ -945,6 +982,7 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
         changeClient,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
     TResult? Function(double value)? changeBudget,
     TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
@@ -967,6 +1005,7 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
         changeClient,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
     TResult Function(double value)? changeBudget,
     TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
@@ -997,6 +1036,8 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
         changeStartDate,
     required TResult Function(ProjectEditEventChangeExpectedEndDate value)
         changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
     required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
     required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
     required TResult Function(ProjectEditEventChangeDescription value)
@@ -1020,6 +1061,8 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult? Function(ProjectEditEventChangeDescription value)?
@@ -1043,6 +1086,8 @@ class _$ProjectEditEventChangeStateImpl implements ProjectEditEventChangeState {
     TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult Function(ProjectEditEventChangeDescription value)?
@@ -1147,6 +1192,7 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
         changeClient,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
     required TResult Function(double value) changeBudget,
     required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
@@ -1169,6 +1215,7 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
         changeClient,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
     TResult? Function(double value)? changeBudget,
     TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
@@ -1191,6 +1238,7 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
         changeClient,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
     TResult Function(double value)? changeBudget,
     TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
@@ -1221,6 +1269,8 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
         changeStartDate,
     required TResult Function(ProjectEditEventChangeExpectedEndDate value)
         changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
     required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
     required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
     required TResult Function(ProjectEditEventChangeDescription value)
@@ -1244,6 +1294,8 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult? Function(ProjectEditEventChangeDescription value)?
@@ -1267,6 +1319,8 @@ class _$ProjectEditEventChangeCityImpl implements ProjectEditEventChangeCity {
     TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult Function(ProjectEditEventChangeDescription value)?
@@ -1373,6 +1427,7 @@ class _$ProjectEditEventChangeAddressImpl
         changeClient,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
     required TResult Function(double value) changeBudget,
     required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
@@ -1395,6 +1450,7 @@ class _$ProjectEditEventChangeAddressImpl
         changeClient,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
     TResult? Function(double value)? changeBudget,
     TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
@@ -1417,6 +1473,7 @@ class _$ProjectEditEventChangeAddressImpl
         changeClient,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
     TResult Function(double value)? changeBudget,
     TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
@@ -1447,6 +1504,8 @@ class _$ProjectEditEventChangeAddressImpl
         changeStartDate,
     required TResult Function(ProjectEditEventChangeExpectedEndDate value)
         changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
     required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
     required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
     required TResult Function(ProjectEditEventChangeDescription value)
@@ -1470,6 +1529,8 @@ class _$ProjectEditEventChangeAddressImpl
     TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult? Function(ProjectEditEventChangeDescription value)?
@@ -1493,6 +1554,8 @@ class _$ProjectEditEventChangeAddressImpl
     TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult Function(ProjectEditEventChangeDescription value)?
@@ -1600,6 +1663,7 @@ class _$ProjectEditEventChangeAddress2Impl
         changeClient,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
     required TResult Function(double value) changeBudget,
     required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
@@ -1622,6 +1686,7 @@ class _$ProjectEditEventChangeAddress2Impl
         changeClient,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
     TResult? Function(double value)? changeBudget,
     TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
@@ -1644,6 +1709,7 @@ class _$ProjectEditEventChangeAddress2Impl
         changeClient,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
     TResult Function(double value)? changeBudget,
     TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
@@ -1674,6 +1740,8 @@ class _$ProjectEditEventChangeAddress2Impl
         changeStartDate,
     required TResult Function(ProjectEditEventChangeExpectedEndDate value)
         changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
     required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
     required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
     required TResult Function(ProjectEditEventChangeDescription value)
@@ -1697,6 +1765,8 @@ class _$ProjectEditEventChangeAddress2Impl
     TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult? Function(ProjectEditEventChangeDescription value)?
@@ -1720,6 +1790,8 @@ class _$ProjectEditEventChangeAddress2Impl
     TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult Function(ProjectEditEventChangeDescription value)?
@@ -1849,6 +1921,7 @@ class _$ProjectEditEventChangeClientImpl
         changeClient,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
     required TResult Function(double value) changeBudget,
     required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
@@ -1871,6 +1944,7 @@ class _$ProjectEditEventChangeClientImpl
         changeClient,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
     TResult? Function(double value)? changeBudget,
     TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
@@ -1893,6 +1967,7 @@ class _$ProjectEditEventChangeClientImpl
         changeClient,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
     TResult Function(double value)? changeBudget,
     TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
@@ -1923,6 +1998,8 @@ class _$ProjectEditEventChangeClientImpl
         changeStartDate,
     required TResult Function(ProjectEditEventChangeExpectedEndDate value)
         changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
     required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
     required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
     required TResult Function(ProjectEditEventChangeDescription value)
@@ -1946,6 +2023,8 @@ class _$ProjectEditEventChangeClientImpl
     TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult? Function(ProjectEditEventChangeDescription value)?
@@ -1969,6 +2048,8 @@ class _$ProjectEditEventChangeClientImpl
     TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult Function(ProjectEditEventChangeDescription value)?
@@ -2080,6 +2161,7 @@ class _$ProjectEditEventChangeStartDateImpl
         changeClient,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
     required TResult Function(double value) changeBudget,
     required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
@@ -2102,6 +2184,7 @@ class _$ProjectEditEventChangeStartDateImpl
         changeClient,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
     TResult? Function(double value)? changeBudget,
     TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
@@ -2124,6 +2207,7 @@ class _$ProjectEditEventChangeStartDateImpl
         changeClient,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
     TResult Function(double value)? changeBudget,
     TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
@@ -2154,6 +2238,8 @@ class _$ProjectEditEventChangeStartDateImpl
         changeStartDate,
     required TResult Function(ProjectEditEventChangeExpectedEndDate value)
         changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
     required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
     required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
     required TResult Function(ProjectEditEventChangeDescription value)
@@ -2177,6 +2263,8 @@ class _$ProjectEditEventChangeStartDateImpl
     TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult? Function(ProjectEditEventChangeDescription value)?
@@ -2200,6 +2288,8 @@ class _$ProjectEditEventChangeStartDateImpl
     TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult Function(ProjectEditEventChangeDescription value)?
@@ -2307,6 +2397,7 @@ class _$ProjectEditEventChangeExpectedEndDateImpl
         changeClient,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
     required TResult Function(double value) changeBudget,
     required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
@@ -2329,6 +2420,7 @@ class _$ProjectEditEventChangeExpectedEndDateImpl
         changeClient,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
     TResult? Function(double value)? changeBudget,
     TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
@@ -2351,6 +2443,7 @@ class _$ProjectEditEventChangeExpectedEndDateImpl
         changeClient,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
     TResult Function(double value)? changeBudget,
     TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
@@ -2381,6 +2474,8 @@ class _$ProjectEditEventChangeExpectedEndDateImpl
         changeStartDate,
     required TResult Function(ProjectEditEventChangeExpectedEndDate value)
         changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
     required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
     required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
     required TResult Function(ProjectEditEventChangeDescription value)
@@ -2404,6 +2499,8 @@ class _$ProjectEditEventChangeExpectedEndDateImpl
     TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult? Function(ProjectEditEventChangeDescription value)?
@@ -2427,6 +2524,8 @@ class _$ProjectEditEventChangeExpectedEndDateImpl
     TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult Function(ProjectEditEventChangeDescription value)?
@@ -2451,6 +2550,242 @@ abstract class ProjectEditEventChangeExpectedEndDate
   @JsonKey(ignore: true)
   _$$ProjectEditEventChangeExpectedEndDateImplCopyWith<
           _$ProjectEditEventChangeExpectedEndDateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProjectEditEventEstimatedEffortImplCopyWith<$Res> {
+  factory _$$ProjectEditEventEstimatedEffortImplCopyWith(
+          _$ProjectEditEventEstimatedEffortImpl value,
+          $Res Function(_$ProjectEditEventEstimatedEffortImpl) then) =
+      __$$ProjectEditEventEstimatedEffortImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$ProjectEditEventEstimatedEffortImplCopyWithImpl<$Res>
+    extends _$ProjectEditEventCopyWithImpl<$Res,
+        _$ProjectEditEventEstimatedEffortImpl>
+    implements _$$ProjectEditEventEstimatedEffortImplCopyWith<$Res> {
+  __$$ProjectEditEventEstimatedEffortImplCopyWithImpl(
+      _$ProjectEditEventEstimatedEffortImpl _value,
+      $Res Function(_$ProjectEditEventEstimatedEffortImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ProjectEditEventEstimatedEffortImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProjectEditEventEstimatedEffortImpl
+    implements ProjectEditEventEstimatedEffort {
+  const _$ProjectEditEventEstimatedEffortImpl({required this.value});
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'ProjectEditEvent.changeEstimatedEffort(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProjectEditEventEstimatedEffortImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProjectEditEventEstimatedEffortImplCopyWith<
+          _$ProjectEditEventEstimatedEffortImpl>
+      get copyWith => __$$ProjectEditEventEstimatedEffortImplCopyWithImpl<
+          _$ProjectEditEventEstimatedEffortImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType type) load,
+    required TResult Function(String value) changeName,
+    required TResult Function(String value) changeZipCode,
+    required TResult Function(String value) changeState,
+    required TResult Function(String value) changeCity,
+    required TResult Function(String value) changeAddress,
+    required TResult Function(String value) changeAddress2,
+    required TResult Function(
+            String clientId, String firstName, String lastName)
+        changeClient,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(ProjectStatus value) changeStatus,
+    required TResult Function(String value) changeDescription,
+    required TResult Function(VoidCallback callback) save,
+  }) {
+    return changeEstimatedEffort(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType type)? load,
+    TResult? Function(String value)? changeName,
+    TResult? Function(String value)? changeZipCode,
+    TResult? Function(String value)? changeState,
+    TResult? Function(String value)? changeCity,
+    TResult? Function(String value)? changeAddress,
+    TResult? Function(String value)? changeAddress2,
+    TResult? Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(ProjectStatus value)? changeStatus,
+    TResult? Function(String value)? changeDescription,
+    TResult? Function(VoidCallback callback)? save,
+  }) {
+    return changeEstimatedEffort?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType type)? load,
+    TResult Function(String value)? changeName,
+    TResult Function(String value)? changeZipCode,
+    TResult Function(String value)? changeState,
+    TResult Function(String value)? changeCity,
+    TResult Function(String value)? changeAddress,
+    TResult Function(String value)? changeAddress2,
+    TResult Function(String clientId, String firstName, String lastName)?
+        changeClient,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(ProjectStatus value)? changeStatus,
+    TResult Function(String value)? changeDescription,
+    TResult Function(VoidCallback callback)? save,
+    required TResult orElse(),
+  }) {
+    if (changeEstimatedEffort != null) {
+      return changeEstimatedEffort(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ProjectEditEventLoad value) load,
+    required TResult Function(ProjectEditEventChangeName value) changeName,
+    required TResult Function(ProjectEditEventChangeZipCode value)
+        changeZipCode,
+    required TResult Function(ProjectEditEventChangeState value) changeState,
+    required TResult Function(ProjectEditEventChangeCity value) changeCity,
+    required TResult Function(ProjectEditEventChangeAddress value)
+        changeAddress,
+    required TResult Function(ProjectEditEventChangeAddress2 value)
+        changeAddress2,
+    required TResult Function(ProjectEditEventChangeClient value) changeClient,
+    required TResult Function(ProjectEditEventChangeStartDate value)
+        changeStartDate,
+    required TResult Function(ProjectEditEventChangeExpectedEndDate value)
+        changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
+    required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
+    required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
+    required TResult Function(ProjectEditEventChangeDescription value)
+        changeDescription,
+    required TResult Function(ProjectEditEventSave value) save,
+  }) {
+    return changeEstimatedEffort(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ProjectEditEventLoad value)? load,
+    TResult? Function(ProjectEditEventChangeName value)? changeName,
+    TResult? Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult? Function(ProjectEditEventChangeState value)? changeState,
+    TResult? Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult? Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult? Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
+    TResult? Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
+    TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult? Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
+    TResult? Function(ProjectEditEventSave value)? save,
+  }) {
+    return changeEstimatedEffort?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ProjectEditEventLoad value)? load,
+    TResult Function(ProjectEditEventChangeName value)? changeName,
+    TResult Function(ProjectEditEventChangeZipCode value)? changeZipCode,
+    TResult Function(ProjectEditEventChangeState value)? changeState,
+    TResult Function(ProjectEditEventChangeCity value)? changeCity,
+    TResult Function(ProjectEditEventChangeAddress value)? changeAddress,
+    TResult Function(ProjectEditEventChangeAddress2 value)? changeAddress2,
+    TResult Function(ProjectEditEventChangeClient value)? changeClient,
+    TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
+    TResult Function(ProjectEditEventChangeExpectedEndDate value)?
+        changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
+    TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
+    TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
+    TResult Function(ProjectEditEventChangeDescription value)?
+        changeDescription,
+    TResult Function(ProjectEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeEstimatedEffort != null) {
+      return changeEstimatedEffort(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProjectEditEventEstimatedEffort implements ProjectEditEvent {
+  const factory ProjectEditEventEstimatedEffort({required final String value}) =
+      _$ProjectEditEventEstimatedEffortImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$ProjectEditEventEstimatedEffortImplCopyWith<
+          _$ProjectEditEventEstimatedEffortImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2536,6 +2871,7 @@ class _$ProjectEditEventChangeBudgetImpl
         changeClient,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
     required TResult Function(double value) changeBudget,
     required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
@@ -2558,6 +2894,7 @@ class _$ProjectEditEventChangeBudgetImpl
         changeClient,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
     TResult? Function(double value)? changeBudget,
     TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
@@ -2580,6 +2917,7 @@ class _$ProjectEditEventChangeBudgetImpl
         changeClient,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
     TResult Function(double value)? changeBudget,
     TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
@@ -2610,6 +2948,8 @@ class _$ProjectEditEventChangeBudgetImpl
         changeStartDate,
     required TResult Function(ProjectEditEventChangeExpectedEndDate value)
         changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
     required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
     required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
     required TResult Function(ProjectEditEventChangeDescription value)
@@ -2633,6 +2973,8 @@ class _$ProjectEditEventChangeBudgetImpl
     TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult? Function(ProjectEditEventChangeDescription value)?
@@ -2656,6 +2998,8 @@ class _$ProjectEditEventChangeBudgetImpl
     TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult Function(ProjectEditEventChangeDescription value)?
@@ -2763,6 +3107,7 @@ class _$ProjectEditEventChangeStatusImpl
         changeClient,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
     required TResult Function(double value) changeBudget,
     required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
@@ -2785,6 +3130,7 @@ class _$ProjectEditEventChangeStatusImpl
         changeClient,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
     TResult? Function(double value)? changeBudget,
     TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
@@ -2807,6 +3153,7 @@ class _$ProjectEditEventChangeStatusImpl
         changeClient,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
     TResult Function(double value)? changeBudget,
     TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
@@ -2837,6 +3184,8 @@ class _$ProjectEditEventChangeStatusImpl
         changeStartDate,
     required TResult Function(ProjectEditEventChangeExpectedEndDate value)
         changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
     required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
     required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
     required TResult Function(ProjectEditEventChangeDescription value)
@@ -2860,6 +3209,8 @@ class _$ProjectEditEventChangeStatusImpl
     TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult? Function(ProjectEditEventChangeDescription value)?
@@ -2883,6 +3234,8 @@ class _$ProjectEditEventChangeStatusImpl
     TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult Function(ProjectEditEventChangeDescription value)?
@@ -2991,6 +3344,7 @@ class _$ProjectEditEventChangeDescriptionImpl
         changeClient,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
     required TResult Function(double value) changeBudget,
     required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
@@ -3013,6 +3367,7 @@ class _$ProjectEditEventChangeDescriptionImpl
         changeClient,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
     TResult? Function(double value)? changeBudget,
     TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
@@ -3035,6 +3390,7 @@ class _$ProjectEditEventChangeDescriptionImpl
         changeClient,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
     TResult Function(double value)? changeBudget,
     TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
@@ -3065,6 +3421,8 @@ class _$ProjectEditEventChangeDescriptionImpl
         changeStartDate,
     required TResult Function(ProjectEditEventChangeExpectedEndDate value)
         changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
     required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
     required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
     required TResult Function(ProjectEditEventChangeDescription value)
@@ -3088,6 +3446,8 @@ class _$ProjectEditEventChangeDescriptionImpl
     TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult? Function(ProjectEditEventChangeDescription value)?
@@ -3111,6 +3471,8 @@ class _$ProjectEditEventChangeDescriptionImpl
     TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult Function(ProjectEditEventChangeDescription value)?
@@ -3215,6 +3577,7 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
         changeClient,
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeExpectedEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
     required TResult Function(double value) changeBudget,
     required TResult Function(ProjectStatus value) changeStatus,
     required TResult Function(String value) changeDescription,
@@ -3237,6 +3600,7 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
         changeClient,
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeExpectedEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
     TResult? Function(double value)? changeBudget,
     TResult? Function(ProjectStatus value)? changeStatus,
     TResult? Function(String value)? changeDescription,
@@ -3259,6 +3623,7 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
         changeClient,
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeExpectedEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
     TResult Function(double value)? changeBudget,
     TResult Function(ProjectStatus value)? changeStatus,
     TResult Function(String value)? changeDescription,
@@ -3289,6 +3654,8 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
         changeStartDate,
     required TResult Function(ProjectEditEventChangeExpectedEndDate value)
         changeExpectedEndDate,
+    required TResult Function(ProjectEditEventEstimatedEffort value)
+        changeEstimatedEffort,
     required TResult Function(ProjectEditEventChangeBudget value) changeBudget,
     required TResult Function(ProjectEditEventChangeStatus value) changeStatus,
     required TResult Function(ProjectEditEventChangeDescription value)
@@ -3312,6 +3679,8 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     TResult? Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult? Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult? Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult? Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult? Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult? Function(ProjectEditEventChangeDescription value)?
@@ -3335,6 +3704,8 @@ class _$ProjectEditEventSaveImpl implements ProjectEditEventSave {
     TResult Function(ProjectEditEventChangeStartDate value)? changeStartDate,
     TResult Function(ProjectEditEventChangeExpectedEndDate value)?
         changeExpectedEndDate,
+    TResult Function(ProjectEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
     TResult Function(ProjectEditEventChangeBudget value)? changeBudget,
     TResult Function(ProjectEditEventChangeStatus value)? changeStatus,
     TResult Function(ProjectEditEventChangeDescription value)?

@@ -160,6 +160,26 @@ class ProjectEditFormView extends IView {
                           ),
                           gapWidth16,
                           Expanded(
+                            child: BaseTextFormField(
+                              label: context.tr.estEffort,
+                              initialValue: state.project.estimatedEffort,
+                              hintText: context.tr.hours,
+                              inputFormatters: <TextInputFormatter>[
+                                FilteringTextInputFormatter.allow(
+                                  RegExp(r'^\d+\:?\d{0,2}'),
+                                ),
+                              ],
+                              onChanged: (value) {
+                                bloc.add(
+                                  ProjectEditEvent.changeEstimatedEffort(
+                                    value: value,
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                          gapWidth16,
+                          Expanded(
                             flex: 1,
                             child: BaseTextFormField(
                               label: context.tr.budget,

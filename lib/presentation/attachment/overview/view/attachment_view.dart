@@ -54,8 +54,6 @@ class AttachmentView extends IView {
           reader.onLoadEnd.listen((e) {
             uploadedImage = reader.result as Uint8List?;
 
-            print('type ${file.type}');
-
             bloc.add(
               AttachmentEvent.addFile(
                 fileItem: FileItem(

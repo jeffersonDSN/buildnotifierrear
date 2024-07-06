@@ -12,6 +12,7 @@ class Project with _$Project {
     @Default('') String name,
     DateTime? startDate,
     DateTime? expectedCompletionDate,
+    @Default('') String estimatedEffort,
     @Default(0) double budget,
     @ProjectTypeConverter()
     @Default(ProjectStatus.planning)

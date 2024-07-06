@@ -65,7 +65,7 @@ class TaskEditFormView extends IView {
                               },
                             ),
                           ),
-                          gapWidth8,
+                          gapWidth16,
                           Expanded(
                             child: BaseDropdownButtonField(
                               label: context.tr.project,
@@ -133,7 +133,7 @@ class TaskEditFormView extends IView {
                               );
                             },
                           ),
-                          gapWidth8,
+                          gapWidth16,
                           BaseDateInputWidget(
                             label: context.tr.expectedEndDate,
                             value: state.task.expectedEndDate,
@@ -156,7 +156,7 @@ class TaskEditFormView extends IView {
                               );
                             },
                           ),
-                          gapWidth8,
+                          gapWidth16,
                           Expanded(
                             child: BaseTextFormField(
                               label: context.tr.estEffort,
@@ -176,7 +176,7 @@ class TaskEditFormView extends IView {
                               },
                             ),
                           ),
-                          gapWidth8,
+                          gapWidth16,
                           Expanded(
                             child: BaseTextFormField(
                               label: context.tr.budget,
@@ -197,7 +197,7 @@ class TaskEditFormView extends IView {
                               },
                             ),
                           ),
-                          gapWidth8,
+                          gapWidth16,
                           Expanded(
                             child: BaseTextFormField(
                               label: 'Project %',

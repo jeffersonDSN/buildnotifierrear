@@ -111,38 +111,48 @@ class SignInView extends IView {
                             ),
                           ),
                         gapHeight24,
-                        FilledButton(
-                          child: state.isSignIn
-                              ? const CircularProgressIndicator(
-                                  color: AppColor.lightColor,
-                                )
-                              : Text(
-                                  context.tr.signin,
-                                ),
-                          onPressed: () {
-                            if (_formKey.currentState?.validate() ?? false) {
-                              // ScaffoldMessenger.of(context).showSnackBar(
-                              //   SnackBar(content: Text('Formulário válido!')),
-                              // );
+                        Row(
+                          children: [
+                            Expanded(
+                              child: FilledButton(
+                                child: state.isSignIn
+                                    ? const SizedBox(
+                                        height: Sizes.size24,
+                                        child: CircularProgressIndicator(
+                                          color: AppColor.lightColor,
+                                        ),
+                                      )
+                                    : Text(
+                                        context.tr.signin,
+                                      ),
+                                onPressed: () {
+                                  if (_formKey.currentState?.validate() ??
+                                      false) {
+                                    // ScaffoldMessenger.of(context).showSnackBar(
+                                    //   SnackBar(content: Text('Formulário válido!')),
+                                    // );
 
-                              bloc.add(
-                                SignInEvent.signIn(
-                                  callback: (value) {
-                                    appBloc(context).add(
-                                      AppEvent.signIn(
-                                        user: value,
+                                    bloc.add(
+                                      SignInEvent.signIn(
+                                        callback: (value) {
+                                          appBloc(context).add(
+                                            AppEvent.signIn(
+                                              user: value,
+                                            ),
+                                          );
+                                        },
                                       ),
                                     );
-                                  },
-                                ),
-                              );
-                            }
-                            // else {
-                            //   ScaffoldMessenger.of(context).showSnackBar(
-                            //     SnackBar(content: Text('Formulário inválido!')),
-                            //   );
-                            // }
-                          },
+                                  }
+                                  // else {
+                                  //   ScaffoldMessenger.of(context).showSnackBar(
+                                  //     SnackBar(content: Text('Formulário inválido!')),
+                                  //   );
+                                  // }
+                                },
+                              ),
+                            ),
+                          ],
                         ),
                         gapHeight24,
                         Row(

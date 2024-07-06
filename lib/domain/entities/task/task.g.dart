@@ -41,10 +41,6 @@ _$TaskImpl _$$TaskImplFromJson(Map<String, dynamic> json) => _$TaskImpl(
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      width: (json['width'] as num?)?.toDouble() ?? 0,
-      dragPosFactor: (json['dragPosFactor'] as num?)?.toDouble() ?? 0,
-      draggingRemainingWidth: (json['draggingRemainingWidth'] as num?)?.toInt(),
-      remainingWidth: (json['remainingWidth'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$TaskImplToJson(_$TaskImpl instance) =>
@@ -64,8 +60,4 @@ Map<String, dynamic> _$$TaskImplToJson(_$TaskImpl instance) =>
       'notesList': instance.notesList,
       'assignTo': instance.assignTo,
       'dependencies': instance.dependencies,
-      'width': instance.width,
-      'dragPosFactor': instance.dragPosFactor,
-      'draggingRemainingWidth': instance.draggingRemainingWidth,
-      'remainingWidth': instance.remainingWidth,
     };

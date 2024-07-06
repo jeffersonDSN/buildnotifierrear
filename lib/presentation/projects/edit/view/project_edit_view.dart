@@ -119,9 +119,7 @@ class ProjectEditView extends IView {
                       return TabBarView(
                         physics: const NeverScrollableScrollPhysics(),
                         children: [
-                          ProjectEditFormView(
-                            key: GlobalKey(),
-                          ),
+                          ProjectEditFormView(),
                           ...type.when(
                             create: () => [
                               Container(),

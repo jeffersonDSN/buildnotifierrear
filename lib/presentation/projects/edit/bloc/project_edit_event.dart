@@ -44,6 +44,10 @@ class ProjectEditEvent with _$ProjectEditEvent {
     required DateTime value,
   }) = ProjectEditEventChangeExpectedEndDate;
 
+  const factory ProjectEditEvent.changeEstimatedEffort({
+    required String value,
+  }) = ProjectEditEventEstimatedEffort;
+
   const factory ProjectEditEvent.changeBudget({
     required double value,
   }) = ProjectEditEventChangeBudget;

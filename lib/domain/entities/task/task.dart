@@ -26,12 +26,6 @@ class Task with _$Task {
     @Default({}) Map<String, String> notesList,
     @Default([]) List<AppointmentUser> assignTo,
     @Default([]) List<String> dependencies,
-
-    // TODO
-    @Default(0) double width,
-    @Default(0) double dragPosFactor,
-    int? draggingRemainingWidth,
-    int? remainingWidth,
   }) = _Task;
 
   factory Task.fromJson(Map<String, Object?> json) => _$TaskFromJson(json);

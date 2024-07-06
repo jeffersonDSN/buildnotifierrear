@@ -205,37 +205,46 @@ class SignUpView extends IView {
                               },
                             ),
                             gapHeight32,
-                            FilledButton(
-                              child: state.isSignUp
-                                  ? const CircularProgressIndicator(
-                                      color: AppColor.lightColor,
-                                    )
-                                  : Text(context.tr.signup),
-                              onPressed: () {
-                                if (_formKey.currentState?.validate() ??
-                                    false) {
-                                  // ScaffoldMessenger.of(context).showSnackBar(
-                                  //   SnackBar(content: Text('Formulário válido!')),
-                                  // );
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: FilledButton(
+                                    child: state.isSignUp
+                                        ? const SizedBox(
+                                            height: Sizes.size24,
+                                            child: CircularProgressIndicator(
+                                              color: AppColor.lightColor,
+                                            ),
+                                          )
+                                        : Text(context.tr.signup),
+                                    onPressed: () {
+                                      if (_formKey.currentState?.validate() ??
+                                          false) {
+                                        // ScaffoldMessenger.of(context).showSnackBar(
+                                        //   SnackBar(content: Text('Formulário válido!')),
+                                        // );
 
-                                  bloc.add(
-                                    SignUpEvent.signUp(
-                                      callback: (value) {
-                                        appBloc(context).add(
-                                          AppEvent.signIn(
-                                            user: value,
+                                        bloc.add(
+                                          SignUpEvent.signUp(
+                                            callback: (value) {
+                                              appBloc(context).add(
+                                                AppEvent.signIn(
+                                                  user: value,
+                                                ),
+                                              );
+                                            },
                                           ),
                                         );
-                                      },
-                                    ),
-                                  );
-                                }
-                                // else {
-                                //   ScaffoldMessenger.of(context).showSnackBar(
-                                //     SnackBar(content: Text('Formulário inválido!')),
-                                //   );
-                                // }
-                              },
+                                      }
+                                      // else {
+                                      //   ScaffoldMessenger.of(context).showSnackBar(
+                                      //     SnackBar(content: Text('Formulário inválido!')),
+                                      //   );
+                                      // }
+                                    },
+                                  ),
+                                ),
+                              ],
                             ),
                             gapHeight24,
                             Row(

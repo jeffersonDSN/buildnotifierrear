@@ -24,6 +24,7 @@ mixin _$Project {
   String get name => throw _privateConstructorUsedError;
   DateTime? get startDate => throw _privateConstructorUsedError;
   DateTime? get expectedCompletionDate => throw _privateConstructorUsedError;
+  String get estimatedEffort => throw _privateConstructorUsedError;
   double get budget => throw _privateConstructorUsedError;
   @ProjectTypeConverter()
   ProjectStatus get status => throw _privateConstructorUsedError;
@@ -55,6 +56,7 @@ abstract class $ProjectCopyWith<$Res> {
       String name,
       DateTime? startDate,
       DateTime? expectedCompletionDate,
+      String estimatedEffort,
       double budget,
       @ProjectTypeConverter() ProjectStatus status,
       String clientId,
@@ -88,6 +90,7 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
     Object? name = null,
     Object? startDate = freezed,
     Object? expectedCompletionDate = freezed,
+    Object? estimatedEffort = null,
     Object? budget = null,
     Object? status = null,
     Object? clientId = null,
@@ -120,6 +123,10 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
           ? _value.expectedCompletionDate
           : expectedCompletionDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      estimatedEffort: null == estimatedEffort
+          ? _value.estimatedEffort
+          : estimatedEffort // ignore: cast_nullable_to_non_nullable
+              as String,
       budget: null == budget
           ? _value.budget
           : budget // ignore: cast_nullable_to_non_nullable
@@ -192,6 +199,7 @@ abstract class _$$ProjectImplCopyWith<$Res> implements $ProjectCopyWith<$Res> {
       String name,
       DateTime? startDate,
       DateTime? expectedCompletionDate,
+      String estimatedEffort,
       double budget,
       @ProjectTypeConverter() ProjectStatus status,
       String clientId,
@@ -223,6 +231,7 @@ class __$$ProjectImplCopyWithImpl<$Res>
     Object? name = null,
     Object? startDate = freezed,
     Object? expectedCompletionDate = freezed,
+    Object? estimatedEffort = null,
     Object? budget = null,
     Object? status = null,
     Object? clientId = null,
@@ -255,6 +264,10 @@ class __$$ProjectImplCopyWithImpl<$Res>
           ? _value.expectedCompletionDate
           : expectedCompletionDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      estimatedEffort: null == estimatedEffort
+          ? _value.estimatedEffort
+          : estimatedEffort // ignore: cast_nullable_to_non_nullable
+              as String,
       budget: null == budget
           ? _value.budget
           : budget // ignore: cast_nullable_to_non_nullable
@@ -323,6 +336,7 @@ class _$ProjectImpl implements _Project {
       this.name = '',
       this.startDate,
       this.expectedCompletionDate,
+      this.estimatedEffort = '',
       this.budget = 0,
       @ProjectTypeConverter() this.status = ProjectStatus.planning,
       this.clientId = '',
@@ -352,6 +366,9 @@ class _$ProjectImpl implements _Project {
   final DateTime? startDate;
   @override
   final DateTime? expectedCompletionDate;
+  @override
+  @JsonKey()
+  final String estimatedEffort;
   @override
   @JsonKey()
   final double budget;
@@ -402,7 +419,7 @@ class _$ProjectImpl implements _Project {
 
   @override
   String toString() {
-    return 'Project(id: $id, name: $name, startDate: $startDate, expectedCompletionDate: $expectedCompletionDate, budget: $budget, status: $status, clientId: $clientId, clientFirstname: $clientFirstname, clientLastname: $clientLastname, zipCode: $zipCode, state: $state, city: $city, address: $address, address2: $address2, description: $description, descriptionList: $descriptionList, latitude: $latitude, longitude: $longitude)';
+    return 'Project(id: $id, name: $name, startDate: $startDate, expectedCompletionDate: $expectedCompletionDate, estimatedEffort: $estimatedEffort, budget: $budget, status: $status, clientId: $clientId, clientFirstname: $clientFirstname, clientLastname: $clientLastname, zipCode: $zipCode, state: $state, city: $city, address: $address, address2: $address2, description: $description, descriptionList: $descriptionList, latitude: $latitude, longitude: $longitude)';
   }
 
   @override
@@ -416,6 +433,8 @@ class _$ProjectImpl implements _Project {
                 other.startDate == startDate) &&
             (identical(other.expectedCompletionDate, expectedCompletionDate) ||
                 other.expectedCompletionDate == expectedCompletionDate) &&
+            (identical(other.estimatedEffort, estimatedEffort) ||
+                other.estimatedEffort == estimatedEffort) &&
             (identical(other.budget, budget) || other.budget == budget) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.clientId, clientId) ||
@@ -442,26 +461,28 @@ class _$ProjectImpl implements _Project {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      startDate,
-      expectedCompletionDate,
-      budget,
-      status,
-      clientId,
-      clientFirstname,
-      clientLastname,
-      zipCode,
-      state,
-      city,
-      address,
-      address2,
-      description,
-      const DeepCollectionEquality().hash(_descriptionList),
-      latitude,
-      longitude);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        startDate,
+        expectedCompletionDate,
+        estimatedEffort,
+        budget,
+        status,
+        clientId,
+        clientFirstname,
+        clientLastname,
+        zipCode,
+        state,
+        city,
+        address,
+        address2,
+        description,
+        const DeepCollectionEquality().hash(_descriptionList),
+        latitude,
+        longitude
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -483,6 +504,7 @@ abstract class _Project implements Project {
       final String name,
       final DateTime? startDate,
       final DateTime? expectedCompletionDate,
+      final String estimatedEffort,
       final double budget,
       @ProjectTypeConverter() final ProjectStatus status,
       final String clientId,
@@ -508,6 +530,8 @@ abstract class _Project implements Project {
   DateTime? get startDate;
   @override
   DateTime? get expectedCompletionDate;
+  @override
+  String get estimatedEffort;
   @override
   double get budget;
   @override

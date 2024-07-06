@@ -36,11 +36,7 @@ mixin _$Task {
   String get notes => throw _privateConstructorUsedError;
   Map<String, String> get notesList => throw _privateConstructorUsedError;
   List<AppointmentUser> get assignTo => throw _privateConstructorUsedError;
-  List<String> get dependencies => throw _privateConstructorUsedError; // TODO
-  double get width => throw _privateConstructorUsedError;
-  double get dragPosFactor => throw _privateConstructorUsedError;
-  int? get draggingRemainingWidth => throw _privateConstructorUsedError;
-  int? get remainingWidth => throw _privateConstructorUsedError;
+  List<String> get dependencies => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -67,11 +63,7 @@ abstract class $TaskCopyWith<$Res> {
       String notes,
       Map<String, String> notesList,
       List<AppointmentUser> assignTo,
-      List<String> dependencies,
-      double width,
-      double dragPosFactor,
-      int? draggingRemainingWidth,
-      int? remainingWidth});
+      List<String> dependencies});
 }
 
 /// @nodoc
@@ -102,10 +94,6 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
     Object? notesList = null,
     Object? assignTo = null,
     Object? dependencies = null,
-    Object? width = null,
-    Object? dragPosFactor = null,
-    Object? draggingRemainingWidth = freezed,
-    Object? remainingWidth = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -168,22 +156,6 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
           ? _value.dependencies
           : dependencies // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      width: null == width
-          ? _value.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as double,
-      dragPosFactor: null == dragPosFactor
-          ? _value.dragPosFactor
-          : dragPosFactor // ignore: cast_nullable_to_non_nullable
-              as double,
-      draggingRemainingWidth: freezed == draggingRemainingWidth
-          ? _value.draggingRemainingWidth
-          : draggingRemainingWidth // ignore: cast_nullable_to_non_nullable
-              as int?,
-      remainingWidth: freezed == remainingWidth
-          ? _value.remainingWidth
-          : remainingWidth // ignore: cast_nullable_to_non_nullable
-              as int?,
     ) as $Val);
   }
 }
@@ -210,11 +182,7 @@ abstract class _$$TaskImplCopyWith<$Res> implements $TaskCopyWith<$Res> {
       String notes,
       Map<String, String> notesList,
       List<AppointmentUser> assignTo,
-      List<String> dependencies,
-      double width,
-      double dragPosFactor,
-      int? draggingRemainingWidth,
-      int? remainingWidth});
+      List<String> dependencies});
 }
 
 /// @nodoc
@@ -242,10 +210,6 @@ class __$$TaskImplCopyWithImpl<$Res>
     Object? notesList = null,
     Object? assignTo = null,
     Object? dependencies = null,
-    Object? width = null,
-    Object? dragPosFactor = null,
-    Object? draggingRemainingWidth = freezed,
-    Object? remainingWidth = freezed,
   }) {
     return _then(_$TaskImpl(
       id: null == id
@@ -308,22 +272,6 @@ class __$$TaskImplCopyWithImpl<$Res>
           ? _value._dependencies
           : dependencies // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      width: null == width
-          ? _value.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as double,
-      dragPosFactor: null == dragPosFactor
-          ? _value.dragPosFactor
-          : dragPosFactor // ignore: cast_nullable_to_non_nullable
-              as double,
-      draggingRemainingWidth: freezed == draggingRemainingWidth
-          ? _value.draggingRemainingWidth
-          : draggingRemainingWidth // ignore: cast_nullable_to_non_nullable
-              as int?,
-      remainingWidth: freezed == remainingWidth
-          ? _value.remainingWidth
-          : remainingWidth // ignore: cast_nullable_to_non_nullable
-              as int?,
     ));
   }
 }
@@ -346,11 +294,7 @@ class _$TaskImpl implements _Task {
       this.notes = '',
       final Map<String, String> notesList = const {},
       final List<AppointmentUser> assignTo = const [],
-      final List<String> dependencies = const [],
-      this.width = 0,
-      this.dragPosFactor = 0,
-      this.draggingRemainingWidth,
-      this.remainingWidth})
+      final List<String> dependencies = const []})
       : _notesList = notesList,
         _assignTo = assignTo,
         _dependencies = dependencies;
@@ -421,21 +365,9 @@ class _$TaskImpl implements _Task {
     return EqualUnmodifiableListView(_dependencies);
   }
 
-// TODO
-  @override
-  @JsonKey()
-  final double width;
-  @override
-  @JsonKey()
-  final double dragPosFactor;
-  @override
-  final int? draggingRemainingWidth;
-  @override
-  final int? remainingWidth;
-
   @override
   String toString() {
-    return 'Task(id: $id, projectId: $projectId, projectName: $projectName, title: $title, startDate: $startDate, expectedEndDate: $expectedEndDate, budget: $budget, taskPercProject: $taskPercProject, estimatedEffort: $estimatedEffort, priority: $priority, status: $status, notes: $notes, notesList: $notesList, assignTo: $assignTo, dependencies: $dependencies, width: $width, dragPosFactor: $dragPosFactor, draggingRemainingWidth: $draggingRemainingWidth, remainingWidth: $remainingWidth)';
+    return 'Task(id: $id, projectId: $projectId, projectName: $projectName, title: $title, startDate: $startDate, expectedEndDate: $expectedEndDate, budget: $budget, taskPercProject: $taskPercProject, estimatedEffort: $estimatedEffort, priority: $priority, status: $status, notes: $notes, notesList: $notesList, assignTo: $assignTo, dependencies: $dependencies)';
   }
 
   @override
@@ -466,40 +398,28 @@ class _$TaskImpl implements _Task {
                 .equals(other._notesList, _notesList) &&
             const DeepCollectionEquality().equals(other._assignTo, _assignTo) &&
             const DeepCollectionEquality()
-                .equals(other._dependencies, _dependencies) &&
-            (identical(other.width, width) || other.width == width) &&
-            (identical(other.dragPosFactor, dragPosFactor) ||
-                other.dragPosFactor == dragPosFactor) &&
-            (identical(other.draggingRemainingWidth, draggingRemainingWidth) ||
-                other.draggingRemainingWidth == draggingRemainingWidth) &&
-            (identical(other.remainingWidth, remainingWidth) ||
-                other.remainingWidth == remainingWidth));
+                .equals(other._dependencies, _dependencies));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        id,
-        projectId,
-        projectName,
-        title,
-        startDate,
-        expectedEndDate,
-        budget,
-        taskPercProject,
-        estimatedEffort,
-        priority,
-        status,
-        notes,
-        const DeepCollectionEquality().hash(_notesList),
-        const DeepCollectionEquality().hash(_assignTo),
-        const DeepCollectionEquality().hash(_dependencies),
-        width,
-        dragPosFactor,
-        draggingRemainingWidth,
-        remainingWidth
-      ]);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      projectId,
+      projectName,
+      title,
+      startDate,
+      expectedEndDate,
+      budget,
+      taskPercProject,
+      estimatedEffort,
+      priority,
+      status,
+      notes,
+      const DeepCollectionEquality().hash(_notesList),
+      const DeepCollectionEquality().hash(_assignTo),
+      const DeepCollectionEquality().hash(_dependencies));
 
   @JsonKey(ignore: true)
   @override
@@ -531,11 +451,7 @@ abstract class _Task implements Task {
       final String notes,
       final Map<String, String> notesList,
       final List<AppointmentUser> assignTo,
-      final List<String> dependencies,
-      final double width,
-      final double dragPosFactor,
-      final int? draggingRemainingWidth,
-      final int? remainingWidth}) = _$TaskImpl;
+      final List<String> dependencies}) = _$TaskImpl;
 
   factory _Task.fromJson(Map<String, dynamic> json) = _$TaskImpl.fromJson;
 
@@ -571,14 +487,6 @@ abstract class _Task implements Task {
   List<AppointmentUser> get assignTo;
   @override
   List<String> get dependencies;
-  @override // TODO
-  double get width;
-  @override
-  double get dragPosFactor;
-  @override
-  int? get draggingRemainingWidth;
-  @override
-  int? get remainingWidth;
   @override
   @JsonKey(ignore: true)
   _$$TaskImplCopyWith<_$TaskImpl> get copyWith =>
