@@ -46,117 +46,120 @@ class SignInView extends IView {
               ),
             ),
             Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(Sizes.size112),
-                child: Form(
-                  key: _formKey,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        context.tr.hello,
-                        style: const TextStyle(
-                          fontSize: Sizes.size32,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        context.tr.signinYourAccount,
-                        style: const TextStyle(
-                          fontSize: Sizes.size16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      gapHeight16,
-                      BaseTextFormField(
-                        label: context.tr.userName,
-                        initialValue: state.userName,
-                        onChanged: (value) {
-                          bloc.add(
-                            SignInEvent.changeUserName(value: value),
-                          );
-                        },
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return context.tr.enterYourUserName;
-                          }
-                          return null;
-                        },
-                      ),
-                      gapHeight16,
-                      BaseTextFormField(
-                        label: context.tr.password,
-                        initialValue: state.password,
-                        obscureText: true,
-                        onChanged: (value) {
-                          bloc.add(
-                            SignInEvent.changePassword(value: value),
-                          );
-                        },
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return context.tr.enterYourpassword;
-                          }
-                          return null;
-                        },
-                      ),
-                      gapHeight8,
-                      if (state.isSignInError)
+              child: Container(
+                color: AppColor.lightColor,
+                child: Padding(
+                  padding: const EdgeInsets.all(Sizes.size112),
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
                         Text(
-                          context.tr.usernamePasswordIncorrect,
+                          context.tr.hello,
                           style: const TextStyle(
-                            color: AppColor.red,
+                            fontSize: Sizes.size32,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                      gapHeight24,
-                      FilledButton(
-                        child: state.isSignIn
-                            ? const CircularProgressIndicator(
-                                color: AppColor.lightColor,
-                              )
-                            : Text(
-                                context.tr.signin,
-                              ),
-                        onPressed: () {
-                          if (_formKey.currentState?.validate() ?? false) {
-                            // ScaffoldMessenger.of(context).showSnackBar(
-                            //   SnackBar(content: Text('Formulário válido!')),
-                            // );
-
+                        Text(
+                          context.tr.signinYourAccount,
+                          style: const TextStyle(
+                            fontSize: Sizes.size16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        gapHeight16,
+                        BaseTextFormField(
+                          label: context.tr.userName,
+                          initialValue: state.userName,
+                          onChanged: (value) {
                             bloc.add(
-                              SignInEvent.signIn(
-                                callback: (value) {
-                                  appBloc(context).add(
-                                    AppEvent.signIn(
-                                      user: value,
-                                    ),
-                                  );
-                                },
-                              ),
+                              SignInEvent.changeUserName(value: value),
                             );
-                          }
-                          // else {
-                          //   ScaffoldMessenger.of(context).showSnackBar(
-                          //     SnackBar(content: Text('Formulário inválido!')),
-                          //   );
-                          // }
-                        },
-                      ),
-                      gapHeight24,
-                      Row(
-                        children: [
-                          Text(context.tr.donotHaveAccount),
-                          TextButton(
-                            child: Text(context.tr.signup),
-                            onPressed: () {
-                              appBloc(context).add(
-                                const AppEvent.createNewUser(),
+                          },
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return context.tr.enterYourUserName;
+                            }
+                            return null;
+                          },
+                        ),
+                        gapHeight16,
+                        BaseTextFormField(
+                          label: context.tr.password,
+                          initialValue: state.password,
+                          obscureText: true,
+                          onChanged: (value) {
+                            bloc.add(
+                              SignInEvent.changePassword(value: value),
+                            );
+                          },
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return context.tr.enterYourpassword;
+                            }
+                            return null;
+                          },
+                        ),
+                        gapHeight8,
+                        if (state.isSignInError)
+                          Text(
+                            context.tr.usernamePasswordIncorrect,
+                            style: const TextStyle(
+                              color: AppColor.red,
+                            ),
+                          ),
+                        gapHeight24,
+                        FilledButton(
+                          child: state.isSignIn
+                              ? const CircularProgressIndicator(
+                                  color: AppColor.lightColor,
+                                )
+                              : Text(
+                                  context.tr.signin,
+                                ),
+                          onPressed: () {
+                            if (_formKey.currentState?.validate() ?? false) {
+                              // ScaffoldMessenger.of(context).showSnackBar(
+                              //   SnackBar(content: Text('Formulário válido!')),
+                              // );
+
+                              bloc.add(
+                                SignInEvent.signIn(
+                                  callback: (value) {
+                                    appBloc(context).add(
+                                      AppEvent.signIn(
+                                        user: value,
+                                      ),
+                                    );
+                                  },
+                                ),
                               );
-                            },
-                          )
-                        ],
-                      ),
-                    ],
+                            }
+                            // else {
+                            //   ScaffoldMessenger.of(context).showSnackBar(
+                            //     SnackBar(content: Text('Formulário inválido!')),
+                            //   );
+                            // }
+                          },
+                        ),
+                        gapHeight24,
+                        Row(
+                          children: [
+                            Text(context.tr.donotHaveAccount),
+                            TextButton(
+                              child: Text(context.tr.signup),
+                              onPressed: () {
+                                appBloc(context).add(
+                                  const AppEvent.createNewUser(),
+                                );
+                              },
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

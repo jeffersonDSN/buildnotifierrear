@@ -3,7 +3,6 @@ import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
-import 'package:buildnotifierrear/presentation/core/widget/base_custom_card_widget.dart';
 import 'package:buildnotifierrear/presentation/schedule/edit/bloc/schedule_edit_bloc.dart';
 import 'package:buildnotifierrear/presentation/schedule/edit/widget/appointment_dates_form.dart';
 import 'package:buildnotifierrear/presentation/schedule/edit/widget/appointment_details_form.dart';
@@ -35,29 +34,31 @@ class ScheduleEditView extends IView {
       ),
     );
 
-    return BaseCustomCardWidget(
-      body: BlocBuilder<ScheduleEditBloc, ScheduleEditState>(
-        bloc: bloc,
-        builder: (context, state) {
-          return state.when(
-            empty: () => Container(),
-            loaded: (
-              periodType,
-              appointments,
-              selectedAppointment,
-              projects,
-              tasks,
-            ) {
-              if (titleController.text != selectedAppointment!.title) {
-                titleController.text = selectedAppointment.title;
-              }
+    return BlocBuilder<ScheduleEditBloc, ScheduleEditState>(
+      bloc: bloc,
+      builder: (context, state) {
+        return state.when(
+          empty: () => Container(),
+          loaded: (
+            periodType,
+            appointments,
+            selectedAppointment,
+            projects,
+            tasks,
+          ) {
+            if (titleController.text != selectedAppointment!.title) {
+              titleController.text = selectedAppointment.title;
+            }
 
-              if (locationController.text != selectedAppointment.location) {
-                locationController.text = selectedAppointment.location;
-              }
+            if (locationController.text != selectedAppointment.location) {
+              locationController.text = selectedAppointment.location;
+            }
 
-              return Column(
+            return Container(
+              color: AppColor.lightColor,
+              child: Column(
                 children: [
+                  const Divider(),
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(Sizes.size16),
@@ -286,54 +287,55 @@ class ScheduleEditView extends IView {
                       ),
                     ),
                   ),
-                ],
-              );
-            },
-          );
-        },
-      ),
-      footer: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(Sizes.size8),
-            child: FilledButton.icon(
-              style: const ButtonStyle(
-                backgroundColor: WidgetStatePropertyAll(
-                  AppColor.warning,
-                ),
-              ),
-              icon: const Icon(Icons.close),
-              label: Text(context.tr.close),
-              onPressed: () {
-                appBloc(context).add(
-                  const AppEvent.goBack(),
-                );
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(Sizes.size8),
-            child: FilledButton.icon(
-              icon: const Icon(
-                Icons.check,
-              ),
-              label: Text(context.tr.save),
-              onPressed: () {
-                bloc.add(
-                  ScheduleEditEvent.save(
-                    callBack: () {
-                      appBloc(context).add(
-                        const AppEvent.goBack(),
-                      );
-                    },
+                  const Divider(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(Sizes.size8),
+                        child: FilledButton.icon(
+                          style: const ButtonStyle(
+                            backgroundColor: WidgetStatePropertyAll(
+                              AppColor.warning,
+                            ),
+                          ),
+                          icon: const Icon(Icons.close),
+                          label: Text(context.tr.close),
+                          onPressed: () {
+                            appBloc(context).add(
+                              const AppEvent.goBack(),
+                            );
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(Sizes.size8),
+                        child: FilledButton.icon(
+                          icon: const Icon(
+                            Icons.check,
+                          ),
+                          label: Text(context.tr.save),
+                          onPressed: () {
+                            bloc.add(
+                              ScheduleEditEvent.save(
+                                callBack: () {
+                                  appBloc(context).add(
+                                    const AppEvent.goBack(),
+                                  );
+                                },
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ],
                   ),
-                );
-              },
-            ),
-          ),
-        ],
-      ),
+                ],
+              ),
+            );
+          },
+        );
+      },
     );
   }
 }
