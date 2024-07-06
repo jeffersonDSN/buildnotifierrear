@@ -26,6 +26,8 @@ mixin _$Task {
   String get title => throw _privateConstructorUsedError;
   DateTime? get startDate => throw _privateConstructorUsedError;
   DateTime? get expectedEndDate => throw _privateConstructorUsedError;
+  double get budget => throw _privateConstructorUsedError;
+  int get taskPercProject => throw _privateConstructorUsedError;
   String get estimatedEffort => throw _privateConstructorUsedError;
   @TaskPriorityConverter()
   TaskPriority get priority => throw _privateConstructorUsedError;
@@ -57,6 +59,8 @@ abstract class $TaskCopyWith<$Res> {
       String title,
       DateTime? startDate,
       DateTime? expectedEndDate,
+      double budget,
+      int taskPercProject,
       String estimatedEffort,
       @TaskPriorityConverter() TaskPriority priority,
       @TaskStatusConverter() TaskStatus status,
@@ -89,6 +93,8 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
     Object? title = null,
     Object? startDate = freezed,
     Object? expectedEndDate = freezed,
+    Object? budget = null,
+    Object? taskPercProject = null,
     Object? estimatedEffort = null,
     Object? priority = null,
     Object? status = null,
@@ -126,6 +132,14 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
           ? _value.expectedEndDate
           : expectedEndDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      budget: null == budget
+          ? _value.budget
+          : budget // ignore: cast_nullable_to_non_nullable
+              as double,
+      taskPercProject: null == taskPercProject
+          ? _value.taskPercProject
+          : taskPercProject // ignore: cast_nullable_to_non_nullable
+              as int,
       estimatedEffort: null == estimatedEffort
           ? _value.estimatedEffort
           : estimatedEffort // ignore: cast_nullable_to_non_nullable
@@ -188,6 +202,8 @@ abstract class _$$TaskImplCopyWith<$Res> implements $TaskCopyWith<$Res> {
       String title,
       DateTime? startDate,
       DateTime? expectedEndDate,
+      double budget,
+      int taskPercProject,
       String estimatedEffort,
       @TaskPriorityConverter() TaskPriority priority,
       @TaskStatusConverter() TaskStatus status,
@@ -217,6 +233,8 @@ class __$$TaskImplCopyWithImpl<$Res>
     Object? title = null,
     Object? startDate = freezed,
     Object? expectedEndDate = freezed,
+    Object? budget = null,
+    Object? taskPercProject = null,
     Object? estimatedEffort = null,
     Object? priority = null,
     Object? status = null,
@@ -254,6 +272,14 @@ class __$$TaskImplCopyWithImpl<$Res>
           ? _value.expectedEndDate
           : expectedEndDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      budget: null == budget
+          ? _value.budget
+          : budget // ignore: cast_nullable_to_non_nullable
+              as double,
+      taskPercProject: null == taskPercProject
+          ? _value.taskPercProject
+          : taskPercProject // ignore: cast_nullable_to_non_nullable
+              as int,
       estimatedEffort: null == estimatedEffort
           ? _value.estimatedEffort
           : estimatedEffort // ignore: cast_nullable_to_non_nullable
@@ -312,6 +338,8 @@ class _$TaskImpl implements _Task {
       this.title = '',
       this.startDate,
       this.expectedEndDate,
+      this.budget = 0,
+      this.taskPercProject = 0,
       this.estimatedEffort = '',
       @TaskPriorityConverter() this.priority = TaskPriority.low,
       @TaskStatusConverter() this.status = TaskStatus.toDo,
@@ -346,6 +374,12 @@ class _$TaskImpl implements _Task {
   final DateTime? startDate;
   @override
   final DateTime? expectedEndDate;
+  @override
+  @JsonKey()
+  final double budget;
+  @override
+  @JsonKey()
+  final int taskPercProject;
   @override
   @JsonKey()
   final String estimatedEffort;
@@ -401,7 +435,7 @@ class _$TaskImpl implements _Task {
 
   @override
   String toString() {
-    return 'Task(id: $id, projectId: $projectId, projectName: $projectName, title: $title, startDate: $startDate, expectedEndDate: $expectedEndDate, estimatedEffort: $estimatedEffort, priority: $priority, status: $status, notes: $notes, notesList: $notesList, assignTo: $assignTo, dependencies: $dependencies, width: $width, dragPosFactor: $dragPosFactor, draggingRemainingWidth: $draggingRemainingWidth, remainingWidth: $remainingWidth)';
+    return 'Task(id: $id, projectId: $projectId, projectName: $projectName, title: $title, startDate: $startDate, expectedEndDate: $expectedEndDate, budget: $budget, taskPercProject: $taskPercProject, estimatedEffort: $estimatedEffort, priority: $priority, status: $status, notes: $notes, notesList: $notesList, assignTo: $assignTo, dependencies: $dependencies, width: $width, dragPosFactor: $dragPosFactor, draggingRemainingWidth: $draggingRemainingWidth, remainingWidth: $remainingWidth)';
   }
 
   @override
@@ -419,6 +453,9 @@ class _$TaskImpl implements _Task {
                 other.startDate == startDate) &&
             (identical(other.expectedEndDate, expectedEndDate) ||
                 other.expectedEndDate == expectedEndDate) &&
+            (identical(other.budget, budget) || other.budget == budget) &&
+            (identical(other.taskPercProject, taskPercProject) ||
+                other.taskPercProject == taskPercProject) &&
             (identical(other.estimatedEffort, estimatedEffort) ||
                 other.estimatedEffort == estimatedEffort) &&
             (identical(other.priority, priority) ||
@@ -441,25 +478,28 @@ class _$TaskImpl implements _Task {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      projectId,
-      projectName,
-      title,
-      startDate,
-      expectedEndDate,
-      estimatedEffort,
-      priority,
-      status,
-      notes,
-      const DeepCollectionEquality().hash(_notesList),
-      const DeepCollectionEquality().hash(_assignTo),
-      const DeepCollectionEquality().hash(_dependencies),
-      width,
-      dragPosFactor,
-      draggingRemainingWidth,
-      remainingWidth);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        projectId,
+        projectName,
+        title,
+        startDate,
+        expectedEndDate,
+        budget,
+        taskPercProject,
+        estimatedEffort,
+        priority,
+        status,
+        notes,
+        const DeepCollectionEquality().hash(_notesList),
+        const DeepCollectionEquality().hash(_assignTo),
+        const DeepCollectionEquality().hash(_dependencies),
+        width,
+        dragPosFactor,
+        draggingRemainingWidth,
+        remainingWidth
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -483,6 +523,8 @@ abstract class _Task implements Task {
       final String title,
       final DateTime? startDate,
       final DateTime? expectedEndDate,
+      final double budget,
+      final int taskPercProject,
       final String estimatedEffort,
       @TaskPriorityConverter() final TaskPriority priority,
       @TaskStatusConverter() final TaskStatus status,
@@ -509,6 +551,10 @@ abstract class _Task implements Task {
   DateTime? get startDate;
   @override
   DateTime? get expectedEndDate;
+  @override
+  double get budget;
+  @override
+  int get taskPercProject;
   @override
   String get estimatedEffort;
   @override

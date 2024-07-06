@@ -25,6 +25,8 @@ mixin _$TaskEditEvent {
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changePercProject,
     required TResult Function(TaskPriority value) changePriority,
     required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
@@ -43,6 +45,8 @@ mixin _$TaskEditEvent {
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changePercProject,
     TResult? Function(TaskPriority value)? changePriority,
     TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
@@ -60,6 +64,8 @@ mixin _$TaskEditEvent {
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changePercProject,
     TResult Function(TaskPriority value)? changePriority,
     TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
@@ -79,6 +85,9 @@ mixin _$TaskEditEvent {
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
     required TResult Function(TaskEditEventEstimatedEffort value)
         changeEstimatedEffort,
+    required TResult Function(TaskEditEventChangeBudget value) changeBudget,
+    required TResult Function(TaskEditEventChangePercProject value)
+        changePercProject,
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
@@ -98,6 +107,8 @@ mixin _$TaskEditEvent {
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult? Function(TaskEditEventEstimatedEffort value)?
         changeEstimatedEffort,
+    TResult? Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult? Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
@@ -116,6 +127,8 @@ mixin _$TaskEditEvent {
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
@@ -242,6 +255,8 @@ class _$TaskEditEventLoadImpl implements TaskEditEventLoad {
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changePercProject,
     required TResult Function(TaskPriority value) changePriority,
     required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
@@ -263,6 +278,8 @@ class _$TaskEditEventLoadImpl implements TaskEditEventLoad {
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changePercProject,
     TResult? Function(TaskPriority value)? changePriority,
     TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
@@ -283,6 +300,8 @@ class _$TaskEditEventLoadImpl implements TaskEditEventLoad {
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changePercProject,
     TResult Function(TaskPriority value)? changePriority,
     TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
@@ -308,6 +327,9 @@ class _$TaskEditEventLoadImpl implements TaskEditEventLoad {
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
     required TResult Function(TaskEditEventEstimatedEffort value)
         changeEstimatedEffort,
+    required TResult Function(TaskEditEventChangeBudget value) changeBudget,
+    required TResult Function(TaskEditEventChangePercProject value)
+        changePercProject,
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
@@ -330,6 +352,8 @@ class _$TaskEditEventLoadImpl implements TaskEditEventLoad {
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult? Function(TaskEditEventEstimatedEffort value)?
         changeEstimatedEffort,
+    TResult? Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult? Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
@@ -351,6 +375,8 @@ class _$TaskEditEventLoadImpl implements TaskEditEventLoad {
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
@@ -465,6 +491,8 @@ class _$TaskEditEventChangeProjectImpl implements TaskEditEventChangeProject {
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changePercProject,
     required TResult Function(TaskPriority value) changePriority,
     required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
@@ -486,6 +514,8 @@ class _$TaskEditEventChangeProjectImpl implements TaskEditEventChangeProject {
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changePercProject,
     TResult? Function(TaskPriority value)? changePriority,
     TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
@@ -506,6 +536,8 @@ class _$TaskEditEventChangeProjectImpl implements TaskEditEventChangeProject {
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changePercProject,
     TResult Function(TaskPriority value)? changePriority,
     TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
@@ -531,6 +563,9 @@ class _$TaskEditEventChangeProjectImpl implements TaskEditEventChangeProject {
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
     required TResult Function(TaskEditEventEstimatedEffort value)
         changeEstimatedEffort,
+    required TResult Function(TaskEditEventChangeBudget value) changeBudget,
+    required TResult Function(TaskEditEventChangePercProject value)
+        changePercProject,
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
@@ -553,6 +588,8 @@ class _$TaskEditEventChangeProjectImpl implements TaskEditEventChangeProject {
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult? Function(TaskEditEventEstimatedEffort value)?
         changeEstimatedEffort,
+    TResult? Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult? Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
@@ -574,6 +611,8 @@ class _$TaskEditEventChangeProjectImpl implements TaskEditEventChangeProject {
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
@@ -677,6 +716,8 @@ class _$TaskEditEventUpdateTitleImpl implements TaskEditEventUpdateTitle {
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changePercProject,
     required TResult Function(TaskPriority value) changePriority,
     required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
@@ -698,6 +739,8 @@ class _$TaskEditEventUpdateTitleImpl implements TaskEditEventUpdateTitle {
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changePercProject,
     TResult? Function(TaskPriority value)? changePriority,
     TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
@@ -718,6 +761,8 @@ class _$TaskEditEventUpdateTitleImpl implements TaskEditEventUpdateTitle {
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changePercProject,
     TResult Function(TaskPriority value)? changePriority,
     TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
@@ -743,6 +788,9 @@ class _$TaskEditEventUpdateTitleImpl implements TaskEditEventUpdateTitle {
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
     required TResult Function(TaskEditEventEstimatedEffort value)
         changeEstimatedEffort,
+    required TResult Function(TaskEditEventChangeBudget value) changeBudget,
+    required TResult Function(TaskEditEventChangePercProject value)
+        changePercProject,
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
@@ -765,6 +813,8 @@ class _$TaskEditEventUpdateTitleImpl implements TaskEditEventUpdateTitle {
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult? Function(TaskEditEventEstimatedEffort value)?
         changeEstimatedEffort,
+    TResult? Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult? Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
@@ -786,6 +836,8 @@ class _$TaskEditEventUpdateTitleImpl implements TaskEditEventUpdateTitle {
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
@@ -887,6 +939,8 @@ class _$TaskEditEventStartDateImpl implements TaskEditEventStartDate {
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changePercProject,
     required TResult Function(TaskPriority value) changePriority,
     required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
@@ -908,6 +962,8 @@ class _$TaskEditEventStartDateImpl implements TaskEditEventStartDate {
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changePercProject,
     TResult? Function(TaskPriority value)? changePriority,
     TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
@@ -928,6 +984,8 @@ class _$TaskEditEventStartDateImpl implements TaskEditEventStartDate {
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changePercProject,
     TResult Function(TaskPriority value)? changePriority,
     TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
@@ -953,6 +1011,9 @@ class _$TaskEditEventStartDateImpl implements TaskEditEventStartDate {
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
     required TResult Function(TaskEditEventEstimatedEffort value)
         changeEstimatedEffort,
+    required TResult Function(TaskEditEventChangeBudget value) changeBudget,
+    required TResult Function(TaskEditEventChangePercProject value)
+        changePercProject,
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
@@ -975,6 +1036,8 @@ class _$TaskEditEventStartDateImpl implements TaskEditEventStartDate {
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult? Function(TaskEditEventEstimatedEffort value)?
         changeEstimatedEffort,
+    TResult? Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult? Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
@@ -996,6 +1059,8 @@ class _$TaskEditEventStartDateImpl implements TaskEditEventStartDate {
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
@@ -1100,6 +1165,8 @@ class _$TaskEditEventExpectedEndDateImpl
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changePercProject,
     required TResult Function(TaskPriority value) changePriority,
     required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
@@ -1121,6 +1188,8 @@ class _$TaskEditEventExpectedEndDateImpl
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changePercProject,
     TResult? Function(TaskPriority value)? changePriority,
     TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
@@ -1141,6 +1210,8 @@ class _$TaskEditEventExpectedEndDateImpl
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changePercProject,
     TResult Function(TaskPriority value)? changePriority,
     TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
@@ -1166,6 +1237,9 @@ class _$TaskEditEventExpectedEndDateImpl
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
     required TResult Function(TaskEditEventEstimatedEffort value)
         changeEstimatedEffort,
+    required TResult Function(TaskEditEventChangeBudget value) changeBudget,
+    required TResult Function(TaskEditEventChangePercProject value)
+        changePercProject,
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
@@ -1188,6 +1262,8 @@ class _$TaskEditEventExpectedEndDateImpl
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult? Function(TaskEditEventEstimatedEffort value)?
         changeEstimatedEffort,
+    TResult? Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult? Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
@@ -1209,6 +1285,8 @@ class _$TaskEditEventExpectedEndDateImpl
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
@@ -1314,6 +1392,8 @@ class _$TaskEditEventEstimatedEffortImpl
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changePercProject,
     required TResult Function(TaskPriority value) changePriority,
     required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
@@ -1335,6 +1415,8 @@ class _$TaskEditEventEstimatedEffortImpl
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changePercProject,
     TResult? Function(TaskPriority value)? changePriority,
     TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
@@ -1355,6 +1437,8 @@ class _$TaskEditEventEstimatedEffortImpl
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changePercProject,
     TResult Function(TaskPriority value)? changePriority,
     TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
@@ -1380,6 +1464,9 @@ class _$TaskEditEventEstimatedEffortImpl
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
     required TResult Function(TaskEditEventEstimatedEffort value)
         changeEstimatedEffort,
+    required TResult Function(TaskEditEventChangeBudget value) changeBudget,
+    required TResult Function(TaskEditEventChangePercProject value)
+        changePercProject,
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
@@ -1402,6 +1489,8 @@ class _$TaskEditEventEstimatedEffortImpl
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult? Function(TaskEditEventEstimatedEffort value)?
         changeEstimatedEffort,
+    TResult? Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult? Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
@@ -1423,6 +1512,8 @@ class _$TaskEditEventEstimatedEffortImpl
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
@@ -1448,6 +1539,456 @@ abstract class TaskEditEventEstimatedEffort implements TaskEditEvent {
   @JsonKey(ignore: true)
   _$$TaskEditEventEstimatedEffortImplCopyWith<
           _$TaskEditEventEstimatedEffortImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TaskEditEventChangeBudgetImplCopyWith<$Res> {
+  factory _$$TaskEditEventChangeBudgetImplCopyWith(
+          _$TaskEditEventChangeBudgetImpl value,
+          $Res Function(_$TaskEditEventChangeBudgetImpl) then) =
+      __$$TaskEditEventChangeBudgetImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({double value});
+}
+
+/// @nodoc
+class __$$TaskEditEventChangeBudgetImplCopyWithImpl<$Res>
+    extends _$TaskEditEventCopyWithImpl<$Res, _$TaskEditEventChangeBudgetImpl>
+    implements _$$TaskEditEventChangeBudgetImplCopyWith<$Res> {
+  __$$TaskEditEventChangeBudgetImplCopyWithImpl(
+      _$TaskEditEventChangeBudgetImpl _value,
+      $Res Function(_$TaskEditEventChangeBudgetImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$TaskEditEventChangeBudgetImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TaskEditEventChangeBudgetImpl implements TaskEditEventChangeBudget {
+  const _$TaskEditEventChangeBudgetImpl({required this.value});
+
+  @override
+  final double value;
+
+  @override
+  String toString() {
+    return 'TaskEditEvent.changeBudget(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TaskEditEventChangeBudgetImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TaskEditEventChangeBudgetImplCopyWith<_$TaskEditEventChangeBudgetImpl>
+      get copyWith => __$$TaskEditEventChangeBudgetImplCopyWithImpl<
+          _$TaskEditEventChangeBudgetImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String projectId, CrudType crudType) load,
+    required TResult Function(String projectId, String projectName)
+        changeProject,
+    required TResult Function(String value) updateTitle,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changePercProject,
+    required TResult Function(TaskPriority value) changePriority,
+    required TResult Function(TaskStatus value) changeStatus,
+    required TResult Function(String value) changeNotes,
+    required TResult Function(List<AppointmentUser> employees)
+        changeSelectedTaskAssignTo,
+    required TResult Function(AppointmentUser employee)
+        removeSelectedTaskAssignTo,
+    required TResult Function(VoidCallback onSave) save,
+  }) {
+    return changeBudget(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String projectId, CrudType crudType)? load,
+    TResult? Function(String projectId, String projectName)? changeProject,
+    TResult? Function(String value)? updateTitle,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changePercProject,
+    TResult? Function(TaskPriority value)? changePriority,
+    TResult? Function(TaskStatus value)? changeStatus,
+    TResult? Function(String value)? changeNotes,
+    TResult? Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
+    TResult? Function(VoidCallback onSave)? save,
+  }) {
+    return changeBudget?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String projectId, CrudType crudType)? load,
+    TResult Function(String projectId, String projectName)? changeProject,
+    TResult Function(String value)? updateTitle,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changePercProject,
+    TResult Function(TaskPriority value)? changePriority,
+    TResult Function(TaskStatus value)? changeStatus,
+    TResult Function(String value)? changeNotes,
+    TResult Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
+    TResult Function(VoidCallback onSave)? save,
+    required TResult orElse(),
+  }) {
+    if (changeBudget != null) {
+      return changeBudget(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TaskEditEventLoad value) load,
+    required TResult Function(TaskEditEventChangeProject value) changeProject,
+    required TResult Function(TaskEditEventUpdateTitle value) updateTitle,
+    required TResult Function(TaskEditEventStartDate value) changeStartDate,
+    required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
+    required TResult Function(TaskEditEventEstimatedEffort value)
+        changeEstimatedEffort,
+    required TResult Function(TaskEditEventChangeBudget value) changeBudget,
+    required TResult Function(TaskEditEventChangePercProject value)
+        changePercProject,
+    required TResult Function(TaskEditEventTaskPriority value) changePriority,
+    required TResult Function(TaskEditEventStatus value) changeStatus,
+    required TResult Function(TaskEditEventNotes value) changeNotes,
+    required TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)
+        changeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)
+        removeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventSave value) save,
+  }) {
+    return changeBudget(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TaskEditEventLoad value)? load,
+    TResult? Function(TaskEditEventChangeProject value)? changeProject,
+    TResult? Function(TaskEditEventUpdateTitle value)? updateTitle,
+    TResult? Function(TaskEditEventStartDate value)? changeStartDate,
+    TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
+    TResult? Function(TaskEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
+    TResult? Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult? Function(TaskEditEventChangePercProject value)? changePercProject,
+    TResult? Function(TaskEditEventTaskPriority value)? changePriority,
+    TResult? Function(TaskEditEventStatus value)? changeStatus,
+    TResult? Function(TaskEditEventNotes value)? changeNotes,
+    TResult? Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventSave value)? save,
+  }) {
+    return changeBudget?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TaskEditEventLoad value)? load,
+    TResult Function(TaskEditEventChangeProject value)? changeProject,
+    TResult Function(TaskEditEventUpdateTitle value)? updateTitle,
+    TResult Function(TaskEditEventStartDate value)? changeStartDate,
+    TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
+    TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult Function(TaskEditEventChangePercProject value)? changePercProject,
+    TResult Function(TaskEditEventTaskPriority value)? changePriority,
+    TResult Function(TaskEditEventStatus value)? changeStatus,
+    TResult Function(TaskEditEventNotes value)? changeNotes,
+    TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeBudget != null) {
+      return changeBudget(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TaskEditEventChangeBudget implements TaskEditEvent {
+  const factory TaskEditEventChangeBudget({required final double value}) =
+      _$TaskEditEventChangeBudgetImpl;
+
+  double get value;
+  @JsonKey(ignore: true)
+  _$$TaskEditEventChangeBudgetImplCopyWith<_$TaskEditEventChangeBudgetImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TaskEditEventChangePercProjectImplCopyWith<$Res> {
+  factory _$$TaskEditEventChangePercProjectImplCopyWith(
+          _$TaskEditEventChangePercProjectImpl value,
+          $Res Function(_$TaskEditEventChangePercProjectImpl) then) =
+      __$$TaskEditEventChangePercProjectImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int value});
+}
+
+/// @nodoc
+class __$$TaskEditEventChangePercProjectImplCopyWithImpl<$Res>
+    extends _$TaskEditEventCopyWithImpl<$Res,
+        _$TaskEditEventChangePercProjectImpl>
+    implements _$$TaskEditEventChangePercProjectImplCopyWith<$Res> {
+  __$$TaskEditEventChangePercProjectImplCopyWithImpl(
+      _$TaskEditEventChangePercProjectImpl _value,
+      $Res Function(_$TaskEditEventChangePercProjectImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$TaskEditEventChangePercProjectImpl(
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TaskEditEventChangePercProjectImpl
+    implements TaskEditEventChangePercProject {
+  const _$TaskEditEventChangePercProjectImpl({required this.value});
+
+  @override
+  final int value;
+
+  @override
+  String toString() {
+    return 'TaskEditEvent.changePercProject(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TaskEditEventChangePercProjectImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TaskEditEventChangePercProjectImplCopyWith<
+          _$TaskEditEventChangePercProjectImpl>
+      get copyWith => __$$TaskEditEventChangePercProjectImplCopyWithImpl<
+          _$TaskEditEventChangePercProjectImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String projectId, CrudType crudType) load,
+    required TResult Function(String projectId, String projectName)
+        changeProject,
+    required TResult Function(String value) updateTitle,
+    required TResult Function(DateTime value) changeStartDate,
+    required TResult Function(DateTime value) changeEndDate,
+    required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changePercProject,
+    required TResult Function(TaskPriority value) changePriority,
+    required TResult Function(TaskStatus value) changeStatus,
+    required TResult Function(String value) changeNotes,
+    required TResult Function(List<AppointmentUser> employees)
+        changeSelectedTaskAssignTo,
+    required TResult Function(AppointmentUser employee)
+        removeSelectedTaskAssignTo,
+    required TResult Function(VoidCallback onSave) save,
+  }) {
+    return changePercProject(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String projectId, CrudType crudType)? load,
+    TResult? Function(String projectId, String projectName)? changeProject,
+    TResult? Function(String value)? updateTitle,
+    TResult? Function(DateTime value)? changeStartDate,
+    TResult? Function(DateTime value)? changeEndDate,
+    TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changePercProject,
+    TResult? Function(TaskPriority value)? changePriority,
+    TResult? Function(TaskStatus value)? changeStatus,
+    TResult? Function(String value)? changeNotes,
+    TResult? Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
+    TResult? Function(VoidCallback onSave)? save,
+  }) {
+    return changePercProject?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String projectId, CrudType crudType)? load,
+    TResult Function(String projectId, String projectName)? changeProject,
+    TResult Function(String value)? updateTitle,
+    TResult Function(DateTime value)? changeStartDate,
+    TResult Function(DateTime value)? changeEndDate,
+    TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changePercProject,
+    TResult Function(TaskPriority value)? changePriority,
+    TResult Function(TaskStatus value)? changeStatus,
+    TResult Function(String value)? changeNotes,
+    TResult Function(List<AppointmentUser> employees)?
+        changeSelectedTaskAssignTo,
+    TResult Function(AppointmentUser employee)? removeSelectedTaskAssignTo,
+    TResult Function(VoidCallback onSave)? save,
+    required TResult orElse(),
+  }) {
+    if (changePercProject != null) {
+      return changePercProject(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TaskEditEventLoad value) load,
+    required TResult Function(TaskEditEventChangeProject value) changeProject,
+    required TResult Function(TaskEditEventUpdateTitle value) updateTitle,
+    required TResult Function(TaskEditEventStartDate value) changeStartDate,
+    required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
+    required TResult Function(TaskEditEventEstimatedEffort value)
+        changeEstimatedEffort,
+    required TResult Function(TaskEditEventChangeBudget value) changeBudget,
+    required TResult Function(TaskEditEventChangePercProject value)
+        changePercProject,
+    required TResult Function(TaskEditEventTaskPriority value) changePriority,
+    required TResult Function(TaskEditEventStatus value) changeStatus,
+    required TResult Function(TaskEditEventNotes value) changeNotes,
+    required TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)
+        changeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)
+        removeSelectedTaskAssignTo,
+    required TResult Function(TaskEditEventSave value) save,
+  }) {
+    return changePercProject(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TaskEditEventLoad value)? load,
+    TResult? Function(TaskEditEventChangeProject value)? changeProject,
+    TResult? Function(TaskEditEventUpdateTitle value)? updateTitle,
+    TResult? Function(TaskEditEventStartDate value)? changeStartDate,
+    TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
+    TResult? Function(TaskEditEventEstimatedEffort value)?
+        changeEstimatedEffort,
+    TResult? Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult? Function(TaskEditEventChangePercProject value)? changePercProject,
+    TResult? Function(TaskEditEventTaskPriority value)? changePriority,
+    TResult? Function(TaskEditEventStatus value)? changeStatus,
+    TResult? Function(TaskEditEventNotes value)? changeNotes,
+    TResult? Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
+    TResult? Function(TaskEditEventSave value)? save,
+  }) {
+    return changePercProject?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TaskEditEventLoad value)? load,
+    TResult Function(TaskEditEventChangeProject value)? changeProject,
+    TResult Function(TaskEditEventUpdateTitle value)? updateTitle,
+    TResult Function(TaskEditEventStartDate value)? changeStartDate,
+    TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
+    TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult Function(TaskEditEventChangePercProject value)? changePercProject,
+    TResult Function(TaskEditEventTaskPriority value)? changePriority,
+    TResult Function(TaskEditEventStatus value)? changeStatus,
+    TResult Function(TaskEditEventNotes value)? changeNotes,
+    TResult Function(TaskEditEventChangeSelectedTaskAssignTo value)?
+        changeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventRemoveSelectedTaskAssignTo value)?
+        removeSelectedTaskAssignTo,
+    TResult Function(TaskEditEventSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changePercProject != null) {
+      return changePercProject(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TaskEditEventChangePercProject implements TaskEditEvent {
+  const factory TaskEditEventChangePercProject({required final int value}) =
+      _$TaskEditEventChangePercProjectImpl;
+
+  int get value;
+  @JsonKey(ignore: true)
+  _$$TaskEditEventChangePercProjectImplCopyWith<
+          _$TaskEditEventChangePercProjectImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1525,6 +2066,8 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changePercProject,
     required TResult Function(TaskPriority value) changePriority,
     required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
@@ -1546,6 +2089,8 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changePercProject,
     TResult? Function(TaskPriority value)? changePriority,
     TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
@@ -1566,6 +2111,8 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changePercProject,
     TResult Function(TaskPriority value)? changePriority,
     TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
@@ -1591,6 +2138,9 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
     required TResult Function(TaskEditEventEstimatedEffort value)
         changeEstimatedEffort,
+    required TResult Function(TaskEditEventChangeBudget value) changeBudget,
+    required TResult Function(TaskEditEventChangePercProject value)
+        changePercProject,
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
@@ -1613,6 +2163,8 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult? Function(TaskEditEventEstimatedEffort value)?
         changeEstimatedEffort,
+    TResult? Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult? Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
@@ -1634,6 +2186,8 @@ class _$TaskEditEventTaskPriorityImpl implements TaskEditEventTaskPriority {
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
@@ -1733,6 +2287,8 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changePercProject,
     required TResult Function(TaskPriority value) changePriority,
     required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
@@ -1754,6 +2310,8 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changePercProject,
     TResult? Function(TaskPriority value)? changePriority,
     TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
@@ -1774,6 +2332,8 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changePercProject,
     TResult Function(TaskPriority value)? changePriority,
     TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
@@ -1799,6 +2359,9 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
     required TResult Function(TaskEditEventEstimatedEffort value)
         changeEstimatedEffort,
+    required TResult Function(TaskEditEventChangeBudget value) changeBudget,
+    required TResult Function(TaskEditEventChangePercProject value)
+        changePercProject,
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
@@ -1821,6 +2384,8 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult? Function(TaskEditEventEstimatedEffort value)?
         changeEstimatedEffort,
+    TResult? Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult? Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
@@ -1842,6 +2407,8 @@ class _$TaskEditEventStatusImpl implements TaskEditEventStatus {
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
@@ -1941,6 +2508,8 @@ class _$TaskEditEventNotesImpl implements TaskEditEventNotes {
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changePercProject,
     required TResult Function(TaskPriority value) changePriority,
     required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
@@ -1962,6 +2531,8 @@ class _$TaskEditEventNotesImpl implements TaskEditEventNotes {
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changePercProject,
     TResult? Function(TaskPriority value)? changePriority,
     TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
@@ -1982,6 +2553,8 @@ class _$TaskEditEventNotesImpl implements TaskEditEventNotes {
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changePercProject,
     TResult Function(TaskPriority value)? changePriority,
     TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
@@ -2007,6 +2580,9 @@ class _$TaskEditEventNotesImpl implements TaskEditEventNotes {
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
     required TResult Function(TaskEditEventEstimatedEffort value)
         changeEstimatedEffort,
+    required TResult Function(TaskEditEventChangeBudget value) changeBudget,
+    required TResult Function(TaskEditEventChangePercProject value)
+        changePercProject,
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
@@ -2029,6 +2605,8 @@ class _$TaskEditEventNotesImpl implements TaskEditEventNotes {
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult? Function(TaskEditEventEstimatedEffort value)?
         changeEstimatedEffort,
+    TResult? Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult? Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
@@ -2050,6 +2628,8 @@ class _$TaskEditEventNotesImpl implements TaskEditEventNotes {
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
@@ -2164,6 +2744,8 @@ class _$TaskEditEventChangeSelectedTaskAssignToImpl
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changePercProject,
     required TResult Function(TaskPriority value) changePriority,
     required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
@@ -2185,6 +2767,8 @@ class _$TaskEditEventChangeSelectedTaskAssignToImpl
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changePercProject,
     TResult? Function(TaskPriority value)? changePriority,
     TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
@@ -2205,6 +2789,8 @@ class _$TaskEditEventChangeSelectedTaskAssignToImpl
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changePercProject,
     TResult Function(TaskPriority value)? changePriority,
     TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
@@ -2230,6 +2816,9 @@ class _$TaskEditEventChangeSelectedTaskAssignToImpl
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
     required TResult Function(TaskEditEventEstimatedEffort value)
         changeEstimatedEffort,
+    required TResult Function(TaskEditEventChangeBudget value) changeBudget,
+    required TResult Function(TaskEditEventChangePercProject value)
+        changePercProject,
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
@@ -2252,6 +2841,8 @@ class _$TaskEditEventChangeSelectedTaskAssignToImpl
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult? Function(TaskEditEventEstimatedEffort value)?
         changeEstimatedEffort,
+    TResult? Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult? Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
@@ -2273,6 +2864,8 @@ class _$TaskEditEventChangeSelectedTaskAssignToImpl
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
@@ -2392,6 +2985,8 @@ class _$TaskEditEventRemoveSelectedTaskAssignToImpl
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changePercProject,
     required TResult Function(TaskPriority value) changePriority,
     required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
@@ -2413,6 +3008,8 @@ class _$TaskEditEventRemoveSelectedTaskAssignToImpl
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changePercProject,
     TResult? Function(TaskPriority value)? changePriority,
     TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
@@ -2433,6 +3030,8 @@ class _$TaskEditEventRemoveSelectedTaskAssignToImpl
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changePercProject,
     TResult Function(TaskPriority value)? changePriority,
     TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
@@ -2458,6 +3057,9 @@ class _$TaskEditEventRemoveSelectedTaskAssignToImpl
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
     required TResult Function(TaskEditEventEstimatedEffort value)
         changeEstimatedEffort,
+    required TResult Function(TaskEditEventChangeBudget value) changeBudget,
+    required TResult Function(TaskEditEventChangePercProject value)
+        changePercProject,
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
@@ -2480,6 +3082,8 @@ class _$TaskEditEventRemoveSelectedTaskAssignToImpl
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult? Function(TaskEditEventEstimatedEffort value)?
         changeEstimatedEffort,
+    TResult? Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult? Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
@@ -2501,6 +3105,8 @@ class _$TaskEditEventRemoveSelectedTaskAssignToImpl
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,
@@ -2603,6 +3209,8 @@ class _$TaskEditEventSaveImpl implements TaskEditEventSave {
     required TResult Function(DateTime value) changeStartDate,
     required TResult Function(DateTime value) changeEndDate,
     required TResult Function(String value) changeEstimatedEffort,
+    required TResult Function(double value) changeBudget,
+    required TResult Function(int value) changePercProject,
     required TResult Function(TaskPriority value) changePriority,
     required TResult Function(TaskStatus value) changeStatus,
     required TResult Function(String value) changeNotes,
@@ -2624,6 +3232,8 @@ class _$TaskEditEventSaveImpl implements TaskEditEventSave {
     TResult? Function(DateTime value)? changeStartDate,
     TResult? Function(DateTime value)? changeEndDate,
     TResult? Function(String value)? changeEstimatedEffort,
+    TResult? Function(double value)? changeBudget,
+    TResult? Function(int value)? changePercProject,
     TResult? Function(TaskPriority value)? changePriority,
     TResult? Function(TaskStatus value)? changeStatus,
     TResult? Function(String value)? changeNotes,
@@ -2644,6 +3254,8 @@ class _$TaskEditEventSaveImpl implements TaskEditEventSave {
     TResult Function(DateTime value)? changeStartDate,
     TResult Function(DateTime value)? changeEndDate,
     TResult Function(String value)? changeEstimatedEffort,
+    TResult Function(double value)? changeBudget,
+    TResult Function(int value)? changePercProject,
     TResult Function(TaskPriority value)? changePriority,
     TResult Function(TaskStatus value)? changeStatus,
     TResult Function(String value)? changeNotes,
@@ -2669,6 +3281,9 @@ class _$TaskEditEventSaveImpl implements TaskEditEventSave {
     required TResult Function(TaskEditEventExpectedEndDate value) changeEndDate,
     required TResult Function(TaskEditEventEstimatedEffort value)
         changeEstimatedEffort,
+    required TResult Function(TaskEditEventChangeBudget value) changeBudget,
+    required TResult Function(TaskEditEventChangePercProject value)
+        changePercProject,
     required TResult Function(TaskEditEventTaskPriority value) changePriority,
     required TResult Function(TaskEditEventStatus value) changeStatus,
     required TResult Function(TaskEditEventNotes value) changeNotes,
@@ -2691,6 +3306,8 @@ class _$TaskEditEventSaveImpl implements TaskEditEventSave {
     TResult? Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult? Function(TaskEditEventEstimatedEffort value)?
         changeEstimatedEffort,
+    TResult? Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult? Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult? Function(TaskEditEventTaskPriority value)? changePriority,
     TResult? Function(TaskEditEventStatus value)? changeStatus,
     TResult? Function(TaskEditEventNotes value)? changeNotes,
@@ -2712,6 +3329,8 @@ class _$TaskEditEventSaveImpl implements TaskEditEventSave {
     TResult Function(TaskEditEventStartDate value)? changeStartDate,
     TResult Function(TaskEditEventExpectedEndDate value)? changeEndDate,
     TResult Function(TaskEditEventEstimatedEffort value)? changeEstimatedEffort,
+    TResult Function(TaskEditEventChangeBudget value)? changeBudget,
+    TResult Function(TaskEditEventChangePercProject value)? changePercProject,
     TResult Function(TaskEditEventTaskPriority value)? changePriority,
     TResult Function(TaskEditEventStatus value)? changeStatus,
     TResult Function(TaskEditEventNotes value)? changeNotes,

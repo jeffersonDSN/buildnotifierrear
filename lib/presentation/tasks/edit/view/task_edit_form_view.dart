@@ -176,6 +176,50 @@ class TaskEditFormView extends IView {
                               },
                             ),
                           ),
+                          gapWidth8,
+                          Expanded(
+                            child: BaseTextFormField(
+                              label: context.tr.budget,
+                              initialValue: state.task.budget > 0
+                                  ? state.task.budget.toStringAsFixed(2)
+                                  : '',
+                              inputFormatters: <TextInputFormatter>[
+                                FilteringTextInputFormatter.allow(
+                                  RegExp(r'^\d+\.?\d{0,2}'),
+                                ),
+                              ],
+                              onChanged: (value) {
+                                bloc.add(
+                                  TaskEditEvent.changeBudget(
+                                    value: double.tryParse(value) ?? 0,
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                          gapWidth8,
+                          Expanded(
+                            child: BaseTextFormField(
+                              label: 'Project %',
+                              initialValue: state.task.taskPercProject > 0
+                                  ? state.task.taskPercProject.toString()
+                                  : '',
+                              inputFormatters: <TextInputFormatter>[
+                                FilteringTextInputFormatter.allow(
+                                  RegExp(
+                                    r'^(100(?:\.0{1,2})?|\d{0,2}(?:\.\d{0,2})?)',
+                                  ),
+                                ),
+                              ],
+                              onChanged: (value) {
+                                bloc.add(
+                                  TaskEditEvent.changePercProject(
+                                    value: int.tryParse(value) ?? 0,
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
                         ],
                       ),
                       gapHeight8,

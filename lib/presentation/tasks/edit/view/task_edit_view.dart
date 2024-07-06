@@ -100,10 +100,9 @@ class TaskEditView extends StatelessWidget {
                   ),
                   loaded: (type, task, projects) {
                     return TabBarView(
+                      physics: const NeverScrollableScrollPhysics(),
                       children: [
-                        TaskEditFormView(
-                          key: GlobalKey(),
-                        ),
+                        TaskEditFormView(),
                         ...type.when(
                           create: () => [
                             Container(),

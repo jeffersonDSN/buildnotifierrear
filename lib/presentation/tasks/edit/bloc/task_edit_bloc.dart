@@ -126,6 +126,20 @@ class TaskEditBloc extends Bloc<TaskEditEvent, TaskEditState> {
               ),
             );
           },
+          changeBudget: (value) {
+            emit(
+              state.asLoaded.copyWith(
+                task: state.asLoaded.task.copyWith(budget: value),
+              ),
+            );
+          },
+          changePercProject: (value) {
+            emit(
+              state.asLoaded.copyWith(
+                task: state.asLoaded.task.copyWith(taskPercProject: value),
+              ),
+            );
+          },
           removeSelectedTaskAssignTo: (employee) {
             var list = [...state.asLoaded.task.assignTo];
             list.remove(employee);

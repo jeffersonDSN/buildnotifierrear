@@ -17,6 +17,8 @@ _$TaskImpl _$$TaskImplFromJson(Map<String, dynamic> json) => _$TaskImpl(
       expectedEndDate: json['expectedEndDate'] == null
           ? null
           : DateTime.parse(json['expectedEndDate'] as String),
+      budget: (json['budget'] as num?)?.toDouble() ?? 0,
+      taskPercProject: (json['taskPercProject'] as num?)?.toInt() ?? 0,
       estimatedEffort: json['estimatedEffort'] as String? ?? '',
       priority: json['priority'] == null
           ? TaskPriority.low
@@ -53,6 +55,8 @@ Map<String, dynamic> _$$TaskImplToJson(_$TaskImpl instance) =>
       'title': instance.title,
       'startDate': instance.startDate?.toIso8601String(),
       'expectedEndDate': instance.expectedEndDate?.toIso8601String(),
+      'budget': instance.budget,
+      'taskPercProject': instance.taskPercProject,
       'estimatedEffort': instance.estimatedEffort,
       'priority': const TaskPriorityConverter().toJson(instance.priority),
       'status': const TaskStatusConverter().toJson(instance.status),

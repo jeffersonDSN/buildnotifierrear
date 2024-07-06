@@ -28,6 +28,14 @@ class TaskEditEvent with _$TaskEditEvent {
     required String value,
   }) = TaskEditEventEstimatedEffort;
 
+  const factory TaskEditEvent.changeBudget({
+    required double value,
+  }) = TaskEditEventChangeBudget;
+
+  const factory TaskEditEvent.changePercProject({
+    required int value,
+  }) = TaskEditEventChangePercProject;
+
   const factory TaskEditEvent.changePriority({
     required TaskPriority value,
   }) = TaskEditEventTaskPriority;

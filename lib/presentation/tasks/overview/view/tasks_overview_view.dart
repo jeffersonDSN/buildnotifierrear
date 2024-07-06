@@ -108,49 +108,52 @@ class TasksOverviewView extends IView {
             ),
           ),
           Expanded(
-            child: TabBarView(children: [
-              BlocBuilder<TasksOverviewBloc, TasksOverviewState>(
-                bloc: bloc,
-                builder: (context, state) {
-                  return state.maybeWhen(
-                    orElse: () => const Card(
-                      child: Center(
-                        child: CircularProgressIndicator(),
+            child: TabBarView(
+              physics: const NeverScrollableScrollPhysics(),
+              children: [
+                BlocBuilder<TasksOverviewBloc, TasksOverviewState>(
+                  bloc: bloc,
+                  builder: (context, state) {
+                    return state.maybeWhen(
+                      orElse: () => const Card(
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
                       ),
-                    ),
-                    loaded: (tasks) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Row(
-                            children: [
-                              TaskStatusDistributionChart(),
-                            ],
-                          ),
-                          Expanded(
-                            child: TasksTableWidget(
-                              tasks: tasks,
-                              onPressed: (task) {
-                                appBloc(context).add(
-                                  AppEvent.changeView(
-                                    mod: Mod.tasks(
-                                      type: ViewType.update(
-                                        id: task.id,
+                      loaded: (tasks) {
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Row(
+                              children: [
+                                TaskStatusDistributionChart(),
+                              ],
+                            ),
+                            Expanded(
+                              child: TasksTableWidget(
+                                tasks: tasks,
+                                onPressed: (task) {
+                                  appBloc(context).add(
+                                    AppEvent.changeView(
+                                      mod: Mod.tasks(
+                                        type: ViewType.update(
+                                          id: task.id,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                );
-                              },
+                                  );
+                                },
+                              ),
                             ),
-                          ),
-                        ],
-                      );
-                    },
-                  );
-                },
-              ),
-              const TaskBoardWidget(),
-            ]),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                ),
+                const TaskBoardWidget(),
+              ],
+            ),
           ),
         ],
       ),

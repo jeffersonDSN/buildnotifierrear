@@ -103,49 +103,52 @@ class ProjectsOverviewView extends IView {
             ),
           ),
           Expanded(
-            child: TabBarView(children: [
-              BlocBuilder<ProjectsOverviewBloc, ProjectsOverviewState>(
-                bloc: bloc,
-                builder: (context, state) {
-                  return state.maybeWhen(
-                    orElse: () => const Card(
-                      child: Center(
-                        child: CircularProgressIndicator(),
+            child: TabBarView(
+              physics: const NeverScrollableScrollPhysics(),
+              children: [
+                BlocBuilder<ProjectsOverviewBloc, ProjectsOverviewState>(
+                  bloc: bloc,
+                  builder: (context, state) {
+                    return state.maybeWhen(
+                      orElse: () => const Card(
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
                       ),
-                    ),
-                    loaded: (projects) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Row(
-                            children: [
-                              ProjectStatusDistributionChart(),
-                            ],
-                          ),
-                          Expanded(
-                            child: ProjectsTableWidget(
-                              projects: projects,
-                              onPressed: (project) {
-                                appBloc(context).add(
-                                  AppEvent.changeView(
-                                    mod: Mod.projects(
-                                      type: ViewType.update(
-                                        id: project.id,
+                      loaded: (projects) {
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Row(
+                              children: [
+                                ProjectStatusDistributionChart(),
+                              ],
+                            ),
+                            Expanded(
+                              child: ProjectsTableWidget(
+                                projects: projects,
+                                onPressed: (project) {
+                                  appBloc(context).add(
+                                    AppEvent.changeView(
+                                      mod: Mod.projects(
+                                        type: ViewType.update(
+                                          id: project.id,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                );
-                              },
+                                  );
+                                },
+                              ),
                             ),
-                          ),
-                        ],
-                      );
-                    },
-                  );
-                },
-              ),
-              const ProjectsBoardWidget(),
-            ]),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                ),
+                const ProjectsBoardWidget(),
+              ],
+            ),
           ),
         ],
       ),

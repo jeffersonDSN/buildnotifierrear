@@ -17,6 +17,8 @@ class Task with _$Task {
     @Default('') String title,
     DateTime? startDate,
     DateTime? expectedEndDate,
+    @Default(0) double budget,
+    @Default(0) int taskPercProject,
     @Default('') String estimatedEffort,
     @TaskPriorityConverter() @Default(TaskPriority.low) TaskPriority priority,
     @TaskStatusConverter() @Default(TaskStatus.toDo) TaskStatus status,

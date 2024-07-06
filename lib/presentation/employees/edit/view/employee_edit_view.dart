@@ -102,6 +102,7 @@ class EmployeeEditView extends StatelessWidget {
           ),
           const Expanded(
             child: TabBarView(
+              physics: NeverScrollableScrollPhysics(),
               children: [
                 EmployeeEditFormView(),
                 EmployeeTimecardOverview(),
