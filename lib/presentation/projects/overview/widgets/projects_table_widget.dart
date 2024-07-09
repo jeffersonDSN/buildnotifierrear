@@ -1,6 +1,7 @@
 import 'package:buildnotifierrear/domain/entities/enums/project_status_enums.dart';
 import 'package:buildnotifierrear/domain/entities/project/project.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
+import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,19 @@ class ProjectsTableWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double calculateExpectedProgress(
+        DateTime startDate, DateTime expectedEndDate) {
+      DateTime today = DateTime.now();
+
+      int totalDays = expectedEndDate.difference(startDate).inDays;
+      int pastDays = today.difference(startDate).inDays;
+
+      double progressoEsperado =
+          totalDays > 0 ? (pastDays / totalDays) * 100 : 0;
+
+      return progressoEsperado;
+    }
+
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(
@@ -30,19 +44,17 @@ class ProjectsTableWidget extends StatelessWidget {
           ),
           columns: [
             DataColumn2(
-              label: Expanded(
-                child: Text(context.tr.name),
-              ),
+              size: ColumnSize.L,
+              label: Text(context.tr.name),
             ),
             DataColumn2(
-              label: Expanded(
-                child: Text(context.tr.client),
-              ),
+              label: Text(context.tr.client),
             ),
             DataColumn2(
-              label: Expanded(
-                child: Text(context.tr.status),
-              ),
+              label: Text(context.tr.status),
+            ),
+            DataColumn2(
+              label: Text(context.tr.progress),
             ),
             DataColumn2(
               numeric: true,
@@ -50,11 +62,82 @@ class ProjectsTableWidget extends StatelessWidget {
             ),
           ],
           rows: projects.map((project) {
+            var expectedProgress = calculateExpectedProgress(
+                project.startDate!, project.expectedCompletionDate!);
+
             return DataRow(
               cells: [
-                DataCell(Text(project.name)),
-                DataCell(Text(project.clientFirstname)),
-                DataCell(Text(project.status.name(context))),
+                DataCell(
+                  Text(
+                    project.name,
+                  ),
+                ),
+                DataCell(
+                  Text(
+                    project.clientFirstname,
+                  ),
+                ),
+                DataCell(
+                  Container(
+                    decoration: BoxDecoration(
+                      color: AppColor.lightColor,
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: project.status.color,
+                        width: .5,
+                      ),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: Sizes.size12,
+                      vertical: Sizes.size2,
+                    ),
+                    child: Text(
+                      project.status.name(context),
+                      style: TextStyle(
+                        color: project.status.color.withOpacity(.7),
+                      ),
+                    ),
+                  ),
+                ),
+                DataCell(
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '${project.progress}%',
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: LinearProgressIndicator(
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(
+                                  Sizes.size4,
+                                ),
+                              ),
+                              value: project.progress / 100,
+                              backgroundColor: AppColor.backgroundColor,
+                              color: expectedProgress <= project.progress
+                                  ? AppColor.green
+                                  : project.expectedCompletionDate!
+                                          .isBefore(DateTime.now())
+                                      ? AppColor.red
+                                      : AppColor.orange,
+                            ),
+                          ),
+                          if (project.progress == 0)
+                            Icon(
+                              Icons.flag,
+                              color: project.expectedCompletionDate!
+                                      .isBefore(DateTime.now())
+                                  ? AppColor.red
+                                  : AppColor.orange,
+                            ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
                 DataCell(
                   IconButton(
                     icon: const Icon(Icons.arrow_forward_ios),

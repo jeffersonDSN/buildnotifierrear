@@ -348,4 +348,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get addAttachment => 'Agregar adjunto';
+
+  @override
+  String get progress => 'Progreso';
 }

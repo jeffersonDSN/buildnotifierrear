@@ -263,6 +263,8 @@ abstract class AppLocalizations {
   String get attachment;
 
   String get addAttachment;
+
+  String get progress;
 }
 
 class _AppLocalizationsDelegate

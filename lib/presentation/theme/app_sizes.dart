@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 /// Constant sizes to be used in the app (sizes, gaps, rounded corners etc.)
 class Sizes {
   static const size0 = 0.0;
+  static const size2 = 2.0;
   static const size4 = 4.0;
   static const size8 = 8.0;
   static const size12 = 12.0;

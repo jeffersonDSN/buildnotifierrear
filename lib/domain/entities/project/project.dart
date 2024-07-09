@@ -26,6 +26,7 @@ class Project with _$Project {
     @Default('') String address,
     @Default('') String address2,
     @Default('') String description,
+    @Default(0) int progress,
     @Default({}) Map<String, String> descriptionList,
     int? latitude,
     int? longitude,

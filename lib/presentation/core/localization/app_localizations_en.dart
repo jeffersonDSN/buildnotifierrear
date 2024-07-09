@@ -347,4 +347,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get addAttachment => 'Add attachment';
+
+  @override
+  String get progress => 'Progress';
 }

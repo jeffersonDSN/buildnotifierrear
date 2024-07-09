@@ -154,20 +154,20 @@ class SignInView extends IView {
                             ),
                           ],
                         ),
-                        gapHeight24,
-                        Row(
-                          children: [
-                            Text(context.tr.donotHaveAccount),
-                            TextButton(
-                              child: Text(context.tr.signup),
-                              onPressed: () {
-                                appBloc(context).add(
-                                  const AppEvent.createNewUser(),
-                                );
-                              },
-                            )
-                          ],
-                        ),
+                        // gapHeight24,
+                        // Row(
+                        //   children: [
+                        //     Text(context.tr.donotHaveAccount),
+                        //     TextButton(
+                        //       child: Text(context.tr.signup),
+                        //       onPressed: () {
+                        //         appBloc(context).add(
+                        //           const AppEvent.createNewUser(),
+                        //         );
+                        //       },
+                        //     )
+                        //   ],
+                        // ),
                       ],
                     ),
                   ),
