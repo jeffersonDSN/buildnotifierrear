@@ -29,6 +29,7 @@ _$TaskImpl _$$TaskImplFromJson(Map<String, dynamic> json) => _$TaskImpl(
           : const TaskStatusConverter()
               .fromJson((json['status'] as num).toInt()),
       notes: json['notes'] as String? ?? '',
+      progress: (json['progress'] as num?)?.toInt() ?? 0,
       notesList: (json['notesList'] as Map<String, dynamic>?)?.map(
             (k, e) => MapEntry(k, e as String),
           ) ??
@@ -57,6 +58,7 @@ Map<String, dynamic> _$$TaskImplToJson(_$TaskImpl instance) =>
       'priority': const TaskPriorityConverter().toJson(instance.priority),
       'status': const TaskStatusConverter().toJson(instance.status),
       'notes': instance.notes,
+      'progress': instance.progress,
       'notesList': instance.notesList,
       'assignTo': instance.assignTo,
       'dependencies': instance.dependencies,

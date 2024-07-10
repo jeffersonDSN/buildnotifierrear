@@ -1,4 +1,5 @@
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
+import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:flutter/material.dart';
 
 enum TaskPriority {
@@ -18,6 +19,19 @@ extension OnTaskPriority on TaskPriority {
         return 2;
       default:
         return 0;
+    }
+  }
+
+  Color get color {
+    switch (this) {
+      case TaskPriority.low:
+        return AppColor.green;
+      case TaskPriority.medium:
+        return AppColor.yellow;
+      case TaskPriority.high:
+        return AppColor.red;
+      default:
+        return AppColor.green;
     }
   }
 

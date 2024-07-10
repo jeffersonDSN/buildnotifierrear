@@ -34,6 +34,7 @@ mixin _$Task {
   @TaskStatusConverter()
   TaskStatus get status => throw _privateConstructorUsedError;
   String get notes => throw _privateConstructorUsedError;
+  int get progress => throw _privateConstructorUsedError;
   Map<String, String> get notesList => throw _privateConstructorUsedError;
   List<AppointmentUser> get assignTo => throw _privateConstructorUsedError;
   List<String> get dependencies => throw _privateConstructorUsedError;
@@ -61,6 +62,7 @@ abstract class $TaskCopyWith<$Res> {
       @TaskPriorityConverter() TaskPriority priority,
       @TaskStatusConverter() TaskStatus status,
       String notes,
+      int progress,
       Map<String, String> notesList,
       List<AppointmentUser> assignTo,
       List<String> dependencies});
@@ -91,6 +93,7 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
     Object? priority = null,
     Object? status = null,
     Object? notes = null,
+    Object? progress = null,
     Object? notesList = null,
     Object? assignTo = null,
     Object? dependencies = null,
@@ -144,6 +147,10 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String,
+      progress: null == progress
+          ? _value.progress
+          : progress // ignore: cast_nullable_to_non_nullable
+              as int,
       notesList: null == notesList
           ? _value.notesList
           : notesList // ignore: cast_nullable_to_non_nullable
@@ -180,6 +187,7 @@ abstract class _$$TaskImplCopyWith<$Res> implements $TaskCopyWith<$Res> {
       @TaskPriorityConverter() TaskPriority priority,
       @TaskStatusConverter() TaskStatus status,
       String notes,
+      int progress,
       Map<String, String> notesList,
       List<AppointmentUser> assignTo,
       List<String> dependencies});
@@ -207,6 +215,7 @@ class __$$TaskImplCopyWithImpl<$Res>
     Object? priority = null,
     Object? status = null,
     Object? notes = null,
+    Object? progress = null,
     Object? notesList = null,
     Object? assignTo = null,
     Object? dependencies = null,
@@ -260,6 +269,10 @@ class __$$TaskImplCopyWithImpl<$Res>
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String,
+      progress: null == progress
+          ? _value.progress
+          : progress // ignore: cast_nullable_to_non_nullable
+              as int,
       notesList: null == notesList
           ? _value._notesList
           : notesList // ignore: cast_nullable_to_non_nullable
@@ -292,6 +305,7 @@ class _$TaskImpl implements _Task {
       @TaskPriorityConverter() this.priority = TaskPriority.low,
       @TaskStatusConverter() this.status = TaskStatus.toDo,
       this.notes = '',
+      this.progress = 0,
       final Map<String, String> notesList = const {},
       final List<AppointmentUser> assignTo = const [],
       final List<String> dependencies = const []})
@@ -338,6 +352,9 @@ class _$TaskImpl implements _Task {
   @override
   @JsonKey()
   final String notes;
+  @override
+  @JsonKey()
+  final int progress;
   final Map<String, String> _notesList;
   @override
   @JsonKey()
@@ -367,7 +384,7 @@ class _$TaskImpl implements _Task {
 
   @override
   String toString() {
-    return 'Task(id: $id, projectId: $projectId, projectName: $projectName, title: $title, startDate: $startDate, expectedEndDate: $expectedEndDate, budget: $budget, taskPercProject: $taskPercProject, estimatedEffort: $estimatedEffort, priority: $priority, status: $status, notes: $notes, notesList: $notesList, assignTo: $assignTo, dependencies: $dependencies)';
+    return 'Task(id: $id, projectId: $projectId, projectName: $projectName, title: $title, startDate: $startDate, expectedEndDate: $expectedEndDate, budget: $budget, taskPercProject: $taskPercProject, estimatedEffort: $estimatedEffort, priority: $priority, status: $status, notes: $notes, progress: $progress, notesList: $notesList, assignTo: $assignTo, dependencies: $dependencies)';
   }
 
   @override
@@ -394,6 +411,8 @@ class _$TaskImpl implements _Task {
                 other.priority == priority) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.progress, progress) ||
+                other.progress == progress) &&
             const DeepCollectionEquality()
                 .equals(other._notesList, _notesList) &&
             const DeepCollectionEquality().equals(other._assignTo, _assignTo) &&
@@ -417,6 +436,7 @@ class _$TaskImpl implements _Task {
       priority,
       status,
       notes,
+      progress,
       const DeepCollectionEquality().hash(_notesList),
       const DeepCollectionEquality().hash(_assignTo),
       const DeepCollectionEquality().hash(_dependencies));
@@ -449,6 +469,7 @@ abstract class _Task implements Task {
       @TaskPriorityConverter() final TaskPriority priority,
       @TaskStatusConverter() final TaskStatus status,
       final String notes,
+      final int progress,
       final Map<String, String> notesList,
       final List<AppointmentUser> assignTo,
       final List<String> dependencies}) = _$TaskImpl;
@@ -481,6 +502,8 @@ abstract class _Task implements Task {
   TaskStatus get status;
   @override
   String get notes;
+  @override
+  int get progress;
   @override
   Map<String, String> get notesList;
   @override

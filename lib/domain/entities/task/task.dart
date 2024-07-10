@@ -23,6 +23,7 @@ class Task with _$Task {
     @TaskPriorityConverter() @Default(TaskPriority.low) TaskPriority priority,
     @TaskStatusConverter() @Default(TaskStatus.toDo) TaskStatus status,
     @Default('') String notes,
+    @Default(0) int progress,
     @Default({}) Map<String, String> notesList,
     @Default([]) List<AppointmentUser> assignTo,
     @Default([]) List<String> dependencies,

@@ -19,7 +19,9 @@ class ProjectsTableWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double calculateExpectedProgress(
-        DateTime startDate, DateTime expectedEndDate) {
+      DateTime startDate,
+      DateTime expectedEndDate,
+    ) {
       DateTime today = DateTime.now();
 
       int totalDays = expectedEndDate.difference(startDate).inDays;
@@ -51,6 +53,7 @@ class ProjectsTableWidget extends StatelessWidget {
               label: Text(context.tr.client),
             ),
             DataColumn2(
+              fixedWidth: Sizes.size156,
               label: Text(context.tr.status),
             ),
             DataColumn2(
@@ -63,13 +66,17 @@ class ProjectsTableWidget extends StatelessWidget {
           ],
           rows: projects.map((project) {
             var expectedProgress = calculateExpectedProgress(
-                project.startDate!, project.expectedCompletionDate!);
+              project.startDate!,
+              project.expectedCompletionDate!,
+            );
 
             return DataRow(
               cells: [
                 DataCell(
                   Text(
                     project.name,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
                 DataCell(
