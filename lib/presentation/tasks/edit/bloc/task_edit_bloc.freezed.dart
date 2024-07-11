@@ -3365,7 +3365,7 @@ mixin _$TaskEditState {
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(
-            CrudType crudType, Task task, List<Project> projects)
+            CrudType crudType, Task task, List<Project> projects, bool isSaving)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -3373,7 +3373,8 @@ mixin _$TaskEditState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType crudType, Task task, List<Project> projects)?
+    TResult? Function(CrudType crudType, Task task, List<Project> projects,
+            bool isSaving)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -3381,7 +3382,8 @@ mixin _$TaskEditState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType crudType, Task task, List<Project> projects)?
+    TResult Function(CrudType crudType, Task task, List<Project> projects,
+            bool isSaving)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -3469,7 +3471,7 @@ class _$TaskEditStateEmptyImpl implements TaskEditStateEmpty {
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(
-            CrudType crudType, Task task, List<Project> projects)
+            CrudType crudType, Task task, List<Project> projects, bool isSaving)
         loaded,
   }) {
     return empty();
@@ -3480,7 +3482,8 @@ class _$TaskEditStateEmptyImpl implements TaskEditStateEmpty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType crudType, Task task, List<Project> projects)?
+    TResult? Function(CrudType crudType, Task task, List<Project> projects,
+            bool isSaving)?
         loaded,
   }) {
     return empty?.call();
@@ -3491,7 +3494,8 @@ class _$TaskEditStateEmptyImpl implements TaskEditStateEmpty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType crudType, Task task, List<Project> projects)?
+    TResult Function(CrudType crudType, Task task, List<Project> projects,
+            bool isSaving)?
         loaded,
     required TResult orElse(),
   }) {
@@ -3582,7 +3586,7 @@ class _$TaskEditStateLoadingImpl implements TaskEditStateLoading {
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(
-            CrudType crudType, Task task, List<Project> projects)
+            CrudType crudType, Task task, List<Project> projects, bool isSaving)
         loaded,
   }) {
     return loading();
@@ -3593,7 +3597,8 @@ class _$TaskEditStateLoadingImpl implements TaskEditStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType crudType, Task task, List<Project> projects)?
+    TResult? Function(CrudType crudType, Task task, List<Project> projects,
+            bool isSaving)?
         loaded,
   }) {
     return loading?.call();
@@ -3604,7 +3609,8 @@ class _$TaskEditStateLoadingImpl implements TaskEditStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType crudType, Task task, List<Project> projects)?
+    TResult Function(CrudType crudType, Task task, List<Project> projects,
+            bool isSaving)?
         loaded,
     required TResult orElse(),
   }) {
@@ -3659,7 +3665,8 @@ abstract class _$$TaskEditStateLoadedImplCopyWith<$Res> {
           $Res Function(_$TaskEditStateLoadedImpl) then) =
       __$$TaskEditStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({CrudType crudType, Task task, List<Project> projects});
+  $Res call(
+      {CrudType crudType, Task task, List<Project> projects, bool isSaving});
 
   $CrudTypeCopyWith<$Res> get crudType;
   $TaskCopyWith<$Res> get task;
@@ -3679,6 +3686,7 @@ class __$$TaskEditStateLoadedImplCopyWithImpl<$Res>
     Object? crudType = null,
     Object? task = null,
     Object? projects = null,
+    Object? isSaving = null,
   }) {
     return _then(_$TaskEditStateLoadedImpl(
       crudType: null == crudType
@@ -3693,6 +3701,10 @@ class __$$TaskEditStateLoadedImplCopyWithImpl<$Res>
           ? _value._projects
           : projects // ignore: cast_nullable_to_non_nullable
               as List<Project>,
+      isSaving: null == isSaving
+          ? _value.isSaving
+          : isSaving // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -3719,7 +3731,8 @@ class _$TaskEditStateLoadedImpl implements TaskEditStateLoaded {
   const _$TaskEditStateLoadedImpl(
       {required this.crudType,
       required this.task,
-      required final List<Project> projects})
+      required final List<Project> projects,
+      this.isSaving = false})
       : _projects = projects;
 
   @override
@@ -3735,8 +3748,12 @@ class _$TaskEditStateLoadedImpl implements TaskEditStateLoaded {
   }
 
   @override
+  @JsonKey()
+  final bool isSaving;
+
+  @override
   String toString() {
-    return 'TaskEditState.loaded(crudType: $crudType, task: $task, projects: $projects)';
+    return 'TaskEditState.loaded(crudType: $crudType, task: $task, projects: $projects, isSaving: $isSaving)';
   }
 
   @override
@@ -3747,12 +3764,14 @@ class _$TaskEditStateLoadedImpl implements TaskEditStateLoaded {
             (identical(other.crudType, crudType) ||
                 other.crudType == crudType) &&
             (identical(other.task, task) || other.task == task) &&
-            const DeepCollectionEquality().equals(other._projects, _projects));
+            const DeepCollectionEquality().equals(other._projects, _projects) &&
+            (identical(other.isSaving, isSaving) ||
+                other.isSaving == isSaving));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, crudType, task,
-      const DeepCollectionEquality().hash(_projects));
+      const DeepCollectionEquality().hash(_projects), isSaving);
 
   @JsonKey(ignore: true)
   @override
@@ -3767,10 +3786,10 @@ class _$TaskEditStateLoadedImpl implements TaskEditStateLoaded {
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(
-            CrudType crudType, Task task, List<Project> projects)
+            CrudType crudType, Task task, List<Project> projects, bool isSaving)
         loaded,
   }) {
-    return loaded(crudType, task, projects);
+    return loaded(crudType, task, projects, isSaving);
   }
 
   @override
@@ -3778,10 +3797,11 @@ class _$TaskEditStateLoadedImpl implements TaskEditStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? empty,
     TResult? Function()? loading,
-    TResult? Function(CrudType crudType, Task task, List<Project> projects)?
+    TResult? Function(CrudType crudType, Task task, List<Project> projects,
+            bool isSaving)?
         loaded,
   }) {
-    return loaded?.call(crudType, task, projects);
+    return loaded?.call(crudType, task, projects, isSaving);
   }
 
   @override
@@ -3789,12 +3809,13 @@ class _$TaskEditStateLoadedImpl implements TaskEditStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? loading,
-    TResult Function(CrudType crudType, Task task, List<Project> projects)?
+    TResult Function(CrudType crudType, Task task, List<Project> projects,
+            bool isSaving)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(crudType, task, projects);
+      return loaded(crudType, task, projects, isSaving);
     }
     return orElse();
   }
@@ -3838,11 +3859,13 @@ abstract class TaskEditStateLoaded implements TaskEditState {
   const factory TaskEditStateLoaded(
       {required final CrudType crudType,
       required final Task task,
-      required final List<Project> projects}) = _$TaskEditStateLoadedImpl;
+      required final List<Project> projects,
+      final bool isSaving}) = _$TaskEditStateLoadedImpl;
 
   CrudType get crudType;
   Task get task;
   List<Project> get projects;
+  bool get isSaving;
   @JsonKey(ignore: true)
   _$$TaskEditStateLoadedImplCopyWith<_$TaskEditStateLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;

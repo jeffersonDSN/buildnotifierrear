@@ -108,20 +108,30 @@ class TasksOverviewView extends IView {
             ),
           ),
           Expanded(
-            child: TabBarView(
-              physics: const NeverScrollableScrollPhysics(),
-              children: [
-                BlocBuilder<TasksOverviewBloc, TasksOverviewState>(
-                  bloc: bloc,
-                  builder: (context, state) {
-                    return state.maybeWhen(
-                      orElse: () => const Card(
+            child: BlocBuilder<TasksOverviewBloc, TasksOverviewState>(
+              bloc: bloc,
+              builder: (context, state) {
+                return state.maybeWhen(
+                  orElse: () => const TabBarView(
+                    physics: NeverScrollableScrollPhysics(),
+                    children: [
+                      Card(
                         child: Center(
                           child: CircularProgressIndicator(),
                         ),
                       ),
-                      loaded: (tasks) {
-                        return Column(
+                      Card(
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  loaded: (tasks) {
+                    return TabBarView(
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: [
+                        Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Row(
@@ -146,13 +156,34 @@ class TasksOverviewView extends IView {
                               ),
                             ),
                           ],
-                        );
-                      },
+                        ),
+                        TaskBoardWidget(
+                          tasks: tasks,
+                          onPressed: (value) {
+                            appBloc(context).add(
+                              AppEvent.changeView(
+                                mod: Mod.tasks(
+                                  type: ViewType.update(
+                                    id: value.id,
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                          onChangeStatus: (value) {
+                            bloc.add(
+                              TasksOverviewEvent.changeStatus(
+                                task: value.task,
+                                status: value.status,
+                              ),
+                            );
+                          },
+                        ),
+                      ],
                     );
                   },
-                ),
-                const TaskBoardWidget(),
-              ],
+                );
+              },
             ),
           ),
         ],

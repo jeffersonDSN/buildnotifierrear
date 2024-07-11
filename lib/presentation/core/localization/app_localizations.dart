@@ -265,6 +265,12 @@ abstract class AppLocalizations {
   String get addAttachment;
 
   String get progress;
+
+  String get month;
+
+  String get week;
+
+  String get day;
 }
 
 class _AppLocalizationsDelegate

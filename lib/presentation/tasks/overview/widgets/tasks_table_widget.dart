@@ -59,7 +59,7 @@ class TasksTableWidget extends StatelessWidget {
               label: Text(context.tr.priority),
             ),
             DataColumn2(
-              fixedWidth: Sizes.size156,
+              fixedWidth: Sizes.size172,
               label: Text(context.tr.status),
             ),
             DataColumn2(

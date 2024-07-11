@@ -18,6 +18,8 @@ class TaskEditView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
     var bloc = BlocProvider.of<TaskEditBloc>(context);
 
     bloc.add(
@@ -98,11 +100,14 @@ class TaskEditView extends StatelessWidget {
                   orElse: () => const Center(
                     child: CircularProgressIndicator(),
                   ),
-                  loaded: (type, task, projects) {
+                  loaded: (type, task, projects, isSaving) {
                     return TabBarView(
                       physics: const NeverScrollableScrollPhysics(),
                       children: [
-                        TaskEditFormView(),
+                        TaskEditFormView(
+                          formKey: formKey,
+                          isSaving: isSaving,
+                        ),
                         ...type.when(
                           create: () => [
                             Container(),

@@ -351,4 +351,13 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get progress => 'Progresso';
+
+  @override
+  String get month => 'Mês';
+
+  @override
+  String get week => 'Semana';
+
+  @override
+  String get day => 'Dia';
 }

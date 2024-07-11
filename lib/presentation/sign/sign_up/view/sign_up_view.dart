@@ -12,7 +12,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class SignUpView extends IView {
   SignUpView({super.key});
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ class SignUpView extends IView {
                         Sizes.size0,
                       ),
                       child: Form(
-                        key: _formKey,
+                        key: formKey,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -218,7 +218,7 @@ class SignUpView extends IView {
                                           )
                                         : Text(context.tr.signup),
                                     onPressed: () {
-                                      if (_formKey.currentState?.validate() ??
+                                      if (formKey.currentState?.validate() ??
                                           false) {
                                         // ScaffoldMessenger.of(context).showSnackBar(
                                         //   SnackBar(content: Text('Formulário válido!')),

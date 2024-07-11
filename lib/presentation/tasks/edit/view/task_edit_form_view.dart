@@ -16,7 +16,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TaskEditFormView extends IView {
-  const TaskEditFormView({super.key});
+  final GlobalKey<FormState> formKey;
+  final bool isSaving;
+  const TaskEditFormView({
+    super.key,
+    required this.formKey,
+    this.isSaving = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +46,7 @@ class TaskEditFormView extends IView {
           Expanded(
             child: SingleChildScrollView(
               child: Form(
+                key: formKey,
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(
                     Sizes.size32,
@@ -62,6 +69,12 @@ class TaskEditFormView extends IView {
                                     value: value,
                                   ),
                                 );
+                              },
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return '${context.tr.title} ${context.tr.isRequired}';
+                                }
+                                return null;
                               },
                             ),
                           ),
@@ -132,6 +145,12 @@ class TaskEditFormView extends IView {
                                 ),
                               );
                             },
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return '${context.tr.startDate} ${context.tr.isRequired}';
+                              }
+                              return null;
+                            },
                           ),
                           gapWidth16,
                           BaseDateInputWidget(
@@ -154,6 +173,12 @@ class TaskEditFormView extends IView {
                                   value: value,
                                 ),
                               );
+                            },
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return '${context.tr.expectedEndDate} ${context.tr.isRequired}';
+                              }
+                              return null;
                             },
                           ),
                           gapWidth16,
@@ -399,17 +424,23 @@ class TaskEditFormView extends IView {
                   icon: const Icon(
                     Icons.check,
                   ),
-                  label: Text(context.tr.save),
+                  label: !isSaving
+                      ? Text(context.tr.save)
+                      : const Center(
+                          child: CircularProgressIndicator(),
+                        ),
                   onPressed: () {
-                    bloc.add(
-                      TaskEditEvent.save(
-                        onSave: () {
-                          appBloc(context).add(
-                            const AppEvent.goBack(),
-                          );
-                        },
-                      ),
-                    );
+                    if (formKey.currentState?.validate() ?? false) {
+                      bloc.add(
+                        TaskEditEvent.save(
+                          onSave: () {
+                            appBloc(context).add(
+                              const AppEvent.goBack(),
+                            );
+                          },
+                        ),
+                      );
+                    }
                   },
                 ),
               ),

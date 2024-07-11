@@ -351,4 +351,13 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get progress => 'Progreso';
+
+  @override
+  String get month => 'Mes';
+
+  @override
+  String get week => 'Semana';
+
+  @override
+  String get day => 'Día';
 }

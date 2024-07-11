@@ -21,6 +21,7 @@ class ProjectEditView extends IView {
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     var bloc = BlocProvider.of<ProjectEditBloc>(context);
 
     bloc.add(ProjectEditEvent.load(type: type));
@@ -115,11 +116,14 @@ class ProjectEditView extends IView {
                     orElse: () => const Center(
                       child: CircularProgressIndicator(),
                     ),
-                    loaded: (type, project, clients, states) {
+                    loaded: (type, project, clients, states, isSaving) {
                       return TabBarView(
                         physics: const NeverScrollableScrollPhysics(),
                         children: [
-                          ProjectEditFormView(),
+                          ProjectEditFormView(
+                            formKey: formKey,
+                            isSaving: isSaving,
+                          ),
                           ...type.when(
                             create: () => [
                               Container(),

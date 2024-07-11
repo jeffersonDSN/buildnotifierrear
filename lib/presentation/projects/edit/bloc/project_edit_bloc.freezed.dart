@@ -3737,7 +3737,7 @@ mixin _$ProjectEditState {
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(CrudType type, Project project,
-            List<Client> clients, List<State> states)
+            List<Client> clients, List<State> states, bool isSaving)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -3746,7 +3746,7 @@ mixin _$ProjectEditState {
     TResult? Function()? empty,
     TResult? Function()? loading,
     TResult? Function(CrudType type, Project project, List<Client> clients,
-            List<State> states)?
+            List<State> states, bool isSaving)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -3755,7 +3755,7 @@ mixin _$ProjectEditState {
     TResult Function()? empty,
     TResult Function()? loading,
     TResult Function(CrudType type, Project project, List<Client> clients,
-            List<State> states)?
+            List<State> states, bool isSaving)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -3845,7 +3845,7 @@ class _$ProjectEditStateEmptyImpl implements ProjectEditStateEmpty {
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(CrudType type, Project project,
-            List<Client> clients, List<State> states)
+            List<Client> clients, List<State> states, bool isSaving)
         loaded,
   }) {
     return empty();
@@ -3857,7 +3857,7 @@ class _$ProjectEditStateEmptyImpl implements ProjectEditStateEmpty {
     TResult? Function()? empty,
     TResult? Function()? loading,
     TResult? Function(CrudType type, Project project, List<Client> clients,
-            List<State> states)?
+            List<State> states, bool isSaving)?
         loaded,
   }) {
     return empty?.call();
@@ -3869,7 +3869,7 @@ class _$ProjectEditStateEmptyImpl implements ProjectEditStateEmpty {
     TResult Function()? empty,
     TResult Function()? loading,
     TResult Function(CrudType type, Project project, List<Client> clients,
-            List<State> states)?
+            List<State> states, bool isSaving)?
         loaded,
     required TResult orElse(),
   }) {
@@ -3962,7 +3962,7 @@ class _$ProjectEditStateLoadingImpl implements ProjectEditStateLoading {
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(CrudType type, Project project,
-            List<Client> clients, List<State> states)
+            List<Client> clients, List<State> states, bool isSaving)
         loaded,
   }) {
     return loading();
@@ -3974,7 +3974,7 @@ class _$ProjectEditStateLoadingImpl implements ProjectEditStateLoading {
     TResult? Function()? empty,
     TResult? Function()? loading,
     TResult? Function(CrudType type, Project project, List<Client> clients,
-            List<State> states)?
+            List<State> states, bool isSaving)?
         loaded,
   }) {
     return loading?.call();
@@ -3986,7 +3986,7 @@ class _$ProjectEditStateLoadingImpl implements ProjectEditStateLoading {
     TResult Function()? empty,
     TResult Function()? loading,
     TResult Function(CrudType type, Project project, List<Client> clients,
-            List<State> states)?
+            List<State> states, bool isSaving)?
         loaded,
     required TResult orElse(),
   }) {
@@ -4046,7 +4046,8 @@ abstract class _$$ProjectEditStateLoadedImplCopyWith<$Res> {
       {CrudType type,
       Project project,
       List<Client> clients,
-      List<State> states});
+      List<State> states,
+      bool isSaving});
 
   $CrudTypeCopyWith<$Res> get type;
   $ProjectCopyWith<$Res> get project;
@@ -4068,6 +4069,7 @@ class __$$ProjectEditStateLoadedImplCopyWithImpl<$Res>
     Object? project = null,
     Object? clients = null,
     Object? states = null,
+    Object? isSaving = null,
   }) {
     return _then(_$ProjectEditStateLoadedImpl(
       type: null == type
@@ -4086,6 +4088,10 @@ class __$$ProjectEditStateLoadedImplCopyWithImpl<$Res>
           ? _value._states
           : states // ignore: cast_nullable_to_non_nullable
               as List<State>,
+      isSaving: null == isSaving
+          ? _value.isSaving
+          : isSaving // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -4113,7 +4119,8 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
       {required this.type,
       required this.project,
       required final List<Client> clients,
-      required final List<State> states})
+      required final List<State> states,
+      this.isSaving = false})
       : _clients = clients,
         _states = states;
 
@@ -4138,8 +4145,12 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
   }
 
   @override
+  @JsonKey()
+  final bool isSaving;
+
+  @override
   String toString() {
-    return 'ProjectEditState.loaded(type: $type, project: $project, clients: $clients, states: $states)';
+    return 'ProjectEditState.loaded(type: $type, project: $project, clients: $clients, states: $states, isSaving: $isSaving)';
   }
 
   @override
@@ -4150,7 +4161,9 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
             (identical(other.type, type) || other.type == type) &&
             (identical(other.project, project) || other.project == project) &&
             const DeepCollectionEquality().equals(other._clients, _clients) &&
-            const DeepCollectionEquality().equals(other._states, _states));
+            const DeepCollectionEquality().equals(other._states, _states) &&
+            (identical(other.isSaving, isSaving) ||
+                other.isSaving == isSaving));
   }
 
   @override
@@ -4159,7 +4172,8 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
       type,
       project,
       const DeepCollectionEquality().hash(_clients),
-      const DeepCollectionEquality().hash(_states));
+      const DeepCollectionEquality().hash(_states),
+      isSaving);
 
   @JsonKey(ignore: true)
   @override
@@ -4174,10 +4188,10 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(CrudType type, Project project,
-            List<Client> clients, List<State> states)
+            List<Client> clients, List<State> states, bool isSaving)
         loaded,
   }) {
-    return loaded(type, project, clients, states);
+    return loaded(type, project, clients, states, isSaving);
   }
 
   @override
@@ -4186,10 +4200,10 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
     TResult? Function()? empty,
     TResult? Function()? loading,
     TResult? Function(CrudType type, Project project, List<Client> clients,
-            List<State> states)?
+            List<State> states, bool isSaving)?
         loaded,
   }) {
-    return loaded?.call(type, project, clients, states);
+    return loaded?.call(type, project, clients, states, isSaving);
   }
 
   @override
@@ -4198,12 +4212,12 @@ class _$ProjectEditStateLoadedImpl implements ProjectEditStateLoaded {
     TResult Function()? empty,
     TResult Function()? loading,
     TResult Function(CrudType type, Project project, List<Client> clients,
-            List<State> states)?
+            List<State> states, bool isSaving)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(type, project, clients, states);
+      return loaded(type, project, clients, states, isSaving);
     }
     return orElse();
   }
@@ -4248,12 +4262,14 @@ abstract class ProjectEditStateLoaded implements ProjectEditState {
       {required final CrudType type,
       required final Project project,
       required final List<Client> clients,
-      required final List<State> states}) = _$ProjectEditStateLoadedImpl;
+      required final List<State> states,
+      final bool isSaving}) = _$ProjectEditStateLoadedImpl;
 
   CrudType get type;
   Project get project;
   List<Client> get clients;
   List<State> get states;
+  bool get isSaving;
   @JsonKey(ignore: true)
   _$$ProjectEditStateLoadedImplCopyWith<_$ProjectEditStateLoadedImpl>
       get copyWith => throw _privateConstructorUsedError;

@@ -15,7 +15,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProjectEditFormView extends IView {
-  const ProjectEditFormView({super.key});
+  final GlobalKey<FormState> formKey;
+  final bool isSaving;
+
+  const ProjectEditFormView({
+    super.key,
+    required this.formKey,
+    this.isSaving = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +46,7 @@ class ProjectEditFormView extends IView {
           Expanded(
             child: SingleChildScrollView(
               child: Form(
+                key: formKey,
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(
                     Sizes.size32,
@@ -61,6 +69,12 @@ class ProjectEditFormView extends IView {
                                     value: value,
                                   ),
                                 );
+                              },
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return '${context.tr.name} ${context.tr.isRequired}';
+                                }
+                                return null;
                               },
                             ),
                           ),
@@ -134,6 +148,12 @@ class ProjectEditFormView extends IView {
                                 ),
                               );
                             },
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return '${context.tr.startDate} ${context.tr.isRequired}';
+                              }
+                              return null;
+                            },
                           ),
                           gapWidth16,
                           BaseDateInputWidget(
@@ -156,6 +176,12 @@ class ProjectEditFormView extends IView {
                                   value: value,
                                 ),
                               );
+                            },
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return '${context.tr.expectedEndDate} ${context.tr.isRequired}';
+                              }
+                              return null;
                             },
                           ),
                           gapWidth16,
@@ -393,17 +419,23 @@ class ProjectEditFormView extends IView {
                   icon: const Icon(
                     Icons.check,
                   ),
-                  label: Text(context.tr.save),
+                  label: !isSaving
+                      ? Text(context.tr.save)
+                      : const Center(
+                          child: CircularProgressIndicator(),
+                        ),
                   onPressed: () {
-                    bloc.add(
-                      ProjectEditEvent.save(
-                        callback: () {
-                          appBloc(context).add(
-                            const AppEvent.goBack(),
-                          );
-                        },
-                      ),
-                    );
+                    if (formKey.currentState?.validate() ?? false) {
+                      bloc.add(
+                        ProjectEditEvent.save(
+                          callback: () {
+                            appBloc(context).add(
+                              const AppEvent.goBack(),
+                            );
+                          },
+                        ),
+                      );
+                    }
                   },
                 ),
               ),

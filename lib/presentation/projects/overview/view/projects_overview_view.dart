@@ -5,7 +5,7 @@ import 'package:buildnotifierrear/presentation/core/extensions/build_context_ext
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/bloc/projects_overview_bloc.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/view/project_status_distribution_chart.dart';
-import 'package:buildnotifierrear/presentation/projects/overview/view/projects_board_widget.dart';
+import 'package:buildnotifierrear/presentation/projects/overview/widgets/projects_board_widget.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/widgets/projects_table_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
@@ -103,20 +103,28 @@ class ProjectsOverviewView extends IView {
             ),
           ),
           Expanded(
-            child: TabBarView(
-              physics: const NeverScrollableScrollPhysics(),
-              children: [
-                BlocBuilder<ProjectsOverviewBloc, ProjectsOverviewState>(
-                  bloc: bloc,
-                  builder: (context, state) {
-                    return state.maybeWhen(
-                      orElse: () => const Card(
-                        child: Center(
+            child: BlocBuilder<ProjectsOverviewBloc, ProjectsOverviewState>(
+              bloc: bloc,
+              builder: (context, state) {
+                return state.maybeWhen(
+                  orElse: () => const Card(
+                    child: TabBarView(
+                      physics: NeverScrollableScrollPhysics(),
+                      children: [
+                        Center(
                           child: CircularProgressIndicator(),
                         ),
-                      ),
-                      loaded: (projects) {
-                        return Column(
+                        Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                      ],
+                    ),
+                  ),
+                  loaded: (projects) {
+                    return TabBarView(
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: [
+                        Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Row(
@@ -141,13 +149,34 @@ class ProjectsOverviewView extends IView {
                               ),
                             ),
                           ],
-                        );
-                      },
+                        ),
+                        ProjectsBoardWidget(
+                          projects: projects,
+                          onPressed: (project) {
+                            appBloc(context).add(
+                              AppEvent.changeView(
+                                mod: Mod.projects(
+                                  type: ViewType.update(
+                                    id: project.id,
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                          onChangeStatus: (value) {
+                            bloc.add(
+                              ProjectsOverviewEvent.changeStatus(
+                                project: value.project,
+                                status: value.status,
+                              ),
+                            );
+                          },
+                        ),
+                      ],
                     );
                   },
-                ),
-                const ProjectsBoardWidget(),
-              ],
+                );
+              },
             ),
           ),
         ],

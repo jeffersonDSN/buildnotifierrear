@@ -8,6 +8,7 @@ class TaskEditState with _$TaskEditState {
     required CrudType crudType,
     required Task task,
     required List<Project> projects,
+    @Default(false) bool isSaving,
   }) = TaskEditStateLoaded;
 }
 

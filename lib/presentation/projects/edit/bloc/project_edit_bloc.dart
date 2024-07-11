@@ -169,6 +169,8 @@ class ProjectEditBloc extends Bloc<ProjectEditEvent, ProjectEditState> {
           );
         },
         save: (callback) async {
+          emit(state.asLoaded.copyWith(isSaving: true));
+
           await state.asLoaded.type.when(
             create: () async {
               return controller.create(
@@ -181,6 +183,8 @@ class ProjectEditBloc extends Bloc<ProjectEditEvent, ProjectEditState> {
               );
             },
           );
+
+          emit(state.asLoaded.copyWith(isSaving: false));
 
           callback.call();
         },

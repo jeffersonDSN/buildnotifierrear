@@ -11,6 +11,7 @@ class BaseDateInputWidget extends StatefulWidget {
   final bool enabled;
   final VoidCallback? onPressedChangeDate;
   final ValueChanged<DateTime> onChangeDate;
+  final FormFieldValidator<String>? validator;
 
   const BaseDateInputWidget({
     super.key,
@@ -20,6 +21,7 @@ class BaseDateInputWidget extends StatefulWidget {
     this.enabled = true,
     required this.onPressedChangeDate,
     required this.onChangeDate,
+    this.validator,
   });
 
   @override
@@ -115,6 +117,7 @@ class _BaseDateInputWidgetState extends State<BaseDateInputWidget> {
               onEditingComplete: () {
                 changeDate();
               },
+              validator: widget.validator,
             ),
           ),
         ),

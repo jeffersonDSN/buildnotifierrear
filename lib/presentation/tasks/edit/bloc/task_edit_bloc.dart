@@ -151,6 +151,8 @@ class TaskEditBloc extends Bloc<TaskEditEvent, TaskEditState> {
             );
           },
           save: (callback) async {
+            emit(state.asLoaded.copyWith(isSaving: true));
+
             await state.asLoaded.crudType.when(
               create: () async {
                 await controller.create(state.asLoaded.task);
@@ -159,6 +161,8 @@ class TaskEditBloc extends Bloc<TaskEditEvent, TaskEditState> {
                 await controller.update(state.asLoaded.task);
               },
             );
+
+            emit(state.asLoaded.copyWith(isSaving: false));
 
             callback.call();
           },

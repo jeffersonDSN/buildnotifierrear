@@ -9,6 +9,7 @@ class ProjectEditState with _$ProjectEditState {
     required Project project,
     required List<Client> clients,
     required List<State> states,
+    @Default(false) bool isSaving,
   }) = ProjectEditStateLoaded;
 }
 
