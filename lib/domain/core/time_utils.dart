@@ -5,8 +5,7 @@ final DateFormat hourFormat = DateFormat.jm();
 final numberFormat = NumberFormat("00");
 
 double parseTimeToDouble(int hours, int minutes) {
-  double decimalMinutes = minutes / 60.0;
-  return hours + decimalMinutes;
+  return hours + (minutes / 60);
 }
 
 String hourFormatByHoursAndMinutes(int hours, int minutes) {

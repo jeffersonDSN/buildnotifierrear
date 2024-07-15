@@ -271,6 +271,20 @@ abstract class AppLocalizations {
   String get week;
 
   String get day;
+
+  String get sun;
+
+  String get mon;
+
+  String get tue;
+
+  String get wed;
+
+  String get thu;
+
+  String get fri;
+
+  String get sat;
 }
 
 class _AppLocalizationsDelegate

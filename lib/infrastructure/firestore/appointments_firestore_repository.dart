@@ -81,6 +81,43 @@ class AppointmentsFirestoreRepository extends TenantFirestoreRepository
   }
 
   @override
+  Future<List<Appointment>> getByPeriod(
+    DateTime fromDate,
+    DateTime toFrom,
+  ) async {
+    var querySnapshot = await collection
+        .where(
+          Filter.and(
+            Filter.and(
+              Filter("startDateTime", isGreaterThanOrEqualTo: fromDate),
+              Filter("startDateTime", isLessThan: toFrom),
+            ),
+            Filter.and(
+              Filter("endDateTime", isGreaterThanOrEqualTo: fromDate),
+              Filter("endDateTime", isLessThan: toFrom),
+            ),
+          ),
+        )
+        .orderBy('startDateTime')
+        .orderBy('endDateTime')
+        .get();
+
+    return querySnapshot.docs.map((DocumentSnapshot document) {
+      var data = document.data() as Map<String, dynamic>;
+      data['id'] = document.id;
+
+      data = data.map((key, value) {
+        if (value is Timestamp) {
+          return MapEntry(key, value.toDate().toString());
+        }
+        return MapEntry(key, value);
+      });
+
+      return Appointment.fromJson(data);
+    }).toList();
+  }
+
+  @override
   Future<List<Appointment>> getByDayAndUser(
     DateTime selectedDay,
     String userId,

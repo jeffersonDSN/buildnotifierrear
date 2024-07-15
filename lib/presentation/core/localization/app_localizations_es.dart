@@ -360,4 +360,25 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get day => 'Día';
+
+  @override
+  String get sun => 'Dom';
+
+  @override
+  String get mon => 'Lun';
+
+  @override
+  String get tue => 'Mar';
+
+  @override
+  String get wed => 'Mié';
+
+  @override
+  String get thu => 'Jue';
+
+  @override
+  String get fri => 'Vie';
+
+  @override
+  String get sat => 'Sáb';
 }

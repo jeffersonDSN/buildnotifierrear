@@ -360,4 +360,25 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get day => 'Dia';
+
+  @override
+  String get sun => 'Dom';
+
+  @override
+  String get mon => 'Seg';
+
+  @override
+  String get tue => 'Ter';
+
+  @override
+  String get wed => 'Qua';
+
+  @override
+  String get thu => 'Qui';
+
+  @override
+  String get fri => 'Sex';
+
+  @override
+  String get sat => 'Sáb';
 }

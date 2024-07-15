@@ -18,41 +18,44 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ScheduleOverViewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(DateTime selectedDay) changeSelectedDay,
+    required TResult Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)
+        load,
     required TResult Function(String appointmantId) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(DateTime selectedDay)? changeSelectedDay,
+    TResult? Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)?
+        load,
     TResult? Function(String appointmantId)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(DateTime selectedDay)? changeSelectedDay,
+    TResult Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)?
+        load,
     TResult Function(String appointmantId)? delete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEOverViewVentChangeSelectedDay value)
-        changeSelectedDay,
+    required TResult Function(ScheduleEOverViewVentLoad value) load,
     required TResult Function(ScheduleOverViewEventDelete value) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEOverViewVentChangeSelectedDay value)?
-        changeSelectedDay,
+    TResult? Function(ScheduleEOverViewVentLoad value)? load,
     TResult? Function(ScheduleOverViewEventDelete value)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEOverViewVentChangeSelectedDay value)?
-        changeSelectedDay,
+    TResult Function(ScheduleEOverViewVentLoad value)? load,
     TResult Function(ScheduleOverViewEventDelete value)? delete,
     required TResult orElse(),
   }) =>
@@ -79,34 +82,45 @@ class _$ScheduleOverViewEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ScheduleEOverViewVentChangeSelectedDayImplCopyWith<$Res> {
-  factory _$$ScheduleEOverViewVentChangeSelectedDayImplCopyWith(
-          _$ScheduleEOverViewVentChangeSelectedDayImpl value,
-          $Res Function(_$ScheduleEOverViewVentChangeSelectedDayImpl) then) =
-      __$$ScheduleEOverViewVentChangeSelectedDayImplCopyWithImpl<$Res>;
+abstract class _$$ScheduleEOverViewVentLoadImplCopyWith<$Res> {
+  factory _$$ScheduleEOverViewVentLoadImplCopyWith(
+          _$ScheduleEOverViewVentLoadImpl value,
+          $Res Function(_$ScheduleEOverViewVentLoadImpl) then) =
+      __$$ScheduleEOverViewVentLoadImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({DateTime selectedDay});
+  $Res call(
+      {CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate});
 }
 
 /// @nodoc
-class __$$ScheduleEOverViewVentChangeSelectedDayImplCopyWithImpl<$Res>
+class __$$ScheduleEOverViewVentLoadImplCopyWithImpl<$Res>
     extends _$ScheduleOverViewEventCopyWithImpl<$Res,
-        _$ScheduleEOverViewVentChangeSelectedDayImpl>
-    implements _$$ScheduleEOverViewVentChangeSelectedDayImplCopyWith<$Res> {
-  __$$ScheduleEOverViewVentChangeSelectedDayImplCopyWithImpl(
-      _$ScheduleEOverViewVentChangeSelectedDayImpl _value,
-      $Res Function(_$ScheduleEOverViewVentChangeSelectedDayImpl) _then)
+        _$ScheduleEOverViewVentLoadImpl>
+    implements _$$ScheduleEOverViewVentLoadImplCopyWith<$Res> {
+  __$$ScheduleEOverViewVentLoadImplCopyWithImpl(
+      _$ScheduleEOverViewVentLoadImpl _value,
+      $Res Function(_$ScheduleEOverViewVentLoadImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selectedDay = null,
+    Object? calendarView = null,
+    Object? fromDate = null,
+    Object? toDate = null,
   }) {
-    return _then(_$ScheduleEOverViewVentChangeSelectedDayImpl(
-      selectedDay: null == selectedDay
-          ? _value.selectedDay
-          : selectedDay // ignore: cast_nullable_to_non_nullable
+    return _then(_$ScheduleEOverViewVentLoadImpl(
+      calendarView: null == calendarView
+          ? _value.calendarView
+          : calendarView // ignore: cast_nullable_to_non_nullable
+              as CalendarViewEnum,
+      fromDate: null == fromDate
+          ? _value.fromDate
+          : fromDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      toDate: null == toDate
+          ? _value.toDate
+          : toDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -114,77 +128,91 @@ class __$$ScheduleEOverViewVentChangeSelectedDayImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ScheduleEOverViewVentChangeSelectedDayImpl
+class _$ScheduleEOverViewVentLoadImpl
     with DiagnosticableTreeMixin
-    implements ScheduleEOverViewVentChangeSelectedDay {
-  const _$ScheduleEOverViewVentChangeSelectedDayImpl(
-      {required this.selectedDay});
+    implements ScheduleEOverViewVentLoad {
+  const _$ScheduleEOverViewVentLoadImpl(
+      {required this.calendarView,
+      required this.fromDate,
+      required this.toDate});
 
   @override
-  final DateTime selectedDay;
+  final CalendarViewEnum calendarView;
+  @override
+  final DateTime fromDate;
+  @override
+  final DateTime toDate;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ScheduleOverViewEvent.changeSelectedDay(selectedDay: $selectedDay)';
+    return 'ScheduleOverViewEvent.load(calendarView: $calendarView, fromDate: $fromDate, toDate: $toDate)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty(
-          'type', 'ScheduleOverViewEvent.changeSelectedDay'))
-      ..add(DiagnosticsProperty('selectedDay', selectedDay));
+      ..add(DiagnosticsProperty('type', 'ScheduleOverViewEvent.load'))
+      ..add(DiagnosticsProperty('calendarView', calendarView))
+      ..add(DiagnosticsProperty('fromDate', fromDate))
+      ..add(DiagnosticsProperty('toDate', toDate));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ScheduleEOverViewVentChangeSelectedDayImpl &&
-            (identical(other.selectedDay, selectedDay) ||
-                other.selectedDay == selectedDay));
+            other is _$ScheduleEOverViewVentLoadImpl &&
+            (identical(other.calendarView, calendarView) ||
+                other.calendarView == calendarView) &&
+            (identical(other.fromDate, fromDate) ||
+                other.fromDate == fromDate) &&
+            (identical(other.toDate, toDate) || other.toDate == toDate));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedDay);
+  int get hashCode => Object.hash(runtimeType, calendarView, fromDate, toDate);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ScheduleEOverViewVentChangeSelectedDayImplCopyWith<
-          _$ScheduleEOverViewVentChangeSelectedDayImpl>
-      get copyWith =>
-          __$$ScheduleEOverViewVentChangeSelectedDayImplCopyWithImpl<
-              _$ScheduleEOverViewVentChangeSelectedDayImpl>(this, _$identity);
+  _$$ScheduleEOverViewVentLoadImplCopyWith<_$ScheduleEOverViewVentLoadImpl>
+      get copyWith => __$$ScheduleEOverViewVentLoadImplCopyWithImpl<
+          _$ScheduleEOverViewVentLoadImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(DateTime selectedDay) changeSelectedDay,
+    required TResult Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)
+        load,
     required TResult Function(String appointmantId) delete,
   }) {
-    return changeSelectedDay(selectedDay);
+    return load(calendarView, fromDate, toDate);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(DateTime selectedDay)? changeSelectedDay,
+    TResult? Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)?
+        load,
     TResult? Function(String appointmantId)? delete,
   }) {
-    return changeSelectedDay?.call(selectedDay);
+    return load?.call(calendarView, fromDate, toDate);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(DateTime selectedDay)? changeSelectedDay,
+    TResult Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)?
+        load,
     TResult Function(String appointmantId)? delete,
     required TResult orElse(),
   }) {
-    if (changeSelectedDay != null) {
-      return changeSelectedDay(selectedDay);
+    if (load != null) {
+      return load(calendarView, fromDate, toDate);
     }
     return orElse();
   }
@@ -192,48 +220,46 @@ class _$ScheduleEOverViewVentChangeSelectedDayImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEOverViewVentChangeSelectedDay value)
-        changeSelectedDay,
+    required TResult Function(ScheduleEOverViewVentLoad value) load,
     required TResult Function(ScheduleOverViewEventDelete value) delete,
   }) {
-    return changeSelectedDay(this);
+    return load(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEOverViewVentChangeSelectedDay value)?
-        changeSelectedDay,
+    TResult? Function(ScheduleEOverViewVentLoad value)? load,
     TResult? Function(ScheduleOverViewEventDelete value)? delete,
   }) {
-    return changeSelectedDay?.call(this);
+    return load?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEOverViewVentChangeSelectedDay value)?
-        changeSelectedDay,
+    TResult Function(ScheduleEOverViewVentLoad value)? load,
     TResult Function(ScheduleOverViewEventDelete value)? delete,
     required TResult orElse(),
   }) {
-    if (changeSelectedDay != null) {
-      return changeSelectedDay(this);
+    if (load != null) {
+      return load(this);
     }
     return orElse();
   }
 }
 
-abstract class ScheduleEOverViewVentChangeSelectedDay
-    implements ScheduleOverViewEvent {
-  const factory ScheduleEOverViewVentChangeSelectedDay(
-          {required final DateTime selectedDay}) =
-      _$ScheduleEOverViewVentChangeSelectedDayImpl;
+abstract class ScheduleEOverViewVentLoad implements ScheduleOverViewEvent {
+  const factory ScheduleEOverViewVentLoad(
+      {required final CalendarViewEnum calendarView,
+      required final DateTime fromDate,
+      required final DateTime toDate}) = _$ScheduleEOverViewVentLoadImpl;
 
-  DateTime get selectedDay;
+  CalendarViewEnum get calendarView;
+  DateTime get fromDate;
+  DateTime get toDate;
   @JsonKey(ignore: true)
-  _$$ScheduleEOverViewVentChangeSelectedDayImplCopyWith<
-          _$ScheduleEOverViewVentChangeSelectedDayImpl>
+  _$$ScheduleEOverViewVentLoadImplCopyWith<_$ScheduleEOverViewVentLoadImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -316,7 +342,9 @@ class _$ScheduleOverViewEventDeleteImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(DateTime selectedDay) changeSelectedDay,
+    required TResult Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)
+        load,
     required TResult Function(String appointmantId) delete,
   }) {
     return delete(appointmantId);
@@ -325,7 +353,9 @@ class _$ScheduleOverViewEventDeleteImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(DateTime selectedDay)? changeSelectedDay,
+    TResult? Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)?
+        load,
     TResult? Function(String appointmantId)? delete,
   }) {
     return delete?.call(appointmantId);
@@ -334,7 +364,9 @@ class _$ScheduleOverViewEventDeleteImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(DateTime selectedDay)? changeSelectedDay,
+    TResult Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)?
+        load,
     TResult Function(String appointmantId)? delete,
     required TResult orElse(),
   }) {
@@ -347,8 +379,7 @@ class _$ScheduleOverViewEventDeleteImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ScheduleEOverViewVentChangeSelectedDay value)
-        changeSelectedDay,
+    required TResult Function(ScheduleEOverViewVentLoad value) load,
     required TResult Function(ScheduleOverViewEventDelete value) delete,
   }) {
     return delete(this);
@@ -357,8 +388,7 @@ class _$ScheduleOverViewEventDeleteImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ScheduleEOverViewVentChangeSelectedDay value)?
-        changeSelectedDay,
+    TResult? Function(ScheduleEOverViewVentLoad value)? load,
     TResult? Function(ScheduleOverViewEventDelete value)? delete,
   }) {
     return delete?.call(this);
@@ -367,8 +397,7 @@ class _$ScheduleOverViewEventDeleteImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ScheduleEOverViewVentChangeSelectedDay value)?
-        changeSelectedDay,
+    TResult Function(ScheduleEOverViewVentLoad value)? load,
     TResult Function(ScheduleOverViewEventDelete value)? delete,
     required TResult orElse(),
   }) {
@@ -392,29 +421,36 @@ abstract class ScheduleOverViewEventDelete implements ScheduleOverViewEvent {
 
 /// @nodoc
 mixin _$ScheduleOverViewState {
-  DateTime get selectedDay => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(DateTime selectedDay) empty,
-    required TResult Function(DateTime selectedDay) loading,
+    required TResult Function() empty,
     required TResult Function(
-            DateTime selectedDay, List<Appointment> appointments)
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)
+        loading,
+    required TResult Function(CalendarViewEnum calendarView, DateTime fromDate,
+            DateTime toDate, List<Appointment> appointments)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(DateTime selectedDay)? empty,
-    TResult? Function(DateTime selectedDay)? loading,
-    TResult? Function(DateTime selectedDay, List<Appointment> appointments)?
+    TResult? Function()? empty,
+    TResult? Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)?
+        loading,
+    TResult? Function(CalendarViewEnum calendarView, DateTime fromDate,
+            DateTime toDate, List<Appointment> appointments)?
         loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(DateTime selectedDay)? empty,
-    TResult Function(DateTime selectedDay)? loading,
-    TResult Function(DateTime selectedDay, List<Appointment> appointments)?
+    TResult Function()? empty,
+    TResult Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)?
+        loading,
+    TResult Function(CalendarViewEnum calendarView, DateTime fromDate,
+            DateTime toDate, List<Appointment> appointments)?
         loaded,
     required TResult orElse(),
   }) =>
@@ -441,10 +477,6 @@ mixin _$ScheduleOverViewState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $ScheduleOverViewStateCopyWith<ScheduleOverViewState> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -452,8 +484,6 @@ abstract class $ScheduleOverViewStateCopyWith<$Res> {
   factory $ScheduleOverViewStateCopyWith(ScheduleOverViewState value,
           $Res Function(ScheduleOverViewState) then) =
       _$ScheduleOverViewStateCopyWithImpl<$Res, ScheduleOverViewState>;
-  @useResult
-  $Res call({DateTime selectedDay});
 }
 
 /// @nodoc
@@ -466,31 +496,14 @@ class _$ScheduleOverViewStateCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? selectedDay = null,
-  }) {
-    return _then(_value.copyWith(
-      selectedDay: null == selectedDay
-          ? _value.selectedDay
-          : selectedDay // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$ScheduleOverViewStateEmptyImplCopyWith<$Res>
-    implements $ScheduleOverViewStateCopyWith<$Res> {
+abstract class _$$ScheduleOverViewStateEmptyImplCopyWith<$Res> {
   factory _$$ScheduleOverViewStateEmptyImplCopyWith(
           _$ScheduleOverViewStateEmptyImpl value,
           $Res Function(_$ScheduleOverViewStateEmptyImpl) then) =
       __$$ScheduleOverViewStateEmptyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({DateTime selectedDay});
 }
 
 /// @nodoc
@@ -502,19 +515,6 @@ class __$$ScheduleOverViewStateEmptyImplCopyWithImpl<$Res>
       _$ScheduleOverViewStateEmptyImpl _value,
       $Res Function(_$ScheduleOverViewStateEmptyImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? selectedDay = null,
-  }) {
-    return _then(_$ScheduleOverViewStateEmptyImpl(
-      selectedDay: null == selectedDay
-          ? _value.selectedDay
-          : selectedDay // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ));
-  }
 }
 
 /// @nodoc
@@ -522,77 +522,71 @@ class __$$ScheduleOverViewStateEmptyImplCopyWithImpl<$Res>
 class _$ScheduleOverViewStateEmptyImpl
     with DiagnosticableTreeMixin
     implements ScheduleOverViewStateEmpty {
-  const _$ScheduleOverViewStateEmptyImpl({required this.selectedDay});
-
-  @override
-  final DateTime selectedDay;
+  const _$ScheduleOverViewStateEmptyImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ScheduleOverViewState.empty(selectedDay: $selectedDay)';
+    return 'ScheduleOverViewState.empty()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ScheduleOverViewState.empty'))
-      ..add(DiagnosticsProperty('selectedDay', selectedDay));
+    properties.add(DiagnosticsProperty('type', 'ScheduleOverViewState.empty'));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ScheduleOverViewStateEmptyImpl &&
-            (identical(other.selectedDay, selectedDay) ||
-                other.selectedDay == selectedDay));
+            other is _$ScheduleOverViewStateEmptyImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedDay);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ScheduleOverViewStateEmptyImplCopyWith<_$ScheduleOverViewStateEmptyImpl>
-      get copyWith => __$$ScheduleOverViewStateEmptyImplCopyWithImpl<
-          _$ScheduleOverViewStateEmptyImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(DateTime selectedDay) empty,
-    required TResult Function(DateTime selectedDay) loading,
+    required TResult Function() empty,
     required TResult Function(
-            DateTime selectedDay, List<Appointment> appointments)
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)
+        loading,
+    required TResult Function(CalendarViewEnum calendarView, DateTime fromDate,
+            DateTime toDate, List<Appointment> appointments)
         loaded,
   }) {
-    return empty(selectedDay);
+    return empty();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(DateTime selectedDay)? empty,
-    TResult? Function(DateTime selectedDay)? loading,
-    TResult? Function(DateTime selectedDay, List<Appointment> appointments)?
+    TResult? Function()? empty,
+    TResult? Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)?
+        loading,
+    TResult? Function(CalendarViewEnum calendarView, DateTime fromDate,
+            DateTime toDate, List<Appointment> appointments)?
         loaded,
   }) {
-    return empty?.call(selectedDay);
+    return empty?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(DateTime selectedDay)? empty,
-    TResult Function(DateTime selectedDay)? loading,
-    TResult Function(DateTime selectedDay, List<Appointment> appointments)?
+    TResult Function()? empty,
+    TResult Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)?
+        loading,
+    TResult Function(CalendarViewEnum calendarView, DateTime fromDate,
+            DateTime toDate, List<Appointment> appointments)?
         loaded,
     required TResult orElse(),
   }) {
     if (empty != null) {
-      return empty(selectedDay);
+      return empty();
     }
     return orElse();
   }
@@ -633,27 +627,18 @@ class _$ScheduleOverViewStateEmptyImpl
 }
 
 abstract class ScheduleOverViewStateEmpty implements ScheduleOverViewState {
-  const factory ScheduleOverViewStateEmpty(
-      {required final DateTime selectedDay}) = _$ScheduleOverViewStateEmptyImpl;
-
-  @override
-  DateTime get selectedDay;
-  @override
-  @JsonKey(ignore: true)
-  _$$ScheduleOverViewStateEmptyImplCopyWith<_$ScheduleOverViewStateEmptyImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  const factory ScheduleOverViewStateEmpty() = _$ScheduleOverViewStateEmptyImpl;
 }
 
 /// @nodoc
-abstract class _$$ScheduleOverViewStateLoadingImplCopyWith<$Res>
-    implements $ScheduleOverViewStateCopyWith<$Res> {
+abstract class _$$ScheduleOverViewStateLoadingImplCopyWith<$Res> {
   factory _$$ScheduleOverViewStateLoadingImplCopyWith(
           _$ScheduleOverViewStateLoadingImpl value,
           $Res Function(_$ScheduleOverViewStateLoadingImpl) then) =
       __$$ScheduleOverViewStateLoadingImplCopyWithImpl<$Res>;
-  @override
   @useResult
-  $Res call({DateTime selectedDay});
+  $Res call(
+      {CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate});
 }
 
 /// @nodoc
@@ -669,12 +654,22 @@ class __$$ScheduleOverViewStateLoadingImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selectedDay = null,
+    Object? calendarView = null,
+    Object? fromDate = null,
+    Object? toDate = null,
   }) {
     return _then(_$ScheduleOverViewStateLoadingImpl(
-      selectedDay: null == selectedDay
-          ? _value.selectedDay
-          : selectedDay // ignore: cast_nullable_to_non_nullable
+      calendarView: null == calendarView
+          ? _value.calendarView
+          : calendarView // ignore: cast_nullable_to_non_nullable
+              as CalendarViewEnum,
+      fromDate: null == fromDate
+          ? _value.fromDate
+          : fromDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      toDate: null == toDate
+          ? _value.toDate
+          : toDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -685,14 +680,21 @@ class __$$ScheduleOverViewStateLoadingImplCopyWithImpl<$Res>
 class _$ScheduleOverViewStateLoadingImpl
     with DiagnosticableTreeMixin
     implements ScheduleOverViewStateLoading {
-  const _$ScheduleOverViewStateLoadingImpl({required this.selectedDay});
+  const _$ScheduleOverViewStateLoadingImpl(
+      {required this.calendarView,
+      required this.fromDate,
+      required this.toDate});
 
   @override
-  final DateTime selectedDay;
+  final CalendarViewEnum calendarView;
+  @override
+  final DateTime fromDate;
+  @override
+  final DateTime toDate;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ScheduleOverViewState.loading(selectedDay: $selectedDay)';
+    return 'ScheduleOverViewState.loading(calendarView: $calendarView, fromDate: $fromDate, toDate: $toDate)';
   }
 
   @override
@@ -700,7 +702,9 @@ class _$ScheduleOverViewStateLoadingImpl
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ScheduleOverViewState.loading'))
-      ..add(DiagnosticsProperty('selectedDay', selectedDay));
+      ..add(DiagnosticsProperty('calendarView', calendarView))
+      ..add(DiagnosticsProperty('fromDate', fromDate))
+      ..add(DiagnosticsProperty('toDate', toDate));
   }
 
   @override
@@ -708,12 +712,15 @@ class _$ScheduleOverViewStateLoadingImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ScheduleOverViewStateLoadingImpl &&
-            (identical(other.selectedDay, selectedDay) ||
-                other.selectedDay == selectedDay));
+            (identical(other.calendarView, calendarView) ||
+                other.calendarView == calendarView) &&
+            (identical(other.fromDate, fromDate) ||
+                other.fromDate == fromDate) &&
+            (identical(other.toDate, toDate) || other.toDate == toDate));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedDay);
+  int get hashCode => Object.hash(runtimeType, calendarView, fromDate, toDate);
 
   @JsonKey(ignore: true)
   @override
@@ -726,37 +733,45 @@ class _$ScheduleOverViewStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(DateTime selectedDay) empty,
-    required TResult Function(DateTime selectedDay) loading,
+    required TResult Function() empty,
     required TResult Function(
-            DateTime selectedDay, List<Appointment> appointments)
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)
+        loading,
+    required TResult Function(CalendarViewEnum calendarView, DateTime fromDate,
+            DateTime toDate, List<Appointment> appointments)
         loaded,
   }) {
-    return loading(selectedDay);
+    return loading(calendarView, fromDate, toDate);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(DateTime selectedDay)? empty,
-    TResult? Function(DateTime selectedDay)? loading,
-    TResult? Function(DateTime selectedDay, List<Appointment> appointments)?
+    TResult? Function()? empty,
+    TResult? Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)?
+        loading,
+    TResult? Function(CalendarViewEnum calendarView, DateTime fromDate,
+            DateTime toDate, List<Appointment> appointments)?
         loaded,
   }) {
-    return loading?.call(selectedDay);
+    return loading?.call(calendarView, fromDate, toDate);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(DateTime selectedDay)? empty,
-    TResult Function(DateTime selectedDay)? loading,
-    TResult Function(DateTime selectedDay, List<Appointment> appointments)?
+    TResult Function()? empty,
+    TResult Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)?
+        loading,
+    TResult Function(CalendarViewEnum calendarView, DateTime fromDate,
+            DateTime toDate, List<Appointment> appointments)?
         loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading(selectedDay);
+      return loading(calendarView, fromDate, toDate);
     }
     return orElse();
   }
@@ -798,12 +813,13 @@ class _$ScheduleOverViewStateLoadingImpl
 
 abstract class ScheduleOverViewStateLoading implements ScheduleOverViewState {
   const factory ScheduleOverViewStateLoading(
-          {required final DateTime selectedDay}) =
-      _$ScheduleOverViewStateLoadingImpl;
+      {required final CalendarViewEnum calendarView,
+      required final DateTime fromDate,
+      required final DateTime toDate}) = _$ScheduleOverViewStateLoadingImpl;
 
-  @override
-  DateTime get selectedDay;
-  @override
+  CalendarViewEnum get calendarView;
+  DateTime get fromDate;
+  DateTime get toDate;
   @JsonKey(ignore: true)
   _$$ScheduleOverViewStateLoadingImplCopyWith<
           _$ScheduleOverViewStateLoadingImpl>
@@ -811,15 +827,17 @@ abstract class ScheduleOverViewStateLoading implements ScheduleOverViewState {
 }
 
 /// @nodoc
-abstract class _$$ScheduleOverViewStateLoadedImplCopyWith<$Res>
-    implements $ScheduleOverViewStateCopyWith<$Res> {
+abstract class _$$ScheduleOverViewStateLoadedImplCopyWith<$Res> {
   factory _$$ScheduleOverViewStateLoadedImplCopyWith(
           _$ScheduleOverViewStateLoadedImpl value,
           $Res Function(_$ScheduleOverViewStateLoadedImpl) then) =
       __$$ScheduleOverViewStateLoadedImplCopyWithImpl<$Res>;
-  @override
   @useResult
-  $Res call({DateTime selectedDay, List<Appointment> appointments});
+  $Res call(
+      {CalendarViewEnum calendarView,
+      DateTime fromDate,
+      DateTime toDate,
+      List<Appointment> appointments});
 }
 
 /// @nodoc
@@ -835,13 +853,23 @@ class __$$ScheduleOverViewStateLoadedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selectedDay = null,
+    Object? calendarView = null,
+    Object? fromDate = null,
+    Object? toDate = null,
     Object? appointments = null,
   }) {
     return _then(_$ScheduleOverViewStateLoadedImpl(
-      selectedDay: null == selectedDay
-          ? _value.selectedDay
-          : selectedDay // ignore: cast_nullable_to_non_nullable
+      calendarView: null == calendarView
+          ? _value.calendarView
+          : calendarView // ignore: cast_nullable_to_non_nullable
+              as CalendarViewEnum,
+      fromDate: null == fromDate
+          ? _value.fromDate
+          : fromDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      toDate: null == toDate
+          ? _value.toDate
+          : toDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
       appointments: null == appointments
           ? _value._appointments
@@ -857,12 +885,18 @@ class _$ScheduleOverViewStateLoadedImpl
     with DiagnosticableTreeMixin
     implements ScheduleOverViewStateLoaded {
   const _$ScheduleOverViewStateLoadedImpl(
-      {required this.selectedDay,
+      {required this.calendarView,
+      required this.fromDate,
+      required this.toDate,
       required final List<Appointment> appointments})
       : _appointments = appointments;
 
   @override
-  final DateTime selectedDay;
+  final CalendarViewEnum calendarView;
+  @override
+  final DateTime fromDate;
+  @override
+  final DateTime toDate;
   final List<Appointment> _appointments;
   @override
   List<Appointment> get appointments {
@@ -873,7 +907,7 @@ class _$ScheduleOverViewStateLoadedImpl
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ScheduleOverViewState.loaded(selectedDay: $selectedDay, appointments: $appointments)';
+    return 'ScheduleOverViewState.loaded(calendarView: $calendarView, fromDate: $fromDate, toDate: $toDate, appointments: $appointments)';
   }
 
   @override
@@ -881,7 +915,9 @@ class _$ScheduleOverViewStateLoadedImpl
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ScheduleOverViewState.loaded'))
-      ..add(DiagnosticsProperty('selectedDay', selectedDay))
+      ..add(DiagnosticsProperty('calendarView', calendarView))
+      ..add(DiagnosticsProperty('fromDate', fromDate))
+      ..add(DiagnosticsProperty('toDate', toDate))
       ..add(DiagnosticsProperty('appointments', appointments));
   }
 
@@ -890,14 +926,17 @@ class _$ScheduleOverViewStateLoadedImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ScheduleOverViewStateLoadedImpl &&
-            (identical(other.selectedDay, selectedDay) ||
-                other.selectedDay == selectedDay) &&
+            (identical(other.calendarView, calendarView) ||
+                other.calendarView == calendarView) &&
+            (identical(other.fromDate, fromDate) ||
+                other.fromDate == fromDate) &&
+            (identical(other.toDate, toDate) || other.toDate == toDate) &&
             const DeepCollectionEquality()
                 .equals(other._appointments, _appointments));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedDay,
+  int get hashCode => Object.hash(runtimeType, calendarView, fromDate, toDate,
       const DeepCollectionEquality().hash(_appointments));
 
   @JsonKey(ignore: true)
@@ -910,37 +949,45 @@ class _$ScheduleOverViewStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(DateTime selectedDay) empty,
-    required TResult Function(DateTime selectedDay) loading,
+    required TResult Function() empty,
     required TResult Function(
-            DateTime selectedDay, List<Appointment> appointments)
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)
+        loading,
+    required TResult Function(CalendarViewEnum calendarView, DateTime fromDate,
+            DateTime toDate, List<Appointment> appointments)
         loaded,
   }) {
-    return loaded(selectedDay, appointments);
+    return loaded(calendarView, fromDate, toDate, appointments);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(DateTime selectedDay)? empty,
-    TResult? Function(DateTime selectedDay)? loading,
-    TResult? Function(DateTime selectedDay, List<Appointment> appointments)?
+    TResult? Function()? empty,
+    TResult? Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)?
+        loading,
+    TResult? Function(CalendarViewEnum calendarView, DateTime fromDate,
+            DateTime toDate, List<Appointment> appointments)?
         loaded,
   }) {
-    return loaded?.call(selectedDay, appointments);
+    return loaded?.call(calendarView, fromDate, toDate, appointments);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(DateTime selectedDay)? empty,
-    TResult Function(DateTime selectedDay)? loading,
-    TResult Function(DateTime selectedDay, List<Appointment> appointments)?
+    TResult Function()? empty,
+    TResult Function(
+            CalendarViewEnum calendarView, DateTime fromDate, DateTime toDate)?
+        loading,
+    TResult Function(CalendarViewEnum calendarView, DateTime fromDate,
+            DateTime toDate, List<Appointment> appointments)?
         loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(selectedDay, appointments);
+      return loaded(calendarView, fromDate, toDate, appointments);
     }
     return orElse();
   }
@@ -982,14 +1029,16 @@ class _$ScheduleOverViewStateLoadedImpl
 
 abstract class ScheduleOverViewStateLoaded implements ScheduleOverViewState {
   const factory ScheduleOverViewStateLoaded(
-          {required final DateTime selectedDay,
+          {required final CalendarViewEnum calendarView,
+          required final DateTime fromDate,
+          required final DateTime toDate,
           required final List<Appointment> appointments}) =
       _$ScheduleOverViewStateLoadedImpl;
 
-  @override
-  DateTime get selectedDay;
+  CalendarViewEnum get calendarView;
+  DateTime get fromDate;
+  DateTime get toDate;
   List<Appointment> get appointments;
-  @override
   @JsonKey(ignore: true)
   _$$ScheduleOverViewStateLoadedImplCopyWith<_$ScheduleOverViewStateLoadedImpl>
       get copyWith => throw _privateConstructorUsedError;

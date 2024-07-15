@@ -1,5 +1,6 @@
 import 'package:buildnotifierrear/domain/controllers/appointment_controller.dart';
 import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
+import 'package:buildnotifierrear/presentation/schedule/overview/enum/calendar_view_enum.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
@@ -12,31 +13,39 @@ class ScheduleOverViewBloc
     extends Bloc<ScheduleOverViewEvent, ScheduleOverViewState> {
   ScheduleOverViewBloc({
     required AppointmentController controller,
-  }) : super(ScheduleOverViewState.empty(selectedDay: DateTime.now())) {
+  }) : super(const ScheduleOverViewState.empty()) {
     on<ScheduleOverViewEvent>((event, emit) async {
       await event.when(
-        changeSelectedDay: (selectedDay) async {
+        load: (calendarView, fromDate, toDate) async {
           emit(
-            ScheduleOverViewState.loading(selectedDay: selectedDay),
+            ScheduleOverViewState.loading(
+              fromDate: fromDate,
+              toDate: toDate,
+              calendarView: calendarView,
+            ),
           );
 
-          var appointments = await controller.getByDay(selectedDay);
+          var appointments = await controller.getByPeriod(fromDate, toDate);
+
+          appointments.sort((a, b) => a.endDateTime.compareTo(b.endDateTime));
 
           emit(
             ScheduleOverViewState.loaded(
-              selectedDay: selectedDay,
+              fromDate: fromDate,
+              toDate: toDate,
               appointments: appointments,
+              calendarView: calendarView,
             ),
           );
         },
         delete: (appointmantId) async {
           await controller.delete(appointmantId);
 
-          add(
-            ScheduleOverViewEvent.changeSelectedDay(
-              selectedDay: state.selectedDay,
-            ),
-          );
+          // add(
+          //   ScheduleOverViewEvent.changeSelectedDay(
+          //     selectedDay: state.selectedDay,
+          //   ),
+          // );
         },
       );
     });

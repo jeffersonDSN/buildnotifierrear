@@ -39,59 +39,60 @@ class EmployeesWhoCheckedInTable extends StatelessWidget {
               ],
             ),
             SizedBox(
-                height: Sizes.size400,
-                child: BlocBuilder<EmployeesWhoCheckedInBloc,
-                    EmployeesWhoCheckedInState>(
-                  bloc: bloc,
-                  builder: (context, state) {
-                    return DataTable2(
-                      columns: [
-                        DataColumn2(
-                          label: Text(context.tr.firstName),
-                          size: ColumnSize.M,
-                        ),
-                        DataColumn2(
-                          label: Text(context.tr.lastName),
-                          size: ColumnSize.M,
-                        ),
-                        DataColumn2(
-                          size: ColumnSize.M,
-                          label: Text(context.tr.lastCheckIn),
-                        ),
-                        DataColumn2(
-                          size: ColumnSize.L,
-                          label: Text(context.tr.location),
-                        ),
-                      ],
-                      empty: Center(
-                        child: Text(
-                          context.tr.hasNoEmployeesCheckedIn,
-                        ),
+              height: Sizes.size400,
+              child: BlocBuilder<EmployeesWhoCheckedInBloc,
+                  EmployeesWhoCheckedInState>(
+                bloc: bloc,
+                builder: (context, state) {
+                  return DataTable2(
+                    columns: [
+                      DataColumn2(
+                        label: Text(context.tr.firstName),
+                        size: ColumnSize.M,
                       ),
-                      rows: state.maybeWhen(
-                        orElse: () => [],
-                        loaded: (timecards) {
-                          return timecards.map(
-                            (timecard) {
-                              return DataRow(
-                                cells: [
-                                  DataCell(Text(timecard.employeeFirstName)),
-                                  DataCell(Text(timecard.employeeLastName)),
-                                  DataCell(
-                                    Text(
-                                      hourFormatByDateTime(timecard.start),
-                                    ),
+                      DataColumn2(
+                        label: Text(context.tr.lastName),
+                        size: ColumnSize.M,
+                      ),
+                      DataColumn2(
+                        size: ColumnSize.M,
+                        label: Text(context.tr.lastCheckIn),
+                      ),
+                      DataColumn2(
+                        size: ColumnSize.L,
+                        label: Text(context.tr.location),
+                      ),
+                    ],
+                    empty: Center(
+                      child: Text(
+                        context.tr.hasNoEmployeesCheckedIn,
+                      ),
+                    ),
+                    rows: state.maybeWhen(
+                      orElse: () => [],
+                      loaded: (timecards) {
+                        return timecards.map(
+                          (timecard) {
+                            return DataRow(
+                              cells: [
+                                DataCell(Text(timecard.employeeFirstName)),
+                                DataCell(Text(timecard.employeeLastName)),
+                                DataCell(
+                                  Text(
+                                    hourFormatByDateTime(timecard.start),
                                   ),
-                                  DataCell(Text(timecard.startLocation ?? '')),
-                                ],
-                              );
-                            },
-                          ).toList();
-                        },
-                      ),
-                    );
-                  },
-                )),
+                                ),
+                                DataCell(Text(timecard.startLocation ?? '')),
+                              ],
+                            );
+                          },
+                        ).toList();
+                      },
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),

@@ -1,89 +1,20 @@
 import 'package:buildnotifierrear/domain/core/time_utils.dart';
+import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-// Classes de exemplo para Appointment e parseTimeToDouble
-class Appointment {
-  final String id;
-  final String title;
-  final DateTime startDateTime;
-  final DateTime endDateTime;
-
-  Appointment({
-    required this.id,
-    required this.title,
-    required this.startDateTime,
-    required this.endDateTime,
-  });
-}
-
 class DayView extends StatelessWidget {
-  const DayView({super.key});
+  final List<Appointment> appointments;
+
+  const DayView({
+    super.key,
+    required this.appointments,
+  });
 
   @override
   Widget build(BuildContext context) {
-    List<Appointment> appointments = [
-      Appointment(
-        id: '1',
-        title: 'Test',
-        startDateTime: DateTime.now().copyWith(
-          hour: 02,
-          minute: 00,
-        ),
-        endDateTime: DateTime.now().copyWith(
-          hour: 03,
-          minute: 00,
-        ),
-      ),
-      Appointment(
-        id: '2',
-        title: 'Test',
-        startDateTime: DateTime.now().copyWith(
-          hour: 02,
-          minute: 00,
-        ),
-        endDateTime: DateTime.now().copyWith(
-          hour: 04,
-          minute: 00,
-        ),
-      ),
-      Appointment(
-        id: '3',
-        title: 'Test 1',
-        startDateTime: DateTime.now().copyWith(
-          hour: 06,
-          minute: 30,
-        ),
-        endDateTime: DateTime.now().copyWith(
-          hour: 07,
-          minute: 30,
-        ),
-      ),
-      Appointment(
-        id: '4',
-        title: 'Test 2',
-        startDateTime: DateTime.now().copyWith(
-          hour: 07,
-          minute: 00,
-        ),
-        endDateTime: DateTime.now().copyWith(
-          hour: 10,
-        ),
-      ),
-      Appointment(
-        id: '5',
-        title: 'Test 3',
-        startDateTime: DateTime.now().copyWith(
-          hour: 11,
-        ),
-        endDateTime: DateTime.now().copyWith(
-          hour: 16,
-        ),
-      ),
-    ];
-
     double calculateRemainingHeight(double startedAt, double endedAt) {
       double projectLength = endedAt - startedAt;
       if (startedAt < 0 || endedAt > 23 || startedAt > endedAt) {
@@ -138,7 +69,7 @@ class DayView extends StatelessWidget {
                                 child: Row(
                                   children: [
                                     gapWidth8,
-                                    Text('$index:00'),
+                                    Text(formatHour(index)),
                                     gapWidth16,
                                     const Expanded(
                                       child: Column(
@@ -179,24 +110,26 @@ class DayView extends StatelessWidget {
                             var overlappingIndex =
                                 overlappingAppointments.indexOf(appointment);
 
-                            double left = 50 +
-                                (constraints.maxWidth - 50) /
+                            double width = (constraints.maxWidth - 100) /
+                                overlappingAppointments.length;
+
+                            double left = 55 +
+                                (constraints.maxWidth - 55) /
                                     overlappingAppointments.length *
                                     overlappingIndex;
 
-                            double width = (constraints.maxWidth - 50) /
-                                overlappingAppointments.length;
-
                             if (remainingHeight > 0) {
                               return Positioned(
-                                top: startDateTime * (1200 / 25),
+                                top: (startDateTime + 0.2) * (1200 / 25),
                                 left: left,
                                 width: width,
-                                height: remainingHeight * (1200 / 25),
+                                height: (remainingHeight - 0.1) * (1200 / 25),
                                 child: Container(
                                   decoration: BoxDecoration(
-                                    color: AppColor.primaryColorSwatch
-                                        .withAlpha(100),
+                                    color:
+                                        AppColor.primaryColorSwatch.withAlpha(
+                                      100,
+                                    ),
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   child: Column(
@@ -213,11 +146,11 @@ class DayView extends StatelessWidget {
                                                               1200 /
                                                               25) /
                                                           2 -
-                                                      1 <
+                                                      3 <
                                                   15
                                               ? (remainingHeight * 1200 / 25) /
                                                       2 -
-                                                  1
+                                                  3
                                               : 15,
                                         ),
                                       ),
@@ -230,15 +163,39 @@ class DayView extends StatelessWidget {
                                           onPanEnd: (details) {},
                                           child: Padding(
                                             padding: const EdgeInsets.only(
-                                                left: Sizes.size8),
-                                            child: Text(
-                                              '${appointment.title}, ${hourFormatByHoursAndMinutes(appointment.startDateTime.hour, appointment.startDateTime.minute)} - ${hourFormatByHoursAndMinutes(appointment.endDateTime.hour, appointment.endDateTime.minute)}',
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              style: const TextStyle(
-                                                fontSize: 12.0,
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                                              left: Sizes.size8,
+                                            ),
+                                            child: Row(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Expanded(
+                                                  child: Text(
+                                                    '${appointment.title}, ${hourFormatByHoursAndMinutes(appointment.startDateTime.hour, appointment.startDateTime.minute)} - ${hourFormatByHoursAndMinutes(appointment.endDateTime.hour, appointment.endDateTime.minute)}',
+                                                    maxLines: 1,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    style: const TextStyle(
+                                                      fontSize: 12.0,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                ),
+                                                ...appointment.assignTo
+                                                    .map((assign) {
+                                                  return CircleAvatar(
+                                                    radius: 15,
+                                                    child: Text(
+                                                      '${assign.firstName[0].toUpperCase()}${assign.lastName[0].toUpperCase()}',
+                                                      style: const TextStyle(
+                                                        fontSize: 10,
+                                                      ),
+                                                    ),
+                                                  );
+                                                }),
+                                                gapWidth4,
+                                              ],
                                             ),
                                           ),
                                         ),
@@ -253,11 +210,11 @@ class DayView extends StatelessWidget {
                                                               1200 /
                                                               25) /
                                                           2 -
-                                                      1 <
+                                                      3 <
                                                   15
                                               ? (remainingHeight * 1200 / 25) /
                                                       2 -
-                                                  1
+                                                  3
                                               : 15,
                                           decoration: const BoxDecoration(
                                             borderRadius: BorderRadius.only(
@@ -286,5 +243,13 @@ class DayView extends StatelessWidget {
         },
       ),
     );
+  }
+
+  String hourFormatByHoursAndMinutes(int hour, int minute) {
+    return DateFormat('hh:mm a').format(DateTime(0, 1, 1, hour, minute));
+  }
+
+  String formatHour(int hour) {
+    return DateFormat('h a').format(DateTime(0, 1, 1, hour));
   }
 }

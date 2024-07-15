@@ -3,6 +3,7 @@ import 'package:buildnotifierrear/domain/repositories/abs_i_crud_repository.dart
 
 abstract interface class AbsIAppointmentRepository
     implements AbsICRUDRepository<Appointment> {
+  Future<List<Appointment>> getByPeriod(DateTime fromDate, DateTime toFrom);
   Future<List<Appointment>> getByDay(DateTime selectedDay);
   Future<List<Appointment>> getByDayAndUser(
     DateTime selectedDay,

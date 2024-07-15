@@ -16,6 +16,10 @@ class AppointmentController extends CRUDController<Appointment> {
         _locationRepository = locationRepository,
         super(repository: repository);
 
+  Future<List<Appointment>> getByPeriod(DateTime fromDate, DateTime toFrom) {
+    return _repository.getByPeriod(fromDate, toFrom);
+  }
+
   Future<List<Appointment>> getByDay(DateTime selectedDay) {
     return _repository.getByDay(selectedDay);
   }

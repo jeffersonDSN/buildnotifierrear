@@ -20,4 +20,19 @@ extension OnCalendarViewEnum on CalendarViewEnum {
         return context.tr.month;
     }
   }
+
+  TResult when<TResult extends Object?>({
+    required TResult Function() month,
+    required TResult Function() week,
+    required TResult Function() day,
+  }) {
+    switch (this) {
+      case CalendarViewEnum.month:
+        return month.call();
+      case CalendarViewEnum.week:
+        return week.call();
+      case CalendarViewEnum.day:
+        return day.call();
+    }
+  }
 }
