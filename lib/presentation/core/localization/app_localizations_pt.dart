@@ -381,4 +381,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get sat => 'Sáb';
+
+  @override
+  String get finance => 'Finanças';
 }

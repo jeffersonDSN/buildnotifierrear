@@ -380,4 +380,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sat => 'Sat';
+
+  @override
+  String get finance => 'Finance';
 }

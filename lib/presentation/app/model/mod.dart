@@ -6,6 +6,7 @@ import 'package:buildnotifierrear/presentation/chat/overview/chat_overview.dart'
 import 'package:buildnotifierrear/presentation/clients/edit/client_edit.dart';
 import 'package:buildnotifierrear/presentation/clients/overview/clients_overview.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
+import 'package:buildnotifierrear/presentation/finance/overview/finance_overview.dart';
 import 'package:buildnotifierrear/presentation/home/overview/home_overview.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/project_edit.dart';
 import 'package:buildnotifierrear/presentation/projects/overview/projects_overview.dart';
@@ -53,6 +54,8 @@ class Mod with _$Mod {
     required FileItem fileItemId,
   }) = ModAttachment;
 
+  const factory Mod.finance() = ModFinance;
+
   const factory Mod.settings() = ModSettings;
 }
 
@@ -65,6 +68,7 @@ extension OnModel on Mod {
   bool get isModEmployees => this is ModEmployees;
   bool get isModTimeCards => this is ModTimecards;
   bool get isModChat => this is ModChat;
+  bool get isModFinance => this is ModFinance;
 
   ModHome get asModHome => this as ModHome;
   ModSchedule get asModSchedule => this as ModSchedule;
@@ -74,6 +78,7 @@ extension OnModel on Mod {
   ModEmployees get asModEmployees => this as ModEmployees;
   ModTimecards get asModtimecards => this as ModTimecards;
   ModChat get asModchat => this as ModChat;
+  ModFinance get asModFinance => this as ModFinance;
 
   Widget view() {
     return when(
@@ -113,6 +118,7 @@ extension OnModel on Mod {
         create: () => const ChatOverview(),
         update: (id) => const ChatOverview(),
       ),
+      finance: () => const FinanceOverview(),
       attachment: (fileItem) => AttachmentFile(
         fileItem: fileItem,
       ),
@@ -158,6 +164,7 @@ extension OnModel on Mod {
         create: () => context.tr.chat,
         update: (id) => context.tr.chat,
       ),
+      finance: () => context.tr.finance,
       //TO DO
       attachment: (fileItemId) => '',
       settings: () => context.tr.settings,

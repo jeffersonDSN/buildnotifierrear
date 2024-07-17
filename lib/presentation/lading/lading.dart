@@ -307,6 +307,25 @@ class Landing extends StatelessWidget {
                           ),
                         ),
                         Container(
+                          color: bloc.state.asLogged.mod.isModFinance
+                              ? AppColor.backgroundColor
+                              : Colors.transparent,
+                          child: ListTile(
+                            iconColor: Colors.white,
+                            textColor: Colors.white,
+                            leading: const Icon(Icons.monetization_on_outlined),
+                            title: Text(context.tr.finance),
+                            selected: bloc.state.asLogged.mod.isModFinance,
+                            onTap: () {
+                              bloc.add(
+                                const AppEvent.changeView(
+                                  mod: Mod.finance(),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        Container(
                           color: bloc.state.asLogged.mod.isModChat
                               ? AppColor.backgroundColor
                               : Colors.transparent,

@@ -172,6 +172,8 @@ abstract class AppLocalizations {
 
   String get timecards;
 
+  String get finance;
+
   String get totalHours;
 
   String get totalPayroll;

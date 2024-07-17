@@ -381,4 +381,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get sat => 'Sáb';
+
+  @override
+  String get finance => 'Finanzas';
 }
