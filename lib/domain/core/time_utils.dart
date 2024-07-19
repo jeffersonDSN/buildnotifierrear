@@ -15,3 +15,13 @@ String hourFormatByHoursAndMinutes(int hours, int minutes) {
 String hourFormatByDateTime(DateTime date) {
   return hourFormat.format(date);
 }
+
+String convertHoursToFormattedTime(double qtyHrs) {
+  int hours = qtyHrs.floor();
+  int minutes = ((qtyHrs - hours) * 60).round();
+
+  String formattedHours = hours.toString().padLeft(2, '0');
+  String formattedMinutes = minutes.toString().padLeft(2, '0');
+
+  return '$formattedHours:$formattedMinutes';
+}

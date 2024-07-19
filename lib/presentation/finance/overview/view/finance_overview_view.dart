@@ -1,10 +1,14 @@
+import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
+import 'package:buildnotifierrear/presentation/app/model/mod.dart';
+import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
+import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:graphic/graphic.dart';
 
-class FinanceOverviewView extends StatelessWidget {
+class FinanceOverviewView extends IView {
   const FinanceOverviewView({super.key});
 
   @override
@@ -94,7 +98,15 @@ class FinanceOverviewView extends StatelessWidget {
                         child: FilledButton.icon(
                           icon: const Icon(Icons.add),
                           label: const Text('New invoices'),
-                          onPressed: () {},
+                          onPressed: () {
+                            appBloc(context).add(
+                              const AppEvent.changeView(
+                                mod: Mod.financeInvoice(
+                                  type: ViewType.create(),
+                                ),
+                              ),
+                            );
+                          },
                         ),
                       ),
                     ],

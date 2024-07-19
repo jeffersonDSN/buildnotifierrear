@@ -152,6 +152,8 @@ abstract class AppLocalizations {
 
   String get priority;
 
+  String get task;
+
   String get tasks;
 
   String get newTask;
@@ -224,6 +226,8 @@ abstract class AppLocalizations {
 
   String get cancel;
 
+  String get submit;
+
   String get close;
 
   String get low;
@@ -287,6 +291,58 @@ abstract class AppLocalizations {
   String get fri;
 
   String get sat;
+
+  String get invoice;
+
+  String get invoiceDate;
+
+  String get dueDate;
+
+  String get addItem;
+
+  String get date;
+
+  String get hoursWorked;
+
+  String get product;
+
+  String get service;
+
+  String get qty;
+
+  String get hrs;
+
+  String get rate;
+
+  String get amount;
+
+  String get customerMessage;
+
+  String get total;
+
+  String get draft;
+
+  String get sent;
+
+  String get partiallyPaid;
+
+  String get paid;
+
+  String get overdue;
+
+  String get cancelled;
+
+  String get refunded;
+
+  String get failed;
+
+  String get remove;
+
+  String get edit;
+
+  String get shareWithClient;
+
+  String get actions;
 }
 
 class _AppLocalizationsDelegate

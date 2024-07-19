@@ -215,6 +215,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get action => 'Ação';
 
   @override
+  String get task => 'Tarefa';
+
+  @override
   String get tasks => 'Tarefas';
 
   @override
@@ -384,4 +387,112 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get finance => 'Finanças';
+
+  @override
+  // TODO: implement submit
+  String get submit => throw UnimplementedError();
+
+  @override
+  // TODO: implement addItem
+  String get addItem => throw UnimplementedError();
+
+  @override
+  // TODO: implement date
+  String get date => throw UnimplementedError();
+
+  @override
+  // TODO: implement hoursWorked
+  String get hoursWorked => throw UnimplementedError();
+
+  @override
+  // TODO: implement amount
+  String get amount => throw UnimplementedError();
+
+  @override
+  // TODO: implement cancelled
+  String get cancelled => throw UnimplementedError();
+
+  @override
+  // TODO: implement customerMessage
+  String get customerMessage => throw UnimplementedError();
+
+  @override
+  // TODO: implement draft
+  String get draft => throw UnimplementedError();
+
+  @override
+  // TODO: implement failed
+  String get failed => throw UnimplementedError();
+
+  @override
+  // TODO: implement hrs
+  String get hrs => throw UnimplementedError();
+
+  @override
+  // TODO: implement overdue
+  String get overdue => throw UnimplementedError();
+
+  @override
+  // TODO: implement paid
+  String get paid => throw UnimplementedError();
+
+  @override
+  // TODO: implement partiallyPaid
+  String get partiallyPaid => throw UnimplementedError();
+
+  @override
+  // TODO: implement product
+  String get product => throw UnimplementedError();
+
+  @override
+  // TODO: implement qty
+  String get qty => throw UnimplementedError();
+
+  @override
+  // TODO: implement rate
+  String get rate => throw UnimplementedError();
+
+  @override
+  // TODO: implement refunded
+  String get refunded => throw UnimplementedError();
+
+  @override
+  // TODO: implement sent
+  String get sent => throw UnimplementedError();
+
+  @override
+  // TODO: implement service
+  String get service => throw UnimplementedError();
+
+  @override
+  // TODO: implement total
+  String get total => throw UnimplementedError();
+
+  @override
+  // TODO: implement invoice
+  String get invoice => throw UnimplementedError();
+
+  @override
+  // TODO: implement invoiceDate
+  String get invoiceDate => throw UnimplementedError();
+
+  @override
+  // TODO: implement remove
+  String get remove => throw UnimplementedError();
+
+  @override
+  // TODO: implement edit
+  String get edit => throw UnimplementedError();
+
+  @override
+  // TODO: implement dueDate
+  String get dueDate => throw UnimplementedError();
+
+  @override
+  // TODO: implement shareWithClient
+  String get shareWithClient => throw UnimplementedError();
+
+  @override
+  // TODO: implement actions
+  String get actions => throw UnimplementedError();
 }

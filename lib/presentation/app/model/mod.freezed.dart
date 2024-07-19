@@ -28,6 +28,7 @@ mixin _$Mod {
     required TResult Function(ViewType type) chat,
     required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() finance,
+    required TResult Function(ViewType type) financeInvoice,
     required TResult Function() settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +44,7 @@ mixin _$Mod {
     TResult? Function(ViewType type)? chat,
     TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? finance,
+    TResult? Function(ViewType type)? financeInvoice,
     TResult? Function()? settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -58,6 +60,7 @@ mixin _$Mod {
     TResult Function(ViewType type)? chat,
     TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? finance,
+    TResult Function(ViewType type)? financeInvoice,
     TResult Function()? settings,
     required TResult orElse(),
   }) =>
@@ -74,6 +77,7 @@ mixin _$Mod {
     required TResult Function(ModChat value) chat,
     required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModFinance value) finance,
+    required TResult Function(ModFinanceInvoice value) financeInvoice,
     required TResult Function(ModSettings value) settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -89,6 +93,7 @@ mixin _$Mod {
     TResult? Function(ModChat value)? chat,
     TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModFinance value)? finance,
+    TResult? Function(ModFinanceInvoice value)? financeInvoice,
     TResult? Function(ModSettings value)? settings,
   }) =>
       throw _privateConstructorUsedError;
@@ -104,6 +109,7 @@ mixin _$Mod {
     TResult Function(ModChat value)? chat,
     TResult Function(ModAttachment value)? attachment,
     TResult Function(ModFinance value)? finance,
+    TResult Function(ModFinanceInvoice value)? financeInvoice,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) =>
@@ -174,6 +180,7 @@ class _$ModHomeImpl implements ModHome {
     required TResult Function(ViewType type) chat,
     required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() finance,
+    required TResult Function(ViewType type) financeInvoice,
     required TResult Function() settings,
   }) {
     return home();
@@ -192,6 +199,7 @@ class _$ModHomeImpl implements ModHome {
     TResult? Function(ViewType type)? chat,
     TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? finance,
+    TResult? Function(ViewType type)? financeInvoice,
     TResult? Function()? settings,
   }) {
     return home?.call();
@@ -210,6 +218,7 @@ class _$ModHomeImpl implements ModHome {
     TResult Function(ViewType type)? chat,
     TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? finance,
+    TResult Function(ViewType type)? financeInvoice,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -232,6 +241,7 @@ class _$ModHomeImpl implements ModHome {
     required TResult Function(ModChat value) chat,
     required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModFinance value) finance,
+    required TResult Function(ModFinanceInvoice value) financeInvoice,
     required TResult Function(ModSettings value) settings,
   }) {
     return home(this);
@@ -250,6 +260,7 @@ class _$ModHomeImpl implements ModHome {
     TResult? Function(ModChat value)? chat,
     TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModFinance value)? finance,
+    TResult? Function(ModFinanceInvoice value)? financeInvoice,
     TResult? Function(ModSettings value)? settings,
   }) {
     return home?.call(this);
@@ -268,6 +279,7 @@ class _$ModHomeImpl implements ModHome {
     TResult Function(ModChat value)? chat,
     TResult Function(ModAttachment value)? attachment,
     TResult Function(ModFinance value)? finance,
+    TResult Function(ModFinanceInvoice value)? financeInvoice,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -366,6 +378,7 @@ class _$ModScheduleImpl implements ModSchedule {
     required TResult Function(ViewType type) chat,
     required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() finance,
+    required TResult Function(ViewType type) financeInvoice,
     required TResult Function() settings,
   }) {
     return schedule(type);
@@ -384,6 +397,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult? Function(ViewType type)? chat,
     TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? finance,
+    TResult? Function(ViewType type)? financeInvoice,
     TResult? Function()? settings,
   }) {
     return schedule?.call(type);
@@ -402,6 +416,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult Function(ViewType type)? chat,
     TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? finance,
+    TResult Function(ViewType type)? financeInvoice,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -424,6 +439,7 @@ class _$ModScheduleImpl implements ModSchedule {
     required TResult Function(ModChat value) chat,
     required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModFinance value) finance,
+    required TResult Function(ModFinanceInvoice value) financeInvoice,
     required TResult Function(ModSettings value) settings,
   }) {
     return schedule(this);
@@ -442,6 +458,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult? Function(ModChat value)? chat,
     TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModFinance value)? finance,
+    TResult? Function(ModFinanceInvoice value)? financeInvoice,
     TResult? Function(ModSettings value)? settings,
   }) {
     return schedule?.call(this);
@@ -460,6 +477,7 @@ class _$ModScheduleImpl implements ModSchedule {
     TResult Function(ModChat value)? chat,
     TResult Function(ModAttachment value)? attachment,
     TResult Function(ModFinance value)? finance,
+    TResult Function(ModFinanceInvoice value)? financeInvoice,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -563,6 +581,7 @@ class _$ModProjectsImpl implements ModProjects {
     required TResult Function(ViewType type) chat,
     required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() finance,
+    required TResult Function(ViewType type) financeInvoice,
     required TResult Function() settings,
   }) {
     return projects(type);
@@ -581,6 +600,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult? Function(ViewType type)? chat,
     TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? finance,
+    TResult? Function(ViewType type)? financeInvoice,
     TResult? Function()? settings,
   }) {
     return projects?.call(type);
@@ -599,6 +619,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult Function(ViewType type)? chat,
     TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? finance,
+    TResult Function(ViewType type)? financeInvoice,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -621,6 +642,7 @@ class _$ModProjectsImpl implements ModProjects {
     required TResult Function(ModChat value) chat,
     required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModFinance value) finance,
+    required TResult Function(ModFinanceInvoice value) financeInvoice,
     required TResult Function(ModSettings value) settings,
   }) {
     return projects(this);
@@ -639,6 +661,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult? Function(ModChat value)? chat,
     TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModFinance value)? finance,
+    TResult? Function(ModFinanceInvoice value)? financeInvoice,
     TResult? Function(ModSettings value)? settings,
   }) {
     return projects?.call(this);
@@ -657,6 +680,7 @@ class _$ModProjectsImpl implements ModProjects {
     TResult Function(ModChat value)? chat,
     TResult Function(ModAttachment value)? attachment,
     TResult Function(ModFinance value)? finance,
+    TResult Function(ModFinanceInvoice value)? financeInvoice,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -760,6 +784,7 @@ class _$ModTasksImpl implements ModTasks {
     required TResult Function(ViewType type) chat,
     required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() finance,
+    required TResult Function(ViewType type) financeInvoice,
     required TResult Function() settings,
   }) {
     return tasks(type);
@@ -778,6 +803,7 @@ class _$ModTasksImpl implements ModTasks {
     TResult? Function(ViewType type)? chat,
     TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? finance,
+    TResult? Function(ViewType type)? financeInvoice,
     TResult? Function()? settings,
   }) {
     return tasks?.call(type);
@@ -796,6 +822,7 @@ class _$ModTasksImpl implements ModTasks {
     TResult Function(ViewType type)? chat,
     TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? finance,
+    TResult Function(ViewType type)? financeInvoice,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -818,6 +845,7 @@ class _$ModTasksImpl implements ModTasks {
     required TResult Function(ModChat value) chat,
     required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModFinance value) finance,
+    required TResult Function(ModFinanceInvoice value) financeInvoice,
     required TResult Function(ModSettings value) settings,
   }) {
     return tasks(this);
@@ -836,6 +864,7 @@ class _$ModTasksImpl implements ModTasks {
     TResult? Function(ModChat value)? chat,
     TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModFinance value)? finance,
+    TResult? Function(ModFinanceInvoice value)? financeInvoice,
     TResult? Function(ModSettings value)? settings,
   }) {
     return tasks?.call(this);
@@ -854,6 +883,7 @@ class _$ModTasksImpl implements ModTasks {
     TResult Function(ModChat value)? chat,
     TResult Function(ModAttachment value)? attachment,
     TResult Function(ModFinance value)? finance,
+    TResult Function(ModFinanceInvoice value)? financeInvoice,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -957,6 +987,7 @@ class _$ModClientsImpl implements ModClients {
     required TResult Function(ViewType type) chat,
     required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() finance,
+    required TResult Function(ViewType type) financeInvoice,
     required TResult Function() settings,
   }) {
     return clients(type);
@@ -975,6 +1006,7 @@ class _$ModClientsImpl implements ModClients {
     TResult? Function(ViewType type)? chat,
     TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? finance,
+    TResult? Function(ViewType type)? financeInvoice,
     TResult? Function()? settings,
   }) {
     return clients?.call(type);
@@ -993,6 +1025,7 @@ class _$ModClientsImpl implements ModClients {
     TResult Function(ViewType type)? chat,
     TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? finance,
+    TResult Function(ViewType type)? financeInvoice,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -1015,6 +1048,7 @@ class _$ModClientsImpl implements ModClients {
     required TResult Function(ModChat value) chat,
     required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModFinance value) finance,
+    required TResult Function(ModFinanceInvoice value) financeInvoice,
     required TResult Function(ModSettings value) settings,
   }) {
     return clients(this);
@@ -1033,6 +1067,7 @@ class _$ModClientsImpl implements ModClients {
     TResult? Function(ModChat value)? chat,
     TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModFinance value)? finance,
+    TResult? Function(ModFinanceInvoice value)? financeInvoice,
     TResult? Function(ModSettings value)? settings,
   }) {
     return clients?.call(this);
@@ -1051,6 +1086,7 @@ class _$ModClientsImpl implements ModClients {
     TResult Function(ModChat value)? chat,
     TResult Function(ModAttachment value)? attachment,
     TResult Function(ModFinance value)? finance,
+    TResult Function(ModFinanceInvoice value)? financeInvoice,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -1154,6 +1190,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     required TResult Function(ViewType type) chat,
     required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() finance,
+    required TResult Function(ViewType type) financeInvoice,
     required TResult Function() settings,
   }) {
     return employees(type);
@@ -1172,6 +1209,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     TResult? Function(ViewType type)? chat,
     TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? finance,
+    TResult? Function(ViewType type)? financeInvoice,
     TResult? Function()? settings,
   }) {
     return employees?.call(type);
@@ -1190,6 +1228,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     TResult Function(ViewType type)? chat,
     TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? finance,
+    TResult Function(ViewType type)? financeInvoice,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -1212,6 +1251,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     required TResult Function(ModChat value) chat,
     required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModFinance value) finance,
+    required TResult Function(ModFinanceInvoice value) financeInvoice,
     required TResult Function(ModSettings value) settings,
   }) {
     return employees(this);
@@ -1230,6 +1270,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     TResult? Function(ModChat value)? chat,
     TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModFinance value)? finance,
+    TResult? Function(ModFinanceInvoice value)? financeInvoice,
     TResult? Function(ModSettings value)? settings,
   }) {
     return employees?.call(this);
@@ -1248,6 +1289,7 @@ class _$ModEmployeesImpl implements ModEmployees {
     TResult Function(ModChat value)? chat,
     TResult Function(ModAttachment value)? attachment,
     TResult Function(ModFinance value)? finance,
+    TResult Function(ModFinanceInvoice value)? financeInvoice,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -1352,6 +1394,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     required TResult Function(ViewType type) chat,
     required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() finance,
+    required TResult Function(ViewType type) financeInvoice,
     required TResult Function() settings,
   }) {
     return timecards(type);
@@ -1370,6 +1413,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     TResult? Function(ViewType type)? chat,
     TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? finance,
+    TResult? Function(ViewType type)? financeInvoice,
     TResult? Function()? settings,
   }) {
     return timecards?.call(type);
@@ -1388,6 +1432,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     TResult Function(ViewType type)? chat,
     TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? finance,
+    TResult Function(ViewType type)? financeInvoice,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -1410,6 +1455,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     required TResult Function(ModChat value) chat,
     required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModFinance value) finance,
+    required TResult Function(ModFinanceInvoice value) financeInvoice,
     required TResult Function(ModSettings value) settings,
   }) {
     return timecards(this);
@@ -1428,6 +1474,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     TResult? Function(ModChat value)? chat,
     TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModFinance value)? finance,
+    TResult? Function(ModFinanceInvoice value)? financeInvoice,
     TResult? Function(ModSettings value)? settings,
   }) {
     return timecards?.call(this);
@@ -1446,6 +1493,7 @@ class _$ModTimecardsImpl implements ModTimecards {
     TResult Function(ModChat value)? chat,
     TResult Function(ModAttachment value)? attachment,
     TResult Function(ModFinance value)? finance,
+    TResult Function(ModFinanceInvoice value)? financeInvoice,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -1550,6 +1598,7 @@ class _$ModChatImpl implements ModChat {
     required TResult Function(ViewType type) chat,
     required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() finance,
+    required TResult Function(ViewType type) financeInvoice,
     required TResult Function() settings,
   }) {
     return chat(type);
@@ -1568,6 +1617,7 @@ class _$ModChatImpl implements ModChat {
     TResult? Function(ViewType type)? chat,
     TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? finance,
+    TResult? Function(ViewType type)? financeInvoice,
     TResult? Function()? settings,
   }) {
     return chat?.call(type);
@@ -1586,6 +1636,7 @@ class _$ModChatImpl implements ModChat {
     TResult Function(ViewType type)? chat,
     TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? finance,
+    TResult Function(ViewType type)? financeInvoice,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -1608,6 +1659,7 @@ class _$ModChatImpl implements ModChat {
     required TResult Function(ModChat value) chat,
     required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModFinance value) finance,
+    required TResult Function(ModFinanceInvoice value) financeInvoice,
     required TResult Function(ModSettings value) settings,
   }) {
     return chat(this);
@@ -1626,6 +1678,7 @@ class _$ModChatImpl implements ModChat {
     TResult? Function(ModChat value)? chat,
     TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModFinance value)? finance,
+    TResult? Function(ModFinanceInvoice value)? financeInvoice,
     TResult? Function(ModSettings value)? settings,
   }) {
     return chat?.call(this);
@@ -1644,6 +1697,7 @@ class _$ModChatImpl implements ModChat {
     TResult Function(ModChat value)? chat,
     TResult Function(ModAttachment value)? attachment,
     TResult Function(ModFinance value)? finance,
+    TResult Function(ModFinanceInvoice value)? financeInvoice,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -1748,6 +1802,7 @@ class _$ModAttachmentImpl implements ModAttachment {
     required TResult Function(ViewType type) chat,
     required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() finance,
+    required TResult Function(ViewType type) financeInvoice,
     required TResult Function() settings,
   }) {
     return attachment(fileItemId);
@@ -1766,6 +1821,7 @@ class _$ModAttachmentImpl implements ModAttachment {
     TResult? Function(ViewType type)? chat,
     TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? finance,
+    TResult? Function(ViewType type)? financeInvoice,
     TResult? Function()? settings,
   }) {
     return attachment?.call(fileItemId);
@@ -1784,6 +1840,7 @@ class _$ModAttachmentImpl implements ModAttachment {
     TResult Function(ViewType type)? chat,
     TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? finance,
+    TResult Function(ViewType type)? financeInvoice,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -1806,6 +1863,7 @@ class _$ModAttachmentImpl implements ModAttachment {
     required TResult Function(ModChat value) chat,
     required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModFinance value) finance,
+    required TResult Function(ModFinanceInvoice value) financeInvoice,
     required TResult Function(ModSettings value) settings,
   }) {
     return attachment(this);
@@ -1824,6 +1882,7 @@ class _$ModAttachmentImpl implements ModAttachment {
     TResult? Function(ModChat value)? chat,
     TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModFinance value)? finance,
+    TResult? Function(ModFinanceInvoice value)? financeInvoice,
     TResult? Function(ModSettings value)? settings,
   }) {
     return attachment?.call(this);
@@ -1842,6 +1901,7 @@ class _$ModAttachmentImpl implements ModAttachment {
     TResult Function(ModChat value)? chat,
     TResult Function(ModAttachment value)? attachment,
     TResult Function(ModFinance value)? finance,
+    TResult Function(ModFinanceInvoice value)? financeInvoice,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -1910,6 +1970,7 @@ class _$ModFinanceImpl implements ModFinance {
     required TResult Function(ViewType type) chat,
     required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() finance,
+    required TResult Function(ViewType type) financeInvoice,
     required TResult Function() settings,
   }) {
     return finance();
@@ -1928,6 +1989,7 @@ class _$ModFinanceImpl implements ModFinance {
     TResult? Function(ViewType type)? chat,
     TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? finance,
+    TResult? Function(ViewType type)? financeInvoice,
     TResult? Function()? settings,
   }) {
     return finance?.call();
@@ -1946,6 +2008,7 @@ class _$ModFinanceImpl implements ModFinance {
     TResult Function(ViewType type)? chat,
     TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? finance,
+    TResult Function(ViewType type)? financeInvoice,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -1968,6 +2031,7 @@ class _$ModFinanceImpl implements ModFinance {
     required TResult Function(ModChat value) chat,
     required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModFinance value) finance,
+    required TResult Function(ModFinanceInvoice value) financeInvoice,
     required TResult Function(ModSettings value) settings,
   }) {
     return finance(this);
@@ -1986,6 +2050,7 @@ class _$ModFinanceImpl implements ModFinance {
     TResult? Function(ModChat value)? chat,
     TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModFinance value)? finance,
+    TResult? Function(ModFinanceInvoice value)? financeInvoice,
     TResult? Function(ModSettings value)? settings,
   }) {
     return finance?.call(this);
@@ -2004,6 +2069,7 @@ class _$ModFinanceImpl implements ModFinance {
     TResult Function(ModChat value)? chat,
     TResult Function(ModAttachment value)? attachment,
     TResult Function(ModFinance value)? finance,
+    TResult Function(ModFinanceInvoice value)? financeInvoice,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {
@@ -2016,6 +2082,211 @@ class _$ModFinanceImpl implements ModFinance {
 
 abstract class ModFinance implements Mod {
   const factory ModFinance() = _$ModFinanceImpl;
+}
+
+/// @nodoc
+abstract class _$$ModFinanceInvoiceImplCopyWith<$Res> {
+  factory _$$ModFinanceInvoiceImplCopyWith(_$ModFinanceInvoiceImpl value,
+          $Res Function(_$ModFinanceInvoiceImpl) then) =
+      __$$ModFinanceInvoiceImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ViewType type});
+
+  $ViewTypeCopyWith<$Res> get type;
+}
+
+/// @nodoc
+class __$$ModFinanceInvoiceImplCopyWithImpl<$Res>
+    extends _$ModCopyWithImpl<$Res, _$ModFinanceInvoiceImpl>
+    implements _$$ModFinanceInvoiceImplCopyWith<$Res> {
+  __$$ModFinanceInvoiceImplCopyWithImpl(_$ModFinanceInvoiceImpl _value,
+      $Res Function(_$ModFinanceInvoiceImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+  }) {
+    return _then(_$ModFinanceInvoiceImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ViewType,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ViewTypeCopyWith<$Res> get type {
+    return $ViewTypeCopyWith<$Res>(_value.type, (value) {
+      return _then(_value.copyWith(type: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ModFinanceInvoiceImpl implements ModFinanceInvoice {
+  const _$ModFinanceInvoiceImpl({required this.type});
+
+  @override
+  final ViewType type;
+
+  @override
+  String toString() {
+    return 'Mod.financeInvoice(type: $type)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ModFinanceInvoiceImpl &&
+            (identical(other.type, type) || other.type == type));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, type);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModFinanceInvoiceImplCopyWith<_$ModFinanceInvoiceImpl> get copyWith =>
+      __$$ModFinanceInvoiceImplCopyWithImpl<_$ModFinanceInvoiceImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() home,
+    required TResult Function(ViewType type) schedule,
+    required TResult Function(ViewType type) projects,
+    required TResult Function(ViewType type) tasks,
+    required TResult Function(ViewType type) clients,
+    required TResult Function(ViewType type) employees,
+    required TResult Function(ViewType type) timecards,
+    required TResult Function(ViewType type) chat,
+    required TResult Function(FileItem fileItemId) attachment,
+    required TResult Function() finance,
+    required TResult Function(ViewType type) financeInvoice,
+    required TResult Function() settings,
+  }) {
+    return financeInvoice(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? home,
+    TResult? Function(ViewType type)? schedule,
+    TResult? Function(ViewType type)? projects,
+    TResult? Function(ViewType type)? tasks,
+    TResult? Function(ViewType type)? clients,
+    TResult? Function(ViewType type)? employees,
+    TResult? Function(ViewType type)? timecards,
+    TResult? Function(ViewType type)? chat,
+    TResult? Function(FileItem fileItemId)? attachment,
+    TResult? Function()? finance,
+    TResult? Function(ViewType type)? financeInvoice,
+    TResult? Function()? settings,
+  }) {
+    return financeInvoice?.call(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? home,
+    TResult Function(ViewType type)? schedule,
+    TResult Function(ViewType type)? projects,
+    TResult Function(ViewType type)? tasks,
+    TResult Function(ViewType type)? clients,
+    TResult Function(ViewType type)? employees,
+    TResult Function(ViewType type)? timecards,
+    TResult Function(ViewType type)? chat,
+    TResult Function(FileItem fileItemId)? attachment,
+    TResult Function()? finance,
+    TResult Function(ViewType type)? financeInvoice,
+    TResult Function()? settings,
+    required TResult orElse(),
+  }) {
+    if (financeInvoice != null) {
+      return financeInvoice(type);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ModHome value) home,
+    required TResult Function(ModSchedule value) schedule,
+    required TResult Function(ModProjects value) projects,
+    required TResult Function(ModTasks value) tasks,
+    required TResult Function(ModClients value) clients,
+    required TResult Function(ModEmployees value) employees,
+    required TResult Function(ModTimecards value) timecards,
+    required TResult Function(ModChat value) chat,
+    required TResult Function(ModAttachment value) attachment,
+    required TResult Function(ModFinance value) finance,
+    required TResult Function(ModFinanceInvoice value) financeInvoice,
+    required TResult Function(ModSettings value) settings,
+  }) {
+    return financeInvoice(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ModHome value)? home,
+    TResult? Function(ModSchedule value)? schedule,
+    TResult? Function(ModProjects value)? projects,
+    TResult? Function(ModTasks value)? tasks,
+    TResult? Function(ModClients value)? clients,
+    TResult? Function(ModEmployees value)? employees,
+    TResult? Function(ModTimecards value)? timecards,
+    TResult? Function(ModChat value)? chat,
+    TResult? Function(ModAttachment value)? attachment,
+    TResult? Function(ModFinance value)? finance,
+    TResult? Function(ModFinanceInvoice value)? financeInvoice,
+    TResult? Function(ModSettings value)? settings,
+  }) {
+    return financeInvoice?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ModHome value)? home,
+    TResult Function(ModSchedule value)? schedule,
+    TResult Function(ModProjects value)? projects,
+    TResult Function(ModTasks value)? tasks,
+    TResult Function(ModClients value)? clients,
+    TResult Function(ModEmployees value)? employees,
+    TResult Function(ModTimecards value)? timecards,
+    TResult Function(ModChat value)? chat,
+    TResult Function(ModAttachment value)? attachment,
+    TResult Function(ModFinance value)? finance,
+    TResult Function(ModFinanceInvoice value)? financeInvoice,
+    TResult Function(ModSettings value)? settings,
+    required TResult orElse(),
+  }) {
+    if (financeInvoice != null) {
+      return financeInvoice(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ModFinanceInvoice implements Mod {
+  const factory ModFinanceInvoice({required final ViewType type}) =
+      _$ModFinanceInvoiceImpl;
+
+  ViewType get type;
+  @JsonKey(ignore: true)
+  _$$ModFinanceInvoiceImplCopyWith<_$ModFinanceInvoiceImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2066,6 +2337,7 @@ class _$ModSettingsImpl implements ModSettings {
     required TResult Function(ViewType type) chat,
     required TResult Function(FileItem fileItemId) attachment,
     required TResult Function() finance,
+    required TResult Function(ViewType type) financeInvoice,
     required TResult Function() settings,
   }) {
     return settings();
@@ -2084,6 +2356,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult? Function(ViewType type)? chat,
     TResult? Function(FileItem fileItemId)? attachment,
     TResult? Function()? finance,
+    TResult? Function(ViewType type)? financeInvoice,
     TResult? Function()? settings,
   }) {
     return settings?.call();
@@ -2102,6 +2375,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult Function(ViewType type)? chat,
     TResult Function(FileItem fileItemId)? attachment,
     TResult Function()? finance,
+    TResult Function(ViewType type)? financeInvoice,
     TResult Function()? settings,
     required TResult orElse(),
   }) {
@@ -2124,6 +2398,7 @@ class _$ModSettingsImpl implements ModSettings {
     required TResult Function(ModChat value) chat,
     required TResult Function(ModAttachment value) attachment,
     required TResult Function(ModFinance value) finance,
+    required TResult Function(ModFinanceInvoice value) financeInvoice,
     required TResult Function(ModSettings value) settings,
   }) {
     return settings(this);
@@ -2142,6 +2417,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult? Function(ModChat value)? chat,
     TResult? Function(ModAttachment value)? attachment,
     TResult? Function(ModFinance value)? finance,
+    TResult? Function(ModFinanceInvoice value)? financeInvoice,
     TResult? Function(ModSettings value)? settings,
   }) {
     return settings?.call(this);
@@ -2160,6 +2436,7 @@ class _$ModSettingsImpl implements ModSettings {
     TResult Function(ModChat value)? chat,
     TResult Function(ModAttachment value)? attachment,
     TResult Function(ModFinance value)? finance,
+    TResult Function(ModFinanceInvoice value)? financeInvoice,
     TResult Function(ModSettings value)? settings,
     required TResult orElse(),
   }) {

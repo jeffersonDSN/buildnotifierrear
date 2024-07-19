@@ -8,6 +8,8 @@ abstract interface class AbsIActivitiesRepository {
     DateTime endDate,
   );
 
+  Future<List<Activity>> getAllUnbilledActivities(String projectId);
+
   Future<String> post(Activity activity);
 
   Future<bool> put(Activity activity);

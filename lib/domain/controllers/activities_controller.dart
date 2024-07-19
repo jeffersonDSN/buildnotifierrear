@@ -20,6 +20,12 @@ class ActivitiesController {
     );
   }
 
+  Future<List<Activity>> getAllUnbilledActivities(
+    String projectId,
+  ) {
+    return _repository.getAllUnbilledActivities(projectId);
+  }
+
   Future<String> startActivities(Activity activity) {
     return _repository.post(activity);
   }

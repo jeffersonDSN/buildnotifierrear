@@ -63,6 +63,32 @@ class ActivitiesFirestoreRepository extends TenantFirestoreRepository
   }
 
   @override
+  Future<List<Activity>> getAllUnbilledActivities(String projectId) async {
+    var querySnapshot = await collection
+        .where('projectId', isEqualTo: projectId)
+        .where('invoiceId', isEqualTo: '')
+        .orderBy('start')
+        .get();
+
+    return querySnapshot.docs
+        .map((DocumentSnapshot document) {
+          var doc = document.data() as Map<String, dynamic>;
+          var result = doc.map((key, value) {
+            if (value is Timestamp) {
+              return MapEntry(key, value.toDate().toString());
+            } else {
+              return MapEntry(key, value);
+            }
+          });
+
+          return {...result, 'id': document.id};
+        })
+        .toList()
+        .map((e) => Activity.fromJson(e))
+        .toList();
+  }
+
+  @override
   Future<String> post(Activity activity) async {
     var schedule = {
       'userId': activity.userId,

@@ -1,5 +1,6 @@
 import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/presentation/assign_to/bloc/assign_to_bloc.dart';
+import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
@@ -27,10 +28,10 @@ class AssignToView extends StatelessWidget {
 
     return AlertDialog(
       elevation: 0,
-      title: const Center(
+      title: Center(
         child: Text(
-          'Assign to',
-          style: TextStyle(
+          context.tr.assignTo,
+          style: const TextStyle(
             color: AppColor.primaryColorSwatch,
           ),
         ),
@@ -85,13 +86,13 @@ class AssignToView extends StatelessWidget {
       ),
       actions: [
         TextButton(
-          child: const Text('Cancel'),
+          child: Text(context.tr.cancel),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
         FilledButton(
-          child: const Text('Submit'),
+          child: Text(context.tr.submit),
           onPressed: () {
             Navigator.pop(
               context,

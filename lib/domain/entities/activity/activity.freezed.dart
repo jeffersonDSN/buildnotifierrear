@@ -22,6 +22,8 @@ Activity _$ActivityFromJson(Map<String, dynamic> json) {
 mixin _$Activity {
   String get id => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
+  String get userFirstName => throw _privateConstructorUsedError;
+  String get userLastName => throw _privateConstructorUsedError;
   String get appointmentId => throw _privateConstructorUsedError;
   dynamic get projectId => throw _privateConstructorUsedError;
   dynamic get taskId => throw _privateConstructorUsedError;
@@ -33,6 +35,7 @@ mixin _$Activity {
   double? get endLatitude => throw _privateConstructorUsedError;
   double? get endLongitude => throw _privateConstructorUsedError;
   String? get endLocation => throw _privateConstructorUsedError;
+  String get invoiceId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,6 +51,8 @@ abstract class $ActivityCopyWith<$Res> {
   $Res call(
       {String id,
       String userId,
+      String userFirstName,
+      String userLastName,
       String appointmentId,
       dynamic projectId,
       dynamic taskId,
@@ -58,7 +63,8 @@ abstract class $ActivityCopyWith<$Res> {
       DateTime? end,
       double? endLatitude,
       double? endLongitude,
-      String? endLocation});
+      String? endLocation,
+      String invoiceId});
 }
 
 /// @nodoc
@@ -76,6 +82,8 @@ class _$ActivityCopyWithImpl<$Res, $Val extends Activity>
   $Res call({
     Object? id = null,
     Object? userId = null,
+    Object? userFirstName = null,
+    Object? userLastName = null,
     Object? appointmentId = null,
     Object? projectId = freezed,
     Object? taskId = freezed,
@@ -87,6 +95,7 @@ class _$ActivityCopyWithImpl<$Res, $Val extends Activity>
     Object? endLatitude = freezed,
     Object? endLongitude = freezed,
     Object? endLocation = freezed,
+    Object? invoiceId = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -96,6 +105,14 @@ class _$ActivityCopyWithImpl<$Res, $Val extends Activity>
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      userFirstName: null == userFirstName
+          ? _value.userFirstName
+          : userFirstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      userLastName: null == userLastName
+          ? _value.userLastName
+          : userLastName // ignore: cast_nullable_to_non_nullable
               as String,
       appointmentId: null == appointmentId
           ? _value.appointmentId
@@ -141,6 +158,10 @@ class _$ActivityCopyWithImpl<$Res, $Val extends Activity>
           ? _value.endLocation
           : endLocation // ignore: cast_nullable_to_non_nullable
               as String?,
+      invoiceId: null == invoiceId
+          ? _value.invoiceId
+          : invoiceId // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -156,6 +177,8 @@ abstract class _$$ActivityImplCopyWith<$Res>
   $Res call(
       {String id,
       String userId,
+      String userFirstName,
+      String userLastName,
       String appointmentId,
       dynamic projectId,
       dynamic taskId,
@@ -166,7 +189,8 @@ abstract class _$$ActivityImplCopyWith<$Res>
       DateTime? end,
       double? endLatitude,
       double? endLongitude,
-      String? endLocation});
+      String? endLocation,
+      String invoiceId});
 }
 
 /// @nodoc
@@ -182,6 +206,8 @@ class __$$ActivityImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? userId = null,
+    Object? userFirstName = null,
+    Object? userLastName = null,
     Object? appointmentId = null,
     Object? projectId = freezed,
     Object? taskId = freezed,
@@ -193,6 +219,7 @@ class __$$ActivityImplCopyWithImpl<$Res>
     Object? endLatitude = freezed,
     Object? endLongitude = freezed,
     Object? endLocation = freezed,
+    Object? invoiceId = null,
   }) {
     return _then(_$ActivityImpl(
       id: null == id
@@ -202,6 +229,14 @@ class __$$ActivityImplCopyWithImpl<$Res>
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      userFirstName: null == userFirstName
+          ? _value.userFirstName
+          : userFirstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      userLastName: null == userLastName
+          ? _value.userLastName
+          : userLastName // ignore: cast_nullable_to_non_nullable
               as String,
       appointmentId: null == appointmentId
           ? _value.appointmentId
@@ -241,6 +276,10 @@ class __$$ActivityImplCopyWithImpl<$Res>
           ? _value.endLocation
           : endLocation // ignore: cast_nullable_to_non_nullable
               as String?,
+      invoiceId: null == invoiceId
+          ? _value.invoiceId
+          : invoiceId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -251,6 +290,8 @@ class _$ActivityImpl implements _Activity {
   _$ActivityImpl(
       {this.id = '',
       required this.userId,
+      required this.userFirstName,
+      required this.userLastName,
       required this.appointmentId,
       this.projectId = '',
       this.taskId = '',
@@ -261,7 +302,8 @@ class _$ActivityImpl implements _Activity {
       this.end,
       this.endLatitude,
       this.endLongitude,
-      this.endLocation});
+      this.endLocation,
+      this.invoiceId = ''});
 
   factory _$ActivityImpl.fromJson(Map<String, dynamic> json) =>
       _$$ActivityImplFromJson(json);
@@ -271,6 +313,10 @@ class _$ActivityImpl implements _Activity {
   final String id;
   @override
   final String userId;
+  @override
+  final String userFirstName;
+  @override
+  final String userLastName;
   @override
   final String appointmentId;
   @override
@@ -295,10 +341,13 @@ class _$ActivityImpl implements _Activity {
   final double? endLongitude;
   @override
   final String? endLocation;
+  @override
+  @JsonKey()
+  final String invoiceId;
 
   @override
   String toString() {
-    return 'Activity(id: $id, userId: $userId, appointmentId: $appointmentId, projectId: $projectId, taskId: $taskId, start: $start, startLatitude: $startLatitude, startLongitude: $startLongitude, startLocation: $startLocation, end: $end, endLatitude: $endLatitude, endLongitude: $endLongitude, endLocation: $endLocation)';
+    return 'Activity(id: $id, userId: $userId, userFirstName: $userFirstName, userLastName: $userLastName, appointmentId: $appointmentId, projectId: $projectId, taskId: $taskId, start: $start, startLatitude: $startLatitude, startLongitude: $startLongitude, startLocation: $startLocation, end: $end, endLatitude: $endLatitude, endLongitude: $endLongitude, endLocation: $endLocation, invoiceId: $invoiceId)';
   }
 
   @override
@@ -308,6 +357,10 @@ class _$ActivityImpl implements _Activity {
             other is _$ActivityImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.userFirstName, userFirstName) ||
+                other.userFirstName == userFirstName) &&
+            (identical(other.userLastName, userLastName) ||
+                other.userLastName == userLastName) &&
             (identical(other.appointmentId, appointmentId) ||
                 other.appointmentId == appointmentId) &&
             const DeepCollectionEquality().equals(other.projectId, projectId) &&
@@ -325,7 +378,9 @@ class _$ActivityImpl implements _Activity {
             (identical(other.endLongitude, endLongitude) ||
                 other.endLongitude == endLongitude) &&
             (identical(other.endLocation, endLocation) ||
-                other.endLocation == endLocation));
+                other.endLocation == endLocation) &&
+            (identical(other.invoiceId, invoiceId) ||
+                other.invoiceId == invoiceId));
   }
 
   @JsonKey(ignore: true)
@@ -334,6 +389,8 @@ class _$ActivityImpl implements _Activity {
       runtimeType,
       id,
       userId,
+      userFirstName,
+      userLastName,
       appointmentId,
       const DeepCollectionEquality().hash(projectId),
       const DeepCollectionEquality().hash(taskId),
@@ -344,7 +401,8 @@ class _$ActivityImpl implements _Activity {
       end,
       endLatitude,
       endLongitude,
-      endLocation);
+      endLocation,
+      invoiceId);
 
   @JsonKey(ignore: true)
   @override
@@ -364,6 +422,8 @@ abstract class _Activity implements Activity {
   factory _Activity(
       {final String id,
       required final String userId,
+      required final String userFirstName,
+      required final String userLastName,
       required final String appointmentId,
       final dynamic projectId,
       final dynamic taskId,
@@ -374,7 +434,8 @@ abstract class _Activity implements Activity {
       final DateTime? end,
       final double? endLatitude,
       final double? endLongitude,
-      final String? endLocation}) = _$ActivityImpl;
+      final String? endLocation,
+      final String invoiceId}) = _$ActivityImpl;
 
   factory _Activity.fromJson(Map<String, dynamic> json) =
       _$ActivityImpl.fromJson;
@@ -383,6 +444,10 @@ abstract class _Activity implements Activity {
   String get id;
   @override
   String get userId;
+  @override
+  String get userFirstName;
+  @override
+  String get userLastName;
   @override
   String get appointmentId;
   @override
@@ -405,6 +470,8 @@ abstract class _Activity implements Activity {
   double? get endLongitude;
   @override
   String? get endLocation;
+  @override
+  String get invoiceId;
   @override
   @JsonKey(ignore: true)
   _$$ActivityImplCopyWith<_$ActivityImpl> get copyWith =>

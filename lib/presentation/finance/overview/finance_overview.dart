@@ -8,5 +8,9 @@ class FinanceOverview extends IView {
   @override
   Widget build(BuildContext context) {
     return const FinanceOverviewView();
+
+    // return const FinanceInvoiceEdit(
+    //   crudType: CrudType.create(),
+    // );
   }
 }

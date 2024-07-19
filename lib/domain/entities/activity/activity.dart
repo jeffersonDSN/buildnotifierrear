@@ -9,6 +9,8 @@ class Activity with _$Activity {
   factory Activity({
     @Default('') String id,
     required String userId,
+    required String userFirstName,
+    required String userLastName,
     required String appointmentId,
     @Default('') projectId,
     @Default('') taskId,
@@ -20,6 +22,7 @@ class Activity with _$Activity {
     double? endLatitude,
     double? endLongitude,
     String? endLocation,
+    @Default('') String invoiceId,
   }) = _Activity;
 
   factory Activity.fromJson(Map<String, Object?> json) =>
@@ -38,6 +41,11 @@ extension OnActivity on Activity {
     int minutes = totalMinutes % 60;
 
     return (hours: hours, minutes: minutes);
+  }
+
+  double get hoursDifference {
+    Duration difference = end!.difference(start);
+    return difference.inMinutes / 60.0;
   }
 }
 

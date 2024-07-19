@@ -214,6 +214,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get action => 'Action';
 
   @override
+  String get task => 'Task';
+
+  @override
   String get tasks => 'Tasks';
 
   @override
@@ -383,4 +386,85 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get finance => 'Finance';
+
+  @override
+  String get submit => 'Submit';
+
+  @override
+  String get addItem => 'Add item';
+
+  @override
+  String get date => 'Date';
+
+  @override
+  String get hoursWorked => 'Hours Worked';
+
+  @override
+  String get product => 'Product';
+
+  @override
+  String get service => 'Service';
+
+  @override
+  String get qty => 'Qty';
+
+  @override
+  String get hrs => 'hrs';
+
+  @override
+  String get rate => 'Rate';
+
+  @override
+  String get amount => 'Amount';
+
+  @override
+  String get customerMessage => 'Customer message';
+
+  @override
+  String get total => 'Total';
+
+  @override
+  String get draft => 'Draft';
+
+  @override
+  String get sent => 'Sent';
+
+  @override
+  String get partiallyPaid => 'Partially Paid';
+
+  @override
+  String get paid => 'Paid';
+
+  @override
+  String get overdue => 'Overdue';
+
+  @override
+  String get cancelled => 'Cancelled';
+
+  @override
+  String get refunded => 'Refunded';
+
+  @override
+  String get failed => 'Failed';
+
+  @override
+  String get invoice => 'Invoice';
+
+  @override
+  String get invoiceDate => 'Invoice date';
+
+  @override
+  String get remove => 'Remove';
+
+  @override
+  String get edit => 'Edit';
+
+  @override
+  String get dueDate => 'Due date';
+
+  @override
+  String get shareWithClient => 'Share with client';
+
+  @override
+  String get actions => 'Actions';
 }

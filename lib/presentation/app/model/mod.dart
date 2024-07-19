@@ -6,6 +6,7 @@ import 'package:buildnotifierrear/presentation/chat/overview/chat_overview.dart'
 import 'package:buildnotifierrear/presentation/clients/edit/client_edit.dart';
 import 'package:buildnotifierrear/presentation/clients/overview/clients_overview.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
+import 'package:buildnotifierrear/presentation/finance/invoice/edit/finance_invoice_edit.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/finance_overview.dart';
 import 'package:buildnotifierrear/presentation/home/overview/home_overview.dart';
 import 'package:buildnotifierrear/presentation/projects/edit/project_edit.dart';
@@ -55,6 +56,10 @@ class Mod with _$Mod {
   }) = ModAttachment;
 
   const factory Mod.finance() = ModFinance;
+
+  const factory Mod.financeInvoice({
+    required ViewType type,
+  }) = ModFinanceInvoice;
 
   const factory Mod.settings() = ModSettings;
 }
@@ -119,6 +124,13 @@ extension OnModel on Mod {
         update: (id) => const ChatOverview(),
       ),
       finance: () => const FinanceOverview(),
+      financeInvoice: (viewType) => viewType.when(
+        overview: () => const FinanceOverview(),
+        create: () => const FinanceInvoiceEdit(),
+        update: (id) => FinanceInvoiceEdit(
+          crudType: CrudType.update(id: id),
+        ),
+      ),
       attachment: (fileItem) => AttachmentFile(
         fileItem: fileItem,
       ),
@@ -165,6 +177,12 @@ extension OnModel on Mod {
         update: (id) => context.tr.chat,
       ),
       finance: () => context.tr.finance,
+
+      financeInvoice: (viewType) => viewType.when(
+        overview: () => context.tr.finance,
+        create: () => '${context.tr.finance} / ${context.tr.invoice}',
+        update: (id) => '${context.tr.finance} / ${context.tr.invoice}',
+      ),
       //TO DO
       attachment: (fileItemId) => '',
       settings: () => context.tr.settings,
