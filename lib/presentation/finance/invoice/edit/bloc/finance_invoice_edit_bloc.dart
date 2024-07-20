@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/invoices_controller.dart';
 import 'package:buildnotifierrear/domain/entities/client/client.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/domain/entities/invoice/invoice.dart';
@@ -13,7 +14,7 @@ part 'finance_invoice_edit_state.dart';
 class FinanceInvoiceEditBloc
     extends Bloc<FinanceInvoiceEditEvent, FinanceInvoiceEditState> {
   FinanceInvoiceEditBloc({
-    required CRUDController<Invoice> controller,
+    required InvoicesController controller,
     required CRUDController<Client> clientController,
   }) : super(const FinanceInvoiceEditState.init()) {
     on<FinanceInvoiceEditEvent>((event, emit) async {
@@ -28,7 +29,9 @@ class FinanceInvoiceEditBloc
           var result = await Future.wait([
             crudType.when(
               create: () async {
-                return const Invoice();
+                return Invoice(
+                  id: await controller.generateInvoiceNumber(),
+                );
               },
               update: (id) async {
                 return controller.getById(id);
@@ -68,7 +71,7 @@ class FinanceInvoiceEditBloc
                 clientFirstName: client.firstName,
                 clientlastName: client.lastName,
                 clientAddress: client.address,
-                clientAddress2: client.address,
+                clientAddress2: client.address2,
                 clientCity: client.city,
                 clientState: client.state,
                 clientZipCode: client.zipCode,

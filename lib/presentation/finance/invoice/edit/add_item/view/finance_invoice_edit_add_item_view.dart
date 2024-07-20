@@ -177,6 +177,10 @@ class FinanceInvoiceEditAddItemView extends StatelessWidget {
                             label: Text(context.tr.date),
                           ),
                           DataColumn2(
+                            size: ColumnSize.L,
+                            label: Text(context.tr.title),
+                          ),
+                          DataColumn2(
                             size: ColumnSize.M,
                             numeric: true,
                             label: Text(context.tr.hoursWorked),
@@ -203,6 +207,13 @@ class FinanceInvoiceEditAddItemView extends StatelessWidget {
                               DataCell(
                                 Text(
                                   dateFormat.format(activitie.start),
+                                ),
+                              ),
+                              DataCell(
+                                Text(
+                                  activitie.title,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                               DataCell(

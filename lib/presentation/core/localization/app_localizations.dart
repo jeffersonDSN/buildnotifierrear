@@ -343,6 +343,16 @@ abstract class AppLocalizations {
   String get shareWithClient;
 
   String get actions;
+
+  String get subTotal;
+
+  String get page;
+
+  String get issueDate;
+
+  String get invoiceTo;
+
+  String get downloadPDF;
 }
 
 class _AppLocalizationsDelegate

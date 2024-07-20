@@ -8,6 +8,7 @@ part 'activity.g.dart';
 class Activity with _$Activity {
   factory Activity({
     @Default('') String id,
+    @Default('') String title,
     required String userId,
     required String userFirstName,
     required String userLastName,

@@ -1,14 +1,24 @@
 import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/invoice/invoice.dart';
-import 'package:buildnotifierrear/domain/repositories/abs_i_crud_repository.dart';
+import 'package:buildnotifierrear/domain/repositories/abs_i_invoices_repository.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/counters_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/tenant_firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 
 class InvoicesFireStoreRepository extends TenantFirestoreRepository
-    implements AbsICRUDRepository<Invoice> {
-  InvoicesFireStoreRepository({required super.tenantId})
-      : super(collectionName: 'invoices');
+    implements AbsIInvoicesRepository {
+  late CountersFireStoreRepository countersRepository;
+
+  InvoicesFireStoreRepository({required String tenantId})
+      : super(collectionName: 'invoices', tenantId: tenantId) {
+    countersRepository = CountersFireStoreRepository(tenantId: tenantId);
+  }
+
+  @override
+  Future<String> generateInvoiceNumber() async {
+    return countersRepository.generateInvoiceNumber();
+  }
 
   @override
   Future<List<Invoice>> getAll() async {
@@ -67,7 +77,7 @@ class InvoicesFireStoreRepository extends TenantFirestoreRepository
       'items': value.items.toJson(),
     };
 
-    await collection.add(invoice);
+    await collection.doc(value.id.toString()).set(invoice);
     return right(true);
   }
 

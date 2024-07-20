@@ -467,4 +467,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get actions => 'Actions';
+
+  @override
+  String get subTotal => 'Sub Total';
+
+  @override
+  String get page => 'Page';
+
+  @override
+  String get issueDate => 'Issue date';
+
+  @override
+  String get invoiceTo => 'Invoice to';
+
+  @override
+  String get downloadPDF => 'Download PDF';
 }

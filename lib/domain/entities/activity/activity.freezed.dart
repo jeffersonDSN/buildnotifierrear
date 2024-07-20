@@ -21,6 +21,7 @@ Activity _$ActivityFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Activity {
   String get id => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
   String get userFirstName => throw _privateConstructorUsedError;
   String get userLastName => throw _privateConstructorUsedError;
@@ -50,6 +51,7 @@ abstract class $ActivityCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
+      String title,
       String userId,
       String userFirstName,
       String userLastName,
@@ -81,6 +83,7 @@ class _$ActivityCopyWithImpl<$Res, $Val extends Activity>
   @override
   $Res call({
     Object? id = null,
+    Object? title = null,
     Object? userId = null,
     Object? userFirstName = null,
     Object? userLastName = null,
@@ -101,6 +104,10 @@ class _$ActivityCopyWithImpl<$Res, $Val extends Activity>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
               as String,
       userId: null == userId
           ? _value.userId
@@ -176,6 +183,7 @@ abstract class _$$ActivityImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
+      String title,
       String userId,
       String userFirstName,
       String userLastName,
@@ -205,6 +213,7 @@ class __$$ActivityImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? title = null,
     Object? userId = null,
     Object? userFirstName = null,
     Object? userLastName = null,
@@ -225,6 +234,10 @@ class __$$ActivityImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
               as String,
       userId: null == userId
           ? _value.userId
@@ -289,6 +302,7 @@ class __$$ActivityImplCopyWithImpl<$Res>
 class _$ActivityImpl implements _Activity {
   _$ActivityImpl(
       {this.id = '',
+      this.title = '',
       required this.userId,
       required this.userFirstName,
       required this.userLastName,
@@ -311,6 +325,9 @@ class _$ActivityImpl implements _Activity {
   @override
   @JsonKey()
   final String id;
+  @override
+  @JsonKey()
+  final String title;
   @override
   final String userId;
   @override
@@ -347,7 +364,7 @@ class _$ActivityImpl implements _Activity {
 
   @override
   String toString() {
-    return 'Activity(id: $id, userId: $userId, userFirstName: $userFirstName, userLastName: $userLastName, appointmentId: $appointmentId, projectId: $projectId, taskId: $taskId, start: $start, startLatitude: $startLatitude, startLongitude: $startLongitude, startLocation: $startLocation, end: $end, endLatitude: $endLatitude, endLongitude: $endLongitude, endLocation: $endLocation, invoiceId: $invoiceId)';
+    return 'Activity(id: $id, title: $title, userId: $userId, userFirstName: $userFirstName, userLastName: $userLastName, appointmentId: $appointmentId, projectId: $projectId, taskId: $taskId, start: $start, startLatitude: $startLatitude, startLongitude: $startLongitude, startLocation: $startLocation, end: $end, endLatitude: $endLatitude, endLongitude: $endLongitude, endLocation: $endLocation, invoiceId: $invoiceId)';
   }
 
   @override
@@ -356,6 +373,7 @@ class _$ActivityImpl implements _Activity {
         (other.runtimeType == runtimeType &&
             other is _$ActivityImpl &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.userFirstName, userFirstName) ||
                 other.userFirstName == userFirstName) &&
@@ -388,6 +406,7 @@ class _$ActivityImpl implements _Activity {
   int get hashCode => Object.hash(
       runtimeType,
       id,
+      title,
       userId,
       userFirstName,
       userLastName,
@@ -421,6 +440,7 @@ class _$ActivityImpl implements _Activity {
 abstract class _Activity implements Activity {
   factory _Activity(
       {final String id,
+      final String title,
       required final String userId,
       required final String userFirstName,
       required final String userLastName,
@@ -442,6 +462,8 @@ abstract class _Activity implements Activity {
 
   @override
   String get id;
+  @override
+  String get title;
   @override
   String get userId;
   @override

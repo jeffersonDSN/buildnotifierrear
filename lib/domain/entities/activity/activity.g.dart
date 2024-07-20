@@ -9,6 +9,7 @@ part of 'activity.dart';
 _$ActivityImpl _$$ActivityImplFromJson(Map<String, dynamic> json) =>
     _$ActivityImpl(
       id: json['id'] as String? ?? '',
+      title: json['title'] as String? ?? '',
       userId: json['userId'] as String,
       userFirstName: json['userFirstName'] as String,
       userLastName: json['userLastName'] as String,
@@ -29,6 +30,7 @@ _$ActivityImpl _$$ActivityImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$ActivityImplToJson(_$ActivityImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'title': instance.title,
       'userId': instance.userId,
       'userFirstName': instance.userFirstName,
       'userLastName': instance.userLastName,

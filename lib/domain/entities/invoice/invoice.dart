@@ -1,6 +1,7 @@
 import 'package:buildnotifierrear/domain/entities/converters/invoice_status_converter.dart';
 import 'package:buildnotifierrear/domain/entities/enums/invoice_status_enums.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:collection/collection.dart';
 
 part 'invoice.freezed.dart';
 part 'invoice.g.dart';
@@ -58,5 +59,35 @@ extension OnInvoice on Invoice {
     return items.isNotEmpty
         ? items.map((item) => item.amount).reduce((a, b) => a + b)
         : 0;
+  }
+
+  List<InvoiceItem> get groupItemsByTask {
+    if (items.isEmpty) {
+      return [];
+    }
+
+    var groupedByTask = groupBy(items, (InvoiceItem item) => item.taskId);
+
+    List<InvoiceItem> result = [];
+    groupedByTask.forEach((taskId, taskItems) {
+      var totalQtyHrs = taskItems.map((e) => e.qtyHrs).reduce((a, b) => a + b);
+      var totalAmount = taskItems.map((e) => e.amount).reduce((a, b) => a + b);
+      //var description = taskItems.map((e) => e.description).join(', ');
+      var description = taskItems.first.description;
+
+      result.add(InvoiceItem(
+        projectId: taskItems.first.projectId,
+        taskId: taskId,
+        activityId: '', // Unificado, sem atividade específica
+        productService: taskItems.first.productService,
+        description: description,
+        qtyHrs: totalQtyHrs,
+        rate: taskItems
+            .first.rate, // Assume que todas as atividades têm a mesma taxa
+        amount: totalAmount,
+      ));
+    });
+
+    return result;
   }
 }

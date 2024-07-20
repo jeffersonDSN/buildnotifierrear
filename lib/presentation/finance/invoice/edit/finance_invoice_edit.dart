@@ -1,4 +1,5 @@
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/invoices_controller.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/clients_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/invoices_firestore_repository.dart';
@@ -22,7 +23,7 @@ class FinanceInvoiceEdit extends IView {
 
     return BlocProvider(
       create: (context) => FinanceInvoiceEditBloc(
-        controller: CRUDController(
+        controller: InvoicesController(
           repository: InvoicesFireStoreRepository(
             tenantId: tenantId,
           ),

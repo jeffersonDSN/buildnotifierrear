@@ -495,4 +495,24 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   // TODO: implement actions
   String get actions => throw UnimplementedError();
+
+  @override
+  // TODO: implement subTotal
+  String get subTotal => throw UnimplementedError();
+
+  @override
+  // TODO: implement page
+  String get page => throw UnimplementedError();
+
+  @override
+  // TODO: implement invoiceTo
+  String get invoiceTo => throw UnimplementedError();
+
+  @override
+  // TODO: implement issueDate
+  String get issueDate => throw UnimplementedError();
+
+  @override
+  // TODO: implement downloadPDF
+  String get downloadPDF => throw UnimplementedError();
 }

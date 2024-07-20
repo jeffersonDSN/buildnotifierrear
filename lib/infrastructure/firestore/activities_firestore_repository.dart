@@ -92,6 +92,7 @@ class ActivitiesFirestoreRepository extends TenantFirestoreRepository
   Future<String> post(Activity activity) async {
     var schedule = {
       'userId': activity.userId,
+      'title': activity.title,
       'appointmentId': activity.appointmentId,
       'projectId': activity.projectId,
       'taskId': activity.taskId,

@@ -1,3 +1,5 @@
+import 'dart:html' as html;
+
 import 'package:buildnotifierrear/domain/core/time_utils.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/domain/entities/enums/invoice_status_enums.dart';
@@ -10,6 +12,7 @@ import 'package:buildnotifierrear/presentation/core/widget/base_dropdown_button_
 import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
 import 'package:buildnotifierrear/presentation/finance/invoice/edit/add_item/finance_invoice_edit_add_item.dart';
 import 'package:buildnotifierrear/presentation/finance/invoice/edit/bloc/finance_invoice_edit_bloc.dart';
+import 'package:buildnotifierrear/presentation/finance/invoice/edit/view/invoice_pdf.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:data_table_2/data_table_2.dart';
@@ -70,7 +73,11 @@ class FinanceInvoiceEditView extends IView {
                           padding: const EdgeInsets.all(2),
                           child: IconButton(
                             icon: const Icon(Icons.arrow_back),
-                            onPressed: () {},
+                            onPressed: () {
+                              appBloc(context).add(
+                                const AppEvent.goBack(),
+                              );
+                            },
                           ),
                         ),
                         Expanded(
@@ -162,7 +169,7 @@ class FinanceInvoiceEditView extends IView {
                                           borderRadius: BorderRadius.circular(
                                             Sizes.size4,
                                           ),
-                                          color: AppColor.warning,
+                                          color: AppColor.red,
                                         ),
                                         child: Padding(
                                           padding: const EdgeInsets.all(
@@ -172,23 +179,53 @@ class FinanceInvoiceEditView extends IView {
                                             children: [
                                               Expanded(
                                                 child: Text(
-                                                  context.tr.close,
+                                                  context.tr.downloadPDF,
                                                   style: const TextStyle(
                                                     color: AppColor.lightColor,
                                                   ),
                                                 ),
                                               ),
                                               const Icon(
-                                                Icons.close,
+                                                Icons.file_download_outlined,
                                                 color: AppColor.lightColor,
                                               ),
                                             ],
                                           ),
                                         ),
                                       ),
-                                      onTap: () {
-                                        appBloc(context).add(
-                                          const AppEvent.goBack(),
+                                      onTap: () async {
+                                        bloc.add(
+                                          FinanceInvoiceEditEvent.save(
+                                            callback: () async {
+                                              var pdfData = await InvoicePdf(
+                                                invoice: invoice,
+                                                buildContext: context,
+                                              ).buildPdf();
+
+                                              final blob = html.Blob(
+                                                [pdfData],
+                                                'application/pdf',
+                                              );
+
+                                              final url = html.Url
+                                                  .createObjectUrlFromBlob(
+                                                blob,
+                                              );
+
+                                              html.AnchorElement(href: url)
+                                                ..setAttribute(
+                                                  "download",
+                                                  "invoice.pdf",
+                                                )
+                                                ..click();
+
+                                              html.Url.revokeObjectUrl(url);
+
+                                              appBloc(context).add(
+                                                const AppEvent.goBack(),
+                                              );
+                                            },
+                                          ),
                                         );
                                       },
                                     ),
@@ -263,9 +300,9 @@ class FinanceInvoiceEditView extends IView {
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
-                                    const Text(
-                                      'INV - 475',
-                                      style: TextStyle(
+                                    Text(
+                                      invoice.id,
+                                      style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -357,7 +394,7 @@ class FinanceInvoiceEditView extends IView {
                                     context: context,
                                     builder: (context) {
                                       return FinanceInvoiceEditAddItem(
-                                        invoiceId: '475',
+                                        invoiceId: invoice.id,
                                         clientId: invoice.clientId,
                                       );
                                     },
@@ -417,7 +454,7 @@ class FinanceInvoiceEditView extends IView {
                                   label: Text(''),
                                 ),
                               ],
-                              rows: invoice.items.map((item) {
+                              rows: invoice.groupItemsByTask.map((item) {
                                 return DataRow(
                                   cells: [
                                     DataCell(
