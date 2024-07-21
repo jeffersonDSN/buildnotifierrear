@@ -515,4 +515,28 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   // TODO: implement downloadPDF
   String get downloadPDF => throw UnimplementedError();
+
+  @override
+  // TODO: implement balance
+  String get balance => throw UnimplementedError();
+
+  @override
+  // TODO: implement expenses
+  String get expenses => throw UnimplementedError();
+
+  @override
+  // TODO: implement invoices
+  String get invoices => throw UnimplementedError();
+
+  @override
+  // TODO: implement cancelInvoice
+  String get cancelInvoice => throw UnimplementedError();
+
+  @override
+  // TODO: implement notDueYet
+  String get notDueYet => throw UnimplementedError();
+
+  @override
+  // TODO: implement markAsPaid
+  String get markAsPaid => throw UnimplementedError();
 }

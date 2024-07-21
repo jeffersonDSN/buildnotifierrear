@@ -39,8 +39,9 @@ class TaskBoardWidget extends StatelessWidget {
               Expanded(
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius:
-                        const BorderRadius.vertical(top: Radius.circular(7.0)),
+                    borderRadius: const BorderRadius.vertical(
+                      top: Radius.circular(7.0),
+                    ),
                     color: status.color,
                   ),
                   padding: const EdgeInsets.all(10),

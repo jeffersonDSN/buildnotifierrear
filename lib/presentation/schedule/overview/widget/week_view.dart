@@ -2,7 +2,7 @@ import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/presentation/schedule/overview/enum/days_of_week.dart';
 import 'package:flutter/material.dart';
 
-import 'package:buildnotifierrear/domain/core/time_utils.dart';
+import 'package:buildnotifierrear/domain/core/format_utils.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:intl/intl.dart';

@@ -100,7 +100,7 @@ class TasksFirestoreRepository extends TenantFirestoreRepository
       'dependencies': value.dependencies,
     };
 
-    await collection.doc(value.id.toString()).update(task);
+    await collection.doc(value.id).update(task);
     return right(true);
   }
 
@@ -131,7 +131,7 @@ class TasksFirestoreRepository extends TenantFirestoreRepository
 
   @override
   Future<bool> delete(String id) async {
-    await collection.doc(id.toString()).delete();
+    await collection.doc(id).delete();
     return true;
   }
 

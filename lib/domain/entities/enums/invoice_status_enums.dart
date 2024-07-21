@@ -1,4 +1,5 @@
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
+import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:flutter/material.dart';
 
 enum InvoiceStatusEnums {
@@ -33,6 +34,29 @@ extension OnInvoiceStatusEnums on InvoiceStatusEnums {
         return context.tr.failed;
       default:
         return context.tr.draft;
+    }
+  }
+
+  Color get color {
+    switch (this) {
+      case InvoiceStatusEnums.draft:
+        return AppColor.warning;
+      case InvoiceStatusEnums.sent:
+        return AppColor.primaryColorSwatch;
+      case InvoiceStatusEnums.partiallyPaid:
+        return AppColor.green;
+      case InvoiceStatusEnums.paid:
+        return AppColor.success;
+      case InvoiceStatusEnums.overdue:
+        return AppColor.red;
+      case InvoiceStatusEnums.cancelled:
+        return AppColor.greyColorSwatch;
+      case InvoiceStatusEnums.refunded:
+        return AppColor.info;
+      case InvoiceStatusEnums.failed:
+        return AppColor.error;
+      default:
+        return AppColor.warning;
     }
   }
 }

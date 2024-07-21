@@ -262,7 +262,7 @@ class AppointmentsFirestoreRepository extends TenantFirestoreRepository
       'assignTo': value.assignTo.toJson(),
     };
 
-    await collection.doc(value.id.toString()).update(schedule);
+    await collection.doc(value.id).update(schedule);
     return right(true);
   }
 
@@ -289,7 +289,7 @@ class AppointmentsFirestoreRepository extends TenantFirestoreRepository
 
   @override
   Future<bool> delete(String id) async {
-    await collection.doc(id.toString()).delete();
+    await collection.doc(id).delete();
     return true;
   }
 }

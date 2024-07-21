@@ -91,3 +91,15 @@ extension OnInvoice on Invoice {
     return result;
   }
 }
+
+extension OnInvoiceList on List<Invoice> {
+  double totalOf(List<InvoiceStatusEnums> status) {
+    var invoices = where((invoice) => status.contains(invoice.status)).toList();
+
+    if (invoices.isEmpty) {
+      return 0;
+    }
+
+    return invoices.map((e) => e.total).reduce((a, b) => a + b);
+  }
+}

@@ -46,7 +46,7 @@ class SettingsFirestoreRepository implements AbsISettingsRepository {
       'profile': value.toJson(),
     };
 
-    await _collection.doc(value.id.toString()).update(settings);
+    await _collection.doc(value.id).update(settings);
     return true;
   }
 }

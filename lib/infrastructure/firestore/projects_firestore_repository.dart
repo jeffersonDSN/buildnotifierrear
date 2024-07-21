@@ -102,7 +102,7 @@ class ProjectsFirestoreRepository extends TenantFirestoreRepository
       'longitude': value.longitude,
     };
 
-    await collection.doc(value.id.toString()).update(project);
+    await collection.doc(value.id).update(project);
     return right(true);
   }
 
@@ -136,7 +136,7 @@ class ProjectsFirestoreRepository extends TenantFirestoreRepository
 
   @override
   Future<bool> delete(String id) async {
-    await collection.doc(id.toString()).delete();
+    await collection.doc(id).delete();
     return true;
   }
 

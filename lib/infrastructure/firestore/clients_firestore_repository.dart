@@ -67,13 +67,13 @@ class ClientsFireStoreRepository extends TenantFirestoreRepository
       'zipCode': value.zipCode,
     };
 
-    await collection.doc(value.id.toString()).update(user);
+    await collection.doc(value.id).update(user);
     return right(true);
   }
 
   @override
   Future<bool> delete(String id) async {
-    await collection.doc(id.toString()).delete();
+    await collection.doc(id).delete();
     return true;
   }
 }

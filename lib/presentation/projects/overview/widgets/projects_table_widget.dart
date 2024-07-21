@@ -87,12 +87,8 @@ class ProjectsTableWidget extends StatelessWidget {
                 DataCell(
                   Container(
                     decoration: BoxDecoration(
-                      color: AppColor.lightColor,
+                      color: project.status.color,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
-                        color: project.status.color,
-                        width: .5,
-                      ),
                     ),
                     padding: const EdgeInsets.symmetric(
                       horizontal: Sizes.size12,
@@ -100,8 +96,8 @@ class ProjectsTableWidget extends StatelessWidget {
                     ),
                     child: Text(
                       project.status.name(context),
-                      style: TextStyle(
-                        color: project.status.color.withOpacity(.7),
+                      style: const TextStyle(
+                        color: AppColor.lightColor,
                       ),
                     ),
                   ),

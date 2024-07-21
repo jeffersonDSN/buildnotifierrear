@@ -1,6 +1,6 @@
 import 'dart:html' as html;
 
-import 'package:buildnotifierrear/domain/core/time_utils.dart';
+import 'package:buildnotifierrear/domain/core/format_utils.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/domain/entities/enums/invoice_status_enums.dart';
 import 'package:buildnotifierrear/domain/entities/invoice/invoice.dart';
@@ -12,7 +12,7 @@ import 'package:buildnotifierrear/presentation/core/widget/base_dropdown_button_
 import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
 import 'package:buildnotifierrear/presentation/finance/invoice/edit/add_item/finance_invoice_edit_add_item.dart';
 import 'package:buildnotifierrear/presentation/finance/invoice/edit/bloc/finance_invoice_edit_bloc.dart';
-import 'package:buildnotifierrear/presentation/finance/invoice/edit/view/invoice_pdf.dart';
+import 'package:buildnotifierrear/presentation/finance/core/invoice_pdf.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:data_table_2/data_table_2.dart';

@@ -1,4 +1,5 @@
 import 'package:buildnotifierrear/domain/core/types_defs.dart';
+import 'package:buildnotifierrear/domain/entities/enums/invoice_status_enums.dart';
 import 'package:buildnotifierrear/domain/entities/invoice/invoice.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_invoices_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/counters_firestore_repository.dart';
@@ -77,7 +78,7 @@ class InvoicesFireStoreRepository extends TenantFirestoreRepository
       'items': value.items.toJson(),
     };
 
-    await collection.doc(value.id.toString()).set(invoice);
+    await collection.doc(value.id).set(invoice);
     return right(true);
   }
 
@@ -99,13 +100,23 @@ class InvoicesFireStoreRepository extends TenantFirestoreRepository
       'items': value.items.toJson(),
     };
 
-    await collection.doc(value.id.toString()).update(invoice);
+    await collection.doc(value.id).update(invoice);
     return right(true);
   }
 
   @override
+  Future<bool> changeStatus(String invoiceId, InvoiceStatusEnums status) async {
+    var invoice = {
+      'status': status.index,
+    };
+
+    await collection.doc(invoiceId).update(invoice);
+    return true;
+  }
+
+  @override
   Future<bool> delete(String id) async {
-    await collection.doc(id.toString()).delete();
+    await collection.doc(id).delete();
     return true;
   }
 }

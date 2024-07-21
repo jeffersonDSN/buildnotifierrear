@@ -482,4 +482,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get downloadPDF => 'Download PDF';
+
+  @override
+  String get balance => 'Balance';
+
+  @override
+  String get invoices => 'Invoices';
+
+  @override
+  String get expenses => 'Expenses';
+
+  @override
+  String get cancelInvoice => 'Cancel invoice';
+
+  @override
+  String get notDueYet => 'Not due yet';
+
+  @override
+  String get markAsPaid => 'Mark as paid';
 }

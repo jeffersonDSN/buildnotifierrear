@@ -1,4 +1,4 @@
-import 'package:buildnotifierrear/domain/core/time_utils.dart';
+import 'package:buildnotifierrear/domain/core/format_utils.dart';
 import 'package:buildnotifierrear/domain/entities/activity/activity.dart';
 import 'package:buildnotifierrear/domain/entities/period/period.dart';
 import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';

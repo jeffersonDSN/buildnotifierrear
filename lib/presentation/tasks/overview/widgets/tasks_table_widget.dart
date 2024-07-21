@@ -97,12 +97,8 @@ class TasksTableWidget extends StatelessWidget {
                 DataCell(
                   Container(
                     decoration: BoxDecoration(
-                      color: AppColor.lightColor,
+                      color: task.priority.color,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
-                        color: task.priority.color,
-                        width: .5,
-                      ),
                     ),
                     padding: const EdgeInsets.symmetric(
                       horizontal: Sizes.size12,
@@ -110,8 +106,8 @@ class TasksTableWidget extends StatelessWidget {
                     ),
                     child: Text(
                       task.priority.name(context),
-                      style: TextStyle(
-                        color: task.priority.color.withOpacity(.7),
+                      style: const TextStyle(
+                        color: AppColor.lightColor,
                       ),
                     ),
                   ),
@@ -119,12 +115,8 @@ class TasksTableWidget extends StatelessWidget {
                 DataCell(
                   Container(
                     decoration: BoxDecoration(
-                      color: AppColor.lightColor,
+                      color: task.status.color,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
-                        color: task.status.color,
-                        width: .5,
-                      ),
                     ),
                     padding: const EdgeInsets.symmetric(
                       horizontal: Sizes.size12,
@@ -132,8 +124,8 @@ class TasksTableWidget extends StatelessWidget {
                     ),
                     child: Text(
                       task.status.name(context),
-                      style: TextStyle(
-                        color: task.status.color.withOpacity(.7),
+                      style: const TextStyle(
+                        color: AppColor.lightColor,
                       ),
                     ),
                   ),

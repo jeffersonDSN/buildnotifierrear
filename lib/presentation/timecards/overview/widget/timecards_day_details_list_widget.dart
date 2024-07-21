@@ -1,4 +1,4 @@
-import 'package:buildnotifierrear/domain/core/time_utils.dart';
+import 'package:buildnotifierrear/domain/core/format_utils.dart';
 import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';

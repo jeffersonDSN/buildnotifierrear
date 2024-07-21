@@ -353,6 +353,18 @@ abstract class AppLocalizations {
   String get invoiceTo;
 
   String get downloadPDF;
+
+  String get balance;
+
+  String get expenses;
+
+  String get invoices;
+
+  String get cancelInvoice;
+
+  String get notDueYet;
+
+  String get markAsPaid;
 }
 
 class _AppLocalizationsDelegate

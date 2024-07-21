@@ -1,13 +1,12 @@
 import 'dart:typed_data';
 
-import 'package:buildnotifierrear/domain/core/time_utils.dart';
+import 'package:buildnotifierrear/domain/core/format_utils.dart';
 import 'package:buildnotifierrear/domain/entities/invoice/invoice.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:intl/intl.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
@@ -255,9 +254,9 @@ class InvoicePdf {
                           pw.Text('${buildContext.tr.invoice} #'),
                           pw.Text(invoice.id),
                           pw.Text(buildContext.tr.issueDate),
-                          pw.Text(_formatDate(DateTime.now())),
+                          pw.Text(formatDate(DateTime.now())),
                           pw.Text(buildContext.tr.dueDate),
-                          pw.Text(_formatDate(invoice.dueDate!)),
+                          pw.Text(formatDate(invoice.dueDate!)),
                         ],
                       ),
                     ),
@@ -380,7 +379,7 @@ class InvoicePdf {
                   mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                   children: [
                     pw.Text(buildContext.tr.subTotal),
-                    pw.Text(_formatCurrency(invoice.total)),
+                    pw.Text(formatCurrency(invoice.total)),
                   ],
                 ),
                 pw.SizedBox(
@@ -404,7 +403,7 @@ class InvoicePdf {
                     mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                     children: [
                       pw.Text(buildContext.tr.total),
-                      pw.Text(_formatCurrency(invoice.total)),
+                      pw.Text(formatCurrency(invoice.total)),
                     ],
                   ),
                 ),
@@ -535,9 +534,9 @@ class InvoicePdf {
                   item.qtyHrs,
                 );
               case 3:
-                return _formatCurrency(item.rate);
+                return formatCurrency(item.rate);
               case 4:
-                return _formatCurrency(item.amount);
+                return formatCurrency(item.amount);
             }
             return '';
           },
@@ -545,13 +544,4 @@ class InvoicePdf {
       ),
     );
   }
-}
-
-String _formatCurrency(double amount) {
-  return '\$${amount.toStringAsFixed(2)}';
-}
-
-String _formatDate(DateTime date) {
-  final format = DateFormat.yMMMd('en_US');
-  return format.format(date);
 }

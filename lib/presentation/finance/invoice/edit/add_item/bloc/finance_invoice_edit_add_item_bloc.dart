@@ -1,7 +1,7 @@
 import 'package:buildnotifierrear/domain/controllers/activities_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/projects_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/tasks_controller.dart';
-import 'package:buildnotifierrear/domain/core/time_utils.dart';
+import 'package:buildnotifierrear/domain/core/format_utils.dart';
 import 'package:buildnotifierrear/domain/entities/activity/activity.dart';
 import 'package:buildnotifierrear/domain/entities/invoice/invoice.dart';
 import 'package:buildnotifierrear/domain/entities/project/project.dart';

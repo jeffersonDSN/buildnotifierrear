@@ -1,11 +1,17 @@
+import 'package:buildnotifierrear/domain/entities/enums/invoice_status_enums.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
 import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
+import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
+import 'package:buildnotifierrear/presentation/finance/overview/bloc/finance_overview_bloc.dart';
+import 'package:buildnotifierrear/presentation/finance/overview/widget/invoice_status_widget.dart';
+import 'package:buildnotifierrear/presentation/finance/overview/widget/invoice_table_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
-import 'package:data_table_2/data_table_2.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphic/graphic.dart';
 
 class FinanceOverviewView extends IView {
@@ -13,6 +19,12 @@ class FinanceOverviewView extends IView {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = BlocProvider.of<FinanceOverviewBloc>(context);
+
+    bloc.add(
+      const FinanceOverviewEvent.load(),
+    );
+
     return DefaultTabController(
       initialIndex: 0,
       length: 3,
@@ -115,702 +127,459 @@ class FinanceOverviewView extends IView {
               ],
             ),
           ),
-          Expanded(
-            child: TabBarView(
-              physics: const NeverScrollableScrollPhysics(),
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(
-                    Sizes.size8,
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Card(
-                              child: SizedBox(
-                                height: Sizes.size240,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(Sizes.size16),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      const Text(
-                                        'Expenses',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      gapHeight16,
-                                      Row(
-                                        children: [
-                                          Expanded(
-                                            child: SizedBox.square(
-                                              dimension: Sizes.size160,
-                                              child: Chart(
-                                                data: const [
-                                                  {
-                                                    'genre': 'Rent & mortgage ',
-                                                    'sold': 2500.00,
-                                                  },
-                                                  {
-                                                    'genre': 'Transport',
-                                                    'sold': 6000.00,
-                                                  },
-                                                  {
-                                                    'genre': 'Employee',
-                                                    'sold': 12000.00,
-                                                  },
-                                                ],
-                                                variables: {
-                                                  'genre': Variable(
-                                                    accessor: (Map map) =>
-                                                        map['genre'] as String,
-                                                  ),
-                                                  'sold': Variable(
-                                                    accessor: (Map map) =>
-                                                        map['sold'] as num,
-                                                  ),
-                                                },
-                                                transforms: [
-                                                  Proportion(
-                                                    variable: 'sold',
-                                                    as: 'percent',
-                                                  )
-                                                ],
-                                                marks: [
-                                                  IntervalMark(
-                                                    position:
-                                                        Varset('percent') /
-                                                            Varset('genre'),
-                                                    color: ColorEncode(
-                                                        variable: 'genre',
-                                                        values: [
-                                                          AppColor
-                                                              .warning.shade400,
-                                                          AppColor
-                                                              .warning.shade500,
-                                                          AppColor
-                                                              .warning.shade600,
-                                                        ]),
-                                                    modifiers: [
-                                                      StackModifier()
-                                                    ],
-                                                  )
-                                                ],
-                                                coord: PolarCoord(
-                                                  transposed: true,
-                                                  dimCount: 1,
-                                                  startRadius: 0.6,
+          BlocBuilder<FinanceOverviewBloc, FinanceOverviewState>(
+            bloc: bloc,
+            builder: (context, state) {
+              return Expanded(
+                child: TabBarView(
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: state.maybeWhen(
+                    orElse: () {
+                      return [
+                        Padding(
+                          padding: const EdgeInsets.all(
+                            Sizes.size8,
+                          ),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Card(
+                                      child: SizedBox(
+                                        height: Sizes.size240,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(
+                                            Sizes.size16,
+                                          ),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                context.tr.expenses,
+                                                style: const TextStyle(
+                                                  fontWeight: FontWeight.bold,
                                                 ),
-                                                selections: {
-                                                  'tap': PointSelection()
-                                                },
                                               ),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: Column(
-                                              children: [
-                                                Row(
-                                                  children: [
-                                                    Container(
-                                                      color: AppColor
-                                                          .warning.shade400,
-                                                      width: Sizes.size12,
-                                                      height: 10,
-                                                    ),
-                                                    gapWidth8,
-                                                    const Text(
-                                                      'Rent & mortgage: 2,500.00',
-                                                    ),
-                                                  ],
+                                              gapHeight16,
+                                              const Expanded(
+                                                child: Center(
+                                                  child:
+                                                      CircularProgressIndicator(),
                                                 ),
-                                                Row(
-                                                  children: [
-                                                    Container(
-                                                      color: AppColor
-                                                          .warning.shade500,
-                                                      width: Sizes.size12,
-                                                      height: 10,
-                                                    ),
-                                                    gapWidth8,
-                                                    const Text(
-                                                      'Travel Expenses: 6,000.00',
-                                                    ),
-                                                  ],
-                                                ),
-                                                Row(
-                                                  children: [
-                                                    Container(
-                                                      color: AppColor
-                                                          .warning.shade500,
-                                                      width: Sizes.size12,
-                                                      height: 10,
-                                                    ),
-                                                    gapWidth8,
-                                                    const Text(
-                                                      'Payroll Expenses: 12,000.00',
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Card(
-                              child: SizedBox(
-                                height: Sizes.size240,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(Sizes.size16),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      const Text(
-                                        'Invoices',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      gapHeight16,
-                                      Row(
-                                        children: [
-                                          Expanded(
-                                            child: SizedBox.square(
-                                              dimension: Sizes.size160,
-                                              child: Chart(
-                                                data: const [
-                                                  {
-                                                    'genre': 'Overdue ',
-                                                    'sold': 5000.00
-                                                  },
-                                                  {
-                                                    'genre': 'Not due yet',
-                                                    'sold': 10000.00
-                                                  },
-                                                  {
-                                                    'genre': 'Paid',
-                                                    'sold': 5500.00
-                                                  },
-                                                ],
-                                                variables: {
-                                                  'genre': Variable(
-                                                    accessor: (Map map) =>
-                                                        map['genre'] as String,
-                                                  ),
-                                                  'sold': Variable(
-                                                    accessor: (Map map) =>
-                                                        map['sold'] as num,
-                                                  ),
-                                                },
-                                                transforms: [
-                                                  Proportion(
-                                                    variable: 'sold',
-                                                    as: 'percent',
-                                                  )
-                                                ],
-                                                marks: [
-                                                  IntervalMark(
-                                                    position:
-                                                        Varset('percent') /
-                                                            Varset('genre'),
-                                                    color: ColorEncode(
-                                                        variable: 'genre',
-                                                        values: [
-                                                          AppColor.red,
-                                                          AppColor
-                                                              .greyColorSwatch,
-                                                          AppColor.green,
-                                                        ]),
-                                                    modifiers: [
-                                                      StackModifier()
-                                                    ],
-                                                  )
-                                                ],
-                                                coord: PolarCoord(
-                                                  transposed: true,
-                                                  dimCount: 1,
-                                                  startRadius: 0.6,
-                                                ),
-                                                selections: {
-                                                  'tap': PointSelection()
-                                                },
                                               ),
-                                            ),
+                                            ],
                                           ),
-                                          Expanded(
-                                            child: Column(
-                                              children: [
-                                                Row(
-                                                  children: [
-                                                    Container(
-                                                      color: AppColor.red,
-                                                      width: Sizes.size12,
-                                                      height: 10,
-                                                    ),
-                                                    gapWidth8,
-                                                    const Text(
-                                                      'Overdue: 5,000.00',
-                                                    ),
-                                                  ],
-                                                ),
-                                                Row(
-                                                  children: [
-                                                    Container(
-                                                      color: AppColor
-                                                          .greyColorSwatch,
-                                                      width: Sizes.size12,
-                                                      height: 10,
-                                                    ),
-                                                    gapWidth8,
-                                                    const Text(
-                                                      'Not due yet: 10,000.00',
-                                                    ),
-                                                  ],
-                                                ),
-                                                Row(
-                                                  children: [
-                                                    Container(
-                                                      color: AppColor.green,
-                                                      width: Sizes.size12,
-                                                      height: 10,
-                                                    ),
-                                                    gapWidth8,
-                                                    const Text(
-                                                      'Paid: 5,500.00',
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Expanded(
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(Sizes.size8),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text(
-                                  'Cash Flow',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                const Text(
-                                  '6,000.00',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                const Text('Current cash balance'),
-                                gapWidth8,
-                                Expanded(
-                                  child: Chart(
-                                    padding: (_) => const EdgeInsets.fromLTRB(
-                                        40, 5, 10, 40),
-                                    data: adjustData,
-                                    variables: {
-                                      'index': Variable(
-                                        accessor: (Map map) =>
-                                            map['index'].toString(),
-                                      ),
-                                      'type': Variable(
-                                        accessor: (Map map) =>
-                                            map['type'] as String,
-                                      ),
-                                      'value': Variable(
-                                        accessor: (Map map) =>
-                                            map['value'] as double,
-                                      ),
-                                    },
-                                    marks: [
-                                      IntervalMark(
-                                        position: Varset('index') *
-                                            Varset('value') /
-                                            Varset('type'),
-                                        color: ColorEncode(
-                                          variable: 'type',
-                                          values: [
-                                            AppColor.green,
-                                            AppColor.warning,
-                                          ],
                                         ),
-                                        size: SizeEncode(value: 16),
-                                        modifiers: [
-                                          DodgeModifier(ratio: 0.3),
-                                        ],
-                                      )
-                                    ],
-                                    coord: RectCoord(
-                                      horizontalRangeUpdater:
-                                          Defaults.horizontalRangeEvent,
-                                    ),
-                                    axes: [
-                                      Defaults.horizontalAxis
-                                        ..tickLine = TickLine(),
-                                      Defaults.verticalAxis,
-                                    ],
-                                    selections: {
-                                      'tap': PointSelection(
-                                        variable: 'index',
-                                      )
-                                    },
-                                    tooltip: TooltipGuide(multiTuples: true),
-                                    crosshair: CrosshairGuide(),
-                                  ),
-                                ),
-                                Row(
-                                  children: [
-                                    Expanded(
-                                      child: Row(
-                                        children: [
-                                          Container(
-                                            color: AppColor.green,
-                                            width: Sizes.size12,
-                                            height: 10,
-                                          ),
-                                          gapWidth8,
-                                          const Text('Money in'),
-                                        ],
                                       ),
                                     ),
-                                    Expanded(
-                                      child: Row(
-                                        children: [
-                                          Container(
-                                            color: AppColor.warning,
-                                            width: Sizes.size12,
-                                            height: 10,
+                                  ),
+                                  Expanded(
+                                    child: Card(
+                                      child: SizedBox(
+                                        height: Sizes.size240,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(
+                                            Sizes.size16,
                                           ),
-                                          gapWidth8,
-                                          const Text('Money out'),
-                                        ],
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                context.tr.invoices,
+                                                style: const TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                              gapHeight16,
+                                              const Expanded(
+                                                child: Center(
+                                                  child:
+                                                      CircularProgressIndicator(),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
                                       ),
                                     ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(
-                      Sizes.size8,
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(
-                                Sizes.size16,
-                              ),
-                              child: DataTable2(
-                                empty: const Center(
-                                  child: Text(
-                                    '',
-                                  ),
-                                ),
-                                columns: const [
-                                  DataColumn2(
-                                    size: ColumnSize.M,
-                                    label: Text('Date'),
-                                  ),
-                                  DataColumn2(
-                                    size: ColumnSize.M,
-                                    label: Text('Invoice'),
-                                  ),
-                                  DataColumn2(
-                                    fixedWidth: Sizes.size136,
-                                    label: Text('Client'),
-                                  ),
-                                  DataColumn2(
-                                    size: ColumnSize.M,
-                                    label: Text('Amount'),
-                                  ),
-                                  DataColumn2(
-                                    size: ColumnSize.M,
-                                    label: Text('Balance'),
-                                  ),
-                                  DataColumn2(
-                                    size: ColumnSize.M,
-                                    numeric: true,
-                                    label: Text('Status'),
-                                  ),
-                                  DataColumn2(
-                                    size: ColumnSize.S,
-                                    numeric: true,
-                                    label: Text(''),
                                   ),
                                 ],
-                                rows: invoices.map((invoice) {
-                                  return DataRow(
-                                    cells: [
-                                      DataCell(
-                                        Text(
-                                          invoice['date'] as String,
-                                        ),
-                                      ),
-                                      DataCell(
-                                        Text(
-                                          (invoice['invoice'] as int)
-                                              .toString(),
-                                        ),
-                                      ),
-                                      DataCell(
-                                        Text(
-                                          invoice['client'] as String,
-                                        ),
-                                      ),
-                                      DataCell(
-                                        Text(
-                                          (invoice['amount'] as double)
-                                              .toString(),
-                                        ),
-                                      ),
-                                      DataCell(
-                                        Text(
-                                          (invoice['paid'] as double)
-                                              .toString(),
-                                        ),
-                                      ),
-                                      DataCell(
-                                        Text(
-                                          invoice['status'] as String,
-                                        ),
-                                      ),
-                                      DataCell(
-                                        PopupMenuButton(
-                                          itemBuilder: (context) => [
-                                            const PopupMenuItem(
-                                              child: Row(
-                                                children: [
-                                                  Icon(
-                                                    size: 20,
-                                                    color: AppColor.green,
-                                                    Icons.shopping_bag_outlined,
-                                                  ),
-                                                  SizedBox(width: 10),
-                                                  Text('Adicionar Pedido'),
-                                                ],
-                                              ),
-                                            ),
-                                            PopupMenuItem(
-                                                child: const Row(
-                                                  children: [
-                                                    Icon(
-                                                      size: 20,
-                                                      color: AppColor.orange,
-                                                      Icons.edit_outlined,
-                                                    ),
-                                                    SizedBox(width: 10),
-                                                    Text('Editar'),
-                                                  ],
-                                                ),
-                                                onTap: () {}),
-                                            PopupMenuItem(
-                                              child: const Row(
-                                                children: [
-                                                  Icon(
-                                                    size: 20,
-                                                    color: AppColor.red,
-                                                    Icons.delete_outline,
-                                                  ),
-                                                  SizedBox(width: 10),
-                                                  Text('Excluir'),
-                                                ],
-                                              ),
-                                              onTap: () {},
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  );
-                                }).toList(),
                               ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(
-                      Sizes.size8,
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(
-                                Sizes.size16,
-                              ),
-                              child: DataTable2(
-                                empty: const Center(
-                                  child: Text(
-                                    '',
+                              const Expanded(
+                                child: Card(
+                                  child: Padding(
+                                    padding: EdgeInsets.all(Sizes.size8),
+                                    child: Center(
+                                      child: CircularProgressIndicator(),
+                                    ),
                                   ),
                                 ),
-                                columns: const [
-                                  DataColumn2(
-                                    size: ColumnSize.M,
-                                    label: Text('Date'),
-                                  ),
-                                  DataColumn2(
-                                    size: ColumnSize.M,
-                                    label: Text('Invoice'),
-                                  ),
-                                  DataColumn2(
-                                    fixedWidth: Sizes.size136,
-                                    label: Text('Client'),
-                                  ),
-                                  DataColumn2(
-                                    size: ColumnSize.M,
-                                    label: Text('Amount'),
-                                  ),
-                                  DataColumn2(
-                                    size: ColumnSize.M,
-                                    label: Text('Balance'),
-                                  ),
-                                  DataColumn2(
-                                    size: ColumnSize.M,
-                                    numeric: true,
-                                    label: Text('Status'),
-                                  ),
-                                  DataColumn2(
-                                    size: ColumnSize.S,
-                                    numeric: true,
-                                    label: Text(''),
-                                  ),
-                                ],
-                                rows: invoices.map((invoice) {
-                                  return DataRow(
-                                    cells: [
-                                      DataCell(
-                                        Text(
-                                          invoice['date'] as String,
-                                        ),
-                                      ),
-                                      DataCell(
-                                        Text(
-                                          (invoice['invoice'] as int)
-                                              .toString(),
-                                        ),
-                                      ),
-                                      DataCell(
-                                        Text(
-                                          invoice['client'] as String,
-                                        ),
-                                      ),
-                                      DataCell(
-                                        Text(
-                                          (invoice['amount'] as double)
-                                              .toString(),
-                                        ),
-                                      ),
-                                      DataCell(
-                                        Text(
-                                          (invoice['paid'] as double)
-                                              .toString(),
-                                        ),
-                                      ),
-                                      DataCell(
-                                        Text(
-                                          invoice['status'] as String,
-                                        ),
-                                      ),
-                                      DataCell(
-                                        PopupMenuButton(
-                                          itemBuilder: (context) => [
-                                            const PopupMenuItem(
-                                              child: Row(
-                                                children: [
-                                                  Icon(
-                                                    size: 20,
-                                                    color: AppColor.green,
-                                                    Icons.shopping_bag_outlined,
-                                                  ),
-                                                  SizedBox(width: 10),
-                                                  Text('Adicionar Pedido'),
-                                                ],
-                                              ),
-                                            ),
-                                            PopupMenuItem(
-                                                child: const Row(
-                                                  children: [
-                                                    Icon(
-                                                      size: 20,
-                                                      color: AppColor.orange,
-                                                      Icons.edit_outlined,
-                                                    ),
-                                                    SizedBox(width: 10),
-                                                    Text('Editar'),
-                                                  ],
-                                                ),
-                                                onTap: () {}),
-                                            PopupMenuItem(
-                                              child: const Row(
-                                                children: [
-                                                  Icon(
-                                                    size: 20,
-                                                    color: AppColor.red,
-                                                    Icons.delete_outline,
-                                                  ),
-                                                  SizedBox(width: 10),
-                                                  Text('Excluir'),
-                                                ],
-                                              ),
-                                              onTap: () {},
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  );
-                                }).toList(),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Card(
+                            child: Expanded(
+                              child: Center(
+                                child: CircularProgressIndicator(),
                               ),
                             ),
                           ),
                         ),
-                      ],
-                    ),
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Card(
+                            child: Expanded(
+                              child: Center(
+                                child: CircularProgressIndicator(),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ];
+                    },
+                    loaded: (invoices) {
+                      return [
+                        Padding(
+                          padding: const EdgeInsets.all(
+                            Sizes.size8,
+                          ),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Card(
+                                      child: SizedBox(
+                                        height: Sizes.size240,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(
+                                              Sizes.size16),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Text(
+                                                context.tr.expenses,
+                                                style: const TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                              gapHeight16,
+                                              Row(
+                                                children: [
+                                                  Expanded(
+                                                    child: SizedBox.square(
+                                                      dimension: Sizes.size160,
+                                                      child: Chart(
+                                                        data: const [
+                                                          {
+                                                            'genre':
+                                                                'Rent & mortgage ',
+                                                            'sold': 2500.00,
+                                                          },
+                                                          {
+                                                            'genre':
+                                                                'Transport',
+                                                            'sold': 6000.00,
+                                                          },
+                                                          {
+                                                            'genre': 'Employee',
+                                                            'sold': 12000.00,
+                                                          },
+                                                        ],
+                                                        variables: {
+                                                          'genre': Variable(
+                                                            accessor: (Map
+                                                                    map) =>
+                                                                map['genre']
+                                                                    as String,
+                                                          ),
+                                                          'sold': Variable(
+                                                            accessor:
+                                                                (Map map) =>
+                                                                    map['sold']
+                                                                        as num,
+                                                          ),
+                                                        },
+                                                        transforms: [
+                                                          Proportion(
+                                                            variable: 'sold',
+                                                            as: 'percent',
+                                                          )
+                                                        ],
+                                                        marks: [
+                                                          IntervalMark(
+                                                            position: Varset(
+                                                                    'percent') /
+                                                                Varset('genre'),
+                                                            color: ColorEncode(
+                                                                variable:
+                                                                    'genre',
+                                                                values: [
+                                                                  AppColor
+                                                                      .warning
+                                                                      .shade400,
+                                                                  AppColor
+                                                                      .warning
+                                                                      .shade500,
+                                                                  AppColor
+                                                                      .warning
+                                                                      .shade600,
+                                                                ]),
+                                                            modifiers: [
+                                                              StackModifier()
+                                                            ],
+                                                          )
+                                                        ],
+                                                        coord: PolarCoord(
+                                                          transposed: true,
+                                                          dimCount: 1,
+                                                          startRadius: 0.6,
+                                                        ),
+                                                        selections: {
+                                                          'tap':
+                                                              PointSelection()
+                                                        },
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Column(
+                                                      children: [
+                                                        Row(
+                                                          children: [
+                                                            Container(
+                                                              color: AppColor
+                                                                  .warning
+                                                                  .shade400,
+                                                              width:
+                                                                  Sizes.size12,
+                                                              height: 10,
+                                                            ),
+                                                            gapWidth8,
+                                                            const Text(
+                                                              'Rent & mortgage: 2,500.00',
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          children: [
+                                                            Container(
+                                                              color: AppColor
+                                                                  .warning
+                                                                  .shade500,
+                                                              width:
+                                                                  Sizes.size12,
+                                                              height: 10,
+                                                            ),
+                                                            gapWidth8,
+                                                            const Text(
+                                                              'Travel Expenses: 6,000.00',
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          children: [
+                                                            Container(
+                                                              color: AppColor
+                                                                  .warning
+                                                                  .shade500,
+                                                              width:
+                                                                  Sizes.size12,
+                                                              height: 10,
+                                                            ),
+                                                            gapWidth8,
+                                                            const Text(
+                                                              'Payroll Expenses: 12,000.00',
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: InvoiceStatusWidget(
+                                      invoices: invoices,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Expanded(
+                                child: Card(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(Sizes.size8),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text(
+                                          'Cash Flow',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        const Text(
+                                          '6,000.00',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        const Text('Current cash balance'),
+                                        gapWidth8,
+                                        Expanded(
+                                          child: Chart(
+                                            padding: (_) =>
+                                                const EdgeInsets.fromLTRB(
+                                                    40, 5, 10, 40),
+                                            data: adjustData,
+                                            variables: {
+                                              'index': Variable(
+                                                accessor: (Map map) =>
+                                                    map['index'].toString(),
+                                              ),
+                                              'type': Variable(
+                                                accessor: (Map map) =>
+                                                    map['type'] as String,
+                                              ),
+                                              'value': Variable(
+                                                accessor: (Map map) =>
+                                                    map['value'] as double,
+                                              ),
+                                            },
+                                            marks: [
+                                              IntervalMark(
+                                                position: Varset('index') *
+                                                    Varset('value') /
+                                                    Varset('type'),
+                                                color: ColorEncode(
+                                                  variable: 'type',
+                                                  values: [
+                                                    AppColor.green,
+                                                    AppColor.warning,
+                                                  ],
+                                                ),
+                                                size: SizeEncode(value: 16),
+                                                modifiers: [
+                                                  DodgeModifier(ratio: 0.3),
+                                                ],
+                                              )
+                                            ],
+                                            coord: RectCoord(
+                                              horizontalRangeUpdater:
+                                                  Defaults.horizontalRangeEvent,
+                                            ),
+                                            axes: [
+                                              Defaults.horizontalAxis
+                                                ..tickLine = TickLine(),
+                                              Defaults.verticalAxis,
+                                            ],
+                                            selections: {
+                                              'tap': PointSelection(
+                                                variable: 'index',
+                                              )
+                                            },
+                                            tooltip:
+                                                TooltipGuide(multiTuples: true),
+                                            crosshair: CrosshairGuide(),
+                                          ),
+                                        ),
+                                        Row(
+                                          children: [
+                                            Expanded(
+                                              child: Row(
+                                                children: [
+                                                  Container(
+                                                    color: AppColor.green,
+                                                    width: Sizes.size12,
+                                                    height: 10,
+                                                  ),
+                                                  gapWidth8,
+                                                  const Text('Money in'),
+                                                ],
+                                              ),
+                                            ),
+                                            Expanded(
+                                              child: Row(
+                                                children: [
+                                                  Container(
+                                                    color: AppColor.warning,
+                                                    width: Sizes.size12,
+                                                    height: 10,
+                                                  ),
+                                                  gapWidth8,
+                                                  const Text('Money out'),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        InvoiceTableWidget(
+                          invoices: invoices,
+                          onPaid: (invoice) {
+                            bloc.add(
+                              FinanceOverviewEvent.changeInvoiceStatus(
+                                invoiceId: invoice.id,
+                                status: InvoiceStatusEnums.paid,
+                              ),
+                            );
+                          },
+                          onCancel: (invoice) {
+                            bloc.add(
+                              FinanceOverviewEvent.changeInvoiceStatus(
+                                invoiceId: invoice.id,
+                                status: InvoiceStatusEnums.cancelled,
+                              ),
+                            );
+                          },
+                        ),
+                        InvoiceTableWidget(
+                          invoices: invoices,
+                          onPaid: (invoice) {
+                            bloc.add(
+                              FinanceOverviewEvent.changeInvoiceStatus(
+                                invoiceId: invoice.id,
+                                status: InvoiceStatusEnums.paid,
+                              ),
+                            );
+                          },
+                          onCancel: (invoice) {
+                            bloc.add(
+                              FinanceOverviewEvent.changeInvoiceStatus(
+                                invoiceId: invoice.id,
+                                status: InvoiceStatusEnums.cancelled,
+                              ),
+                            );
+                          },
+                        ),
+                      ];
+                    },
                   ),
                 ),
-              ],
-            ),
+              );
+            },
           ),
         ],
       ),
@@ -833,55 +602,4 @@ const adjustData = [
   {"type": "Money out", "index": 'May', "value": 8000.00},
   {"type": "Money out", "index": 'June', "value": 8000.00},
   {"type": "Money out", "index": 'July', "value": 12000.00},
-];
-
-const invoices = [
-  {
-    "date": "07/17/2024",
-    "invoice": 1,
-    "client": 'Jefferson Pereira',
-    "amount": 37000.00,
-    "paid": 0,
-    "status": 'Sent',
-  },
-  {
-    "date": "07/17/2024",
-    "invoice": 2,
-    "client": 'Jefferson Pereira',
-    "amount": 37000.00,
-    "paid": 0,
-    "status": 'Sent',
-  },
-  {
-    "date": "07/17/2024",
-    "invoice": 3,
-    "client": 'Jefferson Pereira',
-    "amount": 37000.00,
-    "paid": 0,
-    "status": 'Sent',
-  },
-  {
-    "date": "07/17/2024",
-    "invoice": 4,
-    "client": 'Jefferson Pereira',
-    "amount": 37000.00,
-    "paid": 0,
-    "status": 'Sent',
-  },
-  {
-    "date": "07/17/2024",
-    "invoice": 5,
-    "client": 'Jefferson Pereira',
-    "amount": 37000.00,
-    "paid": 0,
-    "status": 'Sent',
-  },
-  {
-    "date": "07/17/2024",
-    "invoice": 6,
-    "client": 'Jefferson Pereira',
-    "amount": 37000.00,
-    "paid": 0,
-    "status": 'Sent',
-  },
 ];

@@ -156,7 +156,7 @@ class TimecardsFireStoreRepository extends TenantFirestoreRepository
       'endLocation': clock.endLocation,
     };
 
-    await collection.doc(clock.id.toString()).update(schedule);
+    await collection.doc(clock.id).update(schedule);
     return right(true);
   }
 
