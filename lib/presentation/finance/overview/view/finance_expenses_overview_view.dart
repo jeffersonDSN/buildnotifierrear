@@ -1,3 +1,4 @@
+import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/finance/expense/card_overview/finance_expense_card_overview.dart';
 import 'package:buildnotifierrear/presentation/finance/expense/category_overview/finance_expense_category_overview.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/expenses_table_widget.dart';
@@ -22,7 +23,7 @@ class FinanceExpensesOverviewView extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               children: [
                 SizedBox(
-                  width: Sizes.size360,
+                  width: Sizes.size500,
                   child: Padding(
                     padding: const EdgeInsets.all(Sizes.size8),
                     child: Container(
@@ -45,19 +46,19 @@ class FinanceExpensesOverviewView extends StatelessWidget {
                           unselectedLabelColor: Colors.black,
                           indicatorSize: TabBarIndicatorSize.tab,
                           dividerColor: Colors.transparent,
-                          tabs: const [
+                          tabs: [
                             Row(
                               children: [
-                                Icon(Icons.payments_outlined),
+                                const Icon(Icons.payments_outlined),
                                 gapWidth4,
-                                Text('Expenses'),
+                                Text(context.tr.expenses),
                               ],
                             ),
                             Row(
                               children: [
-                                Icon(Icons.settings),
+                                const Icon(Icons.settings),
                                 gapWidth4,
-                                Text('Expense settings'),
+                                Text(context.tr.expenseSettings),
                               ],
                             ),
                           ],
@@ -73,6 +74,7 @@ class FinanceExpensesOverviewView extends StatelessWidget {
             child: Container(
               color: AppColor.lightColor,
               child: TabBarView(
+                physics: const NeverScrollableScrollPhysics(),
                 children: [
                   ExpensesTableWidget(
                     expenses: const [],

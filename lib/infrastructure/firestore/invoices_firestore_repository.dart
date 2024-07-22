@@ -78,8 +78,8 @@ class InvoicesFireStoreRepository extends TenantFirestoreRepository
       'items': value.items.toJson(),
     };
 
-    var doc = await collection.add(invoice);
-    return right(doc.id);
+    await collection.doc(value.id).set(invoice);
+    return right(value.id);
   }
 
   @override

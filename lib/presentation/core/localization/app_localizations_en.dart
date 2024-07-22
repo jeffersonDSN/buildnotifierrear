@@ -542,4 +542,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get newCategory => 'New category';
+
+  @override
+  String get expenseSettings => 'Expense settings';
 }

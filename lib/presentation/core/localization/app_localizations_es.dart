@@ -389,210 +389,161 @@ class AppLocalizationsEs extends AppLocalizations {
   String get finance => 'Finanzas';
 
   @override
-  // TODO: implement submit
-  String get submit => throw UnimplementedError();
+  String get submit => 'Enviar';
 
   @override
-  // TODO: implement addItem
-  String get addItem => throw UnimplementedError();
+  String get addItem => 'Agregar ítem';
 
   @override
-  // TODO: implement date
-  String get date => throw UnimplementedError();
+  String get date => 'Fecha';
 
   @override
-  // TODO: implement hoursWorked
-  String get hoursWorked => throw UnimplementedError();
+  String get hoursWorked => 'Horas trabajadas';
 
   @override
-  // TODO: implement amount
-  String get amount => throw UnimplementedError();
+  String get amount => 'Cantidad';
 
   @override
-  // TODO: implement cancelled
-  String get cancelled => throw UnimplementedError();
+  String get cancelled => 'Cancelado';
 
   @override
-  // TODO: implement customerMessage
-  String get customerMessage => throw UnimplementedError();
+  String get customerMessage => 'Mensaje al cliente';
 
   @override
-  // TODO: implement draft
-  String get draft => throw UnimplementedError();
+  String get draft => 'Borrador';
 
   @override
-  // TODO: implement failed
-  String get failed => throw UnimplementedError();
+  String get failed => 'Fallido';
 
   @override
-  // TODO: implement hrs
-  String get hrs => throw UnimplementedError();
+  String get hrs => 'Hrs';
 
   @override
-  // TODO: implement overdue
-  String get overdue => throw UnimplementedError();
+  String get overdue => 'Vencido';
 
   @override
-  // TODO: implement paid
-  String get paid => throw UnimplementedError();
+  String get paid => 'Pagado';
 
   @override
-  // TODO: implement partiallyPaid
-  String get partiallyPaid => throw UnimplementedError();
+  String get partiallyPaid => 'Parcialmente pagado';
 
   @override
-  // TODO: implement product
-  String get product => throw UnimplementedError();
+  String get product => 'Producto';
 
   @override
-  // TODO: implement qty
-  String get qty => throw UnimplementedError();
+  String get qty => 'Cant';
 
   @override
-  // TODO: implement rate
-  String get rate => throw UnimplementedError();
+  String get rate => 'Tarifa';
 
   @override
-  // TODO: implement refunded
-  String get refunded => throw UnimplementedError();
+  String get refunded => 'Reembolsado';
 
   @override
-  // TODO: implement sent
-  String get sent => throw UnimplementedError();
+  String get sent => 'Enviado';
 
   @override
-  // TODO: implement service
-  String get service => throw UnimplementedError();
+  String get service => 'Servicio';
 
   @override
-  // TODO: implement total
-  String get total => throw UnimplementedError();
+  String get total => 'Total';
 
   @override
-  // TODO: implement invoice
-  String get invoice => throw UnimplementedError();
+  String get invoice => 'Factura';
 
   @override
-  // TODO: implement invoiceDate
-  String get invoiceDate => throw UnimplementedError();
+  String get invoiceDate => 'Fecha de factura';
 
   @override
-  // TODO: implement remove
-  String get remove => throw UnimplementedError();
+  String get remove => 'Eliminar';
 
   @override
-  // TODO: implement edit
-  String get edit => throw UnimplementedError();
+  String get edit => 'Editar';
 
   @override
-  // TODO: implement dueDate
-  String get dueDate => throw UnimplementedError();
+  String get dueDate => 'Fecha de vencimiento';
 
   @override
-  // TODO: implement shareWithClient
-  String get shareWithClient => throw UnimplementedError();
+  String get shareWithClient => 'Compartir con el cliente';
 
   @override
-  // TODO: implement actions
-  String get actions => throw UnimplementedError();
+  String get actions => 'Acciones';
 
   @override
-  // TODO: implement subTotal
-  String get subTotal => throw UnimplementedError();
+  String get subTotal => 'Subtotal';
 
   @override
-  // TODO: implement page
-  String get page => throw UnimplementedError();
+  String get page => 'Página';
 
   @override
-  // TODO: implement invoiceTo
-  String get invoiceTo => throw UnimplementedError();
+  String get invoiceTo => 'Factura a';
 
   @override
-  // TODO: implement issueDate
-  String get issueDate => throw UnimplementedError();
+  String get issueDate => 'Fecha de emisión';
 
   @override
-  // TODO: implement downloadPDF
-  String get downloadPDF => throw UnimplementedError();
+  String get downloadPDF => 'Descargar PDF';
 
   @override
-  // TODO: implement balance
-  String get balance => throw UnimplementedError();
+  String get balance => 'Saldo';
 
   @override
-  // TODO: implement expenses
-  String get expenses => throw UnimplementedError();
+  String get expenses => 'Gastos';
 
   @override
-  // TODO: implement invoices
-  String get invoices => throw UnimplementedError();
+  String get invoices => 'Facturas';
 
   @override
-  // TODO: implement cancelInvoice
-  String get cancelInvoice => throw UnimplementedError();
+  String get cancelInvoice => 'Cancelar factura';
 
   @override
-  // TODO: implement notDueYet
-  String get notDueYet => throw UnimplementedError();
+  String get notDueYet => 'Aún no vencido';
 
   @override
-  // TODO: implement markAsPaid
-  String get markAsPaid => throw UnimplementedError();
+  String get markAsPaid => 'Marcar como pagado';
 
   @override
-  // TODO: implement approved
-  String get approved => throw UnimplementedError();
+  String get approved => 'Aprobado';
 
   @override
-  // TODO: implement bankAccount
-  String get bankAccount => throw UnimplementedError();
+  String get bankAccount => 'Cuenta bancaria';
 
   @override
-  // TODO: implement cash
-  String get cash => throw UnimplementedError();
+  String get cash => 'Efectivo';
 
   @override
-  // TODO: implement check
-  String get check => throw UnimplementedError();
+  String get check => 'Cheque';
 
   @override
-  // TODO: implement creditCard
-  String get creditCard => throw UnimplementedError();
+  String get creditCard => 'Tarjeta de crédito';
 
   @override
-  // TODO: implement debitCard
-  String get debitCard => throw UnimplementedError();
+  String get debitCard => 'Tarjeta de débito';
 
   @override
-  // TODO: implement pending
-  String get pending => throw UnimplementedError();
+  String get pending => 'Pendiente';
 
   @override
-  // TODO: implement credit
-  String get credit => throw UnimplementedError();
+  String get credit => 'Crédito';
 
   @override
-  // TODO: implement debit
-  String get debit => throw UnimplementedError();
+  String get debit => 'Débito';
 
   @override
-  // TODO: implement bankName
-  String get bankName => throw UnimplementedError();
+  String get bankName => 'Nombre del banco';
 
   @override
-  // TODO: implement number
-  String get number => throw UnimplementedError();
+  String get number => 'Número';
 
   @override
-  // TODO: implement newCreditCard
-  String get newCreditCard => throw UnimplementedError();
+  String get newCreditCard => 'Nueva tarjeta de crédito';
 
   @override
-  // TODO: implement categories
-  String get categories => throw UnimplementedError();
+  String get categories => 'Categorías';
 
   @override
-  // TODO: implement newCategory
-  String get newCategory => throw UnimplementedError();
+  String get newCategory => 'Nueva categoría';
+
+  @override
+  String get expenseSettings => 'Configuraciones de gastos';
 }

@@ -393,6 +393,8 @@ abstract class AppLocalizations {
   String get categories;
 
   String get newCategory;
+
+  String get expenseSettings;
 }
 
 class _AppLocalizationsDelegate
