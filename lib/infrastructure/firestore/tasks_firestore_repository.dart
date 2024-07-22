@@ -105,7 +105,7 @@ class TasksFirestoreRepository extends TenantFirestoreRepository
   }
 
   @override
-  Future<Either<ErrorFields, bool>> post(Task value) async {
+  Future<Either<ErrorFields, String>> post(Task value) async {
     var notesList = await getValueList(value.notes);
 
     var task = {
@@ -125,8 +125,8 @@ class TasksFirestoreRepository extends TenantFirestoreRepository
       'dependencies': value.dependencies,
     };
 
-    await collection.add(task);
-    return right(true);
+    var doc = await collection.add(task);
+    return right(doc.id);
   }
 
   @override

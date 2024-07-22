@@ -37,17 +37,13 @@ class FinanceInvoiceEditAddItemView extends StatelessWidget {
         FinanceInvoiceEditAddItemState>(
       bloc: bloc,
       builder: (context, state) {
-        ;
-
         return state.maybeWhen(
           orElse: () {
             return AlertDialog(
-              title: Center(
-                child: Text(
-                  context.tr.addItem,
-                  style: const TextStyle(
-                    color: AppColor.primaryColorSwatch,
-                  ),
+              title: Text(
+                context.tr.addItem,
+                style: const TextStyle(
+                  color: AppColor.primaryColorSwatch,
                 ),
               ),
               content: const SizedBox(
@@ -80,12 +76,10 @@ class FinanceInvoiceEditAddItemView extends StatelessWidget {
           ) {
             return AlertDialog(
               elevation: 0,
-              title: Center(
-                child: Text(
-                  context.tr.addItem,
-                  style: const TextStyle(
-                    color: AppColor.primaryColorSwatch,
-                  ),
+              title: Text(
+                context.tr.addItem,
+                style: const TextStyle(
+                  color: AppColor.primaryColorSwatch,
                 ),
               ),
               content: SizedBox(

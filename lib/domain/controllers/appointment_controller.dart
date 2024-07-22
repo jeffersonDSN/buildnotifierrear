@@ -39,7 +39,7 @@ class AppointmentController extends CRUDController<Appointment> {
   }
 
   @override
-  Future<Either<ErrorFields, bool>> create(Appointment value) async {
+  Future<Either<ErrorFields, String>> create(Appointment value) async {
     var appointment = value;
 
     if (appointment.location.isNotEmpty) {

@@ -54,10 +54,12 @@ class InvoiceTableWidget extends StatelessWidget {
             ),
             DataColumn2(
               size: ColumnSize.M,
+              numeric: true,
               label: Text(context.tr.amount),
             ),
             DataColumn2(
               size: ColumnSize.M,
+              numeric: true,
               label: Text(context.tr.balance),
             ),
             DataColumn2(

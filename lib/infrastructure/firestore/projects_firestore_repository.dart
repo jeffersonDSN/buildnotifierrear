@@ -107,7 +107,7 @@ class ProjectsFirestoreRepository extends TenantFirestoreRepository
   }
 
   @override
-  Future<Either<ErrorFields, bool>> post(Project value) async {
+  Future<Either<ErrorFields, String>> post(Project value) async {
     var descriptionList = await getValueList(value.description);
 
     var project = {
@@ -130,8 +130,8 @@ class ProjectsFirestoreRepository extends TenantFirestoreRepository
       'longitude': value.longitude,
     };
 
-    await collection.add(project);
-    return right(true);
+    var doc = await collection.add(project);
+    return right(doc.id);
   }
 
   @override

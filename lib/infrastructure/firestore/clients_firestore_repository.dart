@@ -34,7 +34,7 @@ class ClientsFireStoreRepository extends TenantFirestoreRepository
   }
 
   @override
-  Future<Either<ErrorFields, bool>> post(Client value) async {
+  Future<Either<ErrorFields, String>> post(Client value) async {
     var user = {
       'firstName': value.firstName,
       'middleName': value.middleName,
@@ -48,8 +48,8 @@ class ClientsFireStoreRepository extends TenantFirestoreRepository
       'zipCode': value.zipCode,
     };
 
-    await collection.add(user);
-    return right(true);
+    var doc = await collection.add(user);
+    return right(doc.id);
   }
 
   @override

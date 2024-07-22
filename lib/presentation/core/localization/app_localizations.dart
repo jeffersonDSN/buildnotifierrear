@@ -365,6 +365,34 @@ abstract class AppLocalizations {
   String get notDueYet;
 
   String get markAsPaid;
+
+  String get pending;
+
+  String get approved;
+
+  String get cash;
+
+  String get creditCard;
+
+  String get debitCard;
+
+  String get bankAccount;
+
+  String get check;
+
+  String get credit;
+
+  String get debit;
+
+  String get number;
+
+  String get bankName;
+
+  String get newCreditCard;
+
+  String get categories;
+
+  String get newCategory;
 }
 
 class _AppLocalizationsDelegate

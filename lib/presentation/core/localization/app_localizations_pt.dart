@@ -539,4 +539,60 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   // TODO: implement markAsPaid
   String get markAsPaid => throw UnimplementedError();
+
+  @override
+  // TODO: implement approved
+  String get approved => throw UnimplementedError();
+
+  @override
+  // TODO: implement bankAccount
+  String get bankAccount => throw UnimplementedError();
+
+  @override
+  // TODO: implement cash
+  String get cash => throw UnimplementedError();
+
+  @override
+  // TODO: implement check
+  String get check => throw UnimplementedError();
+
+  @override
+  // TODO: implement creditCard
+  String get creditCard => throw UnimplementedError();
+
+  @override
+  // TODO: implement debitCard
+  String get debitCard => throw UnimplementedError();
+
+  @override
+  // TODO: implement pending
+  String get pending => throw UnimplementedError();
+
+  @override
+  // TODO: implement credit
+  String get credit => throw UnimplementedError();
+
+  @override
+  // TODO: implement debit
+  String get debit => throw UnimplementedError();
+
+  @override
+  // TODO: implement bankName
+  String get bankName => throw UnimplementedError();
+
+  @override
+  // TODO: implement number
+  String get number => throw UnimplementedError();
+
+  @override
+  // TODO: implement newCreditCard
+  String get newCreditCard => throw UnimplementedError();
+
+  @override
+  // TODO: implement categories
+  String get categories => throw UnimplementedError();
+
+  @override
+  // TODO: implement newCategory
+  String get newCategory => throw UnimplementedError();
 }

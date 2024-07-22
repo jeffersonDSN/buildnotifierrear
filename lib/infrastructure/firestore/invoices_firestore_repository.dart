@@ -61,7 +61,7 @@ class InvoicesFireStoreRepository extends TenantFirestoreRepository
   }
 
   @override
-  Future<Either<ErrorFields, bool>> post(Invoice value) async {
+  Future<Either<ErrorFields, String>> post(Invoice value) async {
     var invoice = {
       'issueDate': value.issueDate,
       'dueDate': value.dueDate,
@@ -78,8 +78,8 @@ class InvoicesFireStoreRepository extends TenantFirestoreRepository
       'items': value.items.toJson(),
     };
 
-    await collection.doc(value.id).set(invoice);
-    return right(true);
+    var doc = await collection.add(invoice);
+    return right(doc.id);
   }
 
   @override

@@ -16,7 +16,7 @@ class CRUDController<T> {
     return _repository.getById(id);
   }
 
-  Future<Either<ErrorFields, bool>> create(T value) async {
+  Future<Either<ErrorFields, String>> create(T value) async {
     return await _repository.post(value);
   }
 

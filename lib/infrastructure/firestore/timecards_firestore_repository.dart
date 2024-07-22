@@ -121,7 +121,7 @@ class TimecardsFireStoreRepository extends TenantFirestoreRepository
   }
 
   @override
-  Future<Either<ErrorFields, bool>> post(Timecard clock) async {
+  Future<Either<ErrorFields, String>> post(Timecard clock) async {
     var schedule = {
       'employeeId': clock.employeeId,
       'employeeFirstName': clock.employeeFirstName,
@@ -136,8 +136,8 @@ class TimecardsFireStoreRepository extends TenantFirestoreRepository
       'endLocation': clock.endLocation,
     };
 
-    await collection.add(schedule);
-    return right(true);
+    var doc = await collection.add(schedule);
+    return right(doc.id);
   }
 
   @override

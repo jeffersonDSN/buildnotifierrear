@@ -267,7 +267,7 @@ class AppointmentsFirestoreRepository extends TenantFirestoreRepository
   }
 
   @override
-  Future<Either<ErrorFields, bool>> post(Appointment value) async {
+  Future<Either<ErrorFields, String>> post(Appointment value) async {
     var schedule = {
       'startDateTime': value.startDateTime,
       'endDateTime': value.endDateTime,
@@ -283,8 +283,8 @@ class AppointmentsFirestoreRepository extends TenantFirestoreRepository
       'assignTo': value.assignTo.toJson(),
     };
 
-    await collection.add(schedule);
-    return right(true);
+    var doc = await collection.add(schedule);
+    return right(doc.id);
   }
 
   @override

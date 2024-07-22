@@ -500,4 +500,46 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get markAsPaid => 'Mark as paid';
+
+  @override
+  String get pending => 'Pending';
+
+  @override
+  String get approved => 'Approved';
+
+  @override
+  String get cash => 'Cash';
+
+  @override
+  String get creditCard => 'Credit card';
+
+  @override
+  String get debitCard => 'Debit card';
+
+  @override
+  String get bankAccount => 'Bank account';
+
+  @override
+  String get check => 'Check';
+
+  @override
+  String get credit => 'Credit';
+
+  @override
+  String get debit => 'Debit';
+
+  @override
+  String get number => 'Number';
+
+  @override
+  String get bankName => 'Bank name';
+
+  @override
+  String get newCreditCard => 'New credit card';
+
+  @override
+  String get categories => 'Categories';
+
+  @override
+  String get newCategory => 'New category';
 }

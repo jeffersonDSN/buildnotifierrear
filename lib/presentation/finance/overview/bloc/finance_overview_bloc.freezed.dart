@@ -217,14 +217,14 @@ class __$$FinanceOverviewEventChangeInvoiceStatusImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? invoiceId = null,
-    Object? status = freezed,
+    Object? status = null,
   }) {
     return _then(_$FinanceOverviewEventChangeInvoiceStatusImpl(
       invoiceId: null == invoiceId
           ? _value.invoiceId
           : invoiceId // ignore: cast_nullable_to_non_nullable
               as String,
-      status: freezed == status
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as InvoiceStatusEnums,
@@ -256,12 +256,11 @@ class _$FinanceOverviewEventChangeInvoiceStatusImpl
             other is _$FinanceOverviewEventChangeInvoiceStatusImpl &&
             (identical(other.invoiceId, invoiceId) ||
                 other.invoiceId == invoiceId) &&
-            const DeepCollectionEquality().equals(other.status, status));
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, invoiceId, const DeepCollectionEquality().hash(status));
+  int get hashCode => Object.hash(runtimeType, invoiceId, status);
 
   @JsonKey(ignore: true)
   @override

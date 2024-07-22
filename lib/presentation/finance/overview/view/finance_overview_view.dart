@@ -5,6 +5,7 @@ import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/bloc/finance_overview_bloc.dart';
+import 'package:buildnotifierrear/presentation/finance/overview/view/finance_expenses_overview_view.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/invoice_status_widget.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/invoice_table_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
@@ -536,25 +537,7 @@ class FinanceOverviewView extends IView {
                             ],
                           ),
                         ),
-                        InvoiceTableWidget(
-                          invoices: invoices,
-                          onPaid: (invoice) {
-                            bloc.add(
-                              FinanceOverviewEvent.changeInvoiceStatus(
-                                invoiceId: invoice.id,
-                                status: InvoiceStatusEnums.paid,
-                              ),
-                            );
-                          },
-                          onCancel: (invoice) {
-                            bloc.add(
-                              FinanceOverviewEvent.changeInvoiceStatus(
-                                invoiceId: invoice.id,
-                                status: InvoiceStatusEnums.cancelled,
-                              ),
-                            );
-                          },
-                        ),
+                        const FinanceExpensesOverviewView(),
                         InvoiceTableWidget(
                           invoices: invoices,
                           onPaid: (invoice) {

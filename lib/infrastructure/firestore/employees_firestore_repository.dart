@@ -105,7 +105,7 @@ class EmployeesFireStoreRepository extends FireStoreRepository
   }
 
   @override
-  Future<Either<ErrorFields, bool>> post(Employee value) async {
+  Future<Either<ErrorFields, String>> post(Employee value) async {
     if (value.userName.isNotEmpty) {
       var result = await getUserByUserName(value.userName);
 
@@ -157,9 +157,8 @@ class EmployeesFireStoreRepository extends FireStoreRepository
       'userType': value.userType,
     };
 
-    await collection.add(user);
-
-    return right(true);
+    var doc = await collection.add(user);
+    return right(doc.id);
   }
 
   @override
