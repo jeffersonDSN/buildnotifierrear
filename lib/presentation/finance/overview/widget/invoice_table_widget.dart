@@ -1,6 +1,6 @@
 import 'dart:html' as html;
 
-import 'package:buildnotifierrear/domain/core/format_utils.dart';
+import 'package:buildnotifierrear/domain/core/utils.dart';
 import 'package:buildnotifierrear/domain/entities/invoice/invoice.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/domain/entities/enums/invoice_status_enums.dart';

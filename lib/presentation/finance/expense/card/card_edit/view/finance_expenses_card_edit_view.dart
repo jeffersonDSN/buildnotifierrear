@@ -1,8 +1,8 @@
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
-import 'package:buildnotifierrear/presentation/finance/expense/card_edit/bloc/finance_expense_card_edit_bloc.dart';
-import 'package:buildnotifierrear/presentation/finance/expense/widget/credit_card_widget.dart';
+import 'package:buildnotifierrear/presentation/finance/expense/card/card_edit/bloc/finance_expense_card_edit_bloc.dart';
+import 'package:buildnotifierrear/presentation/finance/expense/card/widget/credit_card_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';

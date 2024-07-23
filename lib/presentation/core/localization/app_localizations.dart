@@ -395,6 +395,20 @@ abstract class AppLocalizations {
   String get newCategory;
 
   String get expenseSettings;
+
+  String get expense;
+
+  String get overview;
+
+  String get newExpenses;
+
+  String get newInvoices;
+
+  String get linkExpenseToProject;
+
+  String get paymentMethod;
+
+  String get method;
 }
 
 class _AppLocalizationsDelegate

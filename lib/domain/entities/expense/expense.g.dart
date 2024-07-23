@@ -8,7 +8,8 @@ part of 'expense.dart';
 
 _$ExpenseItemImpl _$$ExpenseItemImplFromJson(Map<String, dynamic> json) =>
     _$ExpenseItemImpl(
-      title: json['title'] as String? ?? '',
+      productService: json['productService'] as String? ?? '',
+      description: json['description'] as String? ?? '',
       timeCardId: json['timeCardId'] as String? ?? '',
       expenseId: json['expenseId'] as String? ?? '',
       qtyHrs: (json['qtyHrs'] as num?)?.toDouble() ?? 0,
@@ -18,7 +19,8 @@ _$ExpenseItemImpl _$$ExpenseItemImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ExpenseItemImplToJson(_$ExpenseItemImpl instance) =>
     <String, dynamic>{
-      'title': instance.title,
+      'productService': instance.productService,
+      'description': instance.description,
       'timeCardId': instance.timeCardId,
       'expenseId': instance.expenseId,
       'qtyHrs': instance.qtyHrs,
@@ -38,7 +40,7 @@ _$ExpenseImpl _$$ExpenseImplFromJson(Map<String, dynamic> json) =>
           ? null
           : DateTime.parse(json['paymentDate'] as String),
       categoryId: json['categoryId'] ?? '',
-      categoryName: json['categoryName'] ?? '',
+      categoryTitle: json['categoryTitle'] ?? '',
       projectId: json['projectId'] as String? ?? '',
       taskId: json['taskId'] as String? ?? '',
       employeeId: json['employeeId'] as String? ?? '',
@@ -67,7 +69,7 @@ Map<String, dynamic> _$$ExpenseImplToJson(_$ExpenseImpl instance) =>
       'dueDate': instance.dueDate?.toIso8601String(),
       'paymentDate': instance.paymentDate?.toIso8601String(),
       'categoryId': instance.categoryId,
-      'categoryName': instance.categoryName,
+      'categoryTitle': instance.categoryTitle,
       'projectId': instance.projectId,
       'taskId': instance.taskId,
       'employeeId': instance.employeeId,

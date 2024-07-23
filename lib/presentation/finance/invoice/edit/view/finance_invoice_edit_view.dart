@@ -1,6 +1,6 @@
 import 'dart:html' as html;
 
-import 'package:buildnotifierrear/domain/core/format_utils.dart';
+import 'package:buildnotifierrear/domain/core/utils.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/domain/entities/enums/invoice_status_enums.dart';
 import 'package:buildnotifierrear/domain/entities/invoice/invoice.dart';
@@ -29,15 +29,6 @@ class FinanceInvoiceEditView extends IView {
 
   @override
   Widget build(BuildContext context) {
-    Future<DateTime?> getDate() async {
-      return showDatePicker(
-        context: context,
-        firstDate: DateTime.utc(2010, 10, 16),
-        lastDate: DateTime.utc(2030, 3, 14),
-        initialDate: DateTime.now(),
-      );
-    }
-
     var bloc = BlocProvider.of<FinanceInvoiceEditBloc>(context);
 
     bloc.add(
@@ -317,7 +308,7 @@ class FinanceInvoiceEditView extends IView {
                                       label: context.tr.dueDate,
                                       value: invoice.dueDate,
                                       onPressedChangeDate: () async {
-                                        var date = await getDate();
+                                        var date = await getDate(context);
 
                                         if (date != null) {
                                           bloc.add(

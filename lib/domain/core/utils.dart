@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 final DateFormat hourFormat = DateFormat.jm();
@@ -33,4 +34,13 @@ String formatCurrency(double amount) {
 String formatDate(DateTime date) {
   final format = DateFormat.yMMMd('en_US');
   return format.format(date);
+}
+
+Future<DateTime?> getDate(BuildContext context) async {
+  return showDatePicker(
+    context: context,
+    firstDate: DateTime.utc(2010, 10, 16),
+    lastDate: DateTime.utc(2030, 3, 14),
+    initialDate: DateTime.now(),
+  );
 }

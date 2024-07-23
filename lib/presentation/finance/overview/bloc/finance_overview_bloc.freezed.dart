@@ -361,21 +361,22 @@ mixin _$FinanceOverviewState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(List<Invoice> invoices) loaded,
+    required TResult Function(List<Invoice> invoices, List<Expense> expense)
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(List<Invoice> invoices)? loaded,
+    TResult? Function(List<Invoice> invoices, List<Expense> expense)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(List<Invoice> invoices)? loaded,
+    TResult Function(List<Invoice> invoices, List<Expense> expense)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -466,7 +467,8 @@ class _$FinanceOverviewStateInitImpl implements FinanceOverviewStateInit {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(List<Invoice> invoices) loaded,
+    required TResult Function(List<Invoice> invoices, List<Expense> expense)
+        loaded,
   }) {
     return init();
   }
@@ -476,7 +478,7 @@ class _$FinanceOverviewStateInitImpl implements FinanceOverviewStateInit {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(List<Invoice> invoices)? loaded,
+    TResult? Function(List<Invoice> invoices, List<Expense> expense)? loaded,
   }) {
     return init?.call();
   }
@@ -486,7 +488,7 @@ class _$FinanceOverviewStateInitImpl implements FinanceOverviewStateInit {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(List<Invoice> invoices)? loaded,
+    TResult Function(List<Invoice> invoices, List<Expense> expense)? loaded,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -578,7 +580,8 @@ class _$FinanceOverviewStateLoadingImpl implements FinanceOverviewStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(List<Invoice> invoices) loaded,
+    required TResult Function(List<Invoice> invoices, List<Expense> expense)
+        loaded,
   }) {
     return loading();
   }
@@ -588,7 +591,7 @@ class _$FinanceOverviewStateLoadingImpl implements FinanceOverviewStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(List<Invoice> invoices)? loaded,
+    TResult? Function(List<Invoice> invoices, List<Expense> expense)? loaded,
   }) {
     return loading?.call();
   }
@@ -598,7 +601,7 @@ class _$FinanceOverviewStateLoadingImpl implements FinanceOverviewStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(List<Invoice> invoices)? loaded,
+    TResult Function(List<Invoice> invoices, List<Expense> expense)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -654,7 +657,7 @@ abstract class _$$FinanceOverviewStateLoadedImplCopyWith<$Res> {
           $Res Function(_$FinanceOverviewStateLoadedImpl) then) =
       __$$FinanceOverviewStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Invoice> invoices});
+  $Res call({List<Invoice> invoices, List<Expense> expense});
 }
 
 /// @nodoc
@@ -671,12 +674,17 @@ class __$$FinanceOverviewStateLoadedImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? invoices = null,
+    Object? expense = null,
   }) {
     return _then(_$FinanceOverviewStateLoadedImpl(
       invoices: null == invoices
           ? _value._invoices
           : invoices // ignore: cast_nullable_to_non_nullable
               as List<Invoice>,
+      expense: null == expense
+          ? _value._expense
+          : expense // ignore: cast_nullable_to_non_nullable
+              as List<Expense>,
     ));
   }
 }
@@ -685,8 +693,10 @@ class __$$FinanceOverviewStateLoadedImplCopyWithImpl<$Res>
 
 class _$FinanceOverviewStateLoadedImpl implements FinanceOverviewStateLoaded {
   const _$FinanceOverviewStateLoadedImpl(
-      {required final List<Invoice> invoices})
-      : _invoices = invoices;
+      {required final List<Invoice> invoices,
+      required final List<Expense> expense})
+      : _invoices = invoices,
+        _expense = expense;
 
   final List<Invoice> _invoices;
   @override
@@ -696,9 +706,17 @@ class _$FinanceOverviewStateLoadedImpl implements FinanceOverviewStateLoaded {
     return EqualUnmodifiableListView(_invoices);
   }
 
+  final List<Expense> _expense;
+  @override
+  List<Expense> get expense {
+    if (_expense is EqualUnmodifiableListView) return _expense;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_expense);
+  }
+
   @override
   String toString() {
-    return 'FinanceOverviewState.loaded(invoices: $invoices)';
+    return 'FinanceOverviewState.loaded(invoices: $invoices, expense: $expense)';
   }
 
   @override
@@ -706,12 +724,15 @@ class _$FinanceOverviewStateLoadedImpl implements FinanceOverviewStateLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FinanceOverviewStateLoadedImpl &&
-            const DeepCollectionEquality().equals(other._invoices, _invoices));
+            const DeepCollectionEquality().equals(other._invoices, _invoices) &&
+            const DeepCollectionEquality().equals(other._expense, _expense));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_invoices));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_invoices),
+      const DeepCollectionEquality().hash(_expense));
 
   @JsonKey(ignore: true)
   @override
@@ -725,9 +746,10 @@ class _$FinanceOverviewStateLoadedImpl implements FinanceOverviewStateLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(List<Invoice> invoices) loaded,
+    required TResult Function(List<Invoice> invoices, List<Expense> expense)
+        loaded,
   }) {
-    return loaded(invoices);
+    return loaded(invoices, expense);
   }
 
   @override
@@ -735,9 +757,9 @@ class _$FinanceOverviewStateLoadedImpl implements FinanceOverviewStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(List<Invoice> invoices)? loaded,
+    TResult? Function(List<Invoice> invoices, List<Expense> expense)? loaded,
   }) {
-    return loaded?.call(invoices);
+    return loaded?.call(invoices, expense);
   }
 
   @override
@@ -745,11 +767,11 @@ class _$FinanceOverviewStateLoadedImpl implements FinanceOverviewStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(List<Invoice> invoices)? loaded,
+    TResult Function(List<Invoice> invoices, List<Expense> expense)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(invoices);
+      return loaded(invoices, expense);
     }
     return orElse();
   }
@@ -791,10 +813,11 @@ class _$FinanceOverviewStateLoadedImpl implements FinanceOverviewStateLoaded {
 
 abstract class FinanceOverviewStateLoaded implements FinanceOverviewState {
   const factory FinanceOverviewStateLoaded(
-          {required final List<Invoice> invoices}) =
-      _$FinanceOverviewStateLoadedImpl;
+      {required final List<Invoice> invoices,
+      required final List<Expense> expense}) = _$FinanceOverviewStateLoadedImpl;
 
   List<Invoice> get invoices;
+  List<Expense> get expense;
   @JsonKey(ignore: true)
   _$$FinanceOverviewStateLoadedImplCopyWith<_$FinanceOverviewStateLoadedImpl>
       get copyWith => throw _privateConstructorUsedError;

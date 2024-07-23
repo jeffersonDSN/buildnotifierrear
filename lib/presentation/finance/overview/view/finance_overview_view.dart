@@ -38,7 +38,7 @@ class FinanceOverviewView extends IView {
               mainAxisSize: MainAxisSize.max,
               children: [
                 SizedBox(
-                  width: Sizes.size440,
+                  width: Sizes.size500,
                   child: Padding(
                     padding: const EdgeInsets.all(Sizes.size8),
                     child: Container(
@@ -61,26 +61,26 @@ class FinanceOverviewView extends IView {
                           unselectedLabelColor: Colors.black,
                           indicatorSize: TabBarIndicatorSize.tab,
                           dividerColor: Colors.transparent,
-                          tabs: const [
+                          tabs: [
                             Row(
                               children: [
-                                Icon(Icons.dashboard_outlined),
+                                const Icon(Icons.dashboard_outlined),
                                 gapWidth4,
-                                Text('Overview'),
+                                Text(context.tr.overview),
                               ],
                             ),
                             Row(
                               children: [
-                                Icon(Icons.payments_outlined),
+                                const Icon(Icons.payments_outlined),
                                 gapWidth4,
-                                Text('Expenses'),
+                                Text(context.tr.expenses),
                               ],
                             ),
                             Row(
                               children: [
-                                Icon(Icons.request_quote_outlined),
+                                const Icon(Icons.request_quote_outlined),
                                 gapWidth4,
-                                Text('Invoices'),
+                                Text(context.tr.invoices),
                               ],
                             ),
                           ],
@@ -102,15 +102,23 @@ class FinanceOverviewView extends IView {
                             ),
                           ),
                           icon: const Icon(Icons.add),
-                          label: const Text('New expenses'),
-                          onPressed: () {},
+                          label: Text(context.tr.newExpenses),
+                          onPressed: () {
+                            appBloc(context).add(
+                              const AppEvent.changeView(
+                                mod: Mod.financeExpenses(
+                                  type: ViewType.create(),
+                                ),
+                              ),
+                            );
+                          },
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(Sizes.size8),
                         child: FilledButton.icon(
                           icon: const Icon(Icons.add),
-                          label: const Text('New invoices'),
+                          label: Text(context.tr.newInvoices),
                           onPressed: () {
                             appBloc(context).add(
                               const AppEvent.changeView(
@@ -244,7 +252,7 @@ class FinanceOverviewView extends IView {
                         ),
                       ];
                     },
-                    loaded: (invoices) {
+                    loaded: (invoices, expenses) {
                       return [
                         Padding(
                           padding: const EdgeInsets.all(
@@ -537,7 +545,11 @@ class FinanceOverviewView extends IView {
                             ],
                           ),
                         ),
-                        const FinanceExpensesOverviewView(),
+                        FinanceExpensesOverviewView(
+                          expenses: expenses,
+                          onPaid: (value) {},
+                          onCancel: (value) {},
+                        ),
                         InvoiceTableWidget(
                           invoices: invoices,
                           onPaid: (invoice) {

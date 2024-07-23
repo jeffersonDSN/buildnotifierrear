@@ -412,6 +412,11 @@ class EmployeeEditFormView extends IView {
               Padding(
                 padding: const EdgeInsets.all(Sizes.size8),
                 child: FilledButton.icon(
+                  style: const ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(
+                      AppColor.success,
+                    ),
+                  ),
                   icon: const Icon(
                     Icons.check,
                   ),

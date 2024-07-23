@@ -20,7 +20,8 @@ ExpenseItem _$ExpenseItemFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ExpenseItem {
-  String get title => throw _privateConstructorUsedError;
+  String get productService => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   String get timeCardId => throw _privateConstructorUsedError;
   String get expenseId => throw _privateConstructorUsedError;
   double get qtyHrs => throw _privateConstructorUsedError;
@@ -40,7 +41,8 @@ abstract class $ExpenseItemCopyWith<$Res> {
       _$ExpenseItemCopyWithImpl<$Res, ExpenseItem>;
   @useResult
   $Res call(
-      {String title,
+      {String productService,
+      String description,
       String timeCardId,
       String expenseId,
       double qtyHrs,
@@ -61,7 +63,8 @@ class _$ExpenseItemCopyWithImpl<$Res, $Val extends ExpenseItem>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = null,
+    Object? productService = null,
+    Object? description = null,
     Object? timeCardId = null,
     Object? expenseId = null,
     Object? qtyHrs = null,
@@ -69,9 +72,13 @@ class _$ExpenseItemCopyWithImpl<$Res, $Val extends ExpenseItem>
     Object? amount = null,
   }) {
     return _then(_value.copyWith(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
+      productService: null == productService
+          ? _value.productService
+          : productService // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       timeCardId: null == timeCardId
           ? _value.timeCardId
@@ -106,7 +113,8 @@ abstract class _$$ExpenseItemImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String title,
+      {String productService,
+      String description,
       String timeCardId,
       String expenseId,
       double qtyHrs,
@@ -125,7 +133,8 @@ class __$$ExpenseItemImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = null,
+    Object? productService = null,
+    Object? description = null,
     Object? timeCardId = null,
     Object? expenseId = null,
     Object? qtyHrs = null,
@@ -133,9 +142,13 @@ class __$$ExpenseItemImplCopyWithImpl<$Res>
     Object? amount = null,
   }) {
     return _then(_$ExpenseItemImpl(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
+      productService: null == productService
+          ? _value.productService
+          : productService // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       timeCardId: null == timeCardId
           ? _value.timeCardId
@@ -165,7 +178,8 @@ class __$$ExpenseItemImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ExpenseItemImpl implements _ExpenseItem {
   _$ExpenseItemImpl(
-      {this.title = '',
+      {this.productService = '',
+      this.description = '',
       this.timeCardId = '',
       this.expenseId = '',
       this.qtyHrs = 0,
@@ -177,7 +191,10 @@ class _$ExpenseItemImpl implements _ExpenseItem {
 
   @override
   @JsonKey()
-  final String title;
+  final String productService;
+  @override
+  @JsonKey()
+  final String description;
   @override
   @JsonKey()
   final String timeCardId;
@@ -196,7 +213,7 @@ class _$ExpenseItemImpl implements _ExpenseItem {
 
   @override
   String toString() {
-    return 'ExpenseItem(title: $title, timeCardId: $timeCardId, expenseId: $expenseId, qtyHrs: $qtyHrs, rate: $rate, amount: $amount)';
+    return 'ExpenseItem(productService: $productService, description: $description, timeCardId: $timeCardId, expenseId: $expenseId, qtyHrs: $qtyHrs, rate: $rate, amount: $amount)';
   }
 
   @override
@@ -204,7 +221,10 @@ class _$ExpenseItemImpl implements _ExpenseItem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ExpenseItemImpl &&
-            (identical(other.title, title) || other.title == title) &&
+            (identical(other.productService, productService) ||
+                other.productService == productService) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.timeCardId, timeCardId) ||
                 other.timeCardId == timeCardId) &&
             (identical(other.expenseId, expenseId) ||
@@ -216,8 +236,8 @@ class _$ExpenseItemImpl implements _ExpenseItem {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, title, timeCardId, expenseId, qtyHrs, rate, amount);
+  int get hashCode => Object.hash(runtimeType, productService, description,
+      timeCardId, expenseId, qtyHrs, rate, amount);
 
   @JsonKey(ignore: true)
   @override
@@ -235,7 +255,8 @@ class _$ExpenseItemImpl implements _ExpenseItem {
 
 abstract class _ExpenseItem implements ExpenseItem {
   factory _ExpenseItem(
-      {final String title,
+      {final String productService,
+      final String description,
       final String timeCardId,
       final String expenseId,
       final double qtyHrs,
@@ -246,7 +267,9 @@ abstract class _ExpenseItem implements ExpenseItem {
       _$ExpenseItemImpl.fromJson;
 
   @override
-  String get title;
+  String get productService;
+  @override
+  String get description;
   @override
   String get timeCardId;
   @override
@@ -275,7 +298,7 @@ mixin _$Expense {
   DateTime? get dueDate => throw _privateConstructorUsedError;
   DateTime? get paymentDate => throw _privateConstructorUsedError;
   dynamic get categoryId => throw _privateConstructorUsedError;
-  dynamic get categoryName => throw _privateConstructorUsedError;
+  dynamic get categoryTitle => throw _privateConstructorUsedError;
   String get projectId => throw _privateConstructorUsedError;
   String get taskId => throw _privateConstructorUsedError;
   String get employeeId => throw _privateConstructorUsedError;
@@ -305,7 +328,7 @@ abstract class $ExpenseCopyWith<$Res> {
       DateTime? dueDate,
       DateTime? paymentDate,
       dynamic categoryId,
-      dynamic categoryName,
+      dynamic categoryTitle,
       String projectId,
       String taskId,
       String employeeId,
@@ -336,7 +359,7 @@ class _$ExpenseCopyWithImpl<$Res, $Val extends Expense>
     Object? dueDate = freezed,
     Object? paymentDate = freezed,
     Object? categoryId = freezed,
-    Object? categoryName = freezed,
+    Object? categoryTitle = freezed,
     Object? projectId = null,
     Object? taskId = null,
     Object? employeeId = null,
@@ -372,9 +395,9 @@ class _$ExpenseCopyWithImpl<$Res, $Val extends Expense>
           ? _value.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      categoryName: freezed == categoryName
-          ? _value.categoryName
-          : categoryName // ignore: cast_nullable_to_non_nullable
+      categoryTitle: freezed == categoryTitle
+          ? _value.categoryTitle
+          : categoryTitle // ignore: cast_nullable_to_non_nullable
               as dynamic,
       projectId: null == projectId
           ? _value.projectId
@@ -430,7 +453,7 @@ abstract class _$$ExpenseImplCopyWith<$Res> implements $ExpenseCopyWith<$Res> {
       DateTime? dueDate,
       DateTime? paymentDate,
       dynamic categoryId,
-      dynamic categoryName,
+      dynamic categoryTitle,
       String projectId,
       String taskId,
       String employeeId,
@@ -459,7 +482,7 @@ class __$$ExpenseImplCopyWithImpl<$Res>
     Object? dueDate = freezed,
     Object? paymentDate = freezed,
     Object? categoryId = freezed,
-    Object? categoryName = freezed,
+    Object? categoryTitle = freezed,
     Object? projectId = null,
     Object? taskId = null,
     Object? employeeId = null,
@@ -492,8 +515,8 @@ class __$$ExpenseImplCopyWithImpl<$Res>
           : paymentDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       categoryId: freezed == categoryId ? _value.categoryId! : categoryId,
-      categoryName:
-          freezed == categoryName ? _value.categoryName! : categoryName,
+      categoryTitle:
+          freezed == categoryTitle ? _value.categoryTitle! : categoryTitle,
       projectId: null == projectId
           ? _value.projectId
           : projectId // ignore: cast_nullable_to_non_nullable
@@ -544,7 +567,7 @@ class _$ExpenseImpl implements _Expense {
       this.dueDate,
       this.paymentDate,
       this.categoryId = '',
-      this.categoryName = '',
+      this.categoryTitle = '',
       this.projectId = '',
       this.taskId = '',
       this.employeeId = '',
@@ -576,7 +599,7 @@ class _$ExpenseImpl implements _Expense {
   final dynamic categoryId;
   @override
   @JsonKey()
-  final dynamic categoryName;
+  final dynamic categoryTitle;
   @override
   @JsonKey()
   final String projectId;
@@ -614,7 +637,7 @@ class _$ExpenseImpl implements _Expense {
 
   @override
   String toString() {
-    return 'Expense(id: $id, description: $description, issueDate: $issueDate, dueDate: $dueDate, paymentDate: $paymentDate, categoryId: $categoryId, categoryName: $categoryName, projectId: $projectId, taskId: $taskId, employeeId: $employeeId, creditCardId: $creditCardId, paymentMethod: $paymentMethod, paymentMethodCardId: $paymentMethodCardId, paymentMethodCardNumber: $paymentMethodCardNumber, status: $status, items: $items)';
+    return 'Expense(id: $id, description: $description, issueDate: $issueDate, dueDate: $dueDate, paymentDate: $paymentDate, categoryId: $categoryId, categoryTitle: $categoryTitle, projectId: $projectId, taskId: $taskId, employeeId: $employeeId, creditCardId: $creditCardId, paymentMethod: $paymentMethod, paymentMethodCardId: $paymentMethodCardId, paymentMethodCardNumber: $paymentMethodCardNumber, status: $status, items: $items)';
   }
 
   @override
@@ -633,7 +656,7 @@ class _$ExpenseImpl implements _Expense {
             const DeepCollectionEquality()
                 .equals(other.categoryId, categoryId) &&
             const DeepCollectionEquality()
-                .equals(other.categoryName, categoryName) &&
+                .equals(other.categoryTitle, categoryTitle) &&
             (identical(other.projectId, projectId) ||
                 other.projectId == projectId) &&
             (identical(other.taskId, taskId) || other.taskId == taskId) &&
@@ -662,7 +685,7 @@ class _$ExpenseImpl implements _Expense {
       dueDate,
       paymentDate,
       const DeepCollectionEquality().hash(categoryId),
-      const DeepCollectionEquality().hash(categoryName),
+      const DeepCollectionEquality().hash(categoryTitle),
       projectId,
       taskId,
       employeeId,
@@ -695,7 +718,7 @@ abstract class _Expense implements Expense {
       final DateTime? dueDate,
       final DateTime? paymentDate,
       final dynamic categoryId,
-      final dynamic categoryName,
+      final dynamic categoryTitle,
       final String projectId,
       final String taskId,
       final String employeeId,
@@ -721,7 +744,7 @@ abstract class _Expense implements Expense {
   @override
   dynamic get categoryId;
   @override
-  dynamic get categoryName;
+  dynamic get categoryTitle;
   @override
   String get projectId;
   @override

@@ -1,3 +1,4 @@
+import 'package:buildnotifierrear/domain/core/utils.dart';
 import 'package:buildnotifierrear/domain/entities/enums/project_status_enums.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
@@ -26,15 +27,6 @@ class ProjectEditFormView extends IView {
 
   @override
   Widget build(BuildContext context) {
-    Future<DateTime?> getDate() async {
-      return showDatePicker(
-        context: context,
-        firstDate: DateTime.utc(2010, 10, 16),
-        lastDate: DateTime.utc(2030, 3, 14),
-        initialDate: DateTime.now(),
-      );
-    }
-
     var bloc = BlocProvider.of<ProjectEditBloc>(context);
     var state = bloc.state.asLoaded;
 
@@ -131,7 +123,7 @@ class ProjectEditFormView extends IView {
                             label: context.tr.startDate,
                             value: state.project.startDate,
                             onPressedChangeDate: () async {
-                              var date = await getDate();
+                              var date = await getDate(context);
 
                               if (date != null) {
                                 bloc.add(
@@ -160,7 +152,7 @@ class ProjectEditFormView extends IView {
                             label: context.tr.expectedEndDate,
                             value: state.project.expectedCompletionDate,
                             onPressedChangeDate: () async {
-                              var date = await getDate();
+                              var date = await getDate(context);
 
                               if (date != null) {
                                 bloc.add(
@@ -416,6 +408,11 @@ class ProjectEditFormView extends IView {
               Padding(
                 padding: const EdgeInsets.all(Sizes.size8),
                 child: FilledButton.icon(
+                  style: const ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(
+                      AppColor.success,
+                    ),
+                  ),
                   icon: const Icon(
                     Icons.check,
                   ),

@@ -44,4 +44,6 @@ extension OnPaymentMethodEnums on PaymentMethodEnums {
         return AppColor.success;
     }
   }
+
+  bool get isCreditCard => this == PaymentMethodEnums.creditCard;
 }

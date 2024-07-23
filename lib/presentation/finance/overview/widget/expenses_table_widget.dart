@@ -1,4 +1,4 @@
-import 'package:buildnotifierrear/domain/core/format_utils.dart';
+import 'package:buildnotifierrear/domain/core/utils.dart';
 import 'package:buildnotifierrear/domain/entities/expense/expense.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/domain/entities/enums/expense_status_enums.dart';
@@ -36,7 +36,7 @@ class ExpensesTableWidget extends StatelessWidget {
           ),
           columns: [
             DataColumn2(
-              size: ColumnSize.M,
+              fixedWidth: Sizes.size124,
               label: Text(
                 context.tr.dueDate,
               ),
@@ -45,9 +45,9 @@ class ExpensesTableWidget extends StatelessWidget {
               fixedWidth: Sizes.size200,
               label: Text(context.tr.description),
             ),
-            const DataColumn2(
-              size: ColumnSize.M,
-              label: Text('Method'),
+            DataColumn2(
+              fixedWidth: Sizes.size136,
+              label: Text(context.tr.method),
             ),
             DataColumn2(
               size: ColumnSize.M,
@@ -61,7 +61,6 @@ class ExpensesTableWidget extends StatelessWidget {
             ),
             DataColumn2(
               fixedWidth: Sizes.size152,
-              numeric: true,
               label: Text(context.tr.status),
             ),
             DataColumn2(
@@ -92,8 +91,11 @@ class ExpensesTableWidget extends StatelessWidget {
                 ),
                 DataCell(
                   Text(
-                    0.toStringAsFixed(2),
+                    expense.total.toStringAsFixed(2),
                   ),
+                ),
+                DataCell(
+                  Container(),
                 ),
                 DataCell(
                   Container(
@@ -166,24 +168,24 @@ class ExpensesTableWidget extends StatelessWidget {
                               borderRadius: BorderRadius.circular(
                                 Sizes.size4,
                               ),
-                              color: AppColor.orange,
+                              color: AppColor.primaryColorSwatch,
                             ),
-                            child: const Padding(
-                              padding: EdgeInsets.all(
+                            child: Padding(
+                              padding: const EdgeInsets.all(
                                 Sizes.size8,
                               ),
                               child: Row(
                                 children: [
                                   Expanded(
                                     child: Text(
-                                      'Add attachment',
-                                      style: TextStyle(
+                                      context.tr.addAttachment,
+                                      style: const TextStyle(
                                         color: AppColor.lightColor,
                                       ),
                                     ),
                                   ),
-                                  Icon(
-                                    Icons.file_download_outlined,
+                                  const Icon(
+                                    Icons.attach_file,
                                     color: AppColor.lightColor,
                                   ),
                                 ],

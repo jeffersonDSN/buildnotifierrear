@@ -1,3 +1,4 @@
+import 'package:buildnotifierrear/domain/core/utils.dart';
 import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/domain/entities/enums/task_priority_enums.dart';
 import 'package:buildnotifierrear/domain/entities/enums/task_status_enums.dart';
@@ -26,15 +27,6 @@ class TaskEditFormView extends IView {
 
   @override
   Widget build(BuildContext context) {
-    Future<DateTime?> getDate() async {
-      return showDatePicker(
-        context: context,
-        firstDate: DateTime.utc(2010, 10, 16),
-        lastDate: DateTime.utc(2030, 3, 14),
-        initialDate: DateTime.now(),
-      );
-    }
-
     var bloc = BlocProvider.of<TaskEditBloc>(context);
     var state = bloc.state.asLoaded;
 
@@ -128,7 +120,7 @@ class TaskEditFormView extends IView {
                             label: context.tr.startDate,
                             value: state.task.startDate,
                             onPressedChangeDate: () async {
-                              var date = await getDate();
+                              var date = await getDate(context);
 
                               if (date != null) {
                                 bloc.add(
@@ -157,7 +149,7 @@ class TaskEditFormView extends IView {
                             label: context.tr.expectedEndDate,
                             value: state.task.expectedEndDate,
                             onPressedChangeDate: () async {
-                              var date = await getDate();
+                              var date = await getDate(context);
 
                               if (date != null) {
                                 bloc.add(
@@ -421,6 +413,11 @@ class TaskEditFormView extends IView {
               Padding(
                 padding: const EdgeInsets.all(Sizes.size8),
                 child: FilledButton.icon(
+                  style: const ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(
+                      AppColor.success,
+                    ),
+                  ),
                   icon: const Icon(
                     Icons.check,
                   ),

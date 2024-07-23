@@ -546,4 +546,25 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get expenseSettings => 'Configuraciones de gastos';
+
+  @override
+  String get expense => 'Gasto';
+
+  @override
+  String get overview => 'Visión General';
+
+  @override
+  String get newExpenses => 'Nuevos Gastos';
+
+  @override
+  String get newInvoices => 'Nuevas Facturas';
+
+  @override
+  String get linkExpenseToProject => 'Vincular Despesa ao Projeto';
+
+  @override
+  String get paymentMethod => 'Método de Pago';
+
+  @override
+  String get method => 'Método';
 }

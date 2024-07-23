@@ -545,4 +545,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get expenseSettings => 'Expense settings';
+
+  @override
+  String get expense => 'Expense';
+
+  @override
+  String get overview => 'Overview';
+
+  @override
+  String get newExpenses => 'New expenses';
+
+  @override
+  String get newInvoices => 'New Invoices';
+
+  @override
+  String get linkExpenseToProject => 'Link Expense to Project';
+
+  @override
+  String get paymentMethod => 'Payment method';
+
+  @override
+  String get method => 'Method';
 }

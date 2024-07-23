@@ -1,6 +1,8 @@
 import 'package:bloc/bloc.dart';
+import 'package:buildnotifierrear/domain/controllers/expenses_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/invoices_controller.dart';
 import 'package:buildnotifierrear/domain/entities/enums/invoice_status_enums.dart';
+import 'package:buildnotifierrear/domain/entities/expense/expense.dart';
 import 'package:buildnotifierrear/domain/entities/invoice/invoice.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -12,6 +14,7 @@ class FinanceOverviewBloc
     extends Bloc<FinanceOverviewEvent, FinanceOverviewState> {
   FinanceOverviewBloc({
     required InvoicesController invoicesController,
+    required ExpensesController expensesController,
   }) : super(const FinanceOverviewState.init()) {
     on<FinanceOverviewEvent>((event, emit) async {
       await event.when(
@@ -20,10 +23,16 @@ class FinanceOverviewBloc
             const FinanceOverviewState.loading(),
           );
 
-          var invoices = await invoicesController.getAll();
+          var result = await Future.wait([
+            invoicesController.getAll(),
+            expensesController.getAll(),
+          ]);
 
           emit(
-            FinanceOverviewState.loaded(invoices: invoices),
+            FinanceOverviewState.loaded(
+              invoices: result[0] as List<Invoice>,
+              expense: result[1] as List<Expense>,
+            ),
           );
         },
         changeInvoiceStatus: (invoiceId, status) async {

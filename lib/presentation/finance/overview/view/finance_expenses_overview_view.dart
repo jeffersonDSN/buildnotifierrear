@@ -1,13 +1,23 @@
+import 'package:buildnotifierrear/domain/entities/expense/expense.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
-import 'package:buildnotifierrear/presentation/finance/expense/card_overview/finance_expense_card_overview.dart';
-import 'package:buildnotifierrear/presentation/finance/expense/category_overview/finance_expense_category_overview.dart';
+import 'package:buildnotifierrear/presentation/finance/expense/card/card_overview/finance_expense_card_overview.dart';
+import 'package:buildnotifierrear/presentation/finance/expense/category/category_overview/finance_expense_category_overview.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/expenses_table_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 
 class FinanceExpensesOverviewView extends StatelessWidget {
-  const FinanceExpensesOverviewView({super.key});
+  final List<Expense> expenses;
+  final ValueChanged<Expense> onPaid;
+  final ValueChanged<Expense> onCancel;
+
+  const FinanceExpensesOverviewView({
+    super.key,
+    required this.expenses,
+    required this.onPaid,
+    required this.onCancel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -77,9 +87,9 @@ class FinanceExpensesOverviewView extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
                   ExpensesTableWidget(
-                    expenses: const [],
-                    onPaid: (value) {},
-                    onCancel: (value) {},
+                    expenses: expenses,
+                    onPaid: onPaid,
+                    onCancel: onCancel,
                   ),
                   const Row(
                     children: [

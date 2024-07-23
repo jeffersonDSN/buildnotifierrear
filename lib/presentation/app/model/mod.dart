@@ -6,6 +6,7 @@ import 'package:buildnotifierrear/presentation/chat/overview/chat_overview.dart'
 import 'package:buildnotifierrear/presentation/clients/edit/client_edit.dart';
 import 'package:buildnotifierrear/presentation/clients/overview/clients_overview.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
+import 'package:buildnotifierrear/presentation/finance/expense/edit/finance_expense_edit.dart';
 import 'package:buildnotifierrear/presentation/finance/invoice/edit/finance_invoice_edit.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/finance_overview.dart';
 import 'package:buildnotifierrear/presentation/home/overview/home_overview.dart';
@@ -60,6 +61,10 @@ class Mod with _$Mod {
   const factory Mod.financeInvoice({
     required ViewType type,
   }) = ModFinanceInvoice;
+
+  const factory Mod.financeExpenses({
+    required ViewType type,
+  }) = ModFinanceExpenses;
 
   const factory Mod.settings() = ModSettings;
 }
@@ -131,6 +136,13 @@ extension OnModel on Mod {
           crudType: CrudType.update(id: id),
         ),
       ),
+      financeExpenses: (viewType) => viewType.when(
+        overview: () => const FinanceOverview(),
+        create: () => const FinanceExpenseEdit(),
+        update: (id) => FinanceExpenseEdit(
+          crudType: CrudType.update(id: id),
+        ),
+      ),
       attachment: (fileItem) => AttachmentFile(
         fileItem: fileItem,
       ),
@@ -177,13 +189,16 @@ extension OnModel on Mod {
         update: (id) => context.tr.chat,
       ),
       finance: () => context.tr.finance,
-
       financeInvoice: (viewType) => viewType.when(
         overview: () => context.tr.finance,
         create: () => '${context.tr.finance} / ${context.tr.invoice}',
         update: (id) => '${context.tr.finance} / ${context.tr.invoice}',
       ),
-      //TO DO
+      financeExpenses: (viewType) => viewType.when(
+        overview: () => context.tr.finance,
+        create: () => '${context.tr.finance} / ${context.tr.expense}',
+        update: (id) => '${context.tr.finance} / ${context.tr.expense}',
+      ),
       attachment: (fileItemId) => '',
       settings: () => context.tr.settings,
     );

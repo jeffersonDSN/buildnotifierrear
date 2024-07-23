@@ -10,7 +10,8 @@ part 'expense.g.dart';
 @freezed
 class ExpenseItem with _$ExpenseItem {
   factory ExpenseItem({
-    @Default('') String title,
+    @Default('') String productService,
+    @Default('') String description,
     @Default('') String timeCardId,
     @Default('') String expenseId,
     @Default(0) double qtyHrs,
@@ -37,7 +38,7 @@ class Expense with _$Expense {
     DateTime? dueDate,
     DateTime? paymentDate,
     @Default('') categoryId,
-    @Default('') categoryName,
+    @Default('') categoryTitle,
     @Default('') String projectId,
     @Default('') String taskId,
     @Default('') String employeeId,
@@ -55,4 +56,12 @@ class Expense with _$Expense {
 
   factory Expense.fromJson(Map<String, Object?> json) =>
       _$ExpenseFromJson(json);
+}
+
+extension OnExpense on Expense {
+  double get total {
+    return items.isNotEmpty
+        ? items.map((item) => item.amount).reduce((a, b) => a + b)
+        : 0;
+  }
 }

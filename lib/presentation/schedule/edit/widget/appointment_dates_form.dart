@@ -1,3 +1,4 @@
+import 'package:buildnotifierrear/domain/core/utils.dart';
 import 'package:buildnotifierrear/domain/entities/appointment/appointment.dart';
 import 'package:buildnotifierrear/presentation/schedule/edit/bloc/schedule_edit_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_date_input_widget.dart';
@@ -36,15 +37,6 @@ class AppointmentDatesForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future<DateTime?> getDate() async {
-      return showDatePicker(
-        context: context,
-        firstDate: DateTime.utc(2010, 10, 16),
-        lastDate: DateTime.utc(2030, 3, 14),
-        initialDate: DateTime.now(),
-      );
-    }
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -86,7 +78,7 @@ class AppointmentDatesForm extends StatelessWidget {
                             value: appointment.startDateTime,
                             enabled: appointment == selectedAppointment,
                             onPressedChangeDate: () async {
-                              var date = await getDate();
+                              var date = await getDate(context);
 
                               if (date != null) {
                                 onChangeDate.call(date);
@@ -156,7 +148,7 @@ class AppointmentDatesForm extends StatelessWidget {
                     TextButton(
                       child: const Text('Add a day'),
                       onPressed: () async {
-                        var selectedDay = await getDate();
+                        var selectedDay = await getDate(context);
 
                         if (selectedDay != null) {
                           onPressedAddAdd.call(selectedDay);

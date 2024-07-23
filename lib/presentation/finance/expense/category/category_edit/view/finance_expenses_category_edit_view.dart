@@ -1,7 +1,7 @@
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
-import 'package:buildnotifierrear/presentation/finance/expense/category_edit/bloc/finance_expense_category_edit_bloc.dart';
+import 'package:buildnotifierrear/presentation/finance/expense/category/category_edit/bloc/finance_expense_category_edit_bloc.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';

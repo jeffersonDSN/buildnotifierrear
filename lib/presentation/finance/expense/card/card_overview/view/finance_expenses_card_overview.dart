@@ -1,20 +1,21 @@
-import 'package:buildnotifierrear/domain/entities/expense_category/expense_category.dart';
+import 'package:buildnotifierrear/domain/entities/card/payment_card.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
-import 'package:buildnotifierrear/presentation/finance/expense/category_edit/finance_expense_category_edit.dart';
-import 'package:buildnotifierrear/presentation/finance/expense/category_overview/bloc/finance_expense_category_overview_bloc.dart';
+import 'package:buildnotifierrear/presentation/finance/expense/card/card_edit/finance_expense_card_edit.dart';
+import 'package:buildnotifierrear/presentation/finance/expense/card/card_overview/bloc/finance_expense_card_overview_bloc.dart';
+import 'package:buildnotifierrear/presentation/finance/expense/card/widget/credit_card_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class FinanceExpensesCategoryOverview extends StatelessWidget {
-  const FinanceExpensesCategoryOverview({super.key});
+class FinanceExpensesCardOverview extends StatelessWidget {
+  const FinanceExpensesCardOverview({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var bloc = BlocProvider.of<FinanceExpenseCategoryOverviewBloc>(context);
+    var bloc = BlocProvider.of<FinanceExpenseCardOverviewBloc>(context);
 
     bloc.add(
-      const FinanceExpenseCategoryOverviewEvent.load(),
+      const FinanceExpenseCardOverviewEvent.load(),
     );
 
     return Expanded(
@@ -30,7 +31,7 @@ class FinanceExpensesCategoryOverview extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      context.tr.categories,
+                      context.tr.creditCard,
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -39,20 +40,20 @@ class FinanceExpensesCategoryOverview extends StatelessWidget {
                     FilledButton.icon(
                       icon: const Icon(Icons.add),
                       label: Text(
-                        context.tr.newCategory,
+                        context.tr.newCreditCard,
                       ),
                       onPressed: () async {
-                        var category = await showDialog<ExpenseCategory?>(
+                        var paymentCard = await showDialog<PaymentCard?>(
                           context: context,
                           builder: (context) {
-                            return const FinanceExpenseCategorydEdit();
+                            return const FinanceExpenseCardEdit();
                           },
                         );
 
-                        if (category != null) {
+                        if (paymentCard != null) {
                           bloc.add(
-                            FinanceExpenseCategoryOverviewEvent.addCategory(
-                              category: category,
+                            FinanceExpenseCardOverviewEvent.addCard(
+                              paymentCard: paymentCard,
                             ),
                           );
                         }
@@ -62,8 +63,8 @@ class FinanceExpensesCategoryOverview extends StatelessWidget {
                 ),
                 const Divider(),
                 Expanded(
-                  child: BlocBuilder<FinanceExpenseCategoryOverviewBloc,
-                      FinanceExpenseCategoryOverviewState>(
+                  child: BlocBuilder<FinanceExpenseCardOverviewBloc,
+                      FinanceExpenseCardOverviewState>(
                     bloc: bloc,
                     builder: (context, state) {
                       return state.when(
@@ -73,18 +74,18 @@ class FinanceExpensesCategoryOverview extends StatelessWidget {
                             child: CircularProgressIndicator(),
                           );
                         },
-                        loaded: (categories) {
-                          return ListView.separated(
-                            itemCount: categories.length,
+                        loaded: (cards) {
+                          return ListView.builder(
+                            itemCount: cards.length,
                             itemBuilder: (context, index) {
-                              var category = categories[index];
+                              var card = cards[index];
 
-                              return ListTile(
-                                title: Text(category.title),
+                              return CreditCardWidget(
+                                bankName: card.bankName,
+                                cardHolderName: card.name,
+                                cardNumber: '**** **** **** ${card.number}',
+                                expirationDate: card.dueDay.toString(),
                               );
-                            },
-                            separatorBuilder: (context, index) {
-                              return const Divider();
                             },
                           );
                         },

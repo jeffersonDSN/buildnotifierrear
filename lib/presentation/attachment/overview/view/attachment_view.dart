@@ -124,6 +124,11 @@ class AttachmentView extends IView {
                             },
                           ),
                           FilledButton.icon(
+                            style: const ButtonStyle(
+                              backgroundColor: WidgetStatePropertyAll(
+                                AppColor.success,
+                              ),
+                            ),
                             icon: const Icon(
                               Icons.check,
                             ),
@@ -191,6 +196,11 @@ class AttachmentView extends IView {
                             },
                           ),
                           FilledButton.icon(
+                            style: const ButtonStyle(
+                              backgroundColor: WidgetStatePropertyAll(
+                                AppColor.success,
+                              ),
+                            ),
                             icon: const Icon(
                               Icons.check,
                             ),

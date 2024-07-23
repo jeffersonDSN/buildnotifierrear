@@ -1,4 +1,6 @@
+import 'package:buildnotifierrear/domain/controllers/expenses_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/invoices_controller.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/expenses_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/invoices_firestore_repository.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
@@ -18,6 +20,11 @@ class FinanceOverview extends IView {
       create: (context) => FinanceOverviewBloc(
         invoicesController: InvoicesController(
           repository: InvoicesFireStoreRepository(
+            tenantId: tenantId,
+          ),
+        ),
+        expensesController: ExpensesController(
+          repository: ExpensesFirestoreRepository(
             tenantId: tenantId,
           ),
         ),
