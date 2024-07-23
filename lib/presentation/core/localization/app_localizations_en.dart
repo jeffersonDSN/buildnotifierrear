@@ -556,14 +556,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get newExpenses => 'New expenses';
 
   @override
-  String get newInvoices => 'New Invoices';
+  String get newInvoices => 'New invoices';
 
   @override
-  String get linkExpenseToProject => 'Link Expense to Project';
+  String get linkExpenseToProject => 'Link expense to project';
 
   @override
   String get paymentMethod => 'Payment method';
 
   @override
   String get method => 'Method';
+
+  @override
+  String get unlinkExpenseFromProject => 'Unlink expense from project';
+
+  @override
+  String get approve => 'Approve';
 }

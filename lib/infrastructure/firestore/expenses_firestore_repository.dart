@@ -6,13 +6,16 @@ import 'package:buildnotifierrear/infrastructure/firestore/counters_firestore_re
 import 'package:buildnotifierrear/infrastructure/firestore/tenant_firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class ExpensesFirestoreRepository extends TenantFirestoreRepository
     implements AbsIExpensesRepository {
   late CountersFireStoreRepository countersRepository;
+  final Reference storage;
 
   ExpensesFirestoreRepository({required String tenantId})
-      : super(collectionName: 'expenses', tenantId: tenantId) {
+      : storage = FirebaseStorage.instance.ref('tenant/$tenantId/expenses'),
+        super(collectionName: 'expenses', tenantId: tenantId) {
     countersRepository = CountersFireStoreRepository(tenantId: tenantId);
   }
 
@@ -63,9 +66,11 @@ class ExpensesFirestoreRepository extends TenantFirestoreRepository
       'dueDate': value.dueDate,
       'paymentDate': value.paymentDate,
       'categoryId': value.categoryId,
-      'categoryName': value.categoryTitle,
+      'categoryTitle': value.categoryTitle,
       'projectId': value.projectId,
+      'projectName': value.projectName,
       'taskId': value.taskId,
+      'taskTitle': value.taskTitle,
       'employeeId': value.employeeId,
       'creditCardId': value.creditCardId,
       'paymentMethod': value.paymentMethod.index,
@@ -73,9 +78,22 @@ class ExpensesFirestoreRepository extends TenantFirestoreRepository
       'paymentMethodCardNumber': value.paymentMethodCardNumber,
       'status': value.status.index,
       'items': value.items.toJson(),
+      'attachments': value.attachments.toJson(),
     };
 
     var doc = await collection.add(expense);
+
+    if (value.attachments.isNotEmpty) {
+      for (var attachment in value.attachments) {
+        if (attachment.data != null) {
+          await storage
+              .child(doc.id)
+              .child(attachment.name)
+              .putData(attachment.data!);
+        }
+      }
+    }
+
     return right(doc.id);
   }
 
@@ -87,9 +105,11 @@ class ExpensesFirestoreRepository extends TenantFirestoreRepository
       'dueDate': value.dueDate,
       'paymentDate': value.paymentDate,
       'categoryId': value.categoryId,
-      'categoryName': value.categoryTitle,
+      'categoryTitle': value.categoryTitle,
       'projectId': value.projectId,
+      'projectName': value.projectName,
       'taskId': value.taskId,
+      'taskTitle': value.taskTitle,
       'employeeId': value.employeeId,
       'creditCardId': value.creditCardId,
       'paymentMethod': value.paymentMethod.index,
@@ -97,9 +117,22 @@ class ExpensesFirestoreRepository extends TenantFirestoreRepository
       'paymentMethodCardNumber': value.paymentMethodCardNumber,
       'status': value.status.index,
       'items': value.items.toJson(),
+      'attachments': value.attachments.toJson(),
     };
 
     await collection.doc(value.id).update(expense);
+
+    if (value.attachments.isNotEmpty) {
+      for (var attachment in value.attachments) {
+        if (attachment.data != null) {
+          await storage
+              .child(value.id)
+              .child(attachment.name)
+              .putData(attachment.data!);
+        }
+      }
+    }
+
     return right(true);
   }
 

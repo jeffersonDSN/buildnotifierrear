@@ -27,6 +27,10 @@ mixin _$FinanceExpenseEditEvent {
     required TResult Function(String id, String number)
         changePaymentMethodCreditCard,
     required TResult Function(ExpenseItem item) addExpenseItem,
+    required TResult Function(String projectId, String projectName,
+            String taskId, String taskTitle)
+        linkProject,
+    required TResult Function(Attachment attachment) addAttachment,
     required TResult Function(VoidCallback callBack) save,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,6 +43,10 @@ mixin _$FinanceExpenseEditEvent {
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
+    TResult? Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult? Function(Attachment attachment)? addAttachment,
     TResult? Function(VoidCallback callBack)? save,
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +59,10 @@ mixin _$FinanceExpenseEditEvent {
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
+    TResult Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult Function(Attachment attachment)? addAttachment,
     TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) =>
@@ -71,6 +83,10 @@ mixin _$FinanceExpenseEditEvent {
         changePaymentMethodCreditCard,
     required TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)
         addExpenseItem,
+    required TResult Function(FinanceExpenseEditEventChangeLinkProject value)
+        linkProject,
+    required TResult Function(FinanceExpenseEditEventChangeAddAttachment value)
+        addAttachment,
     required TResult Function(FinanceExpenseEditEventChangeSave value) save,
   }) =>
       throw _privateConstructorUsedError;
@@ -90,6 +106,10 @@ mixin _$FinanceExpenseEditEvent {
         changePaymentMethodCreditCard,
     TResult? Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult? Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult? Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult? Function(FinanceExpenseEditEventChangeSave value)? save,
   }) =>
       throw _privateConstructorUsedError;
@@ -108,6 +128,10 @@ mixin _$FinanceExpenseEditEvent {
         changePaymentMethodCreditCard,
     TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult Function(FinanceExpenseEditEventChangeSave value)? save,
     required TResult orElse(),
   }) =>
@@ -221,6 +245,10 @@ class _$FinanceExpenseEditEventLoadImpl implements FinanceExpenseEditEventLoad {
     required TResult Function(String id, String number)
         changePaymentMethodCreditCard,
     required TResult Function(ExpenseItem item) addExpenseItem,
+    required TResult Function(String projectId, String projectName,
+            String taskId, String taskTitle)
+        linkProject,
+    required TResult Function(Attachment attachment) addAttachment,
     required TResult Function(VoidCallback callBack) save,
   }) {
     return load(crudType);
@@ -236,6 +264,10 @@ class _$FinanceExpenseEditEventLoadImpl implements FinanceExpenseEditEventLoad {
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
+    TResult? Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult? Function(Attachment attachment)? addAttachment,
     TResult? Function(VoidCallback callBack)? save,
   }) {
     return load?.call(crudType);
@@ -251,6 +283,10 @@ class _$FinanceExpenseEditEventLoadImpl implements FinanceExpenseEditEventLoad {
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
+    TResult Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult Function(Attachment attachment)? addAttachment,
     TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
@@ -277,6 +313,10 @@ class _$FinanceExpenseEditEventLoadImpl implements FinanceExpenseEditEventLoad {
         changePaymentMethodCreditCard,
     required TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)
         addExpenseItem,
+    required TResult Function(FinanceExpenseEditEventChangeLinkProject value)
+        linkProject,
+    required TResult Function(FinanceExpenseEditEventChangeAddAttachment value)
+        addAttachment,
     required TResult Function(FinanceExpenseEditEventChangeSave value) save,
   }) {
     return load(this);
@@ -299,6 +339,10 @@ class _$FinanceExpenseEditEventLoadImpl implements FinanceExpenseEditEventLoad {
         changePaymentMethodCreditCard,
     TResult? Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult? Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult? Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult? Function(FinanceExpenseEditEventChangeSave value)? save,
   }) {
     return load?.call(this);
@@ -320,6 +364,10 @@ class _$FinanceExpenseEditEventLoadImpl implements FinanceExpenseEditEventLoad {
         changePaymentMethodCreditCard,
     TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult Function(FinanceExpenseEditEventChangeSave value)? save,
     required TResult orElse(),
   }) {
@@ -419,6 +467,10 @@ class _$FinanceExpenseEditEventChangeDueDateImpl
     required TResult Function(String id, String number)
         changePaymentMethodCreditCard,
     required TResult Function(ExpenseItem item) addExpenseItem,
+    required TResult Function(String projectId, String projectName,
+            String taskId, String taskTitle)
+        linkProject,
+    required TResult Function(Attachment attachment) addAttachment,
     required TResult Function(VoidCallback callBack) save,
   }) {
     return changeDueDate(dueDate);
@@ -434,6 +486,10 @@ class _$FinanceExpenseEditEventChangeDueDateImpl
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
+    TResult? Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult? Function(Attachment attachment)? addAttachment,
     TResult? Function(VoidCallback callBack)? save,
   }) {
     return changeDueDate?.call(dueDate);
@@ -449,6 +505,10 @@ class _$FinanceExpenseEditEventChangeDueDateImpl
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
+    TResult Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult Function(Attachment attachment)? addAttachment,
     TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
@@ -475,6 +535,10 @@ class _$FinanceExpenseEditEventChangeDueDateImpl
         changePaymentMethodCreditCard,
     required TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)
         addExpenseItem,
+    required TResult Function(FinanceExpenseEditEventChangeLinkProject value)
+        linkProject,
+    required TResult Function(FinanceExpenseEditEventChangeAddAttachment value)
+        addAttachment,
     required TResult Function(FinanceExpenseEditEventChangeSave value) save,
   }) {
     return changeDueDate(this);
@@ -497,6 +561,10 @@ class _$FinanceExpenseEditEventChangeDueDateImpl
         changePaymentMethodCreditCard,
     TResult? Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult? Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult? Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult? Function(FinanceExpenseEditEventChangeSave value)? save,
   }) {
     return changeDueDate?.call(this);
@@ -518,6 +586,10 @@ class _$FinanceExpenseEditEventChangeDueDateImpl
         changePaymentMethodCreditCard,
     TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult Function(FinanceExpenseEditEventChangeSave value)? save,
     required TResult orElse(),
   }) {
@@ -623,6 +695,10 @@ class _$FinanceExpenseEditEventChangeDescriptionImpl
     required TResult Function(String id, String number)
         changePaymentMethodCreditCard,
     required TResult Function(ExpenseItem item) addExpenseItem,
+    required TResult Function(String projectId, String projectName,
+            String taskId, String taskTitle)
+        linkProject,
+    required TResult Function(Attachment attachment) addAttachment,
     required TResult Function(VoidCallback callBack) save,
   }) {
     return changeDescription(description);
@@ -638,6 +714,10 @@ class _$FinanceExpenseEditEventChangeDescriptionImpl
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
+    TResult? Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult? Function(Attachment attachment)? addAttachment,
     TResult? Function(VoidCallback callBack)? save,
   }) {
     return changeDescription?.call(description);
@@ -653,6 +733,10 @@ class _$FinanceExpenseEditEventChangeDescriptionImpl
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
+    TResult Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult Function(Attachment attachment)? addAttachment,
     TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
@@ -679,6 +763,10 @@ class _$FinanceExpenseEditEventChangeDescriptionImpl
         changePaymentMethodCreditCard,
     required TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)
         addExpenseItem,
+    required TResult Function(FinanceExpenseEditEventChangeLinkProject value)
+        linkProject,
+    required TResult Function(FinanceExpenseEditEventChangeAddAttachment value)
+        addAttachment,
     required TResult Function(FinanceExpenseEditEventChangeSave value) save,
   }) {
     return changeDescription(this);
@@ -701,6 +789,10 @@ class _$FinanceExpenseEditEventChangeDescriptionImpl
         changePaymentMethodCreditCard,
     TResult? Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult? Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult? Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult? Function(FinanceExpenseEditEventChangeSave value)? save,
   }) {
     return changeDescription?.call(this);
@@ -722,6 +814,10 @@ class _$FinanceExpenseEditEventChangeDescriptionImpl
         changePaymentMethodCreditCard,
     TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult Function(FinanceExpenseEditEventChangeSave value)? save,
     required TResult orElse(),
   }) {
@@ -833,6 +929,10 @@ class _$FinanceExpenseEditEventChangeCategoryImpl
     required TResult Function(String id, String number)
         changePaymentMethodCreditCard,
     required TResult Function(ExpenseItem item) addExpenseItem,
+    required TResult Function(String projectId, String projectName,
+            String taskId, String taskTitle)
+        linkProject,
+    required TResult Function(Attachment attachment) addAttachment,
     required TResult Function(VoidCallback callBack) save,
   }) {
     return changeCategory(id, title);
@@ -848,6 +948,10 @@ class _$FinanceExpenseEditEventChangeCategoryImpl
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
+    TResult? Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult? Function(Attachment attachment)? addAttachment,
     TResult? Function(VoidCallback callBack)? save,
   }) {
     return changeCategory?.call(id, title);
@@ -863,6 +967,10 @@ class _$FinanceExpenseEditEventChangeCategoryImpl
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
+    TResult Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult Function(Attachment attachment)? addAttachment,
     TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
@@ -889,6 +997,10 @@ class _$FinanceExpenseEditEventChangeCategoryImpl
         changePaymentMethodCreditCard,
     required TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)
         addExpenseItem,
+    required TResult Function(FinanceExpenseEditEventChangeLinkProject value)
+        linkProject,
+    required TResult Function(FinanceExpenseEditEventChangeAddAttachment value)
+        addAttachment,
     required TResult Function(FinanceExpenseEditEventChangeSave value) save,
   }) {
     return changeCategory(this);
@@ -911,6 +1023,10 @@ class _$FinanceExpenseEditEventChangeCategoryImpl
         changePaymentMethodCreditCard,
     TResult? Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult? Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult? Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult? Function(FinanceExpenseEditEventChangeSave value)? save,
   }) {
     return changeCategory?.call(this);
@@ -932,6 +1048,10 @@ class _$FinanceExpenseEditEventChangeCategoryImpl
         changePaymentMethodCreditCard,
     TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult Function(FinanceExpenseEditEventChangeSave value)? save,
     required TResult orElse(),
   }) {
@@ -1040,6 +1160,10 @@ class _$FinanceExpenseEditEventChangePaymentMethodImpl
     required TResult Function(String id, String number)
         changePaymentMethodCreditCard,
     required TResult Function(ExpenseItem item) addExpenseItem,
+    required TResult Function(String projectId, String projectName,
+            String taskId, String taskTitle)
+        linkProject,
+    required TResult Function(Attachment attachment) addAttachment,
     required TResult Function(VoidCallback callBack) save,
   }) {
     return changePaymentMethod(paymentMethod);
@@ -1055,6 +1179,10 @@ class _$FinanceExpenseEditEventChangePaymentMethodImpl
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
+    TResult? Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult? Function(Attachment attachment)? addAttachment,
     TResult? Function(VoidCallback callBack)? save,
   }) {
     return changePaymentMethod?.call(paymentMethod);
@@ -1070,6 +1198,10 @@ class _$FinanceExpenseEditEventChangePaymentMethodImpl
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
+    TResult Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult Function(Attachment attachment)? addAttachment,
     TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
@@ -1096,6 +1228,10 @@ class _$FinanceExpenseEditEventChangePaymentMethodImpl
         changePaymentMethodCreditCard,
     required TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)
         addExpenseItem,
+    required TResult Function(FinanceExpenseEditEventChangeLinkProject value)
+        linkProject,
+    required TResult Function(FinanceExpenseEditEventChangeAddAttachment value)
+        addAttachment,
     required TResult Function(FinanceExpenseEditEventChangeSave value) save,
   }) {
     return changePaymentMethod(this);
@@ -1118,6 +1254,10 @@ class _$FinanceExpenseEditEventChangePaymentMethodImpl
         changePaymentMethodCreditCard,
     TResult? Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult? Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult? Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult? Function(FinanceExpenseEditEventChangeSave value)? save,
   }) {
     return changePaymentMethod?.call(this);
@@ -1139,6 +1279,10 @@ class _$FinanceExpenseEditEventChangePaymentMethodImpl
         changePaymentMethodCreditCard,
     TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult Function(FinanceExpenseEditEventChangeSave value)? save,
     required TResult orElse(),
   }) {
@@ -1261,6 +1405,10 @@ class _$FinanceExpenseEditEventChangePaymentMethodCreditCardImpl
     required TResult Function(String id, String number)
         changePaymentMethodCreditCard,
     required TResult Function(ExpenseItem item) addExpenseItem,
+    required TResult Function(String projectId, String projectName,
+            String taskId, String taskTitle)
+        linkProject,
+    required TResult Function(Attachment attachment) addAttachment,
     required TResult Function(VoidCallback callBack) save,
   }) {
     return changePaymentMethodCreditCard(id, number);
@@ -1276,6 +1424,10 @@ class _$FinanceExpenseEditEventChangePaymentMethodCreditCardImpl
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
+    TResult? Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult? Function(Attachment attachment)? addAttachment,
     TResult? Function(VoidCallback callBack)? save,
   }) {
     return changePaymentMethodCreditCard?.call(id, number);
@@ -1291,6 +1443,10 @@ class _$FinanceExpenseEditEventChangePaymentMethodCreditCardImpl
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
+    TResult Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult Function(Attachment attachment)? addAttachment,
     TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
@@ -1317,6 +1473,10 @@ class _$FinanceExpenseEditEventChangePaymentMethodCreditCardImpl
         changePaymentMethodCreditCard,
     required TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)
         addExpenseItem,
+    required TResult Function(FinanceExpenseEditEventChangeLinkProject value)
+        linkProject,
+    required TResult Function(FinanceExpenseEditEventChangeAddAttachment value)
+        addAttachment,
     required TResult Function(FinanceExpenseEditEventChangeSave value) save,
   }) {
     return changePaymentMethodCreditCard(this);
@@ -1339,6 +1499,10 @@ class _$FinanceExpenseEditEventChangePaymentMethodCreditCardImpl
         changePaymentMethodCreditCard,
     TResult? Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult? Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult? Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult? Function(FinanceExpenseEditEventChangeSave value)? save,
   }) {
     return changePaymentMethodCreditCard?.call(this);
@@ -1360,6 +1524,10 @@ class _$FinanceExpenseEditEventChangePaymentMethodCreditCardImpl
         changePaymentMethodCreditCard,
     TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult Function(FinanceExpenseEditEventChangeSave value)? save,
     required TResult orElse(),
   }) {
@@ -1478,6 +1646,10 @@ class _$FinanceExpenseEditEventChangeAddExpenseItemImpl
     required TResult Function(String id, String number)
         changePaymentMethodCreditCard,
     required TResult Function(ExpenseItem item) addExpenseItem,
+    required TResult Function(String projectId, String projectName,
+            String taskId, String taskTitle)
+        linkProject,
+    required TResult Function(Attachment attachment) addAttachment,
     required TResult Function(VoidCallback callBack) save,
   }) {
     return addExpenseItem(item);
@@ -1493,6 +1665,10 @@ class _$FinanceExpenseEditEventChangeAddExpenseItemImpl
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
+    TResult? Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult? Function(Attachment attachment)? addAttachment,
     TResult? Function(VoidCallback callBack)? save,
   }) {
     return addExpenseItem?.call(item);
@@ -1508,6 +1684,10 @@ class _$FinanceExpenseEditEventChangeAddExpenseItemImpl
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
+    TResult Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult Function(Attachment attachment)? addAttachment,
     TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
@@ -1534,6 +1714,10 @@ class _$FinanceExpenseEditEventChangeAddExpenseItemImpl
         changePaymentMethodCreditCard,
     required TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)
         addExpenseItem,
+    required TResult Function(FinanceExpenseEditEventChangeLinkProject value)
+        linkProject,
+    required TResult Function(FinanceExpenseEditEventChangeAddAttachment value)
+        addAttachment,
     required TResult Function(FinanceExpenseEditEventChangeSave value) save,
   }) {
     return addExpenseItem(this);
@@ -1556,6 +1740,10 @@ class _$FinanceExpenseEditEventChangeAddExpenseItemImpl
         changePaymentMethodCreditCard,
     TResult? Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult? Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult? Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult? Function(FinanceExpenseEditEventChangeSave value)? save,
   }) {
     return addExpenseItem?.call(this);
@@ -1577,6 +1765,10 @@ class _$FinanceExpenseEditEventChangeAddExpenseItemImpl
         changePaymentMethodCreditCard,
     TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult Function(FinanceExpenseEditEventChangeSave value)? save,
     required TResult orElse(),
   }) {
@@ -1597,6 +1789,511 @@ abstract class FinanceExpenseEditEventChangeAddExpenseItem
   @JsonKey(ignore: true)
   _$$FinanceExpenseEditEventChangeAddExpenseItemImplCopyWith<
           _$FinanceExpenseEditEventChangeAddExpenseItemImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FinanceExpenseEditEventChangeLinkProjectImplCopyWith<$Res> {
+  factory _$$FinanceExpenseEditEventChangeLinkProjectImplCopyWith(
+          _$FinanceExpenseEditEventChangeLinkProjectImpl value,
+          $Res Function(_$FinanceExpenseEditEventChangeLinkProjectImpl) then) =
+      __$$FinanceExpenseEditEventChangeLinkProjectImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {String projectId, String projectName, String taskId, String taskTitle});
+}
+
+/// @nodoc
+class __$$FinanceExpenseEditEventChangeLinkProjectImplCopyWithImpl<$Res>
+    extends _$FinanceExpenseEditEventCopyWithImpl<$Res,
+        _$FinanceExpenseEditEventChangeLinkProjectImpl>
+    implements _$$FinanceExpenseEditEventChangeLinkProjectImplCopyWith<$Res> {
+  __$$FinanceExpenseEditEventChangeLinkProjectImplCopyWithImpl(
+      _$FinanceExpenseEditEventChangeLinkProjectImpl _value,
+      $Res Function(_$FinanceExpenseEditEventChangeLinkProjectImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? projectId = null,
+    Object? projectName = null,
+    Object? taskId = null,
+    Object? taskTitle = null,
+  }) {
+    return _then(_$FinanceExpenseEditEventChangeLinkProjectImpl(
+      projectId: null == projectId
+          ? _value.projectId
+          : projectId // ignore: cast_nullable_to_non_nullable
+              as String,
+      projectName: null == projectName
+          ? _value.projectName
+          : projectName // ignore: cast_nullable_to_non_nullable
+              as String,
+      taskId: null == taskId
+          ? _value.taskId
+          : taskId // ignore: cast_nullable_to_non_nullable
+              as String,
+      taskTitle: null == taskTitle
+          ? _value.taskTitle
+          : taskTitle // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FinanceExpenseEditEventChangeLinkProjectImpl
+    implements FinanceExpenseEditEventChangeLinkProject {
+  const _$FinanceExpenseEditEventChangeLinkProjectImpl(
+      {required this.projectId,
+      required this.projectName,
+      required this.taskId,
+      required this.taskTitle});
+
+  @override
+  final String projectId;
+  @override
+  final String projectName;
+  @override
+  final String taskId;
+  @override
+  final String taskTitle;
+
+  @override
+  String toString() {
+    return 'FinanceExpenseEditEvent.linkProject(projectId: $projectId, projectName: $projectName, taskId: $taskId, taskTitle: $taskTitle)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FinanceExpenseEditEventChangeLinkProjectImpl &&
+            (identical(other.projectId, projectId) ||
+                other.projectId == projectId) &&
+            (identical(other.projectName, projectName) ||
+                other.projectName == projectName) &&
+            (identical(other.taskId, taskId) || other.taskId == taskId) &&
+            (identical(other.taskTitle, taskTitle) ||
+                other.taskTitle == taskTitle));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, projectId, projectName, taskId, taskTitle);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FinanceExpenseEditEventChangeLinkProjectImplCopyWith<
+          _$FinanceExpenseEditEventChangeLinkProjectImpl>
+      get copyWith =>
+          __$$FinanceExpenseEditEventChangeLinkProjectImplCopyWithImpl<
+              _$FinanceExpenseEditEventChangeLinkProjectImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType crudType) load,
+    required TResult Function(DateTime dueDate) changeDueDate,
+    required TResult Function(String description) changeDescription,
+    required TResult Function(String id, String title) changeCategory,
+    required TResult Function(PaymentMethodEnums paymentMethod)
+        changePaymentMethod,
+    required TResult Function(String id, String number)
+        changePaymentMethodCreditCard,
+    required TResult Function(ExpenseItem item) addExpenseItem,
+    required TResult Function(String projectId, String projectName,
+            String taskId, String taskTitle)
+        linkProject,
+    required TResult Function(Attachment attachment) addAttachment,
+    required TResult Function(VoidCallback callBack) save,
+  }) {
+    return linkProject(projectId, projectName, taskId, taskTitle);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType crudType)? load,
+    TResult? Function(DateTime dueDate)? changeDueDate,
+    TResult? Function(String description)? changeDescription,
+    TResult? Function(String id, String title)? changeCategory,
+    TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
+    TResult? Function(String id, String number)? changePaymentMethodCreditCard,
+    TResult? Function(ExpenseItem item)? addExpenseItem,
+    TResult? Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult? Function(Attachment attachment)? addAttachment,
+    TResult? Function(VoidCallback callBack)? save,
+  }) {
+    return linkProject?.call(projectId, projectName, taskId, taskTitle);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType crudType)? load,
+    TResult Function(DateTime dueDate)? changeDueDate,
+    TResult Function(String description)? changeDescription,
+    TResult Function(String id, String title)? changeCategory,
+    TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
+    TResult Function(String id, String number)? changePaymentMethodCreditCard,
+    TResult Function(ExpenseItem item)? addExpenseItem,
+    TResult Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult Function(Attachment attachment)? addAttachment,
+    TResult Function(VoidCallback callBack)? save,
+    required TResult orElse(),
+  }) {
+    if (linkProject != null) {
+      return linkProject(projectId, projectName, taskId, taskTitle);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FinanceExpenseEditEventLoad value) load,
+    required TResult Function(FinanceExpenseEditEventChangeDueDate value)
+        changeDueDate,
+    required TResult Function(FinanceExpenseEditEventChangeDescription value)
+        changeDescription,
+    required TResult Function(FinanceExpenseEditEventChangeCategory value)
+        changeCategory,
+    required TResult Function(FinanceExpenseEditEventChangePaymentMethod value)
+        changePaymentMethod,
+    required TResult Function(
+            FinanceExpenseEditEventChangePaymentMethodCreditCard value)
+        changePaymentMethodCreditCard,
+    required TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)
+        addExpenseItem,
+    required TResult Function(FinanceExpenseEditEventChangeLinkProject value)
+        linkProject,
+    required TResult Function(FinanceExpenseEditEventChangeAddAttachment value)
+        addAttachment,
+    required TResult Function(FinanceExpenseEditEventChangeSave value) save,
+  }) {
+    return linkProject(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FinanceExpenseEditEventLoad value)? load,
+    TResult? Function(FinanceExpenseEditEventChangeDueDate value)?
+        changeDueDate,
+    TResult? Function(FinanceExpenseEditEventChangeDescription value)?
+        changeDescription,
+    TResult? Function(FinanceExpenseEditEventChangeCategory value)?
+        changeCategory,
+    TResult? Function(FinanceExpenseEditEventChangePaymentMethod value)?
+        changePaymentMethod,
+    TResult? Function(
+            FinanceExpenseEditEventChangePaymentMethodCreditCard value)?
+        changePaymentMethodCreditCard,
+    TResult? Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
+        addExpenseItem,
+    TResult? Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult? Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
+    TResult? Function(FinanceExpenseEditEventChangeSave value)? save,
+  }) {
+    return linkProject?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FinanceExpenseEditEventLoad value)? load,
+    TResult Function(FinanceExpenseEditEventChangeDueDate value)? changeDueDate,
+    TResult Function(FinanceExpenseEditEventChangeDescription value)?
+        changeDescription,
+    TResult Function(FinanceExpenseEditEventChangeCategory value)?
+        changeCategory,
+    TResult Function(FinanceExpenseEditEventChangePaymentMethod value)?
+        changePaymentMethod,
+    TResult Function(
+            FinanceExpenseEditEventChangePaymentMethodCreditCard value)?
+        changePaymentMethodCreditCard,
+    TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
+        addExpenseItem,
+    TResult Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
+    TResult Function(FinanceExpenseEditEventChangeSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (linkProject != null) {
+      return linkProject(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FinanceExpenseEditEventChangeLinkProject
+    implements FinanceExpenseEditEvent {
+  const factory FinanceExpenseEditEventChangeLinkProject(
+          {required final String projectId,
+          required final String projectName,
+          required final String taskId,
+          required final String taskTitle}) =
+      _$FinanceExpenseEditEventChangeLinkProjectImpl;
+
+  String get projectId;
+  String get projectName;
+  String get taskId;
+  String get taskTitle;
+  @JsonKey(ignore: true)
+  _$$FinanceExpenseEditEventChangeLinkProjectImplCopyWith<
+          _$FinanceExpenseEditEventChangeLinkProjectImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FinanceExpenseEditEventChangeAddAttachmentImplCopyWith<$Res> {
+  factory _$$FinanceExpenseEditEventChangeAddAttachmentImplCopyWith(
+          _$FinanceExpenseEditEventChangeAddAttachmentImpl value,
+          $Res Function(_$FinanceExpenseEditEventChangeAddAttachmentImpl)
+              then) =
+      __$$FinanceExpenseEditEventChangeAddAttachmentImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Attachment attachment});
+
+  $AttachmentCopyWith<$Res> get attachment;
+}
+
+/// @nodoc
+class __$$FinanceExpenseEditEventChangeAddAttachmentImplCopyWithImpl<$Res>
+    extends _$FinanceExpenseEditEventCopyWithImpl<$Res,
+        _$FinanceExpenseEditEventChangeAddAttachmentImpl>
+    implements _$$FinanceExpenseEditEventChangeAddAttachmentImplCopyWith<$Res> {
+  __$$FinanceExpenseEditEventChangeAddAttachmentImplCopyWithImpl(
+      _$FinanceExpenseEditEventChangeAddAttachmentImpl _value,
+      $Res Function(_$FinanceExpenseEditEventChangeAddAttachmentImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? attachment = null,
+  }) {
+    return _then(_$FinanceExpenseEditEventChangeAddAttachmentImpl(
+      attachment: null == attachment
+          ? _value.attachment
+          : attachment // ignore: cast_nullable_to_non_nullable
+              as Attachment,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AttachmentCopyWith<$Res> get attachment {
+    return $AttachmentCopyWith<$Res>(_value.attachment, (value) {
+      return _then(_value.copyWith(attachment: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$FinanceExpenseEditEventChangeAddAttachmentImpl
+    implements FinanceExpenseEditEventChangeAddAttachment {
+  const _$FinanceExpenseEditEventChangeAddAttachmentImpl(
+      {required this.attachment});
+
+  @override
+  final Attachment attachment;
+
+  @override
+  String toString() {
+    return 'FinanceExpenseEditEvent.addAttachment(attachment: $attachment)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FinanceExpenseEditEventChangeAddAttachmentImpl &&
+            (identical(other.attachment, attachment) ||
+                other.attachment == attachment));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, attachment);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FinanceExpenseEditEventChangeAddAttachmentImplCopyWith<
+          _$FinanceExpenseEditEventChangeAddAttachmentImpl>
+      get copyWith =>
+          __$$FinanceExpenseEditEventChangeAddAttachmentImplCopyWithImpl<
+                  _$FinanceExpenseEditEventChangeAddAttachmentImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType crudType) load,
+    required TResult Function(DateTime dueDate) changeDueDate,
+    required TResult Function(String description) changeDescription,
+    required TResult Function(String id, String title) changeCategory,
+    required TResult Function(PaymentMethodEnums paymentMethod)
+        changePaymentMethod,
+    required TResult Function(String id, String number)
+        changePaymentMethodCreditCard,
+    required TResult Function(ExpenseItem item) addExpenseItem,
+    required TResult Function(String projectId, String projectName,
+            String taskId, String taskTitle)
+        linkProject,
+    required TResult Function(Attachment attachment) addAttachment,
+    required TResult Function(VoidCallback callBack) save,
+  }) {
+    return addAttachment(attachment);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType crudType)? load,
+    TResult? Function(DateTime dueDate)? changeDueDate,
+    TResult? Function(String description)? changeDescription,
+    TResult? Function(String id, String title)? changeCategory,
+    TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
+    TResult? Function(String id, String number)? changePaymentMethodCreditCard,
+    TResult? Function(ExpenseItem item)? addExpenseItem,
+    TResult? Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult? Function(Attachment attachment)? addAttachment,
+    TResult? Function(VoidCallback callBack)? save,
+  }) {
+    return addAttachment?.call(attachment);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType crudType)? load,
+    TResult Function(DateTime dueDate)? changeDueDate,
+    TResult Function(String description)? changeDescription,
+    TResult Function(String id, String title)? changeCategory,
+    TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
+    TResult Function(String id, String number)? changePaymentMethodCreditCard,
+    TResult Function(ExpenseItem item)? addExpenseItem,
+    TResult Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult Function(Attachment attachment)? addAttachment,
+    TResult Function(VoidCallback callBack)? save,
+    required TResult orElse(),
+  }) {
+    if (addAttachment != null) {
+      return addAttachment(attachment);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FinanceExpenseEditEventLoad value) load,
+    required TResult Function(FinanceExpenseEditEventChangeDueDate value)
+        changeDueDate,
+    required TResult Function(FinanceExpenseEditEventChangeDescription value)
+        changeDescription,
+    required TResult Function(FinanceExpenseEditEventChangeCategory value)
+        changeCategory,
+    required TResult Function(FinanceExpenseEditEventChangePaymentMethod value)
+        changePaymentMethod,
+    required TResult Function(
+            FinanceExpenseEditEventChangePaymentMethodCreditCard value)
+        changePaymentMethodCreditCard,
+    required TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)
+        addExpenseItem,
+    required TResult Function(FinanceExpenseEditEventChangeLinkProject value)
+        linkProject,
+    required TResult Function(FinanceExpenseEditEventChangeAddAttachment value)
+        addAttachment,
+    required TResult Function(FinanceExpenseEditEventChangeSave value) save,
+  }) {
+    return addAttachment(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FinanceExpenseEditEventLoad value)? load,
+    TResult? Function(FinanceExpenseEditEventChangeDueDate value)?
+        changeDueDate,
+    TResult? Function(FinanceExpenseEditEventChangeDescription value)?
+        changeDescription,
+    TResult? Function(FinanceExpenseEditEventChangeCategory value)?
+        changeCategory,
+    TResult? Function(FinanceExpenseEditEventChangePaymentMethod value)?
+        changePaymentMethod,
+    TResult? Function(
+            FinanceExpenseEditEventChangePaymentMethodCreditCard value)?
+        changePaymentMethodCreditCard,
+    TResult? Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
+        addExpenseItem,
+    TResult? Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult? Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
+    TResult? Function(FinanceExpenseEditEventChangeSave value)? save,
+  }) {
+    return addAttachment?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FinanceExpenseEditEventLoad value)? load,
+    TResult Function(FinanceExpenseEditEventChangeDueDate value)? changeDueDate,
+    TResult Function(FinanceExpenseEditEventChangeDescription value)?
+        changeDescription,
+    TResult Function(FinanceExpenseEditEventChangeCategory value)?
+        changeCategory,
+    TResult Function(FinanceExpenseEditEventChangePaymentMethod value)?
+        changePaymentMethod,
+    TResult Function(
+            FinanceExpenseEditEventChangePaymentMethodCreditCard value)?
+        changePaymentMethodCreditCard,
+    TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
+        addExpenseItem,
+    TResult Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
+    TResult Function(FinanceExpenseEditEventChangeSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (addAttachment != null) {
+      return addAttachment(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FinanceExpenseEditEventChangeAddAttachment
+    implements FinanceExpenseEditEvent {
+  const factory FinanceExpenseEditEventChangeAddAttachment(
+          {required final Attachment attachment}) =
+      _$FinanceExpenseEditEventChangeAddAttachmentImpl;
+
+  Attachment get attachment;
+  @JsonKey(ignore: true)
+  _$$FinanceExpenseEditEventChangeAddAttachmentImplCopyWith<
+          _$FinanceExpenseEditEventChangeAddAttachmentImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1680,6 +2377,10 @@ class _$FinanceExpenseEditEventChangeSaveImpl
     required TResult Function(String id, String number)
         changePaymentMethodCreditCard,
     required TResult Function(ExpenseItem item) addExpenseItem,
+    required TResult Function(String projectId, String projectName,
+            String taskId, String taskTitle)
+        linkProject,
+    required TResult Function(Attachment attachment) addAttachment,
     required TResult Function(VoidCallback callBack) save,
   }) {
     return save(callBack);
@@ -1695,6 +2396,10 @@ class _$FinanceExpenseEditEventChangeSaveImpl
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
+    TResult? Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult? Function(Attachment attachment)? addAttachment,
     TResult? Function(VoidCallback callBack)? save,
   }) {
     return save?.call(callBack);
@@ -1710,6 +2415,10 @@ class _$FinanceExpenseEditEventChangeSaveImpl
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
+    TResult Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult Function(Attachment attachment)? addAttachment,
     TResult Function(VoidCallback callBack)? save,
     required TResult orElse(),
   }) {
@@ -1736,6 +2445,10 @@ class _$FinanceExpenseEditEventChangeSaveImpl
         changePaymentMethodCreditCard,
     required TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)
         addExpenseItem,
+    required TResult Function(FinanceExpenseEditEventChangeLinkProject value)
+        linkProject,
+    required TResult Function(FinanceExpenseEditEventChangeAddAttachment value)
+        addAttachment,
     required TResult Function(FinanceExpenseEditEventChangeSave value) save,
   }) {
     return save(this);
@@ -1758,6 +2471,10 @@ class _$FinanceExpenseEditEventChangeSaveImpl
         changePaymentMethodCreditCard,
     TResult? Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult? Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult? Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult? Function(FinanceExpenseEditEventChangeSave value)? save,
   }) {
     return save?.call(this);
@@ -1779,6 +2496,10 @@ class _$FinanceExpenseEditEventChangeSaveImpl
         changePaymentMethodCreditCard,
     TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
         addExpenseItem,
+    TResult Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
     TResult Function(FinanceExpenseEditEventChangeSave value)? save,
     required TResult orElse(),
   }) {

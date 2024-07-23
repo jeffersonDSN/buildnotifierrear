@@ -1,6 +1,8 @@
+import 'package:buildnotifierrear/domain/controllers/attachment_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/expenses_controller.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/attachment_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/expense_categories_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/expenses_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/payment_card_firestore_repository.dart';
@@ -37,6 +39,11 @@ class FinanceExpenseEdit extends IView {
         ),
         paymentCardController: CRUDController(
           repository: PaymentCardFirestoreRepository(
+            tenantId: tenantId,
+          ),
+        ),
+        attachmentController: AttachmentController(
+          repository: AttachmentFirestoreRepository(
             tenantId: tenantId,
           ),
         ),

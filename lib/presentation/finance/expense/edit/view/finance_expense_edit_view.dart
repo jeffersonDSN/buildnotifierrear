@@ -1,5 +1,9 @@
+import 'dart:html';
+import 'dart:typed_data';
+
 import 'package:buildnotifierrear/domain/core/utils.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
+import 'package:buildnotifierrear/domain/entities/enums/file_extension_enums.dart';
 import 'package:buildnotifierrear/domain/entities/enums/payment_method_enums.dart';
 import 'package:buildnotifierrear/domain/entities/expense/expense.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
@@ -8,13 +12,16 @@ import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_date_input_widget.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_dropdown_button_field.dart';
 import 'package:buildnotifierrear/presentation/core/widget/base_text_form_field.dart';
+import 'package:buildnotifierrear/presentation/finance/expense/edit/add_project/finance_expense_edit_add_project.dart';
 import 'package:buildnotifierrear/presentation/finance/expense/edit/item_edit/finance_expense_item_edit.dart';
 import 'package:buildnotifierrear/presentation/finance/expense/edit/bloc/finance_expense_edit_bloc.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:path/path.dart' as path;
 
 class FinanceExpenseEditView extends IView {
   final CrudType crudType;
@@ -97,27 +104,107 @@ class FinanceExpenseEditView extends IView {
                                   ),
                                 ),
                               ),
-                              gapWidth8,
+                              gapWidth24,
                               Expanded(
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    TextButton.icon(
-                                      icon: const Icon(Icons.link),
-                                      label: Text(
-                                        context.tr.linkExpenseToProject,
+                                    if (expense.projectId.isEmpty)
+                                      TextButton.icon(
+                                        icon: const Icon(Icons.link),
+                                        label: Text(
+                                          context.tr.linkExpenseToProject,
+                                        ),
+                                        onPressed: () async {
+                                          var projectInfo = await showDialog<
+                                              ({
+                                                String projectId,
+                                                String projectName,
+                                                String taskId,
+                                                String taskTitle,
+                                              })?>(
+                                            context: context,
+                                            builder: (context) {
+                                              return const FinanceExpenseEditAddProject();
+                                            },
+                                          );
+
+                                          if (projectInfo != null) {
+                                            bloc.add(
+                                              FinanceExpenseEditEvent
+                                                  .linkProject(
+                                                projectId:
+                                                    projectInfo.projectId,
+                                                projectName:
+                                                    projectInfo.projectName,
+                                                taskId: projectInfo.taskId,
+                                                taskTitle:
+                                                    projectInfo.taskTitle,
+                                              ),
+                                            );
+                                          }
+                                        },
                                       ),
-                                      onPressed: () async {},
-                                    ),
+                                    if (expense.projectId.isNotEmpty)
+                                      TextButton.icon(
+                                        icon: const Icon(Icons.link),
+                                        label: Text(
+                                          context.tr.unlinkExpenseFromProject,
+                                        ),
+                                        onPressed: () async {
+                                          bloc.add(
+                                            const FinanceExpenseEditEvent
+                                                .linkProject(
+                                              projectId: '',
+                                              projectName: '',
+                                              taskId: '',
+                                              taskTitle: '',
+                                            ),
+                                          );
+                                        },
+                                      ),
                                   ],
                                 ),
                               ),
                             ],
                           ),
+                          if (expense.projectId.isNotEmpty)
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                top: Sizes.size8,
+                              ),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: BaseTextFormField(
+                                      enabled: false,
+                                      key: Key(expense.projectName),
+                                      label: context.tr.project,
+                                      initialValue: expense.projectName,
+                                    ),
+                                  ),
+                                  if (expense.taskId.isNotEmpty)
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                          left: Sizes.size8,
+                                        ),
+                                        child: Expanded(
+                                          child: BaseTextFormField(
+                                            enabled: false,
+                                            key: Key(expense.taskTitle),
+                                            label: context.tr.task,
+                                            initialValue: expense.taskTitle,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ),
                           gapHeight8,
                           Row(
                             children: [
-                              gapWidth8,
                               Expanded(
                                 child: BaseDropdownButtonField(
                                   value: (
@@ -415,26 +502,61 @@ class FinanceExpenseEditView extends IView {
                           TextButton.icon(
                             icon: const Icon(Icons.attach_file),
                             label: Text(context.tr.addAttachment),
-                            onPressed: () async {},
+                            onPressed: () async {
+                              FileUploadInputElement uploadInput =
+                                  FileUploadInputElement();
+                              uploadInput.accept =
+                                  'pdf, jpg, jpeg, png, gif, txt, pptx';
+                              uploadInput.multiple = false;
+                              uploadInput.click();
+
+                              uploadInput.onChange.listen((e) {
+                                final files = uploadInput.files;
+                                if (files != null && files.isNotEmpty) {
+                                  final file = files[0];
+                                  FileReader reader = FileReader();
+
+                                  Uint8List? uploadedImage;
+
+                                  reader.onLoadEnd.listen((e) {
+                                    uploadedImage = reader.result as Uint8List?;
+
+                                    bloc.add(
+                                      FinanceExpenseEditEvent.addAttachment(
+                                        attachment: Attachment(
+                                          name: file.name,
+                                          fileExtension: path
+                                              .extension(file.name)
+                                              .toLowerCase()
+                                              .fileExtension,
+                                          data: uploadedImage!,
+                                        ),
+                                      ),
+                                    );
+                                  });
+
+                                  reader.readAsArrayBuffer(file);
+                                }
+                              });
+                            },
                           ),
                           gapHeight8,
-                          SizedBox(
-                            height: 150,
-                            child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                Image.asset(
-                                  'assets/images/Nfe.png',
-                                  height: 150,
-                                  width: 100,
-                                ),
-                                gapWidth16,
-                                Image.asset(
-                                  'assets/images/Nfe.png',
-                                  height: 150,
-                                  width: 100,
-                                ),
-                              ],
+                          Expanded(
+                            child: SizedBox(
+                              width: Sizes.size300,
+                              child: ListView.separated(
+                                itemCount: expense.attachments.length,
+                                itemBuilder: (context, index) {
+                                  var fileItem = expense.attachments[index];
+
+                                  return ListTile(
+                                    title: Text(fileItem.name),
+                                  );
+                                },
+                                separatorBuilder: (context, index) {
+                                  return const Divider();
+                                },
+                              ),
                             ),
                           ),
                         ],

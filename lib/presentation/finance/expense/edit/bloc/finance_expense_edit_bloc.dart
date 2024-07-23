@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:buildnotifierrear/domain/controllers/attachment_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/expenses_controller.dart';
 import 'package:buildnotifierrear/domain/entities/card/payment_card.dart';
@@ -19,6 +20,7 @@ class FinanceExpenseEditBloc
     required ExpensesController controller,
     required CRUDController<ExpenseCategory> expenseCategoryController,
     required CRUDController<PaymentCard> paymentCardController,
+    required AttachmentController attachmentController,
   }) : super(const FinanceExpenseEditState.init()) {
     on<FinanceExpenseEditEvent>((event, emit) async {
       await event.when(
@@ -115,6 +117,34 @@ class FinanceExpenseEditBloc
                 items: [
                   ...lastState.expense.items,
                   item,
+                ],
+              ),
+            ),
+          );
+        },
+        linkProject: (projectId, projectName, taskId, taskTitle) {
+          var lastState = state.asLoaded;
+
+          emit(
+            lastState.copyWith(
+              expense: lastState.expense.copyWith(
+                projectId: projectId,
+                projectName: projectName,
+                taskId: taskId,
+                taskTitle: taskTitle,
+              ),
+            ),
+          );
+        },
+        addAttachment: (attachment) {
+          var lastState = state.asLoaded;
+
+          emit(
+            lastState.copyWith(
+              expense: lastState.expense.copyWith(
+                attachments: [
+                  ...lastState.expense.attachments,
+                  attachment,
                 ],
               ),
             ),

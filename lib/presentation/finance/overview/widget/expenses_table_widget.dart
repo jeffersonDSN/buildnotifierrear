@@ -10,12 +10,14 @@ import 'package:flutter/material.dart';
 
 class ExpensesTableWidget extends StatelessWidget {
   final List<Expense> expenses;
+  final ValueChanged<Expense> onEdit;
   final ValueChanged<Expense> onPaid;
   final ValueChanged<Expense> onCancel;
 
   const ExpensesTableWidget({
     super.key,
     required this.expenses,
+    required this.onEdit,
     required this.onPaid,
     required this.onCancel,
   });
@@ -132,6 +134,44 @@ class ExpensesTableWidget extends StatelessWidget {
                     PopupMenuButton(
                       tooltip: '',
                       itemBuilder: (context) => [
+                        if ([
+                          ExpenseStatusEnums.draft,
+                          ExpenseStatusEnums.pending,
+                        ].contains(expense.status))
+                          PopupMenuItem(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(
+                                  Sizes.size4,
+                                ),
+                                color: AppColor.orange,
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(
+                                  Sizes.size8,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        context.tr.edit,
+                                        style: const TextStyle(
+                                          color: AppColor.lightColor,
+                                        ),
+                                      ),
+                                    ),
+                                    const Icon(
+                                      Icons.edit,
+                                      color: AppColor.lightColor,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            onTap: () {
+                              onEdit.call(expense);
+                            },
+                          ),
                         if (ExpenseStatusEnums.pending == expense.status)
                           PopupMenuItem(
                             child: Container(
@@ -141,21 +181,21 @@ class ExpensesTableWidget extends StatelessWidget {
                                 ),
                                 color: AppColor.primaryColorSwatch,
                               ),
-                              child: const Padding(
-                                padding: EdgeInsets.all(
+                              child: Padding(
+                                padding: const EdgeInsets.all(
                                   Sizes.size8,
                                 ),
                                 child: Row(
                                   children: [
                                     Expanded(
                                       child: Text(
-                                        'Approve',
-                                        style: TextStyle(
+                                        context.tr.approve,
+                                        style: const TextStyle(
                                           color: AppColor.lightColor,
                                         ),
                                       ),
                                     ),
-                                    Icon(
+                                    const Icon(
                                       Icons.share,
                                       color: AppColor.lightColor,
                                     ),

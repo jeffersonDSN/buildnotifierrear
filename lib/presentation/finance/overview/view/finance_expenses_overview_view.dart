@@ -1,5 +1,9 @@
 import 'package:buildnotifierrear/domain/entities/expense/expense.dart';
+import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
+import 'package:buildnotifierrear/presentation/app/model/mod.dart';
+import 'package:buildnotifierrear/presentation/app/model/view_type.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
+import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/finance/expense/card/card_overview/finance_expense_card_overview.dart';
 import 'package:buildnotifierrear/presentation/finance/expense/category/category_overview/finance_expense_category_overview.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/expenses_table_widget.dart';
@@ -7,7 +11,7 @@ import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 
-class FinanceExpensesOverviewView extends StatelessWidget {
+class FinanceExpensesOverviewView extends IView {
   final List<Expense> expenses;
   final ValueChanged<Expense> onPaid;
   final ValueChanged<Expense> onCancel;
@@ -88,6 +92,17 @@ class FinanceExpensesOverviewView extends StatelessWidget {
                 children: [
                   ExpensesTableWidget(
                     expenses: expenses,
+                    onEdit: (value) {
+                      appBloc(context).add(
+                        AppEvent.changeView(
+                          mod: Mod.financeExpenses(
+                            type: ViewType.update(
+                              id: value.id,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
                     onPaid: onPaid,
                     onCancel: onCancel,
                   ),

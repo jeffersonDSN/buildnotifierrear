@@ -286,6 +286,195 @@ abstract class _ExpenseItem implements ExpenseItem {
       throw _privateConstructorUsedError;
 }
 
+Attachment _$AttachmentFromJson(Map<String, dynamic> json) {
+  return _Attachment.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Attachment {
+  String get name => throw _privateConstructorUsedError;
+  @FileExtensionConverter()
+  FileExtensionEnums get fileExtension => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false)
+  Uint8List? get data => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AttachmentCopyWith<Attachment> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AttachmentCopyWith<$Res> {
+  factory $AttachmentCopyWith(
+          Attachment value, $Res Function(Attachment) then) =
+      _$AttachmentCopyWithImpl<$Res, Attachment>;
+  @useResult
+  $Res call(
+      {String name,
+      @FileExtensionConverter() FileExtensionEnums fileExtension,
+      @JsonKey(includeFromJson: false) Uint8List? data});
+}
+
+/// @nodoc
+class _$AttachmentCopyWithImpl<$Res, $Val extends Attachment>
+    implements $AttachmentCopyWith<$Res> {
+  _$AttachmentCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? fileExtension = null,
+    Object? data = freezed,
+  }) {
+    return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      fileExtension: null == fileExtension
+          ? _value.fileExtension
+          : fileExtension // ignore: cast_nullable_to_non_nullable
+              as FileExtensionEnums,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Uint8List?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AttachmentImplCopyWith<$Res>
+    implements $AttachmentCopyWith<$Res> {
+  factory _$$AttachmentImplCopyWith(
+          _$AttachmentImpl value, $Res Function(_$AttachmentImpl) then) =
+      __$$AttachmentImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String name,
+      @FileExtensionConverter() FileExtensionEnums fileExtension,
+      @JsonKey(includeFromJson: false) Uint8List? data});
+}
+
+/// @nodoc
+class __$$AttachmentImplCopyWithImpl<$Res>
+    extends _$AttachmentCopyWithImpl<$Res, _$AttachmentImpl>
+    implements _$$AttachmentImplCopyWith<$Res> {
+  __$$AttachmentImplCopyWithImpl(
+      _$AttachmentImpl _value, $Res Function(_$AttachmentImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? fileExtension = null,
+    Object? data = freezed,
+  }) {
+    return _then(_$AttachmentImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      fileExtension: null == fileExtension
+          ? _value.fileExtension
+          : fileExtension // ignore: cast_nullable_to_non_nullable
+              as FileExtensionEnums,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Uint8List?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AttachmentImpl implements _Attachment {
+  const _$AttachmentImpl(
+      {required this.name,
+      @FileExtensionConverter() required this.fileExtension,
+      @JsonKey(includeFromJson: false) this.data});
+
+  factory _$AttachmentImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AttachmentImplFromJson(json);
+
+  @override
+  final String name;
+  @override
+  @FileExtensionConverter()
+  final FileExtensionEnums fileExtension;
+  @override
+  @JsonKey(includeFromJson: false)
+  final Uint8List? data;
+
+  @override
+  String toString() {
+    return 'Attachment(name: $name, fileExtension: $fileExtension, data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AttachmentImpl &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.fileExtension, fileExtension) ||
+                other.fileExtension == fileExtension) &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, fileExtension,
+      const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AttachmentImplCopyWith<_$AttachmentImpl> get copyWith =>
+      __$$AttachmentImplCopyWithImpl<_$AttachmentImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AttachmentImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Attachment implements Attachment {
+  const factory _Attachment(
+      {required final String name,
+      @FileExtensionConverter() required final FileExtensionEnums fileExtension,
+      @JsonKey(includeFromJson: false)
+      final Uint8List? data}) = _$AttachmentImpl;
+
+  factory _Attachment.fromJson(Map<String, dynamic> json) =
+      _$AttachmentImpl.fromJson;
+
+  @override
+  String get name;
+  @override
+  @FileExtensionConverter()
+  FileExtensionEnums get fileExtension;
+  @override
+  @JsonKey(includeFromJson: false)
+  Uint8List? get data;
+  @override
+  @JsonKey(ignore: true)
+  _$$AttachmentImplCopyWith<_$AttachmentImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 Expense _$ExpenseFromJson(Map<String, dynamic> json) {
   return _Expense.fromJson(json);
 }
@@ -300,7 +489,9 @@ mixin _$Expense {
   dynamic get categoryId => throw _privateConstructorUsedError;
   dynamic get categoryTitle => throw _privateConstructorUsedError;
   String get projectId => throw _privateConstructorUsedError;
+  String get projectName => throw _privateConstructorUsedError;
   String get taskId => throw _privateConstructorUsedError;
+  String get taskTitle => throw _privateConstructorUsedError;
   String get employeeId => throw _privateConstructorUsedError;
   String get creditCardId => throw _privateConstructorUsedError;
   @PaymentMethodConverter()
@@ -310,6 +501,7 @@ mixin _$Expense {
   @ExpenseStatusConverter()
   ExpenseStatusEnums get status => throw _privateConstructorUsedError;
   List<ExpenseItem> get items => throw _privateConstructorUsedError;
+  List<Attachment> get attachments => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -330,14 +522,17 @@ abstract class $ExpenseCopyWith<$Res> {
       dynamic categoryId,
       dynamic categoryTitle,
       String projectId,
+      String projectName,
       String taskId,
+      String taskTitle,
       String employeeId,
       String creditCardId,
       @PaymentMethodConverter() PaymentMethodEnums paymentMethod,
       String paymentMethodCardId,
       String paymentMethodCardNumber,
       @ExpenseStatusConverter() ExpenseStatusEnums status,
-      List<ExpenseItem> items});
+      List<ExpenseItem> items,
+      List<Attachment> attachments});
 }
 
 /// @nodoc
@@ -361,7 +556,9 @@ class _$ExpenseCopyWithImpl<$Res, $Val extends Expense>
     Object? categoryId = freezed,
     Object? categoryTitle = freezed,
     Object? projectId = null,
+    Object? projectName = null,
     Object? taskId = null,
+    Object? taskTitle = null,
     Object? employeeId = null,
     Object? creditCardId = null,
     Object? paymentMethod = null,
@@ -369,6 +566,7 @@ class _$ExpenseCopyWithImpl<$Res, $Val extends Expense>
     Object? paymentMethodCardNumber = null,
     Object? status = null,
     Object? items = null,
+    Object? attachments = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -403,9 +601,17 @@ class _$ExpenseCopyWithImpl<$Res, $Val extends Expense>
           ? _value.projectId
           : projectId // ignore: cast_nullable_to_non_nullable
               as String,
+      projectName: null == projectName
+          ? _value.projectName
+          : projectName // ignore: cast_nullable_to_non_nullable
+              as String,
       taskId: null == taskId
           ? _value.taskId
           : taskId // ignore: cast_nullable_to_non_nullable
+              as String,
+      taskTitle: null == taskTitle
+          ? _value.taskTitle
+          : taskTitle // ignore: cast_nullable_to_non_nullable
               as String,
       employeeId: null == employeeId
           ? _value.employeeId
@@ -435,6 +641,10 @@ class _$ExpenseCopyWithImpl<$Res, $Val extends Expense>
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<ExpenseItem>,
+      attachments: null == attachments
+          ? _value.attachments
+          : attachments // ignore: cast_nullable_to_non_nullable
+              as List<Attachment>,
     ) as $Val);
   }
 }
@@ -455,14 +665,17 @@ abstract class _$$ExpenseImplCopyWith<$Res> implements $ExpenseCopyWith<$Res> {
       dynamic categoryId,
       dynamic categoryTitle,
       String projectId,
+      String projectName,
       String taskId,
+      String taskTitle,
       String employeeId,
       String creditCardId,
       @PaymentMethodConverter() PaymentMethodEnums paymentMethod,
       String paymentMethodCardId,
       String paymentMethodCardNumber,
       @ExpenseStatusConverter() ExpenseStatusEnums status,
-      List<ExpenseItem> items});
+      List<ExpenseItem> items,
+      List<Attachment> attachments});
 }
 
 /// @nodoc
@@ -484,7 +697,9 @@ class __$$ExpenseImplCopyWithImpl<$Res>
     Object? categoryId = freezed,
     Object? categoryTitle = freezed,
     Object? projectId = null,
+    Object? projectName = null,
     Object? taskId = null,
+    Object? taskTitle = null,
     Object? employeeId = null,
     Object? creditCardId = null,
     Object? paymentMethod = null,
@@ -492,6 +707,7 @@ class __$$ExpenseImplCopyWithImpl<$Res>
     Object? paymentMethodCardNumber = null,
     Object? status = null,
     Object? items = null,
+    Object? attachments = null,
   }) {
     return _then(_$ExpenseImpl(
       id: null == id
@@ -521,9 +737,17 @@ class __$$ExpenseImplCopyWithImpl<$Res>
           ? _value.projectId
           : projectId // ignore: cast_nullable_to_non_nullable
               as String,
+      projectName: null == projectName
+          ? _value.projectName
+          : projectName // ignore: cast_nullable_to_non_nullable
+              as String,
       taskId: null == taskId
           ? _value.taskId
           : taskId // ignore: cast_nullable_to_non_nullable
+              as String,
+      taskTitle: null == taskTitle
+          ? _value.taskTitle
+          : taskTitle // ignore: cast_nullable_to_non_nullable
               as String,
       employeeId: null == employeeId
           ? _value.employeeId
@@ -553,6 +777,10 @@ class __$$ExpenseImplCopyWithImpl<$Res>
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
               as List<ExpenseItem>,
+      attachments: null == attachments
+          ? _value._attachments
+          : attachments // ignore: cast_nullable_to_non_nullable
+              as List<Attachment>,
     ));
   }
 }
@@ -569,15 +797,19 @@ class _$ExpenseImpl implements _Expense {
       this.categoryId = '',
       this.categoryTitle = '',
       this.projectId = '',
+      this.projectName = '',
       this.taskId = '',
+      this.taskTitle = '',
       this.employeeId = '',
       this.creditCardId = '',
       @PaymentMethodConverter() this.paymentMethod = PaymentMethodEnums.cash,
       this.paymentMethodCardId = '',
       this.paymentMethodCardNumber = '',
       @ExpenseStatusConverter() this.status = ExpenseStatusEnums.draft,
-      final List<ExpenseItem> items = const []})
-      : _items = items;
+      final List<ExpenseItem> items = const [],
+      final List<Attachment> attachments = const []})
+      : _items = items,
+        _attachments = attachments;
 
   factory _$ExpenseImpl.fromJson(Map<String, dynamic> json) =>
       _$$ExpenseImplFromJson(json);
@@ -605,7 +837,13 @@ class _$ExpenseImpl implements _Expense {
   final String projectId;
   @override
   @JsonKey()
+  final String projectName;
+  @override
+  @JsonKey()
   final String taskId;
+  @override
+  @JsonKey()
+  final String taskTitle;
   @override
   @JsonKey()
   final String employeeId;
@@ -635,9 +873,18 @@ class _$ExpenseImpl implements _Expense {
     return EqualUnmodifiableListView(_items);
   }
 
+  final List<Attachment> _attachments;
+  @override
+  @JsonKey()
+  List<Attachment> get attachments {
+    if (_attachments is EqualUnmodifiableListView) return _attachments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_attachments);
+  }
+
   @override
   String toString() {
-    return 'Expense(id: $id, description: $description, issueDate: $issueDate, dueDate: $dueDate, paymentDate: $paymentDate, categoryId: $categoryId, categoryTitle: $categoryTitle, projectId: $projectId, taskId: $taskId, employeeId: $employeeId, creditCardId: $creditCardId, paymentMethod: $paymentMethod, paymentMethodCardId: $paymentMethodCardId, paymentMethodCardNumber: $paymentMethodCardNumber, status: $status, items: $items)';
+    return 'Expense(id: $id, description: $description, issueDate: $issueDate, dueDate: $dueDate, paymentDate: $paymentDate, categoryId: $categoryId, categoryTitle: $categoryTitle, projectId: $projectId, projectName: $projectName, taskId: $taskId, taskTitle: $taskTitle, employeeId: $employeeId, creditCardId: $creditCardId, paymentMethod: $paymentMethod, paymentMethodCardId: $paymentMethodCardId, paymentMethodCardNumber: $paymentMethodCardNumber, status: $status, items: $items, attachments: $attachments)';
   }
 
   @override
@@ -659,7 +906,11 @@ class _$ExpenseImpl implements _Expense {
                 .equals(other.categoryTitle, categoryTitle) &&
             (identical(other.projectId, projectId) ||
                 other.projectId == projectId) &&
+            (identical(other.projectName, projectName) ||
+                other.projectName == projectName) &&
             (identical(other.taskId, taskId) || other.taskId == taskId) &&
+            (identical(other.taskTitle, taskTitle) ||
+                other.taskTitle == taskTitle) &&
             (identical(other.employeeId, employeeId) ||
                 other.employeeId == employeeId) &&
             (identical(other.creditCardId, creditCardId) ||
@@ -672,29 +923,35 @@ class _$ExpenseImpl implements _Expense {
                     other.paymentMethodCardNumber, paymentMethodCardNumber) ||
                 other.paymentMethodCardNumber == paymentMethodCardNumber) &&
             (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality().equals(other._items, _items));
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality()
+                .equals(other._attachments, _attachments));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      description,
-      issueDate,
-      dueDate,
-      paymentDate,
-      const DeepCollectionEquality().hash(categoryId),
-      const DeepCollectionEquality().hash(categoryTitle),
-      projectId,
-      taskId,
-      employeeId,
-      creditCardId,
-      paymentMethod,
-      paymentMethodCardId,
-      paymentMethodCardNumber,
-      status,
-      const DeepCollectionEquality().hash(_items));
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        description,
+        issueDate,
+        dueDate,
+        paymentDate,
+        const DeepCollectionEquality().hash(categoryId),
+        const DeepCollectionEquality().hash(categoryTitle),
+        projectId,
+        projectName,
+        taskId,
+        taskTitle,
+        employeeId,
+        creditCardId,
+        paymentMethod,
+        paymentMethodCardId,
+        paymentMethodCardNumber,
+        status,
+        const DeepCollectionEquality().hash(_items),
+        const DeepCollectionEquality().hash(_attachments)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -720,14 +977,17 @@ abstract class _Expense implements Expense {
       final dynamic categoryId,
       final dynamic categoryTitle,
       final String projectId,
+      final String projectName,
       final String taskId,
+      final String taskTitle,
       final String employeeId,
       final String creditCardId,
       @PaymentMethodConverter() final PaymentMethodEnums paymentMethod,
       final String paymentMethodCardId,
       final String paymentMethodCardNumber,
       @ExpenseStatusConverter() final ExpenseStatusEnums status,
-      final List<ExpenseItem> items}) = _$ExpenseImpl;
+      final List<ExpenseItem> items,
+      final List<Attachment> attachments}) = _$ExpenseImpl;
 
   factory _Expense.fromJson(Map<String, dynamic> json) = _$ExpenseImpl.fromJson;
 
@@ -748,7 +1008,11 @@ abstract class _Expense implements Expense {
   @override
   String get projectId;
   @override
+  String get projectName;
+  @override
   String get taskId;
+  @override
+  String get taskTitle;
   @override
   String get employeeId;
   @override
@@ -765,6 +1029,8 @@ abstract class _Expense implements Expense {
   ExpenseStatusEnums get status;
   @override
   List<ExpenseItem> get items;
+  @override
+  List<Attachment> get attachments;
   @override
   @JsonKey(ignore: true)
   _$$ExpenseImplCopyWith<_$ExpenseImpl> get copyWith =>

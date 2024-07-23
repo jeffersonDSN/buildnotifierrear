@@ -28,6 +28,20 @@ Map<String, dynamic> _$$ExpenseItemImplToJson(_$ExpenseItemImpl instance) =>
       'amount': instance.amount,
     };
 
+_$AttachmentImpl _$$AttachmentImplFromJson(Map<String, dynamic> json) =>
+    _$AttachmentImpl(
+      name: json['name'] as String,
+      fileExtension: const FileExtensionConverter()
+          .fromJson((json['fileExtension'] as num).toInt()),
+    );
+
+Map<String, dynamic> _$$AttachmentImplToJson(_$AttachmentImpl instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'fileExtension':
+          const FileExtensionConverter().toJson(instance.fileExtension),
+    };
+
 _$ExpenseImpl _$$ExpenseImplFromJson(Map<String, dynamic> json) =>
     _$ExpenseImpl(
       id: json['id'] as String? ?? '',
@@ -42,7 +56,9 @@ _$ExpenseImpl _$$ExpenseImplFromJson(Map<String, dynamic> json) =>
       categoryId: json['categoryId'] ?? '',
       categoryTitle: json['categoryTitle'] ?? '',
       projectId: json['projectId'] as String? ?? '',
+      projectName: json['projectName'] as String? ?? '',
       taskId: json['taskId'] as String? ?? '',
+      taskTitle: json['taskTitle'] as String? ?? '',
       employeeId: json['employeeId'] as String? ?? '',
       creditCardId: json['creditCardId'] as String? ?? '',
       paymentMethod: json['paymentMethod'] == null
@@ -59,6 +75,10 @@ _$ExpenseImpl _$$ExpenseImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => ExpenseItem.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      attachments: (json['attachments'] as List<dynamic>?)
+              ?.map((e) => Attachment.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$ExpenseImplToJson(_$ExpenseImpl instance) =>
@@ -71,7 +91,9 @@ Map<String, dynamic> _$$ExpenseImplToJson(_$ExpenseImpl instance) =>
       'categoryId': instance.categoryId,
       'categoryTitle': instance.categoryTitle,
       'projectId': instance.projectId,
+      'projectName': instance.projectName,
       'taskId': instance.taskId,
+      'taskTitle': instance.taskTitle,
       'employeeId': instance.employeeId,
       'creditCardId': instance.creditCardId,
       'paymentMethod':
@@ -80,4 +102,5 @@ Map<String, dynamic> _$$ExpenseImplToJson(_$ExpenseImpl instance) =>
       'paymentMethodCardNumber': instance.paymentMethodCardNumber,
       'status': const ExpenseStatusConverter().toJson(instance.status),
       'items': instance.items,
+      'attachments': instance.attachments,
     };

@@ -32,6 +32,17 @@ class FinanceExpenseEditEvent with _$FinanceExpenseEditEvent {
     required ExpenseItem item,
   }) = FinanceExpenseEditEventChangeAddExpenseItem;
 
+  const factory FinanceExpenseEditEvent.linkProject({
+    required String projectId,
+    required String projectName,
+    required String taskId,
+    required String taskTitle,
+  }) = FinanceExpenseEditEventChangeLinkProject;
+
+  const factory FinanceExpenseEditEvent.addAttachment({
+    required Attachment attachment,
+  }) = FinanceExpenseEditEventChangeAddAttachment;
+
   const factory FinanceExpenseEditEvent.save(VoidCallback callBack) =
       FinanceExpenseEditEventChangeSave;
 }

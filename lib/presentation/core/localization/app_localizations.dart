@@ -409,6 +409,10 @@ abstract class AppLocalizations {
   String get paymentMethod;
 
   String get method;
+
+  String get unlinkExpenseFromProject;
+
+  String get approve;
 }
 
 class _AppLocalizationsDelegate

@@ -57,6 +57,7 @@ flutter:
      - assets/images/buildnotifier_transparent.png
      - assets/images/invoice.png
      - assets/images/Nfe.png
+     - assets/images/Resume.pdf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
