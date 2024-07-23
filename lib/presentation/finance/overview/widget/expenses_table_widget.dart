@@ -36,17 +36,18 @@ class ExpensesTableWidget extends StatelessWidget {
           ),
           columns: [
             DataColumn2(
-              fixedWidth: Sizes.size124,
+              size: ColumnSize.M,
               label: Text(
                 context.tr.dueDate,
               ),
             ),
             DataColumn2(
               fixedWidth: Sizes.size200,
+              size: ColumnSize.L,
               label: Text(context.tr.description),
             ),
             DataColumn2(
-              fixedWidth: Sizes.size136,
+              size: ColumnSize.M,
               label: Text(context.tr.method),
             ),
             DataColumn2(
@@ -54,13 +55,14 @@ class ExpensesTableWidget extends StatelessWidget {
               numeric: true,
               label: Text(context.tr.amount),
             ),
+            // DataColumn2(
+            //   size: ColumnSize.M,
+            //   numeric: true,
+            //   label: Text(context.tr.balance),
+            // ),
             DataColumn2(
-              size: ColumnSize.M,
+              fixedWidth: Sizes.size240,
               numeric: true,
-              label: Text(context.tr.balance),
-            ),
-            DataColumn2(
-              fixedWidth: Sizes.size152,
               label: Text(context.tr.status),
             ),
             DataColumn2(
@@ -94,9 +96,9 @@ class ExpensesTableWidget extends StatelessWidget {
                     expense.total.toStringAsFixed(2),
                   ),
                 ),
-                DataCell(
-                  Container(),
-                ),
+                // DataCell(
+                //   Container(),
+                // ),
                 DataCell(
                   Container(
                     decoration: BoxDecoration(

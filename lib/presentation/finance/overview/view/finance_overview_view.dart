@@ -6,6 +6,7 @@ import 'package:buildnotifierrear/presentation/core/extensions/build_context_ext
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/bloc/finance_overview_bloc.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/view/finance_expenses_overview_view.dart';
+import 'package:buildnotifierrear/presentation/finance/overview/widget/expenses_status_widget.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/invoice_status_widget.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/invoice_table_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
@@ -263,167 +264,13 @@ class FinanceOverviewView extends IView {
                               Row(
                                 children: [
                                   Expanded(
-                                    child: Card(
-                                      child: SizedBox(
-                                        height: Sizes.size240,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(
-                                              Sizes.size16),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              Text(
-                                                context.tr.expenses,
-                                                style: const TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                              gapHeight16,
-                                              Row(
-                                                children: [
-                                                  Expanded(
-                                                    child: SizedBox.square(
-                                                      dimension: Sizes.size160,
-                                                      child: Chart(
-                                                        data: const [
-                                                          {
-                                                            'genre':
-                                                                'Rent & mortgage ',
-                                                            'sold': 2500.00,
-                                                          },
-                                                          {
-                                                            'genre':
-                                                                'Transport',
-                                                            'sold': 6000.00,
-                                                          },
-                                                          {
-                                                            'genre': 'Employee',
-                                                            'sold': 12000.00,
-                                                          },
-                                                        ],
-                                                        variables: {
-                                                          'genre': Variable(
-                                                            accessor: (Map
-                                                                    map) =>
-                                                                map['genre']
-                                                                    as String,
-                                                          ),
-                                                          'sold': Variable(
-                                                            accessor:
-                                                                (Map map) =>
-                                                                    map['sold']
-                                                                        as num,
-                                                          ),
-                                                        },
-                                                        transforms: [
-                                                          Proportion(
-                                                            variable: 'sold',
-                                                            as: 'percent',
-                                                          )
-                                                        ],
-                                                        marks: [
-                                                          IntervalMark(
-                                                            position: Varset(
-                                                                    'percent') /
-                                                                Varset('genre'),
-                                                            color: ColorEncode(
-                                                                variable:
-                                                                    'genre',
-                                                                values: [
-                                                                  AppColor
-                                                                      .warning
-                                                                      .shade400,
-                                                                  AppColor
-                                                                      .warning
-                                                                      .shade500,
-                                                                  AppColor
-                                                                      .warning
-                                                                      .shade600,
-                                                                ]),
-                                                            modifiers: [
-                                                              StackModifier()
-                                                            ],
-                                                          )
-                                                        ],
-                                                        coord: PolarCoord(
-                                                          transposed: true,
-                                                          dimCount: 1,
-                                                          startRadius: 0.6,
-                                                        ),
-                                                        selections: {
-                                                          'tap':
-                                                              PointSelection()
-                                                        },
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: Column(
-                                                      children: [
-                                                        Row(
-                                                          children: [
-                                                            Container(
-                                                              color: AppColor
-                                                                  .warning
-                                                                  .shade400,
-                                                              width:
-                                                                  Sizes.size12,
-                                                              height: 10,
-                                                            ),
-                                                            gapWidth8,
-                                                            const Text(
-                                                              'Rent & mortgage: 2,500.00',
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          children: [
-                                                            Container(
-                                                              color: AppColor
-                                                                  .warning
-                                                                  .shade500,
-                                                              width:
-                                                                  Sizes.size12,
-                                                              height: 10,
-                                                            ),
-                                                            gapWidth8,
-                                                            const Text(
-                                                              'Travel Expenses: 6,000.00',
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          children: [
-                                                            Container(
-                                                              color: AppColor
-                                                                  .warning
-                                                                  .shade500,
-                                                              width:
-                                                                  Sizes.size12,
-                                                              height: 10,
-                                                            ),
-                                                            gapWidth8,
-                                                            const Text(
-                                                              'Payroll Expenses: 12,000.00',
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  )
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
+                                    child: InvoiceStatusWidget(
+                                      invoices: invoices,
                                     ),
                                   ),
                                   Expanded(
-                                    child: InvoiceStatusWidget(
-                                      invoices: invoices,
+                                    child: ExpensesStatusWidget(
+                                      expenses: expenses,
                                     ),
                                   ),
                                 ],

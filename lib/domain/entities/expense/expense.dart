@@ -65,3 +65,15 @@ extension OnExpense on Expense {
         : 0;
   }
 }
+
+extension OnExpenseList on List<Expense> {
+  double totalOf(List<ExpenseStatusEnums> status) {
+    var expenses = where((expense) => status.contains(expense.status)).toList();
+
+    if (expenses.isEmpty) {
+      return 0;
+    }
+
+    return expenses.map((e) => e.total).reduce((a, b) => a + b);
+  }
+}
