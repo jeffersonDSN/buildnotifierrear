@@ -22,6 +22,7 @@ mixin _$FinanceExpenseEditEvent {
     required TResult Function(DateTime dueDate) changeDueDate,
     required TResult Function(String description) changeDescription,
     required TResult Function(String id, String title) changeCategory,
+    required TResult Function(String id, String number) changeCreditCard,
     required TResult Function(PaymentMethodEnums paymentMethod)
         changePaymentMethod,
     required TResult Function(String id, String number)
@@ -40,6 +41,7 @@ mixin _$FinanceExpenseEditEvent {
     TResult? Function(DateTime dueDate)? changeDueDate,
     TResult? Function(String description)? changeDescription,
     TResult? Function(String id, String title)? changeCategory,
+    TResult? Function(String id, String number)? changeCreditCard,
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
@@ -56,6 +58,7 @@ mixin _$FinanceExpenseEditEvent {
     TResult Function(DateTime dueDate)? changeDueDate,
     TResult Function(String description)? changeDescription,
     TResult Function(String id, String title)? changeCategory,
+    TResult Function(String id, String number)? changeCreditCard,
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
@@ -76,6 +79,8 @@ mixin _$FinanceExpenseEditEvent {
         changeDescription,
     required TResult Function(FinanceExpenseEditEventChangeCategory value)
         changeCategory,
+    required TResult Function(FinanceExpenseEditEventChangeCreditCard value)
+        changeCreditCard,
     required TResult Function(FinanceExpenseEditEventChangePaymentMethod value)
         changePaymentMethod,
     required TResult Function(
@@ -99,6 +104,8 @@ mixin _$FinanceExpenseEditEvent {
         changeDescription,
     TResult? Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult? Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult? Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult? Function(
@@ -121,6 +128,8 @@ mixin _$FinanceExpenseEditEvent {
         changeDescription,
     TResult Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult Function(
@@ -240,6 +249,7 @@ class _$FinanceExpenseEditEventLoadImpl implements FinanceExpenseEditEventLoad {
     required TResult Function(DateTime dueDate) changeDueDate,
     required TResult Function(String description) changeDescription,
     required TResult Function(String id, String title) changeCategory,
+    required TResult Function(String id, String number) changeCreditCard,
     required TResult Function(PaymentMethodEnums paymentMethod)
         changePaymentMethod,
     required TResult Function(String id, String number)
@@ -261,6 +271,7 @@ class _$FinanceExpenseEditEventLoadImpl implements FinanceExpenseEditEventLoad {
     TResult? Function(DateTime dueDate)? changeDueDate,
     TResult? Function(String description)? changeDescription,
     TResult? Function(String id, String title)? changeCategory,
+    TResult? Function(String id, String number)? changeCreditCard,
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
@@ -280,6 +291,7 @@ class _$FinanceExpenseEditEventLoadImpl implements FinanceExpenseEditEventLoad {
     TResult Function(DateTime dueDate)? changeDueDate,
     TResult Function(String description)? changeDescription,
     TResult Function(String id, String title)? changeCategory,
+    TResult Function(String id, String number)? changeCreditCard,
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
@@ -306,6 +318,8 @@ class _$FinanceExpenseEditEventLoadImpl implements FinanceExpenseEditEventLoad {
         changeDescription,
     required TResult Function(FinanceExpenseEditEventChangeCategory value)
         changeCategory,
+    required TResult Function(FinanceExpenseEditEventChangeCreditCard value)
+        changeCreditCard,
     required TResult Function(FinanceExpenseEditEventChangePaymentMethod value)
         changePaymentMethod,
     required TResult Function(
@@ -332,6 +346,8 @@ class _$FinanceExpenseEditEventLoadImpl implements FinanceExpenseEditEventLoad {
         changeDescription,
     TResult? Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult? Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult? Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult? Function(
@@ -357,6 +373,8 @@ class _$FinanceExpenseEditEventLoadImpl implements FinanceExpenseEditEventLoad {
         changeDescription,
     TResult Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult Function(
@@ -462,6 +480,7 @@ class _$FinanceExpenseEditEventChangeDueDateImpl
     required TResult Function(DateTime dueDate) changeDueDate,
     required TResult Function(String description) changeDescription,
     required TResult Function(String id, String title) changeCategory,
+    required TResult Function(String id, String number) changeCreditCard,
     required TResult Function(PaymentMethodEnums paymentMethod)
         changePaymentMethod,
     required TResult Function(String id, String number)
@@ -483,6 +502,7 @@ class _$FinanceExpenseEditEventChangeDueDateImpl
     TResult? Function(DateTime dueDate)? changeDueDate,
     TResult? Function(String description)? changeDescription,
     TResult? Function(String id, String title)? changeCategory,
+    TResult? Function(String id, String number)? changeCreditCard,
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
@@ -502,6 +522,7 @@ class _$FinanceExpenseEditEventChangeDueDateImpl
     TResult Function(DateTime dueDate)? changeDueDate,
     TResult Function(String description)? changeDescription,
     TResult Function(String id, String title)? changeCategory,
+    TResult Function(String id, String number)? changeCreditCard,
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
@@ -528,6 +549,8 @@ class _$FinanceExpenseEditEventChangeDueDateImpl
         changeDescription,
     required TResult Function(FinanceExpenseEditEventChangeCategory value)
         changeCategory,
+    required TResult Function(FinanceExpenseEditEventChangeCreditCard value)
+        changeCreditCard,
     required TResult Function(FinanceExpenseEditEventChangePaymentMethod value)
         changePaymentMethod,
     required TResult Function(
@@ -554,6 +577,8 @@ class _$FinanceExpenseEditEventChangeDueDateImpl
         changeDescription,
     TResult? Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult? Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult? Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult? Function(
@@ -579,6 +604,8 @@ class _$FinanceExpenseEditEventChangeDueDateImpl
         changeDescription,
     TResult Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult Function(
@@ -690,6 +717,7 @@ class _$FinanceExpenseEditEventChangeDescriptionImpl
     required TResult Function(DateTime dueDate) changeDueDate,
     required TResult Function(String description) changeDescription,
     required TResult Function(String id, String title) changeCategory,
+    required TResult Function(String id, String number) changeCreditCard,
     required TResult Function(PaymentMethodEnums paymentMethod)
         changePaymentMethod,
     required TResult Function(String id, String number)
@@ -711,6 +739,7 @@ class _$FinanceExpenseEditEventChangeDescriptionImpl
     TResult? Function(DateTime dueDate)? changeDueDate,
     TResult? Function(String description)? changeDescription,
     TResult? Function(String id, String title)? changeCategory,
+    TResult? Function(String id, String number)? changeCreditCard,
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
@@ -730,6 +759,7 @@ class _$FinanceExpenseEditEventChangeDescriptionImpl
     TResult Function(DateTime dueDate)? changeDueDate,
     TResult Function(String description)? changeDescription,
     TResult Function(String id, String title)? changeCategory,
+    TResult Function(String id, String number)? changeCreditCard,
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
@@ -756,6 +786,8 @@ class _$FinanceExpenseEditEventChangeDescriptionImpl
         changeDescription,
     required TResult Function(FinanceExpenseEditEventChangeCategory value)
         changeCategory,
+    required TResult Function(FinanceExpenseEditEventChangeCreditCard value)
+        changeCreditCard,
     required TResult Function(FinanceExpenseEditEventChangePaymentMethod value)
         changePaymentMethod,
     required TResult Function(
@@ -782,6 +814,8 @@ class _$FinanceExpenseEditEventChangeDescriptionImpl
         changeDescription,
     TResult? Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult? Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult? Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult? Function(
@@ -807,6 +841,8 @@ class _$FinanceExpenseEditEventChangeDescriptionImpl
         changeDescription,
     TResult Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult Function(
@@ -924,6 +960,7 @@ class _$FinanceExpenseEditEventChangeCategoryImpl
     required TResult Function(DateTime dueDate) changeDueDate,
     required TResult Function(String description) changeDescription,
     required TResult Function(String id, String title) changeCategory,
+    required TResult Function(String id, String number) changeCreditCard,
     required TResult Function(PaymentMethodEnums paymentMethod)
         changePaymentMethod,
     required TResult Function(String id, String number)
@@ -945,6 +982,7 @@ class _$FinanceExpenseEditEventChangeCategoryImpl
     TResult? Function(DateTime dueDate)? changeDueDate,
     TResult? Function(String description)? changeDescription,
     TResult? Function(String id, String title)? changeCategory,
+    TResult? Function(String id, String number)? changeCreditCard,
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
@@ -964,6 +1002,7 @@ class _$FinanceExpenseEditEventChangeCategoryImpl
     TResult Function(DateTime dueDate)? changeDueDate,
     TResult Function(String description)? changeDescription,
     TResult Function(String id, String title)? changeCategory,
+    TResult Function(String id, String number)? changeCreditCard,
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
@@ -990,6 +1029,8 @@ class _$FinanceExpenseEditEventChangeCategoryImpl
         changeDescription,
     required TResult Function(FinanceExpenseEditEventChangeCategory value)
         changeCategory,
+    required TResult Function(FinanceExpenseEditEventChangeCreditCard value)
+        changeCreditCard,
     required TResult Function(FinanceExpenseEditEventChangePaymentMethod value)
         changePaymentMethod,
     required TResult Function(
@@ -1016,6 +1057,8 @@ class _$FinanceExpenseEditEventChangeCategoryImpl
         changeDescription,
     TResult? Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult? Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult? Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult? Function(
@@ -1041,6 +1084,8 @@ class _$FinanceExpenseEditEventChangeCategoryImpl
         changeDescription,
     TResult Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult Function(
@@ -1073,6 +1118,251 @@ abstract class FinanceExpenseEditEventChangeCategory
   @JsonKey(ignore: true)
   _$$FinanceExpenseEditEventChangeCategoryImplCopyWith<
           _$FinanceExpenseEditEventChangeCategoryImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FinanceExpenseEditEventChangeCreditCardImplCopyWith<$Res> {
+  factory _$$FinanceExpenseEditEventChangeCreditCardImplCopyWith(
+          _$FinanceExpenseEditEventChangeCreditCardImpl value,
+          $Res Function(_$FinanceExpenseEditEventChangeCreditCardImpl) then) =
+      __$$FinanceExpenseEditEventChangeCreditCardImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id, String number});
+}
+
+/// @nodoc
+class __$$FinanceExpenseEditEventChangeCreditCardImplCopyWithImpl<$Res>
+    extends _$FinanceExpenseEditEventCopyWithImpl<$Res,
+        _$FinanceExpenseEditEventChangeCreditCardImpl>
+    implements _$$FinanceExpenseEditEventChangeCreditCardImplCopyWith<$Res> {
+  __$$FinanceExpenseEditEventChangeCreditCardImplCopyWithImpl(
+      _$FinanceExpenseEditEventChangeCreditCardImpl _value,
+      $Res Function(_$FinanceExpenseEditEventChangeCreditCardImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? number = null,
+  }) {
+    return _then(_$FinanceExpenseEditEventChangeCreditCardImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      number: null == number
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FinanceExpenseEditEventChangeCreditCardImpl
+    implements FinanceExpenseEditEventChangeCreditCard {
+  const _$FinanceExpenseEditEventChangeCreditCardImpl(
+      {required this.id, required this.number});
+
+  @override
+  final String id;
+  @override
+  final String number;
+
+  @override
+  String toString() {
+    return 'FinanceExpenseEditEvent.changeCreditCard(id: $id, number: $number)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FinanceExpenseEditEventChangeCreditCardImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.number, number) || other.number == number));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id, number);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FinanceExpenseEditEventChangeCreditCardImplCopyWith<
+          _$FinanceExpenseEditEventChangeCreditCardImpl>
+      get copyWith =>
+          __$$FinanceExpenseEditEventChangeCreditCardImplCopyWithImpl<
+              _$FinanceExpenseEditEventChangeCreditCardImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CrudType crudType) load,
+    required TResult Function(DateTime dueDate) changeDueDate,
+    required TResult Function(String description) changeDescription,
+    required TResult Function(String id, String title) changeCategory,
+    required TResult Function(String id, String number) changeCreditCard,
+    required TResult Function(PaymentMethodEnums paymentMethod)
+        changePaymentMethod,
+    required TResult Function(String id, String number)
+        changePaymentMethodCreditCard,
+    required TResult Function(ExpenseItem item) addExpenseItem,
+    required TResult Function(String projectId, String projectName,
+            String taskId, String taskTitle)
+        linkProject,
+    required TResult Function(Attachment attachment) addAttachment,
+    required TResult Function(VoidCallback callBack) save,
+  }) {
+    return changeCreditCard(id, number);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CrudType crudType)? load,
+    TResult? Function(DateTime dueDate)? changeDueDate,
+    TResult? Function(String description)? changeDescription,
+    TResult? Function(String id, String title)? changeCategory,
+    TResult? Function(String id, String number)? changeCreditCard,
+    TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
+    TResult? Function(String id, String number)? changePaymentMethodCreditCard,
+    TResult? Function(ExpenseItem item)? addExpenseItem,
+    TResult? Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult? Function(Attachment attachment)? addAttachment,
+    TResult? Function(VoidCallback callBack)? save,
+  }) {
+    return changeCreditCard?.call(id, number);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CrudType crudType)? load,
+    TResult Function(DateTime dueDate)? changeDueDate,
+    TResult Function(String description)? changeDescription,
+    TResult Function(String id, String title)? changeCategory,
+    TResult Function(String id, String number)? changeCreditCard,
+    TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
+    TResult Function(String id, String number)? changePaymentMethodCreditCard,
+    TResult Function(ExpenseItem item)? addExpenseItem,
+    TResult Function(String projectId, String projectName, String taskId,
+            String taskTitle)?
+        linkProject,
+    TResult Function(Attachment attachment)? addAttachment,
+    TResult Function(VoidCallback callBack)? save,
+    required TResult orElse(),
+  }) {
+    if (changeCreditCard != null) {
+      return changeCreditCard(id, number);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FinanceExpenseEditEventLoad value) load,
+    required TResult Function(FinanceExpenseEditEventChangeDueDate value)
+        changeDueDate,
+    required TResult Function(FinanceExpenseEditEventChangeDescription value)
+        changeDescription,
+    required TResult Function(FinanceExpenseEditEventChangeCategory value)
+        changeCategory,
+    required TResult Function(FinanceExpenseEditEventChangeCreditCard value)
+        changeCreditCard,
+    required TResult Function(FinanceExpenseEditEventChangePaymentMethod value)
+        changePaymentMethod,
+    required TResult Function(
+            FinanceExpenseEditEventChangePaymentMethodCreditCard value)
+        changePaymentMethodCreditCard,
+    required TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)
+        addExpenseItem,
+    required TResult Function(FinanceExpenseEditEventChangeLinkProject value)
+        linkProject,
+    required TResult Function(FinanceExpenseEditEventChangeAddAttachment value)
+        addAttachment,
+    required TResult Function(FinanceExpenseEditEventChangeSave value) save,
+  }) {
+    return changeCreditCard(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FinanceExpenseEditEventLoad value)? load,
+    TResult? Function(FinanceExpenseEditEventChangeDueDate value)?
+        changeDueDate,
+    TResult? Function(FinanceExpenseEditEventChangeDescription value)?
+        changeDescription,
+    TResult? Function(FinanceExpenseEditEventChangeCategory value)?
+        changeCategory,
+    TResult? Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
+    TResult? Function(FinanceExpenseEditEventChangePaymentMethod value)?
+        changePaymentMethod,
+    TResult? Function(
+            FinanceExpenseEditEventChangePaymentMethodCreditCard value)?
+        changePaymentMethodCreditCard,
+    TResult? Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
+        addExpenseItem,
+    TResult? Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult? Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
+    TResult? Function(FinanceExpenseEditEventChangeSave value)? save,
+  }) {
+    return changeCreditCard?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FinanceExpenseEditEventLoad value)? load,
+    TResult Function(FinanceExpenseEditEventChangeDueDate value)? changeDueDate,
+    TResult Function(FinanceExpenseEditEventChangeDescription value)?
+        changeDescription,
+    TResult Function(FinanceExpenseEditEventChangeCategory value)?
+        changeCategory,
+    TResult Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
+    TResult Function(FinanceExpenseEditEventChangePaymentMethod value)?
+        changePaymentMethod,
+    TResult Function(
+            FinanceExpenseEditEventChangePaymentMethodCreditCard value)?
+        changePaymentMethodCreditCard,
+    TResult Function(FinanceExpenseEditEventChangeAddExpenseItem value)?
+        addExpenseItem,
+    TResult Function(FinanceExpenseEditEventChangeLinkProject value)?
+        linkProject,
+    TResult Function(FinanceExpenseEditEventChangeAddAttachment value)?
+        addAttachment,
+    TResult Function(FinanceExpenseEditEventChangeSave value)? save,
+    required TResult orElse(),
+  }) {
+    if (changeCreditCard != null) {
+      return changeCreditCard(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FinanceExpenseEditEventChangeCreditCard
+    implements FinanceExpenseEditEvent {
+  const factory FinanceExpenseEditEventChangeCreditCard(
+          {required final String id, required final String number}) =
+      _$FinanceExpenseEditEventChangeCreditCardImpl;
+
+  String get id;
+  String get number;
+  @JsonKey(ignore: true)
+  _$$FinanceExpenseEditEventChangeCreditCardImplCopyWith<
+          _$FinanceExpenseEditEventChangeCreditCardImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1155,6 +1445,7 @@ class _$FinanceExpenseEditEventChangePaymentMethodImpl
     required TResult Function(DateTime dueDate) changeDueDate,
     required TResult Function(String description) changeDescription,
     required TResult Function(String id, String title) changeCategory,
+    required TResult Function(String id, String number) changeCreditCard,
     required TResult Function(PaymentMethodEnums paymentMethod)
         changePaymentMethod,
     required TResult Function(String id, String number)
@@ -1176,6 +1467,7 @@ class _$FinanceExpenseEditEventChangePaymentMethodImpl
     TResult? Function(DateTime dueDate)? changeDueDate,
     TResult? Function(String description)? changeDescription,
     TResult? Function(String id, String title)? changeCategory,
+    TResult? Function(String id, String number)? changeCreditCard,
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
@@ -1195,6 +1487,7 @@ class _$FinanceExpenseEditEventChangePaymentMethodImpl
     TResult Function(DateTime dueDate)? changeDueDate,
     TResult Function(String description)? changeDescription,
     TResult Function(String id, String title)? changeCategory,
+    TResult Function(String id, String number)? changeCreditCard,
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
@@ -1221,6 +1514,8 @@ class _$FinanceExpenseEditEventChangePaymentMethodImpl
         changeDescription,
     required TResult Function(FinanceExpenseEditEventChangeCategory value)
         changeCategory,
+    required TResult Function(FinanceExpenseEditEventChangeCreditCard value)
+        changeCreditCard,
     required TResult Function(FinanceExpenseEditEventChangePaymentMethod value)
         changePaymentMethod,
     required TResult Function(
@@ -1247,6 +1542,8 @@ class _$FinanceExpenseEditEventChangePaymentMethodImpl
         changeDescription,
     TResult? Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult? Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult? Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult? Function(
@@ -1272,6 +1569,8 @@ class _$FinanceExpenseEditEventChangePaymentMethodImpl
         changeDescription,
     TResult Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult Function(
@@ -1400,6 +1699,7 @@ class _$FinanceExpenseEditEventChangePaymentMethodCreditCardImpl
     required TResult Function(DateTime dueDate) changeDueDate,
     required TResult Function(String description) changeDescription,
     required TResult Function(String id, String title) changeCategory,
+    required TResult Function(String id, String number) changeCreditCard,
     required TResult Function(PaymentMethodEnums paymentMethod)
         changePaymentMethod,
     required TResult Function(String id, String number)
@@ -1421,6 +1721,7 @@ class _$FinanceExpenseEditEventChangePaymentMethodCreditCardImpl
     TResult? Function(DateTime dueDate)? changeDueDate,
     TResult? Function(String description)? changeDescription,
     TResult? Function(String id, String title)? changeCategory,
+    TResult? Function(String id, String number)? changeCreditCard,
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
@@ -1440,6 +1741,7 @@ class _$FinanceExpenseEditEventChangePaymentMethodCreditCardImpl
     TResult Function(DateTime dueDate)? changeDueDate,
     TResult Function(String description)? changeDescription,
     TResult Function(String id, String title)? changeCategory,
+    TResult Function(String id, String number)? changeCreditCard,
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
@@ -1466,6 +1768,8 @@ class _$FinanceExpenseEditEventChangePaymentMethodCreditCardImpl
         changeDescription,
     required TResult Function(FinanceExpenseEditEventChangeCategory value)
         changeCategory,
+    required TResult Function(FinanceExpenseEditEventChangeCreditCard value)
+        changeCreditCard,
     required TResult Function(FinanceExpenseEditEventChangePaymentMethod value)
         changePaymentMethod,
     required TResult Function(
@@ -1492,6 +1796,8 @@ class _$FinanceExpenseEditEventChangePaymentMethodCreditCardImpl
         changeDescription,
     TResult? Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult? Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult? Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult? Function(
@@ -1517,6 +1823,8 @@ class _$FinanceExpenseEditEventChangePaymentMethodCreditCardImpl
         changeDescription,
     TResult Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult Function(
@@ -1641,6 +1949,7 @@ class _$FinanceExpenseEditEventChangeAddExpenseItemImpl
     required TResult Function(DateTime dueDate) changeDueDate,
     required TResult Function(String description) changeDescription,
     required TResult Function(String id, String title) changeCategory,
+    required TResult Function(String id, String number) changeCreditCard,
     required TResult Function(PaymentMethodEnums paymentMethod)
         changePaymentMethod,
     required TResult Function(String id, String number)
@@ -1662,6 +1971,7 @@ class _$FinanceExpenseEditEventChangeAddExpenseItemImpl
     TResult? Function(DateTime dueDate)? changeDueDate,
     TResult? Function(String description)? changeDescription,
     TResult? Function(String id, String title)? changeCategory,
+    TResult? Function(String id, String number)? changeCreditCard,
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
@@ -1681,6 +1991,7 @@ class _$FinanceExpenseEditEventChangeAddExpenseItemImpl
     TResult Function(DateTime dueDate)? changeDueDate,
     TResult Function(String description)? changeDescription,
     TResult Function(String id, String title)? changeCategory,
+    TResult Function(String id, String number)? changeCreditCard,
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
@@ -1707,6 +2018,8 @@ class _$FinanceExpenseEditEventChangeAddExpenseItemImpl
         changeDescription,
     required TResult Function(FinanceExpenseEditEventChangeCategory value)
         changeCategory,
+    required TResult Function(FinanceExpenseEditEventChangeCreditCard value)
+        changeCreditCard,
     required TResult Function(FinanceExpenseEditEventChangePaymentMethod value)
         changePaymentMethod,
     required TResult Function(
@@ -1733,6 +2046,8 @@ class _$FinanceExpenseEditEventChangeAddExpenseItemImpl
         changeDescription,
     TResult? Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult? Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult? Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult? Function(
@@ -1758,6 +2073,8 @@ class _$FinanceExpenseEditEventChangeAddExpenseItemImpl
         changeDescription,
     TResult Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult Function(
@@ -1900,6 +2217,7 @@ class _$FinanceExpenseEditEventChangeLinkProjectImpl
     required TResult Function(DateTime dueDate) changeDueDate,
     required TResult Function(String description) changeDescription,
     required TResult Function(String id, String title) changeCategory,
+    required TResult Function(String id, String number) changeCreditCard,
     required TResult Function(PaymentMethodEnums paymentMethod)
         changePaymentMethod,
     required TResult Function(String id, String number)
@@ -1921,6 +2239,7 @@ class _$FinanceExpenseEditEventChangeLinkProjectImpl
     TResult? Function(DateTime dueDate)? changeDueDate,
     TResult? Function(String description)? changeDescription,
     TResult? Function(String id, String title)? changeCategory,
+    TResult? Function(String id, String number)? changeCreditCard,
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
@@ -1940,6 +2259,7 @@ class _$FinanceExpenseEditEventChangeLinkProjectImpl
     TResult Function(DateTime dueDate)? changeDueDate,
     TResult Function(String description)? changeDescription,
     TResult Function(String id, String title)? changeCategory,
+    TResult Function(String id, String number)? changeCreditCard,
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
@@ -1966,6 +2286,8 @@ class _$FinanceExpenseEditEventChangeLinkProjectImpl
         changeDescription,
     required TResult Function(FinanceExpenseEditEventChangeCategory value)
         changeCategory,
+    required TResult Function(FinanceExpenseEditEventChangeCreditCard value)
+        changeCreditCard,
     required TResult Function(FinanceExpenseEditEventChangePaymentMethod value)
         changePaymentMethod,
     required TResult Function(
@@ -1992,6 +2314,8 @@ class _$FinanceExpenseEditEventChangeLinkProjectImpl
         changeDescription,
     TResult? Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult? Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult? Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult? Function(
@@ -2017,6 +2341,8 @@ class _$FinanceExpenseEditEventChangeLinkProjectImpl
         changeDescription,
     TResult Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult Function(
@@ -2146,6 +2472,7 @@ class _$FinanceExpenseEditEventChangeAddAttachmentImpl
     required TResult Function(DateTime dueDate) changeDueDate,
     required TResult Function(String description) changeDescription,
     required TResult Function(String id, String title) changeCategory,
+    required TResult Function(String id, String number) changeCreditCard,
     required TResult Function(PaymentMethodEnums paymentMethod)
         changePaymentMethod,
     required TResult Function(String id, String number)
@@ -2167,6 +2494,7 @@ class _$FinanceExpenseEditEventChangeAddAttachmentImpl
     TResult? Function(DateTime dueDate)? changeDueDate,
     TResult? Function(String description)? changeDescription,
     TResult? Function(String id, String title)? changeCategory,
+    TResult? Function(String id, String number)? changeCreditCard,
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
@@ -2186,6 +2514,7 @@ class _$FinanceExpenseEditEventChangeAddAttachmentImpl
     TResult Function(DateTime dueDate)? changeDueDate,
     TResult Function(String description)? changeDescription,
     TResult Function(String id, String title)? changeCategory,
+    TResult Function(String id, String number)? changeCreditCard,
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
@@ -2212,6 +2541,8 @@ class _$FinanceExpenseEditEventChangeAddAttachmentImpl
         changeDescription,
     required TResult Function(FinanceExpenseEditEventChangeCategory value)
         changeCategory,
+    required TResult Function(FinanceExpenseEditEventChangeCreditCard value)
+        changeCreditCard,
     required TResult Function(FinanceExpenseEditEventChangePaymentMethod value)
         changePaymentMethod,
     required TResult Function(
@@ -2238,6 +2569,8 @@ class _$FinanceExpenseEditEventChangeAddAttachmentImpl
         changeDescription,
     TResult? Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult? Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult? Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult? Function(
@@ -2263,6 +2596,8 @@ class _$FinanceExpenseEditEventChangeAddAttachmentImpl
         changeDescription,
     TResult Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult Function(
@@ -2372,6 +2707,7 @@ class _$FinanceExpenseEditEventChangeSaveImpl
     required TResult Function(DateTime dueDate) changeDueDate,
     required TResult Function(String description) changeDescription,
     required TResult Function(String id, String title) changeCategory,
+    required TResult Function(String id, String number) changeCreditCard,
     required TResult Function(PaymentMethodEnums paymentMethod)
         changePaymentMethod,
     required TResult Function(String id, String number)
@@ -2393,6 +2729,7 @@ class _$FinanceExpenseEditEventChangeSaveImpl
     TResult? Function(DateTime dueDate)? changeDueDate,
     TResult? Function(String description)? changeDescription,
     TResult? Function(String id, String title)? changeCategory,
+    TResult? Function(String id, String number)? changeCreditCard,
     TResult? Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult? Function(String id, String number)? changePaymentMethodCreditCard,
     TResult? Function(ExpenseItem item)? addExpenseItem,
@@ -2412,6 +2749,7 @@ class _$FinanceExpenseEditEventChangeSaveImpl
     TResult Function(DateTime dueDate)? changeDueDate,
     TResult Function(String description)? changeDescription,
     TResult Function(String id, String title)? changeCategory,
+    TResult Function(String id, String number)? changeCreditCard,
     TResult Function(PaymentMethodEnums paymentMethod)? changePaymentMethod,
     TResult Function(String id, String number)? changePaymentMethodCreditCard,
     TResult Function(ExpenseItem item)? addExpenseItem,
@@ -2438,6 +2776,8 @@ class _$FinanceExpenseEditEventChangeSaveImpl
         changeDescription,
     required TResult Function(FinanceExpenseEditEventChangeCategory value)
         changeCategory,
+    required TResult Function(FinanceExpenseEditEventChangeCreditCard value)
+        changeCreditCard,
     required TResult Function(FinanceExpenseEditEventChangePaymentMethod value)
         changePaymentMethod,
     required TResult Function(
@@ -2464,6 +2804,8 @@ class _$FinanceExpenseEditEventChangeSaveImpl
         changeDescription,
     TResult? Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult? Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult? Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult? Function(
@@ -2489,6 +2831,8 @@ class _$FinanceExpenseEditEventChangeSaveImpl
         changeDescription,
     TResult Function(FinanceExpenseEditEventChangeCategory value)?
         changeCategory,
+    TResult Function(FinanceExpenseEditEventChangeCreditCard value)?
+        changeCreditCard,
     TResult Function(FinanceExpenseEditEventChangePaymentMethod value)?
         changePaymentMethod,
     TResult Function(

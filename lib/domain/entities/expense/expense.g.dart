@@ -61,6 +61,7 @@ _$ExpenseImpl _$$ExpenseImplFromJson(Map<String, dynamic> json) =>
       taskTitle: json['taskTitle'] as String? ?? '',
       employeeId: json['employeeId'] as String? ?? '',
       creditCardId: json['creditCardId'] as String? ?? '',
+      creditCardNumber: json['creditCardNumber'] as String? ?? '',
       paymentMethod: json['paymentMethod'] == null
           ? PaymentMethodEnums.cash
           : const PaymentMethodConverter()
@@ -96,6 +97,7 @@ Map<String, dynamic> _$$ExpenseImplToJson(_$ExpenseImpl instance) =>
       'taskTitle': instance.taskTitle,
       'employeeId': instance.employeeId,
       'creditCardId': instance.creditCardId,
+      'creditCardNumber': instance.creditCardNumber,
       'paymentMethod':
           const PaymentMethodConverter().toJson(instance.paymentMethod),
       'paymentMethodCardId': instance.paymentMethodCardId,

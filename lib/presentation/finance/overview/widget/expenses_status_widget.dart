@@ -72,9 +72,9 @@ class ExpensesStatusWidget extends StatelessWidget {
                           IntervalMark(
                             position: Varset('percent') / Varset('genre'),
                             color: ColorEncode(variable: 'genre', values: [
-                              AppColor.warning.shade400,
-                              AppColor.warning.shade500,
-                              AppColor.warning.shade600,
+                              AppColor.red,
+                              AppColor.greyColorSwatch,
+                              AppColor.warning,
                             ]),
                             modifiers: [StackModifier()],
                           )
@@ -94,7 +94,7 @@ class ExpensesStatusWidget extends StatelessWidget {
                         Row(
                           children: [
                             Container(
-                              color: AppColor.warning.shade400,
+                              color: AppColor.red,
                               width: Sizes.size12,
                               height: 10,
                             ),
@@ -107,7 +107,7 @@ class ExpensesStatusWidget extends StatelessWidget {
                         Row(
                           children: [
                             Container(
-                              color: AppColor.warning.shade500,
+                              color: AppColor.greyColorSwatch,
                               width: Sizes.size12,
                               height: 10,
                             ),
@@ -120,7 +120,7 @@ class ExpensesStatusWidget extends StatelessWidget {
                         Row(
                           children: [
                             Container(
-                              color: AppColor.warning.shade500,
+                              color: AppColor.warning,
                               width: Sizes.size12,
                               height: 10,
                             ),

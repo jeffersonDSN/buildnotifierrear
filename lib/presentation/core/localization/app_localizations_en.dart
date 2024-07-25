@@ -572,4 +572,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get approve => 'Approve';
+
+  @override
+  String get requestApproval => 'Request approval';
+
+  @override
+  String get cashFlow => 'Cash Flow';
+
+  @override
+  String get currentCashBalance => 'Current cash balance';
+
+  @override
+  String get income => 'Income';
+
+  @override
+  String get cancelExpense => 'Cancel expense';
 }

@@ -413,6 +413,16 @@ abstract class AppLocalizations {
   String get unlinkExpenseFromProject;
 
   String get approve;
+
+  String get requestApproval;
+
+  String get cashFlow;
+
+  String get currentCashBalance;
+
+  String get income;
+
+  String get cancelExpense;
 }
 
 class _AppLocalizationsDelegate

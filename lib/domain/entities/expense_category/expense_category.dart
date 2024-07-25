@@ -8,6 +8,7 @@ class ExpenseCategory with _$ExpenseCategory {
   factory ExpenseCategory({
     @Default('') String id,
     @Default('') String title,
+    @Default(false) system,
   }) = _ExpenseCategory;
 
   factory ExpenseCategory.fromJson(Map<String, Object?> json) =>

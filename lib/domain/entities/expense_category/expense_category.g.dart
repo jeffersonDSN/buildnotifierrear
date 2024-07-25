@@ -11,6 +11,7 @@ _$ExpenseCategoryImpl _$$ExpenseCategoryImplFromJson(
     _$ExpenseCategoryImpl(
       id: json['id'] as String? ?? '',
       title: json['title'] as String? ?? '',
+      system: json['system'] ?? false,
     );
 
 Map<String, dynamic> _$$ExpenseCategoryImplToJson(
@@ -18,4 +19,5 @@ Map<String, dynamic> _$$ExpenseCategoryImplToJson(
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
+      'system': instance.system,
     };

@@ -316,6 +316,7 @@ mixin _$Invoice {
   String get id => throw _privateConstructorUsedError;
   DateTime? get issueDate => throw _privateConstructorUsedError;
   DateTime? get dueDate => throw _privateConstructorUsedError;
+  DateTime? get paymentDate => throw _privateConstructorUsedError;
   String get clientId => throw _privateConstructorUsedError;
   String get clientFirstName => throw _privateConstructorUsedError;
   String get clientlastName => throw _privateConstructorUsedError;
@@ -343,6 +344,7 @@ abstract class $InvoiceCopyWith<$Res> {
       {String id,
       DateTime? issueDate,
       DateTime? dueDate,
+      DateTime? paymentDate,
       String clientId,
       String clientFirstName,
       String clientlastName,
@@ -372,6 +374,7 @@ class _$InvoiceCopyWithImpl<$Res, $Val extends Invoice>
     Object? id = null,
     Object? issueDate = freezed,
     Object? dueDate = freezed,
+    Object? paymentDate = freezed,
     Object? clientId = null,
     Object? clientFirstName = null,
     Object? clientlastName = null,
@@ -396,6 +399,10 @@ class _$InvoiceCopyWithImpl<$Res, $Val extends Invoice>
       dueDate: freezed == dueDate
           ? _value.dueDate
           : dueDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      paymentDate: freezed == paymentDate
+          ? _value.paymentDate
+          : paymentDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       clientId: null == clientId
           ? _value.clientId
@@ -456,6 +463,7 @@ abstract class _$$InvoiceImplCopyWith<$Res> implements $InvoiceCopyWith<$Res> {
       {String id,
       DateTime? issueDate,
       DateTime? dueDate,
+      DateTime? paymentDate,
       String clientId,
       String clientFirstName,
       String clientlastName,
@@ -483,6 +491,7 @@ class __$$InvoiceImplCopyWithImpl<$Res>
     Object? id = null,
     Object? issueDate = freezed,
     Object? dueDate = freezed,
+    Object? paymentDate = freezed,
     Object? clientId = null,
     Object? clientFirstName = null,
     Object? clientlastName = null,
@@ -507,6 +516,10 @@ class __$$InvoiceImplCopyWithImpl<$Res>
       dueDate: freezed == dueDate
           ? _value.dueDate
           : dueDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      paymentDate: freezed == paymentDate
+          ? _value.paymentDate
+          : paymentDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       clientId: null == clientId
           ? _value.clientId
@@ -563,6 +576,7 @@ class _$InvoiceImpl implements _Invoice {
       {this.id = '',
       this.issueDate,
       this.dueDate,
+      this.paymentDate,
       this.clientId = '',
       this.clientFirstName = '',
       this.clientlastName = '',
@@ -586,6 +600,8 @@ class _$InvoiceImpl implements _Invoice {
   final DateTime? issueDate;
   @override
   final DateTime? dueDate;
+  @override
+  final DateTime? paymentDate;
   @override
   @JsonKey()
   final String clientId;
@@ -628,7 +644,7 @@ class _$InvoiceImpl implements _Invoice {
 
   @override
   String toString() {
-    return 'Invoice(id: $id, issueDate: $issueDate, dueDate: $dueDate, clientId: $clientId, clientFirstName: $clientFirstName, clientlastName: $clientlastName, clientAddress: $clientAddress, clientAddress2: $clientAddress2, clientCity: $clientCity, clientState: $clientState, clientZipCode: $clientZipCode, customerMessage: $customerMessage, status: $status, items: $items)';
+    return 'Invoice(id: $id, issueDate: $issueDate, dueDate: $dueDate, paymentDate: $paymentDate, clientId: $clientId, clientFirstName: $clientFirstName, clientlastName: $clientlastName, clientAddress: $clientAddress, clientAddress2: $clientAddress2, clientCity: $clientCity, clientState: $clientState, clientZipCode: $clientZipCode, customerMessage: $customerMessage, status: $status, items: $items)';
   }
 
   @override
@@ -640,6 +656,8 @@ class _$InvoiceImpl implements _Invoice {
             (identical(other.issueDate, issueDate) ||
                 other.issueDate == issueDate) &&
             (identical(other.dueDate, dueDate) || other.dueDate == dueDate) &&
+            (identical(other.paymentDate, paymentDate) ||
+                other.paymentDate == paymentDate) &&
             (identical(other.clientId, clientId) ||
                 other.clientId == clientId) &&
             (identical(other.clientFirstName, clientFirstName) ||
@@ -669,6 +687,7 @@ class _$InvoiceImpl implements _Invoice {
       id,
       issueDate,
       dueDate,
+      paymentDate,
       clientId,
       clientFirstName,
       clientlastName,
@@ -700,6 +719,7 @@ abstract class _Invoice implements Invoice {
       {final String id,
       final DateTime? issueDate,
       final DateTime? dueDate,
+      final DateTime? paymentDate,
       final String clientId,
       final String clientFirstName,
       final String clientlastName,
@@ -720,6 +740,8 @@ abstract class _Invoice implements Invoice {
   DateTime? get issueDate;
   @override
   DateTime? get dueDate;
+  @override
+  DateTime? get paymentDate;
   @override
   String get clientId;
   @override

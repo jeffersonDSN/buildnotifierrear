@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:buildnotifierrear/domain/controllers/attachment_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/expense_categories_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/expenses_controller.dart';
 import 'package:buildnotifierrear/domain/entities/card/payment_card.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
@@ -18,7 +19,7 @@ class FinanceExpenseEditBloc
     extends Bloc<FinanceExpenseEditEvent, FinanceExpenseEditState> {
   FinanceExpenseEditBloc({
     required ExpensesController controller,
-    required CRUDController<ExpenseCategory> expenseCategoryController,
+    required ExpenseCategoriesController expenseCategoryController,
     required CRUDController<PaymentCard> paymentCardController,
     required AttachmentController attachmentController,
   }) : super(const FinanceExpenseEditState.init()) {
@@ -146,6 +147,18 @@ class FinanceExpenseEditBloc
                   ...lastState.expense.attachments,
                   attachment,
                 ],
+              ),
+            ),
+          );
+        },
+        changeCreditCard: (id, number) {
+          var lastState = state.asLoaded;
+
+          emit(
+            lastState.copyWith(
+              expense: lastState.expense.copyWith(
+                creditCardId: id,
+                creditCardNumber: number,
               ),
             ),
           );

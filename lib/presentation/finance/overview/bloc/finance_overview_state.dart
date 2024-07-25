@@ -8,7 +8,7 @@ class FinanceOverviewState with _$FinanceOverviewState {
 
   const factory FinanceOverviewState.loaded({
     required List<Invoice> invoices,
-    required List<Expense> expense,
+    required List<Expense> expenses,
   }) = FinanceOverviewStateLoaded;
 }
 

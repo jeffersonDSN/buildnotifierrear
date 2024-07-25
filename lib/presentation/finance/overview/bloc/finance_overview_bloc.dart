@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:buildnotifierrear/domain/controllers/expenses_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/invoices_controller.dart';
+import 'package:buildnotifierrear/domain/entities/enums/expense_status_enums.dart';
 import 'package:buildnotifierrear/domain/entities/enums/invoice_status_enums.dart';
 import 'package:buildnotifierrear/domain/entities/expense/expense.dart';
 import 'package:buildnotifierrear/domain/entities/invoice/invoice.dart';
@@ -31,7 +32,7 @@ class FinanceOverviewBloc
           emit(
             FinanceOverviewState.loaded(
               invoices: result[0] as List<Invoice>,
-              expense: result[1] as List<Expense>,
+              expenses: result[1] as List<Expense>,
             ),
           );
         },
@@ -44,9 +45,36 @@ class FinanceOverviewBloc
             lastState.copyWith(
               invoices: lastState.invoices.map((invoice) {
                 if (invoice.id == invoiceId) {
-                  return invoice.copyWith(status: status);
+                  return invoice.copyWith(
+                    status: status,
+                    paymentDate: status == InvoiceStatusEnums.paid
+                        ? DateTime.now()
+                        : null,
+                  );
                 } else {
                   return invoice;
+                }
+              }).toList(),
+            ),
+          );
+        },
+        changeExpenseStatus: (expenseId, status) async {
+          await expensesController.changeStatus(expenseId, status);
+
+          var lastState = state.asLoaded;
+
+          emit(
+            lastState.copyWith(
+              expenses: lastState.expenses.map((expense) {
+                if (expense.id == expenseId) {
+                  return expense.copyWith(
+                    status: status,
+                    paymentDate: status == ExpenseStatusEnums.paid
+                        ? DateTime.now()
+                        : null,
+                  );
+                } else {
+                  return expense;
                 }
               }).toList(),
             ),

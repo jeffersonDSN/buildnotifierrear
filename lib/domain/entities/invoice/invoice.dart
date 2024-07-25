@@ -35,6 +35,7 @@ class Invoice with _$Invoice {
     @Default('') String id,
     DateTime? issueDate,
     DateTime? dueDate,
+    DateTime? paymentDate,
     @Default('') String clientId,
     @Default('') String clientFirstName,
     @Default('') String clientlastName,

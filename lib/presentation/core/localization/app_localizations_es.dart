@@ -425,7 +425,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get paid => 'Pagado';
 
   @override
-  String get partiallyPaid => 'Parcialmente pagado';
+  String get partiallyPaid => 'Parc. Pagado';
 
   @override
   String get product => 'Producto';
@@ -573,4 +573,19 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get approve => 'Aprobar';
+
+  @override
+  String get requestApproval => 'Solicitar Aprobación';
+
+  @override
+  String get cashFlow => 'Flujo de Caja';
+
+  @override
+  String get currentCashBalance => 'Saldo de Caja Actual';
+
+  @override
+  String get income => 'Ingreso';
+
+  @override
+  String get cancelExpense => 'Cancelar gasto';
 }

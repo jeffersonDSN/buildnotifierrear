@@ -1,5 +1,6 @@
 import 'package:buildnotifierrear/domain/controllers/attachment_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/expense_categories_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/expenses_controller.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/attachment_firestore_repository.dart';
@@ -32,7 +33,7 @@ class FinanceExpenseEdit extends IView {
             tenantId: tenantId,
           ),
         ),
-        expenseCategoryController: CRUDController(
+        expenseCategoryController: ExpenseCategoriesController(
           repository: ExpenseCategoriesFirestoreRepository(
             tenantId: tenantId,
           ),

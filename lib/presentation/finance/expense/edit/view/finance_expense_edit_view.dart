@@ -64,147 +64,6 @@ class FinanceExpenseEditView extends IView {
                         children: [
                           Row(
                             children: [
-                              BaseDateInputWidget(
-                                label: context.tr.dueDate,
-                                value: expense.dueDate,
-                                onPressedChangeDate: () async {
-                                  var date = await getDate(context);
-
-                                  if (date != null) {
-                                    bloc.add(
-                                      FinanceExpenseEditEvent.changeDueDate(
-                                        dueDate: date,
-                                      ),
-                                    );
-                                  }
-                                },
-                                onChangeDate: (value) {
-                                  bloc.add(
-                                    FinanceExpenseEditEvent.changeDueDate(
-                                      dueDate: value,
-                                    ),
-                                  );
-                                },
-                              ),
-                              gapWidth8,
-                              Expanded(
-                                child: SizedBox(
-                                  width: Sizes.size300,
-                                  child: BaseTextFormField(
-                                    initialValue: expense.description,
-                                    label: context.tr.description,
-                                    onChanged: (value) {
-                                      bloc.add(
-                                        FinanceExpenseEditEvent
-                                            .changeDescription(
-                                          description: value,
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                ),
-                              ),
-                              gapWidth24,
-                              Expanded(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    if (expense.projectId.isEmpty)
-                                      TextButton.icon(
-                                        icon: const Icon(Icons.link),
-                                        label: Text(
-                                          context.tr.linkExpenseToProject,
-                                        ),
-                                        onPressed: () async {
-                                          var projectInfo = await showDialog<
-                                              ({
-                                                String projectId,
-                                                String projectName,
-                                                String taskId,
-                                                String taskTitle,
-                                              })?>(
-                                            context: context,
-                                            builder: (context) {
-                                              return const FinanceExpenseEditAddProject();
-                                            },
-                                          );
-
-                                          if (projectInfo != null) {
-                                            bloc.add(
-                                              FinanceExpenseEditEvent
-                                                  .linkProject(
-                                                projectId:
-                                                    projectInfo.projectId,
-                                                projectName:
-                                                    projectInfo.projectName,
-                                                taskId: projectInfo.taskId,
-                                                taskTitle:
-                                                    projectInfo.taskTitle,
-                                              ),
-                                            );
-                                          }
-                                        },
-                                      ),
-                                    if (expense.projectId.isNotEmpty)
-                                      TextButton.icon(
-                                        icon: const Icon(Icons.link),
-                                        label: Text(
-                                          context.tr.unlinkExpenseFromProject,
-                                        ),
-                                        onPressed: () async {
-                                          bloc.add(
-                                            const FinanceExpenseEditEvent
-                                                .linkProject(
-                                              projectId: '',
-                                              projectName: '',
-                                              taskId: '',
-                                              taskTitle: '',
-                                            ),
-                                          );
-                                        },
-                                      ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                          if (expense.projectId.isNotEmpty)
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                top: Sizes.size8,
-                              ),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: BaseTextFormField(
-                                      enabled: false,
-                                      key: Key(expense.projectName),
-                                      label: context.tr.project,
-                                      initialValue: expense.projectName,
-                                    ),
-                                  ),
-                                  if (expense.taskId.isNotEmpty)
-                                    Expanded(
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                          left: Sizes.size8,
-                                        ),
-                                        child: Expanded(
-                                          child: BaseTextFormField(
-                                            enabled: false,
-                                            key: Key(expense.taskTitle),
-                                            label: context.tr.task,
-                                            initialValue: expense.taskTitle,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                ],
-                              ),
-                            ),
-                          gapHeight8,
-                          Row(
-                            children: [
                               Expanded(
                                 child: BaseDropdownButtonField(
                                   value: (
@@ -239,12 +98,71 @@ class FinanceExpenseEditView extends IView {
                                   },
                                 ),
                               ),
+                              if (expense.categoryId == '2')
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: Sizes.size8,
+                                    ),
+                                    child: Expanded(
+                                      child: BaseDropdownButtonField(
+                                        label: context.tr.creditCard,
+                                        value: (
+                                          id: expense.creditCardId,
+                                          number: expense.creditCardNumber,
+                                        ),
+                                        items: [
+                                          DropdownItem(
+                                            value: (
+                                              id: '',
+                                              number: '',
+                                            ),
+                                            title: '',
+                                          ),
+                                          ...cards.map(
+                                            (card) {
+                                              return DropdownItem(
+                                                value: (
+                                                  id: card.id,
+                                                  number: card.number,
+                                                ),
+                                                title:
+                                                    '**** **** **** ${card.number}',
+                                              );
+                                            },
+                                          ),
+                                        ],
+                                        onChanged: (value) {
+                                          if (value != null) {
+                                            bloc.add(
+                                              FinanceExpenseEditEvent
+                                                  .changeCreditCard(
+                                                id: value.id,
+                                                number: value.number,
+                                              ),
+                                            );
+                                          }
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               gapWidth8,
                               Expanded(
                                 child: BaseDropdownButtonField(
                                   label: context.tr.paymentMethod,
                                   value: expense.paymentMethod,
-                                  items: PaymentMethodEnums.values.map(
+                                  items: PaymentMethodEnums.values.where(
+                                    (paymentMethod) {
+                                      return expense.categoryId != '2' ||
+                                          (expense.categoryId == '2' &&
+                                              [
+                                                PaymentMethodEnums.cash,
+                                                PaymentMethodEnums.debitCard,
+                                                PaymentMethodEnums.bankAccount,
+                                              ].contains(paymentMethod));
+                                    },
+                                  ).map(
                                     (paymentMethod) {
                                       return DropdownItem(
                                         value: paymentMethod,
@@ -314,6 +232,147 @@ class FinanceExpenseEditView extends IView {
                                     ),
                                   ),
                                 ),
+                            ],
+                          ),
+                          if (expense.categoryId != '2')
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                top: Sizes.size16,
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  if (expense.projectId.isEmpty)
+                                    TextButton.icon(
+                                      icon: const Icon(Icons.link),
+                                      label: Text(
+                                        context.tr.linkExpenseToProject,
+                                      ),
+                                      onPressed: () async {
+                                        var projectInfo = await showDialog<
+                                            ({
+                                              String projectId,
+                                              String projectName,
+                                              String taskId,
+                                              String taskTitle,
+                                            })?>(
+                                          context: context,
+                                          builder: (context) {
+                                            return const FinanceExpenseEditAddProject();
+                                          },
+                                        );
+
+                                        if (projectInfo != null) {
+                                          bloc.add(
+                                            FinanceExpenseEditEvent.linkProject(
+                                              projectId: projectInfo.projectId,
+                                              projectName:
+                                                  projectInfo.projectName,
+                                              taskId: projectInfo.taskId,
+                                              taskTitle: projectInfo.taskTitle,
+                                            ),
+                                          );
+                                        }
+                                      },
+                                    ),
+                                  if (expense.projectId.isNotEmpty)
+                                    TextButton.icon(
+                                      icon: const Icon(Icons.link),
+                                      label: Text(
+                                        context.tr.unlinkExpenseFromProject,
+                                      ),
+                                      onPressed: () async {
+                                        bloc.add(
+                                          const FinanceExpenseEditEvent
+                                              .linkProject(
+                                            projectId: '',
+                                            projectName: '',
+                                            taskId: '',
+                                            taskTitle: '',
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                ],
+                              ),
+                            ),
+                          if (expense.projectId.isNotEmpty)
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                top: Sizes.size8,
+                                bottom: Sizes.size8,
+                              ),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: BaseTextFormField(
+                                      enabled: false,
+                                      key: Key(expense.projectName),
+                                      label: context.tr.project,
+                                      initialValue: expense.projectName,
+                                    ),
+                                  ),
+                                  if (expense.taskId.isNotEmpty)
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                          left: Sizes.size8,
+                                        ),
+                                        child: Expanded(
+                                          child: BaseTextFormField(
+                                            enabled: false,
+                                            key: Key(expense.taskTitle),
+                                            label: context.tr.task,
+                                            initialValue: expense.taskTitle,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ),
+                          Row(
+                            children: [
+                              BaseDateInputWidget(
+                                label: context.tr.dueDate,
+                                value: expense.dueDate,
+                                onPressedChangeDate: () async {
+                                  var date = await getDate(context);
+
+                                  if (date != null) {
+                                    bloc.add(
+                                      FinanceExpenseEditEvent.changeDueDate(
+                                        dueDate: date,
+                                      ),
+                                    );
+                                  }
+                                },
+                                onChangeDate: (value) {
+                                  bloc.add(
+                                    FinanceExpenseEditEvent.changeDueDate(
+                                      dueDate: value,
+                                    ),
+                                  );
+                                },
+                              ),
+                              gapWidth8,
+                              Expanded(
+                                child: SizedBox(
+                                  width: Sizes.size300,
+                                  child: BaseTextFormField(
+                                    initialValue: expense.description,
+                                    label: context.tr.description,
+                                    onChanged: (value) {
+                                      bloc.add(
+                                        FinanceExpenseEditEvent
+                                            .changeDescription(
+                                          description: value,
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                           gapHeight16,

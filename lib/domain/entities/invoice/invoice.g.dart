@@ -39,6 +39,9 @@ _$InvoiceImpl _$$InvoiceImplFromJson(Map<String, dynamic> json) =>
       dueDate: json['dueDate'] == null
           ? null
           : DateTime.parse(json['dueDate'] as String),
+      paymentDate: json['paymentDate'] == null
+          ? null
+          : DateTime.parse(json['paymentDate'] as String),
       clientId: json['clientId'] as String? ?? '',
       clientFirstName: json['clientFirstName'] as String? ?? '',
       clientlastName: json['clientlastName'] as String? ?? '',
@@ -63,6 +66,7 @@ Map<String, dynamic> _$$InvoiceImplToJson(_$InvoiceImpl instance) =>
       'id': instance.id,
       'issueDate': instance.issueDate?.toIso8601String(),
       'dueDate': instance.dueDate?.toIso8601String(),
+      'paymentDate': instance.paymentDate?.toIso8601String(),
       'clientId': instance.clientId,
       'clientFirstName': instance.clientFirstName,
       'clientlastName': instance.clientlastName,

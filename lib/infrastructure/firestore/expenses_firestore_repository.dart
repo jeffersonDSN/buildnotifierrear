@@ -1,8 +1,9 @@
 import 'package:buildnotifierrear/domain/core/types_defs.dart';
 import 'package:buildnotifierrear/domain/entities/enums/expense_status_enums.dart';
+import 'package:buildnotifierrear/domain/entities/enums/payment_method_enums.dart';
 import 'package:buildnotifierrear/domain/entities/expense/expense.dart';
 import 'package:buildnotifierrear/domain/repositories/abs_i_expenses_repository.dart';
-import 'package:buildnotifierrear/infrastructure/firestore/counters_firestore_repository.dart';
+import 'package:buildnotifierrear/infrastructure/firestore/payment_card_firestore_repository.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/tenant_firestore_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
@@ -10,13 +11,13 @@ import 'package:firebase_storage/firebase_storage.dart';
 
 class ExpensesFirestoreRepository extends TenantFirestoreRepository
     implements AbsIExpensesRepository {
-  late CountersFireStoreRepository countersRepository;
+  late PaymentCardFirestoreRepository paymentCardRepository;
   final Reference storage;
 
   ExpensesFirestoreRepository({required String tenantId})
       : storage = FirebaseStorage.instance.ref('tenant/$tenantId/expenses'),
         super(collectionName: 'expenses', tenantId: tenantId) {
-    countersRepository = CountersFireStoreRepository(tenantId: tenantId);
+    paymentCardRepository = PaymentCardFirestoreRepository(tenantId: tenantId);
   }
 
   @override
@@ -73,6 +74,7 @@ class ExpensesFirestoreRepository extends TenantFirestoreRepository
       'taskTitle': value.taskTitle,
       'employeeId': value.employeeId,
       'creditCardId': value.creditCardId,
+      'creditCardNumber': value.creditCardNumber,
       'paymentMethod': value.paymentMethod.index,
       'paymentMethodCardId': value.paymentMethodCardId,
       'paymentMethodCardNumber': value.paymentMethodCardNumber,
@@ -94,6 +96,68 @@ class ExpensesFirestoreRepository extends TenantFirestoreRepository
       }
     }
 
+    if (value.paymentMethod == PaymentMethodEnums.creditCard) {
+      var card = await paymentCardRepository.getById(value.paymentMethodCardId);
+
+      var dueDate = DateTime.now().copyWith(
+        day: card.dueDay,
+        hour: 0,
+        minute: 0,
+        second: 0,
+        microsecond: 0,
+        millisecond: 0,
+      );
+
+      var querySnapshot = await collection
+          .where(
+            Filter.and(
+              Filter("creditCardId", isEqualTo: value.paymentMethodCardId),
+              Filter("dueDate", isEqualTo: dueDate),
+            ),
+          )
+          .get();
+
+      if (querySnapshot.docs.isNotEmpty) {
+        collection.doc(querySnapshot.docs.first.id).update({
+          'items': FieldValue.arrayUnion([
+            {
+              'productService': value.categoryTitle,
+              'description': value.description,
+              'expenseId': doc.id,
+              'qtyHrs': 1,
+              'rate': value.total,
+              'amount': value.total,
+            }
+          ])
+        });
+      } else {
+        var expense = {
+          'description': 'Credit card bill " ${value.paymentMethodCardNumber}"',
+          'issueDate': value.issueDate,
+          'dueDate': dueDate,
+          'paymentDate': value.paymentDate,
+          'categoryId': '2',
+          'categoryTitle': 'Credit card bill',
+          'creditCardId': value.paymentMethodCardId,
+          'creditCardNumber': value.paymentMethodCardNumber,
+          'paymentMethod': 0,
+          'status': 0,
+          'items': [
+            {
+              'productService': value.categoryTitle,
+              'description': value.description,
+              'expenseId': doc.id,
+              'qtyHrs': 1,
+              'rate': value.total,
+              'amount': value.total,
+            }
+          ],
+        };
+
+        await collection.add(expense);
+      }
+    }
+
     return right(doc.id);
   }
 
@@ -112,6 +176,7 @@ class ExpensesFirestoreRepository extends TenantFirestoreRepository
       'taskTitle': value.taskTitle,
       'employeeId': value.employeeId,
       'creditCardId': value.creditCardId,
+      'creditCardNumber': value.creditCardNumber,
       'paymentMethod': value.paymentMethod.index,
       'paymentMethodCardId': value.paymentMethodCardId,
       'paymentMethodCardNumber': value.paymentMethodCardNumber,

@@ -12,11 +12,13 @@ import 'package:flutter/material.dart';
 
 class InvoiceTableWidget extends StatelessWidget {
   final List<Invoice> invoices;
+  final ValueChanged<Invoice> onShareWithClient;
   final ValueChanged<Invoice> onPaid;
   final ValueChanged<Invoice> onCancel;
 
   const InvoiceTableWidget({
     super.key,
+    required this.onShareWithClient,
     required this.invoices,
     required this.onPaid,
     required this.onCancel,
@@ -57,14 +59,13 @@ class InvoiceTableWidget extends StatelessWidget {
               numeric: true,
               label: Text(context.tr.amount),
             ),
+            // DataColumn2(
+            //   size: ColumnSize.M,
+            //   numeric: true,
+            //   label: Text(context.tr.balance),
+            // ),
             DataColumn2(
-              size: ColumnSize.M,
-              numeric: true,
-              label: Text(context.tr.balance),
-            ),
-            DataColumn2(
-              fixedWidth: Sizes.size152,
-              numeric: true,
+              fixedWidth: Sizes.size168,
               label: Text(context.tr.status),
             ),
             DataColumn2(
@@ -98,11 +99,11 @@ class InvoiceTableWidget extends StatelessWidget {
                     invoice.total.toStringAsFixed(2),
                   ),
                 ),
-                DataCell(
-                  Text(
-                    0.toStringAsFixed(2),
-                  ),
-                ),
+                // DataCell(
+                //   Text(
+                //     0.toStringAsFixed(2),
+                //   ),
+                // ),
                 DataCell(
                   Container(
                     decoration: BoxDecoration(
@@ -178,6 +179,9 @@ class InvoiceTableWidget extends StatelessWidget {
                                 ),
                               ),
                             ),
+                            onTap: () {
+                              onShareWithClient.call(invoice);
+                            },
                           ),
                         PopupMenuItem(
                           child: Container(

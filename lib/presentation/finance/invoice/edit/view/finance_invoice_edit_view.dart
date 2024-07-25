@@ -87,7 +87,7 @@ class FinanceInvoiceEditView extends IView {
                                           borderRadius: BorderRadius.circular(
                                             Sizes.size4,
                                           ),
-                                          color: AppColor.green,
+                                          color: AppColor.success,
                                         ),
                                         child: Padding(
                                           padding: const EdgeInsets.all(

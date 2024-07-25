@@ -1,3 +1,4 @@
+import 'package:buildnotifierrear/domain/entities/enums/expense_status_enums.dart';
 import 'package:buildnotifierrear/domain/entities/enums/invoice_status_enums.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/app/model/mod.dart';
@@ -6,6 +7,7 @@ import 'package:buildnotifierrear/presentation/core/extensions/build_context_ext
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/bloc/finance_overview_bloc.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/view/finance_expenses_overview_view.dart';
+import 'package:buildnotifierrear/presentation/finance/overview/widget/expenses_cash_flow.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/expenses_status_widget.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/invoice_status_widget.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/invoice_table_widget.dart';
@@ -14,7 +16,6 @@ import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:graphic/graphic.dart';
 
 class FinanceOverviewView extends IView {
   const FinanceOverviewView({super.key});
@@ -275,130 +276,69 @@ class FinanceOverviewView extends IView {
                                   ),
                                 ],
                               ),
-                              Expanded(
-                                child: Card(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(Sizes.size8),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        const Text(
-                                          'Cash Flow',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        const Text(
-                                          '6,000.00',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        const Text('Current cash balance'),
-                                        gapWidth8,
-                                        Expanded(
-                                          child: Chart(
-                                            padding: (_) =>
-                                                const EdgeInsets.fromLTRB(
-                                                    40, 5, 10, 40),
-                                            data: adjustData,
-                                            variables: {
-                                              'index': Variable(
-                                                accessor: (Map map) =>
-                                                    map['index'].toString(),
-                                              ),
-                                              'type': Variable(
-                                                accessor: (Map map) =>
-                                                    map['type'] as String,
-                                              ),
-                                              'value': Variable(
-                                                accessor: (Map map) =>
-                                                    map['value'] as double,
-                                              ),
-                                            },
-                                            marks: [
-                                              IntervalMark(
-                                                position: Varset('index') *
-                                                    Varset('value') /
-                                                    Varset('type'),
-                                                color: ColorEncode(
-                                                  variable: 'type',
-                                                  values: [
-                                                    AppColor.green,
-                                                    AppColor.warning,
-                                                  ],
-                                                ),
-                                                size: SizeEncode(value: 16),
-                                                modifiers: [
-                                                  DodgeModifier(ratio: 0.3),
-                                                ],
-                                              )
-                                            ],
-                                            coord: RectCoord(
-                                              horizontalRangeUpdater:
-                                                  Defaults.horizontalRangeEvent,
-                                            ),
-                                            axes: [
-                                              Defaults.horizontalAxis
-                                                ..tickLine = TickLine(),
-                                              Defaults.verticalAxis,
-                                            ],
-                                            selections: {
-                                              'tap': PointSelection(
-                                                variable: 'index',
-                                              )
-                                            },
-                                            tooltip:
-                                                TooltipGuide(multiTuples: true),
-                                            crosshair: CrosshairGuide(),
-                                          ),
-                                        ),
-                                        Row(
-                                          children: [
-                                            Expanded(
-                                              child: Row(
-                                                children: [
-                                                  Container(
-                                                    color: AppColor.green,
-                                                    width: Sizes.size12,
-                                                    height: 10,
-                                                  ),
-                                                  gapWidth8,
-                                                  const Text('Money in'),
-                                                ],
-                                              ),
-                                            ),
-                                            Expanded(
-                                              child: Row(
-                                                children: [
-                                                  Container(
-                                                    color: AppColor.warning,
-                                                    width: Sizes.size12,
-                                                    height: 10,
-                                                  ),
-                                                  gapWidth8,
-                                                  const Text('Money out'),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
+                              ExpensesCashFlow(
+                                expenses: expenses,
+                                invoices: invoices,
                               ),
                             ],
                           ),
                         ),
                         FinanceExpensesOverviewView(
                           expenses: expenses,
-                          onPaid: (value) {},
-                          onCancel: (value) {},
+                          onRequestApproval: (value) {
+                            bloc.add(
+                              FinanceOverviewEvent.changeExpenseStatus(
+                                expenseId: value.id,
+                                status: ExpenseStatusEnums.pending,
+                              ),
+                            );
+                          },
+                          onApprove: (value) {
+                            bloc.add(
+                              FinanceOverviewEvent.changeExpenseStatus(
+                                expenseId: value.id,
+                                status: ExpenseStatusEnums.approved,
+                              ),
+                            );
+                          },
+                          onEdit: (value) {
+                            appBloc(context).add(
+                              AppEvent.changeView(
+                                mod: Mod.financeExpenses(
+                                  type: ViewType.update(
+                                    id: value.id,
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                          onPaid: (value) {
+                            bloc.add(
+                              FinanceOverviewEvent.changeExpenseStatus(
+                                expenseId: value.id,
+                                status: ExpenseStatusEnums.paid,
+                              ),
+                            );
+                          },
+                          onCancel: (value) {
+                            bloc.add(
+                              FinanceOverviewEvent.changeExpenseStatus(
+                                expenseId: value.id,
+                                status: ExpenseStatusEnums.cancelled,
+                              ),
+                            );
+                          },
                         ),
                         InvoiceTableWidget(
                           invoices: invoices,
+                          onShareWithClient: (invoice) {
+                            bloc.add(
+                              FinanceOverviewEvent.changeInvoiceStatus(
+                                invoiceId: invoice.id,
+                                status: InvoiceStatusEnums.sent,
+                              ),
+                            );
+                          },
                           onPaid: (invoice) {
                             bloc.add(
                               FinanceOverviewEvent.changeInvoiceStatus(
@@ -428,20 +368,3 @@ class FinanceOverviewView extends IView {
     );
   }
 }
-
-const adjustData = [
-  {"type": "Money in", "index": 'January', "value": 12000.00},
-  {"type": "Money in", "index": 'February', "value": 10000.00},
-  {"type": "Money in", "index": 'March', "value": 8000.00},
-  {"type": "Money in", "index": 'April', "value": 11000.00},
-  {"type": "Money in", "index": 'May', "value": 7500.00},
-  {"type": "Money in", "index": 'June', "value": 5300.00},
-  {"type": "Money in", "index": 'July', "value": 5500.00},
-  {"type": "Money out", "index": 'January', "value": 8000.00},
-  {"type": "Money out", "index": 'February', "value": 8000.00},
-  {"type": "Money out", "index": 'March', "value": 8000.00},
-  {"type": "Money out", "index": 'April', "value": 8000.00},
-  {"type": "Money out", "index": 'May', "value": 8000.00},
-  {"type": "Money out", "index": 'June', "value": 8000.00},
-  {"type": "Money out", "index": 'July', "value": 12000.00},
-];

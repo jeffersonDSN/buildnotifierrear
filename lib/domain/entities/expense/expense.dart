@@ -67,6 +67,7 @@ class Expense with _$Expense {
     @Default('') String taskTitle,
     @Default('') String employeeId,
     @Default('') String creditCardId,
+    @Default('') String creditCardNumber,
     @PaymentMethodConverter()
     @Default(PaymentMethodEnums.cash)
     PaymentMethodEnums paymentMethod,
@@ -93,7 +94,10 @@ extension OnExpense on Expense {
 
 extension OnExpenseList on List<Expense> {
   double totalOf(List<ExpenseStatusEnums> status) {
-    var expenses = where((expense) => status.contains(expense.status)).toList();
+    var expenses = where((expense) {
+      return status.contains(expense.status) &&
+          expense.paymentMethod != PaymentMethodEnums.creditCard;
+    }).toList();
 
     if (expenses.isEmpty) {
       return 0;

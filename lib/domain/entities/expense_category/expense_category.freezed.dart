@@ -22,6 +22,7 @@ ExpenseCategory _$ExpenseCategoryFromJson(Map<String, dynamic> json) {
 mixin _$ExpenseCategory {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
+  dynamic get system => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +36,7 @@ abstract class $ExpenseCategoryCopyWith<$Res> {
           ExpenseCategory value, $Res Function(ExpenseCategory) then) =
       _$ExpenseCategoryCopyWithImpl<$Res, ExpenseCategory>;
   @useResult
-  $Res call({String id, String title});
+  $Res call({String id, String title, dynamic system});
 }
 
 /// @nodoc
@@ -53,6 +54,7 @@ class _$ExpenseCategoryCopyWithImpl<$Res, $Val extends ExpenseCategory>
   $Res call({
     Object? id = null,
     Object? title = null,
+    Object? system = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -63,6 +65,10 @@ class _$ExpenseCategoryCopyWithImpl<$Res, $Val extends ExpenseCategory>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      system: freezed == system
+          ? _value.system
+          : system // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ) as $Val);
   }
 }
@@ -75,7 +81,7 @@ abstract class _$$ExpenseCategoryImplCopyWith<$Res>
       __$$ExpenseCategoryImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String title});
+  $Res call({String id, String title, dynamic system});
 }
 
 /// @nodoc
@@ -91,6 +97,7 @@ class __$$ExpenseCategoryImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? title = null,
+    Object? system = freezed,
   }) {
     return _then(_$ExpenseCategoryImpl(
       id: null == id
@@ -101,6 +108,7 @@ class __$$ExpenseCategoryImplCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      system: freezed == system ? _value.system! : system,
     ));
   }
 }
@@ -108,7 +116,7 @@ class __$$ExpenseCategoryImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ExpenseCategoryImpl implements _ExpenseCategory {
-  _$ExpenseCategoryImpl({this.id = '', this.title = ''});
+  _$ExpenseCategoryImpl({this.id = '', this.title = '', this.system = false});
 
   factory _$ExpenseCategoryImpl.fromJson(Map<String, dynamic> json) =>
       _$$ExpenseCategoryImplFromJson(json);
@@ -119,10 +127,13 @@ class _$ExpenseCategoryImpl implements _ExpenseCategory {
   @override
   @JsonKey()
   final String title;
+  @override
+  @JsonKey()
+  final dynamic system;
 
   @override
   String toString() {
-    return 'ExpenseCategory(id: $id, title: $title)';
+    return 'ExpenseCategory(id: $id, title: $title, system: $system)';
   }
 
   @override
@@ -131,12 +142,14 @@ class _$ExpenseCategoryImpl implements _ExpenseCategory {
         (other.runtimeType == runtimeType &&
             other is _$ExpenseCategoryImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title));
+            (identical(other.title, title) || other.title == title) &&
+            const DeepCollectionEquality().equals(other.system, system));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, title);
+  int get hashCode => Object.hash(
+      runtimeType, id, title, const DeepCollectionEquality().hash(system));
 
   @JsonKey(ignore: true)
   @override
@@ -154,8 +167,10 @@ class _$ExpenseCategoryImpl implements _ExpenseCategory {
 }
 
 abstract class _ExpenseCategory implements ExpenseCategory {
-  factory _ExpenseCategory({final String id, final String title}) =
-      _$ExpenseCategoryImpl;
+  factory _ExpenseCategory(
+      {final String id,
+      final String title,
+      final dynamic system}) = _$ExpenseCategoryImpl;
 
   factory _ExpenseCategory.fromJson(Map<String, dynamic> json) =
       _$ExpenseCategoryImpl.fromJson;
@@ -164,6 +179,8 @@ abstract class _ExpenseCategory implements ExpenseCategory {
   String get id;
   @override
   String get title;
+  @override
+  dynamic get system;
   @override
   @JsonKey(ignore: true)
   _$$ExpenseCategoryImplCopyWith<_$ExpenseCategoryImpl> get copyWith =>

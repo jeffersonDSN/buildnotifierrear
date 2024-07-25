@@ -494,6 +494,7 @@ mixin _$Expense {
   String get taskTitle => throw _privateConstructorUsedError;
   String get employeeId => throw _privateConstructorUsedError;
   String get creditCardId => throw _privateConstructorUsedError;
+  String get creditCardNumber => throw _privateConstructorUsedError;
   @PaymentMethodConverter()
   PaymentMethodEnums get paymentMethod => throw _privateConstructorUsedError;
   String get paymentMethodCardId => throw _privateConstructorUsedError;
@@ -527,6 +528,7 @@ abstract class $ExpenseCopyWith<$Res> {
       String taskTitle,
       String employeeId,
       String creditCardId,
+      String creditCardNumber,
       @PaymentMethodConverter() PaymentMethodEnums paymentMethod,
       String paymentMethodCardId,
       String paymentMethodCardNumber,
@@ -561,6 +563,7 @@ class _$ExpenseCopyWithImpl<$Res, $Val extends Expense>
     Object? taskTitle = null,
     Object? employeeId = null,
     Object? creditCardId = null,
+    Object? creditCardNumber = null,
     Object? paymentMethod = null,
     Object? paymentMethodCardId = null,
     Object? paymentMethodCardNumber = null,
@@ -621,6 +624,10 @@ class _$ExpenseCopyWithImpl<$Res, $Val extends Expense>
           ? _value.creditCardId
           : creditCardId // ignore: cast_nullable_to_non_nullable
               as String,
+      creditCardNumber: null == creditCardNumber
+          ? _value.creditCardNumber
+          : creditCardNumber // ignore: cast_nullable_to_non_nullable
+              as String,
       paymentMethod: null == paymentMethod
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
@@ -670,6 +677,7 @@ abstract class _$$ExpenseImplCopyWith<$Res> implements $ExpenseCopyWith<$Res> {
       String taskTitle,
       String employeeId,
       String creditCardId,
+      String creditCardNumber,
       @PaymentMethodConverter() PaymentMethodEnums paymentMethod,
       String paymentMethodCardId,
       String paymentMethodCardNumber,
@@ -702,6 +710,7 @@ class __$$ExpenseImplCopyWithImpl<$Res>
     Object? taskTitle = null,
     Object? employeeId = null,
     Object? creditCardId = null,
+    Object? creditCardNumber = null,
     Object? paymentMethod = null,
     Object? paymentMethodCardId = null,
     Object? paymentMethodCardNumber = null,
@@ -757,6 +766,10 @@ class __$$ExpenseImplCopyWithImpl<$Res>
           ? _value.creditCardId
           : creditCardId // ignore: cast_nullable_to_non_nullable
               as String,
+      creditCardNumber: null == creditCardNumber
+          ? _value.creditCardNumber
+          : creditCardNumber // ignore: cast_nullable_to_non_nullable
+              as String,
       paymentMethod: null == paymentMethod
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
@@ -802,6 +815,7 @@ class _$ExpenseImpl implements _Expense {
       this.taskTitle = '',
       this.employeeId = '',
       this.creditCardId = '',
+      this.creditCardNumber = '',
       @PaymentMethodConverter() this.paymentMethod = PaymentMethodEnums.cash,
       this.paymentMethodCardId = '',
       this.paymentMethodCardNumber = '',
@@ -852,6 +866,9 @@ class _$ExpenseImpl implements _Expense {
   final String creditCardId;
   @override
   @JsonKey()
+  final String creditCardNumber;
+  @override
+  @JsonKey()
   @PaymentMethodConverter()
   final PaymentMethodEnums paymentMethod;
   @override
@@ -884,7 +901,7 @@ class _$ExpenseImpl implements _Expense {
 
   @override
   String toString() {
-    return 'Expense(id: $id, description: $description, issueDate: $issueDate, dueDate: $dueDate, paymentDate: $paymentDate, categoryId: $categoryId, categoryTitle: $categoryTitle, projectId: $projectId, projectName: $projectName, taskId: $taskId, taskTitle: $taskTitle, employeeId: $employeeId, creditCardId: $creditCardId, paymentMethod: $paymentMethod, paymentMethodCardId: $paymentMethodCardId, paymentMethodCardNumber: $paymentMethodCardNumber, status: $status, items: $items, attachments: $attachments)';
+    return 'Expense(id: $id, description: $description, issueDate: $issueDate, dueDate: $dueDate, paymentDate: $paymentDate, categoryId: $categoryId, categoryTitle: $categoryTitle, projectId: $projectId, projectName: $projectName, taskId: $taskId, taskTitle: $taskTitle, employeeId: $employeeId, creditCardId: $creditCardId, creditCardNumber: $creditCardNumber, paymentMethod: $paymentMethod, paymentMethodCardId: $paymentMethodCardId, paymentMethodCardNumber: $paymentMethodCardNumber, status: $status, items: $items, attachments: $attachments)';
   }
 
   @override
@@ -915,6 +932,8 @@ class _$ExpenseImpl implements _Expense {
                 other.employeeId == employeeId) &&
             (identical(other.creditCardId, creditCardId) ||
                 other.creditCardId == creditCardId) &&
+            (identical(other.creditCardNumber, creditCardNumber) ||
+                other.creditCardNumber == creditCardNumber) &&
             (identical(other.paymentMethod, paymentMethod) ||
                 other.paymentMethod == paymentMethod) &&
             (identical(other.paymentMethodCardId, paymentMethodCardId) ||
@@ -945,6 +964,7 @@ class _$ExpenseImpl implements _Expense {
         taskTitle,
         employeeId,
         creditCardId,
+        creditCardNumber,
         paymentMethod,
         paymentMethodCardId,
         paymentMethodCardNumber,
@@ -982,6 +1002,7 @@ abstract class _Expense implements Expense {
       final String taskTitle,
       final String employeeId,
       final String creditCardId,
+      final String creditCardNumber,
       @PaymentMethodConverter() final PaymentMethodEnums paymentMethod,
       final String paymentMethodCardId,
       final String paymentMethodCardNumber,
@@ -1017,6 +1038,8 @@ abstract class _Expense implements Expense {
   String get employeeId;
   @override
   String get creditCardId;
+  @override
+  String get creditCardNumber;
   @override
   @PaymentMethodConverter()
   PaymentMethodEnums get paymentMethod;

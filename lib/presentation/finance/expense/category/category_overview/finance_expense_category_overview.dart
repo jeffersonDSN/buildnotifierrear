@@ -1,5 +1,4 @@
-import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
-import 'package:buildnotifierrear/domain/entities/expense_category/expense_category.dart';
+import 'package:buildnotifierrear/domain/controllers/expense_categories_controller.dart';
 import 'package:buildnotifierrear/infrastructure/firestore/expense_categories_firestore_repository.dart';
 import 'package:buildnotifierrear/presentation/app/bloc/app_bloc.dart';
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
@@ -17,7 +16,7 @@ class FinanceExpenseCategoryOverview extends IView {
 
     return BlocProvider(
       create: (context) => FinanceExpenseCategoryOverviewBloc(
-        controller: CRUDController<ExpenseCategory>(
+        controller: ExpenseCategoriesController(
           repository: ExpenseCategoriesFirestoreRepository(tenantId: tenantId),
         ),
       ),

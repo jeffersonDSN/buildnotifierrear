@@ -19,6 +19,11 @@ class FinanceExpenseEditEvent with _$FinanceExpenseEditEvent {
     required String title,
   }) = FinanceExpenseEditEventChangeCategory;
 
+  const factory FinanceExpenseEditEvent.changeCreditCard({
+    required String id,
+    required String number,
+  }) = FinanceExpenseEditEventChangeCreditCard;
+
   const factory FinanceExpenseEditEvent.changePaymentMethod({
     required PaymentMethodEnums paymentMethod,
   }) = FinanceExpenseEditEventChangePaymentMethod;

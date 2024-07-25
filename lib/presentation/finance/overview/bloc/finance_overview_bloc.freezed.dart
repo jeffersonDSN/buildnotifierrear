@@ -21,6 +21,8 @@ mixin _$FinanceOverviewEvent {
     required TResult Function() load,
     required TResult Function(String invoiceId, InvoiceStatusEnums status)
         changeInvoiceStatus,
+    required TResult Function(String expenseId, ExpenseStatusEnums status)
+        changeExpenseStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +30,8 @@ mixin _$FinanceOverviewEvent {
     TResult? Function()? load,
     TResult? Function(String invoiceId, InvoiceStatusEnums status)?
         changeInvoiceStatus,
+    TResult? Function(String expenseId, ExpenseStatusEnums status)?
+        changeExpenseStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +39,8 @@ mixin _$FinanceOverviewEvent {
     TResult Function()? load,
     TResult Function(String invoiceId, InvoiceStatusEnums status)?
         changeInvoiceStatus,
+    TResult Function(String expenseId, ExpenseStatusEnums status)?
+        changeExpenseStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +49,8 @@ mixin _$FinanceOverviewEvent {
     required TResult Function(FinanceOverviewEventLoad value) load,
     required TResult Function(FinanceOverviewEventChangeInvoiceStatus value)
         changeInvoiceStatus,
+    required TResult Function(FinanceOverviewEventChangeExpenseStatus value)
+        changeExpenseStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +58,8 @@ mixin _$FinanceOverviewEvent {
     TResult? Function(FinanceOverviewEventLoad value)? load,
     TResult? Function(FinanceOverviewEventChangeInvoiceStatus value)?
         changeInvoiceStatus,
+    TResult? Function(FinanceOverviewEventChangeExpenseStatus value)?
+        changeExpenseStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +67,8 @@ mixin _$FinanceOverviewEvent {
     TResult Function(FinanceOverviewEventLoad value)? load,
     TResult Function(FinanceOverviewEventChangeInvoiceStatus value)?
         changeInvoiceStatus,
+    TResult Function(FinanceOverviewEventChangeExpenseStatus value)?
+        changeExpenseStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,6 +138,8 @@ class _$FinanceOverviewEventLoadImpl implements FinanceOverviewEventLoad {
     required TResult Function() load,
     required TResult Function(String invoiceId, InvoiceStatusEnums status)
         changeInvoiceStatus,
+    required TResult Function(String expenseId, ExpenseStatusEnums status)
+        changeExpenseStatus,
   }) {
     return load();
   }
@@ -136,6 +150,8 @@ class _$FinanceOverviewEventLoadImpl implements FinanceOverviewEventLoad {
     TResult? Function()? load,
     TResult? Function(String invoiceId, InvoiceStatusEnums status)?
         changeInvoiceStatus,
+    TResult? Function(String expenseId, ExpenseStatusEnums status)?
+        changeExpenseStatus,
   }) {
     return load?.call();
   }
@@ -146,6 +162,8 @@ class _$FinanceOverviewEventLoadImpl implements FinanceOverviewEventLoad {
     TResult Function()? load,
     TResult Function(String invoiceId, InvoiceStatusEnums status)?
         changeInvoiceStatus,
+    TResult Function(String expenseId, ExpenseStatusEnums status)?
+        changeExpenseStatus,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -160,6 +178,8 @@ class _$FinanceOverviewEventLoadImpl implements FinanceOverviewEventLoad {
     required TResult Function(FinanceOverviewEventLoad value) load,
     required TResult Function(FinanceOverviewEventChangeInvoiceStatus value)
         changeInvoiceStatus,
+    required TResult Function(FinanceOverviewEventChangeExpenseStatus value)
+        changeExpenseStatus,
   }) {
     return load(this);
   }
@@ -170,6 +190,8 @@ class _$FinanceOverviewEventLoadImpl implements FinanceOverviewEventLoad {
     TResult? Function(FinanceOverviewEventLoad value)? load,
     TResult? Function(FinanceOverviewEventChangeInvoiceStatus value)?
         changeInvoiceStatus,
+    TResult? Function(FinanceOverviewEventChangeExpenseStatus value)?
+        changeExpenseStatus,
   }) {
     return load?.call(this);
   }
@@ -180,6 +202,8 @@ class _$FinanceOverviewEventLoadImpl implements FinanceOverviewEventLoad {
     TResult Function(FinanceOverviewEventLoad value)? load,
     TResult Function(FinanceOverviewEventChangeInvoiceStatus value)?
         changeInvoiceStatus,
+    TResult Function(FinanceOverviewEventChangeExpenseStatus value)?
+        changeExpenseStatus,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -277,6 +301,8 @@ class _$FinanceOverviewEventChangeInvoiceStatusImpl
     required TResult Function() load,
     required TResult Function(String invoiceId, InvoiceStatusEnums status)
         changeInvoiceStatus,
+    required TResult Function(String expenseId, ExpenseStatusEnums status)
+        changeExpenseStatus,
   }) {
     return changeInvoiceStatus(invoiceId, status);
   }
@@ -287,6 +313,8 @@ class _$FinanceOverviewEventChangeInvoiceStatusImpl
     TResult? Function()? load,
     TResult? Function(String invoiceId, InvoiceStatusEnums status)?
         changeInvoiceStatus,
+    TResult? Function(String expenseId, ExpenseStatusEnums status)?
+        changeExpenseStatus,
   }) {
     return changeInvoiceStatus?.call(invoiceId, status);
   }
@@ -297,6 +325,8 @@ class _$FinanceOverviewEventChangeInvoiceStatusImpl
     TResult Function()? load,
     TResult Function(String invoiceId, InvoiceStatusEnums status)?
         changeInvoiceStatus,
+    TResult Function(String expenseId, ExpenseStatusEnums status)?
+        changeExpenseStatus,
     required TResult orElse(),
   }) {
     if (changeInvoiceStatus != null) {
@@ -311,6 +341,8 @@ class _$FinanceOverviewEventChangeInvoiceStatusImpl
     required TResult Function(FinanceOverviewEventLoad value) load,
     required TResult Function(FinanceOverviewEventChangeInvoiceStatus value)
         changeInvoiceStatus,
+    required TResult Function(FinanceOverviewEventChangeExpenseStatus value)
+        changeExpenseStatus,
   }) {
     return changeInvoiceStatus(this);
   }
@@ -321,6 +353,8 @@ class _$FinanceOverviewEventChangeInvoiceStatusImpl
     TResult? Function(FinanceOverviewEventLoad value)? load,
     TResult? Function(FinanceOverviewEventChangeInvoiceStatus value)?
         changeInvoiceStatus,
+    TResult? Function(FinanceOverviewEventChangeExpenseStatus value)?
+        changeExpenseStatus,
   }) {
     return changeInvoiceStatus?.call(this);
   }
@@ -331,6 +365,8 @@ class _$FinanceOverviewEventChangeInvoiceStatusImpl
     TResult Function(FinanceOverviewEventLoad value)? load,
     TResult Function(FinanceOverviewEventChangeInvoiceStatus value)?
         changeInvoiceStatus,
+    TResult Function(FinanceOverviewEventChangeExpenseStatus value)?
+        changeExpenseStatus,
     required TResult orElse(),
   }) {
     if (changeInvoiceStatus != null) {
@@ -356,12 +392,186 @@ abstract class FinanceOverviewEventChangeInvoiceStatus
 }
 
 /// @nodoc
+abstract class _$$FinanceOverviewEventChangeExpenseStatusImplCopyWith<$Res> {
+  factory _$$FinanceOverviewEventChangeExpenseStatusImplCopyWith(
+          _$FinanceOverviewEventChangeExpenseStatusImpl value,
+          $Res Function(_$FinanceOverviewEventChangeExpenseStatusImpl) then) =
+      __$$FinanceOverviewEventChangeExpenseStatusImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String expenseId, ExpenseStatusEnums status});
+}
+
+/// @nodoc
+class __$$FinanceOverviewEventChangeExpenseStatusImplCopyWithImpl<$Res>
+    extends _$FinanceOverviewEventCopyWithImpl<$Res,
+        _$FinanceOverviewEventChangeExpenseStatusImpl>
+    implements _$$FinanceOverviewEventChangeExpenseStatusImplCopyWith<$Res> {
+  __$$FinanceOverviewEventChangeExpenseStatusImplCopyWithImpl(
+      _$FinanceOverviewEventChangeExpenseStatusImpl _value,
+      $Res Function(_$FinanceOverviewEventChangeExpenseStatusImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? expenseId = null,
+    Object? status = null,
+  }) {
+    return _then(_$FinanceOverviewEventChangeExpenseStatusImpl(
+      expenseId: null == expenseId
+          ? _value.expenseId
+          : expenseId // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ExpenseStatusEnums,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FinanceOverviewEventChangeExpenseStatusImpl
+    implements FinanceOverviewEventChangeExpenseStatus {
+  const _$FinanceOverviewEventChangeExpenseStatusImpl(
+      {required this.expenseId, required this.status});
+
+  @override
+  final String expenseId;
+  @override
+  final ExpenseStatusEnums status;
+
+  @override
+  String toString() {
+    return 'FinanceOverviewEvent.changeExpenseStatus(expenseId: $expenseId, status: $status)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FinanceOverviewEventChangeExpenseStatusImpl &&
+            (identical(other.expenseId, expenseId) ||
+                other.expenseId == expenseId) &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, expenseId, status);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FinanceOverviewEventChangeExpenseStatusImplCopyWith<
+          _$FinanceOverviewEventChangeExpenseStatusImpl>
+      get copyWith =>
+          __$$FinanceOverviewEventChangeExpenseStatusImplCopyWithImpl<
+              _$FinanceOverviewEventChangeExpenseStatusImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function(String invoiceId, InvoiceStatusEnums status)
+        changeInvoiceStatus,
+    required TResult Function(String expenseId, ExpenseStatusEnums status)
+        changeExpenseStatus,
+  }) {
+    return changeExpenseStatus(expenseId, status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function(String invoiceId, InvoiceStatusEnums status)?
+        changeInvoiceStatus,
+    TResult? Function(String expenseId, ExpenseStatusEnums status)?
+        changeExpenseStatus,
+  }) {
+    return changeExpenseStatus?.call(expenseId, status);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function(String invoiceId, InvoiceStatusEnums status)?
+        changeInvoiceStatus,
+    TResult Function(String expenseId, ExpenseStatusEnums status)?
+        changeExpenseStatus,
+    required TResult orElse(),
+  }) {
+    if (changeExpenseStatus != null) {
+      return changeExpenseStatus(expenseId, status);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FinanceOverviewEventLoad value) load,
+    required TResult Function(FinanceOverviewEventChangeInvoiceStatus value)
+        changeInvoiceStatus,
+    required TResult Function(FinanceOverviewEventChangeExpenseStatus value)
+        changeExpenseStatus,
+  }) {
+    return changeExpenseStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FinanceOverviewEventLoad value)? load,
+    TResult? Function(FinanceOverviewEventChangeInvoiceStatus value)?
+        changeInvoiceStatus,
+    TResult? Function(FinanceOverviewEventChangeExpenseStatus value)?
+        changeExpenseStatus,
+  }) {
+    return changeExpenseStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FinanceOverviewEventLoad value)? load,
+    TResult Function(FinanceOverviewEventChangeInvoiceStatus value)?
+        changeInvoiceStatus,
+    TResult Function(FinanceOverviewEventChangeExpenseStatus value)?
+        changeExpenseStatus,
+    required TResult orElse(),
+  }) {
+    if (changeExpenseStatus != null) {
+      return changeExpenseStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FinanceOverviewEventChangeExpenseStatus
+    implements FinanceOverviewEvent {
+  const factory FinanceOverviewEventChangeExpenseStatus(
+          {required final String expenseId,
+          required final ExpenseStatusEnums status}) =
+      _$FinanceOverviewEventChangeExpenseStatusImpl;
+
+  String get expenseId;
+  ExpenseStatusEnums get status;
+  @JsonKey(ignore: true)
+  _$$FinanceOverviewEventChangeExpenseStatusImplCopyWith<
+          _$FinanceOverviewEventChangeExpenseStatusImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$FinanceOverviewState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(List<Invoice> invoices, List<Expense> expense)
+    required TResult Function(List<Invoice> invoices, List<Expense> expenses)
         loaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -369,14 +579,14 @@ mixin _$FinanceOverviewState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(List<Invoice> invoices, List<Expense> expense)? loaded,
+    TResult? Function(List<Invoice> invoices, List<Expense> expenses)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(List<Invoice> invoices, List<Expense> expense)? loaded,
+    TResult Function(List<Invoice> invoices, List<Expense> expenses)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -467,7 +677,7 @@ class _$FinanceOverviewStateInitImpl implements FinanceOverviewStateInit {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(List<Invoice> invoices, List<Expense> expense)
+    required TResult Function(List<Invoice> invoices, List<Expense> expenses)
         loaded,
   }) {
     return init();
@@ -478,7 +688,7 @@ class _$FinanceOverviewStateInitImpl implements FinanceOverviewStateInit {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(List<Invoice> invoices, List<Expense> expense)? loaded,
+    TResult? Function(List<Invoice> invoices, List<Expense> expenses)? loaded,
   }) {
     return init?.call();
   }
@@ -488,7 +698,7 @@ class _$FinanceOverviewStateInitImpl implements FinanceOverviewStateInit {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(List<Invoice> invoices, List<Expense> expense)? loaded,
+    TResult Function(List<Invoice> invoices, List<Expense> expenses)? loaded,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -580,7 +790,7 @@ class _$FinanceOverviewStateLoadingImpl implements FinanceOverviewStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(List<Invoice> invoices, List<Expense> expense)
+    required TResult Function(List<Invoice> invoices, List<Expense> expenses)
         loaded,
   }) {
     return loading();
@@ -591,7 +801,7 @@ class _$FinanceOverviewStateLoadingImpl implements FinanceOverviewStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(List<Invoice> invoices, List<Expense> expense)? loaded,
+    TResult? Function(List<Invoice> invoices, List<Expense> expenses)? loaded,
   }) {
     return loading?.call();
   }
@@ -601,7 +811,7 @@ class _$FinanceOverviewStateLoadingImpl implements FinanceOverviewStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(List<Invoice> invoices, List<Expense> expense)? loaded,
+    TResult Function(List<Invoice> invoices, List<Expense> expenses)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -657,7 +867,7 @@ abstract class _$$FinanceOverviewStateLoadedImplCopyWith<$Res> {
           $Res Function(_$FinanceOverviewStateLoadedImpl) then) =
       __$$FinanceOverviewStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Invoice> invoices, List<Expense> expense});
+  $Res call({List<Invoice> invoices, List<Expense> expenses});
 }
 
 /// @nodoc
@@ -674,16 +884,16 @@ class __$$FinanceOverviewStateLoadedImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? invoices = null,
-    Object? expense = null,
+    Object? expenses = null,
   }) {
     return _then(_$FinanceOverviewStateLoadedImpl(
       invoices: null == invoices
           ? _value._invoices
           : invoices // ignore: cast_nullable_to_non_nullable
               as List<Invoice>,
-      expense: null == expense
-          ? _value._expense
-          : expense // ignore: cast_nullable_to_non_nullable
+      expenses: null == expenses
+          ? _value._expenses
+          : expenses // ignore: cast_nullable_to_non_nullable
               as List<Expense>,
     ));
   }
@@ -694,9 +904,9 @@ class __$$FinanceOverviewStateLoadedImplCopyWithImpl<$Res>
 class _$FinanceOverviewStateLoadedImpl implements FinanceOverviewStateLoaded {
   const _$FinanceOverviewStateLoadedImpl(
       {required final List<Invoice> invoices,
-      required final List<Expense> expense})
+      required final List<Expense> expenses})
       : _invoices = invoices,
-        _expense = expense;
+        _expenses = expenses;
 
   final List<Invoice> _invoices;
   @override
@@ -706,17 +916,17 @@ class _$FinanceOverviewStateLoadedImpl implements FinanceOverviewStateLoaded {
     return EqualUnmodifiableListView(_invoices);
   }
 
-  final List<Expense> _expense;
+  final List<Expense> _expenses;
   @override
-  List<Expense> get expense {
-    if (_expense is EqualUnmodifiableListView) return _expense;
+  List<Expense> get expenses {
+    if (_expenses is EqualUnmodifiableListView) return _expenses;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_expense);
+    return EqualUnmodifiableListView(_expenses);
   }
 
   @override
   String toString() {
-    return 'FinanceOverviewState.loaded(invoices: $invoices, expense: $expense)';
+    return 'FinanceOverviewState.loaded(invoices: $invoices, expenses: $expenses)';
   }
 
   @override
@@ -725,14 +935,14 @@ class _$FinanceOverviewStateLoadedImpl implements FinanceOverviewStateLoaded {
         (other.runtimeType == runtimeType &&
             other is _$FinanceOverviewStateLoadedImpl &&
             const DeepCollectionEquality().equals(other._invoices, _invoices) &&
-            const DeepCollectionEquality().equals(other._expense, _expense));
+            const DeepCollectionEquality().equals(other._expenses, _expenses));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_invoices),
-      const DeepCollectionEquality().hash(_expense));
+      const DeepCollectionEquality().hash(_expenses));
 
   @JsonKey(ignore: true)
   @override
@@ -746,10 +956,10 @@ class _$FinanceOverviewStateLoadedImpl implements FinanceOverviewStateLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(List<Invoice> invoices, List<Expense> expense)
+    required TResult Function(List<Invoice> invoices, List<Expense> expenses)
         loaded,
   }) {
-    return loaded(invoices, expense);
+    return loaded(invoices, expenses);
   }
 
   @override
@@ -757,9 +967,9 @@ class _$FinanceOverviewStateLoadedImpl implements FinanceOverviewStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(List<Invoice> invoices, List<Expense> expense)? loaded,
+    TResult? Function(List<Invoice> invoices, List<Expense> expenses)? loaded,
   }) {
-    return loaded?.call(invoices, expense);
+    return loaded?.call(invoices, expenses);
   }
 
   @override
@@ -767,11 +977,11 @@ class _$FinanceOverviewStateLoadedImpl implements FinanceOverviewStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(List<Invoice> invoices, List<Expense> expense)? loaded,
+    TResult Function(List<Invoice> invoices, List<Expense> expenses)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(invoices, expense);
+      return loaded(invoices, expenses);
     }
     return orElse();
   }
@@ -813,11 +1023,12 @@ class _$FinanceOverviewStateLoadedImpl implements FinanceOverviewStateLoaded {
 
 abstract class FinanceOverviewStateLoaded implements FinanceOverviewState {
   const factory FinanceOverviewStateLoaded(
-      {required final List<Invoice> invoices,
-      required final List<Expense> expense}) = _$FinanceOverviewStateLoadedImpl;
+          {required final List<Invoice> invoices,
+          required final List<Expense> expenses}) =
+      _$FinanceOverviewStateLoadedImpl;
 
   List<Invoice> get invoices;
-  List<Expense> get expense;
+  List<Expense> get expenses;
   @JsonKey(ignore: true)
   _$$FinanceOverviewStateLoadedImplCopyWith<_$FinanceOverviewStateLoadedImpl>
       get copyWith => throw _privateConstructorUsedError;

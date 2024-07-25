@@ -8,4 +8,9 @@ class FinanceOverviewEvent with _$FinanceOverviewEvent {
     required String invoiceId,
     required InvoiceStatusEnums status,
   }) = FinanceOverviewEventChangeInvoiceStatus;
+
+  const factory FinanceOverviewEvent.changeExpenseStatus({
+    required String expenseId,
+    required ExpenseStatusEnums status,
+  }) = FinanceOverviewEventChangeExpenseStatus;
 }

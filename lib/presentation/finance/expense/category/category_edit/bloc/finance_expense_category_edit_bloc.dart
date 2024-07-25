@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:buildnotifierrear/domain/controllers/crud_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/expense_categories_controller.dart';
 import 'package:buildnotifierrear/domain/entities/core/crud_type.dart';
 import 'package:buildnotifierrear/domain/entities/expense_category/expense_category.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +12,7 @@ part 'finance_expense_category_edit_state.dart';
 class FinanceExpenseCategoryEditBloc extends Bloc<
     FinanceExpenseCategoryEditEvent, FinanceExpenseCategoryEditState> {
   FinanceExpenseCategoryEditBloc({
-    required CRUDController<ExpenseCategory> controller,
+    required ExpenseCategoriesController controller,
   }) : super(const FinanceExpenseCategoryEditState.init()) {
     on<FinanceExpenseCategoryEditEvent>((event, emit) async {
       await event.when(
