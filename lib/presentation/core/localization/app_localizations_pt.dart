@@ -588,4 +588,10 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get cancelExpense => 'Cancelar despesa';
+
+  @override
+  String get expectedExpenses => 'Despesas esperadas';
+
+  @override
+  String get payroll => 'Folha de Pagamento';
 }

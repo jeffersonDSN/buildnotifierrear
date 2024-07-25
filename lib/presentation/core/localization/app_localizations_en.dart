@@ -587,4 +587,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cancelExpense => 'Cancel expense';
+
+  @override
+  String get expectedExpenses => 'Expected expenses';
+
+  @override
+  String get payroll => 'Payroll';
 }

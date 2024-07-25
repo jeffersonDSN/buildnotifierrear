@@ -15,4 +15,6 @@ abstract interface class AbsITimecardRepository
   );
 
   Stream<List<Timecard>> getAllEmployeesWhoCheckedIn();
+
+  Future<List<Timecard>> getAllPendingPayment();
 }

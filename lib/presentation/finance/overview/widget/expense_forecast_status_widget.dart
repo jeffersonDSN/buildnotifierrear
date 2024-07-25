@@ -1,31 +1,32 @@
-import 'package:buildnotifierrear/domain/entities/enums/invoice_status_enums.dart';
-import 'package:buildnotifierrear/domain/entities/invoice/invoice.dart';
+import 'package:buildnotifierrear/domain/entities/employee/employee.dart';
+import 'package:buildnotifierrear/domain/entities/enums/expense_status_enums.dart';
+import 'package:buildnotifierrear/domain/entities/expense/expense.dart';
+import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:graphic/graphic.dart';
 
-class InvoiceStatusWidget extends StatelessWidget {
-  final List<Invoice> invoices;
+class ExpenseForecastStatusWidget extends StatelessWidget {
+  final List<Expense> expenses;
+  final List<Timecard> timecards;
+  final List<Employee> employees;
 
-  const InvoiceStatusWidget({
+  const ExpenseForecastStatusWidget({
     super.key,
-    required this.invoices,
+    required this.expenses,
+    required this.timecards,
+    required this.employees,
   });
 
   @override
   Widget build(BuildContext context) {
-    var totalOfOverdue = invoices.totalOf([InvoiceStatusEnums.overdue]);
+    var totalOfDraft = expenses.totalOf([ExpenseStatusEnums.draft]);
 
-    var totalOfNotDueYet = invoices.totalOf([
-      InvoiceStatusEnums.sent,
-      InvoiceStatusEnums.partiallyPaid,
-    ]);
+    var totalOfPending = expenses.totalOf([ExpenseStatusEnums.pending]);
 
-    var totalOfPaid = invoices.totalOf(
-      [InvoiceStatusEnums.paid],
-    );
+    var totalOfPayroll = employees.getGrossPay(timecards);
 
     return Card(
       child: SizedBox(
@@ -40,7 +41,7 @@ class InvoiceStatusWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                context.tr.invoices,
+                context.tr.expectedExpenses,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
@@ -51,9 +52,9 @@ class InvoiceStatusWidget extends StatelessWidget {
                     dimension: Sizes.size152,
                     child: Chart(
                       data: [
-                        {'genre': 'Overdue', 'sold': totalOfOverdue},
-                        {'genre': 'Not due yet', 'sold': totalOfNotDueYet},
-                        {'genre': 'Paid', 'sold': totalOfPaid},
+                        {'genre': 'Draft', 'sold': totalOfDraft},
+                        {'genre': 'Pending', 'sold': totalOfPending},
+                        {'genre': 'Paid', 'sold': totalOfPayroll},
                       ],
                       variables: {
                         'genre': Variable(
@@ -73,9 +74,9 @@ class InvoiceStatusWidget extends StatelessWidget {
                         IntervalMark(
                           position: Varset('percent') / Varset('genre'),
                           color: ColorEncode(variable: 'genre', values: [
-                            AppColor.red,
-                            AppColor.greyColorSwatch,
-                            AppColor.green,
+                            AppColor.warning,
+                            AppColor.orange,
+                            AppColor.primaryColorSwatch,
                           ]),
                           modifiers: [StackModifier()],
                         )
@@ -95,39 +96,39 @@ class InvoiceStatusWidget extends StatelessWidget {
                         Row(
                           children: [
                             Container(
-                              color: AppColor.red,
+                              color: AppColor.warning,
                               width: Sizes.size12,
                               height: 10,
                             ),
                             gapWidth8,
                             Text(
-                              '${context.tr.overdue} ${totalOfOverdue.toStringAsFixed(2)}',
+                              '${context.tr.draft} ${totalOfDraft.toStringAsFixed(2)}',
                             ),
                           ],
                         ),
                         Row(
                           children: [
                             Container(
-                              color: AppColor.greyColorSwatch,
+                              color: AppColor.orange,
                               width: Sizes.size12,
                               height: 10,
                             ),
                             gapWidth8,
                             Text(
-                              '${context.tr.notDueYet} ${totalOfNotDueYet.toStringAsFixed(2)}',
+                              '${context.tr.pending} ${totalOfPending.toStringAsFixed(2)}',
                             ),
                           ],
                         ),
                         Row(
                           children: [
                             Container(
-                              color: AppColor.green,
+                              color: AppColor.primaryColorSwatch,
                               width: Sizes.size12,
                               height: 10,
                             ),
                             gapWidth8,
                             Text(
-                              '${context.tr.paid} ${totalOfPaid.toStringAsFixed(2)}',
+                              '${context.tr.payroll} ${totalOfPayroll.toStringAsFixed(2)}',
                             ),
                           ],
                         ),

@@ -18,6 +18,7 @@ class Timecard with _$Timecard {
     double? endLatitude,
     double? endLongitude,
     String? endLocation,
+    @Default('') String expenseId,
   }) = _Timecard;
 
   factory Timecard.fromJson(Map<String, Object?> json) =>

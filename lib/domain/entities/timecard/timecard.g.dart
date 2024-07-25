@@ -20,6 +20,7 @@ _$TimecardImpl _$$TimecardImplFromJson(Map<String, dynamic> json) =>
       endLatitude: (json['endLatitude'] as num?)?.toDouble(),
       endLongitude: (json['endLongitude'] as num?)?.toDouble(),
       endLocation: json['endLocation'] as String?,
+      expenseId: json['expenseId'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$TimecardImplToJson(_$TimecardImpl instance) =>
@@ -36,4 +37,5 @@ Map<String, dynamic> _$$TimecardImplToJson(_$TimecardImpl instance) =>
       'endLatitude': instance.endLatitude,
       'endLongitude': instance.endLongitude,
       'endLocation': instance.endLocation,
+      'expenseId': instance.expenseId,
     };

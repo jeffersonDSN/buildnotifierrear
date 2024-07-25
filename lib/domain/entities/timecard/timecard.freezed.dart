@@ -32,6 +32,7 @@ mixin _$Timecard {
   double? get endLatitude => throw _privateConstructorUsedError;
   double? get endLongitude => throw _privateConstructorUsedError;
   String? get endLocation => throw _privateConstructorUsedError;
+  String get expenseId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -56,7 +57,8 @@ abstract class $TimecardCopyWith<$Res> {
       DateTime? end,
       double? endLatitude,
       double? endLongitude,
-      String? endLocation});
+      String? endLocation,
+      String expenseId});
 }
 
 /// @nodoc
@@ -84,6 +86,7 @@ class _$TimecardCopyWithImpl<$Res, $Val extends Timecard>
     Object? endLatitude = freezed,
     Object? endLongitude = freezed,
     Object? endLocation = freezed,
+    Object? expenseId = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -134,6 +137,10 @@ class _$TimecardCopyWithImpl<$Res, $Val extends Timecard>
           ? _value.endLocation
           : endLocation // ignore: cast_nullable_to_non_nullable
               as String?,
+      expenseId: null == expenseId
+          ? _value.expenseId
+          : expenseId // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -158,7 +165,8 @@ abstract class _$$TimecardImplCopyWith<$Res>
       DateTime? end,
       double? endLatitude,
       double? endLongitude,
-      String? endLocation});
+      String? endLocation,
+      String expenseId});
 }
 
 /// @nodoc
@@ -184,6 +192,7 @@ class __$$TimecardImplCopyWithImpl<$Res>
     Object? endLatitude = freezed,
     Object? endLongitude = freezed,
     Object? endLocation = freezed,
+    Object? expenseId = null,
   }) {
     return _then(_$TimecardImpl(
       id: null == id
@@ -234,6 +243,10 @@ class __$$TimecardImplCopyWithImpl<$Res>
           ? _value.endLocation
           : endLocation // ignore: cast_nullable_to_non_nullable
               as String?,
+      expenseId: null == expenseId
+          ? _value.expenseId
+          : expenseId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -253,7 +266,8 @@ class _$TimecardImpl implements _Timecard {
       this.end,
       this.endLatitude,
       this.endLongitude,
-      this.endLocation});
+      this.endLocation,
+      this.expenseId = ''});
 
   factory _$TimecardImpl.fromJson(Map<String, dynamic> json) =>
       _$$TimecardImplFromJson(json);
@@ -285,10 +299,13 @@ class _$TimecardImpl implements _Timecard {
   final double? endLongitude;
   @override
   final String? endLocation;
+  @override
+  @JsonKey()
+  final String expenseId;
 
   @override
   String toString() {
-    return 'Timecard(id: $id, employeeId: $employeeId, employeeFirstName: $employeeFirstName, employeeLastName: $employeeLastName, start: $start, startLatitude: $startLatitude, startLongitude: $startLongitude, startLocation: $startLocation, end: $end, endLatitude: $endLatitude, endLongitude: $endLongitude, endLocation: $endLocation)';
+    return 'Timecard(id: $id, employeeId: $employeeId, employeeFirstName: $employeeFirstName, employeeLastName: $employeeLastName, start: $start, startLatitude: $startLatitude, startLongitude: $startLongitude, startLocation: $startLocation, end: $end, endLatitude: $endLatitude, endLongitude: $endLongitude, endLocation: $endLocation, expenseId: $expenseId)';
   }
 
   @override
@@ -316,7 +333,9 @@ class _$TimecardImpl implements _Timecard {
             (identical(other.endLongitude, endLongitude) ||
                 other.endLongitude == endLongitude) &&
             (identical(other.endLocation, endLocation) ||
-                other.endLocation == endLocation));
+                other.endLocation == endLocation) &&
+            (identical(other.expenseId, expenseId) ||
+                other.expenseId == expenseId));
   }
 
   @JsonKey(ignore: true)
@@ -334,7 +353,8 @@ class _$TimecardImpl implements _Timecard {
       end,
       endLatitude,
       endLongitude,
-      endLocation);
+      endLocation,
+      expenseId);
 
   @JsonKey(ignore: true)
   @override
@@ -363,7 +383,8 @@ abstract class _Timecard implements Timecard {
       final DateTime? end,
       final double? endLatitude,
       final double? endLongitude,
-      final String? endLocation}) = _$TimecardImpl;
+      final String? endLocation,
+      final String expenseId}) = _$TimecardImpl;
 
   factory _Timecard.fromJson(Map<String, dynamic> json) =
       _$TimecardImpl.fromJson;
@@ -392,6 +413,8 @@ abstract class _Timecard implements Timecard {
   double? get endLongitude;
   @override
   String? get endLocation;
+  @override
+  String get expenseId;
   @override
   @JsonKey(ignore: true)
   _$$TimecardImplCopyWith<_$TimecardImpl> get copyWith =>

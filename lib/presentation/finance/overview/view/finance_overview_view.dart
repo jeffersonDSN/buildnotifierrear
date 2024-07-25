@@ -7,7 +7,8 @@ import 'package:buildnotifierrear/presentation/core/extensions/build_context_ext
 import 'package:buildnotifierrear/presentation/core/view/i_view.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/bloc/finance_overview_bloc.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/view/finance_expenses_overview_view.dart';
-import 'package:buildnotifierrear/presentation/finance/overview/widget/expenses_cash_flow.dart';
+import 'package:buildnotifierrear/presentation/finance/overview/widget/expense_forecast_status_widget.dart';
+import 'package:buildnotifierrear/presentation/finance/overview/widget/expenses_cash_flow_widget.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/expenses_status_widget.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/invoice_status_widget.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/invoice_table_widget.dart';
@@ -254,7 +255,7 @@ class FinanceOverviewView extends IView {
                         ),
                       ];
                     },
-                    loaded: (invoices, expenses) {
+                    loaded: (invoices, expenses, timecards, employees) {
                       return [
                         Padding(
                           padding: const EdgeInsets.all(
@@ -276,7 +277,18 @@ class FinanceOverviewView extends IView {
                                   ),
                                 ],
                               ),
-                              ExpensesCashFlow(
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: ExpenseForecastStatusWidget(
+                                      expenses: expenses,
+                                      timecards: timecards,
+                                      employees: employees,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              ExpensesCashFlowWidget(
                                 expenses: expenses,
                                 invoices: invoices,
                               ),

@@ -29,9 +29,12 @@ class ExpensesStatusWidget extends StatelessWidget {
 
     return Card(
       child: SizedBox(
-        height: Sizes.size240,
+        height: Sizes.size180,
         child: Padding(
-          padding: const EdgeInsets.all(Sizes.size16),
+          padding: const EdgeInsets.only(
+            top: Sizes.size8,
+            left: Sizes.size8,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
@@ -42,54 +45,52 @@ class ExpensesStatusWidget extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              gapHeight16,
               Row(
                 children: [
-                  Expanded(
-                    child: SizedBox.square(
-                      dimension: Sizes.size160,
-                      child: Chart(
-                        data: [
-                          {'genre': 'Overdue', 'sold': totalOfOverdue},
-                          {'genre': 'Not due yet', 'sold': totalOfNotDueYet},
-                          {'genre': 'Paid', 'sold': totalOfPaid},
-                        ],
-                        variables: {
-                          'genre': Variable(
-                            accessor: (Map map) => map['genre'] as String,
-                          ),
-                          'sold': Variable(
-                            accessor: (Map map) => map['sold'] as num,
-                          ),
-                        },
-                        transforms: [
-                          Proportion(
-                            variable: 'sold',
-                            as: 'percent',
-                          )
-                        ],
-                        marks: [
-                          IntervalMark(
-                            position: Varset('percent') / Varset('genre'),
-                            color: ColorEncode(variable: 'genre', values: [
-                              AppColor.red,
-                              AppColor.greyColorSwatch,
-                              AppColor.warning,
-                            ]),
-                            modifiers: [StackModifier()],
-                          )
-                        ],
-                        coord: PolarCoord(
-                          transposed: true,
-                          dimCount: 1,
-                          startRadius: 0.6,
+                  SizedBox.square(
+                    dimension: Sizes.size152,
+                    child: Chart(
+                      data: [
+                        {'genre': 'Overdue', 'sold': totalOfOverdue},
+                        {'genre': 'Not due yet', 'sold': totalOfNotDueYet},
+                        {'genre': 'Paid', 'sold': totalOfPaid},
+                      ],
+                      variables: {
+                        'genre': Variable(
+                          accessor: (Map map) => map['genre'] as String,
                         ),
-                        selections: {'tap': PointSelection()},
+                        'sold': Variable(
+                          accessor: (Map map) => map['sold'] as num,
+                        ),
+                      },
+                      transforms: [
+                        Proportion(
+                          variable: 'sold',
+                          as: 'percent',
+                        )
+                      ],
+                      marks: [
+                        IntervalMark(
+                          position: Varset('percent') / Varset('genre'),
+                          color: ColorEncode(variable: 'genre', values: [
+                            AppColor.red,
+                            AppColor.greyColorSwatch,
+                            AppColor.warning,
+                          ]),
+                          modifiers: [StackModifier()],
+                        )
+                      ],
+                      coord: PolarCoord(
+                        transposed: true,
+                        dimCount: 1,
+                        startRadius: 0.6,
                       ),
+                      selections: {'tap': PointSelection()},
                     ),
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: [

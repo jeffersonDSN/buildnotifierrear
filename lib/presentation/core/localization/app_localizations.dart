@@ -423,6 +423,10 @@ abstract class AppLocalizations {
   String get income;
 
   String get cancelExpense;
+
+  String get expectedExpenses;
+
+  String get payroll;
 }
 
 class _AppLocalizationsDelegate

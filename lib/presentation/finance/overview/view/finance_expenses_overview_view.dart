@@ -87,27 +87,24 @@ class FinanceExpensesOverviewView extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Container(
-              color: AppColor.lightColor,
-              child: TabBarView(
-                physics: const NeverScrollableScrollPhysics(),
-                children: [
-                  ExpensesTableWidget(
-                    expenses: expenses,
-                    onRequestApproval: onRequestApproval,
-                    onEdit: onEdit,
-                    onApprove: onApprove,
-                    onPaid: onPaid,
-                    onCancel: onCancel,
-                  ),
-                  const Row(
-                    children: [
-                      FinanceExpenseCategoryOverview(),
-                      FinanceExpenseCardOverview(),
-                    ],
-                  ),
-                ],
-              ),
+            child: TabBarView(
+              physics: const NeverScrollableScrollPhysics(),
+              children: [
+                ExpensesTableWidget(
+                  expenses: expenses,
+                  onRequestApproval: onRequestApproval,
+                  onEdit: onEdit,
+                  onApprove: onApprove,
+                  onPaid: onPaid,
+                  onCancel: onCancel,
+                ),
+                const Row(
+                  children: [
+                    FinanceExpenseCategoryOverview(),
+                    FinanceExpenseCardOverview(),
+                  ],
+                ),
+              ],
             ),
           )
         ],

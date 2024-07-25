@@ -34,4 +34,8 @@ class TimecardsController extends CRUDController<Timecard> {
   Stream<List<Timecard>> getAllEmployeesWhoCheckedIn() {
     return _repository.getAllEmployeesWhoCheckedIn();
   }
+
+  Future<List<Timecard>> getAllPendingPayment() {
+    return _repository.getAllPendingPayment();
+  }
 }

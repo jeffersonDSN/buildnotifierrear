@@ -10,11 +10,11 @@ import 'package:flutter/material.dart';
 import 'package:graphic/graphic.dart';
 import 'package:collection/collection.dart';
 
-class ExpensesCashFlow extends StatelessWidget {
+class ExpensesCashFlowWidget extends StatelessWidget {
   final List<Expense> expenses;
   final List<Invoice> invoices;
 
-  const ExpensesCashFlow({
+  const ExpensesCashFlowWidget({
     super.key,
     required this.expenses,
     required this.invoices,

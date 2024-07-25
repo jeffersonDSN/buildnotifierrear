@@ -33,6 +33,33 @@ class TimecardsFireStoreRepository extends TenantFirestoreRepository
   }
 
   @override
+  Future<List<Timecard>> getAllPendingPayment() async {
+    var querySnapshot = await collection
+        .where(
+          'expenseId',
+          isEqualTo: '',
+        )
+        .get();
+
+    return querySnapshot.docs
+        .map((DocumentSnapshot document) {
+          var doc = document.data() as Map<String, dynamic>;
+          var result = doc.map((key, value) {
+            if (value is Timestamp) {
+              return MapEntry(key, value.toDate().toString());
+            } else {
+              return MapEntry(key, value);
+            }
+          });
+
+          return {...result, 'id': document.id};
+        })
+        .toList()
+        .map((e) => Timecard.fromJson(e))
+        .toList();
+  }
+
+  @override
   Future<List<Timecard>> getAllOfByEmployeeAndPeriod(
     String employeeId,
     DateTime startDate,
@@ -134,6 +161,7 @@ class TimecardsFireStoreRepository extends TenantFirestoreRepository
       'endLatitude': clock.endLatitude,
       'endLongitude': clock.endLongitude,
       'endLocation': clock.endLocation,
+      'expenseId': clock.expenseId,
     };
 
     var doc = await collection.add(schedule);
@@ -154,6 +182,7 @@ class TimecardsFireStoreRepository extends TenantFirestoreRepository
       'endLatitude': clock.endLatitude,
       'endLongitude': clock.endLongitude,
       'endLocation': clock.endLocation,
+      'expenseId': clock.expenseId,
     };
 
     await collection.doc(clock.id).update(schedule);

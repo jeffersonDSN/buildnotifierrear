@@ -65,17 +65,14 @@ CardTheme get _cardTheme => CardTheme(
       color: AppColor.lightColor,
       elevation: 0,
       shape: RoundedRectangleBorder(
-        side: BorderSide(
-          color: AppColor.primaryColorSwatch.withOpacity(
-            .4,
-          ),
-          width: .5,
+        side: const BorderSide(
+          color: Colors.black,
+          width: 2,
         ),
         borderRadius: BorderRadius.circular(
           Sizes.size8,
         ),
       ),
-      shadowColor: AppColor.primaryColorSwatch.withOpacity(.1),
     );
 
 TextTheme get _textTheme => const TextTheme(
