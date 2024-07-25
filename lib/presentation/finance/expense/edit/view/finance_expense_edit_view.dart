@@ -98,53 +98,47 @@ class FinanceExpenseEditView extends IView {
                                   },
                                 ),
                               ),
+                              if (expense.categoryId == '2') gapWidth8,
                               if (expense.categoryId == '2')
                                 Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(
-                                      left: Sizes.size8,
+                                  child: BaseDropdownButtonField(
+                                    label: context.tr.creditCard,
+                                    value: (
+                                      id: expense.creditCardId,
+                                      number: expense.creditCardNumber,
                                     ),
-                                    child: Expanded(
-                                      child: BaseDropdownButtonField(
-                                        label: context.tr.creditCard,
+                                    items: [
+                                      DropdownItem(
                                         value: (
-                                          id: expense.creditCardId,
-                                          number: expense.creditCardNumber,
+                                          id: '',
+                                          number: '',
                                         ),
-                                        items: [
-                                          DropdownItem(
+                                        title: '',
+                                      ),
+                                      ...cards.map(
+                                        (card) {
+                                          return DropdownItem(
                                             value: (
-                                              id: '',
-                                              number: '',
+                                              id: card.id,
+                                              number: card.number,
                                             ),
-                                            title: '',
-                                          ),
-                                          ...cards.map(
-                                            (card) {
-                                              return DropdownItem(
-                                                value: (
-                                                  id: card.id,
-                                                  number: card.number,
-                                                ),
-                                                title:
-                                                    '**** **** **** ${card.number}',
-                                              );
-                                            },
-                                          ),
-                                        ],
-                                        onChanged: (value) {
-                                          if (value != null) {
-                                            bloc.add(
-                                              FinanceExpenseEditEvent
-                                                  .changeCreditCard(
-                                                id: value.id,
-                                                number: value.number,
-                                              ),
-                                            );
-                                          }
+                                            title:
+                                                '**** **** **** ${card.number}',
+                                          );
                                         },
                                       ),
-                                    ),
+                                    ],
+                                    onChanged: (value) {
+                                      if (value != null) {
+                                        bloc.add(
+                                          FinanceExpenseEditEvent
+                                              .changeCreditCard(
+                                            id: value.id,
+                                            number: value.number,
+                                          ),
+                                        );
+                                      }
+                                    },
                                   ),
                                 ),
                               gapWidth8,
@@ -182,54 +176,47 @@ class FinanceExpenseEditView extends IView {
                                   },
                                 ),
                               ),
+                              if (expense.paymentMethod.isCreditCard) gapWidth8,
                               if (expense.paymentMethod.isCreditCard)
                                 Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(
-                                      left: Sizes.size8,
+                                  child: BaseDropdownButtonField(
+                                    label: context.tr.creditCard,
+                                    value: (
+                                      id: expense.paymentMethodCardId,
+                                      number: expense.paymentMethodCardNumber,
                                     ),
-                                    child: Expanded(
-                                      child: BaseDropdownButtonField(
-                                        label: context.tr.creditCard,
+                                    items: [
+                                      DropdownItem(
                                         value: (
-                                          id: expense.paymentMethodCardId,
-                                          number:
-                                              expense.paymentMethodCardNumber,
+                                          id: '',
+                                          number: '',
                                         ),
-                                        items: [
-                                          DropdownItem(
+                                        title: '',
+                                      ),
+                                      ...cards.map(
+                                        (card) {
+                                          return DropdownItem(
                                             value: (
-                                              id: '',
-                                              number: '',
+                                              id: card.id,
+                                              number: card.number,
                                             ),
-                                            title: '',
-                                          ),
-                                          ...cards.map(
-                                            (card) {
-                                              return DropdownItem(
-                                                value: (
-                                                  id: card.id,
-                                                  number: card.number,
-                                                ),
-                                                title:
-                                                    '**** **** **** ${card.number}',
-                                              );
-                                            },
-                                          ),
-                                        ],
-                                        onChanged: (value) {
-                                          if (value != null) {
-                                            bloc.add(
-                                              FinanceExpenseEditEvent
-                                                  .changePaymentMethodCreditCard(
-                                                id: value.id,
-                                                number: value.number,
-                                              ),
-                                            );
-                                          }
+                                            title:
+                                                '**** **** **** ${card.number}',
+                                          );
                                         },
                                       ),
-                                    ),
+                                    ],
+                                    onChanged: (value) {
+                                      if (value != null) {
+                                        bloc.add(
+                                          FinanceExpenseEditEvent
+                                              .changePaymentMethodCreditCard(
+                                            id: value.id,
+                                            number: value.number,
+                                          ),
+                                        );
+                                      }
+                                    },
                                   ),
                                 ),
                             ],
@@ -312,20 +299,14 @@ class FinanceExpenseEditView extends IView {
                                       initialValue: expense.projectName,
                                     ),
                                   ),
+                                  if (expense.taskId.isNotEmpty) gapWidth8,
                                   if (expense.taskId.isNotEmpty)
                                     Expanded(
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                          left: Sizes.size8,
-                                        ),
-                                        child: Expanded(
-                                          child: BaseTextFormField(
-                                            enabled: false,
-                                            key: Key(expense.taskTitle),
-                                            label: context.tr.task,
-                                            initialValue: expense.taskTitle,
-                                          ),
-                                        ),
+                                      child: BaseTextFormField(
+                                        enabled: false,
+                                        key: Key(expense.taskTitle),
+                                        label: context.tr.task,
+                                        initialValue: expense.taskTitle,
                                       ),
                                     ),
                                 ],
