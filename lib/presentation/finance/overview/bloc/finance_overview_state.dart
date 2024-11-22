@@ -11,6 +11,7 @@ class FinanceOverviewState with _$FinanceOverviewState {
     required List<Expense> expenses,
     required List<Timecard> timecards,
     required List<Employee> employees,
+    required List<Project> projects,
   }) = FinanceOverviewStateLoaded;
 }
 

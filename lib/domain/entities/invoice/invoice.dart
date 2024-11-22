@@ -62,6 +62,14 @@ extension OnInvoice on Invoice {
         : 0;
   }
 
+  double get totalByProjects {
+    return items.isNotEmpty
+        ? items.map((item) {
+            return item.projectId.isNotEmpty ? item.amount : 0.0;
+          }).reduce((a, b) => a + b)
+        : 0;
+  }
+
   List<InvoiceItem> get groupItemsByTask {
     if (items.isEmpty) {
       return [];
@@ -102,5 +110,9 @@ extension OnInvoiceList on List<Invoice> {
     }
 
     return invoices.map((e) => e.total).reduce((a, b) => a + b);
+  }
+
+  double totalByProjects() {
+    return map((invoice) => invoice.totalByProjects).reduce((a, b) => a + b);
   }
 }

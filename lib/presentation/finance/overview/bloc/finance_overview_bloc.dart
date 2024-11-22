@@ -2,12 +2,14 @@ import 'package:bloc/bloc.dart';
 import 'package:buildnotifierrear/domain/controllers/employees_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/expenses_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/invoices_controller.dart';
+import 'package:buildnotifierrear/domain/controllers/projects_controller.dart';
 import 'package:buildnotifierrear/domain/controllers/timecards_controller.dart';
 import 'package:buildnotifierrear/domain/entities/employee/employee.dart';
 import 'package:buildnotifierrear/domain/entities/enums/expense_status_enums.dart';
 import 'package:buildnotifierrear/domain/entities/enums/invoice_status_enums.dart';
 import 'package:buildnotifierrear/domain/entities/expense/expense.dart';
 import 'package:buildnotifierrear/domain/entities/invoice/invoice.dart';
+import 'package:buildnotifierrear/domain/entities/project/project.dart';
 import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -22,6 +24,7 @@ class FinanceOverviewBloc
     required ExpensesController expensesController,
     required TimecardsController timecardsController,
     required EmployeesController employeesController,
+    required ProjectsController projectsController,
   }) : super(const FinanceOverviewState.init()) {
     on<FinanceOverviewEvent>((event, emit) async {
       await event.when(
@@ -34,6 +37,7 @@ class FinanceOverviewBloc
             invoicesController.getAll(),
             expensesController.getAll(),
             timecardsController.getAllPendingPayment(),
+            projectsController.getAll(),
           ]);
 
           var timeCards = result[2] as List<Timecard>;
@@ -54,6 +58,7 @@ class FinanceOverviewBloc
               expenses: result[1] as List<Expense>,
               timecards: timeCards,
               employees: employees,
+              projects: result[3] as List<Project>,
             ),
           );
         },

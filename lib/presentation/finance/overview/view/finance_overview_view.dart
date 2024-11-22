@@ -9,7 +9,9 @@ import 'package:buildnotifierrear/presentation/finance/overview/bloc/finance_ove
 import 'package:buildnotifierrear/presentation/finance/overview/view/finance_expenses_overview_view.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/expense_forecast_status_widget.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/expenses_cash_flow_widget.dart';
+import 'package:buildnotifierrear/presentation/finance/overview/widget/expenses_category_widget.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/expenses_status_widget.dart';
+import 'package:buildnotifierrear/presentation/finance/overview/widget/income_forecast_status_widget.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/invoice_status_widget.dart';
 import 'package:buildnotifierrear/presentation/finance/overview/widget/invoice_table_widget.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
@@ -159,7 +161,7 @@ class FinanceOverviewView extends IView {
                                   Expanded(
                                     child: Card(
                                       child: SizedBox(
-                                        height: Sizes.size240,
+                                        height: Sizes.size180,
                                         child: Padding(
                                           padding: const EdgeInsets.all(
                                             Sizes.size16,
@@ -169,7 +171,7 @@ class FinanceOverviewView extends IView {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                context.tr.expenses,
+                                                context.tr.invoice,
                                                 style: const TextStyle(
                                                   fontWeight: FontWeight.bold,
                                                 ),
@@ -190,7 +192,7 @@ class FinanceOverviewView extends IView {
                                   Expanded(
                                     child: Card(
                                       child: SizedBox(
-                                        height: Sizes.size240,
+                                        height: Sizes.size180,
                                         child: Padding(
                                           padding: const EdgeInsets.all(
                                             Sizes.size16,
@@ -200,7 +202,73 @@ class FinanceOverviewView extends IView {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                context.tr.invoices,
+                                                context.tr.expense,
+                                                style: const TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                              gapHeight16,
+                                              const Expanded(
+                                                child: Center(
+                                                  child:
+                                                      CircularProgressIndicator(),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Card(
+                                      child: SizedBox(
+                                        height: Sizes.size180,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(
+                                            Sizes.size16,
+                                          ),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                context.tr.forecastedRevenues,
+                                                style: const TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                              gapHeight16,
+                                              const Expanded(
+                                                child: Center(
+                                                  child:
+                                                      CircularProgressIndicator(),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Card(
+                                      child: SizedBox(
+                                        height: Sizes.size180,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(
+                                            Sizes.size16,
+                                          ),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                context.tr.forecastedExpenses,
                                                 style: const TextStyle(
                                                   fontWeight: FontWeight.bold,
                                                 ),
@@ -255,7 +323,13 @@ class FinanceOverviewView extends IView {
                         ),
                       ];
                     },
-                    loaded: (invoices, expenses, timecards, employees) {
+                    loaded: (
+                      invoices,
+                      expenses,
+                      timecards,
+                      employees,
+                      projects,
+                    ) {
                       return [
                         Padding(
                           padding: const EdgeInsets.all(
@@ -279,6 +353,12 @@ class FinanceOverviewView extends IView {
                               ),
                               Row(
                                 children: [
+                                  Expanded(
+                                    child: IncomeForecastStatusWidget(
+                                      invoices: invoices,
+                                      projects: projects,
+                                    ),
+                                  ),
                                   Expanded(
                                     child: ExpenseForecastStatusWidget(
                                       expenses: expenses,

@@ -1,32 +1,28 @@
-import 'package:buildnotifierrear/domain/entities/employee/employee.dart';
-import 'package:buildnotifierrear/domain/entities/enums/expense_status_enums.dart';
-import 'package:buildnotifierrear/domain/entities/expense/expense.dart';
-import 'package:buildnotifierrear/domain/entities/timecard/timecard.dart';
+import 'package:buildnotifierrear/domain/entities/enums/invoice_status_enums.dart';
+import 'package:buildnotifierrear/domain/entities/invoice/invoice.dart';
+import 'package:buildnotifierrear/domain/entities/project/project.dart';
 import 'package:buildnotifierrear/presentation/core/extensions/build_context_extentions.dart';
 import 'package:buildnotifierrear/presentation/theme/app_color.dart';
 import 'package:buildnotifierrear/presentation/theme/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:graphic/graphic.dart';
 
-class ExpenseForecastStatusWidget extends StatelessWidget {
-  final List<Expense> expenses;
-  final List<Timecard> timecards;
-  final List<Employee> employees;
+class IncomeForecastStatusWidget extends StatelessWidget {
+  final List<Invoice> invoices;
+  final List<Project> projects;
 
-  const ExpenseForecastStatusWidget({
+  const IncomeForecastStatusWidget({
     super.key,
-    required this.expenses,
-    required this.timecards,
-    required this.employees,
+    required this.invoices,
+    required this.projects,
   });
 
   @override
   Widget build(BuildContext context) {
-    var totalOfDraft = expenses.totalOf([ExpenseStatusEnums.draft]);
+    var totalOfDraft = invoices.totalOf([InvoiceStatusEnums.draft]);
 
-    var totalOfPending = expenses.totalOf([ExpenseStatusEnums.pending]);
-
-    var totalOfPayroll = employees.getGrossPay(timecards);
+    var totalForecastProjectRevenues =
+        projects.totalBudget - invoices.totalByProjects();
 
     return Card(
       child: SizedBox(
@@ -41,7 +37,7 @@ class ExpenseForecastStatusWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                context.tr.forecastedExpenses,
+                context.tr.forecastedRevenues,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
@@ -52,9 +48,14 @@ class ExpenseForecastStatusWidget extends StatelessWidget {
                     dimension: Sizes.size152,
                     child: Chart(
                       data: [
-                        {'genre': 'Draft expenses', 'sold': totalOfDraft},
-                        {'genre': 'Pending approval', 'sold': totalOfPending},
-                        {'genre': 'Payroll', 'sold': totalOfPayroll},
+                        {
+                          'genre': 'Draft Invoices',
+                          'sold': totalOfDraft,
+                        },
+                        {
+                          'genre': 'Forecasted project revenues',
+                          'sold': totalForecastProjectRevenues
+                        },
                       ],
                       variables: {
                         'genre': Variable(
@@ -75,8 +76,7 @@ class ExpenseForecastStatusWidget extends StatelessWidget {
                           position: Varset('percent') / Varset('genre'),
                           color: ColorEncode(variable: 'genre', values: [
                             AppColor.warning,
-                            AppColor.orange,
-                            AppColor.primaryColorSwatch,
+                            AppColor.green,
                           ]),
                           modifiers: [StackModifier()],
                         )
@@ -102,33 +102,20 @@ class ExpenseForecastStatusWidget extends StatelessWidget {
                             ),
                             gapWidth8,
                             Text(
-                              '${context.tr.draftExpenses} ${totalOfDraft.toStringAsFixed(2)}',
+                              '${context.tr.draftInvoices} ${totalOfDraft.toStringAsFixed(2)}',
                             ),
                           ],
                         ),
                         Row(
                           children: [
                             Container(
-                              color: AppColor.orange,
+                              color: AppColor.green,
                               width: Sizes.size12,
                               height: 10,
                             ),
                             gapWidth8,
                             Text(
-                              '${context.tr.pendingApproval} ${totalOfPending.toStringAsFixed(2)}',
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              color: AppColor.primaryColorSwatch,
-                              width: Sizes.size12,
-                              height: 10,
-                            ),
-                            gapWidth8,
-                            Text(
-                              '${context.tr.payroll} ${totalOfPayroll.toStringAsFixed(2)}',
+                              '${context.tr.forecastedProjectRevenues} ${totalForecastProjectRevenues.toStringAsFixed(2)}',
                             ),
                           ],
                         ),

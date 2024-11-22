@@ -424,9 +424,21 @@ abstract class AppLocalizations {
 
   String get cancelExpense;
 
-  String get expectedExpenses;
+  String get forecastedExpenses;
 
   String get payroll;
+
+  String get expensesByCategory;
+
+  String get forecastedRevenues;
+
+  String get draftExpenses;
+
+  String get pendingApproval;
+
+  String get draftInvoices;
+
+  String get forecastedProjectRevenues;
 }
 
 class _AppLocalizationsDelegate

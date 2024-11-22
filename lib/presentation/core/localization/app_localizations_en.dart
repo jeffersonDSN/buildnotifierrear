@@ -589,8 +589,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String get cancelExpense => 'Cancel expense';
 
   @override
-  String get expectedExpenses => 'Expected expenses';
+  String get payroll => 'Payroll';
 
   @override
-  String get payroll => 'Payroll';
+  String get expensesByCategory => 'expenses by category';
+
+  @override
+  String get forecastedExpenses => 'Forecasted expenses';
+
+  @override
+  String get forecastedRevenues => 'Forecasted revenues';
+
+  @override
+  String get draftExpenses => 'Draft expenses';
+
+  @override
+  String get pendingApproval => 'Pending Approval';
+
+  @override
+  String get draftInvoices => 'Draft invoices';
+
+  @override
+  String get forecastedProjectRevenues => 'Forecasted project revenues';
 }

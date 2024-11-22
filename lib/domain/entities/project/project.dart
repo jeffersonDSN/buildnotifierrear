@@ -40,4 +40,10 @@ extension OnProjectList on List<Project> {
   int lengthOf(ProjectStatus status) {
     return where((project) => project.status == status).toList().length;
   }
+
+  double get totalBudget {
+    return isNotEmpty
+        ? map((project) => project.budget).reduce((a, b) => a + b)
+        : 0;
+  }
 }
